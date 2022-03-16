@@ -22,9 +22,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Telephony_Sms_Sent::Telephony_Sms_Sent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

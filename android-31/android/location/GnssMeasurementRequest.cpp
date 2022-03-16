@@ -15,9 +15,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssMeasurementRequest::GnssMeasurementRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

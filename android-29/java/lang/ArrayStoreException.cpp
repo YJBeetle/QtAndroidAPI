@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayStoreException::ArrayStoreException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	ArrayStoreException::ArrayStoreException()
 		: java::lang::RuntimeException(

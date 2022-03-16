@@ -22,7 +22,7 @@ namespace org::apache::http::conn::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractVerifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractVerifier(QAndroidJniObject obj);
+		AbstractVerifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractVerifier();

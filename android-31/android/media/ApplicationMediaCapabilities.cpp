@@ -14,9 +14,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationMediaCapabilities::ApplicationMediaCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

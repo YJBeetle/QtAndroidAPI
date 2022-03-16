@@ -44,7 +44,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentProviderOperation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentProviderOperation(QAndroidJniObject obj);
+		ContentProviderOperation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

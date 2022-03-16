@@ -20,7 +20,7 @@ namespace javax::xml::validation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Schema(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Schema(QAndroidJniObject obj);
+		Schema(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -34,9 +34,6 @@ namespace android::service::quicksettings
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TileService::TileService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	TileService::TileService()
 		: android::app::Service(

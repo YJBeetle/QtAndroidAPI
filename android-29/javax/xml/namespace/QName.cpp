@@ -6,9 +6,6 @@ namespace javax::xml::namespace_
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	QName::QName(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	QName::QName(JString arg0)
 		: JObject(

@@ -19,7 +19,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodec_CryptoException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CryptoException(QAndroidJniObject obj);
+		MediaCodec_CryptoException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		MediaCodec_CryptoException(jint arg0, JString arg1);

@@ -21,7 +21,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_MemoryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_MemoryInfo(QAndroidJniObject obj);
+		ActivityManager_MemoryInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ActivityManager_MemoryInfo();

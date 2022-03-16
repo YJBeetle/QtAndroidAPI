@@ -121,7 +121,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Configuration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Configuration(QAndroidJniObject obj);
+		Configuration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Configuration();

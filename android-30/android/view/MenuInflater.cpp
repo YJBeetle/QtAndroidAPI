@@ -5,9 +5,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MenuInflater::MenuInflater(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MenuInflater::MenuInflater(android::content::Context arg0)
 		: JObject(

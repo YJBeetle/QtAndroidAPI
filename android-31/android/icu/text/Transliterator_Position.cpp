@@ -30,9 +30,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Transliterator_Position::Transliterator_Position(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Transliterator_Position::Transliterator_Position()
 		: JObject(

@@ -21,7 +21,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneNames_NameType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneNames_NameType(QAndroidJniObject obj);
+		TimeZoneNames_NameType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

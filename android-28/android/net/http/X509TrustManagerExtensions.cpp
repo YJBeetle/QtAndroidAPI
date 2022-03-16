@@ -7,9 +7,6 @@ namespace android::net::http
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	X509TrustManagerExtensions::X509TrustManagerExtensions(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	X509TrustManagerExtensions::X509TrustManagerExtensions(JObject arg0)
 		: JObject(

@@ -10,9 +10,6 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DynamicsProcessing_Channel::DynamicsProcessing_Channel(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DynamicsProcessing_Channel::DynamicsProcessing_Channel(android::media::audiofx::DynamicsProcessing_Channel &arg0)
 		: JObject(

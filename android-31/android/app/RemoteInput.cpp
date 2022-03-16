@@ -70,9 +70,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteInput::RemoteInput(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

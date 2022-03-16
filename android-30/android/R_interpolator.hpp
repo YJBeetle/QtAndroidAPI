@@ -28,7 +28,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_interpolator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_interpolator(QAndroidJniObject obj);
+		R_interpolator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_interpolator();

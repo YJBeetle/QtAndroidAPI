@@ -19,9 +19,6 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Camera_Area::Camera_Area(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Camera_Area::Camera_Area(android::graphics::Rect arg0, jint arg1)
 		: JObject(

@@ -13,9 +13,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MailTo::MailTo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

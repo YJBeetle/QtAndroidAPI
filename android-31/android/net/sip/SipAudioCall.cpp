@@ -10,9 +10,6 @@ namespace android::net::sip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SipAudioCall::SipAudioCall(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SipAudioCall::SipAudioCall(android::content::Context arg0, android::net::sip::SipProfile arg1)
 		: JObject(

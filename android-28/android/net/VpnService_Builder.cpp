@@ -10,9 +10,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VpnService_Builder::VpnService_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VpnService_Builder::VpnService_Builder(android::net::VpnService arg0)
 		: JObject(

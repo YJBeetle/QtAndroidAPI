@@ -40,7 +40,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZipOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::DeflaterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		ZipOutputStream(QAndroidJniObject obj);
+		ZipOutputStream(QAndroidJniObject obj) : java::util::zip::DeflaterOutputStream(obj) {}
 		
 		// Constructors
 		ZipOutputStream(java::io::OutputStream arg0);

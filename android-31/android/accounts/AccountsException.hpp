@@ -14,7 +14,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccountsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		AccountsException(QAndroidJniObject obj);
+		AccountsException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		AccountsException();

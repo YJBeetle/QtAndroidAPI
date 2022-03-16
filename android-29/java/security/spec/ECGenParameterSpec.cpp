@@ -5,9 +5,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECGenParameterSpec::ECGenParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ECGenParameterSpec::ECGenParameterSpec(JString arg0)
 		: JObject(

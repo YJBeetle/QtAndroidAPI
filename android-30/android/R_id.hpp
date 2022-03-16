@@ -96,7 +96,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_id(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_id(QAndroidJniObject obj);
+		R_id(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_id();

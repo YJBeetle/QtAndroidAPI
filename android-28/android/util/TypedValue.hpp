@@ -65,7 +65,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TypedValue(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TypedValue(QAndroidJniObject obj);
+		TypedValue(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TypedValue();

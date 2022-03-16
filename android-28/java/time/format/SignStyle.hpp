@@ -19,7 +19,7 @@ namespace java::time::format
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SignStyle(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SignStyle(QAndroidJniObject obj);
+		SignStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

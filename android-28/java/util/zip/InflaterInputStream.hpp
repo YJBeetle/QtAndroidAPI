@@ -21,7 +21,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InflaterInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		InflaterInputStream(QAndroidJniObject obj);
+		InflaterInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
 		
 		// Constructors
 		InflaterInputStream(java::io::InputStream arg0);

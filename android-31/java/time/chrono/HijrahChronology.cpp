@@ -27,9 +27,6 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HijrahChronology::HijrahChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
-	
 	// Constructors
 	
 	// Methods

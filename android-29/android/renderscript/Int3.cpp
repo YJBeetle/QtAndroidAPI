@@ -22,9 +22,6 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Int3::Int3(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Int3::Int3()
 		: JObject(

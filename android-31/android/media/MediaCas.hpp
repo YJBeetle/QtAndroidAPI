@@ -47,7 +47,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCas(QAndroidJniObject obj);
+		MediaCas(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaCas(jint arg0);

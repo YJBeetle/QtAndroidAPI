@@ -26,9 +26,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImageDecoder_DecodeException::ImageDecoder_DecodeException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	
 	// Methods

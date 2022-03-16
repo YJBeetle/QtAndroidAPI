@@ -109,9 +109,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Telephony_Mms_Part::Telephony_Mms_Part(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

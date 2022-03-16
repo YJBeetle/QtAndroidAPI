@@ -53,7 +53,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ULocale(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale(QAndroidJniObject obj);
+		ULocale(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ULocale(JString arg0);

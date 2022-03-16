@@ -18,7 +18,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Filter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Filter(QAndroidJniObject obj);
+		Filter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Filter();

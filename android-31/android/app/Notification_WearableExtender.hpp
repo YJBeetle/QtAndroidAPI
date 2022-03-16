@@ -43,7 +43,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_WearableExtender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_WearableExtender(QAndroidJniObject obj);
+		Notification_WearableExtender(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Notification_WearableExtender();

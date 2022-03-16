@@ -33,7 +33,7 @@ namespace android::gesture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GestureStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureStore(QAndroidJniObject obj);
+		GestureStore(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GestureStore();

@@ -16,7 +16,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Path_Direction(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Path_Direction(QAndroidJniObject obj);
+		Path_Direction(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

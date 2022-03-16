@@ -15,7 +15,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CaptureRequest_Key(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptureRequest_Key(QAndroidJniObject obj);
+		CaptureRequest_Key(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CaptureRequest_Key(JString arg0, JClass arg1);

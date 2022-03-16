@@ -14,7 +14,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLSyntaxErrorException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLSyntaxErrorException(QAndroidJniObject obj);
+		SQLSyntaxErrorException(QAndroidJniObject obj) : java::sql::SQLNonTransientException(obj) {}
 		
 		// Constructors
 		SQLSyntaxErrorException();

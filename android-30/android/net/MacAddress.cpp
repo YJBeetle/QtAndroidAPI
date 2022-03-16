@@ -46,9 +46,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MacAddress::MacAddress(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -17,7 +17,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Allocation_MipmapControl(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Allocation_MipmapControl(QAndroidJniObject obj);
+		Allocation_MipmapControl(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

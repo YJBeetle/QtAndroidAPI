@@ -14,9 +14,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BackgroundServiceStartNotAllowedException::BackgroundServiceStartNotAllowedException(QAndroidJniObject obj) : android::app::ServiceStartNotAllowedException(obj) {}
-	
 	// Constructors
 	BackgroundServiceStartNotAllowedException::BackgroundServiceStartNotAllowedException(JString arg0)
 		: android::app::ServiceStartNotAllowedException(

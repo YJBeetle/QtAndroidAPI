@@ -46,7 +46,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VersionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VersionInfo(QAndroidJniObject obj);
+		VersionInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -10,9 +10,6 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ShortcutManager::ShortcutManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

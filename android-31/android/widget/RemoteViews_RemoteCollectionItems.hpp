@@ -21,7 +21,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteViews_RemoteCollectionItems(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_RemoteCollectionItems(QAndroidJniObject obj);
+		RemoteViews_RemoteCollectionItems(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

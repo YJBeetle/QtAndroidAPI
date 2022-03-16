@@ -14,7 +14,7 @@ namespace java::util::prefs
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InvalidPreferencesFormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPreferencesFormatException(QAndroidJniObject obj);
+		InvalidPreferencesFormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		InvalidPreferencesFormatException(JString arg0);

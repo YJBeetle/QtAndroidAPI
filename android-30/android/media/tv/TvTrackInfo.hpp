@@ -27,7 +27,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvTrackInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvTrackInfo(QAndroidJniObject obj);
+		TvTrackInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

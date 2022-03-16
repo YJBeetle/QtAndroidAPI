@@ -13,7 +13,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnrecoverableKeyException(const char *className, const char *sig, Ts...agv) : java::security::UnrecoverableEntryException(className, sig, std::forward<Ts>(agv)...) {}
-		UnrecoverableKeyException(QAndroidJniObject obj);
+		UnrecoverableKeyException(QAndroidJniObject obj) : java::security::UnrecoverableEntryException(obj) {}
 		
 		// Constructors
 		UnrecoverableKeyException();

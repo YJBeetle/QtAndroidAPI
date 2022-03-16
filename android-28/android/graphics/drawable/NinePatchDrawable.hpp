@@ -75,7 +75,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NinePatchDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		NinePatchDrawable(QAndroidJniObject obj);
+		NinePatchDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 		
 		// Constructors
 		NinePatchDrawable(android::graphics::NinePatch arg0);

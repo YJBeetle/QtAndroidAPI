@@ -25,7 +25,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DhcpInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DhcpInfo(QAndroidJniObject obj);
+		DhcpInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DhcpInfo();

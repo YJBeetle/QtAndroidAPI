@@ -41,7 +41,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppComponentFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppComponentFactory(QAndroidJniObject obj);
+		AppComponentFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AppComponentFactory();

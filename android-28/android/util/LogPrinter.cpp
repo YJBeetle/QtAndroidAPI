@@ -5,9 +5,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LogPrinter::LogPrinter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LogPrinter::LogPrinter(jint arg0, JString arg1)
 		: JObject(

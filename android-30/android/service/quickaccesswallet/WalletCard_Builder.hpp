@@ -26,7 +26,7 @@ namespace android::service::quickaccesswallet
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WalletCard_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WalletCard_Builder(QAndroidJniObject obj);
+		WalletCard_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WalletCard_Builder(JString arg0, android::graphics::drawable::Icon arg1, JString arg2, android::app::PendingIntent arg3);

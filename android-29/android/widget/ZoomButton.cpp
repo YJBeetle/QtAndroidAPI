@@ -9,9 +9,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoomButton::ZoomButton(QAndroidJniObject obj) : android::widget::ImageButton(obj) {}
-	
 	// Constructors
 	ZoomButton::ZoomButton(android::content::Context arg0)
 		: android::widget::ImageButton(

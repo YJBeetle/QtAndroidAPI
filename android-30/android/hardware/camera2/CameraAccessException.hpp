@@ -19,7 +19,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraAccessException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		CameraAccessException(QAndroidJniObject obj);
+		CameraAccessException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
 		
 		// Constructors
 		CameraAccessException(jint arg0);

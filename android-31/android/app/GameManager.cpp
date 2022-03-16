@@ -32,9 +32,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GameManager::GameManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -29,7 +29,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StorageStatsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StorageStatsManager(QAndroidJniObject obj);
+		StorageStatsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

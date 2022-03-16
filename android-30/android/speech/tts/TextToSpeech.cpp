@@ -142,9 +142,6 @@ namespace android::speech::tts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextToSpeech::TextToSpeech(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextToSpeech::TextToSpeech(android::content::Context arg0, JObject arg1)
 		: JObject(

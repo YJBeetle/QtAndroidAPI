@@ -42,7 +42,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EthiopicCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
-		EthiopicCalendar(QAndroidJniObject obj);
+		EthiopicCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
 		
 		// Constructors
 		EthiopicCalendar();

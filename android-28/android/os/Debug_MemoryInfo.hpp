@@ -27,7 +27,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Debug_MemoryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Debug_MemoryInfo(QAndroidJniObject obj);
+		Debug_MemoryInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Debug_MemoryInfo();

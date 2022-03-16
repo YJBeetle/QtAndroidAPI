@@ -13,7 +13,7 @@ namespace android::telephony::mbms
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MbmsDownloadSessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsDownloadSessionCallback(QAndroidJniObject obj);
+		MbmsDownloadSessionCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MbmsDownloadSessionCallback();

@@ -21,7 +21,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Phaser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Phaser(QAndroidJniObject obj);
+		Phaser(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Phaser();

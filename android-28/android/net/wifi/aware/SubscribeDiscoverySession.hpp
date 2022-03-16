@@ -20,7 +20,7 @@ namespace android::net::wifi::aware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubscribeDiscoverySession(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::DiscoverySession(className, sig, std::forward<Ts>(agv)...) {}
-		SubscribeDiscoverySession(QAndroidJniObject obj);
+		SubscribeDiscoverySession(QAndroidJniObject obj) : android::net::wifi::aware::DiscoverySession(obj) {}
 		
 		// Constructors
 		

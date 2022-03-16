@@ -25,7 +25,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageSwitcher(const char *className, const char *sig, Ts...agv) : android::widget::ViewSwitcher(className, sig, std::forward<Ts>(agv)...) {}
-		ImageSwitcher(QAndroidJniObject obj);
+		ImageSwitcher(QAndroidJniObject obj) : android::widget::ViewSwitcher(obj) {}
 		
 		// Constructors
 		ImageSwitcher(android::content::Context arg0);

@@ -25,7 +25,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SelectableChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::spi::AbstractInterruptibleChannel(className, sig, std::forward<Ts>(agv)...) {}
-		SelectableChannel(QAndroidJniObject obj);
+		SelectableChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractInterruptibleChannel(obj) {}
 		
 		// Constructors
 		

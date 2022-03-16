@@ -29,9 +29,6 @@ namespace android::bluetooth
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothGattService::BluetoothGattService(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothGattService::BluetoothGattService(java::util::UUID arg0, jint arg1)
 		: JObject(

@@ -24,7 +24,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextPaint(const char *className, const char *sig, Ts...agv) : android::graphics::Paint(className, sig, std::forward<Ts>(agv)...) {}
-		TextPaint(QAndroidJniObject obj);
+		TextPaint(QAndroidJniObject obj) : android::graphics::Paint(obj) {}
 		
 		// Constructors
 		TextPaint();

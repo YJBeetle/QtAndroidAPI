@@ -100,9 +100,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CopticCalendar::CopticCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
-	
 	// Constructors
 	CopticCalendar::CopticCalendar()
 		: android::icu::util::Calendar(

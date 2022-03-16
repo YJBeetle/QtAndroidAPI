@@ -18,9 +18,6 @@ namespace android::gesture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Prediction::Prediction(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

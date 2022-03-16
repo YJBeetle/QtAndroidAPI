@@ -17,7 +17,7 @@ namespace java::lang::ref
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SoftReference(const char *className, const char *sig, Ts...agv) : java::lang::ref::Reference(className, sig, std::forward<Ts>(agv)...) {}
-		SoftReference(QAndroidJniObject obj);
+		SoftReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
 		
 		// Constructors
 		SoftReference(JObject arg0);

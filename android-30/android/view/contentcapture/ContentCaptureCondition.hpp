@@ -24,7 +24,7 @@ namespace android::view::contentcapture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentCaptureCondition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentCaptureCondition(QAndroidJniObject obj);
+		ContentCaptureCondition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentCaptureCondition(android::content::LocusId arg0, jint arg1);

@@ -49,7 +49,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebChromeClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebChromeClient(QAndroidJniObject obj);
+		WebChromeClient(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WebChromeClient();

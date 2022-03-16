@@ -5,9 +5,6 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalCharsetNameException::IllegalCharsetNameException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	IllegalCharsetNameException::IllegalCharsetNameException(JString arg0)
 		: java::lang::IllegalArgumentException(

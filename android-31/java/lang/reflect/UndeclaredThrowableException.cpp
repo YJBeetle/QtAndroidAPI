@@ -9,9 +9,6 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UndeclaredThrowableException::UndeclaredThrowableException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	UndeclaredThrowableException::UndeclaredThrowableException(JThrowable arg0)
 		: java::lang::RuntimeException(

@@ -16,9 +16,6 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OptionalDataException::OptionalDataException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-	
 	// Constructors
 	
 	// Methods

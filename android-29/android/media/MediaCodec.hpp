@@ -90,7 +90,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec(QAndroidJniObject obj);
+		MediaCodec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

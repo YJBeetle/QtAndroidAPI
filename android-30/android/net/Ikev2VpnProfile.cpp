@@ -9,9 +9,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Ikev2VpnProfile::Ikev2VpnProfile(QAndroidJniObject obj) : android::net::PlatformVpnProfile(obj) {}
-	
 	// Constructors
 	
 	// Methods

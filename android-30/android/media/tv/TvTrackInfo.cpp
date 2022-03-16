@@ -38,9 +38,6 @@ namespace android::media::tv
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TvTrackInfo::TvTrackInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

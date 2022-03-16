@@ -21,7 +21,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Geocoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Geocoder(QAndroidJniObject obj);
+		Geocoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Geocoder(android::content::Context arg0);

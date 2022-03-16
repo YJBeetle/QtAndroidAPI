@@ -23,7 +23,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebView_HitTestResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_HitTestResult(QAndroidJniObject obj);
+		WebView_HitTestResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

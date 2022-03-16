@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteCallbackList::RemoteCallbackList(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RemoteCallbackList::RemoteCallbackList()
 		: JObject(

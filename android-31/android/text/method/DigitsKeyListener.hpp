@@ -19,7 +19,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DigitsKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		DigitsKeyListener(QAndroidJniObject obj);
+		DigitsKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
 		
 		// Constructors
 		DigitsKeyListener();

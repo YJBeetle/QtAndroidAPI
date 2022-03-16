@@ -15,7 +15,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmStore_Playback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore_Playback(QAndroidJniObject obj);
+		DrmStore_Playback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmStore_Playback();

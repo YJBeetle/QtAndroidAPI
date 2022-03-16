@@ -5,9 +5,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidParameterException::InvalidParameterException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	InvalidParameterException::InvalidParameterException()
 		: java::lang::IllegalArgumentException(

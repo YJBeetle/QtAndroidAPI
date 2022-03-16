@@ -18,9 +18,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ValueIterator_Element::ValueIterator_Element(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ValueIterator_Element::ValueIterator_Element()
 		: JObject(

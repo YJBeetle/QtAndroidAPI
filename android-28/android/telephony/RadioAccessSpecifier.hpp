@@ -19,7 +19,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RadioAccessSpecifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RadioAccessSpecifier(QAndroidJniObject obj);
+		RadioAccessSpecifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RadioAccessSpecifier(jint arg0, JIntArray arg1, JIntArray arg2);

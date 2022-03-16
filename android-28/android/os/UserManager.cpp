@@ -488,9 +488,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UserManager::UserManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

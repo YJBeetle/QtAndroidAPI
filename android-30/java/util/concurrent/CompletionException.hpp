@@ -14,7 +14,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompletionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		CompletionException(QAndroidJniObject obj);
+		CompletionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		CompletionException(JThrowable arg0);

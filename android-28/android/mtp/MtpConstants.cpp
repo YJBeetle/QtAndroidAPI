@@ -697,9 +697,6 @@ namespace android::mtp
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MtpConstants::MtpConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MtpConstants::MtpConstants()
 		: JObject(

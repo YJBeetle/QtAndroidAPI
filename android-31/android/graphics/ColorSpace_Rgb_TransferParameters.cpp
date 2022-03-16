@@ -47,9 +47,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ColorSpace_Rgb_TransferParameters::ColorSpace_Rgb_TransferParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ColorSpace_Rgb_TransferParameters::ColorSpace_Rgb_TransferParameters(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4)
 		: JObject(

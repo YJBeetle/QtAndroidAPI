@@ -16,9 +16,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms()
 		: JObject(

@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RSAPublicKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RSAPublicKeySpec(QAndroidJniObject obj);
+		RSAPublicKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1);

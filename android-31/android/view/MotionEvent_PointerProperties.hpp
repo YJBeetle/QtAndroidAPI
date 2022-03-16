@@ -15,7 +15,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MotionEvent_PointerProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent_PointerProperties(QAndroidJniObject obj);
+		MotionEvent_PointerProperties(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MotionEvent_PointerProperties();

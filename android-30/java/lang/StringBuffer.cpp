@@ -12,9 +12,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringBuffer::StringBuffer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StringBuffer::StringBuffer()
 		: JObject(

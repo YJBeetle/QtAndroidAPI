@@ -16,7 +16,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Currency_CurrencyUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Currency_CurrencyUsage(QAndroidJniObject obj);
+		Currency_CurrencyUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -18,9 +18,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1)
 		: JObject(

@@ -24,7 +24,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AnimatorInflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AnimatorInflater(QAndroidJniObject obj);
+		AnimatorInflater(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AnimatorInflater();

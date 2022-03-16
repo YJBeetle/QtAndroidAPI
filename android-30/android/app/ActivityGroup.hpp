@@ -24,7 +24,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityGroup(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityGroup(QAndroidJniObject obj);
+		ActivityGroup(QAndroidJniObject obj) : android::app::Activity(obj) {}
 		
 		// Constructors
 		ActivityGroup();

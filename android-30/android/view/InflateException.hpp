@@ -14,7 +14,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InflateException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		InflateException(QAndroidJniObject obj);
+		InflateException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		InflateException();

@@ -34,9 +34,6 @@ namespace android::view::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Transformation::Transformation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Transformation::Transformation()
 		: JObject(

@@ -25,7 +25,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsynchronousServerSocketChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AsynchronousServerSocketChannel(QAndroidJniObject obj);
+		AsynchronousServerSocketChannel(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

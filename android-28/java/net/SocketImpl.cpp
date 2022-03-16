@@ -11,9 +11,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SocketImpl::SocketImpl(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SocketImpl::SocketImpl()
 		: JObject(

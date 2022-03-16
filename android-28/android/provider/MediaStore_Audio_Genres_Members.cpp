@@ -38,9 +38,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Audio_Genres_Members::MediaStore_Audio_Genres_Members(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaStore_Audio_Genres_Members::MediaStore_Audio_Genres_Members()
 		: JObject(

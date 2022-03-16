@@ -39,9 +39,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateTimePatternGenerator_PatternInfo::DateTimePatternGenerator_PatternInfo()
 		: JObject(

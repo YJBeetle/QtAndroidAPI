@@ -15,7 +15,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LinkOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		LinkOption(QAndroidJniObject obj);
+		LinkOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

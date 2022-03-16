@@ -22,7 +22,7 @@ namespace android::speech::tts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextToSpeechService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		TextToSpeechService(QAndroidJniObject obj);
+		TextToSpeechService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		TextToSpeechService();

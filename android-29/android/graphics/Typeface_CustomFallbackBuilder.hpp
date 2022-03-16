@@ -25,7 +25,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Typeface_CustomFallbackBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Typeface_CustomFallbackBuilder(QAndroidJniObject obj);
+		Typeface_CustomFallbackBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily arg0);

@@ -5,9 +5,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharacterStyle::CharacterStyle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CharacterStyle::CharacterStyle()
 		: JObject(

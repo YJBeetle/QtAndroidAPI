@@ -9,9 +9,6 @@ namespace android::appwidget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppWidgetProvider::AppWidgetProvider(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
-	
 	// Constructors
 	AppWidgetProvider::AppWidgetProvider()
 		: android::content::BroadcastReceiver(

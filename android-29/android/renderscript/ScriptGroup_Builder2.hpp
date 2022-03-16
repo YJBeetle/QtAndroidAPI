@@ -43,7 +43,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScriptGroup_Builder2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptGroup_Builder2(QAndroidJniObject obj);
+		ScriptGroup_Builder2(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ScriptGroup_Builder2(android::renderscript::RenderScript arg0);

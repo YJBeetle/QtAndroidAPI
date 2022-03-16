@@ -25,7 +25,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TestLooperManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TestLooperManager(QAndroidJniObject obj);
+		TestLooperManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

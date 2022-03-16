@@ -17,7 +17,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VelocityTracker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VelocityTracker(QAndroidJniObject obj);
+		VelocityTracker(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -13,9 +13,6 @@ namespace android::app::appsearch
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GetByDocumentIdRequest::GetByDocumentIdRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

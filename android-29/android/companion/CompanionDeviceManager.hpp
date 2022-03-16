@@ -30,7 +30,7 @@ namespace android::companion
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompanionDeviceManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CompanionDeviceManager(QAndroidJniObject obj);
+		CompanionDeviceManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

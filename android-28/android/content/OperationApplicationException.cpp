@@ -6,9 +6,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OperationApplicationException::OperationApplicationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	OperationApplicationException::OperationApplicationException()
 		: java::lang::Exception(

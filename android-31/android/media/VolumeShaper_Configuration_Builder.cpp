@@ -6,9 +6,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VolumeShaper_Configuration_Builder::VolumeShaper_Configuration_Builder()
 		: JObject(

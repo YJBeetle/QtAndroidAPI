@@ -28,7 +28,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessagePattern_Part_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern_Part_Type(QAndroidJniObject obj);
+		MessagePattern_Part_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

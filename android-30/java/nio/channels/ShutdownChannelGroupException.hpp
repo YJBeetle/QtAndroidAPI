@@ -11,7 +11,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShutdownChannelGroupException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		ShutdownChannelGroupException(QAndroidJniObject obj);
+		ShutdownChannelGroupException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
 		
 		// Constructors
 		ShutdownChannelGroupException();

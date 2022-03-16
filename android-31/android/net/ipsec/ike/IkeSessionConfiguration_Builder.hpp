@@ -22,7 +22,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeSessionConfiguration_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionConfiguration_Builder(QAndroidJniObject obj);
+		IkeSessionConfiguration_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IkeSessionConfiguration_Builder(android::net::ipsec::ike::IkeSessionConnectionInfo arg0);

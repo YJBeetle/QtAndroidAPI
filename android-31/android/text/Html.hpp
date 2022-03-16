@@ -25,7 +25,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Html(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Html(QAndroidJniObject obj);
+		Html(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

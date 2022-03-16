@@ -5,9 +5,6 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CameraConstrainedHighSpeedCaptureSession::CameraConstrainedHighSpeedCaptureSession(QAndroidJniObject obj) : android::hardware::camera2::CameraCaptureSession(obj) {}
-	
 	// Constructors
 	CameraConstrainedHighSpeedCaptureSession::CameraConstrainedHighSpeedCaptureSession()
 		: android::hardware::camera2::CameraCaptureSession(

@@ -20,7 +20,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TracingController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TracingController(QAndroidJniObject obj);
+		TracingController(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TracingController();

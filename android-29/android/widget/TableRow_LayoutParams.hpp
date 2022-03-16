@@ -30,7 +30,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TableRow_LayoutParams(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		TableRow_LayoutParams(QAndroidJniObject obj);
+		TableRow_LayoutParams(QAndroidJniObject obj) : android::widget::LinearLayout_LayoutParams(obj) {}
 		
 		// Constructors
 		TableRow_LayoutParams();

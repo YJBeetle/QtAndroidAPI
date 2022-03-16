@@ -39,9 +39,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityManager_RecentTaskInfo::ActivityManager_RecentTaskInfo(QAndroidJniObject obj) : android::app::TaskInfo(obj) {}
-	
 	// Constructors
 	ActivityManager_RecentTaskInfo::ActivityManager_RecentTaskInfo()
 		: android::app::TaskInfo(

@@ -6,9 +6,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EnumConstantNotPresentException::EnumConstantNotPresentException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	EnumConstantNotPresentException::EnumConstantNotPresentException(JClass arg0, JString arg1)
 		: java::lang::RuntimeException(

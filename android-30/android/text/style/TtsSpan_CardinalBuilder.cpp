@@ -5,9 +5,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder(QAndroidJniObject obj) : android::text::style::TtsSpan_SemioticClassBuilder(obj) {}
-	
 	// Constructors
 	TtsSpan_CardinalBuilder::TtsSpan_CardinalBuilder()
 		: android::text::style::TtsSpan_SemioticClassBuilder(

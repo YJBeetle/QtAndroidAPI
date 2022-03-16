@@ -54,9 +54,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkInfo_State::NetworkInfo_State(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

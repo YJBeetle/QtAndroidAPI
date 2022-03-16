@@ -35,7 +35,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlarmManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlarmManager(QAndroidJniObject obj);
+		AlarmManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

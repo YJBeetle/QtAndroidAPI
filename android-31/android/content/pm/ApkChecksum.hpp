@@ -23,7 +23,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApkChecksum(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApkChecksum(QAndroidJniObject obj);
+		ApkChecksum(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

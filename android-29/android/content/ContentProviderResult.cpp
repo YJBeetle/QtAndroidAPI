@@ -30,9 +30,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContentProviderResult::ContentProviderResult(android::net::Uri arg0)
 		: JObject(

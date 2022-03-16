@@ -13,9 +13,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ChangedPackages::ChangedPackages(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ChangedPackages::ChangedPackages(jint arg0, JObject arg1)
 		: JObject(

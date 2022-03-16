@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ArrayIndexOutOfBoundsException(const char *className, const char *sig, Ts...agv) : java::lang::IndexOutOfBoundsException(className, sig, std::forward<Ts>(agv)...) {}
-		ArrayIndexOutOfBoundsException(QAndroidJniObject obj);
+		ArrayIndexOutOfBoundsException(QAndroidJniObject obj) : java::lang::IndexOutOfBoundsException(obj) {}
 		
 		// Constructors
 		ArrayIndexOutOfBoundsException();

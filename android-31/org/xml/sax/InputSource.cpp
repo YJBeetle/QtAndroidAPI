@@ -7,9 +7,6 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputSource::InputSource(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InputSource::InputSource()
 		: JObject(

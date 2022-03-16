@@ -5,9 +5,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SyncContext::SyncContext(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

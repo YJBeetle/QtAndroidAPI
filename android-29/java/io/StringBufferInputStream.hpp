@@ -14,7 +14,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringBufferInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		StringBufferInputStream(QAndroidJniObject obj);
+		StringBufferInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
 		
 		// Constructors
 		StringBufferInputStream(JString arg0);

@@ -16,7 +16,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlackLevelPattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BlackLevelPattern(QAndroidJniObject obj);
+		BlackLevelPattern(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

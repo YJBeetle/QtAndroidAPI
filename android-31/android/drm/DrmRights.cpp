@@ -8,9 +8,6 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmRights::DrmRights(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DrmRights::DrmRights(android::drm::ProcessedData arg0, JString arg1)
 		: JObject(

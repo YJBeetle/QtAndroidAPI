@@ -19,7 +19,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DataInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		DataInputStream(QAndroidJniObject obj);
+		DataInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
 		
 		// Constructors
 		DataInputStream(java::io::InputStream arg0);

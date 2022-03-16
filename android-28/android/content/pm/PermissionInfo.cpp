@@ -181,9 +181,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PermissionInfo::PermissionInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
-	
 	// Constructors
 	PermissionInfo::PermissionInfo()
 		: android::content::pm::PackageItemInfo(

@@ -55,7 +55,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputMethodManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputMethodManager(QAndroidJniObject obj);
+		InputMethodManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

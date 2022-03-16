@@ -4,9 +4,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConditionVariable::ConditionVariable(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ConditionVariable::ConditionVariable()
 		: JObject(

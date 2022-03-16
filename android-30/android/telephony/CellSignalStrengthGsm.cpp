@@ -15,9 +15,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CellSignalStrengthGsm::CellSignalStrengthGsm(QAndroidJniObject obj) : android::telephony::CellSignalStrength(obj) {}
-	
 	// Constructors
 	
 	// Methods

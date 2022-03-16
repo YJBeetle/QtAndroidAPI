@@ -111,9 +111,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResolveInfo::ResolveInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ResolveInfo::ResolveInfo()
 		: JObject(

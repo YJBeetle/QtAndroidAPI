@@ -7,9 +7,6 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrowKeyMovementMethod::ArrowKeyMovementMethod(QAndroidJniObject obj) : android::text::method::BaseMovementMethod(obj) {}
-	
 	// Constructors
 	ArrowKeyMovementMethod::ArrowKeyMovementMethod()
 		: android::text::method::BaseMovementMethod(

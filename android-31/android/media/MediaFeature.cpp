@@ -4,9 +4,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaFeature::MediaFeature(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaFeature::MediaFeature()
 		: JObject(

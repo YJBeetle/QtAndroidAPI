@@ -25,7 +25,7 @@ namespace android::icu::math
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MathContext(QAndroidJniObject obj);
+		MathContext(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MathContext(jint arg0);

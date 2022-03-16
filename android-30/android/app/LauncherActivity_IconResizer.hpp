@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LauncherActivity_IconResizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherActivity_IconResizer(QAndroidJniObject obj);
+		LauncherActivity_IconResizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LauncherActivity_IconResizer(android::app::LauncherActivity arg0);

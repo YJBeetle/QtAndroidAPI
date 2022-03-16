@@ -14,7 +14,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TypeNotPresentException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		TypeNotPresentException(QAndroidJniObject obj);
+		TypeNotPresentException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		TypeNotPresentException(JString arg0, JThrowable arg1);

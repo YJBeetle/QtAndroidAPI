@@ -13,9 +13,6 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextClassifierEvent_TextLinkifyEvent::TextClassifierEvent_TextLinkifyEvent(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent(obj) {}
-	
 	// Constructors
 	
 	// Methods

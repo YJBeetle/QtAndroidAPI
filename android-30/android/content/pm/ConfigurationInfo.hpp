@@ -26,7 +26,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfigurationInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfigurationInfo(QAndroidJniObject obj);
+		ConfigurationInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConfigurationInfo();

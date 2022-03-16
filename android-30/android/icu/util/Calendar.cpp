@@ -359,9 +359,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Calendar::Calendar(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

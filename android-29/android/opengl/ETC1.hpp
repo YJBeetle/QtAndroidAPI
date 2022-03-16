@@ -20,7 +20,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ETC1(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ETC1(QAndroidJniObject obj);
+		ETC1(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ETC1();

@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CheckBox(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
-		CheckBox(QAndroidJniObject obj);
+		CheckBox(QAndroidJniObject obj) : android::widget::CompoundButton(obj) {}
 		
 		// Constructors
 		CheckBox(android::content::Context arg0);

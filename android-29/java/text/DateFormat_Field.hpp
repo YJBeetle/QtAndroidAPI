@@ -33,7 +33,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat_Field(QAndroidJniObject obj);
+		DateFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
 		
 		// Constructors
 		

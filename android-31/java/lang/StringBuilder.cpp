@@ -11,9 +11,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringBuilder::StringBuilder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StringBuilder::StringBuilder()
 		: JObject(

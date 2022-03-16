@@ -36,9 +36,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AvailableNetworkInfo::AvailableNetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AvailableNetworkInfo::AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3)
 		: JObject(

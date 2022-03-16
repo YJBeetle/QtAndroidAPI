@@ -5,9 +5,6 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PBEParameterSpec::PBEParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PBEParameterSpec::PBEParameterSpec(JByteArray arg0, jint arg1)
 		: JObject(

@@ -24,7 +24,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Face(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Face(QAndroidJniObject obj);
+		Face(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

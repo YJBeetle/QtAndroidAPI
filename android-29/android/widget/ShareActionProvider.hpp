@@ -26,7 +26,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShareActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
-		ShareActionProvider(QAndroidJniObject obj);
+		ShareActionProvider(QAndroidJniObject obj) : android::view::ActionProvider(obj) {}
 		
 		// Constructors
 		ShareActionProvider(android::content::Context arg0);

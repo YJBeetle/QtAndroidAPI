@@ -42,9 +42,6 @@ namespace android::inputmethodservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Keyboard_Row::Keyboard_Row(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Keyboard_Row::Keyboard_Row(android::inputmethodservice::Keyboard arg0)
 		: JObject(

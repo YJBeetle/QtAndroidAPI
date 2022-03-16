@@ -25,9 +25,6 @@ namespace android::speech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RecognitionService::RecognitionService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	RecognitionService::RecognitionService()
 		: android::app::Service(

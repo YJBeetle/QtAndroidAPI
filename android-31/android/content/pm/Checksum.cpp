@@ -63,9 +63,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Checksum::Checksum(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Checksum::Checksum(jint arg0, JByteArray arg1)
 		: JObject(

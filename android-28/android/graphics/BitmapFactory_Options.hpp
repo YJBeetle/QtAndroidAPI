@@ -48,7 +48,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BitmapFactory_Options(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BitmapFactory_Options(QAndroidJniObject obj);
+		BitmapFactory_Options(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BitmapFactory_Options();

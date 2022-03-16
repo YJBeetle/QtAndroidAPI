@@ -17,7 +17,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DoubleAccumulator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DoubleAccumulator(QAndroidJniObject obj);
+		DoubleAccumulator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DoubleAccumulator(JObject arg0, jdouble arg1);

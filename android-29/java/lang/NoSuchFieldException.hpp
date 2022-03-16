@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NoSuchFieldException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchFieldException(QAndroidJniObject obj);
+		NoSuchFieldException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 		
 		// Constructors
 		NoSuchFieldException();

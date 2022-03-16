@@ -22,7 +22,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PermissionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PermissionRequest(QAndroidJniObject obj);
+		PermissionRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PermissionRequest();

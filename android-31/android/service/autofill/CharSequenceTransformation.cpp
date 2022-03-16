@@ -14,9 +14,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CharSequenceTransformation::CharSequenceTransformation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -21,7 +21,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FloatEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FloatEvaluator(QAndroidJniObject obj);
+		FloatEvaluator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FloatEvaluator();

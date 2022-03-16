@@ -25,7 +25,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Modifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Modifier(QAndroidJniObject obj);
+		Modifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

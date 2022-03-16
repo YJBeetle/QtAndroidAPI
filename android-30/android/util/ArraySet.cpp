@@ -7,9 +7,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArraySet::ArraySet(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ArraySet::ArraySet()
 		: JObject(

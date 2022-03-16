@@ -37,7 +37,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RadioGroup(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		RadioGroup(QAndroidJniObject obj);
+		RadioGroup(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
 		
 		// Constructors
 		RadioGroup(android::content::Context arg0);

@@ -18,9 +18,6 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SensorPrivacyManager_Sensors::SensorPrivacyManager_Sensors(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

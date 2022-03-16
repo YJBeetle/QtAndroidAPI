@@ -15,9 +15,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SecurityLog_SecurityEvent::SecurityLog_SecurityEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -7,9 +7,6 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CustomDescription_Builder::CustomDescription_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CustomDescription_Builder::CustomDescription_Builder(android::widget::RemoteViews arg0)
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::net::http
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SslCertificate_DName::SslCertificate_DName(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SslCertificate_DName::SslCertificate_DName(android::net::http::SslCertificate arg0, JString arg1)
 		: JObject(

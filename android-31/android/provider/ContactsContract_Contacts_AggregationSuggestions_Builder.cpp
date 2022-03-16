@@ -6,9 +6,6 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContactsContract_Contacts_AggregationSuggestions_Builder::ContactsContract_Contacts_AggregationSuggestions_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContactsContract_Contacts_AggregationSuggestions_Builder::ContactsContract_Contacts_AggregationSuggestions_Builder()
 		: JObject(

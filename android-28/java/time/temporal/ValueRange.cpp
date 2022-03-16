@@ -7,9 +7,6 @@ namespace java::time::temporal
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ValueRange::ValueRange(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

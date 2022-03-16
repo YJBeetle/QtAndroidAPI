@@ -31,7 +31,7 @@ namespace java::nio::file::attribute
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AclEntryPermission(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntryPermission(QAndroidJniObject obj);
+		AclEntryPermission(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

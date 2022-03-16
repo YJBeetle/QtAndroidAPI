@@ -13,9 +13,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CodeSource::CodeSource(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CodeSource::CodeSource(java::net::URL arg0, JArray arg1)
 		: JObject(

@@ -11,7 +11,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DHGenParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DHGenParameterSpec(QAndroidJniObject obj);
+		DHGenParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DHGenParameterSpec(jint arg0, jint arg1);

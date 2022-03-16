@@ -102,7 +102,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityInfo(QAndroidJniObject obj);
+		ActivityInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
 		
 		// Constructors
 		ActivityInfo();

@@ -28,7 +28,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Deflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Deflater(QAndroidJniObject obj);
+		Deflater(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Deflater();

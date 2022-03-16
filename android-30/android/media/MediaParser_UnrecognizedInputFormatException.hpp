@@ -11,7 +11,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaParser_UnrecognizedInputFormatException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_UnrecognizedInputFormatException(QAndroidJniObject obj);
+		MediaParser_UnrecognizedInputFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		

@@ -14,9 +14,6 @@ namespace android::view::textclassifier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConversationActions::ConversationActions(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ConversationActions::ConversationActions(JObject arg0, JString arg1)
 		: JObject(

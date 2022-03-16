@@ -18,9 +18,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Filter_FilterResults::Filter_FilterResults(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Filter_FilterResults::Filter_FilterResults()
 		: JObject(

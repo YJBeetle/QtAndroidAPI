@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StreamCorruptedException::StreamCorruptedException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-	
 	// Constructors
 	StreamCorruptedException::StreamCorruptedException()
 		: java::io::ObjectStreamException(

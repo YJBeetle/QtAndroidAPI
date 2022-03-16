@@ -25,7 +25,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EGLExt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGLExt(QAndroidJniObject obj);
+		EGLExt(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EGLExt();

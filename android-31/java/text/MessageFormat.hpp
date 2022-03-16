@@ -47,7 +47,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessageFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		MessageFormat(QAndroidJniObject obj);
+		MessageFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
 		
 		// Constructors
 		MessageFormat(JString arg0);

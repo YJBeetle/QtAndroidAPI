@@ -44,9 +44,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RoundedCorner::RoundedCorner(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RoundedCorner::RoundedCorner(jint arg0, jint arg1, jint arg2, jint arg3)
 		: JObject(

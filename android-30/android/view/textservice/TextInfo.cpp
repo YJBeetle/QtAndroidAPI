@@ -15,9 +15,6 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextInfo::TextInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextInfo::TextInfo(android::os::Parcel arg0)
 		: JObject(

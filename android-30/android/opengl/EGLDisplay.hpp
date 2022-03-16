@@ -13,7 +13,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EGLDisplay(const char *className, const char *sig, Ts...agv) : android::opengl::EGLObjectHandle(className, sig, std::forward<Ts>(agv)...) {}
-		EGLDisplay(QAndroidJniObject obj);
+		EGLDisplay(QAndroidJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
 		
 		// Constructors
 		

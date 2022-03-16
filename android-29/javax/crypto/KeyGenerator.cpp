@@ -9,9 +9,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyGenerator::KeyGenerator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

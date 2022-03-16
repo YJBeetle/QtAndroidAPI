@@ -6,9 +6,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BackgroundColorSpan::BackgroundColorSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
-	
 	// Constructors
 	BackgroundColorSpan::BackgroundColorSpan(android::os::Parcel arg0)
 		: android::text::style::CharacterStyle(

@@ -9,9 +9,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PKCS12Attribute::PKCS12Attribute(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PKCS12Attribute::PKCS12Attribute(JByteArray arg0)
 		: JObject(

@@ -5,9 +5,6 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeUnit::TimeUnit(QAndroidJniObject obj) : android::icu::util::MeasureUnit(obj) {}
-	
 	// Constructors
 	
 	// Methods

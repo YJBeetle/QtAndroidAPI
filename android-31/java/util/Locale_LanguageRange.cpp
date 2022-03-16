@@ -20,9 +20,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Locale_LanguageRange::Locale_LanguageRange(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Locale_LanguageRange::Locale_LanguageRange(JString arg0)
 		: JObject(

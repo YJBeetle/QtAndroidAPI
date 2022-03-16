@@ -21,7 +21,7 @@ namespace android::se::omapi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Reader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Reader(QAndroidJniObject obj);
+		Reader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

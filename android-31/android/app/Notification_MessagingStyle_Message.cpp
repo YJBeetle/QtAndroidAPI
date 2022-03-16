@@ -10,9 +10,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(JString arg0, jlong arg1, android::app::Person arg2)
 		: JObject(

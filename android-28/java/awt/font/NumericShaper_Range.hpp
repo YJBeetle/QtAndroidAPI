@@ -51,7 +51,7 @@ namespace java::awt::font
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumericShaper_Range(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumericShaper_Range(QAndroidJniObject obj);
+		NumericShaper_Range(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

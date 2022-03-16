@@ -52,9 +52,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LinearLayout::LinearLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-	
 	// Constructors
 	LinearLayout::LinearLayout(android::content::Context arg0)
 		: android::view::ViewGroup(

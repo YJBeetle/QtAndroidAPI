@@ -17,7 +17,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IdentityScope(const char *className, const char *sig, Ts...agv) : java::security::Identity(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityScope(QAndroidJniObject obj);
+		IdentityScope(QAndroidJniObject obj) : java::security::Identity(obj) {}
 		
 		// Constructors
 		IdentityScope(JString arg0);

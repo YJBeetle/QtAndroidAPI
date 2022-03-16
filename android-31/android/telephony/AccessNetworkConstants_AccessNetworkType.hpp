@@ -18,7 +18,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessNetworkConstants_AccessNetworkType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_AccessNetworkType(QAndroidJniObject obj);
+		AccessNetworkConstants_AccessNetworkType(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

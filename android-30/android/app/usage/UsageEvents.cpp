@@ -14,9 +14,6 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UsageEvents::UsageEvents(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

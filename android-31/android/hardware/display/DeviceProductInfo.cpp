@@ -43,9 +43,6 @@ namespace android::hardware::display
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DeviceProductInfo::DeviceProductInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DeviceProductInfo::DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4)
 		: JObject(

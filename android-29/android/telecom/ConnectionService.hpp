@@ -42,7 +42,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectionService(QAndroidJniObject obj);
+		ConnectionService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		ConnectionService();

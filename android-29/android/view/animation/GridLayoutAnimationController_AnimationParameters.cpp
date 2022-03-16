@@ -28,9 +28,6 @@ namespace android::view::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GridLayoutAnimationController_AnimationParameters::GridLayoutAnimationController_AnimationParameters(QAndroidJniObject obj) : android::view::animation::LayoutAnimationController_AnimationParameters(obj) {}
-	
 	// Constructors
 	GridLayoutAnimationController_AnimationParameters::GridLayoutAnimationController_AnimationParameters()
 		: android::view::animation::LayoutAnimationController_AnimationParameters(

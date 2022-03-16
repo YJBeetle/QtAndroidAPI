@@ -5,9 +5,6 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EGLDisplay::EGLDisplay(QAndroidJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
-	
 	// Constructors
 	
 	// Methods

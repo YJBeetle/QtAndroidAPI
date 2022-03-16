@@ -95,9 +95,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DisplayContext::DisplayContext(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -10,9 +10,6 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MultiSelectListPreference::MultiSelectListPreference(QAndroidJniObject obj) : android::preference::DialogPreference(obj) {}
-	
 	// Constructors
 	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0)
 		: android::preference::DialogPreference(

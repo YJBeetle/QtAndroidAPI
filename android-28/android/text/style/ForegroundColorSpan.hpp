@@ -20,7 +20,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ForegroundColorSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		ForegroundColorSpan(QAndroidJniObject obj);
+		ForegroundColorSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
 		
 		// Constructors
 		ForegroundColorSpan(android::os::Parcel arg0);

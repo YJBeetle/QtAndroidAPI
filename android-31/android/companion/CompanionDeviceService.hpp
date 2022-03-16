@@ -18,7 +18,7 @@ namespace android::companion
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompanionDeviceService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CompanionDeviceService(QAndroidJniObject obj);
+		CompanionDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		CompanionDeviceService();

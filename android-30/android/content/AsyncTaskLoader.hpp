@@ -27,7 +27,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncTaskLoader(const char *className, const char *sig, Ts...agv) : android::content::Loader(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncTaskLoader(QAndroidJniObject obj);
+		AsyncTaskLoader(QAndroidJniObject obj) : android::content::Loader(obj) {}
 		
 		// Constructors
 		AsyncTaskLoader(android::content::Context arg0);

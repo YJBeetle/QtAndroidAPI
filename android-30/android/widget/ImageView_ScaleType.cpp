@@ -70,9 +70,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImageView_ScaleType::ImageView_ScaleType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

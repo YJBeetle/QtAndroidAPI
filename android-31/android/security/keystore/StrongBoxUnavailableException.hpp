@@ -14,7 +14,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StrongBoxUnavailableException(const char *className, const char *sig, Ts...agv) : java::security::ProviderException(className, sig, std::forward<Ts>(agv)...) {}
-		StrongBoxUnavailableException(QAndroidJniObject obj);
+		StrongBoxUnavailableException(QAndroidJniObject obj) : java::security::ProviderException(obj) {}
 		
 		// Constructors
 		StrongBoxUnavailableException();

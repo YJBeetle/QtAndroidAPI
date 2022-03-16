@@ -24,7 +24,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncTask(QAndroidJniObject obj);
+		AsyncTask(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AsyncTask();

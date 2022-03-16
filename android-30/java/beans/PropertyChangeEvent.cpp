@@ -7,9 +7,6 @@ namespace java::beans
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyChangeEvent::PropertyChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
-	
 	// Constructors
 	PropertyChangeEvent::PropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3)
 		: java::util::EventObject(

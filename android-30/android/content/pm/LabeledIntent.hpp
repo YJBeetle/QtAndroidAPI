@@ -31,7 +31,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LabeledIntent(const char *className, const char *sig, Ts...agv) : android::content::Intent(className, sig, std::forward<Ts>(agv)...) {}
-		LabeledIntent(QAndroidJniObject obj);
+		LabeledIntent(QAndroidJniObject obj) : android::content::Intent(obj) {}
 		
 		// Constructors
 		LabeledIntent(JString arg0, jint arg1, jint arg2);

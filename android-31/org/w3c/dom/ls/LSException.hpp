@@ -16,7 +16,7 @@ namespace org::w3c::dom::ls
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LSException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		LSException(QAndroidJniObject obj);
+		LSException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		LSException(jshort arg0, JString arg1);

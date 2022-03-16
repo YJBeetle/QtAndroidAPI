@@ -21,7 +21,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentObservable(const char *className, const char *sig, Ts...agv) : android::database::Observable(className, sig, std::forward<Ts>(agv)...) {}
-		ContentObservable(QAndroidJniObject obj);
+		ContentObservable(QAndroidJniObject obj) : android::database::Observable(obj) {}
 		
 		// Constructors
 		ContentObservable();

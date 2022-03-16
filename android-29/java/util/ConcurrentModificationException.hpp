@@ -14,7 +14,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConcurrentModificationException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ConcurrentModificationException(QAndroidJniObject obj);
+		ConcurrentModificationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		ConcurrentModificationException();

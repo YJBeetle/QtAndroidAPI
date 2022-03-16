@@ -22,7 +22,7 @@ namespace android::net::vcn
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VcnGatewayConnectionConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VcnGatewayConnectionConfig_Builder(QAndroidJniObject obj);
+		VcnGatewayConnectionConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VcnGatewayConnectionConfig_Builder(JString arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1);

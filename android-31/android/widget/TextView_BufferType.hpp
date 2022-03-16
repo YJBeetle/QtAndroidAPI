@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextView_BufferType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TextView_BufferType(QAndroidJniObject obj);
+		TextView_BufferType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

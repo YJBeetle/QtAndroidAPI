@@ -21,9 +21,6 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DngCreator::DngCreator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DngCreator::DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1)
 		: JObject(

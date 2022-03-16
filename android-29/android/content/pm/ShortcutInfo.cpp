@@ -86,9 +86,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ShortcutInfo::ShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

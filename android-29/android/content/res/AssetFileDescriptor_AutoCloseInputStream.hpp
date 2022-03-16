@@ -17,7 +17,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssetFileDescriptor_AutoCloseInputStream(const char *className, const char *sig, Ts...agv) : android::os::ParcelFileDescriptor_AutoCloseInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		AssetFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj);
+		AssetFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) : android::os::ParcelFileDescriptor_AutoCloseInputStream(obj) {}
 		
 		// Constructors
 		AssetFileDescriptor_AutoCloseInputStream(android::content::res::AssetFileDescriptor arg0);

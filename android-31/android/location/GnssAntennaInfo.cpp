@@ -17,9 +17,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssAntennaInfo::GnssAntennaInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

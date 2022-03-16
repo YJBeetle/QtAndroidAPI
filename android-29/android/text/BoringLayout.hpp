@@ -45,7 +45,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BoringLayout(const char *className, const char *sig, Ts...agv) : android::text::Layout(className, sig, std::forward<Ts>(agv)...) {}
-		BoringLayout(QAndroidJniObject obj);
+		BoringLayout(QAndroidJniObject obj) : android::text::Layout(obj) {}
 		
 		// Constructors
 		BoringLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7);

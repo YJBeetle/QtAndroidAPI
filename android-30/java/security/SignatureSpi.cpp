@@ -10,9 +10,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SignatureSpi::SignatureSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SignatureSpi::SignatureSpi()
 		: JObject(

@@ -17,7 +17,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransitionDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::LayerDrawable(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionDrawable(QAndroidJniObject obj);
+		TransitionDrawable(QAndroidJniObject obj) : android::graphics::drawable::LayerDrawable(obj) {}
 		
 		// Constructors
 		TransitionDrawable(JArray arg0);

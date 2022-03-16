@@ -104,7 +104,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CallLog_Calls(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CallLog_Calls(QAndroidJniObject obj);
+		CallLog_Calls(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CallLog_Calls();

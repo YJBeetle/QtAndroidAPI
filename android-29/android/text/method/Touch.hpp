@@ -24,7 +24,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Touch(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Touch(QAndroidJniObject obj);
+		Touch(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

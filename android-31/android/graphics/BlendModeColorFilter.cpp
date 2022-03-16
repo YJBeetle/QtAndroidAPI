@@ -6,9 +6,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BlendModeColorFilter::BlendModeColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
-	
 	// Constructors
 	BlendModeColorFilter::BlendModeColorFilter(jint arg0, android::graphics::BlendMode arg1)
 		: android::graphics::ColorFilter(

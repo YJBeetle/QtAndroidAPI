@@ -18,7 +18,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SurroundingText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurroundingText(QAndroidJniObject obj);
+		SurroundingText(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SurroundingText(JString arg0, jint arg1, jint arg2, jint arg3);

@@ -50,7 +50,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyProperties(QAndroidJniObject obj);
+		KeyProperties(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

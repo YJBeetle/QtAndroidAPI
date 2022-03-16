@@ -6,9 +6,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActionMenuView_LayoutParams::ActionMenuView_LayoutParams(QAndroidJniObject obj) : android::widget::LinearLayout_LayoutParams(obj) {}
-	
 	// Constructors
 	ActionMenuView_LayoutParams::ActionMenuView_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 		: android::widget::LinearLayout_LayoutParams(

@@ -13,9 +13,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Void::Void(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

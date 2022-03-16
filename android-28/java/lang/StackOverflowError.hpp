@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StackOverflowError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
-		StackOverflowError(QAndroidJniObject obj);
+		StackOverflowError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
 		
 		// Constructors
 		StackOverflowError();

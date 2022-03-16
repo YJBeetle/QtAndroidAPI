@@ -14,9 +14,6 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MessageFormat_Field::MessageFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
-	
 	// Constructors
 	
 	// Methods

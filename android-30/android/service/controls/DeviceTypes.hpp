@@ -70,7 +70,7 @@ namespace android::service::controls
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeviceTypes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceTypes(QAndroidJniObject obj);
+		DeviceTypes(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

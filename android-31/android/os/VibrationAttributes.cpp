@@ -106,9 +106,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VibrationAttributes::VibrationAttributes(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -20,9 +20,6 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SpellCheckerInfo::SpellCheckerInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

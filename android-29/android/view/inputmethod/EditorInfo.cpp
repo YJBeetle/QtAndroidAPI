@@ -249,9 +249,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EditorInfo::EditorInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EditorInfo::EditorInfo()
 		: JObject(

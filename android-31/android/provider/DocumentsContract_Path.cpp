@@ -15,9 +15,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DocumentsContract_Path::DocumentsContract_Path(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DocumentsContract_Path::DocumentsContract_Path(JString arg0, JObject arg1)
 		: JObject(

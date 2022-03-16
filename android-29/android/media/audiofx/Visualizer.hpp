@@ -33,7 +33,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Visualizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Visualizer(QAndroidJniObject obj);
+		Visualizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Visualizer(jint arg0);

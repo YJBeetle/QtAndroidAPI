@@ -22,7 +22,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PKIXReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXReason(QAndroidJniObject obj);
+		PKIXReason(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

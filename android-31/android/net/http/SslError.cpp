@@ -56,9 +56,6 @@ namespace android::net::http
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SslError::SslError(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1)
 		: JObject(

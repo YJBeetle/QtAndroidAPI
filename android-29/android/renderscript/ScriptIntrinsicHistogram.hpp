@@ -36,7 +36,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsicHistogram(const char *className, const char *sig, Ts...agv) : android::renderscript::ScriptIntrinsic(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsicHistogram(QAndroidJniObject obj);
+		ScriptIntrinsicHistogram(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
 		
 		// Constructors
 		

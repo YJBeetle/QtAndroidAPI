@@ -13,7 +13,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NoSuchPropertyException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchPropertyException(QAndroidJniObject obj);
+		NoSuchPropertyException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		NoSuchPropertyException(JString arg0);

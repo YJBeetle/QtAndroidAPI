@@ -22,7 +22,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_CarExtender_UnreadConversation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_CarExtender_UnreadConversation(QAndroidJniObject obj);
+		Notification_CarExtender_UnreadConversation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

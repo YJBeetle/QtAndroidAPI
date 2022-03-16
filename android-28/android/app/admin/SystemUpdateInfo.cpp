@@ -36,9 +36,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SystemUpdateInfo::SystemUpdateInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

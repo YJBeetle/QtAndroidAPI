@@ -16,7 +16,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Edits(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Edits(QAndroidJniObject obj);
+		Edits(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Edits();

@@ -30,9 +30,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextView_BufferType::TextView_BufferType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

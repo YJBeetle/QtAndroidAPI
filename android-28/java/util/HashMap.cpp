@@ -10,9 +10,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HashMap::HashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
-	
 	// Constructors
 	HashMap::HashMap()
 		: java::util::AbstractMap(

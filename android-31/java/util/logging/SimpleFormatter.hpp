@@ -17,7 +17,7 @@ namespace java::util::logging
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SimpleFormatter(const char *className, const char *sig, Ts...agv) : java::util::logging::Formatter(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleFormatter(QAndroidJniObject obj);
+		SimpleFormatter(QAndroidJniObject obj) : java::util::logging::Formatter(obj) {}
 		
 		// Constructors
 		SimpleFormatter();

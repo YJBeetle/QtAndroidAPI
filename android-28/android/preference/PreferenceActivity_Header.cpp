@@ -110,9 +110,6 @@ namespace android::preference
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PreferenceActivity_Header::PreferenceActivity_Header(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PreferenceActivity_Header::PreferenceActivity_Header()
 		: JObject(

@@ -8,9 +8,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Typeface_CustomFallbackBuilder::Typeface_CustomFallbackBuilder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Typeface_CustomFallbackBuilder::Typeface_CustomFallbackBuilder(android::graphics::fonts::FontFamily arg0)
 		: JObject(

@@ -6,9 +6,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECPrivateKeySpec::ECPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1)
 		: JObject(

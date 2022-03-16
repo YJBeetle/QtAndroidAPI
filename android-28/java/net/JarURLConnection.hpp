@@ -38,7 +38,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JarURLConnection(const char *className, const char *sig, Ts...agv) : java::net::URLConnection(className, sig, std::forward<Ts>(agv)...) {}
-		JarURLConnection(QAndroidJniObject obj);
+		JarURLConnection(QAndroidJniObject obj) : java::net::URLConnection(obj) {}
 		
 		// Constructors
 		

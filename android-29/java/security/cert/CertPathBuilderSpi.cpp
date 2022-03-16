@@ -4,9 +4,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertPathBuilderSpi::CertPathBuilderSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CertPathBuilderSpi::CertPathBuilderSpi()
 		: JObject(

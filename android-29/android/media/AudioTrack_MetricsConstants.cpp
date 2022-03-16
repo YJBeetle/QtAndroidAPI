@@ -45,9 +45,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioTrack_MetricsConstants::AudioTrack_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

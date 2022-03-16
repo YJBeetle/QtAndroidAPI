@@ -7,9 +7,6 @@ namespace android::speech::tts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SynthesisRequest::SynthesisRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SynthesisRequest::SynthesisRequest(JString arg0, android::os::Bundle arg1)
 		: JObject(

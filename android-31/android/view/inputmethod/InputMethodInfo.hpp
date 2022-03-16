@@ -48,7 +48,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputMethodInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputMethodInfo(QAndroidJniObject obj);
+		InputMethodInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);

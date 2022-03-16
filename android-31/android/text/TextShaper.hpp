@@ -17,7 +17,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextShaper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextShaper(QAndroidJniObject obj);
+		TextShaper(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

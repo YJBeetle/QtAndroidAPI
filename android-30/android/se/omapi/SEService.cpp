@@ -8,9 +8,6 @@ namespace android::se::omapi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SEService::SEService(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SEService::SEService(android::content::Context arg0, JObject arg1, JObject arg2)
 		: JObject(

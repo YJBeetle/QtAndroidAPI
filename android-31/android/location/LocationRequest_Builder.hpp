@@ -16,7 +16,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocationRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocationRequest_Builder(QAndroidJniObject obj);
+		LocationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LocationRequest_Builder(android::location::LocationRequest arg0);

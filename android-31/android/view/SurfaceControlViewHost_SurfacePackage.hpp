@@ -17,7 +17,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SurfaceControlViewHost_SurfacePackage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControlViewHost_SurfacePackage(QAndroidJniObject obj);
+		SurfaceControlViewHost_SurfacePackage(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SurfaceControlViewHost_SurfacePackage(android::view::SurfaceControlViewHost_SurfacePackage &arg0);

@@ -14,7 +14,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OptionalInt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OptionalInt(QAndroidJniObject obj);
+		OptionalInt(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

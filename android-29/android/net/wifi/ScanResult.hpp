@@ -34,7 +34,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScanResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScanResult(QAndroidJniObject obj);
+		ScanResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

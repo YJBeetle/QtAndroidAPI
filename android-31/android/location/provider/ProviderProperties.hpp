@@ -24,7 +24,7 @@ namespace android::location::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProviderProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderProperties(QAndroidJniObject obj);
+		ProviderProperties(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

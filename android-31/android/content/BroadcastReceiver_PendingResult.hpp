@@ -17,7 +17,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BroadcastReceiver_PendingResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BroadcastReceiver_PendingResult(QAndroidJniObject obj);
+		BroadcastReceiver_PendingResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

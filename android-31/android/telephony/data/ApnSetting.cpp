@@ -213,9 +213,6 @@ namespace android::telephony::data
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApnSetting::ApnSetting(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

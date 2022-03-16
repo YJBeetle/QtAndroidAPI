@@ -4,9 +4,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NullCipher::NullCipher(QAndroidJniObject obj) : javax::crypto::Cipher(obj) {}
-	
 	// Constructors
 	NullCipher::NullCipher()
 		: javax::crypto::Cipher(

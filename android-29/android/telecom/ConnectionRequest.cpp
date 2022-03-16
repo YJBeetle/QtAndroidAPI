@@ -18,9 +18,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConnectionRequest::ConnectionRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2)
 		: JObject(

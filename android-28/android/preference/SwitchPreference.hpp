@@ -21,7 +21,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SwitchPreference(const char *className, const char *sig, Ts...agv) : android::preference::TwoStatePreference(className, sig, std::forward<Ts>(agv)...) {}
-		SwitchPreference(QAndroidJniObject obj);
+		SwitchPreference(QAndroidJniObject obj) : android::preference::TwoStatePreference(obj) {}
 		
 		// Constructors
 		SwitchPreference(android::content::Context arg0);

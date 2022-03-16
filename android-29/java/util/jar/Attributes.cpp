@@ -9,9 +9,6 @@ namespace java::util::jar
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Attributes::Attributes(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Attributes::Attributes()
 		: JObject(

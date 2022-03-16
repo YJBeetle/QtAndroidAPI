@@ -28,7 +28,7 @@ namespace android::net::http
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SslError(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SslError(QAndroidJniObject obj);
+		SslError(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SslError(jint arg0, android::net::http::SslCertificate arg1);

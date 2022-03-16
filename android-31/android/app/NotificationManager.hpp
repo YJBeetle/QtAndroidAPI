@@ -77,7 +77,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotificationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationManager(QAndroidJniObject obj);
+		NotificationManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

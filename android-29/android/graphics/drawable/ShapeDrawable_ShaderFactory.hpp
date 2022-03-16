@@ -16,7 +16,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShapeDrawable_ShaderFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ShapeDrawable_ShaderFactory(QAndroidJniObject obj);
+		ShapeDrawable_ShaderFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ShapeDrawable_ShaderFactory();

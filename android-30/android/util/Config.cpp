@@ -39,9 +39,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Config::Config(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

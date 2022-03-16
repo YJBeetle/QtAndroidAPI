@@ -17,7 +17,7 @@ namespace java::beans
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyChangeListenerProxy(const char *className, const char *sig, Ts...agv) : java::util::EventListenerProxy(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyChangeListenerProxy(QAndroidJniObject obj);
+		PropertyChangeListenerProxy(QAndroidJniObject obj) : java::util::EventListenerProxy(obj) {}
 		
 		// Constructors
 		PropertyChangeListenerProxy(JString arg0, JObject arg1);

@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCasStateException::MediaCasStateException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
-	
 	// Constructors
 	
 	// Methods

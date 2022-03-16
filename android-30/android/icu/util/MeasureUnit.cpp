@@ -1119,9 +1119,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MeasureUnit::MeasureUnit(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

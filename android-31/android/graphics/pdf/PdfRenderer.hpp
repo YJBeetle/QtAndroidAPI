@@ -20,7 +20,7 @@ namespace android::graphics::pdf
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PdfRenderer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PdfRenderer(QAndroidJniObject obj);
+		PdfRenderer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PdfRenderer(android::os::ParcelFileDescriptor arg0);

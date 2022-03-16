@@ -23,7 +23,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebChromeClient_FileChooserParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebChromeClient_FileChooserParams(QAndroidJniObject obj);
+		WebChromeClient_FileChooserParams(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WebChromeClient_FileChooserParams();

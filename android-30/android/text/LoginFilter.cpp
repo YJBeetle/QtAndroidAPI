@@ -5,9 +5,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LoginFilter::LoginFilter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

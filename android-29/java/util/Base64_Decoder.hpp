@@ -23,7 +23,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Base64_Decoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Base64_Decoder(QAndroidJniObject obj);
+		Base64_Decoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

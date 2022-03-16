@@ -5,9 +5,6 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AbstractInputMethodService_AbstractInputMethodImpl::AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0)
 		: JObject(

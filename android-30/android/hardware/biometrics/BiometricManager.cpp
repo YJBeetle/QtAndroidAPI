@@ -39,9 +39,6 @@ namespace android::hardware::biometrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BiometricManager::BiometricManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

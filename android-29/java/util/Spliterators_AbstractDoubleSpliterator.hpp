@@ -11,7 +11,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Spliterators_AbstractDoubleSpliterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Spliterators_AbstractDoubleSpliterator(QAndroidJniObject obj);
+		Spliterators_AbstractDoubleSpliterator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

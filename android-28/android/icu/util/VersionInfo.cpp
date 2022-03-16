@@ -254,9 +254,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VersionInfo::VersionInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

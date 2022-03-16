@@ -11,9 +11,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateFormatSymbols::DateFormatSymbols()
 		: JObject(

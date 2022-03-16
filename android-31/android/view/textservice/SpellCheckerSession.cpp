@@ -16,9 +16,6 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SpellCheckerSession::SpellCheckerSession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

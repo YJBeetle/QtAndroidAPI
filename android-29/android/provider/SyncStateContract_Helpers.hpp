@@ -33,7 +33,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SyncStateContract_Helpers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStateContract_Helpers(QAndroidJniObject obj);
+		SyncStateContract_Helpers(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SyncStateContract_Helpers();

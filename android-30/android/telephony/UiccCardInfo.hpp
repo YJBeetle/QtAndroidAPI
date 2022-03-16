@@ -19,7 +19,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UiccCardInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UiccCardInfo(QAndroidJniObject obj);
+		UiccCardInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

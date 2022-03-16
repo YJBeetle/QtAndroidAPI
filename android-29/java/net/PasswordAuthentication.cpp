@@ -6,9 +6,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PasswordAuthentication::PasswordAuthentication(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PasswordAuthentication::PasswordAuthentication(JString arg0, JCharArray arg1)
 		: JObject(

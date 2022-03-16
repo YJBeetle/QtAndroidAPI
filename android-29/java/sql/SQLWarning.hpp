@@ -14,7 +14,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLWarning(const char *className, const char *sig, Ts...agv) : java::sql::SQLException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLWarning(QAndroidJniObject obj);
+		SQLWarning(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
 		
 		// Constructors
 		SQLWarning();

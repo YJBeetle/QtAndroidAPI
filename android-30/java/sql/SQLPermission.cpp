@@ -5,9 +5,6 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLPermission::SQLPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-	
 	// Constructors
 	SQLPermission::SQLPermission(JString arg0)
 		: java::security::BasicPermission(

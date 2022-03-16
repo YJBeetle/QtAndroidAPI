@@ -18,7 +18,7 @@ namespace android::hardware::lights
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LightState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LightState(QAndroidJniObject obj);
+		LightState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

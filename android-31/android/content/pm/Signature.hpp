@@ -22,7 +22,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Signature(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Signature(QAndroidJniObject obj);
+		Signature(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Signature(JByteArray arg0);

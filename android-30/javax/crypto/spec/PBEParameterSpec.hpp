@@ -13,7 +13,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PBEParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PBEParameterSpec(QAndroidJniObject obj);
+		PBEParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PBEParameterSpec(JByteArray arg0, jint arg1);

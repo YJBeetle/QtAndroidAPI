@@ -7,9 +7,6 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SecretKeySpec::SecretKeySpec(JByteArray arg0, JString arg1)
 		: JObject(

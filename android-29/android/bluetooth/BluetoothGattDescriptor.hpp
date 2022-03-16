@@ -37,7 +37,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothGattDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothGattDescriptor(QAndroidJniObject obj);
+		BluetoothGattDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BluetoothGattDescriptor(java::util::UUID arg0, jint arg1);

@@ -31,7 +31,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SimPhonebookContract_ElementaryFiles(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SimPhonebookContract_ElementaryFiles(QAndroidJniObject obj);
+		SimPhonebookContract_ElementaryFiles(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

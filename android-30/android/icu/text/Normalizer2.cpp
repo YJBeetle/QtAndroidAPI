@@ -10,9 +10,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Normalizer2::Normalizer2(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

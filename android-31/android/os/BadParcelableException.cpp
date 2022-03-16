@@ -6,9 +6,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BadParcelableException::BadParcelableException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
-	
 	// Constructors
 	BadParcelableException::BadParcelableException(java::lang::Exception arg0)
 		: android::util::AndroidRuntimeException(

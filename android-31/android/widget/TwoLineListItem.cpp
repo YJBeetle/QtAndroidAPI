@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TwoLineListItem::TwoLineListItem(QAndroidJniObject obj) : android::widget::RelativeLayout(obj) {}
-	
 	// Constructors
 	TwoLineListItem::TwoLineListItem(android::content::Context arg0)
 		: android::widget::RelativeLayout(

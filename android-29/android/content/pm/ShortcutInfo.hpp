@@ -53,7 +53,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ShortcutInfo(QAndroidJniObject obj);
+		ShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

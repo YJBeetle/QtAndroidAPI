@@ -444,9 +444,6 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Camera_Parameters::Camera_Parameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

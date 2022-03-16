@@ -20,7 +20,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BugreportManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BugreportManager(QAndroidJniObject obj);
+		BugreportManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -86,9 +86,6 @@ namespace android::speech::tts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Voice::Voice(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Voice::Voice(JString arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5)
 		: JObject(

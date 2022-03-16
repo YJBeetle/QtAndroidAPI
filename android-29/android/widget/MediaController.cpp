@@ -9,9 +9,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaController::MediaController(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
-	
 	// Constructors
 	MediaController::MediaController(android::content::Context arg0)
 		: android::widget::FrameLayout(

@@ -19,7 +19,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XMLReaderFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XMLReaderFactory(QAndroidJniObject obj);
+		XMLReaderFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

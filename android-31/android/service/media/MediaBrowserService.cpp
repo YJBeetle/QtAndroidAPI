@@ -22,9 +22,6 @@ namespace android::service::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowserService::MediaBrowserService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	MediaBrowserService::MediaBrowserService()
 		: android::app::Service(

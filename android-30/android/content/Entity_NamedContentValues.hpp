@@ -22,7 +22,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Entity_NamedContentValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Entity_NamedContentValues(QAndroidJniObject obj);
+		Entity_NamedContentValues(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1);

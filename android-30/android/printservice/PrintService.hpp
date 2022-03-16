@@ -40,7 +40,7 @@ namespace android::printservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		PrintService(QAndroidJniObject obj);
+		PrintService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		PrintService();

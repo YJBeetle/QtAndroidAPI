@@ -4,9 +4,6 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStoreParameter::KeyStoreParameter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

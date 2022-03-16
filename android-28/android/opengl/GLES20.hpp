@@ -331,7 +331,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GLES20(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLES20(QAndroidJniObject obj);
+		GLES20(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GLES20();

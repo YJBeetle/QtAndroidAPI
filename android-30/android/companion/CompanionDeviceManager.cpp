@@ -17,9 +17,6 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CompanionDeviceManager::CompanionDeviceManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

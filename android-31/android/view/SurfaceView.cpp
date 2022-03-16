@@ -10,9 +10,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceView::SurfaceView(QAndroidJniObject obj) : android::view::View(obj) {}
-	
 	// Constructors
 	SurfaceView::SurfaceView(android::content::Context arg0)
 		: android::view::View(

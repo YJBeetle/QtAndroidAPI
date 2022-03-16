@@ -239,7 +239,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GLES32(const char *className, const char *sig, Ts...agv) : android::opengl::GLES31(className, sig, std::forward<Ts>(agv)...) {}
-		GLES32(QAndroidJniObject obj);
+		GLES32(QAndroidJniObject obj) : android::opengl::GLES31(obj) {}
 		
 		// Constructors
 		

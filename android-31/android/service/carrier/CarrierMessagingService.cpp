@@ -87,9 +87,6 @@ namespace android::service::carrier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CarrierMessagingService::CarrierMessagingService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	CarrierMessagingService::CarrierMessagingService()
 		: android::app::Service(

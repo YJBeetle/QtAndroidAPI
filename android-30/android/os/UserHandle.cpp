@@ -15,9 +15,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UserHandle::UserHandle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UserHandle::UserHandle(android::os::Parcel arg0)
 		: JObject(

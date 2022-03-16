@@ -25,9 +25,6 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OutputConfiguration::OutputConfiguration(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	OutputConfiguration::OutputConfiguration(android::view::Surface arg0)
 		: JObject(

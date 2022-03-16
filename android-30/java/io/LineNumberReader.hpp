@@ -18,7 +18,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LineNumberReader(const char *className, const char *sig, Ts...agv) : java::io::BufferedReader(className, sig, std::forward<Ts>(agv)...) {}
-		LineNumberReader(QAndroidJniObject obj);
+		LineNumberReader(QAndroidJniObject obj) : java::io::BufferedReader(obj) {}
 		
 		// Constructors
 		LineNumberReader(java::io::Reader arg0);

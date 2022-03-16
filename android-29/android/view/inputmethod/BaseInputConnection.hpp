@@ -50,7 +50,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BaseInputConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BaseInputConnection(QAndroidJniObject obj);
+		BaseInputConnection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BaseInputConnection(android::view::View arg0, jboolean arg1);

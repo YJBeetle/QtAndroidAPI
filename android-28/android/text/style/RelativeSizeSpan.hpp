@@ -20,7 +20,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RelativeSizeSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeSizeSpan(QAndroidJniObject obj);
+		RelativeSizeSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
 		
 		// Constructors
 		RelativeSizeSpan(android::os::Parcel arg0);

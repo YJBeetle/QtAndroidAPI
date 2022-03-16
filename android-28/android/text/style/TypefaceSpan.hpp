@@ -25,7 +25,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TypefaceSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		TypefaceSpan(QAndroidJniObject obj);
+		TypefaceSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
 		
 		// Constructors
 		TypefaceSpan(android::graphics::Typeface arg0);

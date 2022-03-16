@@ -13,7 +13,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimingLogger(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimingLogger(QAndroidJniObject obj);
+		TimingLogger(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TimingLogger(JString arg0, JString arg1);

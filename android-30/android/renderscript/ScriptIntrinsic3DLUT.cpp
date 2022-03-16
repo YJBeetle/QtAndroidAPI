@@ -9,9 +9,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptIntrinsic3DLUT::ScriptIntrinsic3DLUT(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -12,9 +12,6 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Subject::Subject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Subject::Subject()
 		: JObject(

@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StatFs::StatFs(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StatFs::StatFs(JString arg0)
 		: JObject(

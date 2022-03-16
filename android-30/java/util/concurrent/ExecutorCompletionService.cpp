@@ -7,9 +7,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExecutorCompletionService::ExecutorCompletionService(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ExecutorCompletionService::ExecutorCompletionService(JObject arg0)
 		: JObject(

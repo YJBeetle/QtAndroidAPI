@@ -22,7 +22,7 @@ namespace android::app::job
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JobWorkItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobWorkItem(QAndroidJniObject obj);
+		JobWorkItem(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		JobWorkItem(android::content::Intent arg0);

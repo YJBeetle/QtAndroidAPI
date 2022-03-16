@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InstantiationError::InstantiationError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
-	
 	// Constructors
 	InstantiationError::InstantiationError()
 		: java::lang::IncompatibleClassChangeError(

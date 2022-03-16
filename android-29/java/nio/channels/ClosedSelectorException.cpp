@@ -4,9 +4,6 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClosedSelectorException::ClosedSelectorException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
-	
 	// Constructors
 	ClosedSelectorException::ClosedSelectorException()
 		: java::lang::IllegalStateException(

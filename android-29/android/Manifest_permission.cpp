@@ -1269,9 +1269,6 @@ namespace android
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Manifest_permission::Manifest_permission(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Manifest_permission::Manifest_permission()
 		: JObject(

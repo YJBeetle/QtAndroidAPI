@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BlurMaskFilter::BlurMaskFilter(QAndroidJniObject obj) : android::graphics::MaskFilter(obj) {}
-	
 	// Constructors
 	BlurMaskFilter::BlurMaskFilter(jfloat arg0, android::graphics::BlurMaskFilter_Blur arg1)
 		: android::graphics::MaskFilter(

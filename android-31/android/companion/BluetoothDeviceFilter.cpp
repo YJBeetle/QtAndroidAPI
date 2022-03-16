@@ -15,9 +15,6 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothDeviceFilter::BluetoothDeviceFilter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

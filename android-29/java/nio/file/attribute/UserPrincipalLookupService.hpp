@@ -13,7 +13,7 @@ namespace java::nio::file::attribute
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UserPrincipalLookupService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserPrincipalLookupService(QAndroidJniObject obj);
+		UserPrincipalLookupService(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -25,7 +25,7 @@ namespace javax::xml::parsers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SAXParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SAXParserFactory(QAndroidJniObject obj);
+		SAXParserFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

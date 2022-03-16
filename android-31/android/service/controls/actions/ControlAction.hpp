@@ -24,7 +24,7 @@ namespace android::service::controls::actions
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ControlAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ControlAction(QAndroidJniObject obj);
+		ControlAction(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

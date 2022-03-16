@@ -14,9 +14,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Dataset::Dataset(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

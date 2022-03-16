@@ -40,7 +40,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoicemailContract_Voicemails(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoicemailContract_Voicemails(QAndroidJniObject obj);
+		VoicemailContract_Voicemails(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -17,9 +17,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LinkAddress::LinkAddress(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

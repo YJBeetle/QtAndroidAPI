@@ -33,9 +33,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Collections::Collections(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

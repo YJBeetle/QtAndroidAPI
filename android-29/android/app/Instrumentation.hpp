@@ -87,7 +87,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Instrumentation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Instrumentation(QAndroidJniObject obj);
+		Instrumentation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Instrumentation();

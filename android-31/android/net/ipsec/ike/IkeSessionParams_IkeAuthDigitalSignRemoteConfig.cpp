@@ -6,9 +6,6 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSessionParams_IkeAuthDigitalSignRemoteConfig::IkeSessionParams_IkeAuthDigitalSignRemoteConfig(QAndroidJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
-	
 	// Constructors
 	
 	// Methods

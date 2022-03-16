@@ -23,9 +23,6 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Selection::Selection(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

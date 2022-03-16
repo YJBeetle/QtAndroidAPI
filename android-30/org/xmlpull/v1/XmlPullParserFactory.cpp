@@ -16,9 +16,6 @@ namespace org::xmlpull::v1
 		);
 	}
 	
-	// QAndroidJniObject forward
-	XmlPullParserFactory::XmlPullParserFactory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

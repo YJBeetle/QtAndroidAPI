@@ -19,7 +19,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Camera_Area(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_Area(QAndroidJniObject obj);
+		Camera_Area(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Camera_Area(android::graphics::Rect arg0, jint arg1);

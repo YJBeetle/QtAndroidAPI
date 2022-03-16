@@ -19,7 +19,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssAntennaInfo_PhaseCenterOffset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_PhaseCenterOffset(QAndroidJniObject obj);
+		GnssAntennaInfo_PhaseCenterOffset(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GnssAntennaInfo_PhaseCenterOffset(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);

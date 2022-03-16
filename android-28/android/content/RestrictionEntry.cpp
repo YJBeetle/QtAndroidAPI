@@ -74,9 +74,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RestrictionEntry::RestrictionEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RestrictionEntry::RestrictionEntry(android::os::Parcel arg0)
 		: JObject(

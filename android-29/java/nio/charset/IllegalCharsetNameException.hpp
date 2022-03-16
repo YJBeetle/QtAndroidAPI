@@ -13,7 +13,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IllegalCharsetNameException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalCharsetNameException(QAndroidJniObject obj);
+		IllegalCharsetNameException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 		
 		// Constructors
 		IllegalCharsetNameException(JString arg0);

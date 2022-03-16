@@ -21,7 +21,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Signer(const char *className, const char *sig, Ts...agv) : java::security::Identity(className, sig, std::forward<Ts>(agv)...) {}
-		Signer(QAndroidJniObject obj);
+		Signer(QAndroidJniObject obj) : java::security::Identity(obj) {}
 		
 		// Constructors
 		Signer(JString arg0);

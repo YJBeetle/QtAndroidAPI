@@ -28,9 +28,6 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FileDescriptor::FileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FileDescriptor::FileDescriptor()
 		: JObject(

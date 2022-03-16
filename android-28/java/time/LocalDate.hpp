@@ -86,7 +86,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalDate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocalDate(QAndroidJniObject obj);
+		LocalDate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

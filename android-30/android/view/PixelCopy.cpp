@@ -52,9 +52,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PixelCopy::PixelCopy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

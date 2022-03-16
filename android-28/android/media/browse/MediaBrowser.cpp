@@ -28,9 +28,6 @@ namespace android::media::browse
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowser::MediaBrowser(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaBrowser::MediaBrowser(android::content::Context arg0, android::content::ComponentName arg1, android::media::browse::MediaBrowser_ConnectionCallback arg2, android::os::Bundle arg3)
 		: JObject(

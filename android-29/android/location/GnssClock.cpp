@@ -14,9 +14,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssClock::GnssClock(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

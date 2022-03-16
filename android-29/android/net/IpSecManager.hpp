@@ -42,7 +42,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpSecManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager(QAndroidJniObject obj);
+		IpSecManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -9,9 +9,6 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractSelector::AbstractSelector(QAndroidJniObject obj) : java::nio::channels::Selector(obj) {}
-	
 	// Constructors
 	
 	// Methods

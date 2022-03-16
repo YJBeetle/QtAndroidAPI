@@ -6,9 +6,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Uri_Builder::Uri_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Uri_Builder::Uri_Builder()
 		: JObject(

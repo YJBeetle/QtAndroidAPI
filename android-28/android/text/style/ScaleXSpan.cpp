@@ -6,9 +6,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScaleXSpan::ScaleXSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
-	
 	// Constructors
 	ScaleXSpan::ScaleXSpan(android::os::Parcel arg0)
 		: android::text::style::MetricAffectingSpan(

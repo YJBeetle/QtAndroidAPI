@@ -47,7 +47,7 @@ namespace android::service::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaBrowserService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowserService(QAndroidJniObject obj);
+		MediaBrowserService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		MediaBrowserService();

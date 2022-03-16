@@ -13,7 +13,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkSecurityPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSecurityPolicy(QAndroidJniObject obj);
+		NetworkSecurityPolicy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -17,7 +17,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeSessionParams_IkeAuthDigitalSignLocalConfig(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_IkeAuthDigitalSignLocalConfig(QAndroidJniObject obj);
+		IkeSessionParams_IkeAuthDigitalSignLocalConfig(QAndroidJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
 		
 		// Constructors
 		

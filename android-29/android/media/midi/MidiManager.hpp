@@ -29,7 +29,7 @@ namespace android::media::midi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiManager(QAndroidJniObject obj);
+		MidiManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

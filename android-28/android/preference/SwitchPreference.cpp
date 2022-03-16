@@ -7,9 +7,6 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SwitchPreference::SwitchPreference(QAndroidJniObject obj) : android::preference::TwoStatePreference(obj) {}
-	
 	// Constructors
 	SwitchPreference::SwitchPreference(android::content::Context arg0)
 		: android::preference::TwoStatePreference(

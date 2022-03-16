@@ -19,7 +19,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellSignalStrengthLte(const char *className, const char *sig, Ts...agv) : android::telephony::CellSignalStrength(className, sig, std::forward<Ts>(agv)...) {}
-		CellSignalStrengthLte(QAndroidJniObject obj);
+		CellSignalStrengthLte(QAndroidJniObject obj) : android::telephony::CellSignalStrength(obj) {}
 		
 		// Constructors
 		

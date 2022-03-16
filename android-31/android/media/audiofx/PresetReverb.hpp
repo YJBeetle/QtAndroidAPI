@@ -24,7 +24,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PresetReverb(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		PresetReverb(QAndroidJniObject obj);
+		PresetReverb(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
 		
 		// Constructors
 		PresetReverb(jint arg0, jint arg1);

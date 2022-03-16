@@ -30,9 +30,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimePatternGenerator_DisplayWidth::DateTimePatternGenerator_DisplayWidth(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

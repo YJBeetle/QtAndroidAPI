@@ -81,7 +81,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Dialog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Dialog(QAndroidJniObject obj);
+		Dialog(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Dialog(android::content::Context arg0);

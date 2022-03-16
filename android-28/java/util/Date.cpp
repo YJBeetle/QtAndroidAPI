@@ -12,9 +12,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Date::Date(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Date::Date()
 		: JObject(

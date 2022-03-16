@@ -22,9 +22,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SimPhonebookContract::SimPhonebookContract(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

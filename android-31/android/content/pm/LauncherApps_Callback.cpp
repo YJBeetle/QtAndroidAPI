@@ -8,9 +8,6 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LauncherApps_Callback::LauncherApps_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LauncherApps_Callback::LauncherApps_Callback()
 		: JObject(

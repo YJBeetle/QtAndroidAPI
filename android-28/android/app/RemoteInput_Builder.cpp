@@ -9,9 +9,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteInput_Builder::RemoteInput_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RemoteInput_Builder::RemoteInput_Builder(JString arg0)
 		: JObject(

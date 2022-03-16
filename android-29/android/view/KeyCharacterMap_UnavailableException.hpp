@@ -13,7 +13,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyCharacterMap_UnavailableException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyCharacterMap_UnavailableException(QAndroidJniObject obj);
+		KeyCharacterMap_UnavailableException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 		
 		// Constructors
 		KeyCharacterMap_UnavailableException(JString arg0);

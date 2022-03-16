@@ -28,7 +28,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewStub(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		ViewStub(QAndroidJniObject obj);
+		ViewStub(QAndroidJniObject obj) : android::view::View(obj) {}
 		
 		// Constructors
 		ViewStub(android::content::Context arg0);

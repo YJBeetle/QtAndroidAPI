@@ -50,7 +50,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SelectionEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SelectionEvent(QAndroidJniObject obj);
+		SelectionEvent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

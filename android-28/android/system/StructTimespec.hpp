@@ -16,7 +16,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StructTimespec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StructTimespec(QAndroidJniObject obj);
+		StructTimespec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StructTimespec(jlong arg0, jlong arg1);

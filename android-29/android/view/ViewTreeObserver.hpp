@@ -16,7 +16,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewTreeObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewTreeObserver(QAndroidJniObject obj);
+		ViewTreeObserver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -20,7 +20,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageDecoder_DecodeException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		ImageDecoder_DecodeException(QAndroidJniObject obj);
+		ImageDecoder_DecodeException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		

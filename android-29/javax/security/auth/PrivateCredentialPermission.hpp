@@ -28,7 +28,7 @@ namespace javax::security::auth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrivateCredentialPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		PrivateCredentialPermission(QAndroidJniObject obj);
+		PrivateCredentialPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
 		
 		// Constructors
 		PrivateCredentialPermission(JString arg0, JString arg1);

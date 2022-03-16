@@ -13,9 +13,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint arg0, jint arg1)
 		: JObject(

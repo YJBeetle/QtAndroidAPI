@@ -35,7 +35,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SaveInfo(QAndroidJniObject obj);
+		SaveInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

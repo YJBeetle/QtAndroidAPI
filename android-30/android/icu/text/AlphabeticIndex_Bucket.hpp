@@ -17,7 +17,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlphabeticIndex_Bucket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_Bucket(QAndroidJniObject obj);
+		AlphabeticIndex_Bucket(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

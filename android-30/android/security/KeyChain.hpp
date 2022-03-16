@@ -42,7 +42,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyChain(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyChain(QAndroidJniObject obj);
+		KeyChain(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyChain();

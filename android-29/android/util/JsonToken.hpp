@@ -24,7 +24,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JsonToken(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		JsonToken(QAndroidJniObject obj);
+		JsonToken(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -80,9 +80,6 @@ namespace android::inputmethodservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Keyboard::Keyboard(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Keyboard::Keyboard(android::content::Context arg0, jint arg1)
 		: JObject(

@@ -278,9 +278,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Call_Details::Call_Details(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

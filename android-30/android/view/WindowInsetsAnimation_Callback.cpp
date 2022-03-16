@@ -21,9 +21,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WindowInsetsAnimation_Callback::WindowInsetsAnimation_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WindowInsetsAnimation_Callback::WindowInsetsAnimation_Callback(jint arg0)
 		: JObject(

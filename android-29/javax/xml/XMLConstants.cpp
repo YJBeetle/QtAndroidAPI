@@ -133,9 +133,6 @@ namespace javax::xml
 		);
 	}
 	
-	// QAndroidJniObject forward
-	XMLConstants::XMLConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

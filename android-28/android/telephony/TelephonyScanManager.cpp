@@ -4,9 +4,6 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyScanManager::TelephonyScanManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TelephonyScanManager::TelephonyScanManager()
 		: JObject(

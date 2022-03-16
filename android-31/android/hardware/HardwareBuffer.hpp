@@ -43,7 +43,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HardwareBuffer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HardwareBuffer(QAndroidJniObject obj);
+		HardwareBuffer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

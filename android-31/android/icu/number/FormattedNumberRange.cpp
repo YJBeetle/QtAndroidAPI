@@ -10,9 +10,6 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FormattedNumberRange::FormattedNumberRange(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

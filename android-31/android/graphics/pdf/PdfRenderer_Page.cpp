@@ -22,9 +22,6 @@ namespace android::graphics::pdf
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PdfRenderer_Page::PdfRenderer_Page(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

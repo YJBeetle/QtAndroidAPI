@@ -21,9 +21,6 @@ namespace java::nio
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ByteOrder::ByteOrder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

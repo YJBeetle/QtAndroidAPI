@@ -24,7 +24,7 @@ namespace android::hardware::lights
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Light(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Light(QAndroidJniObject obj);
+		Light(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

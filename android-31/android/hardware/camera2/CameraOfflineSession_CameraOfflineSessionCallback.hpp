@@ -17,7 +17,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraOfflineSession_CameraOfflineSessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraOfflineSession_CameraOfflineSessionCallback(QAndroidJniObject obj);
+		CameraOfflineSession_CameraOfflineSessionCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CameraOfflineSession_CameraOfflineSessionCallback();

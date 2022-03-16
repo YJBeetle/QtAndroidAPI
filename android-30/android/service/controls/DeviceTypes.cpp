@@ -417,9 +417,6 @@ namespace android::service::controls
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DeviceTypes::DeviceTypes(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

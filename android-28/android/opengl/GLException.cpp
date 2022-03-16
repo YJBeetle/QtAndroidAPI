@@ -5,9 +5,6 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GLException::GLException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	GLException::GLException(jint arg0)
 		: java::lang::RuntimeException(

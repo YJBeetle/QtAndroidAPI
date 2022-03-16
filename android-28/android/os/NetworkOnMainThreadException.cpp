@@ -4,9 +4,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NetworkOnMainThreadException::NetworkOnMainThreadException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	NetworkOnMainThreadException::NetworkOnMainThreadException()
 		: java::lang::RuntimeException(

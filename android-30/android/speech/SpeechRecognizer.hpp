@@ -36,7 +36,7 @@ namespace android::speech
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpeechRecognizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SpeechRecognizer(QAndroidJniObject obj);
+		SpeechRecognizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

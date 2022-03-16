@@ -14,7 +14,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BoringLayout_Metrics(const char *className, const char *sig, Ts...agv) : android::graphics::Paint_FontMetricsInt(className, sig, std::forward<Ts>(agv)...) {}
-		BoringLayout_Metrics(QAndroidJniObject obj);
+		BoringLayout_Metrics(QAndroidJniObject obj) : android::graphics::Paint_FontMetricsInt(obj) {}
 		
 		// Constructors
 		BoringLayout_Metrics();

@@ -16,7 +16,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Pair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Pair(QAndroidJniObject obj);
+		Pair(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Pair(JObject arg0, JObject arg1);

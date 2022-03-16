@@ -32,7 +32,7 @@ namespace android::os::storage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StorageVolume(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StorageVolume(QAndroidJniObject obj);
+		StorageVolume(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

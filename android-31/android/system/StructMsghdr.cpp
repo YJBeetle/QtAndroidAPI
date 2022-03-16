@@ -34,9 +34,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructMsghdr::StructMsghdr(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StructMsghdr::StructMsghdr(java::net::SocketAddress arg0, JArray arg1, JArray arg2, jint arg3)
 		: JObject(

@@ -14,7 +14,7 @@ namespace java::lang::invoke
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LambdaConversionException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		LambdaConversionException(QAndroidJniObject obj);
+		LambdaConversionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		LambdaConversionException();

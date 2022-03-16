@@ -17,7 +17,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiConfiguration_Status(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_Status(QAndroidJniObject obj);
+		WifiConfiguration_Status(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

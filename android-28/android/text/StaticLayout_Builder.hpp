@@ -30,7 +30,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StaticLayout_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StaticLayout_Builder(QAndroidJniObject obj);
+		StaticLayout_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

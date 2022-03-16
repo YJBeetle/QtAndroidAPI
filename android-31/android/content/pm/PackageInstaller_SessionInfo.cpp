@@ -62,9 +62,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PackageInstaller_SessionInfo::PackageInstaller_SessionInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

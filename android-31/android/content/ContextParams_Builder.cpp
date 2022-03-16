@@ -7,9 +7,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContextParams_Builder::ContextParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContextParams_Builder::ContextParams_Builder()
 		: JObject(

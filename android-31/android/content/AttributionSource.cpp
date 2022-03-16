@@ -16,9 +16,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AttributionSource::AttributionSource(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

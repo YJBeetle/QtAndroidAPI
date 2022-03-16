@@ -50,7 +50,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PermissionInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
-		PermissionInfo(QAndroidJniObject obj);
+		PermissionInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
 		
 		// Constructors
 		PermissionInfo();

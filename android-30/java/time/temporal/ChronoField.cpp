@@ -248,9 +248,6 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ChronoField::ChronoField(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

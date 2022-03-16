@@ -29,7 +29,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URLStreamHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLStreamHandler(QAndroidJniObject obj);
+		URLStreamHandler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		URLStreamHandler();

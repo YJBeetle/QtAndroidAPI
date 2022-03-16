@@ -14,7 +14,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchResult_MatchRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResult_MatchRange(QAndroidJniObject obj);
+		SearchResult_MatchRange(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SearchResult_MatchRange(jint arg0, jint arg1);

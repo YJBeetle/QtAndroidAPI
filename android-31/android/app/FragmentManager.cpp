@@ -20,9 +20,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FragmentManager::FragmentManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FragmentManager::FragmentManager()
 		: JObject(

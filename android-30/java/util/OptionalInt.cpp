@@ -6,9 +6,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OptionalInt::OptionalInt(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

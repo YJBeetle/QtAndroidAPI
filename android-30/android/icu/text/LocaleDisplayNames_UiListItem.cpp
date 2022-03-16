@@ -35,9 +35,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LocaleDisplayNames_UiListItem::LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, JString arg2, JString arg3)
 		: JObject(

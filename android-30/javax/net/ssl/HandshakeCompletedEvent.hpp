@@ -19,7 +19,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HandshakeCompletedEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		HandshakeCompletedEvent(QAndroidJniObject obj);
+		HandshakeCompletedEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
 		
 		// Constructors
 		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1);

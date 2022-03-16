@@ -48,9 +48,6 @@ namespace java::util::logging
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ErrorManager::ErrorManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ErrorManager::ErrorManager()
 		: JObject(

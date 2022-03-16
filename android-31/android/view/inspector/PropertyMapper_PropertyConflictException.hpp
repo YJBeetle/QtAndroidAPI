@@ -13,7 +13,7 @@ namespace android::view::inspector
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyMapper_PropertyConflictException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyMapper_PropertyConflictException(QAndroidJniObject obj);
+		PropertyMapper_PropertyConflictException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		PropertyMapper_PropertyConflictException(JString arg0, JString arg1, JString arg2);

@@ -15,9 +15,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CustomDescription::CustomDescription(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

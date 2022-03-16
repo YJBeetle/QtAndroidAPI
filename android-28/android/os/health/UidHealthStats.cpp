@@ -445,9 +445,6 @@ namespace android::os::health
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UidHealthStats::UidHealthStats(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

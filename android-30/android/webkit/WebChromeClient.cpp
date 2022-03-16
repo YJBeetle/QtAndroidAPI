@@ -14,9 +14,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebChromeClient::WebChromeClient(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WebChromeClient::WebChromeClient()
 		: JObject(

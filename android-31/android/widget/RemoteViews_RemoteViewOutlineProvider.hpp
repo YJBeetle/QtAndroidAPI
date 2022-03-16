@@ -20,7 +20,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteViews_RemoteViewOutlineProvider(const char *className, const char *sig, Ts...agv) : android::view::ViewOutlineProvider(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_RemoteViewOutlineProvider(QAndroidJniObject obj);
+		RemoteViews_RemoteViewOutlineProvider(QAndroidJniObject obj) : android::view::ViewOutlineProvider(obj) {}
 		
 		// Constructors
 		RemoteViews_RemoteViewOutlineProvider(jfloat arg0);

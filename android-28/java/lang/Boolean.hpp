@@ -22,7 +22,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Boolean(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Boolean(QAndroidJniObject obj);
+		Boolean(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Boolean(jboolean arg0);

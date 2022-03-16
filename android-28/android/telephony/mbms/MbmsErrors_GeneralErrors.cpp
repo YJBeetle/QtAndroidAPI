@@ -53,9 +53,6 @@ namespace android::telephony::mbms
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MbmsErrors_GeneralErrors::MbmsErrors_GeneralErrors(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

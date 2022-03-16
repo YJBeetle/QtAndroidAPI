@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InstantiationError(const char *className, const char *sig, Ts...agv) : java::lang::IncompatibleClassChangeError(className, sig, std::forward<Ts>(agv)...) {}
-		InstantiationError(QAndroidJniObject obj);
+		InstantiationError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
 		
 		// Constructors
 		InstantiationError();

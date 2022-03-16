@@ -32,7 +32,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Date(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Date(QAndroidJniObject obj);
+		Date(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Date();

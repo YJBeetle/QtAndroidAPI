@@ -5,9 +5,6 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReferenceQueue::ReferenceQueue(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ReferenceQueue::ReferenceQueue()
 		: JObject(

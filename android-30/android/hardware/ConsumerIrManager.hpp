@@ -14,7 +14,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConsumerIrManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConsumerIrManager(QAndroidJniObject obj);
+		ConsumerIrManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

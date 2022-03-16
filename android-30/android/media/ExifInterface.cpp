@@ -1247,9 +1247,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExifInterface::ExifInterface(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ExifInterface::ExifInterface(java::io::File arg0)
 		: JObject(

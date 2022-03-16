@@ -22,7 +22,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaParser_TrackData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_TrackData(QAndroidJniObject obj);
+		MediaParser_TrackData(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

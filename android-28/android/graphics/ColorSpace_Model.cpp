@@ -38,9 +38,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ColorSpace_Model::ColorSpace_Model(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

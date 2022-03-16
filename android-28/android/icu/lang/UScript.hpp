@@ -214,7 +214,7 @@ namespace android::icu::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UScript(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UScript(QAndroidJniObject obj);
+		UScript(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

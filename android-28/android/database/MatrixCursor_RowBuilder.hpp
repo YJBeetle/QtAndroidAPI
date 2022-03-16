@@ -18,7 +18,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MatrixCursor_RowBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MatrixCursor_RowBuilder(QAndroidJniObject obj);
+		MatrixCursor_RowBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchSpec_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchSpec_Builder(QAndroidJniObject obj);
+		SearchSpec_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SearchSpec_Builder();

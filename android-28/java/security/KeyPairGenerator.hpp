@@ -25,7 +25,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyPairGenerator(const char *className, const char *sig, Ts...agv) : java::security::KeyPairGeneratorSpi(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPairGenerator(QAndroidJniObject obj);
+		KeyPairGenerator(QAndroidJniObject obj) : java::security::KeyPairGeneratorSpi(obj) {}
 		
 		// Constructors
 		

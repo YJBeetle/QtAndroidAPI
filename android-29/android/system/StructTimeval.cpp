@@ -18,9 +18,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructTimeval::StructTimeval(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

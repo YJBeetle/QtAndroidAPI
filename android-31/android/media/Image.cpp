@@ -7,9 +7,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Image::Image(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

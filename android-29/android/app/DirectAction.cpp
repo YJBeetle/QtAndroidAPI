@@ -17,9 +17,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DirectAction::DirectAction(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

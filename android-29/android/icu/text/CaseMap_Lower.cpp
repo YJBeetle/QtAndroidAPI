@@ -9,9 +9,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CaseMap_Lower::CaseMap_Lower(QAndroidJniObject obj) : android::icu::text::CaseMap(obj) {}
-	
 	// Constructors
 	
 	// Methods

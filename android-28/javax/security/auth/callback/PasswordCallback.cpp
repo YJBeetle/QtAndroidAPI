@@ -6,9 +6,6 @@ namespace javax::security::auth::callback
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PasswordCallback::PasswordCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PasswordCallback::PasswordCallback(JString arg0, jboolean arg1)
 		: JObject(

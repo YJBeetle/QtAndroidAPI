@@ -5,9 +5,6 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-	
 	// Constructors
 	PackageManager_NameNotFoundException::PackageManager_NameNotFoundException()
 		: android::util::AndroidException(

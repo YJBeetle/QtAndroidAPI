@@ -16,9 +16,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RegexValidator::RegexValidator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RegexValidator::RegexValidator(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1)
 		: JObject(

@@ -33,7 +33,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvRecordingClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvRecordingClient(QAndroidJniObject obj);
+		TvRecordingClient(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TvRecordingClient(android::content::Context arg0, JString arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3);

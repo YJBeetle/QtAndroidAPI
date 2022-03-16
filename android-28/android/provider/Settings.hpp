@@ -98,7 +98,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Settings(QAndroidJniObject obj);
+		Settings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Settings();

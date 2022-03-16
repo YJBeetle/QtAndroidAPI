@@ -13,9 +13,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ColorStateListDrawable::ColorStateListDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
-	
 	// Constructors
 	ColorStateListDrawable::ColorStateListDrawable()
 		: android::graphics::drawable::Drawable(

@@ -13,7 +13,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZipException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		ZipException(QAndroidJniObject obj);
+		ZipException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		ZipException();

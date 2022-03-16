@@ -14,7 +14,7 @@ namespace java::util::prefs
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BackingStoreException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		BackingStoreException(QAndroidJniObject obj);
+		BackingStoreException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		BackingStoreException(JString arg0);

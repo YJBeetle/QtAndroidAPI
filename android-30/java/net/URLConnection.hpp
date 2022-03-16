@@ -44,7 +44,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URLConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLConnection(QAndroidJniObject obj);
+		URLConnection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

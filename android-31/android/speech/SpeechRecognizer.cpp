@@ -115,9 +115,6 @@ namespace android::speech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SpeechRecognizer::SpeechRecognizer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

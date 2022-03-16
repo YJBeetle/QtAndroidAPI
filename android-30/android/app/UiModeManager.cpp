@@ -87,9 +87,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UiModeManager::UiModeManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

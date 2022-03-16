@@ -8,9 +8,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AutoText::AutoText(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

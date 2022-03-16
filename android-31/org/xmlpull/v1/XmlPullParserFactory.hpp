@@ -23,7 +23,7 @@ namespace org::xmlpull::v1
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XmlPullParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XmlPullParserFactory(QAndroidJniObject obj);
+		XmlPullParserFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

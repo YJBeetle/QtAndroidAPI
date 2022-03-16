@@ -321,9 +321,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CamcorderProfile::CamcorderProfile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

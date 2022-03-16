@@ -19,7 +19,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SizeF(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SizeF(QAndroidJniObject obj);
+		SizeF(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SizeF(jfloat arg0, jfloat arg1);

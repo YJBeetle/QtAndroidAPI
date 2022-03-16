@@ -54,9 +54,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Bitmap_Config::Bitmap_Config(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

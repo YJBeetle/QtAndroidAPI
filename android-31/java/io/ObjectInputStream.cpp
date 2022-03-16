@@ -16,9 +16,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ObjectInputStream::ObjectInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
-	
 	// Constructors
 	ObjectInputStream::ObjectInputStream(java::io::InputStream arg0)
 		: java::io::InputStream(

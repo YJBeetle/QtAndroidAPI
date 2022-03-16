@@ -5,9 +5,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HttpAuthHandler::HttpAuthHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
-	
 	// Constructors
 	
 	// Methods

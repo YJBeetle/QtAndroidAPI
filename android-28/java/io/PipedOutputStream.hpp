@@ -17,7 +17,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PipedOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		PipedOutputStream(QAndroidJniObject obj);
+		PipedOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
 		
 		// Constructors
 		PipedOutputStream();

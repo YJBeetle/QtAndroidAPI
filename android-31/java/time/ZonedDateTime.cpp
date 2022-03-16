@@ -20,9 +20,6 @@ namespace java::time
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZonedDateTime::ZonedDateTime(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

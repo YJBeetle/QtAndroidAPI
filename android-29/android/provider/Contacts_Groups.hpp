@@ -24,7 +24,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Contacts_Groups(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Groups(QAndroidJniObject obj);
+		Contacts_Groups(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

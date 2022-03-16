@@ -17,9 +17,6 @@ namespace android::view::contentcapture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentCaptureContext::ContentCaptureContext(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

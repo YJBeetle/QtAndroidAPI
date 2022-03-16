@@ -18,7 +18,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextView_SavedState(const char *className, const char *sig, Ts...agv) : android::view::View_BaseSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		TextView_SavedState(QAndroidJniObject obj);
+		TextView_SavedState(QAndroidJniObject obj) : android::view::View_BaseSavedState(obj) {}
 		
 		// Constructors
 		

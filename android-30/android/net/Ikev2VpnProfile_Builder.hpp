@@ -26,7 +26,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Ikev2VpnProfile_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Ikev2VpnProfile_Builder(QAndroidJniObject obj);
+		Ikev2VpnProfile_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Ikev2VpnProfile_Builder(JString arg0, JString arg1);

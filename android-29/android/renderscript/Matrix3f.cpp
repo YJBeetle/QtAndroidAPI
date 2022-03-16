@@ -5,9 +5,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Matrix3f::Matrix3f(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Matrix3f::Matrix3f()
 		: JObject(

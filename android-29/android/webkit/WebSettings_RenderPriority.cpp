@@ -30,9 +30,6 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebSettings_RenderPriority::WebSettings_RenderPriority(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

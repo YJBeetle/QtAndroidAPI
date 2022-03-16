@@ -30,7 +30,7 @@ namespace java::util::jar
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JarInputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		JarInputStream(QAndroidJniObject obj);
+		JarInputStream(QAndroidJniObject obj) : java::util::zip::ZipInputStream(obj) {}
 		
 		// Constructors
 		JarInputStream(java::io::InputStream arg0);

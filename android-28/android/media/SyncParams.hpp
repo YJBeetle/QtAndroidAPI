@@ -18,7 +18,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SyncParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncParams(QAndroidJniObject obj);
+		SyncParams(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SyncParams();

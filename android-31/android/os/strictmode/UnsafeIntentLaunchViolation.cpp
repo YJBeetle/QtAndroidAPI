@@ -5,9 +5,6 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsafeIntentLaunchViolation::UnsafeIntentLaunchViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
-	
 	// Constructors
 	UnsafeIntentLaunchViolation::UnsafeIntentLaunchViolation(android::content::Intent arg0)
 		: android::os::strictmode::Violation(

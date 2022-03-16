@@ -10,9 +10,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClipData_Item::ClipData_Item(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ClipData_Item::ClipData_Item(android::content::Intent arg0)
 		: JObject(

@@ -13,7 +13,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Connection_RttTextStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Connection_RttTextStream(QAndroidJniObject obj);
+		Connection_RttTextStream(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

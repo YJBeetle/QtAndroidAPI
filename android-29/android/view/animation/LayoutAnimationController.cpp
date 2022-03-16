@@ -30,9 +30,6 @@ namespace android::view::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LayoutAnimationController::LayoutAnimationController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LayoutAnimationController::LayoutAnimationController(android::view::animation::Animation arg0)
 		: JObject(

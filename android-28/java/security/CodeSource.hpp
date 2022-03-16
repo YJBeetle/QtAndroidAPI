@@ -36,7 +36,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CodeSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CodeSource(QAndroidJniObject obj);
+		CodeSource(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CodeSource(java::net::URL arg0, JArray arg1);

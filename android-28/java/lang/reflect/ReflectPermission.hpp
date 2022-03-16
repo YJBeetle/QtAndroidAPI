@@ -13,7 +13,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReflectPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		ReflectPermission(QAndroidJniObject obj);
+		ReflectPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 		
 		// Constructors
 		ReflectPermission(JString arg0);

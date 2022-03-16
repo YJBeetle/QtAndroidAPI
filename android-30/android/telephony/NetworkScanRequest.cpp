@@ -30,9 +30,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkScanRequest::NetworkScanRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NetworkScanRequest::NetworkScanRequest(jint arg0, JArray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6)
 		: JObject(

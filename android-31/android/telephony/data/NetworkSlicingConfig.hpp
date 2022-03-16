@@ -19,7 +19,7 @@ namespace android::telephony::data
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkSlicingConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkSlicingConfig(QAndroidJniObject obj);
+		NetworkSlicingConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkSlicingConfig();

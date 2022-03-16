@@ -29,9 +29,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaMetadataEditor::MediaMetadataEditor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

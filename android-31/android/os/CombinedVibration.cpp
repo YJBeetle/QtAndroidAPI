@@ -14,9 +14,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CombinedVibration::CombinedVibration(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -34,7 +34,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InCallService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		InCallService(QAndroidJniObject obj);
+		InCallService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		InCallService();

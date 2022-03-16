@@ -5,9 +5,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JsPromptResult::JsPromptResult(QAndroidJniObject obj) : android::webkit::JsResult(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -6,9 +6,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbsoluteSizeSpan::AbsoluteSizeSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
-	
 	// Constructors
 	AbsoluteSizeSpan::AbsoluteSizeSpan(android::os::Parcel arg0)
 		: android::text::style::MetricAffectingSpan(

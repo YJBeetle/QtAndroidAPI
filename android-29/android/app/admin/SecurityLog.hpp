@@ -47,7 +47,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecurityLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecurityLog(QAndroidJniObject obj);
+		SecurityLog(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SecurityLog();

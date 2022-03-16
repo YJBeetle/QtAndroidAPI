@@ -11,7 +11,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Number(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Number(QAndroidJniObject obj);
+		Number(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Number();

@@ -13,7 +13,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DynamicsProcessing_MbcBand(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_BandBase(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_MbcBand(QAndroidJniObject obj);
+		DynamicsProcessing_MbcBand(QAndroidJniObject obj) : android::media::audiofx::DynamicsProcessing_BandBase(obj) {}
 		
 		// Constructors
 		DynamicsProcessing_MbcBand(android::media::audiofx::DynamicsProcessing_MbcBand &arg0);

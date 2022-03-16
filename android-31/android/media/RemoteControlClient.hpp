@@ -47,7 +47,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteControlClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteControlClient(QAndroidJniObject obj);
+		RemoteControlClient(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RemoteControlClient(android::app::PendingIntent arg0);

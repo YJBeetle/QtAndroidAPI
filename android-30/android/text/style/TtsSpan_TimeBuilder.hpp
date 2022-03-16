@@ -11,7 +11,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TtsSpan_TimeBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_TimeBuilder(QAndroidJniObject obj);
+		TtsSpan_TimeBuilder(QAndroidJniObject obj) : android::text::style::TtsSpan_SemioticClassBuilder(obj) {}
 		
 		// Constructors
 		TtsSpan_TimeBuilder();

@@ -31,7 +31,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextClassification(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassification(QAndroidJniObject obj);
+		TextClassification(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

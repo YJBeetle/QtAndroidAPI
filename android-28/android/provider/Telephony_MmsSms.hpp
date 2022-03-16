@@ -35,7 +35,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_MmsSms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_MmsSms(QAndroidJniObject obj);
+		Telephony_MmsSms(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -21,7 +21,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Fragment_SavedState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Fragment_SavedState(QAndroidJniObject obj);
+		Fragment_SavedState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -66,9 +66,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DayOfWeek::DayOfWeek(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

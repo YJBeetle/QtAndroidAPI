@@ -23,7 +23,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessControlContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlContext(QAndroidJniObject obj);
+		AccessControlContext(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessControlContext(JArray arg0);

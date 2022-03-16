@@ -38,9 +38,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MeasureFormat_FormatWidth::MeasureFormat_FormatWidth(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -6,9 +6,6 @@ namespace android::accounts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AuthenticatorException::AuthenticatorException(QAndroidJniObject obj) : android::accounts::AccountsException(obj) {}
-	
 	// Constructors
 	AuthenticatorException::AuthenticatorException()
 		: android::accounts::AccountsException(

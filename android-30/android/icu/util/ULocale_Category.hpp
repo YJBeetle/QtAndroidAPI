@@ -16,7 +16,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ULocale_Category(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale_Category(QAndroidJniObject obj);
+		ULocale_Category(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

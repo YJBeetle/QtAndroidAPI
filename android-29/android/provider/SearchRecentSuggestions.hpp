@@ -28,7 +28,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchRecentSuggestions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchRecentSuggestions(QAndroidJniObject obj);
+		SearchRecentSuggestions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SearchRecentSuggestions(android::content::Context arg0, JString arg1, jint arg2);

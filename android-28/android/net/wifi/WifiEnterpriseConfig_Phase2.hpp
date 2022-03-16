@@ -19,7 +19,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiEnterpriseConfig_Phase2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig_Phase2(QAndroidJniObject obj);
+		WifiEnterpriseConfig_Phase2(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

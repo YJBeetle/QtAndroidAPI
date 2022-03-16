@@ -32,9 +32,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationErrorReport_BatteryInfo::ApplicationErrorReport_BatteryInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ApplicationErrorReport_BatteryInfo::ApplicationErrorReport_BatteryInfo()
 		: JObject(

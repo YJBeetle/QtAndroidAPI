@@ -24,7 +24,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CryptoPrimitive(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CryptoPrimitive(QAndroidJniObject obj);
+		CryptoPrimitive(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

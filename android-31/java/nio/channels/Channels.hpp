@@ -45,7 +45,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Channels(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Channels(QAndroidJniObject obj);
+		Channels(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

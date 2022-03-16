@@ -23,7 +23,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GenericDocument_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GenericDocument_Builder(QAndroidJniObject obj);
+		GenericDocument_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GenericDocument_Builder(JString arg0, JString arg1, JString arg2);

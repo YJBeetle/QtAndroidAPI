@@ -56,9 +56,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DhcpInfo::DhcpInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DhcpInfo::DhcpInfo()
 		: JObject(

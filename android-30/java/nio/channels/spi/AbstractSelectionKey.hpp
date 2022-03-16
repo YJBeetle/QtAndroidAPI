@@ -11,7 +11,7 @@ namespace java::nio::channels::spi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractSelectionKey(const char *className, const char *sig, Ts...agv) : java::nio::channels::SelectionKey(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSelectionKey(QAndroidJniObject obj);
+		AbstractSelectionKey(QAndroidJniObject obj) : java::nio::channels::SelectionKey(obj) {}
 		
 		// Constructors
 		

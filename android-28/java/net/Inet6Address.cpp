@@ -11,9 +11,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Inet6Address::Inet6Address(QAndroidJniObject obj) : java::net::InetAddress(obj) {}
-	
 	// Constructors
 	
 	// Methods

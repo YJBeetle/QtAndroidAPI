@@ -57,9 +57,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Contacts_Phones::Contacts_Phones(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

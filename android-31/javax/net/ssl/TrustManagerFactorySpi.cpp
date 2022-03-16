@@ -6,9 +6,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TrustManagerFactorySpi::TrustManagerFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TrustManagerFactorySpi::TrustManagerFactorySpi()
 		: JObject(

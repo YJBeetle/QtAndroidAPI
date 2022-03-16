@@ -6,9 +6,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParsePosition::ParsePosition(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ParsePosition::ParsePosition(jint arg0)
 		: JObject(

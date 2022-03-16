@@ -10,9 +10,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Binder::Binder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Binder::Binder()
 		: JObject(

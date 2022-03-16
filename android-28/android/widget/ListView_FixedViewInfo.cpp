@@ -27,9 +27,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ListView_FixedViewInfo::ListView_FixedViewInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ListView_FixedViewInfo::ListView_FixedViewInfo(android::widget::ListView arg0)
 		: JObject(

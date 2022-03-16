@@ -25,9 +25,6 @@ namespace android::speech::tts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo()
 		: JObject(

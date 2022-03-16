@@ -29,7 +29,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StateListDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableContainer(className, sig, std::forward<Ts>(agv)...) {}
-		StateListDrawable(QAndroidJniObject obj);
+		StateListDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableContainer(obj) {}
 		
 		// Constructors
 		StateListDrawable();

@@ -18,9 +18,6 @@ namespace org::json
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JSONObject::JSONObject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	JSONObject::JSONObject()
 		: JObject(

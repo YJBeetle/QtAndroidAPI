@@ -6,9 +6,6 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppSearchSchema_DoublePropertyConfig_Builder::AppSearchSchema_DoublePropertyConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AppSearchSchema_DoublePropertyConfig_Builder::AppSearchSchema_DoublePropertyConfig_Builder(JString arg0)
 		: JObject(

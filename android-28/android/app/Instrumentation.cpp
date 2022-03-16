@@ -42,9 +42,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Instrumentation::Instrumentation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Instrumentation::Instrumentation()
 		: JObject(

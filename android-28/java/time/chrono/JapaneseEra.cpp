@@ -53,9 +53,6 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JapaneseEra::JapaneseEra(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

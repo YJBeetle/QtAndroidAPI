@@ -7,9 +7,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatagramPacket::DatagramPacket(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DatagramPacket::DatagramPacket(JByteArray arg0, jint arg1)
 		: JObject(

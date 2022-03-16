@@ -13,9 +13,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncRequest::SyncRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

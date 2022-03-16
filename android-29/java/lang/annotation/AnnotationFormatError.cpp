@@ -6,9 +6,6 @@ namespace java::lang::annotation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnnotationFormatError::AnnotationFormatError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-	
 	// Constructors
 	AnnotationFormatError::AnnotationFormatError(JString arg0)
 		: java::lang::Error(

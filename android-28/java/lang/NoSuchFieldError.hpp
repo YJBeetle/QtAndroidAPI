@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NoSuchFieldError(const char *className, const char *sig, Ts...agv) : java::lang::IncompatibleClassChangeError(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchFieldError(QAndroidJniObject obj);
+		NoSuchFieldError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
 		
 		// Constructors
 		NoSuchFieldError();

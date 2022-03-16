@@ -21,7 +21,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContextParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContextParams_Builder(QAndroidJniObject obj);
+		ContextParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContextParams_Builder();

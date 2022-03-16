@@ -13,9 +13,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Currency::Currency(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

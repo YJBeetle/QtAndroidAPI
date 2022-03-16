@@ -4,9 +4,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MaskFilter::MaskFilter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MaskFilter::MaskFilter()
 		: JObject(

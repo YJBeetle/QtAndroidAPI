@@ -16,9 +16,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Xml::Xml(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

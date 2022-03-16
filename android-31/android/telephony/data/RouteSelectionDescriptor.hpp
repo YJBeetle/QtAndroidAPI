@@ -25,7 +25,7 @@ namespace android::telephony::data
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RouteSelectionDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RouteSelectionDescriptor(QAndroidJniObject obj);
+		RouteSelectionDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

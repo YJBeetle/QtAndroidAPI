@@ -894,9 +894,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WindowManager_LayoutParams::WindowManager_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
-	
 	// Constructors
 	WindowManager_LayoutParams::WindowManager_LayoutParams()
 		: android::view::ViewGroup_LayoutParams(

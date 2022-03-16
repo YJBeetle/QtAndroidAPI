@@ -11,9 +11,6 @@ namespace android::telecom
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PhoneAccount_Builder::PhoneAccount_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccount arg0)
 		: JObject(

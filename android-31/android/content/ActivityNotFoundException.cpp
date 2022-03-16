@@ -5,9 +5,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActivityNotFoundException::ActivityNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	ActivityNotFoundException::ActivityNotFoundException()
 		: java::lang::RuntimeException(

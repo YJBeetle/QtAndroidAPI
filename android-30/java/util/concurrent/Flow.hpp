@@ -11,7 +11,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Flow(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Flow(QAndroidJniObject obj);
+		Flow(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

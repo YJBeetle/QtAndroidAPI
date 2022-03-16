@@ -11,7 +11,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Spliterators_AbstractLongSpliterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Spliterators_AbstractLongSpliterator(QAndroidJniObject obj);
+		Spliterators_AbstractLongSpliterator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -33,7 +33,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Path(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Path(QAndroidJniObject obj);
+		Path(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Path();

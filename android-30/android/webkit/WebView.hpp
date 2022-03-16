@@ -160,7 +160,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebView(const char *className, const char *sig, Ts...agv) : android::widget::AbsoluteLayout(className, sig, std::forward<Ts>(agv)...) {}
-		WebView(QAndroidJniObject obj);
+		WebView(QAndroidJniObject obj) : android::widget::AbsoluteLayout(obj) {}
 		
 		// Constructors
 		WebView(android::content::Context arg0);

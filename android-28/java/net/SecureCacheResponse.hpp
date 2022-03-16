@@ -17,7 +17,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecureCacheResponse(const char *className, const char *sig, Ts...agv) : java::net::CacheResponse(className, sig, std::forward<Ts>(agv)...) {}
-		SecureCacheResponse(QAndroidJniObject obj);
+		SecureCacheResponse(QAndroidJniObject obj) : java::net::CacheResponse(obj) {}
 		
 		// Constructors
 		SecureCacheResponse();

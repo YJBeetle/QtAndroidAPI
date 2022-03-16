@@ -18,7 +18,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PKIXRevocationChecker_Option(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXRevocationChecker_Option(QAndroidJniObject obj);
+		PKIXRevocationChecker_Option(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

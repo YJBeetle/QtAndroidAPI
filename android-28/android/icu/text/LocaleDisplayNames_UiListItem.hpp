@@ -22,7 +22,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleDisplayNames_UiListItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleDisplayNames_UiListItem(QAndroidJniObject obj);
+		LocaleDisplayNames_UiListItem(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, JString arg2, JString arg3);

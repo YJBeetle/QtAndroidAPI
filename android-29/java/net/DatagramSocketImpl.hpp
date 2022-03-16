@@ -33,7 +33,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatagramSocketImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatagramSocketImpl(QAndroidJniObject obj);
+		DatagramSocketImpl(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DatagramSocketImpl();

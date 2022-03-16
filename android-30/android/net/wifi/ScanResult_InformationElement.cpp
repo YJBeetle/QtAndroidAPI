@@ -5,9 +5,6 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScanResult_InformationElement::ScanResult_InformationElement(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ScanResult_InformationElement::ScanResult_InformationElement(android::net::wifi::ScanResult_InformationElement &arg0)
 		: JObject(

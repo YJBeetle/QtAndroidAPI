@@ -20,7 +20,7 @@ namespace android::telephony::ims
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RegistrationManager_RegistrationCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RegistrationManager_RegistrationCallback(QAndroidJniObject obj);
+		RegistrationManager_RegistrationCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RegistrationManager_RegistrationCallback();

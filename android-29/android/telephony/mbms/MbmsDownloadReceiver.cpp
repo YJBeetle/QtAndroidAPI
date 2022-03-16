@@ -6,9 +6,6 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MbmsDownloadReceiver::MbmsDownloadReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
-	
 	// Constructors
 	MbmsDownloadReceiver::MbmsDownloadReceiver()
 		: android::content::BroadcastReceiver(

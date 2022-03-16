@@ -66,9 +66,6 @@ namespace android::graphics::drawable
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GradientDrawable::GradientDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
-	
 	// Constructors
 	GradientDrawable::GradientDrawable()
 		: android::graphics::drawable::Drawable(

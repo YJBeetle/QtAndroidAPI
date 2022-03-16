@@ -37,9 +37,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActivityManager_MemoryInfo::ActivityManager_MemoryInfo()
 		: JObject(

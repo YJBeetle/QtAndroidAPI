@@ -16,7 +16,7 @@ namespace android::accessibilityservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityButtonController_AccessibilityButtonCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityButtonController_AccessibilityButtonCallback(QAndroidJniObject obj);
+		AccessibilityButtonController_AccessibilityButtonCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityButtonController_AccessibilityButtonCallback();

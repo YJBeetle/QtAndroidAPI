@@ -17,7 +17,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FontsContract_FontInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontsContract_FontInfo(QAndroidJniObject obj);
+		FontsContract_FontInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

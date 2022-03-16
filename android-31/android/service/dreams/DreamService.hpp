@@ -64,7 +64,7 @@ namespace android::service::dreams
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DreamService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		DreamService(QAndroidJniObject obj);
+		DreamService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		DreamService();

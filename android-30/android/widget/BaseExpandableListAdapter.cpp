@@ -5,9 +5,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseExpandableListAdapter::BaseExpandableListAdapter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BaseExpandableListAdapter::BaseExpandableListAdapter()
 		: JObject(

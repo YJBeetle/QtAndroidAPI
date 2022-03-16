@@ -12,9 +12,6 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Font_Builder::Font_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Font_Builder::Font_Builder(android::graphics::fonts::Font arg0)
 		: JObject(

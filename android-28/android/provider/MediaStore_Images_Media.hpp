@@ -30,7 +30,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Images_Media(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Images_Media(QAndroidJniObject obj);
+		MediaStore_Images_Media(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaStore_Images_Media();

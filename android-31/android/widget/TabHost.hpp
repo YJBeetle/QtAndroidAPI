@@ -42,7 +42,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TabHost(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		TabHost(QAndroidJniObject obj);
+		TabHost(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
 		
 		// Constructors
 		TabHost(android::content::Context arg0);

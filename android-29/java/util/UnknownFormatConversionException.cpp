@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnknownFormatConversionException::UnknownFormatConversionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
-	
 	// Constructors
 	UnknownFormatConversionException::UnknownFormatConversionException(JString arg0)
 		: java::util::IllegalFormatException(

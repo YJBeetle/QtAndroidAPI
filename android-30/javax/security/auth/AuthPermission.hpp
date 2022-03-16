@@ -13,7 +13,7 @@ namespace javax::security::auth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AuthPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		AuthPermission(QAndroidJniObject obj);
+		AuthPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 		
 		// Constructors
 		AuthPermission(JString arg0);

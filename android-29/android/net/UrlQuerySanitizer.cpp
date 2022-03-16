@@ -6,9 +6,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UrlQuerySanitizer::UrlQuerySanitizer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UrlQuerySanitizer::UrlQuerySanitizer()
 		: JObject(

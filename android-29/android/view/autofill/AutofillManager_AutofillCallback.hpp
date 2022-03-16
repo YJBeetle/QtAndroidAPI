@@ -19,7 +19,7 @@ namespace android::view::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AutofillManager_AutofillCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AutofillManager_AutofillCallback(QAndroidJniObject obj);
+		AutofillManager_AutofillCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AutofillManager_AutofillCallback();

@@ -6,9 +6,6 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PBEKeySpec::PBEKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PBEKeySpec::PBEKeySpec(JCharArray arg0)
 		: JObject(

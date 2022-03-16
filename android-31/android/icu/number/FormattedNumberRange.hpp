@@ -27,7 +27,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FormattedNumberRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FormattedNumberRange(QAndroidJniObject obj);
+		FormattedNumberRange(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -77,7 +77,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocationManager(QAndroidJniObject obj);
+		LocationManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

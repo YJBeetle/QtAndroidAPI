@@ -27,7 +27,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SoftApConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SoftApConfiguration(QAndroidJniObject obj);
+		SoftApConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

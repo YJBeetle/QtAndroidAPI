@@ -11,9 +11,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayBlockingQueue::ArrayBlockingQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
-	
 	// Constructors
 	ArrayBlockingQueue::ArrayBlockingQueue(jint arg0)
 		: java::util::AbstractQueue(

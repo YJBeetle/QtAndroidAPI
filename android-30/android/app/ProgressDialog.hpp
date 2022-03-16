@@ -32,7 +32,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProgressDialog(const char *className, const char *sig, Ts...agv) : android::app::AlertDialog(className, sig, std::forward<Ts>(agv)...) {}
-		ProgressDialog(QAndroidJniObject obj);
+		ProgressDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
 		
 		// Constructors
 		ProgressDialog(android::content::Context arg0);

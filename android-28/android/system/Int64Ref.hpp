@@ -12,7 +12,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Int64Ref(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Int64Ref(QAndroidJniObject obj);
+		Int64Ref(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Int64Ref(jlong arg0);

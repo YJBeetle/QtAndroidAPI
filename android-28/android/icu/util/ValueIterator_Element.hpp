@@ -15,7 +15,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ValueIterator_Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ValueIterator_Element(QAndroidJniObject obj);
+		ValueIterator_Element(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ValueIterator_Element();

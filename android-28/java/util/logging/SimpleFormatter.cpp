@@ -6,9 +6,6 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleFormatter::SimpleFormatter(QAndroidJniObject obj) : java::util::logging::Formatter(obj) {}
-	
 	// Constructors
 	SimpleFormatter::SimpleFormatter()
 		: java::util::logging::Formatter(

@@ -201,9 +201,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioTrack::AudioTrack(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AudioTrack::AudioTrack(android::media::AudioAttributes arg0, android::media::AudioFormat arg1, jint arg2, jint arg3, jint arg4)
 		: JObject(

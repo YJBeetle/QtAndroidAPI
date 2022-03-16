@@ -33,7 +33,7 @@ namespace android::speech::tts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Voice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Voice(QAndroidJniObject obj);
+		Voice(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Voice(JString arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5);

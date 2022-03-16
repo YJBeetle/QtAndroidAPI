@@ -11,7 +11,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Debug_InstructionCount(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Debug_InstructionCount(QAndroidJniObject obj);
+		Debug_InstructionCount(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Debug_InstructionCount();

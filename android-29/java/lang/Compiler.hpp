@@ -15,7 +15,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Compiler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Compiler(QAndroidJniObject obj);
+		Compiler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

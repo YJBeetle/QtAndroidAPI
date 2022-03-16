@@ -15,9 +15,6 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CollationElementIterator::CollationElementIterator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

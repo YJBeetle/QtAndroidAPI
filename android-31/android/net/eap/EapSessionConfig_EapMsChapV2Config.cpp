@@ -6,9 +6,6 @@ namespace android::net::eap
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EapSessionConfig_EapMsChapV2Config::EapSessionConfig_EapMsChapV2Config(QAndroidJniObject obj) : android::net::eap::EapSessionConfig_EapMethodConfig(obj) {}
-	
 	// Constructors
 	
 	// Methods

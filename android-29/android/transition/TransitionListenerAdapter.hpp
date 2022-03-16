@@ -16,7 +16,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransitionListenerAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionListenerAdapter(QAndroidJniObject obj);
+		TransitionListenerAdapter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TransitionListenerAdapter();

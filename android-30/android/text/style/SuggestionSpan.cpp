@@ -80,9 +80,6 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SuggestionSpan::SuggestionSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
-	
 	// Constructors
 	SuggestionSpan::SuggestionSpan(android::os::Parcel arg0)
 		: android::text::style::CharacterStyle(

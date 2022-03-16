@@ -4,9 +4,6 @@ namespace java::util::stream
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StreamSupport::StreamSupport(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

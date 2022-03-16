@@ -13,7 +13,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ArgbEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ArgbEvaluator(QAndroidJniObject obj);
+		ArgbEvaluator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ArgbEvaluator();

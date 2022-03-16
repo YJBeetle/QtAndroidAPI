@@ -14,7 +14,7 @@ namespace android::speech::tts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UtteranceProgressListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UtteranceProgressListener(QAndroidJniObject obj);
+		UtteranceProgressListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UtteranceProgressListener();

@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalAccessError::IllegalAccessError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
-	
 	// Constructors
 	IllegalAccessError::IllegalAccessError()
 		: java::lang::IncompatibleClassChangeError(

@@ -24,7 +24,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IccOpenLogicalChannelResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IccOpenLogicalChannelResponse(QAndroidJniObject obj);
+		IccOpenLogicalChannelResponse(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

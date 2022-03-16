@@ -14,9 +14,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatagramSocket::DatagramSocket(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DatagramSocket::DatagramSocket()
 		: JObject(

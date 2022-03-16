@@ -35,7 +35,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ArrayAdapter(const char *className, const char *sig, Ts...agv) : android::widget::BaseAdapter(className, sig, std::forward<Ts>(agv)...) {}
-		ArrayAdapter(QAndroidJniObject obj);
+		ArrayAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
 		
 		// Constructors
 		ArrayAdapter(android::content::Context arg0, jint arg1);

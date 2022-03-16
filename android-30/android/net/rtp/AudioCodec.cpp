@@ -66,9 +66,6 @@ namespace android::net::rtp
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioCodec::AudioCodec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

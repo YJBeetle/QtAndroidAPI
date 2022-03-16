@@ -23,7 +23,7 @@ namespace android::view::textservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SentenceSuggestionsInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SentenceSuggestionsInfo(QAndroidJniObject obj);
+		SentenceSuggestionsInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SentenceSuggestionsInfo(android::os::Parcel arg0);

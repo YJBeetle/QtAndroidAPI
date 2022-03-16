@@ -31,7 +31,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OutputStreamWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
-		OutputStreamWriter(QAndroidJniObject obj);
+		OutputStreamWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
 		
 		// Constructors
 		OutputStreamWriter(java::io::OutputStream arg0);

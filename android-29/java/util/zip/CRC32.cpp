@@ -6,9 +6,6 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CRC32::CRC32(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CRC32::CRC32()
 		: JObject(

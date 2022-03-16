@@ -325,7 +325,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Character_UnicodeBlock(const char *className, const char *sig, Ts...agv) : java::lang::Character_Subset(className, sig, std::forward<Ts>(agv)...) {}
-		Character_UnicodeBlock(QAndroidJniObject obj);
+		Character_UnicodeBlock(QAndroidJniObject obj) : java::lang::Character_Subset(obj) {}
 		
 		// Constructors
 		

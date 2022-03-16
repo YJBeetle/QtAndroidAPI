@@ -33,9 +33,6 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ETC1::ETC1(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ETC1::ETC1()
 		: JObject(

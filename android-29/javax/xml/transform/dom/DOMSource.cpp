@@ -13,9 +13,6 @@ namespace javax::xml::transform::dom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DOMSource::DOMSource(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DOMSource::DOMSource()
 		: JObject(

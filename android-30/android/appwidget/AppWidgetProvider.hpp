@@ -29,7 +29,7 @@ namespace android::appwidget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppWidgetProvider(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		AppWidgetProvider(QAndroidJniObject obj);
+		AppWidgetProvider(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
 		
 		// Constructors
 		AppWidgetProvider();

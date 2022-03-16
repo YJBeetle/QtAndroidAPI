@@ -11,7 +11,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeadSystemException(const char *className, const char *sig, Ts...agv) : android::os::DeadObjectException(className, sig, std::forward<Ts>(agv)...) {}
-		DeadSystemException(QAndroidJniObject obj);
+		DeadSystemException(QAndroidJniObject obj) : android::os::DeadObjectException(obj) {}
 		
 		// Constructors
 		DeadSystemException();

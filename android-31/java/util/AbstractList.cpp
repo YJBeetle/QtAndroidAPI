@@ -6,9 +6,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractList::AbstractList(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
-	
 	// Constructors
 	
 	// Methods

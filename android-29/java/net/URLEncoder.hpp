@@ -21,7 +21,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URLEncoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLEncoder(QAndroidJniObject obj);
+		URLEncoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

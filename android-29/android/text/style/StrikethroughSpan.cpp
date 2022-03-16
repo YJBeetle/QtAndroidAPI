@@ -6,9 +6,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StrikethroughSpan::StrikethroughSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
-	
 	// Constructors
 	StrikethroughSpan::StrikethroughSpan()
 		: android::text::style::CharacterStyle(

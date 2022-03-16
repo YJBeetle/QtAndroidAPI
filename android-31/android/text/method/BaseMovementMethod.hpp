@@ -24,7 +24,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BaseMovementMethod(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BaseMovementMethod(QAndroidJniObject obj);
+		BaseMovementMethod(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BaseMovementMethod();

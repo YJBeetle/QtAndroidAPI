@@ -20,7 +20,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalizedNumberRangeFormatter(const char *className, const char *sig, Ts...agv) : android::icu::number::NumberRangeFormatterSettings(className, sig, std::forward<Ts>(agv)...) {}
-		LocalizedNumberRangeFormatter(QAndroidJniObject obj);
+		LocalizedNumberRangeFormatter(QAndroidJniObject obj) : android::icu::number::NumberRangeFormatterSettings(obj) {}
 		
 		// Constructors
 		

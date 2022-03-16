@@ -23,7 +23,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ObbInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ObbInfo(QAndroidJniObject obj);
+		ObbInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

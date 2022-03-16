@@ -23,9 +23,6 @@ namespace java::util::zip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZipEntry::ZipEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ZipEntry::ZipEntry(JString arg0)
 		: JObject(

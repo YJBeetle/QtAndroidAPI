@@ -35,7 +35,7 @@ namespace java::util::prefs
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractPreferences(const char *className, const char *sig, Ts...agv) : java::util::prefs::Preferences(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractPreferences(QAndroidJniObject obj);
+		AbstractPreferences(QAndroidJniObject obj) : java::util::prefs::Preferences(obj) {}
 		
 		// Constructors
 		

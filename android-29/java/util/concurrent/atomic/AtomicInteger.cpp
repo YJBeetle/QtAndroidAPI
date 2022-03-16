@@ -5,9 +5,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicInteger::AtomicInteger(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	AtomicInteger::AtomicInteger()
 		: java::lang::Number(

@@ -7,9 +7,6 @@ namespace android::service::voice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractionSession_CompleteVoiceRequest::VoiceInteractionSession_CompleteVoiceRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
-	
 	// Constructors
 	
 	// Methods

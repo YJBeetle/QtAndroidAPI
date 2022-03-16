@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PopupMenu::PopupMenu(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PopupMenu::PopupMenu(android::content::Context arg0, android::view::View arg1)
 		: JObject(

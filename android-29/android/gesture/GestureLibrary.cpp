@@ -8,9 +8,6 @@ namespace android::gesture
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GestureLibrary::GestureLibrary(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -13,7 +13,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Float2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Float2(QAndroidJniObject obj);
+		Float2(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Float2();

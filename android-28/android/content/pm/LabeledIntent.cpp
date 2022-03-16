@@ -18,9 +18,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LabeledIntent::LabeledIntent(QAndroidJniObject obj) : android::content::Intent(obj) {}
-	
 	// Constructors
 	LabeledIntent::LabeledIntent(JString arg0, jint arg1, jint arg2)
 		: android::content::Intent(

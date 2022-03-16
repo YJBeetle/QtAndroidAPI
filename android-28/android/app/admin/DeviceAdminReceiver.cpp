@@ -139,9 +139,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DeviceAdminReceiver::DeviceAdminReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
-	
 	// Constructors
 	DeviceAdminReceiver::DeviceAdminReceiver()
 		: android::content::BroadcastReceiver(

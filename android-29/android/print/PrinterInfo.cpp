@@ -38,9 +38,6 @@ namespace android::print
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PrinterInfo::PrinterInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

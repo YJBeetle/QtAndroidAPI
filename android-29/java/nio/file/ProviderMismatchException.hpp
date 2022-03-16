@@ -13,7 +13,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProviderMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderMismatchException(QAndroidJniObject obj);
+		ProviderMismatchException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
 		
 		// Constructors
 		ProviderMismatchException();

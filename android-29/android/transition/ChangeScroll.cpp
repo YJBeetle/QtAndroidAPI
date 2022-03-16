@@ -9,9 +9,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChangeScroll::ChangeScroll(QAndroidJniObject obj) : android::transition::Transition(obj) {}
-	
 	// Constructors
 	ChangeScroll::ChangeScroll()
 		: android::transition::Transition(

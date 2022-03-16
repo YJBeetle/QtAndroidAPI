@@ -27,7 +27,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Loader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Loader(QAndroidJniObject obj);
+		Loader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Loader(android::content::Context arg0);

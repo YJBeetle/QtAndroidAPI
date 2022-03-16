@@ -20,7 +20,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioFocusRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioFocusRequest(QAndroidJniObject obj);
+		AudioFocusRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

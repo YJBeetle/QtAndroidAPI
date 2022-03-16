@@ -44,7 +44,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Charset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Charset(QAndroidJniObject obj);
+		Charset(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

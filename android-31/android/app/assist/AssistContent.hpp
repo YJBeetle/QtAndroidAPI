@@ -34,7 +34,7 @@ namespace android::app::assist
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssistContent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssistContent(QAndroidJniObject obj);
+		AssistContent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AssistContent();

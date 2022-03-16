@@ -30,7 +30,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaSession2Service(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession2Service(QAndroidJniObject obj);
+		MediaSession2Service(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		MediaSession2Service();

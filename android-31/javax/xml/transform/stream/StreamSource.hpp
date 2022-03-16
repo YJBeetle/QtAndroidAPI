@@ -26,7 +26,7 @@ namespace javax::xml::transform::stream
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StreamSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamSource(QAndroidJniObject obj);
+		StreamSource(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StreamSource();

@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder()
 		: JObject(

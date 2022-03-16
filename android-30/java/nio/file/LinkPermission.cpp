@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LinkPermission::LinkPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-	
 	// Constructors
 	LinkPermission::LinkPermission(JString arg0)
 		: java::security::BasicPermission(

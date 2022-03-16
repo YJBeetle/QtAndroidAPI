@@ -17,7 +17,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyguardManager_KeyguardLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyguardManager_KeyguardLock(QAndroidJniObject obj);
+		KeyguardManager_KeyguardLock(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

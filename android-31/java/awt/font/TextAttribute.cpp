@@ -481,9 +481,6 @@ namespace java::awt::font
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextAttribute::TextAttribute(QAndroidJniObject obj) : java::text::AttributedCharacterIterator_Attribute(obj) {}
-	
 	// Constructors
 	
 	// Methods

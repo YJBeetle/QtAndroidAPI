@@ -19,9 +19,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LinkProperties::LinkProperties(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LinkProperties::LinkProperties()
 		: JObject(

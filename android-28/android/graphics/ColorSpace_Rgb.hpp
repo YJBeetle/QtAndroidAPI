@@ -19,7 +19,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Rgb(const char *className, const char *sig, Ts...agv) : android::graphics::ColorSpace(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Rgb(QAndroidJniObject obj);
+		ColorSpace_Rgb(QAndroidJniObject obj) : android::graphics::ColorSpace(obj) {}
 		
 		// Constructors
 		ColorSpace_Rgb(JString arg0, JFloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2);

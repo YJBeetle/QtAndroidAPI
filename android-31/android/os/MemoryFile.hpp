@@ -22,7 +22,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MemoryFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MemoryFile(QAndroidJniObject obj);
+		MemoryFile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MemoryFile(JString arg0, jint arg1);

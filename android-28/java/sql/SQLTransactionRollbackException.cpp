@@ -6,9 +6,6 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLTransactionRollbackException::SQLTransactionRollbackException(QAndroidJniObject obj) : java::sql::SQLTransientException(obj) {}
-	
 	// Constructors
 	SQLTransactionRollbackException::SQLTransactionRollbackException()
 		: java::sql::SQLTransientException(

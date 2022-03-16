@@ -33,7 +33,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CellInfo(QAndroidJniObject obj);
+		CellInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

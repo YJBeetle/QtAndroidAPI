@@ -7,9 +7,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScaleGestureDetector::ScaleGestureDetector(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, JObject arg1)
 		: JObject(

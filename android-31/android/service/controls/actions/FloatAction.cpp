@@ -5,9 +5,6 @@ namespace android::service::controls::actions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FloatAction::FloatAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-	
 	// Constructors
 	FloatAction::FloatAction(JString arg0, jfloat arg1)
 		: android::service::controls::actions::ControlAction(

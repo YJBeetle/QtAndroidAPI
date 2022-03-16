@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Dictionary(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Dictionary(QAndroidJniObject obj);
+		Dictionary(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Dictionary();

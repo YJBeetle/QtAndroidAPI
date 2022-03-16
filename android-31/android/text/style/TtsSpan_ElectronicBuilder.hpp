@@ -13,7 +13,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TtsSpan_ElectronicBuilder(const char *className, const char *sig, Ts...agv) : android::text::style::TtsSpan_SemioticClassBuilder(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan_ElectronicBuilder(QAndroidJniObject obj);
+		TtsSpan_ElectronicBuilder(QAndroidJniObject obj) : android::text::style::TtsSpan_SemioticClassBuilder(obj) {}
 		
 		// Constructors
 		TtsSpan_ElectronicBuilder();

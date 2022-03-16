@@ -5,9 +5,6 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Matrix::Matrix(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Matrix::Matrix()
 		: JObject(

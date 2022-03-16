@@ -95,9 +95,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WallpaperManager::WallpaperManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

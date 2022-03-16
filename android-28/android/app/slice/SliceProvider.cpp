@@ -23,9 +23,6 @@ namespace android::app::slice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SliceProvider::SliceProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
-	
 	// Constructors
 	SliceProvider::SliceProvider()
 		: android::content::ContentProvider(

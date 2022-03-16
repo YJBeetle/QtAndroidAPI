@@ -14,7 +14,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OisSample(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OisSample(QAndroidJniObject obj);
+		OisSample(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		OisSample(jlong arg0, jfloat arg1, jfloat arg2);

@@ -467,9 +467,6 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Sensor::Sensor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -31,7 +31,7 @@ namespace android::net::wifi::rtt
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RangingResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RangingResult(QAndroidJniObject obj);
+		RangingResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

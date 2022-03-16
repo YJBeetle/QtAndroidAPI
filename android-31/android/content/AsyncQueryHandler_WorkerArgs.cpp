@@ -73,9 +73,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AsyncQueryHandler_WorkerArgs::AsyncQueryHandler_WorkerArgs(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

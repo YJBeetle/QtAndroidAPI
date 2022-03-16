@@ -6,9 +6,6 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessibilityService_MagnificationController::AccessibilityService_MagnificationController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

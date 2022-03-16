@@ -24,9 +24,6 @@ namespace android::media::tv
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TvInputService::TvInputService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	TvInputService::TvInputService()
 		: android::app::Service(

@@ -49,7 +49,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentValues(QAndroidJniObject obj);
+		ContentValues(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentValues();

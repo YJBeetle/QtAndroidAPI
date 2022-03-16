@@ -26,7 +26,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Messenger(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Messenger(QAndroidJniObject obj);
+		Messenger(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Messenger(android::os::Handler arg0);

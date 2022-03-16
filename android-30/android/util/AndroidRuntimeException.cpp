@@ -7,9 +7,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AndroidRuntimeException::AndroidRuntimeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	AndroidRuntimeException::AndroidRuntimeException()
 		: java::lang::RuntimeException(

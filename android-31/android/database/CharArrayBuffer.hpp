@@ -15,7 +15,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CharArrayBuffer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharArrayBuffer(QAndroidJniObject obj);
+		CharArrayBuffer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CharArrayBuffer(JCharArray arg0);

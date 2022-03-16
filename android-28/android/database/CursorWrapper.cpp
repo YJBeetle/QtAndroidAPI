@@ -13,9 +13,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CursorWrapper::CursorWrapper(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CursorWrapper::CursorWrapper(JObject arg0)
 		: JObject(

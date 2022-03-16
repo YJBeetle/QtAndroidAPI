@@ -5,9 +5,6 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IvParameterSpec::IvParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IvParameterSpec::IvParameterSpec(JByteArray arg0)
 		: JObject(

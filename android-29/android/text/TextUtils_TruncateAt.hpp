@@ -18,7 +18,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextUtils_TruncateAt(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TextUtils_TruncateAt(QAndroidJniObject obj);
+		TextUtils_TruncateAt(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

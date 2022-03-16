@@ -21,7 +21,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PipedReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
-		PipedReader(QAndroidJniObject obj);
+		PipedReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
 		
 		// Constructors
 		PipedReader();

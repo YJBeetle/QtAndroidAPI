@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DigitalClock(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		DigitalClock(QAndroidJniObject obj);
+		DigitalClock(QAndroidJniObject obj) : android::widget::TextView(obj) {}
 		
 		// Constructors
 		DigitalClock(android::content::Context arg0);

@@ -61,7 +61,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		TvView(QAndroidJniObject obj);
+		TvView(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
 		
 		// Constructors
 		TvView(android::content::Context arg0);

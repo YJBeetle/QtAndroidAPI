@@ -6,9 +6,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlignmentSpan_Standard::AlignmentSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AlignmentSpan_Standard::AlignmentSpan_Standard(android::os::Parcel arg0)
 		: JObject(

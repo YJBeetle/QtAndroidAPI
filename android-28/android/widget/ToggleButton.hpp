@@ -21,7 +21,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ToggleButton(const char *className, const char *sig, Ts...agv) : android::widget::CompoundButton(className, sig, std::forward<Ts>(agv)...) {}
-		ToggleButton(QAndroidJniObject obj);
+		ToggleButton(QAndroidJniObject obj) : android::widget::CompoundButton(obj) {}
 		
 		// Constructors
 		ToggleButton(android::content::Context arg0);

@@ -16,9 +16,6 @@ namespace android::view::displayhash
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VerifiedDisplayHash::VerifiedDisplayHash(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VerifiedDisplayHash::VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, JString arg2, JByteArray arg3)
 		: JObject(

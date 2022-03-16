@@ -22,7 +22,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReplacementTransformationMethod(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReplacementTransformationMethod(QAndroidJniObject obj);
+		ReplacementTransformationMethod(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ReplacementTransformationMethod();

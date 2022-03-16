@@ -13,7 +13,7 @@ namespace android::service::carrier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierMessagingService_SendMultipartSmsResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingService_SendMultipartSmsResult(QAndroidJniObject obj);
+		CarrierMessagingService_SendMultipartSmsResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CarrierMessagingService_SendMultipartSmsResult(jint arg0, JIntArray arg1);

@@ -19,7 +19,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_RunningServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj);
+		ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ApplicationErrorReport_RunningServiceInfo();

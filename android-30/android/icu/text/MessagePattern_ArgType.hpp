@@ -20,7 +20,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessagePattern_ArgType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern_ArgType(QAndroidJniObject obj);
+		MessagePattern_ArgType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -46,7 +46,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_Action(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_Action(QAndroidJniObject obj);
+		Notification_Action(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Notification_Action(jint arg0, JString arg1, android::app::PendingIntent arg2);

@@ -17,7 +17,7 @@ namespace android::service::carrier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessagePdu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePdu(QAndroidJniObject obj);
+		MessagePdu(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MessagePdu(JObject arg0);

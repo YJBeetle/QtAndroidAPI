@@ -15,9 +15,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SharedMemory::SharedMemory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -13,7 +13,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebStorage_Origin(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebStorage_Origin(QAndroidJniObject obj);
+		WebStorage_Origin(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

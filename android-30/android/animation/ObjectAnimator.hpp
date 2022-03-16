@@ -40,7 +40,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ObjectAnimator(const char *className, const char *sig, Ts...agv) : android::animation::ValueAnimator(className, sig, std::forward<Ts>(agv)...) {}
-		ObjectAnimator(QAndroidJniObject obj);
+		ObjectAnimator(QAndroidJniObject obj) : android::animation::ValueAnimator(obj) {}
 		
 		// Constructors
 		ObjectAnimator();

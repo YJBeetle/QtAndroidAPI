@@ -6,9 +6,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WritableIdentityCredential::WritableIdentityCredential(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

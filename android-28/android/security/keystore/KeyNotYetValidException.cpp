@@ -6,9 +6,6 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyNotYetValidException::KeyNotYetValidException(QAndroidJniObject obj) : java::security::InvalidKeyException(obj) {}
-	
 	// Constructors
 	KeyNotYetValidException::KeyNotYetValidException()
 		: java::security::InvalidKeyException(

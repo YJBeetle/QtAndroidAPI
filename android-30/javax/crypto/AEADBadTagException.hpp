@@ -13,7 +13,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AEADBadTagException(const char *className, const char *sig, Ts...agv) : javax::crypto::BadPaddingException(className, sig, std::forward<Ts>(agv)...) {}
-		AEADBadTagException(QAndroidJniObject obj);
+		AEADBadTagException(QAndroidJniObject obj) : javax::crypto::BadPaddingException(obj) {}
 		
 		// Constructors
 		AEADBadTagException();

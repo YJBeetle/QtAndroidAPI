@@ -256,9 +256,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BatteryManager::BatteryManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

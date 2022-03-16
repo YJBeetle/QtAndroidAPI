@@ -27,7 +27,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothSocket(QAndroidJniObject obj);
+		BluetoothSocket(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

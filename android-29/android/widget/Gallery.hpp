@@ -41,7 +41,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Gallery(const char *className, const char *sig, Ts...agv) : android::widget::AbsSpinner(className, sig, std::forward<Ts>(agv)...) {}
-		Gallery(QAndroidJniObject obj);
+		Gallery(QAndroidJniObject obj) : android::widget::AbsSpinner(obj) {}
 		
 		// Constructors
 		Gallery(android::content::Context arg0);

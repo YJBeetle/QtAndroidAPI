@@ -27,7 +27,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InetSocketAddress(const char *className, const char *sig, Ts...agv) : java::net::SocketAddress(className, sig, std::forward<Ts>(agv)...) {}
-		InetSocketAddress(QAndroidJniObject obj);
+		InetSocketAddress(QAndroidJniObject obj) : java::net::SocketAddress(obj) {}
 		
 		// Constructors
 		InetSocketAddress(jint arg0);

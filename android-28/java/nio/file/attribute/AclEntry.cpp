@@ -8,9 +8,6 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AclEntry::AclEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

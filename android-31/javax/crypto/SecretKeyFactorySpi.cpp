@@ -5,9 +5,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecretKeyFactorySpi::SecretKeyFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SecretKeyFactorySpi::SecretKeyFactorySpi()
 		: JObject(

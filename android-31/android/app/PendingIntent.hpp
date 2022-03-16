@@ -50,7 +50,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PendingIntent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PendingIntent(QAndroidJniObject obj);
+		PendingIntent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

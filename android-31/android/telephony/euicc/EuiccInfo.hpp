@@ -18,7 +18,7 @@ namespace android::telephony::euicc
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EuiccInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EuiccInfo(QAndroidJniObject obj);
+		EuiccInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EuiccInfo(JString arg0);

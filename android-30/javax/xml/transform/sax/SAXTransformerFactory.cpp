@@ -21,9 +21,6 @@ namespace javax::xml::transform::sax
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SAXTransformerFactory::SAXTransformerFactory(QAndroidJniObject obj) : javax::xml::transform::TransformerFactory(obj) {}
-	
 	// Constructors
 	
 	// Methods

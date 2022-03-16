@@ -9,9 +9,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ObjectStreamField::ObjectStreamField(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ObjectStreamField::ObjectStreamField(JString arg0, JClass arg1)
 		: JObject(

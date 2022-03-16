@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ComposePathEffect::ComposePathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-	
 	// Constructors
 	ComposePathEffect::ComposePathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1)
 		: android::graphics::PathEffect(

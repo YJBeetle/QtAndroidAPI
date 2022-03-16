@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaExtractor_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaExtractor_MetricsConstants(QAndroidJniObject obj);
+		MediaExtractor_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

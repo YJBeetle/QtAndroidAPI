@@ -20,7 +20,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MetricAffectingSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		MetricAffectingSpan(QAndroidJniObject obj);
+		MetricAffectingSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
 		
 		// Constructors
 		MetricAffectingSpan();

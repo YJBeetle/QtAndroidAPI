@@ -31,7 +31,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CursorLoader(const char *className, const char *sig, Ts...agv) : android::content::AsyncTaskLoader(className, sig, std::forward<Ts>(agv)...) {}
-		CursorLoader(QAndroidJniObject obj);
+		CursorLoader(QAndroidJniObject obj) : android::content::AsyncTaskLoader(obj) {}
 		
 		// Constructors
 		CursorLoader(android::content::Context arg0);

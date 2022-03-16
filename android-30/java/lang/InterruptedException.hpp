@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InterruptedException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		InterruptedException(QAndroidJniObject obj);
+		InterruptedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		InterruptedException();

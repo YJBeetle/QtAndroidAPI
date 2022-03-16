@@ -63,7 +63,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Properties(const char *className, const char *sig, Ts...agv) : java::util::Hashtable(className, sig, std::forward<Ts>(agv)...) {}
-		Properties(QAndroidJniObject obj);
+		Properties(QAndroidJniObject obj) : java::util::Hashtable(obj) {}
 		
 		// Constructors
 		Properties();

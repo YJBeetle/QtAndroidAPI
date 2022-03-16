@@ -56,9 +56,6 @@ namespace android::net::wifi::p2p
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiP2pConfig::WifiP2pConfig(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WifiP2pConfig::WifiP2pConfig()
 		: JObject(

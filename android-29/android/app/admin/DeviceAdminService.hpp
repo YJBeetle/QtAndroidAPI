@@ -16,7 +16,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeviceAdminService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceAdminService(QAndroidJniObject obj);
+		DeviceAdminService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		DeviceAdminService();

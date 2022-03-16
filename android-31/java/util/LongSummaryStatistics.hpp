@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LongSummaryStatistics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LongSummaryStatistics(QAndroidJniObject obj);
+		LongSummaryStatistics(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LongSummaryStatistics();

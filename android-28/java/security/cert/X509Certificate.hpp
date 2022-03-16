@@ -31,7 +31,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X509Certificate(const char *className, const char *sig, Ts...agv) : java::security::cert::Certificate(className, sig, std::forward<Ts>(agv)...) {}
-		X509Certificate(QAndroidJniObject obj);
+		X509Certificate(QAndroidJniObject obj) : java::security::cert::Certificate(obj) {}
 		
 		// Constructors
 		

@@ -39,9 +39,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	System::System(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

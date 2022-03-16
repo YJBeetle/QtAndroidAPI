@@ -16,7 +16,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringJoiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StringJoiner(QAndroidJniObject obj);
+		StringJoiner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StringJoiner(JString arg0);

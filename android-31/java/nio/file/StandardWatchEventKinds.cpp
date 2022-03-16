@@ -36,9 +36,6 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StandardWatchEventKinds::StandardWatchEventKinds(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MessageQueue::MessageQueue(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

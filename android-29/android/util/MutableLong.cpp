@@ -10,9 +10,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MutableLong::MutableLong(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MutableLong::MutableLong(jlong arg0)
 		: JObject(

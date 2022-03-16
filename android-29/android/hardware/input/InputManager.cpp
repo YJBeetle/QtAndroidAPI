@@ -24,9 +24,6 @@ namespace android::hardware::input
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputManager::InputManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -11,9 +11,6 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EditTextPreference::EditTextPreference(QAndroidJniObject obj) : android::preference::DialogPreference(obj) {}
-	
 	// Constructors
 	EditTextPreference::EditTextPreference(android::content::Context arg0)
 		: android::preference::DialogPreference(

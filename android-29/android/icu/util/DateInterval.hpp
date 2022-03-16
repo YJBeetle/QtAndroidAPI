@@ -14,7 +14,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateInterval(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateInterval(QAndroidJniObject obj);
+		DateInterval(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateInterval(jlong arg0, jlong arg1);

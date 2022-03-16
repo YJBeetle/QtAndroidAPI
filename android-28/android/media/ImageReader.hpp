@@ -24,7 +24,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageReader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImageReader(QAndroidJniObject obj);
+		ImageReader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

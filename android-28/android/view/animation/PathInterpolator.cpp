@@ -6,9 +6,6 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PathInterpolator::PathInterpolator(QAndroidJniObject obj) : android::view::animation::BaseInterpolator(obj) {}
-	
 	// Constructors
 	PathInterpolator::PathInterpolator(android::graphics::Path arg0)
 		: android::view::animation::BaseInterpolator(

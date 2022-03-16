@@ -7,9 +7,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FilterOutputStream::FilterOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
-	
 	// Constructors
 	FilterOutputStream::FilterOutputStream(java::io::OutputStream arg0)
 		: java::io::OutputStream(

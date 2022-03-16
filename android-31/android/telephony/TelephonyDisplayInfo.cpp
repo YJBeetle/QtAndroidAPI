@@ -57,9 +57,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TelephonyDisplayInfo::TelephonyDisplayInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

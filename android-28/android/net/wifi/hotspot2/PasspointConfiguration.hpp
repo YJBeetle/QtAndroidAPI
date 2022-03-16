@@ -27,7 +27,7 @@ namespace android::net::wifi::hotspot2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PasspointConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PasspointConfiguration(QAndroidJniObject obj);
+		PasspointConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PasspointConfiguration();

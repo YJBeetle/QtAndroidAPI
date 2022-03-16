@@ -19,7 +19,7 @@ namespace android::telephony::gsm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SmsMessage_MessageClass(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SmsMessage_MessageClass(QAndroidJniObject obj);
+		SmsMessage_MessageClass(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

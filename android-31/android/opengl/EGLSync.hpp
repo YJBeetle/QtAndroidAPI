@@ -13,7 +13,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EGLSync(const char *className, const char *sig, Ts...agv) : android::opengl::EGLObjectHandle(className, sig, std::forward<Ts>(agv)...) {}
-		EGLSync(QAndroidJniObject obj);
+		EGLSync(QAndroidJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
 		
 		// Constructors
 		

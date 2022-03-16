@@ -15,9 +15,6 @@ namespace android::net::wifi::rtt
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiRttManager::WifiRttManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

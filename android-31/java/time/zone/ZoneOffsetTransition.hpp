@@ -34,7 +34,7 @@ namespace java::time::zone
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneOffsetTransition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneOffsetTransition(QAndroidJniObject obj);
+		ZoneOffsetTransition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

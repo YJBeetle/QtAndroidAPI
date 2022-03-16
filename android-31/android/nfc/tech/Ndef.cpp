@@ -47,9 +47,6 @@ namespace android::nfc::tech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Ndef::Ndef(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -10,9 +10,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProtectionDomain::ProtectionDomain(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ProtectionDomain::ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1)
 		: JObject(

@@ -126,9 +126,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IDNA_Error::IDNA_Error(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

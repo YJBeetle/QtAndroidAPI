@@ -27,7 +27,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkStats_Bucket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStats_Bucket(QAndroidJniObject obj);
+		NetworkStats_Bucket(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkStats_Bucket();

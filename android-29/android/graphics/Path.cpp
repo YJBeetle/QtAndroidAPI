@@ -10,9 +10,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Path::Path(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Path::Path()
 		: JObject(

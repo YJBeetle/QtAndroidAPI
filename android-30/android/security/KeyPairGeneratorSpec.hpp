@@ -29,7 +29,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyPairGeneratorSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPairGeneratorSpec(QAndroidJniObject obj);
+		KeyPairGeneratorSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -27,7 +27,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_MmsSms_PendingMessages(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_MmsSms_PendingMessages(QAndroidJniObject obj);
+		Telephony_MmsSms_PendingMessages(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -25,7 +25,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VibratorManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VibratorManager(QAndroidJniObject obj);
+		VibratorManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

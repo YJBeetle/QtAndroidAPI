@@ -9,9 +9,6 @@ namespace java::nio
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntBuffer::IntBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
-	
 	// Constructors
 	
 	// Methods

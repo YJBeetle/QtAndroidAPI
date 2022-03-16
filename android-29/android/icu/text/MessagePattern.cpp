@@ -30,9 +30,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MessagePattern::MessagePattern(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MessagePattern::MessagePattern()
 		: JObject(

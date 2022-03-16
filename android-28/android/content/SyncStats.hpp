@@ -27,7 +27,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SyncStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncStats(QAndroidJniObject obj);
+		SyncStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SyncStats();

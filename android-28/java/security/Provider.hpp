@@ -28,7 +28,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Provider(const char *className, const char *sig, Ts...agv) : java::util::Properties(className, sig, std::forward<Ts>(agv)...) {}
-		Provider(QAndroidJniObject obj);
+		Provider(QAndroidJniObject obj) : java::util::Properties(obj) {}
 		
 		// Constructors
 		

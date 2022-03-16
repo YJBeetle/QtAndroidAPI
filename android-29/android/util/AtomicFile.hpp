@@ -25,7 +25,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AtomicFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicFile(QAndroidJniObject obj);
+		AtomicFile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AtomicFile(java::io::File arg0);

@@ -35,9 +35,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncAdapterType::SyncAdapterType(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SyncAdapterType::SyncAdapterType(android::os::Parcel arg0)
 		: JObject(

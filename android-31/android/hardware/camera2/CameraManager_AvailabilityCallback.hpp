@@ -13,7 +13,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraManager_AvailabilityCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraManager_AvailabilityCallback(QAndroidJniObject obj);
+		CameraManager_AvailabilityCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CameraManager_AvailabilityCallback();

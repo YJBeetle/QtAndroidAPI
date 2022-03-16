@@ -15,9 +15,6 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobWorkItem::JobWorkItem(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	JobWorkItem::JobWorkItem(android::content::Intent arg0)
 		: JObject(

@@ -33,7 +33,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ListFragment(const char *className, const char *sig, Ts...agv) : android::app::Fragment(className, sig, std::forward<Ts>(agv)...) {}
-		ListFragment(QAndroidJniObject obj);
+		ListFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
 		
 		// Constructors
 		ListFragment();

@@ -189,9 +189,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DocumentsContract_Document::DocumentsContract_Document(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

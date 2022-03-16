@@ -15,9 +15,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VersionedPackage::VersionedPackage(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VersionedPackage::VersionedPackage(JString arg0, jint arg1)
 		: JObject(

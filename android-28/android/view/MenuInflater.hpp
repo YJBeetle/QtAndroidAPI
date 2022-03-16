@@ -16,7 +16,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MenuInflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MenuInflater(QAndroidJniObject obj);
+		MenuInflater(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MenuInflater(android::content::Context arg0);

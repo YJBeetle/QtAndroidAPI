@@ -9,9 +9,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Enum::Enum(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

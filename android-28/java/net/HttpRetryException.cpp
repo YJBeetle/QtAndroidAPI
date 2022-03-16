@@ -5,9 +5,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HttpRetryException::HttpRetryException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	HttpRetryException::HttpRetryException(JString arg0, jint arg1)
 		: java::io::IOException(

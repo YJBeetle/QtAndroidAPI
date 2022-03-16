@@ -6,9 +6,6 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OisSample::OisSample(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	OisSample::OisSample(jlong arg0, jfloat arg1, jfloat arg2)
 		: JObject(

@@ -14,7 +14,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessageDecryptionException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		MessageDecryptionException(QAndroidJniObject obj);
+		MessageDecryptionException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 		
 		// Constructors
 		MessageDecryptionException(JString arg0);

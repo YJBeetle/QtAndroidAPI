@@ -16,9 +16,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URLClassLoader::URLClassLoader(QAndroidJniObject obj) : java::security::SecureClassLoader(obj) {}
-	
 	// Constructors
 	URLClassLoader::URLClassLoader(JArray arg0)
 		: java::security::SecureClassLoader(

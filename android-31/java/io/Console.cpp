@@ -13,9 +13,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Console::Console(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

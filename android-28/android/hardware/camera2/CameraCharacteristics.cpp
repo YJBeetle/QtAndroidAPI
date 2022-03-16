@@ -694,9 +694,6 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CameraCharacteristics::CameraCharacteristics(QAndroidJniObject obj) : android::hardware::camera2::CameraMetadata(obj) {}
-	
 	// Constructors
 	
 	// Methods

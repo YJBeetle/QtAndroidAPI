@@ -22,7 +22,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AuthenticationRequiredException(const char *className, const char *sig, Ts...agv) : java::lang::SecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		AuthenticationRequiredException(QAndroidJniObject obj);
+		AuthenticationRequiredException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
 		
 		// Constructors
 		AuthenticationRequiredException(JThrowable arg0, android::app::PendingIntent arg1);

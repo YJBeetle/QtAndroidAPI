@@ -8,9 +8,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, JString arg1)
 		: JObject(

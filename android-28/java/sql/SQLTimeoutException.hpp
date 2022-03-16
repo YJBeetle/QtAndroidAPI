@@ -14,7 +14,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLTimeoutException(const char *className, const char *sig, Ts...agv) : java::sql::SQLTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLTimeoutException(QAndroidJniObject obj);
+		SQLTimeoutException(QAndroidJniObject obj) : java::sql::SQLTransientException(obj) {}
 		
 		// Constructors
 		SQLTimeoutException();

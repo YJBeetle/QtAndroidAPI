@@ -10,9 +10,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StaticLayout_Builder::StaticLayout_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

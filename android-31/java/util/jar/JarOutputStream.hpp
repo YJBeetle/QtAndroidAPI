@@ -25,7 +25,7 @@ namespace java::util::jar
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JarOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		JarOutputStream(QAndroidJniObject obj);
+		JarOutputStream(QAndroidJniObject obj) : java::util::zip::ZipOutputStream(obj) {}
 		
 		// Constructors
 		JarOutputStream(java::io::OutputStream arg0);

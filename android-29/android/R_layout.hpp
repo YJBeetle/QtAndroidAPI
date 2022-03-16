@@ -35,7 +35,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_layout(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_layout(QAndroidJniObject obj);
+		R_layout(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_layout();

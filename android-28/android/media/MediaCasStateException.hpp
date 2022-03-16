@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCasStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasStateException(QAndroidJniObject obj);
+		MediaCasStateException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
 		
 		// Constructors
 		

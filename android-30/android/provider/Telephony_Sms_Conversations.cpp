@@ -38,9 +38,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Telephony_Sms_Conversations::Telephony_Sms_Conversations(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

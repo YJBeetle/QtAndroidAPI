@@ -13,7 +13,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GCMParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GCMParameterSpec(QAndroidJniObject obj);
+		GCMParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GCMParameterSpec(jint arg0, JByteArray arg1);

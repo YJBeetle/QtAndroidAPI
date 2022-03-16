@@ -13,7 +13,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VisualVoicemailService_VisualVoicemailTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailService_VisualVoicemailTask(QAndroidJniObject obj);
+		VisualVoicemailService_VisualVoicemailTask(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

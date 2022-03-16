@@ -16,7 +16,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PorterDuffXfermode(const char *className, const char *sig, Ts...agv) : android::graphics::Xfermode(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuffXfermode(QAndroidJniObject obj);
+		PorterDuffXfermode(QAndroidJniObject obj) : android::graphics::Xfermode(obj) {}
 		
 		// Constructors
 		PorterDuffXfermode(android::graphics::PorterDuff_Mode arg0);

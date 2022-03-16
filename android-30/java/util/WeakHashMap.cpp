@@ -7,9 +7,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WeakHashMap::WeakHashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
-	
 	// Constructors
 	WeakHashMap::WeakHashMap()
 		: java::util::AbstractMap(

@@ -13,7 +13,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProxyFileDescriptorCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProxyFileDescriptorCallback(QAndroidJniObject obj);
+		ProxyFileDescriptorCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ProxyFileDescriptorCallback();

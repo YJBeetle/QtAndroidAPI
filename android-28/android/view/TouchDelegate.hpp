@@ -28,7 +28,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TouchDelegate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TouchDelegate(QAndroidJniObject obj);
+		TouchDelegate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TouchDelegate(android::graphics::Rect arg0, android::view::View arg1);

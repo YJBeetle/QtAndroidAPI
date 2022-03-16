@@ -5,9 +5,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyNetworkSpecifier_Builder::TelephonyNetworkSpecifier_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TelephonyNetworkSpecifier_Builder::TelephonyNetworkSpecifier_Builder()
 		: JObject(

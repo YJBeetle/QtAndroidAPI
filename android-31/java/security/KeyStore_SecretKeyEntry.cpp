@@ -5,9 +5,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(JObject arg0)
 		: JObject(

@@ -15,9 +15,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncNotedAppOp::SyncNotedAppOp(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SyncNotedAppOp::SyncNotedAppOp(jint arg0, JString arg1)
 		: JObject(

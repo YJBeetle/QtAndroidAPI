@@ -24,7 +24,7 @@ namespace android::window
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SplashScreenView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		SplashScreenView(QAndroidJniObject obj);
+		SplashScreenView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
 		
 		// Constructors
 		

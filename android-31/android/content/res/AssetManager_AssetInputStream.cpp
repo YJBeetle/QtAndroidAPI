@@ -6,9 +6,6 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AssetManager_AssetInputStream::AssetManager_AssetInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
-	
 	// Constructors
 	
 	// Methods

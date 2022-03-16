@@ -45,7 +45,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmManagerClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmManagerClient(QAndroidJniObject obj);
+		DrmManagerClient(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmManagerClient(android::content::Context arg0);

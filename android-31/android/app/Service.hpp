@@ -50,7 +50,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Service(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		Service(QAndroidJniObject obj);
+		Service(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
 		
 		// Constructors
 		Service();

@@ -16,9 +16,6 @@ namespace javax::xml::transform::stream
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StreamResult::StreamResult(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StreamResult::StreamResult()
 		: JObject(

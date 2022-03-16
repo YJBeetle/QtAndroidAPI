@@ -20,7 +20,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CyclicBarrier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CyclicBarrier(QAndroidJniObject obj);
+		CyclicBarrier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CyclicBarrier(jint arg0);

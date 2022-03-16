@@ -16,7 +16,7 @@ namespace android::service::voice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlwaysOnHotwordDetector_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlwaysOnHotwordDetector_Callback(QAndroidJniObject obj);
+		AlwaysOnHotwordDetector_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AlwaysOnHotwordDetector_Callback();

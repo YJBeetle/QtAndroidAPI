@@ -12,7 +12,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MutableShort(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableShort(QAndroidJniObject obj);
+		MutableShort(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MutableShort(jshort arg0);

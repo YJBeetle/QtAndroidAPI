@@ -24,9 +24,6 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ThaiBuddhistChronology::ThaiBuddhistChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
-	
 	// Constructors
 	
 	// Methods

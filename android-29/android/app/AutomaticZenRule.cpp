@@ -18,9 +18,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AutomaticZenRule::AutomaticZenRule(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AutomaticZenRule::AutomaticZenRule(android::os::Parcel arg0)
 		: JObject(

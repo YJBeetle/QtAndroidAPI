@@ -40,7 +40,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X509CertSelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509CertSelector(QAndroidJniObject obj);
+		X509CertSelector(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		X509CertSelector();

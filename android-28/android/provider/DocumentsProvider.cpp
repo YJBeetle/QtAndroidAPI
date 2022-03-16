@@ -17,9 +17,6 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DocumentsProvider::DocumentsProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
-	
 	// Constructors
 	DocumentsProvider::DocumentsProvider()
 		: android::content::ContentProvider(

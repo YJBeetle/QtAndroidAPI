@@ -15,7 +15,7 @@ namespace java::nio
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ByteOrder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ByteOrder(QAndroidJniObject obj);
+		ByteOrder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

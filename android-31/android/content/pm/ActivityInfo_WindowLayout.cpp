@@ -46,9 +46,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6)
 		: JObject(

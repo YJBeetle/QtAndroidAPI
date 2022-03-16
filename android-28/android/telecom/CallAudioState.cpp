@@ -51,9 +51,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CallAudioState::CallAudioState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CallAudioState::CallAudioState(jboolean arg0, jint arg1, jint arg2)
 		: JObject(

@@ -5,9 +5,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CloseGuard::CloseGuard(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CloseGuard::CloseGuard()
 		: JObject(

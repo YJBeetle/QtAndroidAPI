@@ -150,9 +150,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PorterDuff_Mode::PorterDuff_Mode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

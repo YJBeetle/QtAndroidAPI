@@ -23,7 +23,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AttributionSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttributionSource(QAndroidJniObject obj);
+		AttributionSource(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

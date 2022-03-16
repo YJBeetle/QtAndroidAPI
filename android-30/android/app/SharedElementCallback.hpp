@@ -28,7 +28,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SharedElementCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SharedElementCallback(QAndroidJniObject obj);
+		SharedElementCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SharedElementCallback();

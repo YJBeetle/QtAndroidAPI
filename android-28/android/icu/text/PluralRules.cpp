@@ -72,9 +72,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PluralRules::PluralRules(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

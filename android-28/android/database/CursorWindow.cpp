@@ -16,9 +16,6 @@ namespace android::database
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CursorWindow::CursorWindow(QAndroidJniObject obj) : android::database::sqlite::SQLiteClosable(obj) {}
-	
 	// Constructors
 	CursorWindow::CursorWindow(jboolean arg0)
 		: android::database::sqlite::SQLiteClosable(

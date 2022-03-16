@@ -27,7 +27,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityManager(QAndroidJniObject obj);
+		AccessibilityManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

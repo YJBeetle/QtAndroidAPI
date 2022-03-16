@@ -25,7 +25,7 @@ namespace android::graphics::drawable::shapes
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Shape(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Shape(QAndroidJniObject obj);
+		Shape(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Shape();

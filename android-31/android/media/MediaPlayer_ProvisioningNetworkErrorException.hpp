@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_ProvisioningNetworkErrorException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_ProvisioningNetworkErrorException(QAndroidJniObject obj);
+		MediaPlayer_ProvisioningNetworkErrorException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
 		
 		// Constructors
 		MediaPlayer_ProvisioningNetworkErrorException(JString arg0);

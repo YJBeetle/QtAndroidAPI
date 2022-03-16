@@ -20,7 +20,7 @@ namespace android::media::midi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiDevice_MidiConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDevice_MidiConnection(QAndroidJniObject obj);
+		MidiDevice_MidiConnection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

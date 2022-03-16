@@ -70,9 +70,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PackageStats::PackageStats(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PackageStats::PackageStats(android::content::pm::PackageStats &arg0)
 		: JObject(

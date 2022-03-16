@@ -13,7 +13,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MandatoryStreamCombination_MandatoryStreamInformation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MandatoryStreamCombination_MandatoryStreamInformation(QAndroidJniObject obj);
+		MandatoryStreamCombination_MandatoryStreamInformation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

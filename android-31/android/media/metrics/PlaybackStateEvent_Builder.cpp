@@ -6,9 +6,6 @@ namespace android::media::metrics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PlaybackStateEvent_Builder::PlaybackStateEvent_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PlaybackStateEvent_Builder::PlaybackStateEvent_Builder()
 		: JObject(

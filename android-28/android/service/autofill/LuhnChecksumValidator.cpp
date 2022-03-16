@@ -15,9 +15,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LuhnChecksumValidator::LuhnChecksumValidator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LuhnChecksumValidator::LuhnChecksumValidator(JArray arg0)
 		: JObject(

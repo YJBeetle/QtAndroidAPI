@@ -14,7 +14,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PKCS8EncodedKeySpec(const char *className, const char *sig, Ts...agv) : java::security::spec::EncodedKeySpec(className, sig, std::forward<Ts>(agv)...) {}
-		PKCS8EncodedKeySpec(QAndroidJniObject obj);
+		PKCS8EncodedKeySpec(QAndroidJniObject obj) : java::security::spec::EncodedKeySpec(obj) {}
 		
 		// Constructors
 		PKCS8EncodedKeySpec(JByteArray arg0);

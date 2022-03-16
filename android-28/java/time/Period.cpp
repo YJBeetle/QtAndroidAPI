@@ -19,9 +19,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Period::Period(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

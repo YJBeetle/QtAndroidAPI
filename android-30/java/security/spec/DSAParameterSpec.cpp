@@ -5,9 +5,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DSAParameterSpec::DSAParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DSAParameterSpec::DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 		: JObject(

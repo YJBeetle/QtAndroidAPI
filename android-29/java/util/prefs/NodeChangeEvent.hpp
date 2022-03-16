@@ -24,7 +24,7 @@ namespace java::util::prefs
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NodeChangeEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		NodeChangeEvent(QAndroidJniObject obj);
+		NodeChangeEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
 		
 		// Constructors
 		NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1);

@@ -11,9 +11,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RenderNode::RenderNode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RenderNode::RenderNode(JString arg0)
 		: JObject(

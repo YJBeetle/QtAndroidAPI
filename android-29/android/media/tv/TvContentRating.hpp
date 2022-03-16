@@ -16,7 +16,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvContentRating(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvContentRating(QAndroidJniObject obj);
+		TvContentRating(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

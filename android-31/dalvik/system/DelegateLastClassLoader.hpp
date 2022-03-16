@@ -22,7 +22,7 @@ namespace dalvik::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DelegateLastClassLoader(const char *className, const char *sig, Ts...agv) : dalvik::system::PathClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		DelegateLastClassLoader(QAndroidJniObject obj);
+		DelegateLastClassLoader(QAndroidJniObject obj) : dalvik::system::PathClassLoader(obj) {}
 		
 		// Constructors
 		DelegateLastClassLoader(JString arg0, java::lang::ClassLoader arg1);

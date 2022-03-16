@@ -25,7 +25,7 @@ namespace android::telephony::data
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApnSetting_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApnSetting_Builder(QAndroidJniObject obj);
+		ApnSetting_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ApnSetting_Builder();

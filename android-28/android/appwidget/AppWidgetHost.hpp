@@ -33,7 +33,7 @@ namespace android::appwidget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppWidgetHost(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppWidgetHost(QAndroidJniObject obj);
+		AppWidgetHost(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AppWidgetHost(android::content::Context arg0, jint arg1);

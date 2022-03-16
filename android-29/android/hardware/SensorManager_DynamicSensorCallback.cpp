@@ -5,9 +5,6 @@ namespace android::hardware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback()
 		: JObject(

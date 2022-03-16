@@ -7,9 +7,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URLSpan::URLSpan(QAndroidJniObject obj) : android::text::style::ClickableSpan(obj) {}
-	
 	// Constructors
 	URLSpan::URLSpan(android::os::Parcel arg0)
 		: android::text::style::ClickableSpan(

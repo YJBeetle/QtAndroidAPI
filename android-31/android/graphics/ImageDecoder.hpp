@@ -64,7 +64,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageDecoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImageDecoder(QAndroidJniObject obj);
+		ImageDecoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

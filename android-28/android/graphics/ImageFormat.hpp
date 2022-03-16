@@ -30,7 +30,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImageFormat(QAndroidJniObject obj);
+		ImageFormat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ImageFormat();

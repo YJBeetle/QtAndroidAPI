@@ -14,9 +14,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	X509CertSelector::X509CertSelector(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	X509CertSelector::X509CertSelector()
 		: JObject(

@@ -17,9 +17,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RouteInfo::RouteInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

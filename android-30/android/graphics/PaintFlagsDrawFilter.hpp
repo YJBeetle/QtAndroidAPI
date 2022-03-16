@@ -11,7 +11,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PaintFlagsDrawFilter(const char *className, const char *sig, Ts...agv) : android::graphics::DrawFilter(className, sig, std::forward<Ts>(agv)...) {}
-		PaintFlagsDrawFilter(QAndroidJniObject obj);
+		PaintFlagsDrawFilter(QAndroidJniObject obj) : android::graphics::DrawFilter(obj) {}
 		
 		// Constructors
 		PaintFlagsDrawFilter(jint arg0, jint arg1);

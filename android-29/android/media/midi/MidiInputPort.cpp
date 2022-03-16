@@ -6,9 +6,6 @@ namespace android::media::midi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MidiInputPort::MidiInputPort(QAndroidJniObject obj) : android::media::midi::MidiReceiver(obj) {}
-	
 	// Constructors
 	
 	// Methods

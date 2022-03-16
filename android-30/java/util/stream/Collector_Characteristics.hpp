@@ -17,7 +17,7 @@ namespace java::util::stream
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Collector_Characteristics(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Collector_Characteristics(QAndroidJniObject obj);
+		Collector_Characteristics(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

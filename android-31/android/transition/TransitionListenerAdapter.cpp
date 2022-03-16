@@ -5,9 +5,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransitionListenerAdapter::TransitionListenerAdapter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TransitionListenerAdapter::TransitionListenerAdapter()
 		: JObject(

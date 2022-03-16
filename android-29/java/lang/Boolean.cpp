@@ -32,9 +32,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Boolean::Boolean(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Boolean::Boolean(jboolean arg0)
 		: JObject(

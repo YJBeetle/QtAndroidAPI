@@ -24,7 +24,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BatchUpdateException(const char *className, const char *sig, Ts...agv) : java::sql::SQLException(className, sig, std::forward<Ts>(agv)...) {}
-		BatchUpdateException(QAndroidJniObject obj);
+		BatchUpdateException(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
 		
 		// Constructors
 		BatchUpdateException();

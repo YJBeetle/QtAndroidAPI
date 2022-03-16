@@ -10,9 +10,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SpannedString::SpannedString(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SpannedString::SpannedString(JString arg0)
 		: JObject(

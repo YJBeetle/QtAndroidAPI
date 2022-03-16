@@ -11,9 +11,6 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	KeyGenParameterSpec_Builder::KeyGenParameterSpec_Builder(JString arg0, jint arg1)
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputFilter_AllCaps::InputFilter_AllCaps(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InputFilter_AllCaps::InputFilter_AllCaps()
 		: JObject(

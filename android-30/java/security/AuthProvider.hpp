@@ -17,7 +17,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AuthProvider(const char *className, const char *sig, Ts...agv) : java::security::Provider(className, sig, std::forward<Ts>(agv)...) {}
-		AuthProvider(QAndroidJniObject obj);
+		AuthProvider(QAndroidJniObject obj) : java::security::Provider(obj) {}
 		
 		// Constructors
 		

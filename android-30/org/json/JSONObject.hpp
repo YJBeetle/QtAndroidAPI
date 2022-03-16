@@ -28,7 +28,7 @@ namespace org::json
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JSONObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JSONObject(QAndroidJniObject obj);
+		JSONObject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		JSONObject();

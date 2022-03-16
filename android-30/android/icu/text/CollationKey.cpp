@@ -7,9 +7,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CollationKey::CollationKey(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CollationKey::CollationKey(JString arg0, JByteArray arg1)
 		: JObject(

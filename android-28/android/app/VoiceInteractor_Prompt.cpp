@@ -16,9 +16,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VoiceInteractor_Prompt::VoiceInteractor_Prompt(JString arg0)
 		: JObject(

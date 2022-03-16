@@ -10,9 +10,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(JByteArray arg0)
 		: JObject(

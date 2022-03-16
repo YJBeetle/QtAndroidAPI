@@ -18,7 +18,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_UssdResponseCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_UssdResponseCallback(QAndroidJniObject obj);
+		TelephonyManager_UssdResponseCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TelephonyManager_UssdResponseCallback();

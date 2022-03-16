@@ -356,9 +356,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Settings_Global::Settings_Global(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
-	
 	// Constructors
 	Settings_Global::Settings_Global()
 		: android::provider::Settings_NameValueTable(

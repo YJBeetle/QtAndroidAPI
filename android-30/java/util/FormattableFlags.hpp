@@ -14,7 +14,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FormattableFlags(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FormattableFlags(QAndroidJniObject obj);
+		FormattableFlags(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

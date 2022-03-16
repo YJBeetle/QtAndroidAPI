@@ -20,7 +20,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnderlineSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		UnderlineSpan(QAndroidJniObject obj);
+		UnderlineSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
 		
 		// Constructors
 		UnderlineSpan();

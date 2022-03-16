@@ -8,9 +8,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DisplayCutout::DisplayCutout(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DisplayCutout::DisplayCutout(android::graphics::Rect arg0, JObject arg1)
 		: JObject(

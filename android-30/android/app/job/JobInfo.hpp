@@ -51,7 +51,7 @@ namespace android::app::job
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JobInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobInfo(QAndroidJniObject obj);
+		JobInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

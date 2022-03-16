@@ -45,7 +45,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PreferenceActivity_Header(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceActivity_Header(QAndroidJniObject obj);
+		PreferenceActivity_Header(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PreferenceActivity_Header();

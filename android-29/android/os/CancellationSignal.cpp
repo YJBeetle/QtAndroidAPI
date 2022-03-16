@@ -4,9 +4,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CancellationSignal::CancellationSignal(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CancellationSignal::CancellationSignal()
 		: JObject(

@@ -7,9 +7,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCrypto::MediaCrypto(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaCrypto::MediaCrypto(java::util::UUID arg0, JByteArray arg1)
 		: JObject(

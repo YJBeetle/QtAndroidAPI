@@ -39,7 +39,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssetFileDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssetFileDescriptor(QAndroidJniObject obj);
+		AssetFileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);

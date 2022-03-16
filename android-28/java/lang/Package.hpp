@@ -23,7 +23,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Package(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Package(QAndroidJniObject obj);
+		Package(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

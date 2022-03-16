@@ -17,7 +17,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SequenceInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		SequenceInputStream(QAndroidJniObject obj);
+		SequenceInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
 		
 		// Constructors
 		SequenceInputStream(JObject arg0);

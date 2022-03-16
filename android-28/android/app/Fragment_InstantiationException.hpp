@@ -17,7 +17,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Fragment_InstantiationException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		Fragment_InstantiationException(QAndroidJniObject obj);
+		Fragment_InstantiationException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 		
 		// Constructors
 		Fragment_InstantiationException(JString arg0, java::lang::Exception arg1);

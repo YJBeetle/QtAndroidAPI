@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteViews_RemoteResponse::RemoteViews_RemoteResponse(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RemoteViews_RemoteResponse::RemoteViews_RemoteResponse()
 		: JObject(

@@ -23,9 +23,6 @@ namespace org::xml::sax::helpers
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NamespaceSupport::NamespaceSupport(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NamespaceSupport::NamespaceSupport()
 		: JObject(

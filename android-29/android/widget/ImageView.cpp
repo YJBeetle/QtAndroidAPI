@@ -18,9 +18,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageView::ImageView(QAndroidJniObject obj) : android::view::View(obj) {}
-	
 	// Constructors
 	ImageView::ImageView(android::content::Context arg0)
 		: android::view::View(

@@ -22,9 +22,6 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Authenticator_RequestorType::Authenticator_RequestorType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

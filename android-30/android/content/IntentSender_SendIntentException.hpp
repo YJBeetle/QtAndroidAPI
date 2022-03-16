@@ -17,7 +17,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntentSender_SendIntentException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		IntentSender_SendIntentException(QAndroidJniObject obj);
+		IntentSender_SendIntentException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
 		
 		// Constructors
 		IntentSender_SendIntentException();

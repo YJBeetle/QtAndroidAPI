@@ -29,9 +29,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Intent_ShortcutIconResource::Intent_ShortcutIconResource(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Intent_ShortcutIconResource::Intent_ShortcutIconResource()
 		: JObject(

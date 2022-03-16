@@ -6,9 +6,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExemptionMechanismSpi::ExemptionMechanismSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ExemptionMechanismSpi::ExemptionMechanismSpi()
 		: JObject(

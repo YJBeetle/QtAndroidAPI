@@ -16,7 +16,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextClassifier_EntityConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassifier_EntityConfig_Builder(QAndroidJniObject obj);
+		TextClassifier_EntityConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TextClassifier_EntityConfig_Builder();

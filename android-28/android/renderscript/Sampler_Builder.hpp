@@ -24,7 +24,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Sampler_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Sampler_Builder(QAndroidJniObject obj);
+		Sampler_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Sampler_Builder(android::renderscript::RenderScript arg0);

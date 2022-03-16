@@ -253,9 +253,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NotificationManager::NotificationManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

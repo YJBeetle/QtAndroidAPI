@@ -16,7 +16,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraConstrainedHighSpeedCaptureSession(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraCaptureSession(className, sig, std::forward<Ts>(agv)...) {}
-		CameraConstrainedHighSpeedCaptureSession(QAndroidJniObject obj);
+		CameraConstrainedHighSpeedCaptureSession(QAndroidJniObject obj) : android::hardware::camera2::CameraCaptureSession(obj) {}
 		
 		// Constructors
 		CameraConstrainedHighSpeedCaptureSession();

@@ -17,9 +17,6 @@ namespace android::view::translation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewTranslationResponse::ViewTranslationResponse(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

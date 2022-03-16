@@ -8,9 +8,6 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvInputService_RecordingSession::TvInputService_RecordingSession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TvInputService_RecordingSession::TvInputService_RecordingSession(android::content::Context arg0)
 		: JObject(

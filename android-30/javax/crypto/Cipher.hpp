@@ -55,7 +55,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Cipher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Cipher(QAndroidJniObject obj);
+		Cipher(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

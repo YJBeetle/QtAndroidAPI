@@ -135,9 +135,6 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ChronoUnit::ChronoUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

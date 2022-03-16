@@ -18,7 +18,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DisplayContext_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayContext_Type(QAndroidJniObject obj);
+		DisplayContext_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

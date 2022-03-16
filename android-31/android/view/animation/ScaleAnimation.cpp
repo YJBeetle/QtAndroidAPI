@@ -6,9 +6,6 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScaleAnimation::ScaleAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
-	
 	// Constructors
 	ScaleAnimation::ScaleAnimation(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(

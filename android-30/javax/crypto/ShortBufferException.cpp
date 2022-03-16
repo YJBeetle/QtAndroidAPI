@@ -5,9 +5,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ShortBufferException::ShortBufferException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-	
 	// Constructors
 	ShortBufferException::ShortBufferException()
 		: java::security::GeneralSecurityException(

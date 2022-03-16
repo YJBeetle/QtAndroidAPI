@@ -5,9 +5,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RSIllegalArgumentException::RSIllegalArgumentException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
-	
 	// Constructors
 	RSIllegalArgumentException::RSIllegalArgumentException(JString arg0)
 		: android::renderscript::RSRuntimeException(

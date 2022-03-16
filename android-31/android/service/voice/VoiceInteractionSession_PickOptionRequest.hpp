@@ -22,7 +22,7 @@ namespace android::service::voice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession_PickOptionRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_PickOptionRequest(QAndroidJniObject obj);
+		VoiceInteractionSession_PickOptionRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
 		
 		// Constructors
 		

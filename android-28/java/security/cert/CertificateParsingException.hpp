@@ -14,7 +14,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertificateParsingException(const char *className, const char *sig, Ts...agv) : java::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateParsingException(QAndroidJniObject obj);
+		CertificateParsingException(QAndroidJniObject obj) : java::security::cert::CertificateException(obj) {}
 		
 		// Constructors
 		CertificateParsingException();

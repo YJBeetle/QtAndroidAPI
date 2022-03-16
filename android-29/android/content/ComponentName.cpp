@@ -17,9 +17,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ComponentName::ComponentName(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ComponentName::ComponentName(android::os::Parcel arg0)
 		: JObject(

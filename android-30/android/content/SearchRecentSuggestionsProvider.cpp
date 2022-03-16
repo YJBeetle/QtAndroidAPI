@@ -22,9 +22,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
-	
 	// Constructors
 	SearchRecentSuggestionsProvider::SearchRecentSuggestionsProvider()
 		: android::content::ContentProvider(

@@ -20,9 +20,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Pair::Pair(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Pair::Pair(JObject arg0, JObject arg1)
 		: JObject(

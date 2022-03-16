@@ -24,7 +24,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CircularPropagation(const char *className, const char *sig, Ts...agv) : android::transition::VisibilityPropagation(className, sig, std::forward<Ts>(agv)...) {}
-		CircularPropagation(QAndroidJniObject obj);
+		CircularPropagation(QAndroidJniObject obj) : android::transition::VisibilityPropagation(obj) {}
 		
 		// Constructors
 		CircularPropagation();

@@ -62,7 +62,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EditorInfo(QAndroidJniObject obj);
+		EditorInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EditorInfo();

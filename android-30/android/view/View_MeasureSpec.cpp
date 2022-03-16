@@ -26,9 +26,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	View_MeasureSpec::View_MeasureSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	View_MeasureSpec::View_MeasureSpec()
 		: JObject(

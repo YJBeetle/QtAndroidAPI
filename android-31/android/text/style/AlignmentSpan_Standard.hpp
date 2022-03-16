@@ -20,7 +20,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlignmentSpan_Standard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlignmentSpan_Standard(QAndroidJniObject obj);
+		AlignmentSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AlignmentSpan_Standard(android::os::Parcel arg0);

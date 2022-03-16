@@ -16,7 +16,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileIntegrityManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileIntegrityManager(QAndroidJniObject obj);
+		FileIntegrityManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

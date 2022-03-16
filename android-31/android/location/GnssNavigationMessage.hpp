@@ -37,7 +37,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssNavigationMessage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssNavigationMessage(QAndroidJniObject obj);
+		GnssNavigationMessage(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

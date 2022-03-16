@@ -47,7 +47,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CamcorderProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CamcorderProfile(QAndroidJniObject obj);
+		CamcorderProfile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

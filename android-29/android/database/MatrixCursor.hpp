@@ -20,7 +20,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MatrixCursor(const char *className, const char *sig, Ts...agv) : android::database::AbstractCursor(className, sig, std::forward<Ts>(agv)...) {}
-		MatrixCursor(QAndroidJniObject obj);
+		MatrixCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
 		
 		// Constructors
 		MatrixCursor(JArray arg0);

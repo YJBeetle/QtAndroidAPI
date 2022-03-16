@@ -56,9 +56,6 @@ namespace android::net::vcn
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VcnManager::VcnManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

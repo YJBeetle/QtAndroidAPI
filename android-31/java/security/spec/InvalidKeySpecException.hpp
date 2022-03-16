@@ -14,7 +14,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InvalidKeySpecException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidKeySpecException(QAndroidJniObject obj);
+		InvalidKeySpecException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
 		
 		// Constructors
 		InvalidKeySpecException();

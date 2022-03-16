@@ -6,9 +6,6 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RotateAnimation::RotateAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
-	
 	// Constructors
 	RotateAnimation::RotateAnimation(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(

@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NotLinkException::NotLinkException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
-	
 	// Constructors
 	NotLinkException::NotLinkException(JString arg0)
 		: java::nio::file::FileSystemException(

@@ -37,7 +37,7 @@ namespace android::service::quicksettings
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TileService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		TileService(QAndroidJniObject obj);
+		TileService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		TileService();

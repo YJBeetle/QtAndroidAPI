@@ -6,9 +6,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BidiFormatter_Builder::BidiFormatter_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BidiFormatter_Builder::BidiFormatter_Builder()
 		: JObject(

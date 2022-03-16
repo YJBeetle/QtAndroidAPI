@@ -21,7 +21,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimedText(QAndroidJniObject obj);
+		TimedText(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

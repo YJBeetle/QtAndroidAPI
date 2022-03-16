@@ -38,7 +38,7 @@ namespace android::nfc
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NdefRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NdefRecord(QAndroidJniObject obj);
+		NdefRecord(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NdefRecord(JByteArray arg0);

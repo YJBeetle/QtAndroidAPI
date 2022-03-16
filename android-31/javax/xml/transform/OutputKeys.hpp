@@ -23,7 +23,7 @@ namespace javax::xml::transform
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OutputKeys(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OutputKeys(QAndroidJniObject obj);
+		OutputKeys(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

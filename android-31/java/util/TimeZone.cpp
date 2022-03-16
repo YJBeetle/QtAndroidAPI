@@ -25,9 +25,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeZone::TimeZone(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TimeZone::TimeZone()
 		: JObject(

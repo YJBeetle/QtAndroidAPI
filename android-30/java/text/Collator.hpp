@@ -30,7 +30,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Collator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Collator(QAndroidJniObject obj);
+		Collator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -15,7 +15,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GpsStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GpsStatus(QAndroidJniObject obj);
+		GpsStatus(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

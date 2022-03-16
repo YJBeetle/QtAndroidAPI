@@ -59,9 +59,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaRoute2ProviderService::MediaRoute2ProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	MediaRoute2ProviderService::MediaRoute2ProviderService()
 		: android::app::Service(

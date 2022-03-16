@@ -7,9 +7,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TreeSet::TreeSet(QAndroidJniObject obj) : java::util::AbstractSet(obj) {}
-	
 	// Constructors
 	TreeSet::TreeSet()
 		: java::util::AbstractSet(

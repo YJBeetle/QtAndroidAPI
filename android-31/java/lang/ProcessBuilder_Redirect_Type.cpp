@@ -46,9 +46,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ProcessBuilder_Redirect_Type::ProcessBuilder_Redirect_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

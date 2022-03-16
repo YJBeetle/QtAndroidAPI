@@ -19,7 +19,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Certificate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Certificate(QAndroidJniObject obj);
+		Certificate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

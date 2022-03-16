@@ -21,7 +21,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLServerSocket(const char *className, const char *sig, Ts...agv) : java::net::ServerSocket(className, sig, std::forward<Ts>(agv)...) {}
-		SSLServerSocket(QAndroidJniObject obj);
+		SSLServerSocket(QAndroidJniObject obj) : java::net::ServerSocket(obj) {}
 		
 		// Constructors
 		

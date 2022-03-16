@@ -5,9 +5,6 @@ namespace android::app::admin
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DeviceAdminService::DeviceAdminService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	DeviceAdminService::DeviceAdminService()
 		: android::app::Service(

@@ -14,9 +14,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyboardShortcutInfo::KeyboardShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	KeyboardShortcutInfo::KeyboardShortcutInfo(JString arg0, jchar arg1, jint arg2)
 		: JObject(

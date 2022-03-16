@@ -16,9 +16,6 @@ namespace android::net::wifi::hotspot2::pps
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HomeSp::HomeSp(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	HomeSp::HomeSp()
 		: JObject(

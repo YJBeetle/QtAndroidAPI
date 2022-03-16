@@ -9,9 +9,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocalActivityManager::LocalActivityManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LocalActivityManager::LocalActivityManager(android::app::Activity arg0, jboolean arg1)
 		: JObject(

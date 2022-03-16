@@ -5,9 +5,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SearchEvent::SearchEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SearchEvent::SearchEvent(android::view::InputDevice arg0)
 		: JObject(

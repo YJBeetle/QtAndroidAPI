@@ -26,7 +26,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringPrepParseException(const char *className, const char *sig, Ts...agv) : java::text::ParseException(className, sig, std::forward<Ts>(agv)...) {}
-		StringPrepParseException(QAndroidJniObject obj);
+		StringPrepParseException(QAndroidJniObject obj) : java::text::ParseException(obj) {}
 		
 		// Constructors
 		StringPrepParseException(JString arg0, jint arg1);

@@ -33,7 +33,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StructStat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StructStat(QAndroidJniObject obj);
+		StructStat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, android::system::StructTimespec arg8, android::system::StructTimespec arg9, android::system::StructTimespec arg10, jlong arg11, jlong arg12);

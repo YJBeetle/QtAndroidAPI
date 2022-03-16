@@ -26,7 +26,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SharedMemory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SharedMemory(QAndroidJniObject obj);
+		SharedMemory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

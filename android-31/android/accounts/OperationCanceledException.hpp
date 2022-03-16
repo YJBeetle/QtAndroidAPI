@@ -14,7 +14,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OperationCanceledException(const char *className, const char *sig, Ts...agv) : android::accounts::AccountsException(className, sig, std::forward<Ts>(agv)...) {}
-		OperationCanceledException(QAndroidJniObject obj);
+		OperationCanceledException(QAndroidJniObject obj) : android::accounts::AccountsException(obj) {}
 		
 		// Constructors
 		OperationCanceledException();

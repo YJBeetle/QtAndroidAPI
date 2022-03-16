@@ -20,7 +20,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssAntennaInfo_SphericalCorrections(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_SphericalCorrections(QAndroidJniObject obj);
+		GnssAntennaInfo_SphericalCorrections(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GnssAntennaInfo_SphericalCorrections(JArray arg0, JArray arg1);

@@ -21,7 +21,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DirectoryIteratorException(const char *className, const char *sig, Ts...agv) : java::util::ConcurrentModificationException(className, sig, std::forward<Ts>(agv)...) {}
-		DirectoryIteratorException(QAndroidJniObject obj);
+		DirectoryIteratorException(QAndroidJniObject obj) : java::util::ConcurrentModificationException(obj) {}
 		
 		// Constructors
 		DirectoryIteratorException(java::io::IOException arg0);

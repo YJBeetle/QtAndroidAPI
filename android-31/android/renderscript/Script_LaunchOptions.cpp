@@ -4,9 +4,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Script_LaunchOptions::Script_LaunchOptions(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Script_LaunchOptions::Script_LaunchOptions()
 		: JObject(

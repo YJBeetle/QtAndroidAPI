@@ -22,9 +22,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Dialog::Dialog(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Dialog::Dialog(android::content::Context arg0)
 		: JObject(

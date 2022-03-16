@@ -14,7 +14,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SparseBooleanArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SparseBooleanArray(QAndroidJniObject obj);
+		SparseBooleanArray(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SparseBooleanArray();

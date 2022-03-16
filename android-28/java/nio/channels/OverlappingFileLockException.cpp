@@ -4,9 +4,6 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OverlappingFileLockException::OverlappingFileLockException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
-	
 	// Constructors
 	OverlappingFileLockException::OverlappingFileLockException()
 		: java::lang::IllegalStateException(

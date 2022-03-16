@@ -16,7 +16,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CacheResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CacheResponse(QAndroidJniObject obj);
+		CacheResponse(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CacheResponse();

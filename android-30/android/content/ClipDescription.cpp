@@ -57,9 +57,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClipDescription::ClipDescription(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ClipDescription::ClipDescription(android::content::ClipDescription &arg0)
 		: JObject(

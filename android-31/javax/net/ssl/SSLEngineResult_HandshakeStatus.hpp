@@ -20,7 +20,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLEngineResult_HandshakeStatus(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngineResult_HandshakeStatus(QAndroidJniObject obj);
+		SSLEngineResult_HandshakeStatus(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

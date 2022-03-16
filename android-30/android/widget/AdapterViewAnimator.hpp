@@ -33,7 +33,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AdapterViewAnimator(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
-		AdapterViewAnimator(QAndroidJniObject obj);
+		AdapterViewAnimator(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
 		
 		// Constructors
 		AdapterViewAnimator(android::content::Context arg0);

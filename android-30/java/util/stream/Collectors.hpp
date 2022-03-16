@@ -70,7 +70,7 @@ namespace java::util::stream
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Collectors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Collectors(QAndroidJniObject obj);
+		Collectors(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

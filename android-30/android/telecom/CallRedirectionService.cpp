@@ -16,9 +16,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CallRedirectionService::CallRedirectionService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	CallRedirectionService::CallRedirectionService()
 		: android::app::Service(

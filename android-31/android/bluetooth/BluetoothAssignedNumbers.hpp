@@ -238,7 +238,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothAssignedNumbers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothAssignedNumbers(QAndroidJniObject obj);
+		BluetoothAssignedNumbers(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

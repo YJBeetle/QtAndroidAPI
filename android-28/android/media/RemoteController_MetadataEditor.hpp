@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteController_MetadataEditor(const char *className, const char *sig, Ts...agv) : android::media::MediaMetadataEditor(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteController_MetadataEditor(QAndroidJniObject obj);
+		RemoteController_MetadataEditor(QAndroidJniObject obj) : android::media::MediaMetadataEditor(obj) {}
 		
 		// Constructors
 		

@@ -53,7 +53,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppOpsManager(QAndroidJniObject obj);
+		AppOpsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

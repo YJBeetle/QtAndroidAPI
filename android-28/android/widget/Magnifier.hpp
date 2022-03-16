@@ -16,7 +16,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Magnifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Magnifier(QAndroidJniObject obj);
+		Magnifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Magnifier(android::view::View arg0);

@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParserFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ParserFactory(QAndroidJniObject obj);
+		ParserFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

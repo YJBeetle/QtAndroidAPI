@@ -14,7 +14,7 @@ namespace org::json
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JSONStringer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JSONStringer(QAndroidJniObject obj);
+		JSONStringer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		JSONStringer();

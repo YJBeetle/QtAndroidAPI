@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor(QAndroidJniObject obj);
+		VoiceInteractor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

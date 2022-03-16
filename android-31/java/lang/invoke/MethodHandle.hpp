@@ -24,7 +24,7 @@ namespace java::lang::invoke
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MethodHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MethodHandle(QAndroidJniObject obj);
+		MethodHandle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

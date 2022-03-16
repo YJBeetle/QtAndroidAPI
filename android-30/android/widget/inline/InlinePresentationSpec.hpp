@@ -27,7 +27,7 @@ namespace android::widget::inline_
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InlinePresentationSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlinePresentationSpec(QAndroidJniObject obj);
+		InlinePresentationSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

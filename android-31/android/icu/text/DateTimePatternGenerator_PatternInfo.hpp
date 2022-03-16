@@ -18,7 +18,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateTimePatternGenerator_PatternInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj);
+		DateTimePatternGenerator_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateTimePatternGenerator_PatternInfo();

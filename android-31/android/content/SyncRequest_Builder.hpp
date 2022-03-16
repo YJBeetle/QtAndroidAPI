@@ -25,7 +25,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SyncRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncRequest_Builder(QAndroidJniObject obj);
+		SyncRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SyncRequest_Builder();

@@ -6,9 +6,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2)
 		: JObject(

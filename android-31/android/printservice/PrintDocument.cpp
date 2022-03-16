@@ -6,9 +6,6 @@ namespace android::printservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintDocument::PrintDocument(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

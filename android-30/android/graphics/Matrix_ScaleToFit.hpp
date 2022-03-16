@@ -18,7 +18,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Matrix_ScaleToFit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Matrix_ScaleToFit(QAndroidJniObject obj);
+		Matrix_ScaleToFit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -20,7 +20,7 @@ namespace android::accessibilityservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityService_ScreenshotResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_ScreenshotResult(QAndroidJniObject obj);
+		AccessibilityService_ScreenshotResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

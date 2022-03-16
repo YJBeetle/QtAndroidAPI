@@ -8,9 +8,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRouter_UserRouteInfo::MediaRouter_UserRouteInfo(QAndroidJniObject obj) : android::media::MediaRouter_RouteInfo(obj) {}
-	
 	// Constructors
 	
 	// Methods

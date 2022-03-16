@@ -10,9 +10,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IconMarginSpan::IconMarginSpan(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IconMarginSpan::IconMarginSpan(android::graphics::Bitmap arg0)
 		: JObject(

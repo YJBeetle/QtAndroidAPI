@@ -6,9 +6,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocalSocketAddress::LocalSocketAddress(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LocalSocketAddress::LocalSocketAddress(JString arg0)
 		: JObject(

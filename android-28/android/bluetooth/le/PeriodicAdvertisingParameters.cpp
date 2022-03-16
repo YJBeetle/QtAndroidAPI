@@ -13,9 +13,6 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PeriodicAdvertisingParameters::PeriodicAdvertisingParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

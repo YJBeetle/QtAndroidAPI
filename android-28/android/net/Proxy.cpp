@@ -22,9 +22,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Proxy::Proxy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Proxy::Proxy()
 		: JObject(

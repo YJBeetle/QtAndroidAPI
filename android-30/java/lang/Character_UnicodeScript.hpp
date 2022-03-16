@@ -176,7 +176,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Character_UnicodeScript(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Character_UnicodeScript(QAndroidJniObject obj);
+		Character_UnicodeScript(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

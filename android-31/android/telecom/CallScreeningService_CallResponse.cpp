@@ -33,9 +33,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CallScreeningService_CallResponse::CallScreeningService_CallResponse(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

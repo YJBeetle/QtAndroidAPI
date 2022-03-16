@@ -38,9 +38,6 @@ namespace javax::net::ssl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SSLEngineResult_Status::SSLEngineResult_Status(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

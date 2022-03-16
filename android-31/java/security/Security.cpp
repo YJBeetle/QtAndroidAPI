@@ -14,9 +14,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Security::Security(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

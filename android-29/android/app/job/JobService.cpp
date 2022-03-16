@@ -15,9 +15,6 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobService::JobService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	JobService::JobService()
 		: android::app::Service(

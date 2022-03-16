@@ -9,9 +9,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptIntrinsicYuvToRGB::ScriptIntrinsicYuvToRGB(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
-	
 	// Constructors
 	
 	// Methods

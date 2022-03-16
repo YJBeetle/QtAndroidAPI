@@ -13,7 +13,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DataFormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		DataFormatException(QAndroidJniObject obj);
+		DataFormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		DataFormatException();

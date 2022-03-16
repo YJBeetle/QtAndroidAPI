@@ -28,7 +28,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PreferenceScreen(const char *className, const char *sig, Ts...agv) : android::preference::PreferenceGroup(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceScreen(QAndroidJniObject obj);
+		PreferenceScreen(QAndroidJniObject obj) : android::preference::PreferenceGroup(obj) {}
 		
 		// Constructors
 		

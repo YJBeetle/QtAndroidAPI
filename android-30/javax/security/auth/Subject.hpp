@@ -32,7 +32,7 @@ namespace javax::security::auth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Subject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Subject(QAndroidJniObject obj);
+		Subject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Subject();

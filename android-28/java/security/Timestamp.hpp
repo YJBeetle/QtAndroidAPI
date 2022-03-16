@@ -26,7 +26,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Timestamp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Timestamp(QAndroidJniObject obj);
+		Timestamp(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1);

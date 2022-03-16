@@ -9,9 +9,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DynamicLayout_Builder::DynamicLayout_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

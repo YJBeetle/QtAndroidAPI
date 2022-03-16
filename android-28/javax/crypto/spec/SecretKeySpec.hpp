@@ -15,7 +15,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecretKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeySpec(QAndroidJniObject obj);
+		SecretKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SecretKeySpec(JByteArray arg0, JString arg1);

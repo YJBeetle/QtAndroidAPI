@@ -11,9 +11,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ThreadGroup::ThreadGroup(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ThreadGroup::ThreadGroup(JString arg0)
 		: JObject(

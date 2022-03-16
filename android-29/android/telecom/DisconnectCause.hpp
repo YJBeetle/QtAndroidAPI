@@ -33,7 +33,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DisconnectCause(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DisconnectCause(QAndroidJniObject obj);
+		DisconnectCause(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DisconnectCause(jint arg0);

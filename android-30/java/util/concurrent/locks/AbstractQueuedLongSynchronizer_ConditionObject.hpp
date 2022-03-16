@@ -24,7 +24,7 @@ namespace java::util::concurrent::locks
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractQueuedLongSynchronizer_ConditionObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractQueuedLongSynchronizer_ConditionObject(QAndroidJniObject obj);
+		AbstractQueuedLongSynchronizer_ConditionObject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractQueuedLongSynchronizer_ConditionObject(java::util::concurrent::locks::AbstractQueuedLongSynchronizer arg0);

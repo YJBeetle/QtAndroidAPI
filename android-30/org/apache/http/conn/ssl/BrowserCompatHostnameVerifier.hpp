@@ -14,7 +14,7 @@ namespace org::apache::http::conn::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BrowserCompatHostnameVerifier(const char *className, const char *sig, Ts...agv) : org::apache::http::conn::ssl::AbstractVerifier(className, sig, std::forward<Ts>(agv)...) {}
-		BrowserCompatHostnameVerifier(QAndroidJniObject obj);
+		BrowserCompatHostnameVerifier(QAndroidJniObject obj) : org::apache::http::conn::ssl::AbstractVerifier(obj) {}
 		
 		// Constructors
 		BrowserCompatHostnameVerifier();

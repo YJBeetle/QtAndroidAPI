@@ -271,9 +271,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaCodecInfo_VideoCapabilities_PerformancePoint::MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2)
 		: JObject(

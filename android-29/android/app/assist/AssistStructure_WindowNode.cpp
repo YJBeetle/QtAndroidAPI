@@ -6,9 +6,6 @@ namespace android::app::assist
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AssistStructure_WindowNode::AssistStructure_WindowNode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

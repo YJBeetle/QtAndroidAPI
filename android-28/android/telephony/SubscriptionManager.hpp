@@ -33,7 +33,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubscriptionManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionManager(QAndroidJniObject obj);
+		SubscriptionManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

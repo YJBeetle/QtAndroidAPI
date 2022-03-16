@@ -22,9 +22,6 @@ namespace android::icu::number
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormatter_DecimalSeparatorDisplay::NumberFormatter_DecimalSeparatorDisplay(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

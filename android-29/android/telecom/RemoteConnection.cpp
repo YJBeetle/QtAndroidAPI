@@ -14,9 +14,6 @@ namespace android::telecom
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteConnection::RemoteConnection(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

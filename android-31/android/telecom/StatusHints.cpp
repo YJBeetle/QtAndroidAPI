@@ -17,9 +17,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StatusHints::StatusHints(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StatusHints::StatusHints(JString arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2)
 		: JObject(

@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocatorImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocatorImpl(QAndroidJniObject obj);
+		LocatorImpl(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LocatorImpl();

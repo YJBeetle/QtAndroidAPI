@@ -17,9 +17,6 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NumberFormatterSettings::NumberFormatterSettings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

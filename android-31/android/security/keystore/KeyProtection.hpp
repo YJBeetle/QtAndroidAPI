@@ -17,7 +17,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyProtection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyProtection(QAndroidJniObject obj);
+		KeyProtection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

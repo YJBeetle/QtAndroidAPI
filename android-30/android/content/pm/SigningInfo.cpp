@@ -14,9 +14,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SigningInfo::SigningInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SigningInfo::SigningInfo()
 		: JObject(

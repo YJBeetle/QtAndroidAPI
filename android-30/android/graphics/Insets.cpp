@@ -48,9 +48,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Insets::Insets(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

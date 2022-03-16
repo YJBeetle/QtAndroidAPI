@@ -27,7 +27,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SignatureSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignatureSpi(QAndroidJniObject obj);
+		SignatureSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SignatureSpi();

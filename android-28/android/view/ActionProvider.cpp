@@ -6,9 +6,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActionProvider::ActionProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActionProvider::ActionProvider(android::content::Context arg0)
 		: JObject(

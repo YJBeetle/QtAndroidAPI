@@ -23,7 +23,7 @@ namespace java::util::jar
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JarEntry(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipEntry(className, sig, std::forward<Ts>(agv)...) {}
-		JarEntry(QAndroidJniObject obj);
+		JarEntry(QAndroidJniObject obj) : java::util::zip::ZipEntry(obj) {}
 		
 		// Constructors
 		JarEntry(JString arg0);

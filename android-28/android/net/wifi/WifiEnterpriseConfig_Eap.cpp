@@ -67,9 +67,6 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiEnterpriseConfig_Eap::WifiEnterpriseConfig_Eap(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

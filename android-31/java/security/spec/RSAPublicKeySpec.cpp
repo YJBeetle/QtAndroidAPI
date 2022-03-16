@@ -5,9 +5,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RSAPublicKeySpec::RSAPublicKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
 		: JObject(

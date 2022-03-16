@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractor_ConfirmationRequest(const char *className, const char *sig, Ts...agv) : android::app::VoiceInteractor_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_ConfirmationRequest(QAndroidJniObject obj);
+		VoiceInteractor_ConfirmationRequest(QAndroidJniObject obj) : android::app::VoiceInteractor_Request(obj) {}
 		
 		// Constructors
 		VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);

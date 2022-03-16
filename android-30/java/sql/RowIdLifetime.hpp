@@ -19,7 +19,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RowIdLifetime(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RowIdLifetime(QAndroidJniObject obj);
+		RowIdLifetime(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

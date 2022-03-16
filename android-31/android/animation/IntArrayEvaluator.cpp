@@ -6,9 +6,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntArrayEvaluator::IntArrayEvaluator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IntArrayEvaluator::IntArrayEvaluator()
 		: JObject(

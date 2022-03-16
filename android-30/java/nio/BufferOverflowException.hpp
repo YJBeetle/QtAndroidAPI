@@ -11,7 +11,7 @@ namespace java::nio
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BufferOverflowException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		BufferOverflowException(QAndroidJniObject obj);
+		BufferOverflowException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		BufferOverflowException();

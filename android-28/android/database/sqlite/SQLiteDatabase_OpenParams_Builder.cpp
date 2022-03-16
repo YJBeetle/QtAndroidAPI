@@ -6,9 +6,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder()
 		: JObject(

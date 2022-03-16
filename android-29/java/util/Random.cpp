@@ -10,9 +10,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Random::Random(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Random::Random()
 		: JObject(

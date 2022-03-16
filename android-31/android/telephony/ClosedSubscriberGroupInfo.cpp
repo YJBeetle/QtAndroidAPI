@@ -15,9 +15,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClosedSubscriberGroupInfo::ClosedSubscriberGroupInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

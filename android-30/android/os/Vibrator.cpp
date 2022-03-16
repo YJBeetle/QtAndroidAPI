@@ -30,9 +30,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Vibrator::Vibrator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

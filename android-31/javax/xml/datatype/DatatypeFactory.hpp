@@ -43,7 +43,7 @@ namespace javax::xml::datatype
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatatypeFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeFactory(QAndroidJniObject obj);
+		DatatypeFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

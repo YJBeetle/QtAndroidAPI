@@ -27,7 +27,7 @@ namespace org::xml::sax
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SAXException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		SAXException(QAndroidJniObject obj);
+		SAXException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		SAXException();

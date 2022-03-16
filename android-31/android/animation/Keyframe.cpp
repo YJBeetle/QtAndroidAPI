@@ -6,9 +6,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Keyframe::Keyframe(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Keyframe::Keyframe()
 		: JObject(

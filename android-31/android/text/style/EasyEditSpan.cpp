@@ -29,9 +29,6 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EasyEditSpan::EasyEditSpan(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EasyEditSpan::EasyEditSpan()
 		: JObject(

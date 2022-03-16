@@ -9,9 +9,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptIntrinsicBlend::ScriptIntrinsicBlend(QAndroidJniObject obj) : android::renderscript::ScriptIntrinsic(obj) {}
-	
 	// Constructors
 	
 	// Methods

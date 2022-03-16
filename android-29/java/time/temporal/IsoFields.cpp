@@ -52,9 +52,6 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IsoFields::IsoFields(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

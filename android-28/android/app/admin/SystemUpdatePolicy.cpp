@@ -35,9 +35,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SystemUpdatePolicy::SystemUpdatePolicy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

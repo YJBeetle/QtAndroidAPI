@@ -18,7 +18,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DisplayCutout(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayCutout(QAndroidJniObject obj);
+		DisplayCutout(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DisplayCutout(android::graphics::Rect arg0, JObject arg1);

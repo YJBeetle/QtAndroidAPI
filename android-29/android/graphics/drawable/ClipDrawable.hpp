@@ -30,7 +30,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClipDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		ClipDrawable(QAndroidJniObject obj);
+		ClipDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
 		
 		// Constructors
 		ClipDrawable(android::graphics::drawable::Drawable arg0, jint arg1, jint arg2);

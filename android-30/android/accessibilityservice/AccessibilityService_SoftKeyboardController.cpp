@@ -6,9 +6,6 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessibilityService_SoftKeyboardController::AccessibilityService_SoftKeyboardController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

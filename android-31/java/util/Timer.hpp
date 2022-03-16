@@ -26,7 +26,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Timer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Timer(QAndroidJniObject obj);
+		Timer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Timer();

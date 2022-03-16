@@ -20,7 +20,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLSessionCache(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSessionCache(QAndroidJniObject obj);
+		SSLSessionCache(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SSLSessionCache(android::content::Context arg0);

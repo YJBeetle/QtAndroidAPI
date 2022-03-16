@@ -21,7 +21,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeflaterOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		DeflaterOutputStream(QAndroidJniObject obj);
+		DeflaterOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
 		
 		// Constructors
 		DeflaterOutputStream(java::io::OutputStream arg0);

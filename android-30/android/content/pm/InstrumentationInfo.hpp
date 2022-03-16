@@ -29,7 +29,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InstrumentationInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::PackageItemInfo(className, sig, std::forward<Ts>(agv)...) {}
-		InstrumentationInfo(QAndroidJniObject obj);
+		InstrumentationInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
 		
 		// Constructors
 		InstrumentationInfo();

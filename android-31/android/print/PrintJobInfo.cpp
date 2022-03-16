@@ -67,9 +67,6 @@ namespace android::print
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PrintJobInfo::PrintJobInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

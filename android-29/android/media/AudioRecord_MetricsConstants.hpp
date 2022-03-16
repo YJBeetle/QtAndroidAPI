@@ -18,7 +18,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioRecord_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioRecord_MetricsConstants(QAndroidJniObject obj);
+		AudioRecord_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

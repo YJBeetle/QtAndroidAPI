@@ -9,9 +9,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CompletableFuture::CompletableFuture(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CompletableFuture::CompletableFuture()
 		: JObject(

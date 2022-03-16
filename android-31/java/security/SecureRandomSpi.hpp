@@ -14,7 +14,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecureRandomSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecureRandomSpi(QAndroidJniObject obj);
+		SecureRandomSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SecureRandomSpi();

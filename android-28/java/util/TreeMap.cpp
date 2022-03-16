@@ -7,9 +7,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TreeMap::TreeMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
-	
 	// Constructors
 	TreeMap::TreeMap()
 		: java::util::AbstractMap(

@@ -42,7 +42,7 @@ namespace javax::xml::datatype
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XMLGregorianCalendar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XMLGregorianCalendar(QAndroidJniObject obj);
+		XMLGregorianCalendar(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		XMLGregorianCalendar();

@@ -35,7 +35,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentProviderResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentProviderResult(QAndroidJniObject obj);
+		ContentProviderResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentProviderResult(android::net::Uri arg0);

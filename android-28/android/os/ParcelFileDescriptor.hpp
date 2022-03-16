@@ -47,7 +47,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParcelFileDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelFileDescriptor(QAndroidJniObject obj);
+		ParcelFileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ParcelFileDescriptor(android::os::ParcelFileDescriptor &arg0);

@@ -23,7 +23,7 @@ namespace java::util::jar
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Attributes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Attributes(QAndroidJniObject obj);
+		Attributes(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Attributes();

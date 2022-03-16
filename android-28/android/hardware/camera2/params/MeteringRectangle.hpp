@@ -29,7 +29,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MeteringRectangle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MeteringRectangle(QAndroidJniObject obj);
+		MeteringRectangle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MeteringRectangle(android::graphics::Rect arg0, jint arg1);

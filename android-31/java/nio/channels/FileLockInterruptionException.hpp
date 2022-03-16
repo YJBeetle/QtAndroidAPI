@@ -11,7 +11,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileLockInterruptionException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		FileLockInterruptionException(QAndroidJniObject obj);
+		FileLockInterruptionException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		FileLockInterruptionException();

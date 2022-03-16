@@ -17,7 +17,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CRL(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CRL(QAndroidJniObject obj);
+		CRL(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

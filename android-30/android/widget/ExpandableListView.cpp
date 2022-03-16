@@ -44,9 +44,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExpandableListView::ExpandableListView(QAndroidJniObject obj) : android::widget::ListView(obj) {}
-	
 	// Constructors
 	ExpandableListView::ExpandableListView(android::content::Context arg0)
 		: android::widget::ListView(

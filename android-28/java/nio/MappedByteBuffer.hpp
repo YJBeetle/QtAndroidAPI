@@ -24,7 +24,7 @@ namespace java::nio
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MappedByteBuffer(const char *className, const char *sig, Ts...agv) : java::nio::ByteBuffer(className, sig, std::forward<Ts>(agv)...) {}
-		MappedByteBuffer(QAndroidJniObject obj);
+		MappedByteBuffer(QAndroidJniObject obj) : java::nio::ByteBuffer(obj) {}
 		
 		// Constructors
 		

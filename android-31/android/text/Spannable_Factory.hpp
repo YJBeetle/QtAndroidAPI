@@ -13,7 +13,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Spannable_Factory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Spannable_Factory(QAndroidJniObject obj);
+		Spannable_Factory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Spannable_Factory();

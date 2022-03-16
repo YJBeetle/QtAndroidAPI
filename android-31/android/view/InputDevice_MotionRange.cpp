@@ -4,9 +4,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputDevice_MotionRange::InputDevice_MotionRange(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

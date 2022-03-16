@@ -25,7 +25,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GlobalSearchSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GlobalSearchSession(QAndroidJniObject obj);
+		GlobalSearchSession(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

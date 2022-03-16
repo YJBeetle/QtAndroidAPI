@@ -26,7 +26,7 @@ namespace android::media::session
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PlaybackState_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackState_Builder(QAndroidJniObject obj);
+		PlaybackState_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PlaybackState_Builder();

@@ -19,9 +19,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BassBoost::BassBoost(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-	
 	// Constructors
 	BassBoost::BassBoost(jint arg0, jint arg1)
 		: android::media::audiofx::AudioEffect(

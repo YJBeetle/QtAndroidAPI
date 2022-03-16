@@ -6,9 +6,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalArgumentException::IllegalArgumentException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	IllegalArgumentException::IllegalArgumentException()
 		: java::lang::RuntimeException(

@@ -27,7 +27,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Playlists_Members(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Playlists_Members(QAndroidJniObject obj);
+		MediaStore_Audio_Playlists_Members(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaStore_Audio_Playlists_Members();

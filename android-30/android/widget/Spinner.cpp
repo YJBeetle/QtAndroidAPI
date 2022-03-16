@@ -24,9 +24,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Spinner::Spinner(QAndroidJniObject obj) : android::widget::AbsSpinner(obj) {}
-	
 	// Constructors
 	Spinner::Spinner(android::content::Context arg0)
 		: android::widget::AbsSpinner(

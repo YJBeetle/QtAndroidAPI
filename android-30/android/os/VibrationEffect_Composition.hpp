@@ -21,7 +21,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VibrationEffect_Composition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VibrationEffect_Composition(QAndroidJniObject obj);
+		VibrationEffect_Composition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -8,9 +8,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Element::Element(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
-	
 	// Constructors
 	
 	// Methods

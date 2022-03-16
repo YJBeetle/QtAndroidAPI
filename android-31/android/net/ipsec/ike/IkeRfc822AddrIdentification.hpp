@@ -15,7 +15,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeRfc822AddrIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeRfc822AddrIdentification(QAndroidJniObject obj);
+		IkeRfc822AddrIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
 		
 		// Constructors
 		IkeRfc822AddrIdentification(JString arg0);

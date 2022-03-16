@@ -17,7 +17,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GuardedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GuardedObject(QAndroidJniObject obj);
+		GuardedObject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GuardedObject(JObject arg0, JObject arg1);

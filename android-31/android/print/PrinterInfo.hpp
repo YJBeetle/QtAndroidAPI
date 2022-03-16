@@ -30,7 +30,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrinterInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrinterInfo(QAndroidJniObject obj);
+		PrinterInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

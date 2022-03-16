@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EmbossMaskFilter::EmbossMaskFilter(QAndroidJniObject obj) : android::graphics::MaskFilter(obj) {}
-	
 	// Constructors
 	EmbossMaskFilter::EmbossMaskFilter(JFloatArray arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 		: android::graphics::MaskFilter(

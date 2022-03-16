@@ -22,7 +22,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IdentityHashMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityHashMap(QAndroidJniObject obj);
+		IdentityHashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
 		
 		// Constructors
 		IdentityHashMap();

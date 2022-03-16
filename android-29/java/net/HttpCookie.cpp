@@ -8,9 +8,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HttpCookie::HttpCookie(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	HttpCookie::HttpCookie(JString arg0, JString arg1)
 		: JObject(

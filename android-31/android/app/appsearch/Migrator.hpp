@@ -16,7 +16,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Migrator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Migrator(QAndroidJniObject obj);
+		Migrator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Migrator();

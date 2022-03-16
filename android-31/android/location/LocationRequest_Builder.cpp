@@ -5,9 +5,6 @@ namespace android::location
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocationRequest_Builder::LocationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LocationRequest_Builder::LocationRequest_Builder(android::location::LocationRequest arg0)
 		: JObject(

@@ -14,9 +14,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteViews_RemoteCollectionItems::RemoteViews_RemoteCollectionItems(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

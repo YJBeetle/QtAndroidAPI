@@ -7,9 +7,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLEngineResult::SSLEngineResult(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SSLEngineResult::SSLEngineResult(javax::net::ssl::SSLEngineResult_Status arg0, javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3)
 		: JObject(

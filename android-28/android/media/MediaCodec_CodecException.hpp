@@ -15,7 +15,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodec_CodecException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_CodecException(QAndroidJniObject obj);
+		MediaCodec_CodecException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
 		
 		// Constructors
 		

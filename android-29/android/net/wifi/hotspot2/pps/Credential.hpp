@@ -36,7 +36,7 @@ namespace android::net::wifi::hotspot2::pps
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Credential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Credential(QAndroidJniObject obj);
+		Credential(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Credential();

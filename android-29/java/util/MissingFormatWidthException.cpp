@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MissingFormatWidthException::MissingFormatWidthException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
-	
 	// Constructors
 	MissingFormatWidthException::MissingFormatWidthException(JString arg0)
 		: java::util::IllegalFormatException(

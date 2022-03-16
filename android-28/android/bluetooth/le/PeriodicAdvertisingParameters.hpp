@@ -17,7 +17,7 @@ namespace android::bluetooth::le
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PeriodicAdvertisingParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeriodicAdvertisingParameters(QAndroidJniObject obj);
+		PeriodicAdvertisingParameters(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -23,7 +23,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConcurrentLinkedQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
-		ConcurrentLinkedQueue(QAndroidJniObject obj);
+		ConcurrentLinkedQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
 		
 		// Constructors
 		ConcurrentLinkedQueue();

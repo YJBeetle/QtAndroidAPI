@@ -16,9 +16,6 @@ namespace android::net::wifi::aware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiAwareNetworkInfo::WifiAwareNetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

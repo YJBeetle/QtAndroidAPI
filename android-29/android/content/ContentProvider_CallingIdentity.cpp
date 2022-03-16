@@ -6,9 +6,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentProvider_CallingIdentity::ContentProvider_CallingIdentity(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

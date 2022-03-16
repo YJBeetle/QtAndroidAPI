@@ -60,7 +60,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeviceAdminReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceAdminReceiver(QAndroidJniObject obj);
+		DeviceAdminReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
 		
 		// Constructors
 		DeviceAdminReceiver();

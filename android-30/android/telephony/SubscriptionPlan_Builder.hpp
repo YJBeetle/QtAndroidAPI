@@ -26,7 +26,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubscriptionPlan_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionPlan_Builder(QAndroidJniObject obj);
+		SubscriptionPlan_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

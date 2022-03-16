@@ -98,9 +98,6 @@ namespace java::math
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BigDecimal::BigDecimal(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	BigDecimal::BigDecimal(JCharArray arg0)
 		: java::lang::Number(

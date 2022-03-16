@@ -5,9 +5,6 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnticipateOvershootInterpolator::AnticipateOvershootInterpolator(QAndroidJniObject obj) : android::view::animation::BaseInterpolator(obj) {}
-	
 	// Constructors
 	AnticipateOvershootInterpolator::AnticipateOvershootInterpolator()
 		: android::view::animation::BaseInterpolator(

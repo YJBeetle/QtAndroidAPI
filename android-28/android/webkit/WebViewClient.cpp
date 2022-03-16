@@ -157,9 +157,6 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebViewClient::WebViewClient(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WebViewClient::WebViewClient()
 		: JObject(

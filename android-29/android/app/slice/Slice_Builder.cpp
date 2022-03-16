@@ -13,9 +13,6 @@ namespace android::app::slice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Slice_Builder::Slice_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Slice_Builder::Slice_Builder(android::app::slice::Slice_Builder &arg0)
 		: JObject(

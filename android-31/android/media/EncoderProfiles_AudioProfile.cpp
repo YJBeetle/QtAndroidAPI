@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EncoderProfiles_AudioProfile::EncoderProfiles_AudioProfile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

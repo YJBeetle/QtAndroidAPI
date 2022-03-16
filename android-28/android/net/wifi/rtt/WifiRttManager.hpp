@@ -22,7 +22,7 @@ namespace android::net::wifi::rtt
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiRttManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiRttManager(QAndroidJniObject obj);
+		WifiRttManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

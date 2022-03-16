@@ -14,9 +14,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchIterator::SearchIterator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

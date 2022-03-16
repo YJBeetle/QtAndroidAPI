@@ -6,9 +6,6 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateInterval::DateInterval(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateInterval::DateInterval(jlong arg0, jlong arg1)
 		: JObject(

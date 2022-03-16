@@ -21,9 +21,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PathMeasure::PathMeasure(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PathMeasure::PathMeasure()
 		: JObject(

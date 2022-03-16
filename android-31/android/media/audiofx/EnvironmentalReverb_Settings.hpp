@@ -23,7 +23,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EnvironmentalReverb_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EnvironmentalReverb_Settings(QAndroidJniObject obj);
+		EnvironmentalReverb_Settings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EnvironmentalReverb_Settings();

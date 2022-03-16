@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AudioDeviceCallback::AudioDeviceCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AudioDeviceCallback::AudioDeviceCallback()
 		: JObject(

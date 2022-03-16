@@ -47,7 +47,7 @@ namespace android::speech::tts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextToSpeech_Engine(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextToSpeech_Engine(QAndroidJniObject obj);
+		TextToSpeech_Engine(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0);

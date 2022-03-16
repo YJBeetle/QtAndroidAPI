@@ -7,9 +7,6 @@ namespace android::printservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrinterDiscoverySession::PrinterDiscoverySession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PrinterDiscoverySession::PrinterDiscoverySession()
 		: JObject(

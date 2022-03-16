@@ -6,9 +6,6 @@ namespace android::os::strictmode
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IncorrectContextUseViolation::IncorrectContextUseViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
-	
 	// Constructors
 	IncorrectContextUseViolation::IncorrectContextUseViolation(JString arg0, JThrowable arg1)
 		: android::os::strictmode::Violation(

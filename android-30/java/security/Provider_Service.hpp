@@ -29,7 +29,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Provider_Service(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Provider_Service(QAndroidJniObject obj);
+		Provider_Service(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Provider_Service(java::security::Provider arg0, JString arg1, JString arg2, JString arg3, JObject arg4, JObject arg5);

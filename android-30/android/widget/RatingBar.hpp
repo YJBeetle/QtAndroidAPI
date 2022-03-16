@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RatingBar(const char *className, const char *sig, Ts...agv) : android::widget::AbsSeekBar(className, sig, std::forward<Ts>(agv)...) {}
-		RatingBar(QAndroidJniObject obj);
+		RatingBar(QAndroidJniObject obj) : android::widget::AbsSeekBar(obj) {}
 		
 		// Constructors
 		RatingBar(android::content::Context arg0);

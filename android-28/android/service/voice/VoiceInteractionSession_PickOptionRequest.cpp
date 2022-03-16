@@ -8,9 +8,6 @@ namespace android::service::voice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractionSession_PickOptionRequest::VoiceInteractionSession_PickOptionRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
-	
 	// Constructors
 	
 	// Methods

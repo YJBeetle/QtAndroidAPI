@@ -28,7 +28,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Uri(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Uri(QAndroidJniObject obj);
+		Uri(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

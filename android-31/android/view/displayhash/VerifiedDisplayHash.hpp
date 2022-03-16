@@ -23,7 +23,7 @@ namespace android::view::displayhash
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VerifiedDisplayHash(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VerifiedDisplayHash(QAndroidJniObject obj);
+		VerifiedDisplayHash(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, JString arg2, JByteArray arg3);

@@ -38,9 +38,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IslamicCalendar_CalculationType::IslamicCalendar_CalculationType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

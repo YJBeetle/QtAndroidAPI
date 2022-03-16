@@ -35,7 +35,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecureClassLoader(const char *className, const char *sig, Ts...agv) : java::lang::ClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		SecureClassLoader(QAndroidJniObject obj);
+		SecureClassLoader(QAndroidJniObject obj) : java::lang::ClassLoader(obj) {}
 		
 		// Constructors
 		

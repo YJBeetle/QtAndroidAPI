@@ -25,7 +25,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResultReceiver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResultReceiver(QAndroidJniObject obj);
+		ResultReceiver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ResultReceiver(android::os::Handler arg0);

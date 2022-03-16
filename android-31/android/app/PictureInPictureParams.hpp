@@ -19,7 +19,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PictureInPictureParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PictureInPictureParams(QAndroidJniObject obj);
+		PictureInPictureParams(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

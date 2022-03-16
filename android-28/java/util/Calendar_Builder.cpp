@@ -10,9 +10,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Calendar_Builder::Calendar_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Calendar_Builder::Calendar_Builder()
 		: JObject(

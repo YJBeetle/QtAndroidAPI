@@ -6,9 +6,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VisibilityPropagation::VisibilityPropagation(QAndroidJniObject obj) : android::transition::TransitionPropagation(obj) {}
-	
 	// Constructors
 	VisibilityPropagation::VisibilityPropagation()
 		: android::transition::TransitionPropagation(

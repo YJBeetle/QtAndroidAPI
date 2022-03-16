@@ -39,7 +39,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeSessionParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_Builder(QAndroidJniObject obj);
+		IkeSessionParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IkeSessionParams_Builder();

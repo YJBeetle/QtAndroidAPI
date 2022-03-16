@@ -14,9 +14,6 @@ namespace android::telephony::euicc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DownloadableSubscription::DownloadableSubscription(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

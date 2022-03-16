@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RuntimePermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		RuntimePermission(QAndroidJniObject obj);
+		RuntimePermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 		
 		// Constructors
 		RuntimePermission(JString arg0);

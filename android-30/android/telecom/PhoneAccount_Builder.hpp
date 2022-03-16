@@ -34,7 +34,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PhoneAccount_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneAccount_Builder(QAndroidJniObject obj);
+		PhoneAccount_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PhoneAccount_Builder(android::telecom::PhoneAccount arg0);

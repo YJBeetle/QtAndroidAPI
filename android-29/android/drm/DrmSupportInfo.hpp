@@ -14,7 +14,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmSupportInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmSupportInfo(QAndroidJniObject obj);
+		DrmSupportInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmSupportInfo();

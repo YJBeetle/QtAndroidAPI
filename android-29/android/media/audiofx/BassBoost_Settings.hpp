@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BassBoost_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BassBoost_Settings(QAndroidJniObject obj);
+		BassBoost_Settings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BassBoost_Settings();

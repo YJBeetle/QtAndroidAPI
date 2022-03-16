@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LruCache::LruCache(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LruCache::LruCache(jint arg0)
 		: JObject(

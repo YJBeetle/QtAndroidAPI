@@ -20,9 +20,6 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IDN::IDN(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

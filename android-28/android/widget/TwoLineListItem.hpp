@@ -21,7 +21,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TwoLineListItem(const char *className, const char *sig, Ts...agv) : android::widget::RelativeLayout(className, sig, std::forward<Ts>(agv)...) {}
-		TwoLineListItem(QAndroidJniObject obj);
+		TwoLineListItem(QAndroidJniObject obj) : android::widget::RelativeLayout(obj) {}
 		
 		// Constructors
 		TwoLineListItem(android::content::Context arg0);

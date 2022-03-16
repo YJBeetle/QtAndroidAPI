@@ -27,7 +27,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StatusHints(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatusHints(QAndroidJniObject obj);
+		StatusHints(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StatusHints(JString arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2);

@@ -6,9 +6,6 @@ namespace android::service::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaBrowserService_Result::MediaBrowserService_Result(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

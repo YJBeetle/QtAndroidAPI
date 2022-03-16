@@ -48,9 +48,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo()
 		: JObject(

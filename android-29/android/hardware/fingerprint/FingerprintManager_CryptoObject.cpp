@@ -7,9 +7,6 @@ namespace android::hardware::fingerprint
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(java::security::Signature arg0)
 		: JObject(

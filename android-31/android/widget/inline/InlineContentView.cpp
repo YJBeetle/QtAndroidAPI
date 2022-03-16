@@ -6,9 +6,6 @@ namespace android::widget::inline_
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InlineContentView::InlineContentView(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-	
 	// Constructors
 	
 	// Methods

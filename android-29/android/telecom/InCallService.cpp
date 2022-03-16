@@ -18,9 +18,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InCallService::InCallService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	InCallService::InCallService()
 		: android::app::Service(

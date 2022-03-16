@@ -17,7 +17,7 @@ namespace dalvik::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PathClassLoader(const char *className, const char *sig, Ts...agv) : dalvik::system::BaseDexClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		PathClassLoader(QAndroidJniObject obj);
+		PathClassLoader(QAndroidJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
 		
 		// Constructors
 		PathClassLoader(JString arg0, java::lang::ClassLoader arg1);

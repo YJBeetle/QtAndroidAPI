@@ -6,9 +6,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EphemeralPublicKeyNotFoundException::EphemeralPublicKeyNotFoundException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
-	
 	// Constructors
 	EphemeralPublicKeyNotFoundException::EphemeralPublicKeyNotFoundException(JString arg0)
 		: android::security::identity::IdentityCredentialException(

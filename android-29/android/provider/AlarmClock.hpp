@@ -36,7 +36,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlarmClock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlarmClock(QAndroidJniObject obj);
+		AlarmClock(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AlarmClock();

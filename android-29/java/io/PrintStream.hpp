@@ -46,7 +46,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		PrintStream(QAndroidJniObject obj);
+		PrintStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
 		
 		// Constructors
 		PrintStream(java::io::File arg0);

@@ -14,7 +14,7 @@ namespace android::media::effect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Effect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Effect(QAndroidJniObject obj);
+		Effect(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Effect();

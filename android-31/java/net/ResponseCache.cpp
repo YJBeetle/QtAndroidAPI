@@ -9,9 +9,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResponseCache::ResponseCache(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ResponseCache::ResponseCache()
 		: JObject(

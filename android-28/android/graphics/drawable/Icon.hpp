@@ -56,7 +56,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Icon(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Icon(QAndroidJniObject obj);
+		Icon(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

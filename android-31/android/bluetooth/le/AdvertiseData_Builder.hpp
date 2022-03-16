@@ -21,7 +21,7 @@ namespace android::bluetooth::le
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AdvertiseData_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AdvertiseData_Builder(QAndroidJniObject obj);
+		AdvertiseData_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AdvertiseData_Builder();

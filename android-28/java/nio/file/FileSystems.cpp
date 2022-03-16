@@ -7,9 +7,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileSystems::FileSystems(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

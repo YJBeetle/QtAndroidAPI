@@ -8,9 +8,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Button::Button(QAndroidJniObject obj) : android::widget::TextView(obj) {}
-	
 	// Constructors
 	Button::Button(android::content::Context arg0)
 		: android::widget::TextView(

@@ -16,9 +16,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NotificationChannelGroup::NotificationChannelGroup(JString arg0, JString arg1)
 		: JObject(

@@ -5,9 +5,6 @@ namespace android::service::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CameraPrewarmService::CameraPrewarmService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	CameraPrewarmService::CameraPrewarmService()
 		: android::app::Service(

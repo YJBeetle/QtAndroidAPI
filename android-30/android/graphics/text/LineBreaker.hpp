@@ -32,7 +32,7 @@ namespace android::graphics::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LineBreaker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LineBreaker(QAndroidJniObject obj);
+		LineBreaker(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

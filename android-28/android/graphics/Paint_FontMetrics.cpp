@@ -34,9 +34,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Paint_FontMetrics::Paint_FontMetrics(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Paint_FontMetrics::Paint_FontMetrics()
 		: JObject(

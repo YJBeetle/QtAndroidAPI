@@ -11,7 +11,7 @@ namespace android::telephony::ims::feature
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MmTelFeature(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MmTelFeature(QAndroidJniObject obj);
+		MmTelFeature(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

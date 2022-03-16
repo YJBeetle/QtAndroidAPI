@@ -25,7 +25,7 @@ namespace android::nfc::cardemulation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NfcFCardEmulation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcFCardEmulation(QAndroidJniObject obj);
+		NfcFCardEmulation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

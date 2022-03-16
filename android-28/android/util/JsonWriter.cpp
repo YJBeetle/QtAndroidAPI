@@ -7,9 +7,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JsonWriter::JsonWriter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	JsonWriter::JsonWriter(java::io::Writer arg0)
 		: JObject(

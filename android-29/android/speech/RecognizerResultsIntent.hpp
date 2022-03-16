@@ -20,7 +20,7 @@ namespace android::speech
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RecognizerResultsIntent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecognizerResultsIntent(QAndroidJniObject obj);
+		RecognizerResultsIntent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

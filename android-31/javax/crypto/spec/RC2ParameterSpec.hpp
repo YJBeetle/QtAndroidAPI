@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RC2ParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RC2ParameterSpec(QAndroidJniObject obj);
+		RC2ParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RC2ParameterSpec(jint arg0);

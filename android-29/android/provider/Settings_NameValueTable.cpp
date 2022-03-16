@@ -23,9 +23,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Settings_NameValueTable::Settings_NameValueTable(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Settings_NameValueTable::Settings_NameValueTable()
 		: JObject(

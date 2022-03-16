@@ -11,9 +11,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnicodeSetSpanner::UnicodeSetSpanner(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UnicodeSetSpanner::UnicodeSetSpanner(android::icu::text::UnicodeSet arg0)
 		: JObject(

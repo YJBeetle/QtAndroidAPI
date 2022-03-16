@@ -5,9 +5,6 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AttributeListImpl::AttributeListImpl(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AttributeListImpl::AttributeListImpl()
 		: JObject(

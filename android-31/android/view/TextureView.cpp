@@ -13,9 +13,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextureView::TextureView(QAndroidJniObject obj) : android::view::View(obj) {}
-	
 	// Constructors
 	TextureView::TextureView(android::content::Context arg0)
 		: android::view::View(

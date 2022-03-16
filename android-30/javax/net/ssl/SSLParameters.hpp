@@ -14,7 +14,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLParameters(QAndroidJniObject obj);
+		SSLParameters(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SSLParameters();

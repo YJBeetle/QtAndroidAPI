@@ -21,9 +21,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CarrierConfigManager_Gps::CarrierConfigManager_Gps(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

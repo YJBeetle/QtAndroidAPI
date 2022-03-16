@@ -15,7 +15,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_integer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_integer(QAndroidJniObject obj);
+		R_integer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_integer();

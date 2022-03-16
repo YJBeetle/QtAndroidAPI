@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResourceBusyException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		ResourceBusyException(QAndroidJniObject obj);
+		ResourceBusyException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
 		
 		// Constructors
 		ResourceBusyException(JString arg0);

@@ -37,7 +37,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CalendarContract_Instances(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_Instances(QAndroidJniObject obj);
+		CalendarContract_Instances(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

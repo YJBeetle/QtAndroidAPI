@@ -7,9 +7,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Exchanger::Exchanger(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Exchanger::Exchanger()
 		: JObject(

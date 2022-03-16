@@ -35,7 +35,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UrlQuerySanitizer_IllegalCharacterValueSanitizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj);
+		UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0);

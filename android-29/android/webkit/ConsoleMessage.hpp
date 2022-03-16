@@ -17,7 +17,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConsoleMessage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConsoleMessage(QAndroidJniObject obj);
+		ConsoleMessage(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConsoleMessage(JString arg0, JString arg1, jint arg2, android::webkit::ConsoleMessage_MessageLevel arg3);

@@ -25,7 +25,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MultiTapKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::BaseKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		MultiTapKeyListener(QAndroidJniObject obj);
+		MultiTapKeyListener(QAndroidJniObject obj) : android::text::method::BaseKeyListener(obj) {}
 		
 		// Constructors
 		MultiTapKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);

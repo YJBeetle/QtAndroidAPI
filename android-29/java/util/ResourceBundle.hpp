@@ -38,7 +38,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResourceBundle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResourceBundle(QAndroidJniObject obj);
+		ResourceBundle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ResourceBundle();

@@ -12,9 +12,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Provider_Service::Provider_Service(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Provider_Service::Provider_Service(java::security::Provider arg0, JString arg1, JString arg2, JString arg3, JObject arg4, JObject arg5)
 		: JObject(

@@ -19,7 +19,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IDN(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IDN(QAndroidJniObject obj);
+		IDN(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

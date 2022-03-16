@@ -6,9 +6,6 @@ namespace android::accounts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NetworkErrorException::NetworkErrorException(QAndroidJniObject obj) : android::accounts::AccountsException(obj) {}
-	
 	// Constructors
 	NetworkErrorException::NetworkErrorException()
 		: android::accounts::AccountsException(

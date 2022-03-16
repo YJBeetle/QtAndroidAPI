@@ -55,7 +55,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClassLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClassLoader(QAndroidJniObject obj);
+		ClassLoader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

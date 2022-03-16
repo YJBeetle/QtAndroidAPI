@@ -11,7 +11,7 @@ namespace javax::microedition::khronos::egl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EGLSurface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGLSurface(QAndroidJniObject obj);
+		EGLSurface(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EGLSurface();

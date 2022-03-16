@@ -17,9 +17,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaSession2Service::MediaSession2Service(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	MediaSession2Service::MediaSession2Service()
 		: android::app::Service(

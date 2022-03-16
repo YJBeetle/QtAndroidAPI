@@ -72,7 +72,7 @@ namespace android::speech::tts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextToSpeech(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextToSpeech(QAndroidJniObject obj);
+		TextToSpeech(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TextToSpeech(android::content::Context arg0, JObject arg1);

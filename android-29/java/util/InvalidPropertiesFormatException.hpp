@@ -22,7 +22,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InvalidPropertiesFormatException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidPropertiesFormatException(QAndroidJniObject obj);
+		InvalidPropertiesFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		InvalidPropertiesFormatException(JString arg0);

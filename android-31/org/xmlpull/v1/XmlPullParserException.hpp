@@ -14,7 +14,7 @@ namespace org::xmlpull::v1
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XmlPullParserException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		XmlPullParserException(QAndroidJniObject obj);
+		XmlPullParserException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		XmlPullParserException(JString arg0);

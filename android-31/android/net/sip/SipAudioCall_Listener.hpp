@@ -21,7 +21,7 @@ namespace android::net::sip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SipAudioCall_Listener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipAudioCall_Listener(QAndroidJniObject obj);
+		SipAudioCall_Listener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SipAudioCall_Listener();

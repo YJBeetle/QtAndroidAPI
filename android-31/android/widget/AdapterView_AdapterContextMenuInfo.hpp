@@ -19,7 +19,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AdapterView_AdapterContextMenuInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj);
+		AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2);

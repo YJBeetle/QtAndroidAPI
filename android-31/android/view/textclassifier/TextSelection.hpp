@@ -26,7 +26,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextSelection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextSelection(QAndroidJniObject obj);
+		TextSelection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

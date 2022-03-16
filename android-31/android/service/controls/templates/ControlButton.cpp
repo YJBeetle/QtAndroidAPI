@@ -14,9 +14,6 @@ namespace android::service::controls::templates
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ControlButton::ControlButton(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ControlButton::ControlButton(jboolean arg0, JString arg1)
 		: JObject(

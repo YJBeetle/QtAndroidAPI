@@ -7,9 +7,6 @@ namespace android::net::ipsec::ike
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeSession::IkeSession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IkeSession::IkeSession(android::content::Context arg0, android::net::ipsec::ike::IkeSessionParams arg1, android::net::ipsec::ike::ChildSessionParams arg2, JObject arg3, JObject arg4, JObject arg5)
 		: JObject(

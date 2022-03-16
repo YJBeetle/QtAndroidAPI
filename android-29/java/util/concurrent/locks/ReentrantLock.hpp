@@ -21,7 +21,7 @@ namespace java::util::concurrent::locks
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReentrantLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReentrantLock(QAndroidJniObject obj);
+		ReentrantLock(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ReentrantLock();

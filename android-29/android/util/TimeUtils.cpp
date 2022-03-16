@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimeUtils::TimeUtils(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

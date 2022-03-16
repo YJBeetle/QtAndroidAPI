@@ -22,7 +22,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatabaseUtils_InsertHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatabaseUtils_InsertHelper(QAndroidJniObject obj);
+		DatabaseUtils_InsertHelper(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, JString arg1);

@@ -30,9 +30,6 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberFormat::NumberFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
-	
 	// Constructors
 	
 	// Methods

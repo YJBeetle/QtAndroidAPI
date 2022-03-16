@@ -25,9 +25,6 @@ namespace java::util::zip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZipFile::ZipFile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ZipFile::ZipFile(java::io::File arg0)
 		: JObject(

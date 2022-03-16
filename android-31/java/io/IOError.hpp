@@ -13,7 +13,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IOError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		IOError(QAndroidJniObject obj);
+		IOError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 		
 		// Constructors
 		IOError(JThrowable arg0);

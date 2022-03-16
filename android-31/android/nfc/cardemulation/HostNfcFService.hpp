@@ -25,7 +25,7 @@ namespace android::nfc::cardemulation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HostNfcFService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		HostNfcFService(QAndroidJniObject obj);
+		HostNfcFService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		HostNfcFService();

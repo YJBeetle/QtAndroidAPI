@@ -6,9 +6,6 @@ namespace android::hardware::fingerprint
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FingerprintManager_AuthenticationCallback::FingerprintManager_AuthenticationCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FingerprintManager_AuthenticationCallback::FingerprintManager_AuthenticationCallback()
 		: JObject(

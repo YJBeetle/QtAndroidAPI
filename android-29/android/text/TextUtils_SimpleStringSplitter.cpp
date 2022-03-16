@@ -6,9 +6,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(jchar arg0)
 		: JObject(

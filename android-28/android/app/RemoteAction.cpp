@@ -19,9 +19,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteAction::RemoteAction(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RemoteAction::RemoteAction(android::graphics::drawable::Icon arg0, JString arg1, JString arg2, android::app::PendingIntent arg3)
 		: JObject(

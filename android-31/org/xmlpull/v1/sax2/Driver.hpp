@@ -18,7 +18,7 @@ namespace org::xmlpull::v1::sax2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Driver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Driver(QAndroidJniObject obj);
+		Driver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Driver();

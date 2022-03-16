@@ -28,7 +28,7 @@ namespace java::beans
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyChangeSupport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyChangeSupport(QAndroidJniObject obj);
+		PropertyChangeSupport(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PropertyChangeSupport(JObject arg0);

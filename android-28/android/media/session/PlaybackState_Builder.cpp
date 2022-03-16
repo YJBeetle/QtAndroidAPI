@@ -9,9 +9,6 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PlaybackState_Builder::PlaybackState_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PlaybackState_Builder::PlaybackState_Builder()
 		: JObject(

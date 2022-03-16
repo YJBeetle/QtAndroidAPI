@@ -38,7 +38,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GregorianCalendar(const char *className, const char *sig, Ts...agv) : java::util::Calendar(className, sig, std::forward<Ts>(agv)...) {}
-		GregorianCalendar(QAndroidJniObject obj);
+		GregorianCalendar(QAndroidJniObject obj) : java::util::Calendar(obj) {}
 		
 		// Constructors
 		GregorianCalendar();

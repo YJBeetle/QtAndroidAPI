@@ -5,9 +5,6 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SignalStrengthUpdateRequest_Builder::SignalStrengthUpdateRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SignalStrengthUpdateRequest_Builder::SignalStrengthUpdateRequest_Builder()
 		: JObject(

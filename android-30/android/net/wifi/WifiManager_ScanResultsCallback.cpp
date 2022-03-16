@@ -4,9 +4,6 @@ namespace android::net::wifi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiManager_ScanResultsCallback::WifiManager_ScanResultsCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WifiManager_ScanResultsCallback::WifiManager_ScanResultsCallback()
 		: JObject(

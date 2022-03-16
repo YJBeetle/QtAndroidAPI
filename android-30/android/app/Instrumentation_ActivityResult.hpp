@@ -16,7 +16,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Instrumentation_ActivityResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Instrumentation_ActivityResult(QAndroidJniObject obj);
+		Instrumentation_ActivityResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1);

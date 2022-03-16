@@ -8,9 +8,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EllipticCurve::EllipticCurve(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EllipticCurve::EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 		: JObject(

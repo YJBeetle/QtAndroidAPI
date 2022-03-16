@@ -7,9 +7,6 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextLinks_Builder::TextLinks_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextLinks_Builder::TextLinks_Builder(JString arg0)
 		: JObject(

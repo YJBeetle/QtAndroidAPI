@@ -21,7 +21,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlarmManager_AlarmClockInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlarmManager_AlarmClockInfo(QAndroidJniObject obj);
+		AlarmManager_AlarmClockInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AlarmManager_AlarmClockInfo(jlong arg0, android::app::PendingIntent arg1);

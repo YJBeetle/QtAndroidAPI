@@ -26,7 +26,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpSecAlgorithm(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecAlgorithm(QAndroidJniObject obj);
+		IpSecAlgorithm(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IpSecAlgorithm(JString arg0, JByteArray arg1);

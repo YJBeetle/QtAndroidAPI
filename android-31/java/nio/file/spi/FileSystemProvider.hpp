@@ -52,7 +52,7 @@ namespace java::nio::file::spi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileSystemProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileSystemProvider(QAndroidJniObject obj);
+		FileSystemProvider(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

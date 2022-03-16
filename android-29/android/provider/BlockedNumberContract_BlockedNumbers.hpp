@@ -23,7 +23,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlockedNumberContract_BlockedNumbers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BlockedNumberContract_BlockedNumbers(QAndroidJniObject obj);
+		BlockedNumberContract_BlockedNumbers(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

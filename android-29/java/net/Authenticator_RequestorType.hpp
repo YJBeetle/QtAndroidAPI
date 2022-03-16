@@ -16,7 +16,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Authenticator_RequestorType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Authenticator_RequestorType(QAndroidJniObject obj);
+		Authenticator_RequestorType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

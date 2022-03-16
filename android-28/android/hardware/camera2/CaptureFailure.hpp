@@ -18,7 +18,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CaptureFailure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptureFailure(QAndroidJniObject obj);
+		CaptureFailure(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

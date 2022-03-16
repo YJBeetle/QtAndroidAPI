@@ -5,9 +5,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
-	
 	// Constructors
 	SQLiteReadOnlyDatabaseException::SQLiteReadOnlyDatabaseException()
 		: android::database::sqlite::SQLiteException(

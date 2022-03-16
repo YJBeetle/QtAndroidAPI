@@ -7,9 +7,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnimatorInflater::AnimatorInflater(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AnimatorInflater::AnimatorInflater()
 		: JObject(

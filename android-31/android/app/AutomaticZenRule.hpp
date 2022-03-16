@@ -31,7 +31,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AutomaticZenRule(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AutomaticZenRule(QAndroidJniObject obj);
+		AutomaticZenRule(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AutomaticZenRule(android::os::Parcel arg0);

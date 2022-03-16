@@ -76,9 +76,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ParcelFileDescriptor::ParcelFileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ParcelFileDescriptor::ParcelFileDescriptor(android::os::ParcelFileDescriptor &arg0)
 		: JObject(

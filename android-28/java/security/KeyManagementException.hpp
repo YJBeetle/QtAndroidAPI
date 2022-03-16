@@ -14,7 +14,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyManagementException(const char *className, const char *sig, Ts...agv) : java::security::KeyException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyManagementException(QAndroidJniObject obj);
+		KeyManagementException(QAndroidJniObject obj) : java::security::KeyException(obj) {}
 		
 		// Constructors
 		KeyManagementException();

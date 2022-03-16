@@ -31,7 +31,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DnsResolver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DnsResolver(QAndroidJniObject obj);
+		DnsResolver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

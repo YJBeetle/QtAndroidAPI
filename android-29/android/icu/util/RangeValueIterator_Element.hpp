@@ -14,7 +14,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RangeValueIterator_Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RangeValueIterator_Element(QAndroidJniObject obj);
+		RangeValueIterator_Element(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RangeValueIterator_Element();

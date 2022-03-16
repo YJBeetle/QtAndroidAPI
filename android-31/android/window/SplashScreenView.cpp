@@ -7,9 +7,6 @@ namespace android::window
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SplashScreenView::SplashScreenView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
-	
 	// Constructors
 	
 	// Methods

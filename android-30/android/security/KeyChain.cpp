@@ -92,9 +92,6 @@ namespace android::security
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyChain::KeyChain(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	KeyChain::KeyChain()
 		: JObject(

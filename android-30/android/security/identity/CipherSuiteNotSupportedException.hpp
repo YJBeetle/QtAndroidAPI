@@ -14,7 +14,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CipherSuiteNotSupportedException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		CipherSuiteNotSupportedException(QAndroidJniObject obj);
+		CipherSuiteNotSupportedException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 		
 		// Constructors
 		CipherSuiteNotSupportedException(JString arg0);

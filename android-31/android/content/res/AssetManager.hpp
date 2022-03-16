@@ -26,7 +26,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssetManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssetManager(QAndroidJniObject obj);
+		AssetManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

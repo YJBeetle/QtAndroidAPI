@@ -25,7 +25,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaController2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaController2(QAndroidJniObject obj);
+		MediaController2(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

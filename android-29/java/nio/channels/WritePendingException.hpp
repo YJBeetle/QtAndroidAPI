@@ -11,7 +11,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WritePendingException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		WritePendingException(QAndroidJniObject obj);
+		WritePendingException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
 		
 		// Constructors
 		WritePendingException();

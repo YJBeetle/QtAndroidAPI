@@ -6,9 +6,6 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WrongMethodTypeException::WrongMethodTypeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	WrongMethodTypeException::WrongMethodTypeException()
 		: java::lang::RuntimeException(

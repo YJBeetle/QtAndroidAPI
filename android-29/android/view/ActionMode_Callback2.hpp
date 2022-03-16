@@ -24,7 +24,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActionMode_Callback2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActionMode_Callback2(QAndroidJniObject obj);
+		ActionMode_Callback2(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ActionMode_Callback2();

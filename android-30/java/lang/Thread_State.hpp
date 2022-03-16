@@ -20,7 +20,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Thread_State(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Thread_State(QAndroidJniObject obj);
+		Thread_State(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

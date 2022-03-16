@@ -9,9 +9,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ForkJoinWorkerThread::ForkJoinWorkerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
-	
 	// Constructors
 	
 	// Methods

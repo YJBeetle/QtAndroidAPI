@@ -14,7 +14,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ObjectOutputStream_PutField(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ObjectOutputStream_PutField(QAndroidJniObject obj);
+		ObjectOutputStream_PutField(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ObjectOutputStream_PutField();

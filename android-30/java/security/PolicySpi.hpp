@@ -28,7 +28,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PolicySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PolicySpi(QAndroidJniObject obj);
+		PolicySpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PolicySpi();

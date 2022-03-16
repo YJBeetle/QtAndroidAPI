@@ -8,9 +8,6 @@ namespace android::app::people
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConversationStatus_Builder::ConversationStatus_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ConversationStatus_Builder::ConversationStatus_Builder(JString arg0, jint arg1)
 		: JObject(

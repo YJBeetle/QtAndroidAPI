@@ -20,7 +20,7 @@ namespace android::view::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScaleAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		ScaleAnimation(QAndroidJniObject obj);
+		ScaleAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
 		
 		// Constructors
 		ScaleAnimation(android::content::Context arg0, JObject arg1);

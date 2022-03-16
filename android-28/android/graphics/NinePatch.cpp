@@ -12,9 +12,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NinePatch::NinePatch(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NinePatch::NinePatch(android::graphics::Bitmap arg0, JByteArray arg1)
 		: JObject(

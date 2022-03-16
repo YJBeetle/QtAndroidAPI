@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IllegalFormatPrecisionException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalFormatPrecisionException(QAndroidJniObject obj);
+		IllegalFormatPrecisionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
 		
 		// Constructors
 		IllegalFormatPrecisionException(jint arg0);

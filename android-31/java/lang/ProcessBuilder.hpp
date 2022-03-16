@@ -26,7 +26,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder(QAndroidJniObject obj);
+		ProcessBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ProcessBuilder(JArray arg0);

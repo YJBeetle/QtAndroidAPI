@@ -21,7 +21,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeTunnelConnectionParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeTunnelConnectionParams(QAndroidJniObject obj);
+		IkeTunnelConnectionParams(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IkeTunnelConnectionParams(android::net::ipsec::ike::IkeSessionParams arg0, android::net::ipsec::ike::TunnelModeChildSessionParams arg1);

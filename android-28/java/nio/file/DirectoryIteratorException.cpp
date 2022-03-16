@@ -7,9 +7,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DirectoryIteratorException::DirectoryIteratorException(QAndroidJniObject obj) : java::util::ConcurrentModificationException(obj) {}
-	
 	// Constructors
 	DirectoryIteratorException::DirectoryIteratorException(java::io::IOException arg0)
 		: java::util::ConcurrentModificationException(

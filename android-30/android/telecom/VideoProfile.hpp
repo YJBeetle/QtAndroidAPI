@@ -27,7 +27,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VideoProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VideoProfile(QAndroidJniObject obj);
+		VideoProfile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VideoProfile(jint arg0);

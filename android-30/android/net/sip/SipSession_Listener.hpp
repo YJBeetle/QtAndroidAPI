@@ -21,7 +21,7 @@ namespace android::net::sip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SipSession_Listener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipSession_Listener(QAndroidJniObject obj);
+		SipSession_Listener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SipSession_Listener();

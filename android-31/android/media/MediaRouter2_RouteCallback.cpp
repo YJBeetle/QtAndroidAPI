@@ -4,9 +4,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRouter2_RouteCallback::MediaRouter2_RouteCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaRouter2_RouteCallback::MediaRouter2_RouteCallback()
 		: JObject(

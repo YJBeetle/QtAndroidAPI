@@ -18,7 +18,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_ImsServiceEntitlement(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_ImsServiceEntitlement(QAndroidJniObject obj);
+		CarrierConfigManager_ImsServiceEntitlement(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

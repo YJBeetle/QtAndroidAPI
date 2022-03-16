@@ -15,9 +15,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CellIdentityCdma::CellIdentityCdma(QAndroidJniObject obj) : android::telephony::CellIdentity(obj) {}
-	
 	// Constructors
 	
 	// Methods

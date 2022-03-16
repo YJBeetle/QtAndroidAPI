@@ -6,9 +6,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchAlgorithmException::NoSuchAlgorithmException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-	
 	// Constructors
 	NoSuchAlgorithmException::NoSuchAlgorithmException()
 		: java::security::GeneralSecurityException(

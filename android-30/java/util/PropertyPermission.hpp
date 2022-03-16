@@ -30,7 +30,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyPermission(QAndroidJniObject obj);
+		PropertyPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
 		
 		// Constructors
 		PropertyPermission(JString arg0, JString arg1);

@@ -14,7 +14,7 @@ namespace javax::xml::transform
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransformerConfigurationException(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerException(className, sig, std::forward<Ts>(agv)...) {}
-		TransformerConfigurationException(QAndroidJniObject obj);
+		TransformerConfigurationException(QAndroidJniObject obj) : javax::xml::transform::TransformerException(obj) {}
 		
 		// Constructors
 		TransformerConfigurationException();

@@ -21,7 +21,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FragmentBreadCrumbs(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentBreadCrumbs(QAndroidJniObject obj);
+		FragmentBreadCrumbs(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
 		
 		// Constructors
 		FragmentBreadCrumbs(android::content::Context arg0);

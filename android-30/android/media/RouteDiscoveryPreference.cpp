@@ -15,9 +15,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RouteDiscoveryPreference::RouteDiscoveryPreference(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

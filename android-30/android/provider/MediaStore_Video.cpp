@@ -16,9 +16,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Video::MediaStore_Video(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaStore_Video::MediaStore_Video()
 		: JObject(

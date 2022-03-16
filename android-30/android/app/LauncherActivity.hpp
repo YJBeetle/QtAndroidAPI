@@ -33,7 +33,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LauncherActivity(const char *className, const char *sig, Ts...agv) : android::app::ListActivity(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherActivity(QAndroidJniObject obj);
+		LauncherActivity(QAndroidJniObject obj) : android::app::ListActivity(obj) {}
 		
 		// Constructors
 		LauncherActivity();

@@ -40,7 +40,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RunningServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RunningServiceInfo(QAndroidJniObject obj);
+		ActivityManager_RunningServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ActivityManager_RunningServiceInfo();

@@ -7,9 +7,6 @@ namespace android::net::wifi::p2p
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WifiP2pConfig_Builder::WifiP2pConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WifiP2pConfig_Builder::WifiP2pConfig_Builder()
 		: JObject(

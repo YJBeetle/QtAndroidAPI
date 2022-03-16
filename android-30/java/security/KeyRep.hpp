@@ -19,7 +19,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyRep(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyRep(QAndroidJniObject obj);
+		KeyRep(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyRep(java::security::KeyRep_Type arg0, JString arg1, JString arg2, JByteArray arg3);

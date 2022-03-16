@@ -10,9 +10,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteQueryBuilder::SQLiteQueryBuilder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SQLiteQueryBuilder::SQLiteQueryBuilder()
 		: JObject(

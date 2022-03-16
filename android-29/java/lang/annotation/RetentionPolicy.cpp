@@ -30,9 +30,6 @@ namespace java::lang::annotation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RetentionPolicy::RetentionPolicy(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

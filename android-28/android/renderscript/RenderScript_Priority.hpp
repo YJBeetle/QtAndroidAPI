@@ -16,7 +16,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RenderScript_Priority(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_Priority(QAndroidJniObject obj);
+		RenderScript_Priority(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

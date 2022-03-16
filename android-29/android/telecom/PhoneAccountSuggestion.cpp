@@ -50,9 +50,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PhoneAccountSuggestion::PhoneAccountSuggestion(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PhoneAccountSuggestion::PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2)
 		: JObject(

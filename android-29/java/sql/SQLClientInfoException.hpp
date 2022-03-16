@@ -14,7 +14,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLClientInfoException(const char *className, const char *sig, Ts...agv) : java::sql::SQLException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLClientInfoException(QAndroidJniObject obj);
+		SQLClientInfoException(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
 		
 		// Constructors
 		SQLClientInfoException();

@@ -13,9 +13,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BitSet::BitSet(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BitSet::BitSet()
 		: JObject(

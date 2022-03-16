@@ -36,7 +36,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRoute2ProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRoute2ProviderService(QAndroidJniObject obj);
+		MediaRoute2ProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		MediaRoute2ProviderService();

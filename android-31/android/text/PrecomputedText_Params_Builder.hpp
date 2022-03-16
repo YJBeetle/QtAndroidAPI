@@ -20,7 +20,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrecomputedText_Params_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrecomputedText_Params_Builder(QAndroidJniObject obj);
+		PrecomputedText_Params_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PrecomputedText_Params_Builder(android::text::PrecomputedText_Params arg0);

@@ -38,9 +38,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateFormat_BooleanAttribute::DateFormat_BooleanAttribute(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

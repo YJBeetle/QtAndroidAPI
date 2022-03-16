@@ -33,7 +33,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OutputConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OutputConfiguration(QAndroidJniObject obj);
+		OutputConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		OutputConfiguration(android::view::Surface arg0);

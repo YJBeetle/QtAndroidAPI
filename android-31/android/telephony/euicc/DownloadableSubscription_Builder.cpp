@@ -6,9 +6,6 @@ namespace android::telephony::euicc
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DownloadableSubscription_Builder::DownloadableSubscription_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DownloadableSubscription_Builder::DownloadableSubscription_Builder(android::telephony::euicc::DownloadableSubscription arg0)
 		: JObject(

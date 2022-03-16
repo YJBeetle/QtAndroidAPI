@@ -7,9 +7,6 @@ namespace org::json
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JSONTokener::JSONTokener(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	JSONTokener::JSONTokener(JString arg0)
 		: JObject(

@@ -10,9 +10,6 @@ namespace android::graphics::drawable::shapes
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArcShape::ArcShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::RectShape(obj) {}
-	
 	// Constructors
 	ArcShape::ArcShape(jfloat arg0, jfloat arg1)
 		: android::graphics::drawable::shapes::RectShape(

@@ -13,9 +13,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SurfaceControlViewHost_SurfacePackage::SurfaceControlViewHost_SurfacePackage(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

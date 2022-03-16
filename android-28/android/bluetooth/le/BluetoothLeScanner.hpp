@@ -28,7 +28,7 @@ namespace android::bluetooth::le
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothLeScanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothLeScanner(QAndroidJniObject obj);
+		BluetoothLeScanner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

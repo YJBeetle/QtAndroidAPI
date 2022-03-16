@@ -1010,9 +1010,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	View::View(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	View::View(android::content::Context arg0)
 		: JObject(

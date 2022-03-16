@@ -37,9 +37,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Settings_Panel::Settings_Panel(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

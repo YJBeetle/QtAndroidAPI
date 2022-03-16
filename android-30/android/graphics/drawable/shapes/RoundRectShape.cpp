@@ -12,9 +12,6 @@ namespace android::graphics::drawable::shapes
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RoundRectShape::RoundRectShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::RectShape(obj) {}
-	
 	// Constructors
 	RoundRectShape::RoundRectShape(JFloatArray arg0, android::graphics::RectF arg1, JFloatArray arg2)
 		: android::graphics::drawable::shapes::RectShape(

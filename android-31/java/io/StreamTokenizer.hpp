@@ -30,7 +30,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StreamTokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamTokenizer(QAndroidJniObject obj);
+		StreamTokenizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StreamTokenizer(java::io::InputStream arg0);

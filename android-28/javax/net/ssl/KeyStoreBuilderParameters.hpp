@@ -16,7 +16,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyStoreBuilderParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStoreBuilderParameters(QAndroidJniObject obj);
+		KeyStoreBuilderParameters(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyStoreBuilderParameters(java::security::KeyStore_Builder arg0);

@@ -29,7 +29,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChangeBounds(const char *className, const char *sig, Ts...agv) : android::transition::Transition(className, sig, std::forward<Ts>(agv)...) {}
-		ChangeBounds(QAndroidJniObject obj);
+		ChangeBounds(QAndroidJniObject obj) : android::transition::Transition(obj) {}
 		
 		// Constructors
 		ChangeBounds();

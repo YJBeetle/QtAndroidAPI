@@ -25,7 +25,7 @@ namespace java::time::zone
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneOffsetTransitionRule_TimeDefinition(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneOffsetTransitionRule_TimeDefinition(QAndroidJniObject obj);
+		ZoneOffsetTransitionRule_TimeDefinition(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

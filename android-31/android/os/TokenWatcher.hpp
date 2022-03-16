@@ -21,7 +21,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TokenWatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TokenWatcher(QAndroidJniObject obj);
+		TokenWatcher(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TokenWatcher(android::os::Handler arg0, JString arg1);

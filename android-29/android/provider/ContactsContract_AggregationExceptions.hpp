@@ -26,7 +26,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_AggregationExceptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_AggregationExceptions(QAndroidJniObject obj);
+		ContactsContract_AggregationExceptions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -14,9 +14,6 @@ namespace javax::crypto::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OAEPParameterSpec::OAEPParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	OAEPParameterSpec::OAEPParameterSpec(JString arg0, JString arg1, JObject arg2, javax::crypto::spec::PSource arg3)
 		: JObject(

@@ -14,7 +14,7 @@ namespace android::service::voice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlwaysOnHotwordDetector_ModelParamRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlwaysOnHotwordDetector_ModelParamRange(QAndroidJniObject obj);
+		AlwaysOnHotwordDetector_ModelParamRange(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

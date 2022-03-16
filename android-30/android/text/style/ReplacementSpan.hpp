@@ -29,7 +29,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReplacementSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		ReplacementSpan(QAndroidJniObject obj);
+		ReplacementSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
 		
 		// Constructors
 		ReplacementSpan();

@@ -23,7 +23,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_DataUsageFeedback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_DataUsageFeedback(QAndroidJniObject obj);
+		ContactsContract_DataUsageFeedback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContactsContract_DataUsageFeedback();

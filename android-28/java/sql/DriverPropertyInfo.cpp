@@ -40,9 +40,6 @@ namespace java::sql
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DriverPropertyInfo::DriverPropertyInfo(JString arg0, JString arg1)
 		: JObject(

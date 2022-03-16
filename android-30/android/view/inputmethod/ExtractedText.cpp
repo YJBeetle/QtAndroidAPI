@@ -78,9 +78,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExtractedText::ExtractedText(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ExtractedText::ExtractedText()
 		: JObject(

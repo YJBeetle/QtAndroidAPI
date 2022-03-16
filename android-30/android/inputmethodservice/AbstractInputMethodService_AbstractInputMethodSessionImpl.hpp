@@ -24,7 +24,7 @@ namespace android::inputmethodservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractInputMethodService_AbstractInputMethodSessionImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractInputMethodService_AbstractInputMethodSessionImpl(QAndroidJniObject obj);
+		AbstractInputMethodService_AbstractInputMethodSessionImpl(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0);

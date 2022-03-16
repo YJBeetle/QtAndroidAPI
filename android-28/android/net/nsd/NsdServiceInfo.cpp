@@ -15,9 +15,6 @@ namespace android::net::nsd
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NsdServiceInfo::NsdServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NsdServiceInfo::NsdServiceInfo()
 		: JObject(

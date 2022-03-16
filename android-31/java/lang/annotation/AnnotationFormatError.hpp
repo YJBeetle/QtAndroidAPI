@@ -14,7 +14,7 @@ namespace java::lang::annotation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AnnotationFormatError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		AnnotationFormatError(QAndroidJniObject obj);
+		AnnotationFormatError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 		
 		// Constructors
 		AnnotationFormatError(JString arg0);

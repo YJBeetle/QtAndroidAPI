@@ -124,7 +124,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MotionEvent(const char *className, const char *sig, Ts...agv) : android::view::InputEvent(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent(QAndroidJniObject obj);
+		MotionEvent(QAndroidJniObject obj) : android::view::InputEvent(obj) {}
 		
 		// Constructors
 		

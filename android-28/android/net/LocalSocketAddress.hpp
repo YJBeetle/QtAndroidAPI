@@ -17,7 +17,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalSocketAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocalSocketAddress(QAndroidJniObject obj);
+		LocalSocketAddress(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LocalSocketAddress(JString arg0);

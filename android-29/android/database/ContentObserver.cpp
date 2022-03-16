@@ -6,9 +6,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentObserver::ContentObserver(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContentObserver::ContentObserver(android::os::Handler arg0)
 		: JObject(

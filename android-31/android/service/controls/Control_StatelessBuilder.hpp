@@ -30,7 +30,7 @@ namespace android::service::controls
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Control_StatelessBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Control_StatelessBuilder(QAndroidJniObject obj);
+		Control_StatelessBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Control_StatelessBuilder(android::service::controls::Control arg0);

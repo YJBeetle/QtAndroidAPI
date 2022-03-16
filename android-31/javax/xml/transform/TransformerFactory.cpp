@@ -8,9 +8,6 @@ namespace javax::xml::transform
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransformerFactory::TransformerFactory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

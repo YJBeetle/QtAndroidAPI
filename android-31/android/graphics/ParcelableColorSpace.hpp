@@ -22,7 +22,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParcelableColorSpace(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelableColorSpace(QAndroidJniObject obj);
+		ParcelableColorSpace(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ParcelableColorSpace(android::graphics::ColorSpace arg0);

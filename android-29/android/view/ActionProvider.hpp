@@ -20,7 +20,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActionProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActionProvider(QAndroidJniObject obj);
+		ActionProvider(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ActionProvider(android::content::Context arg0);

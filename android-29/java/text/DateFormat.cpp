@@ -176,9 +176,6 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateFormat::DateFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
-	
 	// Constructors
 	
 	// Methods

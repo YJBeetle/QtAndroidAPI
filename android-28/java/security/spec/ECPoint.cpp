@@ -14,9 +14,6 @@ namespace java::security::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ECPoint::ECPoint(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ECPoint::ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1)
 		: JObject(

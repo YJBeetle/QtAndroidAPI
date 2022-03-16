@@ -23,7 +23,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LauncherApps_ShortcutQuery(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps_ShortcutQuery(QAndroidJniObject obj);
+		LauncherApps_ShortcutQuery(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LauncherApps_ShortcutQuery();

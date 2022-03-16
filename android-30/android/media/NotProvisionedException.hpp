@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotProvisionedException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		NotProvisionedException(QAndroidJniObject obj);
+		NotProvisionedException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
 		
 		// Constructors
 		NotProvisionedException(JString arg0);

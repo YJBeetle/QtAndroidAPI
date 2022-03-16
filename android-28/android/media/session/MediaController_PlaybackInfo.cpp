@@ -19,9 +19,6 @@ namespace android::media::session
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaController_PlaybackInfo::MediaController_PlaybackInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

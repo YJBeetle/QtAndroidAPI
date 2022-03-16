@@ -9,9 +9,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChangeImageTransform::ChangeImageTransform(QAndroidJniObject obj) : android::transition::Transition(obj) {}
-	
 	// Constructors
 	ChangeImageTransform::ChangeImageTransform()
 		: android::transition::Transition(

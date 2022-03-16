@@ -25,7 +25,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScrollCaptureTarget(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScrollCaptureTarget(QAndroidJniObject obj);
+		ScrollCaptureTarget(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, JObject arg3);

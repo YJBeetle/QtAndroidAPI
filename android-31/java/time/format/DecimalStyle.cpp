@@ -15,9 +15,6 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DecimalStyle::DecimalStyle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

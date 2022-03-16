@@ -21,9 +21,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ClipData::ClipData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ClipData::ClipData(android::content::ClipData &arg0)
 		: JObject(

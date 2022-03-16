@@ -11,9 +11,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContextThemeWrapper::ContextThemeWrapper(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
-	
 	// Constructors
 	ContextThemeWrapper::ContextThemeWrapper()
 		: android::content::ContextWrapper(

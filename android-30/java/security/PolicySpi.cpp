@@ -8,9 +8,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PolicySpi::PolicySpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PolicySpi::PolicySpi()
 		: JObject(

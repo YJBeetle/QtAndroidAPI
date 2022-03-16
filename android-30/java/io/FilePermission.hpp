@@ -34,7 +34,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FilePermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		FilePermission(QAndroidJniObject obj);
+		FilePermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
 		
 		// Constructors
 		FilePermission(JString arg0, JString arg1);

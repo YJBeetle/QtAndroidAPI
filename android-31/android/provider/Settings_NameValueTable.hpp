@@ -23,7 +23,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Settings_NameValueTable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_NameValueTable(QAndroidJniObject obj);
+		Settings_NameValueTable(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Settings_NameValueTable();

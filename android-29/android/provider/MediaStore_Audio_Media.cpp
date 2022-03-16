@@ -62,9 +62,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Audio_Media::MediaStore_Audio_Media(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaStore_Audio_Media::MediaStore_Audio_Media()
 		: JObject(

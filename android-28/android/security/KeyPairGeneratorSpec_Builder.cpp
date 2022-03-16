@@ -10,9 +10,6 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyPairGeneratorSpec_Builder::KeyPairGeneratorSpec_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	KeyPairGeneratorSpec_Builder::KeyPairGeneratorSpec_Builder(android::content::Context arg0)
 		: JObject(

@@ -20,9 +20,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DecimalFormat::DecimalFormat(QAndroidJniObject obj) : java::text::NumberFormat(obj) {}
-	
 	// Constructors
 	DecimalFormat::DecimalFormat()
 		: java::text::NumberFormat(

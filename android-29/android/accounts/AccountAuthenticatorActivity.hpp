@@ -16,7 +16,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccountAuthenticatorActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		AccountAuthenticatorActivity(QAndroidJniObject obj);
+		AccountAuthenticatorActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
 		
 		// Constructors
 		AccountAuthenticatorActivity();

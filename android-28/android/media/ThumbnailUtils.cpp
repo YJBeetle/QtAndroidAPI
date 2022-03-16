@@ -13,9 +13,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ThumbnailUtils::ThumbnailUtils(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ThumbnailUtils::ThumbnailUtils()
 		: JObject(

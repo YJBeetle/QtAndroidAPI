@@ -8,9 +8,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TrustAnchor::TrustAnchor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TrustAnchor::TrustAnchor(java::security::cert::X509Certificate arg0, JByteArray arg1)
 		: JObject(

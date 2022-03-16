@@ -69,9 +69,6 @@ namespace android::app::appsearch
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppSearchResult::AppSearchResult(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

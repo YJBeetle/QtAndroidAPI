@@ -23,7 +23,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FutureTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FutureTask(QAndroidJniObject obj);
+		FutureTask(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FutureTask(JObject arg0);

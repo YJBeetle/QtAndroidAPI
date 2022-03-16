@@ -8,9 +8,6 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HandlerBase::HandlerBase(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	HandlerBase::HandlerBase()
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VelocityTracker::VelocityTracker(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

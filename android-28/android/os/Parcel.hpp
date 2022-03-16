@@ -74,7 +74,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Parcel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Parcel(QAndroidJniObject obj);
+		Parcel(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

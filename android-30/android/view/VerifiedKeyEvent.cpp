@@ -15,9 +15,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VerifiedKeyEvent::VerifiedKeyEvent(QAndroidJniObject obj) : android::view::VerifiedInputEvent(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -26,7 +26,7 @@ namespace android::content::pm::verify::domain
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DomainVerificationUserState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DomainVerificationUserState(QAndroidJniObject obj);
+		DomainVerificationUserState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -6,9 +6,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptGroup_Binding::ScriptGroup_Binding(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ScriptGroup_Binding::ScriptGroup_Binding(android::renderscript::Script_FieldID arg0, JObject arg1)
 		: JObject(

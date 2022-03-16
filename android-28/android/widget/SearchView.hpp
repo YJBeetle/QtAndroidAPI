@@ -33,7 +33,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchView(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		SearchView(QAndroidJniObject obj);
+		SearchView(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
 		
 		// Constructors
 		SearchView(android::content::Context arg0);

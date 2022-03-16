@@ -6,9 +6,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

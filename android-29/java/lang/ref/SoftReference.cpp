@@ -6,9 +6,6 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SoftReference::SoftReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
-	
 	// Constructors
 	SoftReference::SoftReference(JObject arg0)
 		: java::lang::ref::Reference(

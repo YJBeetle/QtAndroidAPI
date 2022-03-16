@@ -15,9 +15,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(JString arg0, jint arg1)
 		: JObject(

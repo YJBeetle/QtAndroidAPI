@@ -30,7 +30,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Debug(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Debug(QAndroidJniObject obj);
+		Debug(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

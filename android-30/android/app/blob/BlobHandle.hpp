@@ -21,7 +21,7 @@ namespace android::app::blob
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlobHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BlobHandle(QAndroidJniObject obj);
+		BlobHandle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

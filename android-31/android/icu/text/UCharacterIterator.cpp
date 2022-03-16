@@ -15,9 +15,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UCharacterIterator::UCharacterIterator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

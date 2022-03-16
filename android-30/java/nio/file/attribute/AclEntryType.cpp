@@ -38,9 +38,6 @@ namespace java::nio::file::attribute
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AclEntryType::AclEntryType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -22,7 +22,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X509ExtendedTrustManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509ExtendedTrustManager(QAndroidJniObject obj);
+		X509ExtendedTrustManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		X509ExtendedTrustManager();

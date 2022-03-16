@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SizeF::SizeF(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SizeF::SizeF(jfloat arg0, jfloat arg1)
 		: JObject(

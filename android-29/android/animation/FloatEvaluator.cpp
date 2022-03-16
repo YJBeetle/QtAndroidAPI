@@ -7,9 +7,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FloatEvaluator::FloatEvaluator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FloatEvaluator::FloatEvaluator()
 		: JObject(

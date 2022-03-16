@@ -15,9 +15,6 @@ namespace android::service::quickaccesswallet
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GetWalletCardsError::GetWalletCardsError(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GetWalletCardsError::GetWalletCardsError(android::graphics::drawable::Icon arg0, JString arg1)
 		: JObject(

@@ -27,7 +27,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellInfoNr(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
-		CellInfoNr(QAndroidJniObject obj);
+		CellInfoNr(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
 		
 		// Constructors
 		

@@ -29,7 +29,7 @@ namespace java::time::temporal
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WeekFields(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WeekFields(QAndroidJniObject obj);
+		WeekFields(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

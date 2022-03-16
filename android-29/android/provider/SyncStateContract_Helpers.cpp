@@ -10,9 +10,6 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SyncStateContract_Helpers::SyncStateContract_Helpers(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SyncStateContract_Helpers::SyncStateContract_Helpers()
 		: JObject(

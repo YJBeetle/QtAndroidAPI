@@ -17,7 +17,7 @@ namespace android::media::midi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiInputPort(const char *className, const char *sig, Ts...agv) : android::media::midi::MidiReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		MidiInputPort(QAndroidJniObject obj);
+		MidiInputPort(QAndroidJniObject obj) : android::media::midi::MidiReceiver(obj) {}
 		
 		// Constructors
 		

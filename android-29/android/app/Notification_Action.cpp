@@ -116,9 +116,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Notification_Action::Notification_Action(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification_Action::Notification_Action(jint arg0, JString arg1, android::app::PendingIntent arg2)
 		: JObject(

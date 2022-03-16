@@ -13,7 +13,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputFilter_LengthFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputFilter_LengthFilter(QAndroidJniObject obj);
+		InputFilter_LengthFilter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InputFilter_LengthFilter(jint arg0);

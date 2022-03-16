@@ -34,9 +34,6 @@ namespace android::accessibilityservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FingerprintGestureController::FingerprintGestureController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Dictionary::Dictionary(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Dictionary::Dictionary()
 		: JObject(

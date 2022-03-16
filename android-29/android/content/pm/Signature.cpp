@@ -18,9 +18,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Signature::Signature(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Signature::Signature(JByteArray arg0)
 		: JObject(

@@ -166,9 +166,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeZoneFormat_Style::TimeZoneFormat_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -13,7 +13,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExtendedSSLSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExtendedSSLSession(QAndroidJniObject obj);
+		ExtendedSSLSession(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ExtendedSSLSession();

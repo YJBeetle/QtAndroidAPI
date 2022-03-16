@@ -25,7 +25,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DelegatedAdminReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		DelegatedAdminReceiver(QAndroidJniObject obj);
+		DelegatedAdminReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
 		
 		// Constructors
 		DelegatedAdminReceiver();

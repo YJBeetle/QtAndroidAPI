@@ -13,9 +13,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLContextSpi::SSLContextSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SSLContextSpi::SSLContextSpi()
 		: JObject(

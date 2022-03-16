@@ -18,7 +18,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VersionedPackage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VersionedPackage(QAndroidJniObject obj);
+		VersionedPackage(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VersionedPackage(JString arg0, jint arg1);

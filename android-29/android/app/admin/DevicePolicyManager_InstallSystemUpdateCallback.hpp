@@ -18,7 +18,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DevicePolicyManager_InstallSystemUpdateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj);
+		DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DevicePolicyManager_InstallSystemUpdateCallback();

@@ -13,7 +13,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageManager_NameNotFoundException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		PackageManager_NameNotFoundException(QAndroidJniObject obj);
+		PackageManager_NameNotFoundException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
 		
 		// Constructors
 		PackageManager_NameNotFoundException();

@@ -10,9 +10,6 @@ namespace android::service::controls
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Control_StatelessBuilder::Control_StatelessBuilder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Control_StatelessBuilder::Control_StatelessBuilder(android::service::controls::Control arg0)
 		: JObject(

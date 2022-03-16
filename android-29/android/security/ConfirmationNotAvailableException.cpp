@@ -5,9 +5,6 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConfirmationNotAvailableException::ConfirmationNotAvailableException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	ConfirmationNotAvailableException::ConfirmationNotAvailableException()
 		: java::lang::Exception(

@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PorterDuffColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuffColorFilter(QAndroidJniObject obj);
+		PorterDuffColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
 		
 		// Constructors
 		PorterDuffColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1);

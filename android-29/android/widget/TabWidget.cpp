@@ -11,9 +11,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TabWidget::TabWidget(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
-	
 	// Constructors
 	TabWidget::TabWidget(android::content::Context arg0)
 		: android::widget::LinearLayout(

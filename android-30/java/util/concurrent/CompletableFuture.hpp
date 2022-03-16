@@ -20,7 +20,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompletableFuture(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CompletableFuture(QAndroidJniObject obj);
+		CompletableFuture(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CompletableFuture();

@@ -11,7 +11,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony(QAndroidJniObject obj);
+		Telephony(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

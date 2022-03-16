@@ -22,7 +22,7 @@ namespace android::service::controls::templates
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ToggleRangeTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		ToggleRangeTemplate(QAndroidJniObject obj);
+		ToggleRangeTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 		
 		// Constructors
 		ToggleRangeTemplate(JString arg0, android::service::controls::templates::ControlButton arg1, android::service::controls::templates::RangeTemplate arg2);

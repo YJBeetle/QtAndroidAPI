@@ -5,9 +5,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLSessionBindingEvent::SSLSessionBindingEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
-	
 	// Constructors
 	SSLSessionBindingEvent::SSLSessionBindingEvent(JObject arg0, JString arg1)
 		: java::util::EventObject(

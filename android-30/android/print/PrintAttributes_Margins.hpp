@@ -15,7 +15,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintAttributes_Margins(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes_Margins(QAndroidJniObject obj);
+		PrintAttributes_Margins(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PrintAttributes_Margins(jint arg0, jint arg1, jint arg2, jint arg3);

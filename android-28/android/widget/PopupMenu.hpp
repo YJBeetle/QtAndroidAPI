@@ -24,7 +24,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PopupMenu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PopupMenu(QAndroidJniObject obj);
+		PopupMenu(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PopupMenu(android::content::Context arg0, android::view::View arg1);

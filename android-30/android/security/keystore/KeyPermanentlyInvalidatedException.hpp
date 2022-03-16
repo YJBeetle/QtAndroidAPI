@@ -14,7 +14,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyPermanentlyInvalidatedException(const char *className, const char *sig, Ts...agv) : java::security::InvalidKeyException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyPermanentlyInvalidatedException(QAndroidJniObject obj);
+		KeyPermanentlyInvalidatedException(QAndroidJniObject obj) : java::security::InvalidKeyException(obj) {}
 		
 		// Constructors
 		KeyPermanentlyInvalidatedException();

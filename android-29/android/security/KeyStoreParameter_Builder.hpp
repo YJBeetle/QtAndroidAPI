@@ -20,7 +20,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyStoreParameter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStoreParameter_Builder(QAndroidJniObject obj);
+		KeyStoreParameter_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyStoreParameter_Builder(android::content::Context arg0);

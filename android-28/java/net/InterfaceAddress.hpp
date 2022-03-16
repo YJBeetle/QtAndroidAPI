@@ -22,7 +22,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InterfaceAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InterfaceAddress(QAndroidJniObject obj);
+		InterfaceAddress(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

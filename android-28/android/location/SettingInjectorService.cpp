@@ -38,9 +38,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SettingInjectorService::SettingInjectorService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	SettingInjectorService::SettingInjectorService(JString arg0)
 		: android::app::Service(

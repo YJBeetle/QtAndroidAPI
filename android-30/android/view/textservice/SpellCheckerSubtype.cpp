@@ -18,9 +18,6 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SpellCheckerSubtype::SpellCheckerSubtype(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SpellCheckerSubtype::SpellCheckerSubtype(jint arg0, JString arg1, JString arg2)
 		: JObject(

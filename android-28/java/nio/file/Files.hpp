@@ -59,7 +59,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Files(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Files(QAndroidJniObject obj);
+		Files(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

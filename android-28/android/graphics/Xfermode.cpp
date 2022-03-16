@@ -4,9 +4,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Xfermode::Xfermode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Xfermode::Xfermode()
 		: JObject(

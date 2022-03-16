@@ -26,7 +26,7 @@ namespace java::lang::annotation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ElementType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ElementType(QAndroidJniObject obj);
+		ElementType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

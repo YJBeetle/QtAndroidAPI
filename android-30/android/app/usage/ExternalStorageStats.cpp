@@ -13,9 +13,6 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ExternalStorageStats::ExternalStorageStats(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -40,9 +40,6 @@ namespace android::bluetooth::le
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AdvertiseCallback::AdvertiseCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AdvertiseCallback::AdvertiseCallback()
 		: JObject(

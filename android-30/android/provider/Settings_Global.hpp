@@ -65,7 +65,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Settings_Global(const char *className, const char *sig, Ts...agv) : android::provider::Settings_NameValueTable(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_Global(QAndroidJniObject obj);
+		Settings_Global(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
 		
 		// Constructors
 		Settings_Global();

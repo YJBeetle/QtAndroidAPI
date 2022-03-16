@@ -16,7 +16,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AnimatorListenerAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AnimatorListenerAdapter(QAndroidJniObject obj);
+		AnimatorListenerAdapter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AnimatorListenerAdapter();

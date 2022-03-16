@@ -9,9 +9,6 @@ namespace javax::xml::parsers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DocumentBuilderFactory::DocumentBuilderFactory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

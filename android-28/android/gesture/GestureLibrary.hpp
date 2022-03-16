@@ -25,7 +25,7 @@ namespace android::gesture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GestureLibrary(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureLibrary(QAndroidJniObject obj);
+		GestureLibrary(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

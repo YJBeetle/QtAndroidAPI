@@ -96,9 +96,6 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Layout::Layout(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

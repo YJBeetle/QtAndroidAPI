@@ -24,7 +24,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncQueryHandler_WorkerHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncQueryHandler_WorkerHandler(QAndroidJniObject obj);
+		AsyncQueryHandler_WorkerHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
 		
 		// Constructors
 		AsyncQueryHandler_WorkerHandler(android::content::AsyncQueryHandler arg0, android::os::Looper arg1);

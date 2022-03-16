@@ -8,9 +8,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	X509ExtendedTrustManager::X509ExtendedTrustManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	X509ExtendedTrustManager::X509ExtendedTrustManager()
 		: JObject(

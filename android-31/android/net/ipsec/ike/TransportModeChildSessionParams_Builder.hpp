@@ -24,7 +24,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransportModeChildSessionParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransportModeChildSessionParams_Builder(QAndroidJniObject obj);
+		TransportModeChildSessionParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TransportModeChildSessionParams_Builder();

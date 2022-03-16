@@ -61,9 +61,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PresetReverb::PresetReverb(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-	
 	// Constructors
 	PresetReverb::PresetReverb(jint arg0, jint arg1)
 		: android::media::audiofx::AudioEffect(

@@ -31,7 +31,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperColors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperColors(QAndroidJniObject obj);
+		WallpaperColors(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WallpaperColors(android::os::Parcel arg0);

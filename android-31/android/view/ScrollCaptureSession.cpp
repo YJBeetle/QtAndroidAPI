@@ -7,9 +7,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScrollCaptureSession::ScrollCaptureSession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ScrollCaptureSession::ScrollCaptureSession(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Point arg2)
 		: JObject(

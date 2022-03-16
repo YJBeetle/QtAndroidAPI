@@ -23,7 +23,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessageDigest(const char *className, const char *sig, Ts...agv) : java::security::MessageDigestSpi(className, sig, std::forward<Ts>(agv)...) {}
-		MessageDigest(QAndroidJniObject obj);
+		MessageDigest(QAndroidJniObject obj) : java::security::MessageDigestSpi(obj) {}
 		
 		// Constructors
 		

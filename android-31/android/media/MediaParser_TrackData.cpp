@@ -20,9 +20,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaParser_TrackData::MediaParser_TrackData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

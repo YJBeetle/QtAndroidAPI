@@ -16,7 +16,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Formatter_BigDecimalLayoutForm(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Formatter_BigDecimalLayoutForm(QAndroidJniObject obj);
+		Formatter_BigDecimalLayoutForm(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

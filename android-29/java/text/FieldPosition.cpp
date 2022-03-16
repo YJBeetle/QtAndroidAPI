@@ -7,9 +7,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FieldPosition::FieldPosition(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FieldPosition::FieldPosition(jint arg0)
 		: JObject(

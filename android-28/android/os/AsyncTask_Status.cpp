@@ -30,9 +30,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AsyncTask_Status::AsyncTask_Status(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

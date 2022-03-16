@@ -25,7 +25,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DirectAction_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DirectAction_Builder(QAndroidJniObject obj);
+		DirectAction_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DirectAction_Builder(JString arg0);

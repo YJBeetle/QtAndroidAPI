@@ -20,7 +20,7 @@ namespace android::app::slice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SliceMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SliceMetrics(QAndroidJniObject obj);
+		SliceMetrics(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SliceMetrics(android::content::Context arg0, android::net::Uri arg1);

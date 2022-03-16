@@ -6,9 +6,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DocTypeNotSupportedException::DocTypeNotSupportedException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
-	
 	// Constructors
 	DocTypeNotSupportedException::DocTypeNotSupportedException(JString arg0)
 		: android::security::identity::IdentityCredentialException(

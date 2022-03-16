@@ -8,9 +8,6 @@ namespace android::print
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintManager::PrintManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

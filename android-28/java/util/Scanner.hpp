@@ -58,7 +58,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Scanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Scanner(QAndroidJniObject obj);
+		Scanner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Scanner(java::io::File arg0);

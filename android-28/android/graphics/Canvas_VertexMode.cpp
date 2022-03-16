@@ -30,9 +30,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Canvas_VertexMode::Canvas_VertexMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -17,9 +17,6 @@ namespace java::time::chrono
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HijrahEra::HijrahEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

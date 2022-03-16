@@ -14,9 +14,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FactoryResetProtectionPolicy::FactoryResetProtectionPolicy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

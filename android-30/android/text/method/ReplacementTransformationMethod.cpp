@@ -8,9 +8,6 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReplacementTransformationMethod::ReplacementTransformationMethod(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ReplacementTransformationMethod::ReplacementTransformationMethod()
 		: JObject(

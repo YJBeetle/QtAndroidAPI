@@ -56,7 +56,7 @@ namespace javax::xml::datatype
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatatypeConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeConstants(QAndroidJniObject obj);
+		DatatypeConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

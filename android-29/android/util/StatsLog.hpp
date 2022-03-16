@@ -14,7 +14,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StatsLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatsLog(QAndroidJniObject obj);
+		StatsLog(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

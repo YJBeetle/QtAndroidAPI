@@ -25,7 +25,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrecomputedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrecomputedText(QAndroidJniObject obj);
+		PrecomputedText(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

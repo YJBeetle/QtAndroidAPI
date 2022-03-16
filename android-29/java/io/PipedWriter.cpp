@@ -6,9 +6,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PipedWriter::PipedWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
-	
 	// Constructors
 	PipedWriter::PipedWriter()
 		: java::io::Writer(

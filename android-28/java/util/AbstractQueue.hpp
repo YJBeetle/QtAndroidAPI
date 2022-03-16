@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractQueue(QAndroidJniObject obj);
+		AbstractQueue(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
 		
 		// Constructors
 		

@@ -75,7 +75,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Sensor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Sensor(QAndroidJniObject obj);
+		Sensor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

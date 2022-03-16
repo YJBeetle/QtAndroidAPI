@@ -779,9 +779,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Context::Context(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Context::Context()
 		: JObject(

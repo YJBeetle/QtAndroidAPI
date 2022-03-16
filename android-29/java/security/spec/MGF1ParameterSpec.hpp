@@ -24,7 +24,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MGF1ParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MGF1ParameterSpec(QAndroidJniObject obj);
+		MGF1ParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MGF1ParameterSpec(JString arg0);

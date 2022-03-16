@@ -44,7 +44,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityOptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityOptions(QAndroidJniObject obj);
+		ActivityOptions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

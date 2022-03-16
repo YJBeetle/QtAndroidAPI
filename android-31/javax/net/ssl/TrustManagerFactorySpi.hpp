@@ -17,7 +17,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TrustManagerFactorySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TrustManagerFactorySpi(QAndroidJniObject obj);
+		TrustManagerFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TrustManagerFactorySpi();

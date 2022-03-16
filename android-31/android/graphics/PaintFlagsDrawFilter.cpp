@@ -4,9 +4,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PaintFlagsDrawFilter::PaintFlagsDrawFilter(QAndroidJniObject obj) : android::graphics::DrawFilter(obj) {}
-	
 	// Constructors
 	PaintFlagsDrawFilter::PaintFlagsDrawFilter(jint arg0, jint arg1)
 		: android::graphics::DrawFilter(

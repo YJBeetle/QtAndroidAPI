@@ -55,9 +55,6 @@ namespace android::security::identity
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResultData::ResultData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

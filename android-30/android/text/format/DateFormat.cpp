@@ -12,9 +12,6 @@ namespace android::text::format
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateFormat::DateFormat(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateFormat::DateFormat()
 		: JObject(

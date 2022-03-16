@@ -14,9 +14,6 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LogRecord::LogRecord(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LogRecord::LogRecord(java::util::logging::Level arg0, JString arg1)
 		: JObject(

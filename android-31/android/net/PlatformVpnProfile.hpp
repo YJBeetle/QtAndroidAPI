@@ -16,7 +16,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PlatformVpnProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlatformVpnProfile(QAndroidJniObject obj);
+		PlatformVpnProfile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

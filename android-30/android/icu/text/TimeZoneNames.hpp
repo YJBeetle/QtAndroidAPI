@@ -25,7 +25,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneNames(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneNames(QAndroidJniObject obj);
+		TimeZoneNames(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

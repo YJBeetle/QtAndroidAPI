@@ -26,7 +26,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AttributedString(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttributedString(QAndroidJniObject obj);
+		AttributedString(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AttributedString(JString arg0);

@@ -116,9 +116,6 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkStats_Bucket::NetworkStats_Bucket(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NetworkStats_Bucket::NetworkStats_Bucket()
 		: JObject(

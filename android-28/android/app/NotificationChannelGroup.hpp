@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotificationChannelGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationChannelGroup(QAndroidJniObject obj);
+		NotificationChannelGroup(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NotificationChannelGroup(JString arg0, JString arg1);

@@ -8,9 +8,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LinearGradient::LinearGradient(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
-	
 	// Constructors
 	LinearGradient::LinearGradient(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, JIntArray arg4, JFloatArray arg5, android::graphics::Shader_TileMode arg6)
 		: android::graphics::Shader(

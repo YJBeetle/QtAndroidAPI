@@ -11,7 +11,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_fraction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_fraction(QAndroidJniObject obj);
+		R_fraction(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_fraction();

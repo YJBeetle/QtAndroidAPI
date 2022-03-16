@@ -40,7 +40,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateFormatSymbols(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormatSymbols(QAndroidJniObject obj);
+		DateFormatSymbols(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateFormatSymbols();

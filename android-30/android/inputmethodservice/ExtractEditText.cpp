@@ -6,9 +6,6 @@ namespace android::inputmethodservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExtractEditText::ExtractEditText(QAndroidJniObject obj) : android::widget::EditText(obj) {}
-	
 	// Constructors
 	ExtractEditText::ExtractEditText(android::content::Context arg0)
 		: android::widget::EditText(

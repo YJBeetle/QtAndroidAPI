@@ -42,7 +42,7 @@ namespace android::service::wallpaper
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperService_Engine(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperService_Engine(QAndroidJniObject obj);
+		WallpaperService_Engine(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0);

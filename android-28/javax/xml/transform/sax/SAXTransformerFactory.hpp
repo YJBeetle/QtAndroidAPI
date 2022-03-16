@@ -15,7 +15,7 @@ namespace javax::xml::transform::sax
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SAXTransformerFactory(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerFactory(className, sig, std::forward<Ts>(agv)...) {}
-		SAXTransformerFactory(QAndroidJniObject obj);
+		SAXTransformerFactory(QAndroidJniObject obj) : javax::xml::transform::TransformerFactory(obj) {}
 		
 		// Constructors
 		

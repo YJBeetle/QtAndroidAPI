@@ -17,7 +17,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PutDocumentsRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PutDocumentsRequest_Builder(QAndroidJniObject obj);
+		PutDocumentsRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PutDocumentsRequest_Builder();

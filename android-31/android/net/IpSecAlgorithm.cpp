@@ -103,9 +103,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IpSecAlgorithm::IpSecAlgorithm(JString arg0, JByteArray arg1)
 		: JObject(

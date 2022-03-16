@@ -64,7 +64,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HijrahChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
-		HijrahChronology(QAndroidJniObject obj);
+		HijrahChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 		
 		// Constructors
 		

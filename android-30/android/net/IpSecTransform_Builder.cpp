@@ -10,9 +10,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IpSecTransform_Builder::IpSecTransform_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IpSecTransform_Builder::IpSecTransform_Builder(android::content::Context arg0)
 		: JObject(

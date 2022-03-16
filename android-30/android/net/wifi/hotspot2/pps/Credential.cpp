@@ -20,9 +20,6 @@ namespace android::net::wifi::hotspot2::pps
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Credential::Credential(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Credential::Credential()
 		: JObject(

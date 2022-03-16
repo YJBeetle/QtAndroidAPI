@@ -23,9 +23,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextClock::TextClock(QAndroidJniObject obj) : android::widget::TextView(obj) {}
-	
 	// Constructors
 	TextClock::TextClock(android::content::Context arg0)
 		: android::widget::TextView(

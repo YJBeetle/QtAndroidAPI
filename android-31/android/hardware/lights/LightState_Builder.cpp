@@ -5,9 +5,6 @@ namespace android::hardware::lights
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LightState_Builder::LightState_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LightState_Builder::LightState_Builder()
 		: JObject(

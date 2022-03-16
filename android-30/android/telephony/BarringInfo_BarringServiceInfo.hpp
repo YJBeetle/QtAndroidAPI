@@ -22,7 +22,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BarringInfo_BarringServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BarringInfo_BarringServiceInfo(QAndroidJniObject obj);
+		BarringInfo_BarringServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

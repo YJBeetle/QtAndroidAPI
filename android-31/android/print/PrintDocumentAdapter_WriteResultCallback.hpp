@@ -14,7 +14,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintDocumentAdapter_WriteResultCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocumentAdapter_WriteResultCallback(QAndroidJniObject obj);
+		PrintDocumentAdapter_WriteResultCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -24,7 +24,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MacAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MacAddress(QAndroidJniObject obj);
+		MacAddress(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

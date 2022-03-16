@@ -13,7 +13,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Visualizer_MeasurementPeakRms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Visualizer_MeasurementPeakRms(QAndroidJniObject obj);
+		Visualizer_MeasurementPeakRms(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Visualizer_MeasurementPeakRms();

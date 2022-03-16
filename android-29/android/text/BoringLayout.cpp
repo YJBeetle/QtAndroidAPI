@@ -13,9 +13,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BoringLayout::BoringLayout(QAndroidJniObject obj) : android::text::Layout(obj) {}
-	
 	// Constructors
 	BoringLayout::BoringLayout(JString arg0, android::text::TextPaint arg1, jint arg2, android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, android::text::BoringLayout_Metrics arg6, jboolean arg7)
 		: android::text::Layout(

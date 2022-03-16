@@ -31,7 +31,7 @@ namespace org::w3c::dom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DOMException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		DOMException(QAndroidJniObject obj);
+		DOMException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		DOMException(jshort arg0, JString arg1);

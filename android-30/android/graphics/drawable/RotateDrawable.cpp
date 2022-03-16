@@ -7,9 +7,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RotateDrawable::RotateDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
-	
 	// Constructors
 	RotateDrawable::RotateDrawable()
 		: android::graphics::drawable::DrawableWrapper(

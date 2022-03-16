@@ -120,9 +120,6 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlaybackStateEvent::PlaybackStateEvent(QAndroidJniObject obj) : android::media::metrics::Event(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -18,7 +18,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PaintDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::ShapeDrawable(className, sig, std::forward<Ts>(agv)...) {}
-		PaintDrawable(QAndroidJniObject obj);
+		PaintDrawable(QAndroidJniObject obj) : android::graphics::drawable::ShapeDrawable(obj) {}
 		
 		// Constructors
 		PaintDrawable();

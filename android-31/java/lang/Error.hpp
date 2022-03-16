@@ -14,7 +14,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Error(const char *className, const char *sig, Ts...agv) : JThrowable(className, sig, std::forward<Ts>(agv)...) {}
-		Error(QAndroidJniObject obj);
+		Error(QAndroidJniObject obj) : JThrowable(obj) {}
 		
 		// Constructors
 		Error();

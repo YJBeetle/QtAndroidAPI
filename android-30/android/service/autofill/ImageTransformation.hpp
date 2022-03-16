@@ -18,7 +18,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageTransformation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImageTransformation(QAndroidJniObject obj);
+		ImageTransformation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

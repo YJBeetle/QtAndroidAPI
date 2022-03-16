@@ -17,7 +17,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CountDownLatch(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CountDownLatch(QAndroidJniObject obj);
+		CountDownLatch(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CountDownLatch(jint arg0);

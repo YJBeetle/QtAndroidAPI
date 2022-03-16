@@ -41,7 +41,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JapaneseEra(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JapaneseEra(QAndroidJniObject obj);
+		JapaneseEra(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

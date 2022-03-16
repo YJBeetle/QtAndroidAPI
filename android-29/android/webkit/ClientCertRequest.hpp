@@ -16,7 +16,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClientCertRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClientCertRequest(QAndroidJniObject obj);
+		ClientCertRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ClientCertRequest();

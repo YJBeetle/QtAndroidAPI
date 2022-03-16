@@ -24,7 +24,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Scene(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Scene(QAndroidJniObject obj);
+		Scene(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Scene(android::view::ViewGroup arg0);

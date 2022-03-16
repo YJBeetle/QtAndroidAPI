@@ -7,9 +7,6 @@ namespace android::hardware::display
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VirtualDisplay::VirtualDisplay(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

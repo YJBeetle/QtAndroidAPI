@@ -7,9 +7,6 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PasswordTransformationMethod::PasswordTransformationMethod(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PasswordTransformationMethod::PasswordTransformationMethod()
 		: JObject(

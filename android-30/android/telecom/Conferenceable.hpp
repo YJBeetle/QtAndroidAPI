@@ -11,7 +11,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Conferenceable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Conferenceable(QAndroidJniObject obj);
+		Conferenceable(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

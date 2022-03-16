@@ -19,7 +19,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WriteAbortedException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		WriteAbortedException(QAndroidJniObject obj);
+		WriteAbortedException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
 		
 		// Constructors
 		WriteAbortedException(JString arg0, java::lang::Exception arg1);

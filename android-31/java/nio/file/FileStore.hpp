@@ -15,7 +15,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileStore(QAndroidJniObject obj);
+		FileStore(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

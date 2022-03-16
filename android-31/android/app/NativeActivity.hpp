@@ -27,7 +27,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NativeActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		NativeActivity(QAndroidJniObject obj);
+		NativeActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
 		
 		// Constructors
 		NativeActivity();

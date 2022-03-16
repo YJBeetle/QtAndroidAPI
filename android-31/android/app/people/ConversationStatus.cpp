@@ -108,9 +108,6 @@ namespace android::app::people
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ConversationStatus::ConversationStatus(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

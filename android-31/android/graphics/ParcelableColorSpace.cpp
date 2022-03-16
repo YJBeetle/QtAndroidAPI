@@ -15,9 +15,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ParcelableColorSpace::ParcelableColorSpace(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ParcelableColorSpace::ParcelableColorSpace(android::graphics::ColorSpace arg0)
 		: JObject(

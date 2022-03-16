@@ -24,7 +24,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ComponentName(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ComponentName(QAndroidJniObject obj);
+		ComponentName(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ComponentName(android::os::Parcel arg0);

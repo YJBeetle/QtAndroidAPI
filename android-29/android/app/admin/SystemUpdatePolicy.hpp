@@ -21,7 +21,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SystemUpdatePolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SystemUpdatePolicy(QAndroidJniObject obj);
+		SystemUpdatePolicy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

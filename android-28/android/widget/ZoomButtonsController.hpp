@@ -24,7 +24,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoomButtonsController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZoomButtonsController(QAndroidJniObject obj);
+		ZoomButtonsController(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ZoomButtonsController(android::view::View arg0);

@@ -34,7 +34,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Fade(const char *className, const char *sig, Ts...agv) : android::transition::Visibility(className, sig, std::forward<Ts>(agv)...) {}
-		Fade(QAndroidJniObject obj);
+		Fade(QAndroidJniObject obj) : android::transition::Visibility(obj) {}
 		
 		// Constructors
 		Fade();

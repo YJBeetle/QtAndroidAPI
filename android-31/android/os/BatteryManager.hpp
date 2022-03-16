@@ -47,7 +47,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BatteryManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BatteryManager(QAndroidJniObject obj);
+		BatteryManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

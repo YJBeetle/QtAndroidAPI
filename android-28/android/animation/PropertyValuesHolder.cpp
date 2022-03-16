@@ -15,9 +15,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyValuesHolder::PropertyValuesHolder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

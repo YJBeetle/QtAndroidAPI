@@ -20,9 +20,6 @@ namespace android::service::quickaccesswallet
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WalletServiceEvent::WalletServiceEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WalletServiceEvent::WalletServiceEvent(jint arg0)
 		: JObject(

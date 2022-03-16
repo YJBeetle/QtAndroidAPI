@@ -17,7 +17,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputStream(QAndroidJniObject obj);
+		InputStream(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InputStream();

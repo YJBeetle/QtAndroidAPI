@@ -17,7 +17,7 @@ namespace android::net::wifi::hotspot2::omadm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PpsMoParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PpsMoParser(QAndroidJniObject obj);
+		PpsMoParser(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -102,9 +102,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessNetworkConstants_GeranBand::AccessNetworkConstants_GeranBand(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

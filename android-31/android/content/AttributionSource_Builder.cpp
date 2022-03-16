@@ -6,9 +6,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AttributionSource_Builder::AttributionSource_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AttributionSource_Builder::AttributionSource_Builder(jint arg0)
 		: JObject(

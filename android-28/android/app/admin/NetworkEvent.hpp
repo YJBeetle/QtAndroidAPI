@@ -18,7 +18,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent(QAndroidJniObject obj);
+		NetworkEvent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

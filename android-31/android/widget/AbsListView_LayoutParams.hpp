@@ -20,7 +20,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbsListView_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		AbsListView_LayoutParams(QAndroidJniObject obj);
+		AbsListView_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
 		
 		// Constructors
 		AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

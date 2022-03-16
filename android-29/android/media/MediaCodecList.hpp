@@ -24,7 +24,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodecList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecList(QAndroidJniObject obj);
+		MediaCodecList(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaCodecList(jint arg0);

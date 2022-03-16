@@ -23,9 +23,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentProvider::ContentProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContentProvider::ContentProvider()
 		: JObject(

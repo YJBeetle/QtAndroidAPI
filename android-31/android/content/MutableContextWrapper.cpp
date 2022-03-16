@@ -5,9 +5,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MutableContextWrapper::MutableContextWrapper(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
-	
 	// Constructors
 	MutableContextWrapper::MutableContextWrapper(android::content::Context arg0)
 		: android::content::ContextWrapper(

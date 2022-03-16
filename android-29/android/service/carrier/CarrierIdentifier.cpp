@@ -16,9 +16,6 @@ namespace android::service::carrier
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CarrierIdentifier::CarrierIdentifier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CarrierIdentifier::CarrierIdentifier(JByteArray arg0, JString arg1, JString arg2)
 		: JObject(

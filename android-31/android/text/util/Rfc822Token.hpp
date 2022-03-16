@@ -14,7 +14,7 @@ namespace android::text::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Rfc822Token(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Rfc822Token(QAndroidJniObject obj);
+		Rfc822Token(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Rfc822Token(JString arg0, JString arg1, JString arg2);

@@ -23,9 +23,6 @@ namespace android::gesture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GesturePoint::GesturePoint(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GesturePoint::GesturePoint(jfloat arg0, jfloat arg1, jlong arg2)
 		: JObject(

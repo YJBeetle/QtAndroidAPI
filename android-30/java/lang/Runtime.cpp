@@ -10,9 +10,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Runtime::Runtime(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

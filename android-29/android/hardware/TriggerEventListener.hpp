@@ -16,7 +16,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TriggerEventListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TriggerEventListener(QAndroidJniObject obj);
+		TriggerEventListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TriggerEventListener();

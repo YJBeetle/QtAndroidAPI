@@ -39,7 +39,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X509CRL(const char *className, const char *sig, Ts...agv) : java::security::cert::CRL(className, sig, std::forward<Ts>(agv)...) {}
-		X509CRL(QAndroidJniObject obj);
+		X509CRL(QAndroidJniObject obj) : java::security::cert::CRL(obj) {}
 		
 		// Constructors
 		

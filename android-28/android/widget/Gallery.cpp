@@ -12,9 +12,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Gallery::Gallery(QAndroidJniObject obj) : android::widget::AbsSpinner(obj) {}
-	
 	// Constructors
 	Gallery::Gallery(android::content::Context arg0)
 		: android::widget::AbsSpinner(

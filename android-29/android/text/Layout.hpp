@@ -53,7 +53,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Layout(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Layout(QAndroidJniObject obj);
+		Layout(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

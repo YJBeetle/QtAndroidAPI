@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RSAOtherPrimeInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RSAOtherPrimeInfo(QAndroidJniObject obj);
+		RSAOtherPrimeInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);

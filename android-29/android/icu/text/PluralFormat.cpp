@@ -15,9 +15,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PluralFormat::PluralFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
-	
 	// Constructors
 	PluralFormat::PluralFormat()
 		: android::icu::text::UFormat(

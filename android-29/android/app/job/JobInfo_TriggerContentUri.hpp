@@ -23,7 +23,7 @@ namespace android::app::job
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JobInfo_TriggerContentUri(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobInfo_TriggerContentUri(QAndroidJniObject obj);
+		JobInfo_TriggerContentUri(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1);

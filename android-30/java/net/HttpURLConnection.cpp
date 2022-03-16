@@ -262,9 +262,6 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HttpURLConnection::HttpURLConnection(QAndroidJniObject obj) : java::net::URLConnection(obj) {}
-	
 	// Constructors
 	
 	// Methods

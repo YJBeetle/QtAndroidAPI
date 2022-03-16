@@ -16,9 +16,6 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ShortcutInfo_Builder::ShortcutInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ShortcutInfo_Builder::ShortcutInfo_Builder(android::content::Context arg0, JString arg1)
 		: JObject(

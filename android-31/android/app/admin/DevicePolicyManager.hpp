@@ -244,7 +244,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DevicePolicyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DevicePolicyManager(QAndroidJniObject obj);
+		DevicePolicyManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

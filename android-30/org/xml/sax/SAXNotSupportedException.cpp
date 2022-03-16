@@ -5,9 +5,6 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SAXNotSupportedException::SAXNotSupportedException(QAndroidJniObject obj) : org::xml::sax::SAXException(obj) {}
-	
 	// Constructors
 	SAXNotSupportedException::SAXNotSupportedException()
 		: org::xml::sax::SAXException(

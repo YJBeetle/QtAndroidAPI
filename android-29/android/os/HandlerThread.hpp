@@ -17,7 +17,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HandlerThread(const char *className, const char *sig, Ts...agv) : java::lang::Thread(className, sig, std::forward<Ts>(agv)...) {}
-		HandlerThread(QAndroidJniObject obj);
+		HandlerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
 		
 		// Constructors
 		HandlerThread(JString arg0);

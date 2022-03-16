@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Shader::Shader(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Shader::Shader()
 		: JObject(

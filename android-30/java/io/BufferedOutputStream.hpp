@@ -17,7 +17,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BufferedOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		BufferedOutputStream(QAndroidJniObject obj);
+		BufferedOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
 		
 		// Constructors
 		BufferedOutputStream(java::io::OutputStream arg0);

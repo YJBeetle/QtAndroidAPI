@@ -9,9 +9,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MatrixCursor::MatrixCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
-	
 	// Constructors
 	MatrixCursor::MatrixCursor(JArray arg0)
 		: android::database::AbstractCursor(

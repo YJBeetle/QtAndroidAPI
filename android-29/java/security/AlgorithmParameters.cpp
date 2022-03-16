@@ -9,9 +9,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlgorithmParameters::AlgorithmParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

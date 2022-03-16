@@ -7,9 +7,6 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvView_TvInputCallback::TvView_TvInputCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TvView_TvInputCallback::TvView_TvInputCallback()
 		: JObject(

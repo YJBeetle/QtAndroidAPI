@@ -27,7 +27,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkInfo_DetailedState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkInfo_DetailedState(QAndroidJniObject obj);
+		NetworkInfo_DetailedState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

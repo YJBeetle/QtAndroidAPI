@@ -6,9 +6,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AuthProvider::AuthProvider(QAndroidJniObject obj) : java::security::Provider(obj) {}
-	
 	// Constructors
 	
 	// Methods

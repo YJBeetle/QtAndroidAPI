@@ -27,7 +27,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AnimatorSet(const char *className, const char *sig, Ts...agv) : android::animation::Animator(className, sig, std::forward<Ts>(agv)...) {}
-		AnimatorSet(QAndroidJniObject obj);
+		AnimatorSet(QAndroidJniObject obj) : android::animation::Animator(obj) {}
 		
 		// Constructors
 		AnimatorSet();

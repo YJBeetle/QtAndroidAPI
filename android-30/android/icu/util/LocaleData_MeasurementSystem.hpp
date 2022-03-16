@@ -14,7 +14,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleData_MeasurementSystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData_MeasurementSystem(QAndroidJniObject obj);
+		LocaleData_MeasurementSystem(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

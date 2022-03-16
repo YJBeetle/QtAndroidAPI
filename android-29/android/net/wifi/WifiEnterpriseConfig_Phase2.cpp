@@ -60,9 +60,6 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiEnterpriseConfig_Phase2::WifiEnterpriseConfig_Phase2(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

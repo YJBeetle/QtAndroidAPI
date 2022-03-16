@@ -27,7 +27,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LinkProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LinkProperties(QAndroidJniObject obj);
+		LinkProperties(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LinkProperties();

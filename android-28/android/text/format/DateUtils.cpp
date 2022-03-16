@@ -329,9 +329,6 @@ namespace android::text::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateUtils::DateUtils(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateUtils::DateUtils()
 		: JObject(

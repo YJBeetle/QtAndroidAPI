@@ -189,9 +189,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AlarmClock::AlarmClock(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AlarmClock::AlarmClock()
 		: JObject(

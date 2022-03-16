@@ -188,9 +188,6 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HardwareBuffer::HardwareBuffer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -37,7 +37,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DynamicsProcessing_Config(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_Config(QAndroidJniObject obj);
+		DynamicsProcessing_Config(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

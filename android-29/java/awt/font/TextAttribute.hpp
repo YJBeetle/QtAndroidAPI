@@ -85,7 +85,7 @@ namespace java::awt::font
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextAttribute(const char *className, const char *sig, Ts...agv) : java::text::AttributedCharacterIterator_Attribute(className, sig, std::forward<Ts>(agv)...) {}
-		TextAttribute(QAndroidJniObject obj);
+		TextAttribute(QAndroidJniObject obj) : java::text::AttributedCharacterIterator_Attribute(obj) {}
 		
 		// Constructors
 		

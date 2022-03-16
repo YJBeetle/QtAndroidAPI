@@ -7,9 +7,6 @@ namespace android::app::appsearch::exceptions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppSearchException::AppSearchException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	AppSearchException::AppSearchException(jint arg0)
 		: java::lang::Exception(

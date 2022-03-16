@@ -19,7 +19,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaDrm_KeyStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_KeyStatus(QAndroidJniObject obj);
+		MediaDrm_KeyStatus(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

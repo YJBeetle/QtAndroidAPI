@@ -47,9 +47,6 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ObbInfo::ObbInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

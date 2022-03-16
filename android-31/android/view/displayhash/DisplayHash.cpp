@@ -14,9 +14,6 @@ namespace android::view::displayhash
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DisplayHash::DisplayHash(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

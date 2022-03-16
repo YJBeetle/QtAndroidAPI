@@ -13,9 +13,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RuleBasedCollator::RuleBasedCollator(QAndroidJniObject obj) : android::icu::text::Collator(obj) {}
-	
 	// Constructors
 	RuleBasedCollator::RuleBasedCollator(JString arg0)
 		: android::icu::text::Collator(

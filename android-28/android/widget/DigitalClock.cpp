@@ -6,9 +6,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DigitalClock::DigitalClock(QAndroidJniObject obj) : android::widget::TextView(obj) {}
-	
 	// Constructors
 	DigitalClock::DigitalClock(android::content::Context arg0)
 		: android::widget::TextView(

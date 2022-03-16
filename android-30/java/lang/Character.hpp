@@ -91,7 +91,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Character(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Character(QAndroidJniObject obj);
+		Character(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Character(jchar arg0);

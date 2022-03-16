@@ -10,9 +10,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Vector::Vector(QAndroidJniObject obj) : java::util::AbstractList(obj) {}
-	
 	// Constructors
 	Vector::Vector()
 		: java::util::AbstractList(

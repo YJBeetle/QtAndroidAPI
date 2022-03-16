@@ -6,9 +6,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteViews_RemoteViewOutlineProvider::RemoteViews_RemoteViewOutlineProvider(QAndroidJniObject obj) : android::view::ViewOutlineProvider(obj) {}
-	
 	// Constructors
 	RemoteViews_RemoteViewOutlineProvider::RemoteViews_RemoteViewOutlineProvider(jfloat arg0)
 		: android::view::ViewOutlineProvider(

@@ -26,7 +26,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RuleBasedCollator(const char *className, const char *sig, Ts...agv) : java::text::Collator(className, sig, std::forward<Ts>(agv)...) {}
-		RuleBasedCollator(QAndroidJniObject obj);
+		RuleBasedCollator(QAndroidJniObject obj) : java::text::Collator(obj) {}
 		
 		// Constructors
 		RuleBasedCollator(JString arg0);

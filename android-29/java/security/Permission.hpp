@@ -18,7 +18,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Permission(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Permission(QAndroidJniObject obj);
+		Permission(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Permission(JString arg0);

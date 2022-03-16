@@ -19,7 +19,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit QuickViewConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		QuickViewConstants(QAndroidJniObject obj);
+		QuickViewConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

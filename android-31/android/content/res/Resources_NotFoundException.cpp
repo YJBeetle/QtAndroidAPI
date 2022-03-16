@@ -6,9 +6,6 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Resources_NotFoundException::Resources_NotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	Resources_NotFoundException::Resources_NotFoundException()
 		: java::lang::RuntimeException(

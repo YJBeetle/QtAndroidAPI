@@ -22,9 +22,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Canvas_EdgeType::Canvas_EdgeType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -94,7 +94,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Fragment(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Fragment(QAndroidJniObject obj);
+		Fragment(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Fragment();

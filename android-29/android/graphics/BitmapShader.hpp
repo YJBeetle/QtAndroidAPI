@@ -20,7 +20,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BitmapShader(const char *className, const char *sig, Ts...agv) : android::graphics::Shader(className, sig, std::forward<Ts>(agv)...) {}
-		BitmapShader(QAndroidJniObject obj);
+		BitmapShader(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
 		
 		// Constructors
 		BitmapShader(android::graphics::Bitmap arg0, android::graphics::Shader_TileMode arg1, android::graphics::Shader_TileMode arg2);

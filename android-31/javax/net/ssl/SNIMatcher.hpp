@@ -16,7 +16,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SNIMatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SNIMatcher(QAndroidJniObject obj);
+		SNIMatcher(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

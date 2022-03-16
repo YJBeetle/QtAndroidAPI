@@ -93,9 +93,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Connection_VideoProvider::Connection_VideoProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Connection_VideoProvider::Connection_VideoProvider()
 		: JObject(

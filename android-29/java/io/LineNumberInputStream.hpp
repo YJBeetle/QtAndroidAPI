@@ -17,7 +17,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LineNumberInputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		LineNumberInputStream(QAndroidJniObject obj);
+		LineNumberInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
 		
 		// Constructors
 		LineNumberInputStream(java::io::InputStream arg0);

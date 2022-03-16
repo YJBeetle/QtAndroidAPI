@@ -14,9 +14,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputBinding::InputBinding(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InputBinding::InputBinding(JObject arg0, android::view::inputmethod::InputBinding &arg1)
 		: JObject(

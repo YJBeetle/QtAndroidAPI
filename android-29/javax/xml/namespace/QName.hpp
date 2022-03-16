@@ -14,7 +14,7 @@ namespace javax::xml::namespace_
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit QName(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		QName(QAndroidJniObject obj);
+		QName(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		QName(JString arg0);

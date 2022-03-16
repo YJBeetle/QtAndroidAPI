@@ -23,7 +23,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AtomicReferenceArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicReferenceArray(QAndroidJniObject obj);
+		AtomicReferenceArray(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AtomicReferenceArray(JObjectArray arg0);

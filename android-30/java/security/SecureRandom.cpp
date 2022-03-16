@@ -9,9 +9,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecureRandom::SecureRandom(QAndroidJniObject obj) : java::util::Random(obj) {}
-	
 	// Constructors
 	SecureRandom::SecureRandom()
 		: java::util::Random(

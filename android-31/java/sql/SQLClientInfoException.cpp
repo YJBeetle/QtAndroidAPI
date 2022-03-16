@@ -6,9 +6,6 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLClientInfoException::SQLClientInfoException(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
-	
 	// Constructors
 	SQLClientInfoException::SQLClientInfoException()
 		: java::sql::SQLException(

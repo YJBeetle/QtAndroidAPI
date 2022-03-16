@@ -50,9 +50,6 @@ namespace android::hardware::lights
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Light::Light(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

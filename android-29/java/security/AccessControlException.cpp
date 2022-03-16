@@ -6,9 +6,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessControlException::AccessControlException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
-	
 	// Constructors
 	AccessControlException::AccessControlException(JString arg0)
 		: java::lang::SecurityException(

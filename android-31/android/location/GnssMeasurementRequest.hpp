@@ -19,7 +19,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssMeasurementRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssMeasurementRequest(QAndroidJniObject obj);
+		GnssMeasurementRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

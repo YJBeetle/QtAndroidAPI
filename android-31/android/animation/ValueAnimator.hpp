@@ -25,7 +25,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ValueAnimator(const char *className, const char *sig, Ts...agv) : android::animation::Animator(className, sig, std::forward<Ts>(agv)...) {}
-		ValueAnimator(QAndroidJniObject obj);
+		ValueAnimator(QAndroidJniObject obj) : android::animation::Animator(obj) {}
 		
 		// Constructors
 		ValueAnimator();

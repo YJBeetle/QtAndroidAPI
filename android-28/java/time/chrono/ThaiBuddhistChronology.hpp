@@ -55,7 +55,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThaiBuddhistChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
-		ThaiBuddhistChronology(QAndroidJniObject obj);
+		ThaiBuddhistChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 		
 		// Constructors
 		

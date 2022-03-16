@@ -30,7 +30,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DelayQueue(const char *className, const char *sig, Ts...agv) : java::util::AbstractQueue(className, sig, std::forward<Ts>(agv)...) {}
-		DelayQueue(QAndroidJniObject obj);
+		DelayQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
 		
 		// Constructors
 		DelayQueue();

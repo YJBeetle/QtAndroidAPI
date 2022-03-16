@@ -22,7 +22,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SyncAdapterType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncAdapterType(QAndroidJniObject obj);
+		SyncAdapterType(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SyncAdapterType(android::os::Parcel arg0);

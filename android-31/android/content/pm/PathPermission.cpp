@@ -14,9 +14,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PathPermission::PathPermission(QAndroidJniObject obj) : android::os::PatternMatcher(obj) {}
-	
 	// Constructors
 	PathPermission::PathPermission(android::os::Parcel arg0)
 		: android::os::PatternMatcher(

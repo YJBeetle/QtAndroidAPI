@@ -33,7 +33,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent(QAndroidJniObject obj);
+		NetworkEvent(QAndroidJniObject obj) : android::media::metrics::Event(obj) {}
 		
 		// Constructors
 		

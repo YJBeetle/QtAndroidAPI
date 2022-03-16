@@ -26,7 +26,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AuthenticatorDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AuthenticatorDescription(QAndroidJniObject obj);
+		AuthenticatorDescription(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AuthenticatorDescription(JString arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5);

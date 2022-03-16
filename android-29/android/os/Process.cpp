@@ -161,9 +161,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Process::Process(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Process::Process()
 		: JObject(

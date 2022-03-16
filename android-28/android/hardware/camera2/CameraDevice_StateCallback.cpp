@@ -40,9 +40,6 @@ namespace android::hardware::camera2
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CameraDevice_StateCallback::CameraDevice_StateCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CameraDevice_StateCallback::CameraDevice_StateCallback()
 		: JObject(

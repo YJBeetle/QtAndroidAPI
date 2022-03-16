@@ -32,7 +32,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SessionConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SessionConfiguration(QAndroidJniObject obj);
+		SessionConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SessionConfiguration(jint arg0, JObject arg1, JObject arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3);

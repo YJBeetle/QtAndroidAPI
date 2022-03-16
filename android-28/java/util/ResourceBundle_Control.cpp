@@ -48,9 +48,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ResourceBundle_Control::ResourceBundle_Control(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

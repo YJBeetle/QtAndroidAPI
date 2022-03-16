@@ -18,7 +18,7 @@ namespace android::telephony::ims
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImsRcsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImsRcsManager(QAndroidJniObject obj);
+		ImsRcsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

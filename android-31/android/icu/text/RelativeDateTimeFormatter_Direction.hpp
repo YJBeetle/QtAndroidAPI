@@ -20,7 +20,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RelativeDateTimeFormatter_Direction(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeDateTimeFormatter_Direction(QAndroidJniObject obj);
+		RelativeDateTimeFormatter_Direction(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

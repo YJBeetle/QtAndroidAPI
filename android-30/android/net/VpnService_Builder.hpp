@@ -34,7 +34,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VpnService_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VpnService_Builder(QAndroidJniObject obj);
+		VpnService_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VpnService_Builder(android::net::VpnService arg0);

@@ -8,9 +8,6 @@ namespace android::print
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintJobInfo_Builder::PrintJobInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PrintJobInfo_Builder::PrintJobInfo_Builder(android::print::PrintJobInfo arg0)
 		: JObject(

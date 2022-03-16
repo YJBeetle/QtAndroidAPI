@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GetByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetByDocumentIdRequest_Builder(QAndroidJniObject obj);
+		GetByDocumentIdRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GetByDocumentIdRequest_Builder(JString arg0);

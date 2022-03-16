@@ -6,9 +6,6 @@ namespace dalvik::system
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PathClassLoader::PathClassLoader(QAndroidJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
-	
 	// Constructors
 	PathClassLoader::PathClassLoader(JString arg0, java::lang::ClassLoader arg1)
 		: dalvik::system::BaseDexClassLoader(

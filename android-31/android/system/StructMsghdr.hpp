@@ -22,7 +22,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StructMsghdr(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StructMsghdr(QAndroidJniObject obj);
+		StructMsghdr(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StructMsghdr(java::net::SocketAddress arg0, JArray arg1, JArray arg2, jint arg3);

@@ -5,9 +5,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Spannable_Factory::Spannable_Factory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Spannable_Factory::Spannable_Factory()
 		: JObject(

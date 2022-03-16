@@ -33,7 +33,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertificateRevokedException(const char *className, const char *sig, Ts...agv) : java::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateRevokedException(QAndroidJniObject obj);
+		CertificateRevokedException(QAndroidJniObject obj) : java::security::cert::CertificateException(obj) {}
 		
 		// Constructors
 		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, JObject arg3);

@@ -15,7 +15,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlphabetIndexer(const char *className, const char *sig, Ts...agv) : android::database::DataSetObserver(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabetIndexer(QAndroidJniObject obj);
+		AlphabetIndexer(QAndroidJniObject obj) : android::database::DataSetObserver(obj) {}
 		
 		// Constructors
 		AlphabetIndexer(JObject arg0, jint arg1, JString arg2);

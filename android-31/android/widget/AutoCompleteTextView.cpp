@@ -13,9 +13,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AutoCompleteTextView::AutoCompleteTextView(QAndroidJniObject obj) : android::widget::EditText(obj) {}
-	
 	// Constructors
 	AutoCompleteTextView::AutoCompleteTextView(android::content::Context arg0)
 		: android::widget::EditText(

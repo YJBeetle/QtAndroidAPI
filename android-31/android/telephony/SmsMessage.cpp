@@ -82,9 +82,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SmsMessage::SmsMessage(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -14,9 +14,6 @@ namespace android::app::usage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UsageStats::UsageStats(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UsageStats::UsageStats(android::app::usage::UsageStats &arg0)
 		: JObject(

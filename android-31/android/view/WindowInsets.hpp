@@ -31,7 +31,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WindowInsets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsets(QAndroidJniObject obj);
+		WindowInsets(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WindowInsets(android::view::WindowInsets &arg0);

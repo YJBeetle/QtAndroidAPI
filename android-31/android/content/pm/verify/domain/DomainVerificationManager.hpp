@@ -17,7 +17,7 @@ namespace android::content::pm::verify::domain
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DomainVerificationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DomainVerificationManager(QAndroidJniObject obj);
+		DomainVerificationManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

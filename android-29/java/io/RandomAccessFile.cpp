@@ -10,9 +10,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RandomAccessFile::RandomAccessFile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RandomAccessFile::RandomAccessFile(java::io::File arg0, JString arg1)
 		: JObject(

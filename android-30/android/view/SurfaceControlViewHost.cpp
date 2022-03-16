@@ -8,9 +8,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceControlViewHost::SurfaceControlViewHost(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SurfaceControlViewHost::SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, JObject arg2)
 		: JObject(

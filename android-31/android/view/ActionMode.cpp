@@ -29,9 +29,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActionMode::ActionMode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActionMode::ActionMode()
 		: JObject(

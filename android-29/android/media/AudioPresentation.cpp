@@ -43,9 +43,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioPresentation::AudioPresentation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -45,7 +45,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PreferenceFragment(const char *className, const char *sig, Ts...agv) : android::app::Fragment(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceFragment(QAndroidJniObject obj);
+		PreferenceFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
 		
 		// Constructors
 		PreferenceFragment();

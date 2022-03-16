@@ -23,7 +23,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmInfoEvent(const char *className, const char *sig, Ts...agv) : android::drm::DrmEvent(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInfoEvent(QAndroidJniObject obj);
+		DrmInfoEvent(QAndroidJniObject obj) : android::drm::DrmEvent(obj) {}
 		
 		// Constructors
 		DrmInfoEvent(jint arg0, jint arg1, JString arg2);

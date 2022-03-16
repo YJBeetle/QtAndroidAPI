@@ -882,9 +882,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

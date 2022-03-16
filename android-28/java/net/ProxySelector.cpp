@@ -8,9 +8,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProxySelector::ProxySelector(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ProxySelector::ProxySelector()
 		: JObject(

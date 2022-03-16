@@ -5,9 +5,6 @@ namespace android::accessibilityservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2)
 		: JObject(

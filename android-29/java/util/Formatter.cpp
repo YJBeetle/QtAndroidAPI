@@ -13,9 +13,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Formatter::Formatter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Formatter::Formatter()
 		: JObject(

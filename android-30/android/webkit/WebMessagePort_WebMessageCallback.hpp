@@ -20,7 +20,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebMessagePort_WebMessageCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebMessagePort_WebMessageCallback(QAndroidJniObject obj);
+		WebMessagePort_WebMessageCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WebMessagePort_WebMessageCallback();

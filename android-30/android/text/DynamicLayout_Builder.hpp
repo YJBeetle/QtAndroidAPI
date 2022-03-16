@@ -29,7 +29,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DynamicLayout_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicLayout_Builder(QAndroidJniObject obj);
+		DynamicLayout_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

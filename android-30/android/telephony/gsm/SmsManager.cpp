@@ -71,9 +71,6 @@ namespace android::telephony::gsm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SmsManager::SmsManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

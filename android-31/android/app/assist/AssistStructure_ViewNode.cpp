@@ -50,9 +50,6 @@ namespace android::app::assist
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AssistStructure_ViewNode::AssistStructure_ViewNode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

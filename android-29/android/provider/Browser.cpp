@@ -38,9 +38,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Browser::Browser(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Browser::Browser()
 		: JObject(

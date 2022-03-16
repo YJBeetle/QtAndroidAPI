@@ -17,7 +17,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberRangeFormatter_RangeIdentityResult(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter_RangeIdentityResult(QAndroidJniObject obj);
+		NumberRangeFormatter_RangeIdentityResult(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

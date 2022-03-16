@@ -81,7 +81,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebViewClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewClient(QAndroidJniObject obj);
+		WebViewClient(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WebViewClient();

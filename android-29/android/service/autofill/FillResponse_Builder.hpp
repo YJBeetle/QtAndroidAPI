@@ -41,7 +41,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FillResponse_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FillResponse_Builder(QAndroidJniObject obj);
+		FillResponse_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FillResponse_Builder();

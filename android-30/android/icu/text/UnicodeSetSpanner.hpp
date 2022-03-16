@@ -31,7 +31,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSetSpanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetSpanner(QAndroidJniObject obj);
+		UnicodeSetSpanner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UnicodeSetSpanner(android::icu::text::UnicodeSet arg0);

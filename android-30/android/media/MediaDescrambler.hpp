@@ -30,7 +30,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaDescrambler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDescrambler(QAndroidJniObject obj);
+		MediaDescrambler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaDescrambler(jint arg0);

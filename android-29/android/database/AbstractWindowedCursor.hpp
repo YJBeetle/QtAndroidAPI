@@ -22,7 +22,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractWindowedCursor(const char *className, const char *sig, Ts...agv) : android::database::AbstractCursor(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractWindowedCursor(QAndroidJniObject obj);
+		AbstractWindowedCursor(QAndroidJniObject obj) : android::database::AbstractCursor(obj) {}
 		
 		// Constructors
 		AbstractWindowedCursor();

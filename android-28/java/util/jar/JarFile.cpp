@@ -24,9 +24,6 @@ namespace java::util::jar
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JarFile::JarFile(QAndroidJniObject obj) : java::util::zip::ZipFile(obj) {}
-	
 	// Constructors
 	JarFile::JarFile(java::io::File arg0)
 		: java::util::zip::ZipFile(

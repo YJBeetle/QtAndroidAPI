@@ -20,7 +20,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextLinks_TextLinkSpan(const char *className, const char *sig, Ts...agv) : android::text::style::ClickableSpan(className, sig, std::forward<Ts>(agv)...) {}
-		TextLinks_TextLinkSpan(QAndroidJniObject obj);
+		TextLinks_TextLinkSpan(QAndroidJniObject obj) : android::text::style::ClickableSpan(obj) {}
 		
 		// Constructors
 		TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0);

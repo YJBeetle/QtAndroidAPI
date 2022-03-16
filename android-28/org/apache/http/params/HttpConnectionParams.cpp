@@ -4,9 +4,6 @@ namespace org::apache::http::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HttpConnectionParams::HttpConnectionParams(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

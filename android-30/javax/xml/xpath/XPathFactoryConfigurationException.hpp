@@ -14,7 +14,7 @@ namespace javax::xml::xpath
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XPathFactoryConfigurationException(const char *className, const char *sig, Ts...agv) : javax::xml::xpath::XPathException(className, sig, std::forward<Ts>(agv)...) {}
-		XPathFactoryConfigurationException(QAndroidJniObject obj);
+		XPathFactoryConfigurationException(QAndroidJniObject obj) : javax::xml::xpath::XPathException(obj) {}
 		
 		// Constructors
 		XPathFactoryConfigurationException(JString arg0);

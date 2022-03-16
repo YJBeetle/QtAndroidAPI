@@ -54,9 +54,6 @@ namespace android::hardware::display
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DisplayManager::DisplayManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

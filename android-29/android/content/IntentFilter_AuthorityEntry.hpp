@@ -18,7 +18,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntentFilter_AuthorityEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntentFilter_AuthorityEntry(QAndroidJniObject obj);
+		IntentFilter_AuthorityEntry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IntentFilter_AuthorityEntry(JString arg0, JString arg1);

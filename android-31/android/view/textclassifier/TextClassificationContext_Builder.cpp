@@ -6,9 +6,6 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextClassificationContext_Builder::TextClassificationContext_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextClassificationContext_Builder::TextClassificationContext_Builder(JString arg0, JString arg1)
 		: JObject(

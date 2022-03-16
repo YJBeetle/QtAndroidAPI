@@ -16,9 +16,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ShareActionProvider::ShareActionProvider(QAndroidJniObject obj) : android::view::ActionProvider(obj) {}
-	
 	// Constructors
 	ShareActionProvider::ShareActionProvider(android::content::Context arg0)
 		: android::view::ActionProvider(

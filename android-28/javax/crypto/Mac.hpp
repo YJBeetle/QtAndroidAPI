@@ -31,7 +31,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Mac(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Mac(QAndroidJniObject obj);
+		Mac(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

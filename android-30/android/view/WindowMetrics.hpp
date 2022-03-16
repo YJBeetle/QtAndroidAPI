@@ -20,7 +20,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WindowMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowMetrics(QAndroidJniObject obj);
+		WindowMetrics(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WindowMetrics(android::graphics::Rect arg0, android::view::WindowInsets arg1);

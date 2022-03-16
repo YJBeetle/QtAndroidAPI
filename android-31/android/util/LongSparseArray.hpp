@@ -14,7 +14,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LongSparseArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LongSparseArray(QAndroidJniObject obj);
+		LongSparseArray(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LongSparseArray();

@@ -20,7 +20,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Session2CommandGroup_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Session2CommandGroup_Builder(QAndroidJniObject obj);
+		Session2CommandGroup_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Session2CommandGroup_Builder();

@@ -11,7 +11,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TelephonyScanManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyScanManager(QAndroidJniObject obj);
+		TelephonyScanManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TelephonyScanManager();

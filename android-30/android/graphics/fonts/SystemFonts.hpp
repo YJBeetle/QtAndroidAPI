@@ -11,7 +11,7 @@ namespace android::graphics::fonts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SystemFonts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SystemFonts(QAndroidJniObject obj);
+		SystemFonts(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

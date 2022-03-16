@@ -15,9 +15,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RadioAccessSpecifier::RadioAccessSpecifier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RadioAccessSpecifier::RadioAccessSpecifier(jint arg0, JIntArray arg1, JIntArray arg2)
 		: JObject(

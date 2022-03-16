@@ -17,7 +17,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LongAdder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LongAdder(QAndroidJniObject obj);
+		LongAdder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LongAdder();

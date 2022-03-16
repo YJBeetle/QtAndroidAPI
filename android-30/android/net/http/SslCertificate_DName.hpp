@@ -17,7 +17,7 @@ namespace android::net::http
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SslCertificate_DName(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SslCertificate_DName(QAndroidJniObject obj);
+		SslCertificate_DName(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SslCertificate_DName(android::net::http::SslCertificate arg0, JString arg1);

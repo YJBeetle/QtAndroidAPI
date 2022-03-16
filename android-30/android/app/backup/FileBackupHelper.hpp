@@ -29,7 +29,7 @@ namespace android::app::backup
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileBackupHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileBackupHelper(QAndroidJniObject obj);
+		FileBackupHelper(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FileBackupHelper(android::content::Context arg0, JArray arg1);

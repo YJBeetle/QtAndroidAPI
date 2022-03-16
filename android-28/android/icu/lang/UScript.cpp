@@ -1298,9 +1298,6 @@ namespace android::icu::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UScript::UScript(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

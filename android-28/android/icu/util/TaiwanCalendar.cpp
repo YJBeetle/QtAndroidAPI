@@ -23,9 +23,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TaiwanCalendar::TaiwanCalendar(QAndroidJniObject obj) : android::icu::util::GregorianCalendar(obj) {}
-	
 	// Constructors
 	TaiwanCalendar::TaiwanCalendar()
 		: android::icu::util::GregorianCalendar(

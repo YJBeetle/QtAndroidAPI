@@ -20,7 +20,7 @@ namespace android::icu::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UScript_ScriptUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UScript_ScriptUsage(QAndroidJniObject obj);
+		UScript_ScriptUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

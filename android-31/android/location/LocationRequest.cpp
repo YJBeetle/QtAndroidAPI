@@ -43,9 +43,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocationRequest::LocationRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

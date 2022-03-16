@@ -24,7 +24,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Drawable_ConstantState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Drawable_ConstantState(QAndroidJniObject obj);
+		Drawable_ConstantState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Drawable_ConstantState();

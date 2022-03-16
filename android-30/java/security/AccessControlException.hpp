@@ -17,7 +17,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessControlException(const char *className, const char *sig, Ts...agv) : java::lang::SecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlException(QAndroidJniObject obj);
+		AccessControlException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
 		
 		// Constructors
 		AccessControlException(JString arg0);

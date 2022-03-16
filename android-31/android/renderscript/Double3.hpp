@@ -14,7 +14,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Double3(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Double3(QAndroidJniObject obj);
+		Double3(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Double3();

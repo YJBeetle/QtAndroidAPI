@@ -25,7 +25,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_CallStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_Style(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_CallStyle(QAndroidJniObject obj);
+		Notification_CallStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
 		
 		// Constructors
 		

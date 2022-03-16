@@ -30,9 +30,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Year::Year(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

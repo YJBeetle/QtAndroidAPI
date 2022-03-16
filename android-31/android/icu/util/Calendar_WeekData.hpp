@@ -20,7 +20,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Calendar_WeekData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Calendar_WeekData(QAndroidJniObject obj);
+		Calendar_WeekData(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Calendar_WeekData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);

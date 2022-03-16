@@ -37,9 +37,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Parcel::Parcel(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

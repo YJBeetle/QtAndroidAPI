@@ -5,9 +5,6 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyManager_NetworkSlicingException::TelephonyManager_NetworkSlicingException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	
 	// Methods

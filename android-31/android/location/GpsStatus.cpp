@@ -33,9 +33,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GpsStatus::GpsStatus(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

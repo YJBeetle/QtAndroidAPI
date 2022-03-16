@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Virtualizer_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Virtualizer_Settings(QAndroidJniObject obj);
+		Virtualizer_Settings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Virtualizer_Settings();

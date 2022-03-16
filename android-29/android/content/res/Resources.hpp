@@ -71,7 +71,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Resources(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Resources(QAndroidJniObject obj);
+		Resources(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2);

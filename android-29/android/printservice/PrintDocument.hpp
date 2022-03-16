@@ -20,7 +20,7 @@ namespace android::printservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintDocument(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocument(QAndroidJniObject obj);
+		PrintDocument(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

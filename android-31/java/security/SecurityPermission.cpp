@@ -5,9 +5,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecurityPermission::SecurityPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-	
 	// Constructors
 	SecurityPermission::SecurityPermission(JString arg0)
 		: java::security::BasicPermission(

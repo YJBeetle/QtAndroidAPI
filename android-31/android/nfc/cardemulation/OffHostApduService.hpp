@@ -19,7 +19,7 @@ namespace android::nfc::cardemulation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OffHostApduService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		OffHostApduService(QAndroidJniObject obj);
+		OffHostApduService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		OffHostApduService();

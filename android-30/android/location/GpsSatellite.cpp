@@ -4,9 +4,6 @@ namespace android::location
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GpsSatellite::GpsSatellite(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

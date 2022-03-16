@@ -6,9 +6,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Observable::Observable(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Observable::Observable()
 		: JObject(

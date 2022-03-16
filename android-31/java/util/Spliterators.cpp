@@ -8,9 +8,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Spliterators::Spliterators(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

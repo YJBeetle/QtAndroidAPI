@@ -42,7 +42,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Surface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Surface(QAndroidJniObject obj);
+		Surface(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Surface(android::graphics::SurfaceTexture arg0);

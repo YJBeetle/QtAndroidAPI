@@ -16,9 +16,6 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Long2::Long2(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Long2::Long2()
 		: JObject(

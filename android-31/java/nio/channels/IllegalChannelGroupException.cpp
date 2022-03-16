@@ -4,9 +4,6 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalChannelGroupException::IllegalChannelGroupException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	IllegalChannelGroupException::IllegalChannelGroupException()
 		: java::lang::IllegalArgumentException(

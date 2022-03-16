@@ -68,9 +68,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodec_CryptoException::MediaCodec_CryptoException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	MediaCodec_CryptoException::MediaCodec_CryptoException(jint arg0, JString arg1)
 		: java::lang::RuntimeException(

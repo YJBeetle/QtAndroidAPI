@@ -21,7 +21,7 @@ namespace java::util::concurrent::locks
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StampedLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StampedLock(QAndroidJniObject obj);
+		StampedLock(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StampedLock();

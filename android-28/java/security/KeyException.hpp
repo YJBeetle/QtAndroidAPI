@@ -14,7 +14,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyException(QAndroidJniObject obj);
+		KeyException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
 		
 		// Constructors
 		KeyException();

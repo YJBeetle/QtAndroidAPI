@@ -11,7 +11,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyStore_CallbackHandlerProtection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_CallbackHandlerProtection(QAndroidJniObject obj);
+		KeyStore_CallbackHandlerProtection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyStore_CallbackHandlerProtection(JObject arg0);

@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NotProvisionedException::NotProvisionedException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
-	
 	// Constructors
 	NotProvisionedException::NotProvisionedException(JString arg0)
 		: android::media::MediaDrmException(

@@ -22,7 +22,7 @@ namespace org::json
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JSONArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JSONArray(QAndroidJniObject obj);
+		JSONArray(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		JSONArray();

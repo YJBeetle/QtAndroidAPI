@@ -20,7 +20,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Contacts_Photos(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Photos(QAndroidJniObject obj);
+		Contacts_Photos(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

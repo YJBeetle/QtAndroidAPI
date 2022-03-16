@@ -22,7 +22,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StructPollfd(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StructPollfd(QAndroidJniObject obj);
+		StructPollfd(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StructPollfd();

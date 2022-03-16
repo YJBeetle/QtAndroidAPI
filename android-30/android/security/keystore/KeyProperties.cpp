@@ -290,9 +290,6 @@ namespace android::security::keystore
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyProperties::KeyProperties(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -21,7 +21,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSetIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetIterator(QAndroidJniObject obj);
+		UnicodeSetIterator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UnicodeSetIterator();

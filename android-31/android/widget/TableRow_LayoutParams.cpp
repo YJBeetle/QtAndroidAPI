@@ -20,9 +20,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TableRow_LayoutParams::TableRow_LayoutParams(QAndroidJniObject obj) : android::widget::LinearLayout_LayoutParams(obj) {}
-	
 	// Constructors
 	TableRow_LayoutParams::TableRow_LayoutParams()
 		: android::widget::LinearLayout_LayoutParams(

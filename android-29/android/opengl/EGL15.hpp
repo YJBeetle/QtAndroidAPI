@@ -88,7 +88,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EGL15(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGL15(QAndroidJniObject obj);
+		EGL15(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

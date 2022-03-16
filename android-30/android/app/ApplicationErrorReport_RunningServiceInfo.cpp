@@ -19,9 +19,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo()
 		: JObject(

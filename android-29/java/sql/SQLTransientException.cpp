@@ -6,9 +6,6 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLTransientException::SQLTransientException(QAndroidJniObject obj) : java::sql::SQLException(obj) {}
-	
 	// Constructors
 	SQLTransientException::SQLTransientException()
 		: java::sql::SQLException(

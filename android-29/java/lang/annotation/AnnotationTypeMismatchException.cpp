@@ -6,9 +6,6 @@ namespace java::lang::annotation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnnotationTypeMismatchException::AnnotationTypeMismatchException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	AnnotationTypeMismatchException::AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1)
 		: java::lang::RuntimeException(

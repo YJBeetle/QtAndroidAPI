@@ -13,7 +13,7 @@ namespace android::os::strictmode
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CleartextNetworkViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		CleartextNetworkViolation(QAndroidJniObject obj);
+		CleartextNetworkViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
 		
 		// Constructors
 		

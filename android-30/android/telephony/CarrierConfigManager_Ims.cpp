@@ -21,9 +21,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CarrierConfigManager_Ims::CarrierConfigManager_Ims(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

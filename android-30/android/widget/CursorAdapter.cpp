@@ -25,9 +25,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CursorAdapter::CursorAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
-	
 	// Constructors
 	CursorAdapter::CursorAdapter(android::content::Context arg0, JObject arg1)
 		: android::widget::BaseAdapter(

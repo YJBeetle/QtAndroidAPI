@@ -6,9 +6,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServiceWorkerController::ServiceWorkerController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ServiceWorkerController::ServiceWorkerController()
 		: JObject(

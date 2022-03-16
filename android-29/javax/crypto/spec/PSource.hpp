@@ -13,7 +13,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PSource(QAndroidJniObject obj);
+		PSource(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

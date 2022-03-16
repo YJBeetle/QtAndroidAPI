@@ -33,7 +33,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DragEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DragEvent(QAndroidJniObject obj);
+		DragEvent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

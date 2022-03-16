@@ -17,7 +17,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PKIXCertPathChecker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXCertPathChecker(QAndroidJniObject obj);
+		PKIXCertPathChecker(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

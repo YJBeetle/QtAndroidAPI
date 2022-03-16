@@ -39,7 +39,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RuleBasedCollator(const char *className, const char *sig, Ts...agv) : android::icu::text::Collator(className, sig, std::forward<Ts>(agv)...) {}
-		RuleBasedCollator(QAndroidJniObject obj);
+		RuleBasedCollator(QAndroidJniObject obj) : android::icu::text::Collator(obj) {}
 		
 		// Constructors
 		RuleBasedCollator(JString arg0);

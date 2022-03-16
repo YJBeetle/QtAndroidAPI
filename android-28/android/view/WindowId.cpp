@@ -16,9 +16,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WindowId::WindowId(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -6,9 +6,6 @@ namespace android::text::format
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Formatter::Formatter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Formatter::Formatter()
 		: JObject(

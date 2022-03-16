@@ -15,7 +15,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AtomicIntegerFieldUpdater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicIntegerFieldUpdater(QAndroidJniObject obj);
+		AtomicIntegerFieldUpdater(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

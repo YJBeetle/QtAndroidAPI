@@ -30,9 +30,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PopupWindow::PopupWindow(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PopupWindow::PopupWindow()
 		: JObject(

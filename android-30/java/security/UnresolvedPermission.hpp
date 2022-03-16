@@ -32,7 +32,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnresolvedPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		UnresolvedPermission(QAndroidJniObject obj);
+		UnresolvedPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
 		
 		// Constructors
 		UnresolvedPermission(JString arg0, JString arg1, JString arg2, JArray arg3);

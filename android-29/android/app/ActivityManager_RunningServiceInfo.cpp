@@ -130,9 +130,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo()
 		: JObject(

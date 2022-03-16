@@ -23,7 +23,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_CallComposerException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_CallComposerException(QAndroidJniObject obj);
+		TelephonyManager_CallComposerException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		TelephonyManager_CallComposerException(jint arg0, java::io::IOException arg1);

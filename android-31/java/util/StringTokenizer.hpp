@@ -15,7 +15,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringTokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StringTokenizer(QAndroidJniObject obj);
+		StringTokenizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StringTokenizer(JString arg0);

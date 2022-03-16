@@ -30,9 +30,6 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessMode::AccessMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

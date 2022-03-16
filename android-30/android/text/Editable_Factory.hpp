@@ -13,7 +13,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Editable_Factory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Editable_Factory(QAndroidJniObject obj);
+		Editable_Factory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Editable_Factory();

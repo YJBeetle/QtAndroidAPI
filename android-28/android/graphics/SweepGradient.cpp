@@ -6,9 +6,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SweepGradient::SweepGradient(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
-	
 	// Constructors
 	SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, JIntArray arg2, JFloatArray arg3)
 		: android::graphics::Shader(

@@ -101,7 +101,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FieldPacker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FieldPacker(QAndroidJniObject obj);
+		FieldPacker(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FieldPacker(JByteArray arg0);

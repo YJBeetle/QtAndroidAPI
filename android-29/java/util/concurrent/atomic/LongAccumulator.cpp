@@ -7,9 +7,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LongAccumulator::LongAccumulator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LongAccumulator::LongAccumulator(JObject arg0, jlong arg1)
 		: JObject(

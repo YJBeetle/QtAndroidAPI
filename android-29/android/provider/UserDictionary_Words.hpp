@@ -37,7 +37,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UserDictionary_Words(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserDictionary_Words(QAndroidJniObject obj);
+		UserDictionary_Words(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UserDictionary_Words();

@@ -18,7 +18,7 @@ namespace android::telephony::cdma
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CdmaCellLocation(const char *className, const char *sig, Ts...agv) : android::telephony::CellLocation(className, sig, std::forward<Ts>(agv)...) {}
-		CdmaCellLocation(QAndroidJniObject obj);
+		CdmaCellLocation(QAndroidJniObject obj) : android::telephony::CellLocation(obj) {}
 		
 		// Constructors
 		CdmaCellLocation();

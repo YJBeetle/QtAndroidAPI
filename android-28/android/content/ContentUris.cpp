@@ -6,9 +6,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentUris::ContentUris(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContentUris::ContentUris()
 		: JObject(

@@ -7,9 +7,6 @@ namespace android::hardware::biometrics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(java::security::Signature arg0)
 		: JObject(

@@ -28,9 +28,6 @@ namespace android::drm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmManagerClient::DrmManagerClient(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DrmManagerClient::DrmManagerClient(android::content::Context arg0)
 		: JObject(

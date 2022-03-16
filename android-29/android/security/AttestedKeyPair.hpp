@@ -17,7 +17,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AttestedKeyPair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttestedKeyPair(QAndroidJniObject obj);
+		AttestedKeyPair(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

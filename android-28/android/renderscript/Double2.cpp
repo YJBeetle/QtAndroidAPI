@@ -16,9 +16,6 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Double2::Double2(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Double2::Double2()
 		: JObject(

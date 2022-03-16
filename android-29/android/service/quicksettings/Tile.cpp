@@ -36,9 +36,6 @@ namespace android::service::quicksettings
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Tile::Tile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

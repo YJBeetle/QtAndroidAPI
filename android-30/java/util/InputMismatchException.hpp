@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputMismatchException(const char *className, const char *sig, Ts...agv) : java::util::NoSuchElementException(className, sig, std::forward<Ts>(agv)...) {}
-		InputMismatchException(QAndroidJniObject obj);
+		InputMismatchException(QAndroidJniObject obj) : java::util::NoSuchElementException(obj) {}
 		
 		// Constructors
 		InputMismatchException();

@@ -17,7 +17,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntentService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		IntentService(QAndroidJniObject obj);
+		IntentService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		IntentService(JString arg0);

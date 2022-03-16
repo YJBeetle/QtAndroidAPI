@@ -13,9 +13,6 @@ namespace android::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Animator::Animator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Animator::Animator()
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SeekBar::SeekBar(QAndroidJniObject obj) : android::widget::AbsSeekBar(obj) {}
-	
 	// Constructors
 	SeekBar::SeekBar(android::content::Context arg0)
 		: android::widget::AbsSeekBar(

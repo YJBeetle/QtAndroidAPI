@@ -11,9 +11,6 @@ namespace android::service::voice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VoiceInteractionSessionService::VoiceInteractionSessionService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	VoiceInteractionSessionService::VoiceInteractionSessionService()
 		: android::app::Service(

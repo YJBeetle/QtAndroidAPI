@@ -10,9 +10,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Loader::Loader(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Loader::Loader(android::content::Context arg0)
 		: JObject(

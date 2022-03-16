@@ -18,7 +18,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextKeyListener_Capitalize(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TextKeyListener_Capitalize(QAndroidJniObject obj);
+		TextKeyListener_Capitalize(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

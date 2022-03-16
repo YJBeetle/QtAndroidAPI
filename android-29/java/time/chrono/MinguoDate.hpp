@@ -45,7 +45,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MinguoDate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MinguoDate(QAndroidJniObject obj);
+		MinguoDate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

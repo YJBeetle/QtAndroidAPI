@@ -22,7 +22,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CalendarContract_Reminders(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_Reminders(QAndroidJniObject obj);
+		CalendarContract_Reminders(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

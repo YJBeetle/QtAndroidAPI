@@ -17,7 +17,7 @@ namespace android::media::browse
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaBrowser_SubscriptionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowser_SubscriptionCallback(QAndroidJniObject obj);
+		MediaBrowser_SubscriptionCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaBrowser_SubscriptionCallback();

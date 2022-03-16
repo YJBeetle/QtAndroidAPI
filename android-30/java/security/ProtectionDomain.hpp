@@ -30,7 +30,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProtectionDomain(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProtectionDomain(QAndroidJniObject obj);
+		ProtectionDomain(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1);

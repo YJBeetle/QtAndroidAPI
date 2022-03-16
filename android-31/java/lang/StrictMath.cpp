@@ -18,9 +18,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StrictMath::StrictMath(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

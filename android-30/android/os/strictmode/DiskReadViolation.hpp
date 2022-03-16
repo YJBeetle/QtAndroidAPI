@@ -11,7 +11,7 @@ namespace android::os::strictmode
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DiskReadViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		DiskReadViolation(QAndroidJniObject obj);
+		DiskReadViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
 		
 		// Constructors
 		

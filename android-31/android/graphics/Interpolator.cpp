@@ -6,9 +6,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Interpolator::Interpolator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Interpolator::Interpolator(jint arg0)
 		: JObject(

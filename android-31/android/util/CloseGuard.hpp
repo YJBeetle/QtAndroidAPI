@@ -13,7 +13,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CloseGuard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CloseGuard(QAndroidJniObject obj);
+		CloseGuard(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CloseGuard();

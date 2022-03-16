@@ -35,7 +35,7 @@ namespace org::apache::http::conn::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLSocketFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSocketFactory(QAndroidJniObject obj);
+		SSLSocketFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SSLSocketFactory(java::security::KeyStore arg0);

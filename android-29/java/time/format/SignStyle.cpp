@@ -46,9 +46,6 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SignStyle::SignStyle(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

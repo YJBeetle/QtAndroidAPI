@@ -22,9 +22,6 @@ namespace javax::xml::xpath
 		);
 	}
 	
-	// QAndroidJniObject forward
-	XPathFactory::XPathFactory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

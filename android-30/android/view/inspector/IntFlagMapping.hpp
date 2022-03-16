@@ -13,7 +13,7 @@ namespace android::view::inspector
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntFlagMapping(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntFlagMapping(QAndroidJniObject obj);
+		IntFlagMapping(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IntFlagMapping();

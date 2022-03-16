@@ -9,9 +9,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Explode::Explode(QAndroidJniObject obj) : android::transition::Visibility(obj) {}
-	
 	// Constructors
 	Explode::Explode()
 		: android::transition::Visibility(

@@ -7,9 +7,6 @@ namespace android::speech
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RecognitionService_Callback::RecognitionService_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

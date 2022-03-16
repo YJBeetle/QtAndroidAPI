@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DeadObjectException::DeadObjectException(QAndroidJniObject obj) : android::os::RemoteException(obj) {}
-	
 	// Constructors
 	DeadObjectException::DeadObjectException()
 		: android::os::RemoteException(

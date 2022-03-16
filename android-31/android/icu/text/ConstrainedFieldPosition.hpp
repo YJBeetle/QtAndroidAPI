@@ -19,7 +19,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConstrainedFieldPosition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConstrainedFieldPosition(QAndroidJniObject obj);
+		ConstrainedFieldPosition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConstrainedFieldPosition();

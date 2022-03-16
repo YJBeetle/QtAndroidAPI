@@ -17,7 +17,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Layout_Alignment(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Layout_Alignment(QAndroidJniObject obj);
+		Layout_Alignment(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

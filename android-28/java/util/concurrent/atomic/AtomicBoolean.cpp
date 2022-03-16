@@ -5,9 +5,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicBoolean::AtomicBoolean(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AtomicBoolean::AtomicBoolean()
 		: JObject(

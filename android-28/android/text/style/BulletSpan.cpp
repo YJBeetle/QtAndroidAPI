@@ -16,9 +16,6 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BulletSpan::BulletSpan(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BulletSpan::BulletSpan()
 		: JObject(

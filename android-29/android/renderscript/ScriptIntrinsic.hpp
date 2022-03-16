@@ -16,7 +16,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScriptIntrinsic(const char *className, const char *sig, Ts...agv) : android::renderscript::Script(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptIntrinsic(QAndroidJniObject obj);
+		ScriptIntrinsic(QAndroidJniObject obj) : android::renderscript::Script(obj) {}
 		
 		// Constructors
 		

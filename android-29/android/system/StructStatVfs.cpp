@@ -71,9 +71,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructStatVfs::StructStatVfs(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StructStatVfs::StructStatVfs(jlong arg0, jlong arg1, jlong arg2, jlong arg3, jlong arg4, jlong arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10)
 		: JObject(

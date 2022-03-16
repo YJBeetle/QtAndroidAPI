@@ -33,7 +33,7 @@ namespace android::graphics::drawable::shapes
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RectShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::Shape(className, sig, std::forward<Ts>(agv)...) {}
-		RectShape(QAndroidJniObject obj);
+		RectShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::Shape(obj) {}
 		
 		// Constructors
 		RectShape();

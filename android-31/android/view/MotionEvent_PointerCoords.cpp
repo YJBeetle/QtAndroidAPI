@@ -58,9 +58,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MotionEvent_PointerCoords::MotionEvent_PointerCoords(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MotionEvent_PointerCoords::MotionEvent_PointerCoords()
 		: JObject(

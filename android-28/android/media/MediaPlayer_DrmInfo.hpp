@@ -17,7 +17,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_DrmInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_DrmInfo(QAndroidJniObject obj);
+		MediaPlayer_DrmInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

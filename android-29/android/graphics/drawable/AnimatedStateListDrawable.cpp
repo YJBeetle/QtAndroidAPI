@@ -9,9 +9,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnimatedStateListDrawable::AnimatedStateListDrawable(QAndroidJniObject obj) : android::graphics::drawable::StateListDrawable(obj) {}
-	
 	// Constructors
 	AnimatedStateListDrawable::AnimatedStateListDrawable()
 		: android::graphics::drawable::StateListDrawable(

@@ -11,7 +11,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertStoreSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertStoreSpi(QAndroidJniObject obj);
+		CertStoreSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CertStoreSpi(JObject arg0);

@@ -20,9 +20,6 @@ namespace java::security::spec
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PSSParameterSpec::PSSParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PSSParameterSpec::PSSParameterSpec(jint arg0)
 		: JObject(

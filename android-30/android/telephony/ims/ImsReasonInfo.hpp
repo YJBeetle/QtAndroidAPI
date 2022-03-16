@@ -191,7 +191,7 @@ namespace android::telephony::ims
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImsReasonInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImsReasonInfo(QAndroidJniObject obj);
+		ImsReasonInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ImsReasonInfo(jint arg0, jint arg1, JString arg2);

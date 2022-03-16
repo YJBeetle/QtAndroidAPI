@@ -24,7 +24,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Intent_ShortcutIconResource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Intent_ShortcutIconResource(QAndroidJniObject obj);
+		Intent_ShortcutIconResource(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Intent_ShortcutIconResource();

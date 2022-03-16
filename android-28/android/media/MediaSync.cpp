@@ -26,9 +26,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaSync::MediaSync(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaSync::MediaSync()
 		: JObject(

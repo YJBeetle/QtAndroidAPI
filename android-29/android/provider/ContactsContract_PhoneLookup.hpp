@@ -20,7 +20,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_PhoneLookup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_PhoneLookup(QAndroidJniObject obj);
+		ContactsContract_PhoneLookup(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

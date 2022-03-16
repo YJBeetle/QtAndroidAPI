@@ -89,9 +89,6 @@ namespace java::lang::reflect
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Modifier::Modifier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

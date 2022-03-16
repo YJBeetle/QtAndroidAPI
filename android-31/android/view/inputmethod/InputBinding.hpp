@@ -18,7 +18,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputBinding(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputBinding(QAndroidJniObject obj);
+		InputBinding(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InputBinding(JObject arg0, android::view::inputmethod::InputBinding &arg1);

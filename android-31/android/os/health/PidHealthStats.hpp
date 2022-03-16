@@ -14,7 +14,7 @@ namespace android::os::health
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PidHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PidHealthStats(QAndroidJniObject obj);
+		PidHealthStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

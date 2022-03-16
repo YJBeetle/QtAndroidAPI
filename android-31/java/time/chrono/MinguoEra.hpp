@@ -24,7 +24,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MinguoEra(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MinguoEra(QAndroidJniObject obj);
+		MinguoEra(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

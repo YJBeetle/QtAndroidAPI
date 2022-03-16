@@ -28,7 +28,7 @@ namespace android::service::chooser
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChooserTargetService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		ChooserTargetService(QAndroidJniObject obj);
+		ChooserTargetService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		ChooserTargetService();

@@ -5,9 +5,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Base64DataException::Base64DataException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	Base64DataException::Base64DataException(JString arg0)
 		: java::io::IOException(

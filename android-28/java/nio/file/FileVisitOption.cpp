@@ -14,9 +14,6 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FileVisitOption::FileVisitOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

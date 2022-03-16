@@ -15,9 +15,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CorrectionInfo::CorrectionInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CorrectionInfo::CorrectionInfo(jint arg0, JString arg1, JString arg2)
 		: JObject(

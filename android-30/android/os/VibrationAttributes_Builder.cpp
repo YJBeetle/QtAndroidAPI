@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VibrationAttributes_Builder::VibrationAttributes_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VibrationAttributes_Builder::VibrationAttributes_Builder()
 		: JObject(

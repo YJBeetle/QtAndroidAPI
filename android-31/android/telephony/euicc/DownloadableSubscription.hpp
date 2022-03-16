@@ -18,7 +18,7 @@ namespace android::telephony::euicc
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DownloadableSubscription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadableSubscription(QAndroidJniObject obj);
+		DownloadableSubscription(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

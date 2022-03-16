@@ -9,9 +9,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Identity::Identity(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Identity::Identity(JString arg0)
 		: JObject(

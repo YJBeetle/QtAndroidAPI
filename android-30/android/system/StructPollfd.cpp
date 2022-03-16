@@ -33,9 +33,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructPollfd::StructPollfd(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StructPollfd::StructPollfd()
 		: JObject(

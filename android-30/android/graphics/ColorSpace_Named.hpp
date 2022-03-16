@@ -30,7 +30,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Named(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Named(QAndroidJniObject obj);
+		ColorSpace_Named(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

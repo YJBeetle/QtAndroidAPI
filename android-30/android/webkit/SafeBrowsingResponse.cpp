@@ -4,9 +4,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SafeBrowsingResponse::SafeBrowsingResponse(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SafeBrowsingResponse::SafeBrowsingResponse()
 		: JObject(

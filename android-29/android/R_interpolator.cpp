@@ -123,9 +123,6 @@ namespace android
 		);
 	}
 	
-	// QAndroidJniObject forward
-	R_interpolator::R_interpolator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	R_interpolator::R_interpolator()
 		: JObject(

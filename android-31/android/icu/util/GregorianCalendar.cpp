@@ -24,9 +24,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GregorianCalendar::GregorianCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
-	
 	// Constructors
 	GregorianCalendar::GregorianCalendar()
 		: android::icu::util::Calendar(

@@ -35,7 +35,7 @@ namespace android::telephony::emergency
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EmergencyNumber(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EmergencyNumber(QAndroidJniObject obj);
+		EmergencyNumber(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

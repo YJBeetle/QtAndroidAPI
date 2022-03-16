@@ -38,9 +38,6 @@ namespace android::text::method
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextKeyListener_Capitalize::TextKeyListener_Capitalize(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

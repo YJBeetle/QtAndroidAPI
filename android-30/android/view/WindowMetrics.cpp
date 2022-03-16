@@ -6,9 +6,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowMetrics::WindowMetrics(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WindowMetrics::WindowMetrics(android::graphics::Rect arg0, android::view::WindowInsets arg1)
 		: JObject(

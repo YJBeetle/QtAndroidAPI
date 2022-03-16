@@ -77,9 +77,6 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CaptioningManager_CaptionStyle::CaptioningManager_CaptionStyle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

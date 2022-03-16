@@ -13,7 +13,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectException(QAndroidJniObject obj);
+		ConnectException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
 		
 		// Constructors
 		ConnectException();

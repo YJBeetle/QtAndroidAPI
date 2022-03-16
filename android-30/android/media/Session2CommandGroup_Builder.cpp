@@ -6,9 +6,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Session2CommandGroup_Builder::Session2CommandGroup_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Session2CommandGroup_Builder::Session2CommandGroup_Builder()
 		: JObject(

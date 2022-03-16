@@ -4,9 +4,6 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CameraOfflineSession::CameraOfflineSession(QAndroidJniObject obj) : android::hardware::camera2::CameraCaptureSession(obj) {}
-	
 	// Constructors
 	CameraOfflineSession::CameraOfflineSession()
 		: android::hardware::camera2::CameraCaptureSession(

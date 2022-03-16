@@ -30,7 +30,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShortcutManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ShortcutManager(QAndroidJniObject obj);
+		ShortcutManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

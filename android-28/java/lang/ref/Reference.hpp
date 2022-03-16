@@ -17,7 +17,7 @@ namespace java::lang::ref
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Reference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Reference(QAndroidJniObject obj);
+		Reference(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

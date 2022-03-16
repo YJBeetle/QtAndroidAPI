@@ -215,9 +215,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Bidi::Bidi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Bidi::Bidi()
 		: JObject(

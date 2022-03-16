@@ -19,7 +19,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EllipticCurve(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EllipticCurve(QAndroidJniObject obj);
+		EllipticCurve(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);

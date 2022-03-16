@@ -25,7 +25,7 @@ namespace android::app::role
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RoleManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RoleManager(QAndroidJniObject obj);
+		RoleManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

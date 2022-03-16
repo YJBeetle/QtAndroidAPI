@@ -1980,9 +1980,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CarrierConfigManager::CarrierConfigManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

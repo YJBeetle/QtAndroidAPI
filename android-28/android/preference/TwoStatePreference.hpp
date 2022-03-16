@@ -22,7 +22,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TwoStatePreference(const char *className, const char *sig, Ts...agv) : android::preference::Preference(className, sig, std::forward<Ts>(agv)...) {}
-		TwoStatePreference(QAndroidJniObject obj);
+		TwoStatePreference(QAndroidJniObject obj) : android::preference::Preference(obj) {}
 		
 		// Constructors
 		TwoStatePreference(android::content::Context arg0);

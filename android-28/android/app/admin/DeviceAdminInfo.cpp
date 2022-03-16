@@ -84,9 +84,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DeviceAdminInfo::DeviceAdminInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DeviceAdminInfo::DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
 		: JObject(

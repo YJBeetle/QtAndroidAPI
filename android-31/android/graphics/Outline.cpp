@@ -6,9 +6,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Outline::Outline(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Outline::Outline()
 		: JObject(

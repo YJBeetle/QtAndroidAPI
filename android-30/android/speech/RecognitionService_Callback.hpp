@@ -21,7 +21,7 @@ namespace android::speech
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RecognitionService_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecognitionService_Callback(QAndroidJniObject obj);
+		RecognitionService_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -66,9 +66,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContentInfo::ContentInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

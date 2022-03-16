@@ -14,7 +14,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Character_Subset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Character_Subset(QAndroidJniObject obj);
+		Character_Subset(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

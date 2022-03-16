@@ -28,7 +28,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorStateList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ColorStateList(QAndroidJniObject obj);
+		ColorStateList(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ColorStateList(JArray arg0, JIntArray arg1);

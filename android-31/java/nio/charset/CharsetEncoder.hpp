@@ -39,7 +39,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CharsetEncoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharsetEncoder(QAndroidJniObject obj);
+		CharsetEncoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

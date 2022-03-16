@@ -31,7 +31,7 @@ namespace android::view::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Animation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Animation(QAndroidJniObject obj);
+		Animation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Animation();

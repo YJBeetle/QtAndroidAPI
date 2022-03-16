@@ -13,9 +13,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	QuickContactBadge::QuickContactBadge(QAndroidJniObject obj) : android::widget::ImageView(obj) {}
-	
 	// Constructors
 	QuickContactBadge::QuickContactBadge(android::content::Context arg0)
 		: android::widget::ImageView(

@@ -20,7 +20,7 @@ namespace android::telephony::mbms
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MbmsDownloadReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsDownloadReceiver(QAndroidJniObject obj);
+		MbmsDownloadReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
 		
 		// Constructors
 		MbmsDownloadReceiver();

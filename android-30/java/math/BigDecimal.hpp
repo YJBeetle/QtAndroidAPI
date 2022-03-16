@@ -52,7 +52,7 @@ namespace java::math
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BigDecimal(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		BigDecimal(QAndroidJniObject obj);
+		BigDecimal(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		BigDecimal(JCharArray arg0);

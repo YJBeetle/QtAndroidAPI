@@ -20,7 +20,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_dimen(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_dimen(QAndroidJniObject obj);
+		R_dimen(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_dimen();

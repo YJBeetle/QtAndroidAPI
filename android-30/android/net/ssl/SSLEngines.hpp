@@ -16,7 +16,7 @@ namespace android::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLEngines(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngines(QAndroidJniObject obj);
+		SSLEngines(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PresetReverb_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PresetReverb_Settings(QAndroidJniObject obj);
+		PresetReverb_Settings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PresetReverb_Settings();

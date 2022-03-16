@@ -26,7 +26,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CallScreeningService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CallScreeningService(QAndroidJniObject obj);
+		CallScreeningService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		CallScreeningService();

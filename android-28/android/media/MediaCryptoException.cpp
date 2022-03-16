@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCryptoException::MediaCryptoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	MediaCryptoException::MediaCryptoException(JString arg0)
 		: java::lang::Exception(

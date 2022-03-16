@@ -10,9 +10,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyPermission::PropertyPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-	
 	// Constructors
 	PropertyPermission::PropertyPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(

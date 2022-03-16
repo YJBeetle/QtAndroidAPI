@@ -7,9 +7,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MacSpi::MacSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MacSpi::MacSpi()
 		: JObject(

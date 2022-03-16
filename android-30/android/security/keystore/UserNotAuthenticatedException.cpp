@@ -6,9 +6,6 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UserNotAuthenticatedException::UserNotAuthenticatedException(QAndroidJniObject obj) : java::security::InvalidKeyException(obj) {}
-	
 	// Constructors
 	UserNotAuthenticatedException::UserNotAuthenticatedException()
 		: java::security::InvalidKeyException(

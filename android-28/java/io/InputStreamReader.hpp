@@ -26,7 +26,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputStreamReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
-		InputStreamReader(QAndroidJniObject obj);
+		InputStreamReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
 		
 		// Constructors
 		InputStreamReader(java::io::InputStream arg0);

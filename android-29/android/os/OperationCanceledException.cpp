@@ -5,9 +5,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OperationCanceledException::OperationCanceledException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	OperationCanceledException::OperationCanceledException()
 		: java::lang::RuntimeException(

@@ -25,7 +25,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_StatusUpdates(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_StatusUpdates(QAndroidJniObject obj);
+		ContactsContract_StatusUpdates(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

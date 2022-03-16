@@ -13,7 +13,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Executors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Executors(QAndroidJniObject obj);
+		Executors(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

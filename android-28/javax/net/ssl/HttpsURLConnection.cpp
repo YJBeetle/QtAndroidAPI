@@ -9,9 +9,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HttpsURLConnection::HttpsURLConnection(QAndroidJniObject obj) : java::net::HttpURLConnection(obj) {}
-	
 	// Constructors
 	
 	// Methods

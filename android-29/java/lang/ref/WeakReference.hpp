@@ -17,7 +17,7 @@ namespace java::lang::ref
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WeakReference(const char *className, const char *sig, Ts...agv) : java::lang::ref::Reference(className, sig, std::forward<Ts>(agv)...) {}
-		WeakReference(QAndroidJniObject obj);
+		WeakReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
 		
 		// Constructors
 		WeakReference(JObject arg0);

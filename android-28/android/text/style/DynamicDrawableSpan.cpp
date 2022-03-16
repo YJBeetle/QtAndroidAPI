@@ -23,9 +23,6 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DynamicDrawableSpan::DynamicDrawableSpan(QAndroidJniObject obj) : android::text::style::ReplacementSpan(obj) {}
-	
 	// Constructors
 	DynamicDrawableSpan::DynamicDrawableSpan()
 		: android::text::style::ReplacementSpan(

@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(android::media::RouteDiscoveryPreference arg0)
 		: JObject(

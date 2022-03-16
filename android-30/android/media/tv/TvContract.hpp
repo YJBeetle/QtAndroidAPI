@@ -34,7 +34,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract(QAndroidJniObject obj);
+		TvContract(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

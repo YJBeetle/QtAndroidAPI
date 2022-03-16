@@ -16,7 +16,7 @@ namespace javax::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectionEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectionEvent(QAndroidJniObject obj);
+		ConnectionEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
 		
 		// Constructors
 		ConnectionEvent(JObject arg0);

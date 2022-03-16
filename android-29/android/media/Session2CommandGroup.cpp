@@ -14,9 +14,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Session2CommandGroup::Session2CommandGroup(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

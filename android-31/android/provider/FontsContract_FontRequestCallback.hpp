@@ -22,7 +22,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FontsContract_FontRequestCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontsContract_FontRequestCallback(QAndroidJniObject obj);
+		FontsContract_FontRequestCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FontsContract_FontRequestCallback();

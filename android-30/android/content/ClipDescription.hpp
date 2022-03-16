@@ -29,7 +29,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClipDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClipDescription(QAndroidJniObject obj);
+		ClipDescription(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ClipDescription(android::content::ClipDescription &arg0);

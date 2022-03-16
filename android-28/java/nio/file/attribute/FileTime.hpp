@@ -26,7 +26,7 @@ namespace java::nio::file::attribute
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileTime(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileTime(QAndroidJniObject obj);
+		FileTime(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

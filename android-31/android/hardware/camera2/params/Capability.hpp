@@ -22,7 +22,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Capability(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Capability(QAndroidJniObject obj);
+		Capability(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

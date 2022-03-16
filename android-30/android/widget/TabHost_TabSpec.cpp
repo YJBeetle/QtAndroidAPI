@@ -10,9 +10,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TabHost_TabSpec::TabHost_TabSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

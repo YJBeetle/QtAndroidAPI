@@ -20,7 +20,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewAnimationUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewAnimationUtils(QAndroidJniObject obj);
+		ViewAnimationUtils(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

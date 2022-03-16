@@ -13,7 +13,7 @@ namespace android::net::wifi::aware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PeerHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeerHandle(QAndroidJniObject obj);
+		PeerHandle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

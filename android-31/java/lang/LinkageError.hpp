@@ -14,7 +14,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LinkageError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		LinkageError(QAndroidJniObject obj);
+		LinkageError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 		
 		// Constructors
 		LinkageError();

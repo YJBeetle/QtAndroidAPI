@@ -14,7 +14,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InternalError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
-		InternalError(QAndroidJniObject obj);
+		InternalError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
 		
 		// Constructors
 		InternalError();

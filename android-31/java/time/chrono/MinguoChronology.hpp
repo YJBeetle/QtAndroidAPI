@@ -51,7 +51,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MinguoChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
-		MinguoChronology(QAndroidJniObject obj);
+		MinguoChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 		
 		// Constructors
 		

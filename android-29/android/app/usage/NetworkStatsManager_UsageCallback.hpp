@@ -13,7 +13,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkStatsManager_UsageCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStatsManager_UsageCallback(QAndroidJniObject obj);
+		NetworkStatsManager_UsageCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkStatsManager_UsageCallback();

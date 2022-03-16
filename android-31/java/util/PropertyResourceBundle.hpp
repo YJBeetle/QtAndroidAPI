@@ -22,7 +22,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyResourceBundle(const char *className, const char *sig, Ts...agv) : java::util::ResourceBundle(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyResourceBundle(QAndroidJniObject obj);
+		PropertyResourceBundle(QAndroidJniObject obj) : java::util::ResourceBundle(obj) {}
 		
 		// Constructors
 		PropertyResourceBundle(java::io::InputStream arg0);

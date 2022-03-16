@@ -23,9 +23,6 @@ namespace android::media::session
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaSession_QueueItem::MediaSession_QueueItem(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaSession_QueueItem::MediaSession_QueueItem(android::media::MediaDescription arg0, jlong arg1)
 		: JObject(

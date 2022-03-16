@@ -31,7 +31,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PeriodicSync(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeriodicSync(QAndroidJniObject obj);
+		PeriodicSync(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jlong arg3);

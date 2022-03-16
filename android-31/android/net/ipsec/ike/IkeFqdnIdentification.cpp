@@ -13,9 +13,6 @@ namespace android::net::ipsec::ike
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IkeFqdnIdentification::IkeFqdnIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
-	
 	// Constructors
 	IkeFqdnIdentification::IkeFqdnIdentification(JString arg0)
 		: android::net::ipsec::ike::IkeIdentification(

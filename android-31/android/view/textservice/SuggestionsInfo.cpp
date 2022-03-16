@@ -50,9 +50,6 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SuggestionsInfo::SuggestionsInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SuggestionsInfo::SuggestionsInfo(android::os::Parcel arg0)
 		: JObject(

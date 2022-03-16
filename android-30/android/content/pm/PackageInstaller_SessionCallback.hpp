@@ -11,7 +11,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageInstaller_SessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageInstaller_SessionCallback(QAndroidJniObject obj);
+		PackageInstaller_SessionCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PackageInstaller_SessionCallback();

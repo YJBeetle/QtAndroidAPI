@@ -16,7 +16,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DefaultDatabaseErrorHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DefaultDatabaseErrorHandler(QAndroidJniObject obj);
+		DefaultDatabaseErrorHandler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DefaultDatabaseErrorHandler();

@@ -20,7 +20,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MotionEvent_PointerCoords(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MotionEvent_PointerCoords(QAndroidJniObject obj);
+		MotionEvent_PointerCoords(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MotionEvent_PointerCoords();

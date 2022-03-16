@@ -14,9 +14,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WindowAnimationFrameStats::WindowAnimationFrameStats(QAndroidJniObject obj) : android::view::FrameStats(obj) {}
-	
 	// Constructors
 	
 	// Methods

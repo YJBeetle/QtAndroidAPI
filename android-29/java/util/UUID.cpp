@@ -7,9 +7,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UUID::UUID(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UUID::UUID(jlong arg0, jlong arg1)
 		: JObject(

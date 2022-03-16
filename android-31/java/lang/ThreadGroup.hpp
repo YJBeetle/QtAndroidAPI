@@ -28,7 +28,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThreadGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadGroup(QAndroidJniObject obj);
+		ThreadGroup(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ThreadGroup(JString arg0);

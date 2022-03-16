@@ -6,9 +6,6 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseKeyListener::BaseKeyListener(QAndroidJniObject obj) : android::text::method::MetaKeyKeyListener(obj) {}
-	
 	// Constructors
 	BaseKeyListener::BaseKeyListener()
 		: android::text::method::MetaKeyKeyListener(

@@ -6,9 +6,6 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher()
 		: JObject(

@@ -14,9 +14,6 @@ namespace java::util::zip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GZIPInputStream::GZIPInputStream(QAndroidJniObject obj) : java::util::zip::InflaterInputStream(obj) {}
-	
 	// Constructors
 	GZIPInputStream::GZIPInputStream(java::io::InputStream arg0)
 		: java::util::zip::InflaterInputStream(

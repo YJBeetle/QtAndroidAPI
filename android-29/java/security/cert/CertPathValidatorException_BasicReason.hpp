@@ -21,7 +21,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertPathValidatorException_BasicReason(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathValidatorException_BasicReason(QAndroidJniObject obj);
+		CertPathValidatorException_BasicReason(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

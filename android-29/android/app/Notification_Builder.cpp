@@ -23,9 +23,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_Builder::Notification_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification_Builder::Notification_Builder(android::content::Context arg0)
 		: JObject(

@@ -14,9 +14,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ForkJoinTask::ForkJoinTask(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ForkJoinTask::ForkJoinTask()
 		: JObject(

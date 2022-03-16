@@ -10,9 +10,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MutableBoolean::MutableBoolean(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MutableBoolean::MutableBoolean(jboolean arg0)
 		: JObject(

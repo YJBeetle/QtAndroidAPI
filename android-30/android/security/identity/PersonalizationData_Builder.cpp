@@ -8,9 +8,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PersonalizationData_Builder::PersonalizationData_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PersonalizationData_Builder::PersonalizationData_Builder()
 		: JObject(

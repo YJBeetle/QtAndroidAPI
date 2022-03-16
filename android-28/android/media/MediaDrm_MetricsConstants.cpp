@@ -285,9 +285,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaDrm_MetricsConstants::MediaDrm_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

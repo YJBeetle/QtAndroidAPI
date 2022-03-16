@@ -230,9 +230,6 @@ namespace android::accessibilityservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityService::AccessibilityService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	AccessibilityService::AccessibilityService()
 		: android::app::Service(

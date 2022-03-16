@@ -51,9 +51,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Display_HdrCapabilities::Display_HdrCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

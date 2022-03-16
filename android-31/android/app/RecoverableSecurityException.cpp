@@ -16,9 +16,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RecoverableSecurityException::RecoverableSecurityException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
-	
 	// Constructors
 	RecoverableSecurityException::RecoverableSecurityException(JThrowable arg0, JString arg1, android::app::RemoteAction arg2)
 		: java::lang::SecurityException(

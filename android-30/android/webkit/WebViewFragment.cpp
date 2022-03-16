@@ -9,9 +9,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebViewFragment::WebViewFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
-	
 	// Constructors
 	WebViewFragment::WebViewFragment()
 		: android::app::Fragment(

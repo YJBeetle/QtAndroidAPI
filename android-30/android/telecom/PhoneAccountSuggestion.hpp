@@ -27,7 +27,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PhoneAccountSuggestion(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneAccountSuggestion(QAndroidJniObject obj);
+		PhoneAccountSuggestion(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2);

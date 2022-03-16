@@ -14,9 +14,6 @@ namespace android::net::sip
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SipProfile::SipProfile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

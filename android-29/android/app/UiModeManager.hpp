@@ -23,7 +23,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UiModeManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UiModeManager(QAndroidJniObject obj);
+		UiModeManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

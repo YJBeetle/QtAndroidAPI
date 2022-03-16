@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoomButtonsController::ZoomButtonsController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ZoomButtonsController::ZoomButtonsController(android::view::View arg0)
 		: JObject(

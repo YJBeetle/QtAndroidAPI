@@ -6,9 +6,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MessageDecryptionException::MessageDecryptionException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
-	
 	// Constructors
 	MessageDecryptionException::MessageDecryptionException(JString arg0)
 		: android::security::identity::IdentityCredentialException(

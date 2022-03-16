@@ -17,7 +17,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Inflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Inflater(QAndroidJniObject obj);
+		Inflater(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Inflater();

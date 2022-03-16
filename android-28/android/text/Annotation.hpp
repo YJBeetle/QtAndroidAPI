@@ -17,7 +17,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Annotation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Annotation(QAndroidJniObject obj);
+		Annotation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Annotation(android::os::Parcel arg0);

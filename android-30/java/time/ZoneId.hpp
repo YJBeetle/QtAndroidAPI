@@ -35,7 +35,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneId(QAndroidJniObject obj);
+		ZoneId(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

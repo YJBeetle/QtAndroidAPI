@@ -27,7 +27,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PreciseDataConnectionState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PreciseDataConnectionState(QAndroidJniObject obj);
+		PreciseDataConnectionState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

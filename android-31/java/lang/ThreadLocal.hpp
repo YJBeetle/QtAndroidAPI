@@ -21,7 +21,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThreadLocal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadLocal(QAndroidJniObject obj);
+		ThreadLocal(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ThreadLocal();

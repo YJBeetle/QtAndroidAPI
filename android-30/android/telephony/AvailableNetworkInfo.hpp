@@ -22,7 +22,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AvailableNetworkInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AvailableNetworkInfo(QAndroidJniObject obj);
+		AvailableNetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3);

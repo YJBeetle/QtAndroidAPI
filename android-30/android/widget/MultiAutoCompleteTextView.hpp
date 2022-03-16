@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MultiAutoCompleteTextView(const char *className, const char *sig, Ts...agv) : android::widget::AutoCompleteTextView(className, sig, std::forward<Ts>(agv)...) {}
-		MultiAutoCompleteTextView(QAndroidJniObject obj);
+		MultiAutoCompleteTextView(QAndroidJniObject obj) : android::widget::AutoCompleteTextView(obj) {}
 		
 		// Constructors
 		MultiAutoCompleteTextView(android::content::Context arg0);

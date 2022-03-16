@@ -5,9 +5,6 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedCharsetException::UnsupportedCharsetException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	UnsupportedCharsetException::UnsupportedCharsetException(JString arg0)
 		: java::lang::IllegalArgumentException(

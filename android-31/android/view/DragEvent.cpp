@@ -59,9 +59,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DragEvent::DragEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

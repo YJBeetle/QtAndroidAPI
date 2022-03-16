@@ -16,7 +16,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileChannel_MapMode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileChannel_MapMode(QAndroidJniObject obj);
+		FileChannel_MapMode(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

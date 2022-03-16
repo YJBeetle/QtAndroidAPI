@@ -21,7 +21,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UserData_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserData_Builder(QAndroidJniObject obj);
+		UserData_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UserData_Builder(JString arg0, JString arg1, JString arg2);

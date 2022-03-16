@@ -14,9 +14,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServiceLoader::ServiceLoader(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -18,9 +18,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Person::Person(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

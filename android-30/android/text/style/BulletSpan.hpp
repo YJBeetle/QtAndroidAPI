@@ -30,7 +30,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BulletSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BulletSpan(QAndroidJniObject obj);
+		BulletSpan(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BulletSpan();

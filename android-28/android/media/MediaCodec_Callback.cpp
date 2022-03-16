@@ -8,9 +8,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCodec_Callback::MediaCodec_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaCodec_Callback::MediaCodec_Callback()
 		: JObject(

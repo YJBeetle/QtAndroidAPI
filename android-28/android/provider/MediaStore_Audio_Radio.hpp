@@ -14,7 +14,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio_Radio(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Radio(QAndroidJniObject obj);
+		MediaStore_Audio_Radio(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -47,7 +47,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperInfo(QAndroidJniObject obj);
+		WallpaperInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);

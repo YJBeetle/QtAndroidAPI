@@ -19,7 +19,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExpandableListView_ExpandableListContextMenuInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExpandableListView_ExpandableListContextMenuInfo(QAndroidJniObject obj);
+		ExpandableListView_ExpandableListContextMenuInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ExpandableListView_ExpandableListContextMenuInfo(android::view::View arg0, jlong arg1, jlong arg2);

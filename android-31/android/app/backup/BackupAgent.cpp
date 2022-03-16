@@ -37,9 +37,6 @@ namespace android::app::backup
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BackupAgent::BackupAgent(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
-	
 	// Constructors
 	BackupAgent::BackupAgent()
 		: android::content::ContextWrapper(

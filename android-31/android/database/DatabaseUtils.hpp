@@ -69,7 +69,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatabaseUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatabaseUtils(QAndroidJniObject obj);
+		DatabaseUtils(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DatabaseUtils();

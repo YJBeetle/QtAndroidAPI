@@ -26,9 +26,6 @@ namespace android::service::controls
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ControlsProviderService::ControlsProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	ControlsProviderService::ControlsProviderService()
 		: android::app::Service(

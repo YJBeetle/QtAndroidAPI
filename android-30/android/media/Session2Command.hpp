@@ -24,7 +24,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Session2Command(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Session2Command(QAndroidJniObject obj);
+		Session2Command(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Session2Command(jint arg0);

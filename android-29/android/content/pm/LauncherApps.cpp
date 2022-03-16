@@ -46,9 +46,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LauncherApps::LauncherApps(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

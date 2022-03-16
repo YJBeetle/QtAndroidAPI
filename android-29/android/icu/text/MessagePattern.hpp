@@ -29,7 +29,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessagePattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern(QAndroidJniObject obj);
+		MessagePattern(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MessagePattern();

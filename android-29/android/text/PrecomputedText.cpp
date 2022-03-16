@@ -11,9 +11,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrecomputedText::PrecomputedText(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -6,9 +6,6 @@ namespace android::nfc
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FormatException::FormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	FormatException::FormatException()
 		: java::lang::Exception(

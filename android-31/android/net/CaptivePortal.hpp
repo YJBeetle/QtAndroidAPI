@@ -17,7 +17,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CaptivePortal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptivePortal(QAndroidJniObject obj);
+		CaptivePortal(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

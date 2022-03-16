@@ -67,9 +67,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Build_VERSION::Build_VERSION(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Build_VERSION::Build_VERSION()
 		: JObject(

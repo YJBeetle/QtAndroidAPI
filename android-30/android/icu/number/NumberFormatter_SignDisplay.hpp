@@ -21,7 +21,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberFormatter_SignDisplay(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter_SignDisplay(QAndroidJniObject obj);
+		NumberFormatter_SignDisplay(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

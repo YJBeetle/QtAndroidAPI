@@ -93,9 +93,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioRecord::AudioRecord(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AudioRecord::AudioRecord(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 		: JObject(

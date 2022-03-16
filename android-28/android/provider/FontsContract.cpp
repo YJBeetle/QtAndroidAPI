@@ -12,9 +12,6 @@ namespace android::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FontsContract::FontsContract(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

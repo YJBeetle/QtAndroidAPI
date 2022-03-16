@@ -22,7 +22,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbsSavedState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbsSavedState(QAndroidJniObject obj);
+		AbsSavedState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

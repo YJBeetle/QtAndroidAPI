@@ -37,7 +37,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit View_AccessibilityDelegate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		View_AccessibilityDelegate(QAndroidJniObject obj);
+		View_AccessibilityDelegate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		View_AccessibilityDelegate();

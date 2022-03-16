@@ -14,7 +14,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SparseArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SparseArray(QAndroidJniObject obj);
+		SparseArray(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SparseArray();

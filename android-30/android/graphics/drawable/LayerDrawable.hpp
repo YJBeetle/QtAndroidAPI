@@ -57,7 +57,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LayerDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::Drawable(className, sig, std::forward<Ts>(agv)...) {}
-		LayerDrawable(QAndroidJniObject obj);
+		LayerDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
 		
 		// Constructors
 		LayerDrawable(JArray arg0);

@@ -23,7 +23,7 @@ namespace java::nio::file::attribute
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AclEntry_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntry_Builder(QAndroidJniObject obj);
+		AclEntry_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

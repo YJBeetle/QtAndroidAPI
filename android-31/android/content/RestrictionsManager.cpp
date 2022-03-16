@@ -240,9 +240,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RestrictionsManager::RestrictionsManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

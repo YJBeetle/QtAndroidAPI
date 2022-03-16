@@ -18,7 +18,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Paint_FontMetricsInt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_FontMetricsInt(QAndroidJniObject obj);
+		Paint_FontMetricsInt(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Paint_FontMetricsInt();

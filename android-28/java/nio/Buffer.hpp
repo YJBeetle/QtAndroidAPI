@@ -17,7 +17,7 @@ namespace java::nio
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Buffer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Buffer(QAndroidJniObject obj);
+		Buffer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

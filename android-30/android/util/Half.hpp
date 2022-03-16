@@ -27,7 +27,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Half(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Half(QAndroidJniObject obj);
+		Half(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Half(jdouble arg0);

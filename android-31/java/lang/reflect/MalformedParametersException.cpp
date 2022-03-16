@@ -5,9 +5,6 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MalformedParametersException::MalformedParametersException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	MalformedParametersException::MalformedParametersException()
 		: java::lang::RuntimeException(

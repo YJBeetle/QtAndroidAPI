@@ -23,7 +23,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Identity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Identity(QAndroidJniObject obj);
+		Identity(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Identity(JString arg0);

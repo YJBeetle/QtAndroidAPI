@@ -388,7 +388,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit View(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		View(QAndroidJniObject obj);
+		View(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		View(android::content::Context arg0);

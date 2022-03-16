@@ -10,9 +10,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TabActivity::TabActivity(QAndroidJniObject obj) : android::app::ActivityGroup(obj) {}
-	
 	// Constructors
 	TabActivity::TabActivity()
 		: android::app::ActivityGroup(

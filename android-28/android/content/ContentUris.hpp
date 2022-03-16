@@ -20,7 +20,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentUris(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentUris(QAndroidJniObject obj);
+		ContentUris(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentUris();

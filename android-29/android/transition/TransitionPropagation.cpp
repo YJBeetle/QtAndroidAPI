@@ -8,9 +8,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransitionPropagation::TransitionPropagation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TransitionPropagation::TransitionPropagation()
 		: JObject(

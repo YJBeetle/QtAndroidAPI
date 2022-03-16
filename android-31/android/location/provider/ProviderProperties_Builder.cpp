@@ -5,9 +5,6 @@ namespace android::location::provider
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProviderProperties_Builder::ProviderProperties_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ProviderProperties_Builder::ProviderProperties_Builder()
 		: JObject(

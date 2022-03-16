@@ -19,7 +19,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X509ExtendedKeyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509ExtendedKeyManager(QAndroidJniObject obj);
+		X509ExtendedKeyManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -17,9 +17,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Scanner::Scanner(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Scanner::Scanner(java::io::File arg0)
 		: JObject(

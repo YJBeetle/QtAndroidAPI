@@ -11,7 +11,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RenderProcessGoneDetail(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RenderProcessGoneDetail(QAndroidJniObject obj);
+		RenderProcessGoneDetail(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RenderProcessGoneDetail();

@@ -19,9 +19,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback()
 		: JObject(

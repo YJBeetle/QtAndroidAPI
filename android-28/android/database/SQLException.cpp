@@ -6,9 +6,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLException::SQLException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	SQLException::SQLException()
 		: java::lang::RuntimeException(

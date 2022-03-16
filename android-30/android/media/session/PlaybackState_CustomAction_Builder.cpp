@@ -8,9 +8,6 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(JString arg0, JString arg1, jint arg2)
 		: JObject(

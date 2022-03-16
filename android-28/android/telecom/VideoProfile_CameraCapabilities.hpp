@@ -17,7 +17,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VideoProfile_CameraCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VideoProfile_CameraCapabilities(QAndroidJniObject obj);
+		VideoProfile_CameraCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VideoProfile_CameraCapabilities(jint arg0, jint arg1);

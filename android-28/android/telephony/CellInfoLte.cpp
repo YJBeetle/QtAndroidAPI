@@ -17,9 +17,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CellInfoLte::CellInfoLte(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
-	
 	// Constructors
 	
 	// Methods

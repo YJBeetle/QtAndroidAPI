@@ -25,9 +25,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FormattableFlags::FormattableFlags(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

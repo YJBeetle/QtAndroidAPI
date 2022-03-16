@@ -13,7 +13,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppSearchBatchResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchBatchResult(QAndroidJniObject obj);
+		AppSearchBatchResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

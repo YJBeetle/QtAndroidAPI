@@ -6,9 +6,6 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CheckedInputStream::CheckedInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
-	
 	// Constructors
 	CheckedInputStream::CheckedInputStream(java::io::InputStream arg0, JObject arg1)
 		: java::io::FilterInputStream(

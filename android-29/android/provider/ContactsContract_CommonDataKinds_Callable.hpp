@@ -23,7 +23,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Callable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Callable(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_Callable(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContactsContract_CommonDataKinds_Callable();

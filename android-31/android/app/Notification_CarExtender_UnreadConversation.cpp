@@ -8,9 +8,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_CarExtender_UnreadConversation::Notification_CarExtender_UnreadConversation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -13,9 +13,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SyncStateContract_Constants::SyncStateContract_Constants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SyncStateContract_Constants::SyncStateContract_Constants()
 		: JObject(

@@ -16,7 +16,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertPathValidatorSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathValidatorSpi(QAndroidJniObject obj);
+		CertPathValidatorSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CertPathValidatorSpi();

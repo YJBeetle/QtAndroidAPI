@@ -51,7 +51,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Script(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		Script(QAndroidJniObject obj);
+		Script(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
 		
 		// Constructors
 		

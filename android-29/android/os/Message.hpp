@@ -37,7 +37,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Message(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Message(QAndroidJniObject obj);
+		Message(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Message();

@@ -42,9 +42,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PatternMatcher::PatternMatcher(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PatternMatcher::PatternMatcher(android::os::Parcel arg0)
 		: JObject(

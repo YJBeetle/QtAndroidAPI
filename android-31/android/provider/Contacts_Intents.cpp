@@ -61,9 +61,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Contacts_Intents::Contacts_Intents(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Contacts_Intents::Contacts_Intents()
 		: JObject(

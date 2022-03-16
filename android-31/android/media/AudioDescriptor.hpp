@@ -15,7 +15,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioDescriptor(QAndroidJniObject obj);
+		AudioDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

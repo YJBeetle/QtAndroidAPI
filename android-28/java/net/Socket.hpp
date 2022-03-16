@@ -46,7 +46,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Socket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Socket(QAndroidJniObject obj);
+		Socket(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Socket();

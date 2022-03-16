@@ -17,7 +17,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssetManager_AssetInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		AssetManager_AssetInputStream(QAndroidJniObject obj);
+		AssetManager_AssetInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
 		
 		// Constructors
 		

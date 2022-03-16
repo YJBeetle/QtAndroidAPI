@@ -38,9 +38,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Matrix_ScaleToFit::Matrix_ScaleToFit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -243,9 +243,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaPlayer::MediaPlayer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaPlayer::MediaPlayer()
 		: JObject(

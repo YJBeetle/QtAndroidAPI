@@ -11,7 +11,7 @@ namespace java::time::temporal
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TemporalQueries(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TemporalQueries(QAndroidJniObject obj);
+		TemporalQueries(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

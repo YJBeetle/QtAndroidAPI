@@ -16,7 +16,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StateSet(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StateSet(QAndroidJniObject obj);
+		StateSet(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

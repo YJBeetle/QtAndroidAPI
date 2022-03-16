@@ -38,7 +38,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Call_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Call_Callback(QAndroidJniObject obj);
+		Call_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Call_Callback();

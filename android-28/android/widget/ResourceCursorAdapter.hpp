@@ -28,7 +28,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResourceCursorAdapter(const char *className, const char *sig, Ts...agv) : android::widget::CursorAdapter(className, sig, std::forward<Ts>(agv)...) {}
-		ResourceCursorAdapter(QAndroidJniObject obj);
+		ResourceCursorAdapter(QAndroidJniObject obj) : android::widget::CursorAdapter(obj) {}
 		
 		// Constructors
 		ResourceCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2);

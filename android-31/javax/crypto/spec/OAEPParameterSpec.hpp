@@ -18,7 +18,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OAEPParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OAEPParameterSpec(QAndroidJniObject obj);
+		OAEPParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		OAEPParameterSpec(JString arg0, JString arg1, JObject arg2, javax::crypto::spec::PSource arg3);

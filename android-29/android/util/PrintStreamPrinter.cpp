@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintStreamPrinter::PrintStreamPrinter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PrintStreamPrinter::PrintStreamPrinter(java::io::PrintStream arg0)
 		: JObject(

@@ -19,7 +19,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BufferedReader(const char *className, const char *sig, Ts...agv) : java::io::Reader(className, sig, std::forward<Ts>(agv)...) {}
-		BufferedReader(QAndroidJniObject obj);
+		BufferedReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
 		
 		// Constructors
 		BufferedReader(java::io::Reader arg0);

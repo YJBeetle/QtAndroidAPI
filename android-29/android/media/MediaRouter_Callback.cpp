@@ -7,9 +7,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaRouter_Callback::MediaRouter_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaRouter_Callback::MediaRouter_Callback()
 		: JObject(

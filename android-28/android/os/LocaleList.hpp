@@ -25,7 +25,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleList(QAndroidJniObject obj);
+		LocaleList(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LocaleList(JArray arg0);

@@ -29,9 +29,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Fragment::Fragment(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Fragment::Fragment()
 		: JObject(

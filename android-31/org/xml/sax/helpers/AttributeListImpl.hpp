@@ -13,7 +13,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AttributeListImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttributeListImpl(QAndroidJniObject obj);
+		AttributeListImpl(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AttributeListImpl();

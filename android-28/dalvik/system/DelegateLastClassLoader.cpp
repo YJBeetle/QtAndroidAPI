@@ -8,9 +8,6 @@ namespace dalvik::system
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DelegateLastClassLoader::DelegateLastClassLoader(QAndroidJniObject obj) : dalvik::system::PathClassLoader(obj) {}
-	
 	// Constructors
 	DelegateLastClassLoader::DelegateLastClassLoader(JString arg0, java::lang::ClassLoader arg1)
 		: dalvik::system::PathClassLoader(

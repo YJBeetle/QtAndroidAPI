@@ -14,9 +14,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PictureInPictureUiState::PictureInPictureUiState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

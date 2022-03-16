@@ -50,7 +50,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Types(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Types(QAndroidJniObject obj);
+		Types(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

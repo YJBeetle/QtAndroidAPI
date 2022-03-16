@@ -45,7 +45,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransitionSet(const char *className, const char *sig, Ts...agv) : android::transition::Transition(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionSet(QAndroidJniObject obj);
+		TransitionSet(QAndroidJniObject obj) : android::transition::Transition(obj) {}
 		
 		// Constructors
 		TransitionSet();

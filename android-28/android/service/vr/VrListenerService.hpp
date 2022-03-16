@@ -26,7 +26,7 @@ namespace android::service::vr
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VrListenerService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		VrListenerService(QAndroidJniObject obj);
+		VrListenerService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		VrListenerService();

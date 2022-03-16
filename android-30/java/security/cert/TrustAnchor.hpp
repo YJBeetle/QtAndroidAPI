@@ -22,7 +22,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TrustAnchor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TrustAnchor(QAndroidJniObject obj);
+		TrustAnchor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TrustAnchor(java::security::cert::X509Certificate arg0, JByteArray arg1);

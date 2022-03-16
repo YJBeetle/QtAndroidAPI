@@ -11,7 +11,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PorterDuff(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuff(QAndroidJniObject obj);
+		PorterDuff(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PorterDuff();

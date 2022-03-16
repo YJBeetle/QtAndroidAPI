@@ -14,9 +14,6 @@ namespace android::view::accessibility
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AccessibilityNodeProvider::AccessibilityNodeProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AccessibilityNodeProvider::AccessibilityNodeProvider()
 		: JObject(

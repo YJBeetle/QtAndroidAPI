@@ -26,7 +26,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkInfo(QAndroidJniObject obj);
+		NetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkInfo(jint arg0, jint arg1, JString arg2, JString arg3);

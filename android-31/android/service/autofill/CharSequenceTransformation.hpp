@@ -18,7 +18,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CharSequenceTransformation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharSequenceTransformation(QAndroidJniObject obj);
+		CharSequenceTransformation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

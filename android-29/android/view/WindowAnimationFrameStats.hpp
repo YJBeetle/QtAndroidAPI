@@ -18,7 +18,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WindowAnimationFrameStats(const char *className, const char *sig, Ts...agv) : android::view::FrameStats(className, sig, std::forward<Ts>(agv)...) {}
-		WindowAnimationFrameStats(QAndroidJniObject obj);
+		WindowAnimationFrameStats(QAndroidJniObject obj) : android::view::FrameStats(obj) {}
 		
 		// Constructors
 		

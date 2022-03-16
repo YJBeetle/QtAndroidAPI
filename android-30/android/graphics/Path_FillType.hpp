@@ -18,7 +18,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Path_FillType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Path_FillType(QAndroidJniObject obj);
+		Path_FillType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

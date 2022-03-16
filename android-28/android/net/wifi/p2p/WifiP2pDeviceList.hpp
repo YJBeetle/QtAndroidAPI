@@ -22,7 +22,7 @@ namespace android::net::wifi::p2p
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiP2pDeviceList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pDeviceList(QAndroidJniObject obj);
+		WifiP2pDeviceList(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WifiP2pDeviceList();

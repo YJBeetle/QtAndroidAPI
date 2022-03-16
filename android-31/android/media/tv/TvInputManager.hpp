@@ -64,7 +64,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvInputManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputManager(QAndroidJniObject obj);
+		TvInputManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

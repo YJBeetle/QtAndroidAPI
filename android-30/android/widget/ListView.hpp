@@ -47,7 +47,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ListView(const char *className, const char *sig, Ts...agv) : android::widget::AbsListView(className, sig, std::forward<Ts>(agv)...) {}
-		ListView(QAndroidJniObject obj);
+		ListView(QAndroidJniObject obj) : android::widget::AbsListView(obj) {}
 		
 		// Constructors
 		ListView(android::content::Context arg0);

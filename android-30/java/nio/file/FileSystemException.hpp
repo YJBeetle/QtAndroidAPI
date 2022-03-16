@@ -13,7 +13,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileSystemException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		FileSystemException(QAndroidJniObject obj);
+		FileSystemException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		FileSystemException(JString arg0);

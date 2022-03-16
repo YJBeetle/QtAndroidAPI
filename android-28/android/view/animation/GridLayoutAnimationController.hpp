@@ -33,7 +33,7 @@ namespace android::view::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GridLayoutAnimationController(const char *className, const char *sig, Ts...agv) : android::view::animation::LayoutAnimationController(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayoutAnimationController(QAndroidJniObject obj);
+		GridLayoutAnimationController(QAndroidJniObject obj) : android::view::animation::LayoutAnimationController(obj) {}
 		
 		// Constructors
 		GridLayoutAnimationController(android::view::animation::Animation arg0);

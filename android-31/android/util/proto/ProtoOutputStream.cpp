@@ -238,9 +238,6 @@ namespace android::util::proto
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ProtoOutputStream::ProtoOutputStream(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ProtoOutputStream::ProtoOutputStream()
 		: JObject(

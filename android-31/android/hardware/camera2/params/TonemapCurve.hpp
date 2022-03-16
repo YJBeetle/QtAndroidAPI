@@ -25,7 +25,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TonemapCurve(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TonemapCurve(QAndroidJniObject obj);
+		TonemapCurve(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TonemapCurve(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2);

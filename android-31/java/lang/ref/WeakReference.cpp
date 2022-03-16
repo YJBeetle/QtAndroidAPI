@@ -6,9 +6,6 @@ namespace java::lang::ref
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WeakReference::WeakReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
-	
 	// Constructors
 	WeakReference::WeakReference(JObject arg0)
 		: java::lang::ref::Reference(

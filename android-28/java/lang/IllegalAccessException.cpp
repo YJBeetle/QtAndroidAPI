@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllegalAccessException::IllegalAccessException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
-	
 	// Constructors
 	IllegalAccessException::IllegalAccessException()
 		: java::lang::ReflectiveOperationException(

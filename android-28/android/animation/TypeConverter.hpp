@@ -14,7 +14,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TypeConverter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TypeConverter(QAndroidJniObject obj);
+		TypeConverter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TypeConverter(JClass arg0, JClass arg1);

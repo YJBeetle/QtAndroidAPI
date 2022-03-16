@@ -18,7 +18,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntProperty(const char *className, const char *sig, Ts...agv) : android::util::Property(className, sig, std::forward<Ts>(agv)...) {}
-		IntProperty(QAndroidJniObject obj);
+		IntProperty(QAndroidJniObject obj) : android::util::Property(obj) {}
 		
 		// Constructors
 		IntProperty(JString arg0);

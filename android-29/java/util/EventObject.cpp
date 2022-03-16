@@ -6,9 +6,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EventObject::EventObject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EventObject::EventObject(JObject arg0)
 		: JObject(

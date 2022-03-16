@@ -26,7 +26,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecureRandom(const char *className, const char *sig, Ts...agv) : java::util::Random(className, sig, std::forward<Ts>(agv)...) {}
-		SecureRandom(QAndroidJniObject obj);
+		SecureRandom(QAndroidJniObject obj) : java::util::Random(obj) {}
 		
 		// Constructors
 		SecureRandom();

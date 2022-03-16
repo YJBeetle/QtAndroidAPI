@@ -35,7 +35,7 @@ namespace android::view::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LayoutAnimationController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LayoutAnimationController(QAndroidJniObject obj);
+		LayoutAnimationController(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LayoutAnimationController(android::view::animation::Animation arg0);

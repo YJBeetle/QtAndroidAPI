@@ -6,9 +6,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbsListView_LayoutParams::AbsListView_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
-	
 	// Constructors
 	AbsListView_LayoutParams::AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 		: android::view::ViewGroup_LayoutParams(

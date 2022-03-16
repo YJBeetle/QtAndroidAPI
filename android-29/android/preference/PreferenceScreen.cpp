@@ -9,9 +9,6 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PreferenceScreen::PreferenceScreen(QAndroidJniObject obj) : android::preference::PreferenceGroup(obj) {}
-	
 	// Constructors
 	
 	// Methods

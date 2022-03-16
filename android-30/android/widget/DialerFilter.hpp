@@ -31,7 +31,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DialerFilter(const char *className, const char *sig, Ts...agv) : android::widget::RelativeLayout(className, sig, std::forward<Ts>(agv)...) {}
-		DialerFilter(QAndroidJniObject obj);
+		DialerFilter(QAndroidJniObject obj) : android::widget::RelativeLayout(obj) {}
 		
 		// Constructors
 		DialerFilter(android::content::Context arg0);

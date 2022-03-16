@@ -33,7 +33,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothManager(QAndroidJniObject obj);
+		BluetoothManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

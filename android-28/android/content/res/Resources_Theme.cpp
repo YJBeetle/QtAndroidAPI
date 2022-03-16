@@ -10,9 +10,6 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Resources_Theme::Resources_Theme(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

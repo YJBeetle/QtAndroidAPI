@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IOError::IOError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-	
 	// Constructors
 	IOError::IOError(JThrowable arg0)
 		: java::lang::Error(

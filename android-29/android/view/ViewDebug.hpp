@@ -29,7 +29,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewDebug(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewDebug(QAndroidJniObject obj);
+		ViewDebug(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ViewDebug();

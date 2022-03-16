@@ -55,7 +55,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Bundle(const char *className, const char *sig, Ts...agv) : android::os::BaseBundle(className, sig, std::forward<Ts>(agv)...) {}
-		Bundle(QAndroidJniObject obj);
+		Bundle(QAndroidJniObject obj) : android::os::BaseBundle(obj) {}
 		
 		// Constructors
 		Bundle();

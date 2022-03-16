@@ -34,7 +34,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExpandableListView(const char *className, const char *sig, Ts...agv) : android::widget::ListView(className, sig, std::forward<Ts>(agv)...) {}
-		ExpandableListView(QAndroidJniObject obj);
+		ExpandableListView(QAndroidJniObject obj) : android::widget::ListView(obj) {}
 		
 		// Constructors
 		ExpandableListView(android::content::Context arg0);

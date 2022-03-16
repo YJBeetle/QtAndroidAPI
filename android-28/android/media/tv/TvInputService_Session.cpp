@@ -14,9 +14,6 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvInputService_Session::TvInputService_Session(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TvInputService_Session::TvInputService_Session(android::content::Context arg0)
 		: JObject(

@@ -32,7 +32,7 @@ namespace android::view::textservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextServicesManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextServicesManager(QAndroidJniObject obj);
+		TextServicesManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

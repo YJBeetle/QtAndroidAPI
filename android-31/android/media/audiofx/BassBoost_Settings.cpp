@@ -11,9 +11,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BassBoost_Settings::BassBoost_Settings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BassBoost_Settings::BassBoost_Settings()
 		: JObject(

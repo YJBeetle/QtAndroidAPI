@@ -5,9 +5,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchPropertyException::NoSuchPropertyException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	NoSuchPropertyException::NoSuchPropertyException(JString arg0)
 		: java::lang::RuntimeException(

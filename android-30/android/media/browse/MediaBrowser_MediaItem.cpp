@@ -29,9 +29,6 @@ namespace android::media::browse
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowser_MediaItem::MediaBrowser_MediaItem(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaBrowser_MediaItem::MediaBrowser_MediaItem(android::media::MediaDescription arg0, jint arg1)
 		: JObject(

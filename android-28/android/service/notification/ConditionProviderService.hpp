@@ -35,7 +35,7 @@ namespace android::service::notification
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConditionProviderService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		ConditionProviderService(QAndroidJniObject obj);
+		ConditionProviderService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		ConditionProviderService();

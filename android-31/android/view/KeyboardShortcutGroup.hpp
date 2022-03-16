@@ -22,7 +22,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyboardShortcutGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyboardShortcutGroup(QAndroidJniObject obj);
+		KeyboardShortcutGroup(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyboardShortcutGroup(JString arg0);

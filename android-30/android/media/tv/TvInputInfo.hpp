@@ -51,7 +51,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvInputInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputInfo(QAndroidJniObject obj);
+		TvInputInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

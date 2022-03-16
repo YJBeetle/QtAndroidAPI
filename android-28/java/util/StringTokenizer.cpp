@@ -7,9 +7,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringTokenizer::StringTokenizer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StringTokenizer::StringTokenizer(JString arg0)
 		: JObject(

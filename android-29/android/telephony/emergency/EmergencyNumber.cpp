@@ -127,9 +127,6 @@ namespace android::telephony::emergency
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EmergencyNumber::EmergencyNumber(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

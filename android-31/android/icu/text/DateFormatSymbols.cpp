@@ -56,9 +56,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DateFormatSymbols::DateFormatSymbols()
 		: JObject(

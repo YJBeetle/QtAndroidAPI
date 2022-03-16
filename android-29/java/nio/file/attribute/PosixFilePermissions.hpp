@@ -17,7 +17,7 @@ namespace java::nio::file::attribute
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PosixFilePermissions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PosixFilePermissions(QAndroidJniObject obj);
+		PosixFilePermissions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

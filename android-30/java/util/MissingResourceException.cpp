@@ -6,9 +6,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MissingResourceException::MissingResourceException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	MissingResourceException::MissingResourceException(JString arg0, JString arg1, JString arg2)
 		: java::lang::RuntimeException(

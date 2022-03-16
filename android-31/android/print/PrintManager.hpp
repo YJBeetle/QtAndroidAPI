@@ -25,7 +25,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintManager(QAndroidJniObject obj);
+		PrintManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

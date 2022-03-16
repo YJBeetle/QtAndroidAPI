@@ -20,7 +20,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Gallery_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		Gallery_LayoutParams(QAndroidJniObject obj);
+		Gallery_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
 		
 		// Constructors
 		Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

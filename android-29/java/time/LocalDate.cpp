@@ -48,9 +48,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocalDate::LocalDate(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

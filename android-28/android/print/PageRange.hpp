@@ -20,7 +20,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PageRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PageRange(QAndroidJniObject obj);
+		PageRange(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PageRange(jint arg0, jint arg1);

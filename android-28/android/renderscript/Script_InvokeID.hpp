@@ -20,7 +20,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Script_InvokeID(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		Script_InvokeID(QAndroidJniObject obj);
+		Script_InvokeID(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
 		
 		// Constructors
 		

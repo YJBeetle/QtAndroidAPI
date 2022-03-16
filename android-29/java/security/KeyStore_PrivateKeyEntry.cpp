@@ -7,9 +7,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	KeyStore_PrivateKeyEntry::KeyStore_PrivateKeyEntry(JObject arg0, JArray arg1)
 		: JObject(

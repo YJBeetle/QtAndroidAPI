@@ -6,9 +6,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WebBackForwardList::WebBackForwardList(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WebBackForwardList::WebBackForwardList()
 		: JObject(

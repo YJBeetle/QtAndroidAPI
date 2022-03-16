@@ -8,9 +8,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DigestOutputStream::DigestOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
-	
 	// Constructors
 	DigestOutputStream::DigestOutputStream(java::io::OutputStream arg0, java::security::MessageDigest arg1)
 		: java::io::FilterOutputStream(

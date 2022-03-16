@@ -26,7 +26,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UsageStatsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsageStatsManager(QAndroidJniObject obj);
+		UsageStatsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

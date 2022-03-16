@@ -22,7 +22,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextLinks_TextLink(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextLinks_TextLink(QAndroidJniObject obj);
+		TextLinks_TextLink(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -13,7 +13,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DynamicsProcessing_Limiter(const char *className, const char *sig, Ts...agv) : android::media::audiofx::DynamicsProcessing_Stage(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicsProcessing_Limiter(QAndroidJniObject obj);
+		DynamicsProcessing_Limiter(QAndroidJniObject obj) : android::media::audiofx::DynamicsProcessing_Stage(obj) {}
 		
 		// Constructors
 		DynamicsProcessing_Limiter(android::media::audiofx::DynamicsProcessing_Limiter &arg0);

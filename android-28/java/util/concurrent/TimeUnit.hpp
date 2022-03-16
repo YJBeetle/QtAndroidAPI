@@ -34,7 +34,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeUnit(QAndroidJniObject obj);
+		TimeUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

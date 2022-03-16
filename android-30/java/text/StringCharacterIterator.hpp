@@ -14,7 +14,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringCharacterIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StringCharacterIterator(QAndroidJniObject obj);
+		StringCharacterIterator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StringCharacterIterator(JString arg0);

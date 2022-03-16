@@ -14,9 +14,6 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LogSessionId::LogSessionId(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

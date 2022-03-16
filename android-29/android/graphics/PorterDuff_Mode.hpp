@@ -32,7 +32,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PorterDuff_Mode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PorterDuff_Mode(QAndroidJniObject obj);
+		PorterDuff_Mode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -5,9 +5,6 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileIntegrityManager::FileIntegrityManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

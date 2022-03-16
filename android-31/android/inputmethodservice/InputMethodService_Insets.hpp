@@ -24,7 +24,7 @@ namespace android::inputmethodservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputMethodService_Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputMethodService_Insets(QAndroidJniObject obj);
+		InputMethodService_Insets(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InputMethodService_Insets();

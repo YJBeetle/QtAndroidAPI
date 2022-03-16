@@ -13,7 +13,7 @@ namespace dalvik::bytecode
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OpcodeInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OpcodeInfo(QAndroidJniObject obj);
+		OpcodeInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

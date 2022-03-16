@@ -22,7 +22,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GatewayInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GatewayInfo(QAndroidJniObject obj);
+		GatewayInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GatewayInfo(JString arg0, android::net::Uri arg1, android::net::Uri arg2);

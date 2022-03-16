@@ -7,9 +7,6 @@ namespace android::content::pm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResolveInfo_DisplayNameComparator::ResolveInfo_DisplayNameComparator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ResolveInfo_DisplayNameComparator::ResolveInfo_DisplayNameComparator(android::content::pm::PackageManager arg0)
 		: JObject(

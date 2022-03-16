@@ -13,7 +13,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RSIllegalArgumentException(const char *className, const char *sig, Ts...agv) : android::renderscript::RSRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		RSIllegalArgumentException(QAndroidJniObject obj);
+		RSIllegalArgumentException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
 		
 		// Constructors
 		RSIllegalArgumentException(JString arg0);

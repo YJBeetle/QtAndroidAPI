@@ -22,9 +22,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StateSet::StateSet(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -10,9 +10,6 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatagramChannel::DatagramChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
-	
 	// Constructors
 	
 	// Methods

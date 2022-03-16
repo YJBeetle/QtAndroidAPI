@@ -8,9 +8,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_CarExtender_Builder::Notification_CarExtender_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification_CarExtender_Builder::Notification_CarExtender_Builder(JString arg0)
 		: JObject(

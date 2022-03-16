@@ -211,9 +211,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioDeviceInfo::AudioDeviceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

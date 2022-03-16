@@ -55,7 +55,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RestrictionsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RestrictionsManager(QAndroidJniObject obj);
+		RestrictionsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

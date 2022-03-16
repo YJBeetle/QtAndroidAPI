@@ -19,9 +19,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleList::LocaleList(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LocaleList::LocaleList(JArray arg0)
 		: JObject(

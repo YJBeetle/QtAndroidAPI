@@ -17,9 +17,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MotionEvent_PointerProperties::MotionEvent_PointerProperties(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MotionEvent_PointerProperties::MotionEvent_PointerProperties()
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::os::health
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HealthStats::HealthStats(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -35,7 +35,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntentSender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntentSender(QAndroidJniObject obj);
+		IntentSender(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

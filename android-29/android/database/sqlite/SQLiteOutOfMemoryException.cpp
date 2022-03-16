@@ -5,9 +5,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
-	
 	// Constructors
 	SQLiteOutOfMemoryException::SQLiteOutOfMemoryException()
 		: android::database::sqlite::SQLiteException(

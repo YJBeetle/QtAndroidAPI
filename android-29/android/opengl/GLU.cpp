@@ -7,9 +7,6 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GLU::GLU(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GLU::GLU()
 		: JObject(

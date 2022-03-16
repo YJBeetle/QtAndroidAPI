@@ -33,9 +33,6 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WeekFields::WeekFields(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

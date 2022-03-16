@@ -101,9 +101,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaPlayer_MetricsConstants::MediaPlayer_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

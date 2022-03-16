@@ -193,9 +193,6 @@ namespace android::media::metrics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlaybackMetrics::PlaybackMetrics(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

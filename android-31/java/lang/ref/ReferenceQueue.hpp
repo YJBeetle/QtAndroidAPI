@@ -16,7 +16,7 @@ namespace java::lang::ref
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReferenceQueue(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReferenceQueue(QAndroidJniObject obj);
+		ReferenceQueue(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ReferenceQueue();

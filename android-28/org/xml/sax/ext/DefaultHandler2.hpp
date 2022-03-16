@@ -18,7 +18,7 @@ namespace org::xml::sax::ext
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DefaultHandler2(const char *className, const char *sig, Ts...agv) : org::xml::sax::helpers::DefaultHandler(className, sig, std::forward<Ts>(agv)...) {}
-		DefaultHandler2(QAndroidJniObject obj);
+		DefaultHandler2(QAndroidJniObject obj) : org::xml::sax::helpers::DefaultHandler(obj) {}
 		
 		// Constructors
 		DefaultHandler2();

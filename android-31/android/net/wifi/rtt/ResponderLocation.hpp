@@ -47,7 +47,7 @@ namespace android::net::wifi::rtt
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResponderLocation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResponderLocation(QAndroidJniObject obj);
+		ResponderLocation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

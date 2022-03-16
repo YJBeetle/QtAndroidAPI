@@ -7,9 +7,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DoubleAdder::DoubleAdder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DoubleAdder::DoubleAdder()
 		: JObject(

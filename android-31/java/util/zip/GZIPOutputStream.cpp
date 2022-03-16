@@ -7,9 +7,6 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GZIPOutputStream::GZIPOutputStream(QAndroidJniObject obj) : java::util::zip::DeflaterOutputStream(obj) {}
-	
 	// Constructors
 	GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0)
 		: java::util::zip::DeflaterOutputStream(

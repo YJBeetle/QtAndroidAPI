@@ -23,9 +23,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputMethodInfo::InputMethodInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InputMethodInfo::InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
 		: JObject(

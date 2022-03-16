@@ -13,7 +13,7 @@ namespace android::icu::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UCharacterDirection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacterDirection(QAndroidJniObject obj);
+		UCharacterDirection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

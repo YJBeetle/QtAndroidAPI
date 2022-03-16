@@ -18,7 +18,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Transliterator_Position(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Transliterator_Position(QAndroidJniObject obj);
+		Transliterator_Position(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Transliterator_Position();

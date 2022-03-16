@@ -31,7 +31,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DynamicDrawableSpan(const char *className, const char *sig, Ts...agv) : android::text::style::ReplacementSpan(className, sig, std::forward<Ts>(agv)...) {}
-		DynamicDrawableSpan(QAndroidJniObject obj);
+		DynamicDrawableSpan(QAndroidJniObject obj) : android::text::style::ReplacementSpan(obj) {}
 		
 		// Constructors
 		DynamicDrawableSpan();

@@ -22,7 +22,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateValueSanitizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateValueSanitizer(QAndroidJniObject obj);
+		DateValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateValueSanitizer(android::icu::text::DateFormat arg0);

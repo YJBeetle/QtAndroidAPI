@@ -74,9 +74,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SocketKeepalive::SocketKeepalive(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

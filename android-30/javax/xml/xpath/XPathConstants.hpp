@@ -23,7 +23,7 @@ namespace javax::xml::xpath
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XPathConstants(QAndroidJniObject obj);
+		XPathConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

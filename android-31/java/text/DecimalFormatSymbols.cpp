@@ -10,9 +10,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DecimalFormatSymbols::DecimalFormatSymbols(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DecimalFormatSymbols::DecimalFormatSymbols()
 		: JObject(

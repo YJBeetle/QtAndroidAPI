@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCryptoException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCryptoException(QAndroidJniObject obj);
+		MediaCryptoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		MediaCryptoException(JString arg0);

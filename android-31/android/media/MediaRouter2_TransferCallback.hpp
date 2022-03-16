@@ -20,7 +20,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRouter2_TransferCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2_TransferCallback(QAndroidJniObject obj);
+		MediaRouter2_TransferCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaRouter2_TransferCallback();

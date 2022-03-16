@@ -30,9 +30,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Paint_Cap::Paint_Cap(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

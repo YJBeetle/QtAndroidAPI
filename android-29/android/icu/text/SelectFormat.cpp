@@ -9,9 +9,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SelectFormat::SelectFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
-	
 	// Constructors
 	SelectFormat::SelectFormat(JString arg0)
 		: java::text::Format(

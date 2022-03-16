@@ -13,7 +13,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_animator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_animator(QAndroidJniObject obj);
+		R_animator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_animator();

@@ -40,7 +40,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Video_Thumbnails(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Video_Thumbnails(QAndroidJniObject obj);
+		MediaStore_Video_Thumbnails(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaStore_Video_Thumbnails();

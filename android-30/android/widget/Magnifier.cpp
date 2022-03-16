@@ -21,9 +21,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Magnifier::Magnifier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Magnifier::Magnifier(android::view::View arg0)
 		: JObject(

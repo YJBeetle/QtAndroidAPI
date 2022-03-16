@@ -106,9 +106,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GnssNavigationMessage::GnssNavigationMessage(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

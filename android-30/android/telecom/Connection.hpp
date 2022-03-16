@@ -130,7 +130,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Connection(const char *className, const char *sig, Ts...agv) : android::telecom::Conferenceable(className, sig, std::forward<Ts>(agv)...) {}
-		Connection(QAndroidJniObject obj);
+		Connection(QAndroidJniObject obj) : android::telecom::Conferenceable(obj) {}
 		
 		// Constructors
 		Connection();

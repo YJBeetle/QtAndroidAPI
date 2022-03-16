@@ -36,9 +36,6 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AssetManager::AssetManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

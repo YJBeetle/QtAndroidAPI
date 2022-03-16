@@ -28,7 +28,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MetaKeyKeyListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MetaKeyKeyListener(QAndroidJniObject obj);
+		MetaKeyKeyListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MetaKeyKeyListener();

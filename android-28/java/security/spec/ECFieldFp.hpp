@@ -17,7 +17,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ECFieldFp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ECFieldFp(QAndroidJniObject obj);
+		ECFieldFp(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ECFieldFp(java::math::BigInteger arg0);

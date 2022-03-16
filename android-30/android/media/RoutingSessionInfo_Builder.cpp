@@ -8,9 +8,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(android::media::RoutingSessionInfo arg0)
 		: JObject(

@@ -18,7 +18,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateSorter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateSorter(QAndroidJniObject obj);
+		DateSorter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateSorter(android::content::Context arg0);

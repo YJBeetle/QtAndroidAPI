@@ -8,9 +8,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileWriter::FileWriter(QAndroidJniObject obj) : java::io::OutputStreamWriter(obj) {}
-	
 	// Constructors
 	FileWriter::FileWriter(java::io::File arg0)
 		: java::io::OutputStreamWriter(

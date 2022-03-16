@@ -14,7 +14,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractMap_SimpleEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractMap_SimpleEntry(QAndroidJniObject obj);
+		AbstractMap_SimpleEntry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractMap_SimpleEntry(JObject arg0);

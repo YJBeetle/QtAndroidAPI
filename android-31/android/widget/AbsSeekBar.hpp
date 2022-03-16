@@ -45,7 +45,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbsSeekBar(const char *className, const char *sig, Ts...agv) : android::widget::ProgressBar(className, sig, std::forward<Ts>(agv)...) {}
-		AbsSeekBar(QAndroidJniObject obj);
+		AbsSeekBar(QAndroidJniObject obj) : android::widget::ProgressBar(obj) {}
 		
 		// Constructors
 		AbsSeekBar(android::content::Context arg0);

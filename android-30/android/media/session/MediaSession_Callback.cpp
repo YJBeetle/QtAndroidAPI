@@ -10,9 +10,6 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaSession_Callback::MediaSession_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaSession_Callback::MediaSession_Callback()
 		: JObject(

@@ -26,9 +26,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaParser_SeekPoint::MediaParser_SeekPoint(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

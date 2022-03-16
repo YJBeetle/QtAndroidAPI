@@ -19,7 +19,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LuhnChecksumValidator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LuhnChecksumValidator(QAndroidJniObject obj);
+		LuhnChecksumValidator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LuhnChecksumValidator(JArray arg0);

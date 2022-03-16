@@ -18,7 +18,7 @@ namespace android::service::quickaccesswallet
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WalletServiceEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WalletServiceEvent(QAndroidJniObject obj);
+		WalletServiceEvent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WalletServiceEvent(jint arg0);

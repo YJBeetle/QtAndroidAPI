@@ -19,7 +19,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RouteDiscoveryPreference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RouteDiscoveryPreference(QAndroidJniObject obj);
+		RouteDiscoveryPreference(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

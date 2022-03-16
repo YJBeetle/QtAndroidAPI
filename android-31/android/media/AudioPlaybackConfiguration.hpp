@@ -27,7 +27,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioPlaybackConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioPlaybackConfiguration(QAndroidJniObject obj);
+		AudioPlaybackConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

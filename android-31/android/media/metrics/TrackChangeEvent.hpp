@@ -33,7 +33,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TrackChangeEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		TrackChangeEvent(QAndroidJniObject obj);
+		TrackChangeEvent(QAndroidJniObject obj) : android::media::metrics::Event(obj) {}
 		
 		// Constructors
 		

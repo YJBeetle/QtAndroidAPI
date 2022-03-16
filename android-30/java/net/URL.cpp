@@ -19,9 +19,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URL::URL(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	URL::URL(JString arg0)
 		: JObject(

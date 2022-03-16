@@ -5,9 +5,6 @@ namespace android::telephony::ims
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImsMmTelManager_CapabilityCallback::ImsMmTelManager_CapabilityCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ImsMmTelManager_CapabilityCallback::ImsMmTelManager_CapabilityCallback()
 		: JObject(

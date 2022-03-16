@@ -17,7 +17,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReportSystemUsageRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReportSystemUsageRequest_Builder(QAndroidJniObject obj);
+		ReportSystemUsageRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ReportSystemUsageRequest_Builder(JString arg0, JString arg1, JString arg2, JString arg3);

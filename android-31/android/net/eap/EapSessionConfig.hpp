@@ -34,7 +34,7 @@ namespace android::net::eap
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EapSessionConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig(QAndroidJniObject obj);
+		EapSessionConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

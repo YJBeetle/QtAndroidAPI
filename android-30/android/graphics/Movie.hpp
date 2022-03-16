@@ -26,7 +26,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Movie(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Movie(QAndroidJniObject obj);
+		Movie(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

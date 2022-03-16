@@ -6,9 +6,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Intent_FilterComparison::Intent_FilterComparison(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Intent_FilterComparison::Intent_FilterComparison(android::content::Intent arg0)
 		: JObject(

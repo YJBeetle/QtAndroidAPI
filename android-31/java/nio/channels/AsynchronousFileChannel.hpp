@@ -23,7 +23,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsynchronousFileChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AsynchronousFileChannel(QAndroidJniObject obj);
+		AsynchronousFileChannel(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

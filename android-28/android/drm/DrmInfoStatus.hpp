@@ -23,7 +23,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmInfoStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInfoStatus(QAndroidJniObject obj);
+		DrmInfoStatus(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, JString arg3);

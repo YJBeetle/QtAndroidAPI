@@ -7,9 +7,6 @@ namespace android::telephony::data
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TrafficDescriptor_Builder::TrafficDescriptor_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TrafficDescriptor_Builder::TrafficDescriptor_Builder()
 		: JObject(

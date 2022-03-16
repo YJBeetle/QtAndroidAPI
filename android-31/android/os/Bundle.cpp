@@ -37,9 +37,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Bundle::Bundle(QAndroidJniObject obj) : android::os::BaseBundle(obj) {}
-	
 	// Constructors
 	Bundle::Bundle()
 		: android::os::BaseBundle(

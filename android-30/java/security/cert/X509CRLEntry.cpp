@@ -11,9 +11,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	X509CRLEntry::X509CRLEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	X509CRLEntry::X509CRLEntry()
 		: JObject(

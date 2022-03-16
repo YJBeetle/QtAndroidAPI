@@ -16,7 +16,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CharacterStyle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharacterStyle(QAndroidJniObject obj);
+		CharacterStyle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CharacterStyle();

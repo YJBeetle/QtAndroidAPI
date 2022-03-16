@@ -15,7 +15,7 @@ namespace android::media::midi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiDeviceInfo_PortInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDeviceInfo_PortInfo(QAndroidJniObject obj);
+		MidiDeviceInfo_PortInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

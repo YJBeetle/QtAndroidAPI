@@ -65,9 +65,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UiAutomation::UiAutomation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

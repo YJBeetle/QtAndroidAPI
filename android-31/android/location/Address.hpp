@@ -26,7 +26,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Address(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Address(QAndroidJniObject obj);
+		Address(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Address(java::util::Locale arg0);

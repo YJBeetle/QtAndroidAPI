@@ -26,7 +26,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_BubbleMetadata(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_BubbleMetadata(QAndroidJniObject obj);
+		Notification_BubbleMetadata(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

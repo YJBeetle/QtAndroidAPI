@@ -8,9 +8,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StackView::StackView(QAndroidJniObject obj) : android::widget::AdapterViewAnimator(obj) {}
-	
 	// Constructors
 	StackView::StackView(android::content::Context arg0)
 		: android::widget::AdapterViewAnimator(

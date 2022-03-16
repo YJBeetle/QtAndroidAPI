@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DashPathEffect::DashPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-	
 	// Constructors
 	DashPathEffect::DashPathEffect(JFloatArray arg0, jfloat arg1)
 		: android::graphics::PathEffect(

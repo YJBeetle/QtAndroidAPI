@@ -23,7 +23,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextLanguage_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextLanguage_Request(QAndroidJniObject obj);
+		TextLanguage_Request(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -40,9 +40,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructUtsname::StructUtsname(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StructUtsname::StructUtsname(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLSessionCache::SSLSessionCache(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SSLSessionCache::SSLSessionCache(android::content::Context arg0)
 		: JObject(

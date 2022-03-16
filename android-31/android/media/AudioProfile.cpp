@@ -20,9 +20,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioProfile::AudioProfile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

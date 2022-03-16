@@ -6,9 +6,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PendingIntent_CanceledException::PendingIntent_CanceledException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-	
 	// Constructors
 	PendingIntent_CanceledException::PendingIntent_CanceledException()
 		: android::util::AndroidException(

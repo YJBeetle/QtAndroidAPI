@@ -13,7 +13,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SocketTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::InterruptedIOException(className, sig, std::forward<Ts>(agv)...) {}
-		SocketTimeoutException(QAndroidJniObject obj);
+		SocketTimeoutException(QAndroidJniObject obj) : java::io::InterruptedIOException(obj) {}
 		
 		// Constructors
 		SocketTimeoutException();

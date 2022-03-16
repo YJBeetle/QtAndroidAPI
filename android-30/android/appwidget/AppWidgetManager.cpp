@@ -236,9 +236,6 @@ namespace android::appwidget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppWidgetManager::AppWidgetManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -17,7 +17,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputFilter_AllCaps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputFilter_AllCaps(QAndroidJniObject obj);
+		InputFilter_AllCaps(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InputFilter_AllCaps();

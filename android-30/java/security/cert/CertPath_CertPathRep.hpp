@@ -15,7 +15,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertPath_CertPathRep(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertPath_CertPathRep(QAndroidJniObject obj);
+		CertPath_CertPathRep(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

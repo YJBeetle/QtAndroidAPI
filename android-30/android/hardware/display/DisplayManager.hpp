@@ -40,7 +40,7 @@ namespace android::hardware::display
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DisplayManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayManager(QAndroidJniObject obj);
+		DisplayManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

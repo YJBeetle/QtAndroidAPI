@@ -18,9 +18,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkRequest::NetworkRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

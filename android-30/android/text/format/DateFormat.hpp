@@ -35,7 +35,7 @@ namespace android::text::format
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat(QAndroidJniObject obj);
+		DateFormat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateFormat();

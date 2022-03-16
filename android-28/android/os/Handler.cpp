@@ -8,9 +8,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Handler::Handler(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Handler::Handler()
 		: JObject(

@@ -11,7 +11,7 @@ namespace android::app::backup
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FullBackupDataOutput(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FullBackupDataOutput(QAndroidJniObject obj);
+		FullBackupDataOutput(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

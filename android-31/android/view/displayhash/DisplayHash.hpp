@@ -18,7 +18,7 @@ namespace android::view::displayhash
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DisplayHash(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayHash(QAndroidJniObject obj);
+		DisplayHash(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

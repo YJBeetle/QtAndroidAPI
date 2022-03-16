@@ -9,9 +9,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExceptionInInitializerError::ExceptionInInitializerError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
-	
 	// Constructors
 	ExceptionInInitializerError::ExceptionInInitializerError()
 		: java::lang::LinkageError(

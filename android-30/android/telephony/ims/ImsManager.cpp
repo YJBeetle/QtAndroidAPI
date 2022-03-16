@@ -31,9 +31,6 @@ namespace android::telephony::ims
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImsManager::ImsManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

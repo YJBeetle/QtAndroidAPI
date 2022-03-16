@@ -75,7 +75,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DownloadManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadManager(QAndroidJniObject obj);
+		DownloadManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

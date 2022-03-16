@@ -7,9 +7,6 @@ namespace java::time::format
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DateTimeParseException::DateTimeParseException(QAndroidJniObject obj) : java::time::DateTimeException(obj) {}
-	
 	// Constructors
 	DateTimeParseException::DateTimeParseException(JString arg0, JString arg1, jint arg2)
 		: java::time::DateTimeException(

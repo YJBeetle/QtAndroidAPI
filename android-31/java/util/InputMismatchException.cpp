@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputMismatchException::InputMismatchException(QAndroidJniObject obj) : java::util::NoSuchElementException(obj) {}
-	
 	// Constructors
 	InputMismatchException::InputMismatchException()
 		: java::util::NoSuchElementException(

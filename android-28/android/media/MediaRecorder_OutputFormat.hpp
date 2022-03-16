@@ -25,7 +25,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRecorder_OutputFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_OutputFormat(QAndroidJniObject obj);
+		MediaRecorder_OutputFormat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

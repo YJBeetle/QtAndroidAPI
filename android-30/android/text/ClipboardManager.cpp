@@ -5,9 +5,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClipboardManager::ClipboardManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ClipboardManager::ClipboardManager()
 		: JObject(

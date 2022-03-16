@@ -14,7 +14,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PhoneNumberFormattingTextWatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneNumberFormattingTextWatcher(QAndroidJniObject obj);
+		PhoneNumberFormattingTextWatcher(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PhoneNumberFormattingTextWatcher();

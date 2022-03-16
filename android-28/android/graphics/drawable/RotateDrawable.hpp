@@ -24,7 +24,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RotateDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::DrawableWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		RotateDrawable(QAndroidJniObject obj);
+		RotateDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
 		
 		// Constructors
 		RotateDrawable();

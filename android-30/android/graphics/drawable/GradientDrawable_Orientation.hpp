@@ -22,7 +22,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GradientDrawable_Orientation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		GradientDrawable_Orientation(QAndroidJniObject obj);
+		GradientDrawable_Orientation(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

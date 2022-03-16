@@ -71,7 +71,7 @@ namespace android::appwidget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppWidgetManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppWidgetManager(QAndroidJniObject obj);
+		AppWidgetManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

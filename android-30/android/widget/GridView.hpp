@@ -46,7 +46,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GridView(const char *className, const char *sig, Ts...agv) : android::widget::AbsListView(className, sig, std::forward<Ts>(agv)...) {}
-		GridView(QAndroidJniObject obj);
+		GridView(QAndroidJniObject obj) : android::widget::AbsListView(obj) {}
 		
 		// Constructors
 		GridView(android::content::Context arg0);

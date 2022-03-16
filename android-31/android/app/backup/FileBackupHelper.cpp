@@ -9,9 +9,6 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileBackupHelper::FileBackupHelper(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FileBackupHelper::FileBackupHelper(android::content::Context arg0, JArray arg1)
 		: JObject(

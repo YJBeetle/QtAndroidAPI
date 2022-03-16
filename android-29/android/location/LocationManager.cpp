@@ -96,9 +96,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocationManager::LocationManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

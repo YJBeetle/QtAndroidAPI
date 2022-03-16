@@ -18,7 +18,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_PinnedPositions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_PinnedPositions(QAndroidJniObject obj);
+		ContactsContract_PinnedPositions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContactsContract_PinnedPositions();

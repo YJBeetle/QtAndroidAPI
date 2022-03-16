@@ -11,9 +11,6 @@ namespace java::beans
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyChangeSupport::PropertyChangeSupport(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PropertyChangeSupport::PropertyChangeSupport(JObject arg0)
 		: JObject(

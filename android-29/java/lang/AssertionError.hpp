@@ -15,7 +15,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssertionError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		AssertionError(QAndroidJniObject obj);
+		AssertionError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 		
 		// Constructors
 		AssertionError();

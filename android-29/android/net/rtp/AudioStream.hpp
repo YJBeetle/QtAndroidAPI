@@ -24,7 +24,7 @@ namespace android::net::rtp
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioStream(const char *className, const char *sig, Ts...agv) : android::net::rtp::RtpStream(className, sig, std::forward<Ts>(agv)...) {}
-		AudioStream(QAndroidJniObject obj);
+		AudioStream(QAndroidJniObject obj) : android::net::rtp::RtpStream(obj) {}
 		
 		// Constructors
 		AudioStream(java::net::InetAddress arg0);

@@ -11,7 +11,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleData_PaperSize(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData_PaperSize(QAndroidJniObject obj);
+		LocaleData_PaperSize(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

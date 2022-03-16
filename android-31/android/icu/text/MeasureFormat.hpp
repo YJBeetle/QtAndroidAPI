@@ -55,7 +55,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MeasureFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
-		MeasureFormat(QAndroidJniObject obj);
+		MeasureFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
 		
 		// Constructors
 		

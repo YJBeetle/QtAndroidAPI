@@ -24,9 +24,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewDebug::ViewDebug(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ViewDebug::ViewDebug()
 		: JObject(

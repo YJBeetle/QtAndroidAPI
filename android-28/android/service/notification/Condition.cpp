@@ -114,9 +114,6 @@ namespace android::service::notification
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Condition::Condition(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Condition::Condition(android::os::Parcel arg0)
 		: JObject(

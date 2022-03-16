@@ -18,9 +18,6 @@ namespace android::service::chooser
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ChooserTarget::ChooserTarget(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ChooserTarget::ChooserTarget(JString arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)
 		: JObject(

@@ -20,7 +20,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioPresentation_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioPresentation_Builder(QAndroidJniObject obj);
+		AudioPresentation_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AudioPresentation_Builder(jint arg0);

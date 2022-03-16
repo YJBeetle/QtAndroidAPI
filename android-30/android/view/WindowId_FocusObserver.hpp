@@ -16,7 +16,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WindowId_FocusObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowId_FocusObserver(QAndroidJniObject obj);
+		WindowId_FocusObserver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WindowId_FocusObserver();

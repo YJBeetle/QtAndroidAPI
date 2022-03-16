@@ -14,7 +14,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ServiceConfigurationError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceConfigurationError(QAndroidJniObject obj);
+		ServiceConfigurationError(QAndroidJniObject obj) : java::lang::Error(obj) {}
 		
 		// Constructors
 		ServiceConfigurationError(JString arg0);

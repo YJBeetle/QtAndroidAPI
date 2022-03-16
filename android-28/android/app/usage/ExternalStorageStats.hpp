@@ -17,7 +17,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExternalStorageStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExternalStorageStats(QAndroidJniObject obj);
+		ExternalStorageStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

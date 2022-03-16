@@ -23,7 +23,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpannableStringBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SpannableStringBuilder(QAndroidJniObject obj);
+		SpannableStringBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SpannableStringBuilder();

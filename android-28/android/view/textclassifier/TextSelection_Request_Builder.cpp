@@ -7,9 +7,6 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextSelection_Request_Builder::TextSelection_Request_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextSelection_Request_Builder::TextSelection_Request_Builder(JString arg0, jint arg1, jint arg2)
 		: JObject(

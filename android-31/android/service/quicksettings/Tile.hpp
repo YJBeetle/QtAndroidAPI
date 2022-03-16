@@ -25,7 +25,7 @@ namespace android::service::quicksettings
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Tile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Tile(QAndroidJniObject obj);
+		Tile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

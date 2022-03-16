@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Filter::Filter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Filter::Filter()
 		: JObject(

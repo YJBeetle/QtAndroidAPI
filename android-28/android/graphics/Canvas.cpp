@@ -29,9 +29,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Canvas::Canvas(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Canvas::Canvas()
 		: JObject(

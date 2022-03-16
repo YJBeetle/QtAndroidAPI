@@ -17,7 +17,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocalSocketAddress_Namespace(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		LocalSocketAddress_Namespace(QAndroidJniObject obj);
+		LocalSocketAddress_Namespace(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -17,7 +17,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebSettings_PluginState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		WebSettings_PluginState(QAndroidJniObject obj);
+		WebSettings_PluginState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

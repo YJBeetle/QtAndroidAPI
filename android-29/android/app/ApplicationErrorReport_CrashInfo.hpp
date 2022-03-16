@@ -25,7 +25,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_CrashInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationErrorReport_CrashInfo(QAndroidJniObject obj);
+		ApplicationErrorReport_CrashInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ApplicationErrorReport_CrashInfo();

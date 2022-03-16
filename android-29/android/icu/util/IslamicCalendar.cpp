@@ -94,9 +94,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IslamicCalendar::IslamicCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
-	
 	// Constructors
 	IslamicCalendar::IslamicCalendar()
 		: android::icu::util::Calendar(

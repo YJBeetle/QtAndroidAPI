@@ -20,9 +20,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Conference::Conference(QAndroidJniObject obj) : android::telecom::Conferenceable(obj) {}
-	
 	// Constructors
 	Conference::Conference(android::telecom::PhoneAccountHandle arg0)
 		: android::telecom::Conferenceable(

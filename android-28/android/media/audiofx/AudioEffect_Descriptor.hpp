@@ -22,7 +22,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioEffect_Descriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioEffect_Descriptor(QAndroidJniObject obj);
+		AudioEffect_Descriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AudioEffect_Descriptor();

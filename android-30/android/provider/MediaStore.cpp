@@ -381,9 +381,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore::MediaStore(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaStore::MediaStore()
 		: JObject(

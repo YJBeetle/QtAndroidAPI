@@ -4,9 +4,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteClosable::SQLiteClosable(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SQLiteClosable::SQLiteClosable()
 		: JObject(

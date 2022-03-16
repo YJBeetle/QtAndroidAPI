@@ -16,7 +16,7 @@ namespace android::media::midi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiSender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiSender(QAndroidJniObject obj);
+		MidiSender(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MidiSender();

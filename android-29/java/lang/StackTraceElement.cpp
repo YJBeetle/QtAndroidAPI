@@ -9,9 +9,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StackTraceElement::StackTraceElement(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StackTraceElement::StackTraceElement(JString arg0, JString arg1, JString arg2, jint arg3)
 		: JObject(

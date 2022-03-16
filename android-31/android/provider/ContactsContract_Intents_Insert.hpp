@@ -43,7 +43,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_Intents_Insert(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Intents_Insert(QAndroidJniObject obj);
+		ContactsContract_Intents_Insert(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContactsContract_Intents_Insert();

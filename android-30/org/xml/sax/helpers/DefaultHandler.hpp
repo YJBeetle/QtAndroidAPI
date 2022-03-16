@@ -22,7 +22,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DefaultHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DefaultHandler(QAndroidJniObject obj);
+		DefaultHandler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DefaultHandler();

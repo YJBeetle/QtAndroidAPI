@@ -130,9 +130,6 @@ namespace org::w3c::dom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DOMException::DOMException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	DOMException::DOMException(jshort arg0, JString arg1)
 		: java::lang::RuntimeException(

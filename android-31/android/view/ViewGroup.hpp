@@ -140,7 +140,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewGroup(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		ViewGroup(QAndroidJniObject obj);
+		ViewGroup(QAndroidJniObject obj) : android::view::View(obj) {}
 		
 		// Constructors
 		ViewGroup(android::content::Context arg0);

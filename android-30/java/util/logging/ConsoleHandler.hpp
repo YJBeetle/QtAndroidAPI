@@ -16,7 +16,7 @@ namespace java::util::logging
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConsoleHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::StreamHandler(className, sig, std::forward<Ts>(agv)...) {}
-		ConsoleHandler(QAndroidJniObject obj);
+		ConsoleHandler(QAndroidJniObject obj) : java::util::logging::StreamHandler(obj) {}
 		
 		// Constructors
 		ConsoleHandler();

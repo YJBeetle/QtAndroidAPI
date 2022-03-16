@@ -34,7 +34,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IdentityCredential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredential(QAndroidJniObject obj);
+		IdentityCredential(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

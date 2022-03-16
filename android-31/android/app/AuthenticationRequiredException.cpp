@@ -15,9 +15,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AuthenticationRequiredException::AuthenticationRequiredException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
-	
 	// Constructors
 	AuthenticationRequiredException::AuthenticationRequiredException(JThrowable arg0, android::app::PendingIntent arg1)
 		: java::lang::SecurityException(

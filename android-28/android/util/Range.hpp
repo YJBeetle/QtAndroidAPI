@@ -14,7 +14,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Range(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Range(QAndroidJniObject obj);
+		Range(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Range(JObject arg0, JObject arg1);

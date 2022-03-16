@@ -22,7 +22,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfirmationPrompt_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationPrompt_Builder(QAndroidJniObject obj);
+		ConfirmationPrompt_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConfirmationPrompt_Builder(android::content::Context arg0);

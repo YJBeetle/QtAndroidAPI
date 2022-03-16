@@ -23,7 +23,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
-		StringWriter(QAndroidJniObject obj);
+		StringWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
 		
 		// Constructors
 		StringWriter();

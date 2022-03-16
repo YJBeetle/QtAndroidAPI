@@ -6,9 +6,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Application::Application(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
-	
 	// Constructors
 	Application::Application()
 		: android::content::ContextWrapper(

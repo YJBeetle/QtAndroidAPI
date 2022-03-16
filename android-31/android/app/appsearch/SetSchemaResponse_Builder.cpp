@@ -7,9 +7,6 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SetSchemaResponse_Builder::SetSchemaResponse_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SetSchemaResponse_Builder::SetSchemaResponse_Builder()
 		: JObject(

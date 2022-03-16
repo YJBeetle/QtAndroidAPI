@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRouter2_ControllerCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2_ControllerCallback(QAndroidJniObject obj);
+		MediaRouter2_ControllerCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaRouter2_ControllerCallback();

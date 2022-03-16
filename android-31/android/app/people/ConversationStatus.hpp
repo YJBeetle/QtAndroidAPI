@@ -37,7 +37,7 @@ namespace android::app::people
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConversationStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationStatus(QAndroidJniObject obj);
+		ConversationStatus(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

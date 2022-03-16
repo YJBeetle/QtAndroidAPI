@@ -32,9 +32,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnicodeSetIterator::UnicodeSetIterator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UnicodeSetIterator::UnicodeSetIterator()
 		: JObject(

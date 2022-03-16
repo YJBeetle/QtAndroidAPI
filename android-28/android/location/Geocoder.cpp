@@ -7,9 +7,6 @@ namespace android::location
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Geocoder::Geocoder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Geocoder::Geocoder(android::content::Context arg0)
 		: JObject(

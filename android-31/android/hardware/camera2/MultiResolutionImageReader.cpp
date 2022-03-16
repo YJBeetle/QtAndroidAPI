@@ -7,9 +7,6 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MultiResolutionImageReader::MultiResolutionImageReader(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MultiResolutionImageReader::MultiResolutionImageReader(JObject arg0, jint arg1, jint arg2)
 		: JObject(

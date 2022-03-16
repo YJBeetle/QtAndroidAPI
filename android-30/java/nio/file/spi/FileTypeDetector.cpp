@@ -6,9 +6,6 @@ namespace java::nio::file::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileTypeDetector::FileTypeDetector(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

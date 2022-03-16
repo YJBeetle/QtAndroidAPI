@@ -18,7 +18,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StructUtsname(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StructUtsname(QAndroidJniObject obj);
+		StructUtsname(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StructUtsname(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);

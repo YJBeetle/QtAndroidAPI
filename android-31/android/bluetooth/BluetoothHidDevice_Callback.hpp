@@ -17,7 +17,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothHidDevice_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHidDevice_Callback(QAndroidJniObject obj);
+		BluetoothHidDevice_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BluetoothHidDevice_Callback();

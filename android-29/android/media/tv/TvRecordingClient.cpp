@@ -10,9 +10,6 @@ namespace android::media::tv
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TvRecordingClient::TvRecordingClient(android::content::Context arg0, JString arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3)
 		: JObject(

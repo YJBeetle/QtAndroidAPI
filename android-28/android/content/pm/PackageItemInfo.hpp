@@ -38,7 +38,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageItemInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageItemInfo(QAndroidJniObject obj);
+		PackageItemInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PackageItemInfo();

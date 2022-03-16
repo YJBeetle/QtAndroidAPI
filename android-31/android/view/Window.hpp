@@ -114,7 +114,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Window(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Window(QAndroidJniObject obj);
+		Window(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Window(android::content::Context arg0);

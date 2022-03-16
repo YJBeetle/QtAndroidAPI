@@ -26,7 +26,7 @@ namespace android::view::contentcapture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentCaptureContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentCaptureContext(QAndroidJniObject obj);
+		ContentCaptureContext(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

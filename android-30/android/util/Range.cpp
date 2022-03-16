@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Range::Range(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Range::Range(JObject arg0, JObject arg1)
 		: JObject(

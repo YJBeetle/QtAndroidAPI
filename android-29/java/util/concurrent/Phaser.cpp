@@ -7,9 +7,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Phaser::Phaser(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Phaser::Phaser()
 		: JObject(

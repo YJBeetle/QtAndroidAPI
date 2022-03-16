@@ -6,9 +6,6 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException(QAndroidJniObject obj) : java::security::ProviderException(obj) {}
-	
 	// Constructors
 	SecureKeyImportUnavailableException::SecureKeyImportUnavailableException()
 		: java::security::ProviderException(

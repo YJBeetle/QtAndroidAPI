@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileAlreadyExistsException::FileAlreadyExistsException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
-	
 	// Constructors
 	FileAlreadyExistsException::FileAlreadyExistsException(JString arg0)
 		: java::nio::file::FileSystemException(

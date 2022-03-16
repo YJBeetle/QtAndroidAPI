@@ -20,7 +20,7 @@ namespace android::service::controls::templates
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ControlTemplate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ControlTemplate(QAndroidJniObject obj);
+		ControlTemplate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

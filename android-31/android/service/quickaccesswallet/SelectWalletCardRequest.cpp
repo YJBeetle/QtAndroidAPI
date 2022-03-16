@@ -14,9 +14,6 @@ namespace android::service::quickaccesswallet
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SelectWalletCardRequest::SelectWalletCardRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SelectWalletCardRequest::SelectWalletCardRequest(JString arg0)
 		: JObject(

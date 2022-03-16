@@ -43,7 +43,7 @@ namespace java::time::zone
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneRules(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneRules(QAndroidJniObject obj);
+		ZoneRules(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

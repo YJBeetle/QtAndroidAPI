@@ -16,7 +16,7 @@ namespace android::printservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CustomPrinterIconCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CustomPrinterIconCallback(QAndroidJniObject obj);
+		CustomPrinterIconCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

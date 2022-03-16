@@ -19,7 +19,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FeatureGroupInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FeatureGroupInfo(QAndroidJniObject obj);
+		FeatureGroupInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FeatureGroupInfo();

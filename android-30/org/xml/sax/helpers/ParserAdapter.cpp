@@ -12,9 +12,6 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParserAdapter::ParserAdapter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ParserAdapter::ParserAdapter()
 		: JObject(

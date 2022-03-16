@@ -5,9 +5,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimingLogger::TimingLogger(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TimingLogger::TimingLogger(JString arg0, JString arg1)
 		: JObject(

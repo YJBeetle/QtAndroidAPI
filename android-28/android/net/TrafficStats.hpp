@@ -25,7 +25,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TrafficStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TrafficStats(QAndroidJniObject obj);
+		TrafficStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TrafficStats();

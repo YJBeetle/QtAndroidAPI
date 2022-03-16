@@ -8,9 +8,6 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SearchResult_Builder::SearchResult_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SearchResult_Builder::SearchResult_Builder(JString arg0, JString arg1)
 		: JObject(

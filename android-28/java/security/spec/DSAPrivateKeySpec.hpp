@@ -16,7 +16,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DSAPrivateKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DSAPrivateKeySpec(QAndroidJniObject obj);
+		DSAPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3);

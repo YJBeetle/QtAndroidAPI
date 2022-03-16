@@ -39,7 +39,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LinearLayout(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		LinearLayout(QAndroidJniObject obj);
+		LinearLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
 		
 		// Constructors
 		LinearLayout(android::content::Context arg0);

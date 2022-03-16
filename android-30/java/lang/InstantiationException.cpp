@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InstantiationException::InstantiationException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
-	
 	// Constructors
 	InstantiationException::InstantiationException()
 		: java::lang::ReflectiveOperationException(

@@ -8,9 +8,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TestLooperManager::TestLooperManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

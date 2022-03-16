@@ -6,9 +6,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicIntegerArray::AtomicIntegerArray(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AtomicIntegerArray::AtomicIntegerArray(JIntArray arg0)
 		: JObject(

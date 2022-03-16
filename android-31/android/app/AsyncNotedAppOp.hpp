@@ -19,7 +19,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncNotedAppOp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncNotedAppOp(QAndroidJniObject obj);
+		AsyncNotedAppOp(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

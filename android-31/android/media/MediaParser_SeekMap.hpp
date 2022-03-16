@@ -17,7 +17,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaParser_SeekMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_SeekMap(QAndroidJniObject obj);
+		MediaParser_SeekMap(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -21,7 +21,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SocketKeepalive(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SocketKeepalive(QAndroidJniObject obj);
+		SocketKeepalive(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

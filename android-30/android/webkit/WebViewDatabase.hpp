@@ -18,7 +18,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebViewDatabase(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewDatabase(QAndroidJniObject obj);
+		WebViewDatabase(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WebViewDatabase();

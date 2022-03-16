@@ -11,7 +11,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Script_LaunchOptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Script_LaunchOptions(QAndroidJniObject obj);
+		Script_LaunchOptions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Script_LaunchOptions();

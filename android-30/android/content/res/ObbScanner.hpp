@@ -17,7 +17,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ObbScanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ObbScanner(QAndroidJniObject obj);
+		ObbScanner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

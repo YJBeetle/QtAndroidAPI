@@ -7,9 +7,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentHandler::ContentHandler(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContentHandler::ContentHandler()
 		: JObject(

@@ -19,7 +19,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompletionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CompletionInfo(QAndroidJniObject obj);
+		CompletionInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CompletionInfo(jlong arg0, jint arg1, JString arg2);

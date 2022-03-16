@@ -26,7 +26,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CipherSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CipherSpi(QAndroidJniObject obj);
+		CipherSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CipherSpi();

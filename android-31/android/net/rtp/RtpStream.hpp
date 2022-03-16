@@ -19,7 +19,7 @@ namespace android::net::rtp
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RtpStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RtpStream(QAndroidJniObject obj);
+		RtpStream(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

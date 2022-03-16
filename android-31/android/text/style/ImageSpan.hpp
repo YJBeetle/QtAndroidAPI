@@ -29,7 +29,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageSpan(const char *className, const char *sig, Ts...agv) : android::text::style::DynamicDrawableSpan(className, sig, std::forward<Ts>(agv)...) {}
-		ImageSpan(QAndroidJniObject obj);
+		ImageSpan(QAndroidJniObject obj) : android::text::style::DynamicDrawableSpan(obj) {}
 		
 		// Constructors
 		ImageSpan(android::graphics::Bitmap arg0);

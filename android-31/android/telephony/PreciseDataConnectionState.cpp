@@ -17,9 +17,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PreciseDataConnectionState::PreciseDataConnectionState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

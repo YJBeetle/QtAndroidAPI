@@ -16,9 +16,6 @@ namespace android::view::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SentenceSuggestionsInfo::SentenceSuggestionsInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SentenceSuggestionsInfo::SentenceSuggestionsInfo(android::os::Parcel arg0)
 		: JObject(

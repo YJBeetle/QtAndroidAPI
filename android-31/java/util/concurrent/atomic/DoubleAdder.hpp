@@ -17,7 +17,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DoubleAdder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DoubleAdder(QAndroidJniObject obj);
+		DoubleAdder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DoubleAdder();

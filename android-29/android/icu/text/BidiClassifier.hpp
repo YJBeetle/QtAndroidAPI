@@ -13,7 +13,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BidiClassifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BidiClassifier(QAndroidJniObject obj);
+		BidiClassifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BidiClassifier(JObject arg0);

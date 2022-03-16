@@ -32,9 +32,6 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ObjectStreamClass::ObjectStreamClass(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

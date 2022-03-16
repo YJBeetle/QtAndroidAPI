@@ -33,7 +33,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityWindowInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityWindowInfo(QAndroidJniObject obj);
+		AccessibilityWindowInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Canvas_VertexMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Canvas_VertexMode(QAndroidJniObject obj);
+		Canvas_VertexMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -9,9 +9,6 @@ namespace org::xml::sax::helpers
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XMLFilterImpl::XMLFilterImpl(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	XMLFilterImpl::XMLFilterImpl()
 		: JObject(

@@ -23,7 +23,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteInput_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteInput_Builder(QAndroidJniObject obj);
+		RemoteInput_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RemoteInput_Builder(JString arg0);

@@ -20,7 +20,7 @@ namespace android::nfc
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Tag(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Tag(QAndroidJniObject obj);
+		Tag(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

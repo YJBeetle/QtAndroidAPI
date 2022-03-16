@@ -36,7 +36,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URI(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URI(QAndroidJniObject obj);
+		URI(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		URI(JString arg0);

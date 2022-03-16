@@ -26,7 +26,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HapticFeedbackConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HapticFeedbackConstants(QAndroidJniObject obj);
+		HapticFeedbackConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

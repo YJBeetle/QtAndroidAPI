@@ -13,7 +13,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZipError(const char *className, const char *sig, Ts...agv) : java::lang::InternalError(className, sig, std::forward<Ts>(agv)...) {}
-		ZipError(QAndroidJniObject obj);
+		ZipError(QAndroidJniObject obj) : java::lang::InternalError(obj) {}
 		
 		// Constructors
 		ZipError(JString arg0);

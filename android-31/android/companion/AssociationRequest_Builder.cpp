@@ -6,9 +6,6 @@ namespace android::companion
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AssociationRequest_Builder::AssociationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AssociationRequest_Builder::AssociationRequest_Builder()
 		: JObject(

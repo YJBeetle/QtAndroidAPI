@@ -18,7 +18,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CursorJoiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CursorJoiner(QAndroidJniObject obj);
+		CursorJoiner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CursorJoiner(JObject arg0, JArray arg1, JObject arg2, JArray arg3);

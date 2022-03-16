@@ -5,9 +5,6 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextClassifierEvent_TextSelectionEvent_Builder::TextClassifierEvent_TextSelectionEvent_Builder(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent_Builder(obj) {}
-	
 	// Constructors
 	TextClassifierEvent_TextSelectionEvent_Builder::TextClassifierEvent_TextSelectionEvent_Builder(jint arg0)
 		: android::view::textclassifier::TextClassifierEvent_Builder(

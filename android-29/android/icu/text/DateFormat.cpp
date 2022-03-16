@@ -690,9 +690,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateFormat::DateFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
-	
 	// Constructors
 	
 	// Methods

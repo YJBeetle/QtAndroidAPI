@@ -13,7 +13,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JsPromptResult(const char *className, const char *sig, Ts...agv) : android::webkit::JsResult(className, sig, std::forward<Ts>(agv)...) {}
-		JsPromptResult(QAndroidJniObject obj);
+		JsPromptResult(QAndroidJniObject obj) : android::webkit::JsResult(obj) {}
 		
 		// Constructors
 		

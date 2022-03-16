@@ -13,7 +13,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvView_TimeShiftPositionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvView_TimeShiftPositionCallback(QAndroidJniObject obj);
+		TvView_TimeShiftPositionCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TvView_TimeShiftPositionCallback();

@@ -24,7 +24,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectivityManager_NetworkCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectivityManager_NetworkCallback(QAndroidJniObject obj);
+		ConnectivityManager_NetworkCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConnectivityManager_NetworkCallback();

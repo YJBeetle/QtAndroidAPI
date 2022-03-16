@@ -22,7 +22,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DigestOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		DigestOutputStream(QAndroidJniObject obj);
+		DigestOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
 		
 		// Constructors
 		DigestOutputStream(java::io::OutputStream arg0, java::security::MessageDigest arg1);

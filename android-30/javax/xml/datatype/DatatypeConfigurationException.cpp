@@ -6,9 +6,6 @@ namespace javax::xml::datatype
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatatypeConfigurationException::DatatypeConfigurationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	DatatypeConfigurationException::DatatypeConfigurationException()
 		: java::lang::Exception(

@@ -15,7 +15,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageIdentifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageIdentifier(QAndroidJniObject obj);
+		PackageIdentifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PackageIdentifier(JString arg0, JByteArray arg1);

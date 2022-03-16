@@ -11,7 +11,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GetSchemaResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetSchemaResponse(QAndroidJniObject obj);
+		GetSchemaResponse(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

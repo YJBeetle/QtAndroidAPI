@@ -7,9 +7,6 @@ namespace android::net::wifi::aware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SubscribeConfig_Builder::SubscribeConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SubscribeConfig_Builder::SubscribeConfig_Builder()
 		: JObject(

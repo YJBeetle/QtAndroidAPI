@@ -31,7 +31,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SupplicantState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SupplicantState(QAndroidJniObject obj);
+		SupplicantState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

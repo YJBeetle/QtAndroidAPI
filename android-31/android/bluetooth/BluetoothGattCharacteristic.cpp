@@ -209,9 +209,6 @@ namespace android::bluetooth
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothGattCharacteristic::BluetoothGattCharacteristic(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothGattCharacteristic::BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2)
 		: JObject(

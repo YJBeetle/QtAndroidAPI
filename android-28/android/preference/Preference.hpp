@@ -52,7 +52,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Preference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Preference(QAndroidJniObject obj);
+		Preference(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Preference(android::content::Context arg0);

@@ -29,7 +29,7 @@ namespace javax::xml
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XMLConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XMLConstants(QAndroidJniObject obj);
+		XMLConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -25,7 +25,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkScanRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkScanRequest(QAndroidJniObject obj);
+		NetworkScanRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkScanRequest(jint arg0, JArray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6);

@@ -22,7 +22,7 @@ namespace dalvik::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DexFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DexFile(QAndroidJniObject obj);
+		DexFile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DexFile(java::io::File arg0);

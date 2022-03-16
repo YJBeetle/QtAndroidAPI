@@ -7,9 +7,6 @@ namespace javax::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Certificate::Certificate(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Certificate::Certificate()
 		: JObject(

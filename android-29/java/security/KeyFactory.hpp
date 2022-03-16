@@ -23,7 +23,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyFactory(QAndroidJniObject obj);
+		KeyFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

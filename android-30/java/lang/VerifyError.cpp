@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VerifyError::VerifyError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
-	
 	// Constructors
 	VerifyError::VerifyError()
 		: java::lang::LinkageError(

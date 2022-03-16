@@ -26,9 +26,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VolumeProvider::VolumeProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VolumeProvider::VolumeProvider(jint arg0, jint arg1, jint arg2)
 		: JObject(

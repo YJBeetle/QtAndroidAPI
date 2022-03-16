@@ -21,7 +21,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UsageEvents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsageEvents(QAndroidJniObject obj);
+		UsageEvents(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -20,7 +20,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BidiFormatter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BidiFormatter_Builder(QAndroidJniObject obj);
+		BidiFormatter_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BidiFormatter_Builder();

@@ -108,9 +108,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeZone::TimeZone(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TimeZone::TimeZone()
 		: JObject(

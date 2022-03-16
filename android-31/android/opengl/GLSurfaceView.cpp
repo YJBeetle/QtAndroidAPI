@@ -33,9 +33,6 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GLSurfaceView::GLSurfaceView(QAndroidJniObject obj) : android::view::SurfaceView(obj) {}
-	
 	// Constructors
 	GLSurfaceView::GLSurfaceView(android::content::Context arg0)
 		: android::view::SurfaceView(

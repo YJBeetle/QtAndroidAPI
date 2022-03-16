@@ -72,9 +72,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ServiceState::ServiceState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ServiceState::ServiceState()
 		: JObject(

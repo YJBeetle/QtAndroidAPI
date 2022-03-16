@@ -31,7 +31,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyGenParameterSpec_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyGenParameterSpec_Builder(QAndroidJniObject obj);
+		KeyGenParameterSpec_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyGenParameterSpec_Builder(JString arg0, jint arg1);

@@ -28,7 +28,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CallAudioState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CallAudioState(QAndroidJniObject obj);
+		CallAudioState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CallAudioState(jboolean arg0, jint arg1, jint arg2);

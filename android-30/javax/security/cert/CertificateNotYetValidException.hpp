@@ -13,7 +13,7 @@ namespace javax::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CertificateNotYetValidException(const char *className, const char *sig, Ts...agv) : javax::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateNotYetValidException(QAndroidJniObject obj);
+		CertificateNotYetValidException(QAndroidJniObject obj) : javax::security::cert::CertificateException(obj) {}
 		
 		// Constructors
 		CertificateNotYetValidException();

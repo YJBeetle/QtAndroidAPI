@@ -22,7 +22,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ByteArrayOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		ByteArrayOutputStream(QAndroidJniObject obj);
+		ByteArrayOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
 		
 		// Constructors
 		ByteArrayOutputStream();

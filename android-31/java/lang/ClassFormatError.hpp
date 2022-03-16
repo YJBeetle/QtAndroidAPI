@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClassFormatError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		ClassFormatError(QAndroidJniObject obj);
+		ClassFormatError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
 		
 		// Constructors
 		ClassFormatError();

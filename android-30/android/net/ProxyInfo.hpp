@@ -24,7 +24,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProxyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProxyInfo(QAndroidJniObject obj);
+		ProxyInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ProxyInfo(android::net::ProxyInfo &arg0);

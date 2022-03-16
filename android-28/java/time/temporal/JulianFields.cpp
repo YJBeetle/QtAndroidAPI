@@ -28,9 +28,6 @@ namespace java::time::temporal
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JulianFields::JulianFields(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

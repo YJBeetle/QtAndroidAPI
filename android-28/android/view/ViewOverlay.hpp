@@ -24,7 +24,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewOverlay(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewOverlay(QAndroidJniObject obj);
+		ViewOverlay(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

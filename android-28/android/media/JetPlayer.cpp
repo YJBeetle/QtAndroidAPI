@@ -9,9 +9,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JetPlayer::JetPlayer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

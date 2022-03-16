@@ -21,7 +21,7 @@ namespace javax::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SocketFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SocketFactory(QAndroidJniObject obj);
+		SocketFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

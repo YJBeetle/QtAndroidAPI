@@ -11,7 +11,7 @@ namespace android::os::strictmode
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InstanceCountViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		InstanceCountViolation(QAndroidJniObject obj);
+		InstanceCountViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
 		
 		// Constructors
 		

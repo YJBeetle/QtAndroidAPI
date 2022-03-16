@@ -83,9 +83,6 @@ namespace android::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Html::Html(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

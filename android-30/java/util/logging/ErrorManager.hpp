@@ -23,7 +23,7 @@ namespace java::util::logging
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ErrorManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ErrorManager(QAndroidJniObject obj);
+		ErrorManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ErrorManager();

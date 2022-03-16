@@ -7,9 +7,6 @@ namespace android::bluetooth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BluetoothGattCallback::BluetoothGattCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothGattCallback::BluetoothGattCallback()
 		: JObject(

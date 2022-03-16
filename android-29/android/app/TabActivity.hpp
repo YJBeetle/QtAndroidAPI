@@ -30,7 +30,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TabActivity(const char *className, const char *sig, Ts...agv) : android::app::ActivityGroup(className, sig, std::forward<Ts>(agv)...) {}
-		TabActivity(QAndroidJniObject obj);
+		TabActivity(QAndroidJniObject obj) : android::app::ActivityGroup(obj) {}
 		
 		// Constructors
 		TabActivity();

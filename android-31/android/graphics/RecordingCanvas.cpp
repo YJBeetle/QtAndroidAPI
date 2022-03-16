@@ -24,9 +24,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RecordingCanvas::RecordingCanvas(QAndroidJniObject obj) : android::graphics::Canvas(obj) {}
-	
 	// Constructors
 	
 	// Methods

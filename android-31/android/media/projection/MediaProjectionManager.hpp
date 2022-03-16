@@ -20,7 +20,7 @@ namespace android::media::projection
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaProjectionManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaProjectionManager(QAndroidJniObject obj);
+		MediaProjectionManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

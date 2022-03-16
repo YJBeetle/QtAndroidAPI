@@ -20,7 +20,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Pipe(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Pipe(QAndroidJniObject obj);
+		Pipe(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

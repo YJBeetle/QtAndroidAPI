@@ -10,9 +10,6 @@ namespace android::appwidget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppWidgetHost::AppWidgetHost(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AppWidgetHost::AppWidgetHost(android::content::Context arg0, jint arg1)
 		: JObject(

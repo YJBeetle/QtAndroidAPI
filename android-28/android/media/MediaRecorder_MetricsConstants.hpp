@@ -29,7 +29,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRecorder_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_MetricsConstants(QAndroidJniObject obj);
+		MediaRecorder_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

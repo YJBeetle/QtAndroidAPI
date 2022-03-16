@@ -24,7 +24,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ListView_FixedViewInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ListView_FixedViewInfo(QAndroidJniObject obj);
+		ListView_FixedViewInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ListView_FixedViewInfo(android::widget::ListView arg0);

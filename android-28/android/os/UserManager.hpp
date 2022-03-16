@@ -90,7 +90,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UserManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserManager(QAndroidJniObject obj);
+		UserManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

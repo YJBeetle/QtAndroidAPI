@@ -104,7 +104,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_color(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_color(QAndroidJniObject obj);
+		R_color(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_color();

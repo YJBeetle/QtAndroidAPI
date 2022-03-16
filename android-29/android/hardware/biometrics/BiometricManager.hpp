@@ -15,7 +15,7 @@ namespace android::hardware::biometrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BiometricManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricManager(QAndroidJniObject obj);
+		BiometricManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -44,9 +44,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Short::Short(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	Short::Short(JString arg0)
 		: java::lang::Number(

@@ -14,7 +14,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLFeatureNotSupportedException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLFeatureNotSupportedException(QAndroidJniObject obj);
+		SQLFeatureNotSupportedException(QAndroidJniObject obj) : java::sql::SQLNonTransientException(obj) {}
 		
 		// Constructors
 		SQLFeatureNotSupportedException();

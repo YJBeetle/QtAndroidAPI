@@ -53,7 +53,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PointerIcon(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PointerIcon(QAndroidJniObject obj);
+		PointerIcon(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

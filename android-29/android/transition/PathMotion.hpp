@@ -20,7 +20,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PathMotion(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PathMotion(QAndroidJniObject obj);
+		PathMotion(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PathMotion();

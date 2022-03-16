@@ -320,9 +320,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaMetadataRetriever::MediaMetadataRetriever(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaMetadataRetriever::MediaMetadataRetriever()
 		: JObject(

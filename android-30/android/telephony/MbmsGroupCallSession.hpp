@@ -20,7 +20,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MbmsGroupCallSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsGroupCallSession(QAndroidJniObject obj);
+		MbmsGroupCallSession(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

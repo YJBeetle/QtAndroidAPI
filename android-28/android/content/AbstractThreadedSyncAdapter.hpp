@@ -38,7 +38,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractThreadedSyncAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractThreadedSyncAdapter(QAndroidJniObject obj);
+		AbstractThreadedSyncAdapter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1);

@@ -17,9 +17,6 @@ namespace java::time::zone
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoneRules::ZoneRules(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

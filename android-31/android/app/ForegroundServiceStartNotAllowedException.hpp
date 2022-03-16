@@ -18,7 +18,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ForegroundServiceStartNotAllowedException(const char *className, const char *sig, Ts...agv) : android::app::ServiceStartNotAllowedException(className, sig, std::forward<Ts>(agv)...) {}
-		ForegroundServiceStartNotAllowedException(QAndroidJniObject obj);
+		ForegroundServiceStartNotAllowedException(QAndroidJniObject obj) : android::app::ServiceStartNotAllowedException(obj) {}
 		
 		// Constructors
 		ForegroundServiceStartNotAllowedException(JString arg0);

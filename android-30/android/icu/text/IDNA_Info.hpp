@@ -11,7 +11,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IDNA_Info(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IDNA_Info(QAndroidJniObject obj);
+		IDNA_Info(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IDNA_Info();

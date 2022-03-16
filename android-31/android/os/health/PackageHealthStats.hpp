@@ -13,7 +13,7 @@ namespace android::os::health
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageHealthStats(QAndroidJniObject obj);
+		PackageHealthStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

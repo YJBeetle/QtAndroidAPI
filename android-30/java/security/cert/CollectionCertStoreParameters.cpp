@@ -6,9 +6,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CollectionCertStoreParameters::CollectionCertStoreParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CollectionCertStoreParameters::CollectionCertStoreParameters()
 		: JObject(

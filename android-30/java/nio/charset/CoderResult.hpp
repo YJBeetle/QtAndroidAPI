@@ -21,7 +21,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CoderResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CoderResult(QAndroidJniObject obj);
+		CoderResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

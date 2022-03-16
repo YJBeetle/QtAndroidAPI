@@ -22,9 +22,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleDisplayNames_DialectHandling::LocaleDisplayNames_DialectHandling(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

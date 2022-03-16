@@ -6,9 +6,6 @@ namespace android::security::keystore
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UserPresenceUnavailableException::UserPresenceUnavailableException(QAndroidJniObject obj) : java::security::InvalidKeyException(obj) {}
-	
 	// Constructors
 	UserPresenceUnavailableException::UserPresenceUnavailableException()
 		: java::security::InvalidKeyException(

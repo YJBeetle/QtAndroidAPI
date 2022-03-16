@@ -75,9 +75,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EnvironmentalReverb::EnvironmentalReverb(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-	
 	// Constructors
 	EnvironmentalReverb::EnvironmentalReverb(jint arg0, jint arg1)
 		: android::media::audiofx::AudioEffect(

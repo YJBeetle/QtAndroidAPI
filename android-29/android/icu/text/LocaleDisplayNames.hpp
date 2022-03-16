@@ -34,7 +34,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LocaleDisplayNames(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleDisplayNames(QAndroidJniObject obj);
+		LocaleDisplayNames(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

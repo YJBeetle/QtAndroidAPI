@@ -6,9 +6,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Error::Error(QAndroidJniObject obj) : JThrowable(obj) {}
-	
 	// Constructors
 	Error::Error()
 		: JThrowable(

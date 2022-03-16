@@ -17,7 +17,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyStore_TrustedCertificateEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_TrustedCertificateEntry(QAndroidJniObject obj);
+		KeyStore_TrustedCertificateEntry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyStore_TrustedCertificateEntry(java::security::cert::Certificate arg0);

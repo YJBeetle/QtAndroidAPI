@@ -11,7 +11,7 @@ namespace android::view::translation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UiTranslationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UiTranslationManager(QAndroidJniObject obj);
+		UiTranslationManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

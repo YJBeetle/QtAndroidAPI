@@ -27,7 +27,7 @@ namespace android::media::midi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MidiDeviceService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDeviceService(QAndroidJniObject obj);
+		MidiDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		MidiDeviceService();

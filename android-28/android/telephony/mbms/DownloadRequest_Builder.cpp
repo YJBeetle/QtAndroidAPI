@@ -9,9 +9,6 @@ namespace android::telephony::mbms
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DownloadRequest_Builder::DownloadRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DownloadRequest_Builder::DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1)
 		: JObject(

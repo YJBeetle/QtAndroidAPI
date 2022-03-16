@@ -10,9 +10,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Hashtable::Hashtable(QAndroidJniObject obj) : java::util::Dictionary(obj) {}
-	
 	// Constructors
 	Hashtable::Hashtable()
 		: java::util::Dictionary(

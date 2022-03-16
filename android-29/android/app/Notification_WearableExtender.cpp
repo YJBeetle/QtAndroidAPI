@@ -74,9 +74,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Notification_WearableExtender::Notification_WearableExtender(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification_WearableExtender::Notification_WearableExtender()
 		: JObject(

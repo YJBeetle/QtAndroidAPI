@@ -11,7 +11,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCasException_ResourceBusyException(const char *className, const char *sig, Ts...agv) : android::media::MediaCasException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException_ResourceBusyException(QAndroidJniObject obj);
+		MediaCasException_ResourceBusyException(QAndroidJniObject obj) : android::media::MediaCasException(obj) {}
 		
 		// Constructors
 		

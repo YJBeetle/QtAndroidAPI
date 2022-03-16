@@ -30,9 +30,6 @@ namespace android::service::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(JString arg0, android::os::Bundle arg1)
 		: JObject(

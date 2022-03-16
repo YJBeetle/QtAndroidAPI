@@ -17,7 +17,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewStructure_HtmlInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj);
+		ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ViewStructure_HtmlInfo_Builder();

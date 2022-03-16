@@ -25,7 +25,7 @@ namespace android::database::sqlite
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLiteOpenHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteOpenHelper(QAndroidJniObject obj);
+		SQLiteOpenHelper(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3);

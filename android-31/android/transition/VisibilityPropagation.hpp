@@ -17,7 +17,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VisibilityPropagation(const char *className, const char *sig, Ts...agv) : android::transition::TransitionPropagation(className, sig, std::forward<Ts>(agv)...) {}
-		VisibilityPropagation(QAndroidJniObject obj);
+		VisibilityPropagation(QAndroidJniObject obj) : android::transition::TransitionPropagation(obj) {}
 		
 		// Constructors
 		VisibilityPropagation();

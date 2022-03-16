@@ -12,9 +12,6 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InvalidClassException::InvalidClassException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-	
 	// Constructors
 	InvalidClassException::InvalidClassException(JString arg0)
 		: java::io::ObjectStreamException(

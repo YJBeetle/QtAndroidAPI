@@ -23,9 +23,6 @@ namespace android::print
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PageRange::PageRange(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PageRange::PageRange(jint arg0, jint arg1)
 		: JObject(

@@ -88,7 +88,7 @@ namespace android::service::notification
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotificationListenerService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationListenerService(QAndroidJniObject obj);
+		NotificationListenerService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		NotificationListenerService();

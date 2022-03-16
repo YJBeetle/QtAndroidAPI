@@ -6,9 +6,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CyclicBarrier::CyclicBarrier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CyclicBarrier::CyclicBarrier(jint arg0)
 		: JObject(

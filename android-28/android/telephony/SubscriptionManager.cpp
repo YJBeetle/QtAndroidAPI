@@ -69,9 +69,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SubscriptionManager::SubscriptionManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

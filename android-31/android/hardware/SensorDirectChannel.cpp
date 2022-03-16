@@ -47,9 +47,6 @@ namespace android::hardware
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SensorDirectChannel::SensorDirectChannel(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

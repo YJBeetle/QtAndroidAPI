@@ -30,9 +30,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioTimestamp::AudioTimestamp(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AudioTimestamp::AudioTimestamp()
 		: JObject(

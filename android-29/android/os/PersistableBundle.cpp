@@ -23,9 +23,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PersistableBundle::PersistableBundle(QAndroidJniObject obj) : android::os::BaseBundle(obj) {}
-	
 	// Constructors
 	PersistableBundle::PersistableBundle()
 		: android::os::BaseBundle(

@@ -6,9 +6,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArcMotion::ArcMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
-	
 	// Constructors
 	ArcMotion::ArcMotion()
 		: android::transition::PathMotion(

@@ -6,9 +6,6 @@ namespace org::json
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JSONStringer::JSONStringer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	JSONStringer::JSONStringer()
 		: JObject(

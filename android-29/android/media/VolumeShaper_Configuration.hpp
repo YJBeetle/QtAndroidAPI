@@ -28,7 +28,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VolumeShaper_Configuration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VolumeShaper_Configuration(QAndroidJniObject obj);
+		VolumeShaper_Configuration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

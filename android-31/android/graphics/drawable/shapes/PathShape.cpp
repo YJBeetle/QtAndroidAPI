@@ -9,9 +9,6 @@ namespace android::graphics::drawable::shapes
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PathShape::PathShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::Shape(obj) {}
-	
 	// Constructors
 	PathShape::PathShape(android::graphics::Path arg0, jfloat arg1, jfloat arg2)
 		: android::graphics::drawable::shapes::Shape(

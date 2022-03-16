@@ -15,9 +15,6 @@ namespace java::util::prefs
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractPreferences::AbstractPreferences(QAndroidJniObject obj) : java::util::prefs::Preferences(obj) {}
-	
 	// Constructors
 	
 	// Methods

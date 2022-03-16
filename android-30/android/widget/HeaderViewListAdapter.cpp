@@ -10,9 +10,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HeaderViewListAdapter::HeaderViewListAdapter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	HeaderViewListAdapter::HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, JObject arg2)
 		: JObject(

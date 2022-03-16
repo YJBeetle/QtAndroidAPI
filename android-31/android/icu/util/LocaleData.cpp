@@ -37,9 +37,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocaleData::LocaleData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

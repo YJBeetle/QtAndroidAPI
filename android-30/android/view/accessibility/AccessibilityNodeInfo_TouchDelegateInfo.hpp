@@ -25,7 +25,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_TouchDelegateInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj);
+		AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityNodeInfo_TouchDelegateInfo(JObject arg0);

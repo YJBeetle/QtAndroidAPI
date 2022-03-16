@@ -6,9 +6,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Gallery_LayoutParams::Gallery_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
-	
 	// Constructors
 	Gallery_LayoutParams::Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 		: android::view::ViewGroup_LayoutParams(

@@ -28,9 +28,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NeighboringCellInfo::NeighboringCellInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NeighboringCellInfo::NeighboringCellInfo()
 		: JObject(

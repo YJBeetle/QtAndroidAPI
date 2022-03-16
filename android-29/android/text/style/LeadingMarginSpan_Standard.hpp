@@ -29,7 +29,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LeadingMarginSpan_Standard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LeadingMarginSpan_Standard(QAndroidJniObject obj);
+		LeadingMarginSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LeadingMarginSpan_Standard(android::os::Parcel arg0);

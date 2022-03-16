@@ -40,7 +40,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClipData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClipData(QAndroidJniObject obj);
+		ClipData(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ClipData(android::content::ClipData &arg0);

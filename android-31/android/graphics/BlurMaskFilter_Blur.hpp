@@ -18,7 +18,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlurMaskFilter_Blur(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		BlurMaskFilter_Blur(QAndroidJniObject obj);
+		BlurMaskFilter_Blur(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -17,7 +17,7 @@ namespace android::service::quickaccesswallet
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GetWalletCardsRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetWalletCardsRequest(QAndroidJniObject obj);
+		GetWalletCardsRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GetWalletCardsRequest(jint arg0, jint arg1, jint arg2, jint arg3);

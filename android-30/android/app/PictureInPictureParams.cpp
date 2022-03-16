@@ -13,9 +13,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PictureInPictureParams::PictureInPictureParams(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

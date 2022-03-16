@@ -24,9 +24,6 @@ namespace android::app::slice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SliceManager::SliceManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

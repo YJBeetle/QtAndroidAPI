@@ -25,9 +25,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IpSecManager::IpSecManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

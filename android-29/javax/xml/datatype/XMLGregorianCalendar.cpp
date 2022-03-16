@@ -13,9 +13,6 @@ namespace javax::xml::datatype
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XMLGregorianCalendar::XMLGregorianCalendar(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	XMLGregorianCalendar::XMLGregorianCalendar()
 		: JObject(

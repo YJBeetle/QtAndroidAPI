@@ -5,9 +5,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnrecoverableKeyException::UnrecoverableKeyException(QAndroidJniObject obj) : java::security::UnrecoverableEntryException(obj) {}
-	
 	// Constructors
 	UnrecoverableKeyException::UnrecoverableKeyException()
 		: java::security::UnrecoverableEntryException(

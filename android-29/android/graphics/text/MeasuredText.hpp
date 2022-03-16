@@ -17,7 +17,7 @@ namespace android::graphics::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MeasuredText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MeasuredText(QAndroidJniObject obj);
+		MeasuredText(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

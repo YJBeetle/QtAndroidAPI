@@ -49,7 +49,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvInputService_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputService_Session(QAndroidJniObject obj);
+		TvInputService_Session(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TvInputService_Session(android::content::Context arg0);

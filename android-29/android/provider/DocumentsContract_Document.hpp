@@ -37,7 +37,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DocumentsContract_Document(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DocumentsContract_Document(QAndroidJniObject obj);
+		DocumentsContract_Document(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

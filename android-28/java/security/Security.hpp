@@ -34,7 +34,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Security(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Security(QAndroidJniObject obj);
+		Security(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

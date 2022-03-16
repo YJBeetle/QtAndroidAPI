@@ -54,9 +54,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CallLog_Locations::CallLog_Locations(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -19,7 +19,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmConvertedStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmConvertedStatus(QAndroidJniObject obj);
+		DrmConvertedStatus(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmConvertedStatus(jint arg0, JByteArray arg1, jint arg2);

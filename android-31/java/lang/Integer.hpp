@@ -32,7 +32,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Integer(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Integer(QAndroidJniObject obj);
+		Integer(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Integer(jint arg0);

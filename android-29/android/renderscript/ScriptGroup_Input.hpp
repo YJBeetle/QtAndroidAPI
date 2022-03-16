@@ -11,7 +11,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScriptGroup_Input(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScriptGroup_Input(QAndroidJniObject obj);
+		ScriptGroup_Input(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

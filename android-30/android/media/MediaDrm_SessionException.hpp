@@ -15,7 +15,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaDrm_SessionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_SessionException(QAndroidJniObject obj);
+		MediaDrm_SessionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		MediaDrm_SessionException(jint arg0, JString arg1);

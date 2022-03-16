@@ -20,7 +20,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WebViewRenderProcessClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebViewRenderProcessClient(QAndroidJniObject obj);
+		WebViewRenderProcessClient(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WebViewRenderProcessClient();

@@ -5,9 +5,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BidiClassifier::BidiClassifier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BidiClassifier::BidiClassifier(JObject arg0)
 		: JObject(

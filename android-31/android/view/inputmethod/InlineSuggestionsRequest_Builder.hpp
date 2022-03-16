@@ -28,7 +28,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InlineSuggestionsRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestionsRequest_Builder(QAndroidJniObject obj);
+		InlineSuggestionsRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InlineSuggestionsRequest_Builder(JObject arg0);

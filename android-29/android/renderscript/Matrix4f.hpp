@@ -13,7 +13,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Matrix4f(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Matrix4f(QAndroidJniObject obj);
+		Matrix4f(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Matrix4f();

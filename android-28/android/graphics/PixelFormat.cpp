@@ -156,9 +156,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PixelFormat::PixelFormat(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PixelFormat::PixelFormat()
 		: JObject(

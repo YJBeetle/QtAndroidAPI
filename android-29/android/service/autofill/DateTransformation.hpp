@@ -26,7 +26,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateTransformation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateTransformation(QAndroidJniObject obj);
+		DateTransformation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateTransformation(android::view::autofill::AutofillId arg0, android::icu::text::DateFormat arg1);

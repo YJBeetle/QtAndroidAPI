@@ -44,7 +44,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Element_DataType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Element_DataType(QAndroidJniObject obj);
+		Element_DataType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

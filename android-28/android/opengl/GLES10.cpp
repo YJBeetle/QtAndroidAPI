@@ -1669,9 +1669,6 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GLES10::GLES10(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GLES10::GLES10()
 		: JObject(

@@ -246,7 +246,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Context(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Context(QAndroidJniObject obj);
+		Context(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Context();

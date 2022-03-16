@@ -37,9 +37,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContextWrapper::ContextWrapper(QAndroidJniObject obj) : android::content::Context(obj) {}
-	
 	// Constructors
 	ContextWrapper::ContextWrapper(android::content::Context arg0)
 		: android::content::Context(

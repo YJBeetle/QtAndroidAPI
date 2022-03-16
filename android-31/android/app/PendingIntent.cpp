@@ -64,9 +64,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PendingIntent::PendingIntent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

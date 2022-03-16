@@ -8,9 +8,6 @@ namespace android::app::admin
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DelegatedAdminReceiver::DelegatedAdminReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
-	
 	// Constructors
 	DelegatedAdminReceiver::DelegatedAdminReceiver()
 		: android::content::BroadcastReceiver(

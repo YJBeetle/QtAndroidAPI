@@ -13,7 +13,7 @@ namespace android::sax
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Element(QAndroidJniObject obj);
+		Element(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

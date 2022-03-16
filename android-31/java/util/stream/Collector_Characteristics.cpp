@@ -30,9 +30,6 @@ namespace java::util::stream
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Collector_Characteristics::Collector_Characteristics(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

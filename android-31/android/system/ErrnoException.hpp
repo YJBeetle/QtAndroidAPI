@@ -23,7 +23,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ErrnoException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ErrnoException(QAndroidJniObject obj);
+		ErrnoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		ErrnoException(JString arg0, jint arg1);

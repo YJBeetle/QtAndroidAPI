@@ -36,7 +36,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Console(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Console(QAndroidJniObject obj);
+		Console(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

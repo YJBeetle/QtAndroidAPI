@@ -14,7 +14,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BaseObj(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BaseObj(QAndroidJniObject obj);
+		BaseObj(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -6,9 +6,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLParameters::SSLParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SSLParameters::SSLParameters()
 		: JObject(

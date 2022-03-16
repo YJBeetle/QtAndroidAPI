@@ -20,7 +20,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkEvent_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent_Builder(QAndroidJniObject obj);
+		NetworkEvent_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkEvent_Builder();

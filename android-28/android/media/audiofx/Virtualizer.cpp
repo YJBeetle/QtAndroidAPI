@@ -48,9 +48,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Virtualizer::Virtualizer(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-	
 	// Constructors
 	Virtualizer::Virtualizer(jint arg0, jint arg1)
 		: android::media::audiofx::AudioEffect(

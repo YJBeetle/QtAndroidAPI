@@ -13,7 +13,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AtomicBoolean(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicBoolean(QAndroidJniObject obj);
+		AtomicBoolean(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AtomicBoolean();

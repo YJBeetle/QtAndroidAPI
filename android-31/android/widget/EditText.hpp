@@ -25,7 +25,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EditText(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		EditText(QAndroidJniObject obj);
+		EditText(QAndroidJniObject obj) : android::widget::TextView(obj) {}
 		
 		// Constructors
 		EditText(android::content::Context arg0);

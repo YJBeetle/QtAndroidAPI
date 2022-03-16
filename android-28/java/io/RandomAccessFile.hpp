@@ -27,7 +27,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RandomAccessFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RandomAccessFile(QAndroidJniObject obj);
+		RandomAccessFile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RandomAccessFile(java::io::File arg0, JString arg1);

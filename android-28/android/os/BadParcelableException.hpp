@@ -17,7 +17,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BadParcelableException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		BadParcelableException(QAndroidJniObject obj);
+		BadParcelableException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 		
 		// Constructors
 		BadParcelableException(java::lang::Exception arg0);

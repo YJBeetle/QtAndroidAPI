@@ -14,9 +14,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChoiceFormat::ChoiceFormat(QAndroidJniObject obj) : java::text::NumberFormat(obj) {}
-	
 	// Constructors
 	ChoiceFormat::ChoiceFormat(JString arg0)
 		: java::text::NumberFormat(

@@ -51,7 +51,7 @@ namespace android::icu::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UCharacter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacter(QAndroidJniObject obj);
+		UCharacter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -6,9 +6,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FaceDetector::FaceDetector(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FaceDetector::FaceDetector(jint arg0, jint arg1, jint arg2)
 		: JObject(

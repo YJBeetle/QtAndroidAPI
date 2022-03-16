@@ -5,9 +5,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DSAPrivateKeySpec::DSAPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DSAPrivateKeySpec::DSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3)
 		: JObject(

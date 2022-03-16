@@ -34,7 +34,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JapaneseCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::GregorianCalendar(className, sig, std::forward<Ts>(agv)...) {}
-		JapaneseCalendar(QAndroidJniObject obj);
+		JapaneseCalendar(QAndroidJniObject obj) : android::icu::util::GregorianCalendar(obj) {}
 		
 		// Constructors
 		JapaneseCalendar();

@@ -22,7 +22,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageView_ScaleType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ImageView_ScaleType(QAndroidJniObject obj);
+		ImageView_ScaleType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

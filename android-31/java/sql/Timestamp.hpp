@@ -26,7 +26,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Timestamp(const char *className, const char *sig, Ts...agv) : java::util::Date(className, sig, std::forward<Ts>(agv)...) {}
-		Timestamp(QAndroidJniObject obj);
+		Timestamp(QAndroidJniObject obj) : java::util::Date(obj) {}
 		
 		// Constructors
 		Timestamp(jlong arg0);

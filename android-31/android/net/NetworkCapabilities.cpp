@@ -262,9 +262,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkCapabilities::NetworkCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NetworkCapabilities::NetworkCapabilities()
 		: JObject(

@@ -115,7 +115,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentResolver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentResolver(QAndroidJniObject obj);
+		ContentResolver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentResolver(android::content::Context arg0);

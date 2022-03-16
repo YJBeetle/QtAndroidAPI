@@ -50,7 +50,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DngCreator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DngCreator(QAndroidJniObject obj);
+		DngCreator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1);

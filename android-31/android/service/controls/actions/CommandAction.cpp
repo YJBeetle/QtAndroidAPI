@@ -5,9 +5,6 @@ namespace android::service::controls::actions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CommandAction::CommandAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-	
 	// Constructors
 	CommandAction::CommandAction(JString arg0)
 		: android::service::controls::actions::ControlAction(

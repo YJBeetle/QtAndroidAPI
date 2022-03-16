@@ -24,7 +24,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder_Redirect(QAndroidJniObject obj);
+		ProcessBuilder_Redirect(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

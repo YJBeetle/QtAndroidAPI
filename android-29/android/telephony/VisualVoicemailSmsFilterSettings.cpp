@@ -49,9 +49,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VisualVoicemailSmsFilterSettings::VisualVoicemailSmsFilterSettings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -33,7 +33,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InCallService_VideoCall(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InCallService_VideoCall(QAndroidJniObject obj);
+		InCallService_VideoCall(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InCallService_VideoCall();

@@ -26,9 +26,6 @@ namespace android::service::wallpaper
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WallpaperService::WallpaperService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	WallpaperService::WallpaperService()
 		: android::app::Service(

@@ -25,7 +25,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StackView(const char *className, const char *sig, Ts...agv) : android::widget::AdapterViewAnimator(className, sig, std::forward<Ts>(agv)...) {}
-		StackView(QAndroidJniObject obj);
+		StackView(QAndroidJniObject obj) : android::widget::AdapterViewAnimator(obj) {}
 		
 		// Constructors
 		StackView(android::content::Context arg0);

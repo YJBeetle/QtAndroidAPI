@@ -6,9 +6,6 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AppSearchManager_SearchContext_Builder::AppSearchManager_SearchContext_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AppSearchManager_SearchContext_Builder::AppSearchManager_SearchContext_Builder(JString arg0)
 		: JObject(

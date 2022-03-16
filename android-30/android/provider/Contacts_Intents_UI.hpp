@@ -24,7 +24,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Contacts_Intents_UI(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_Intents_UI(QAndroidJniObject obj);
+		Contacts_Intents_UI(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Contacts_Intents_UI();

@@ -16,7 +16,7 @@ namespace android::hardware::biometrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BiometricPrompt_AuthenticationResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricPrompt_AuthenticationResult(QAndroidJniObject obj);
+		BiometricPrompt_AuthenticationResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

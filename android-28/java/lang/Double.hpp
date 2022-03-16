@@ -34,7 +34,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Double(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Double(QAndroidJniObject obj);
+		Double(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Double(jdouble arg0);

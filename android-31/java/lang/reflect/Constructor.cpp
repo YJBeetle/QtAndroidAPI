@@ -16,9 +16,6 @@ namespace java::lang::reflect
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Constructor::Constructor(QAndroidJniObject obj) : java::lang::reflect::Executable(obj) {}
-	
 	// Constructors
 	
 	// Methods

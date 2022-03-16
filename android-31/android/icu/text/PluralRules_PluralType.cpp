@@ -22,9 +22,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PluralRules_PluralType::PluralRules_PluralType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

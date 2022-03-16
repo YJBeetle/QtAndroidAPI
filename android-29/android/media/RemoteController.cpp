@@ -22,9 +22,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteController::RemoteController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RemoteController::RemoteController(android::content::Context arg0, JObject arg1)
 		: JObject(

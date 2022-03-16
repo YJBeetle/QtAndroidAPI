@@ -38,7 +38,7 @@ namespace android::graphics::fonts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Font_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Font_Builder(QAndroidJniObject obj);
+		Font_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Font_Builder(android::graphics::fonts::Font arg0);

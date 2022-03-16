@@ -15,7 +15,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DESKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DESKeySpec(QAndroidJniObject obj);
+		DESKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DESKeySpec(JByteArray arg0);

@@ -63,9 +63,6 @@ namespace android::preference
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PreferenceActivity::PreferenceActivity(QAndroidJniObject obj) : android::app::ListActivity(obj) {}
-	
 	// Constructors
 	PreferenceActivity::PreferenceActivity()
 		: android::app::ListActivity(

@@ -50,9 +50,6 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiConfiguration_PairwiseCipher::WifiConfiguration_PairwiseCipher(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

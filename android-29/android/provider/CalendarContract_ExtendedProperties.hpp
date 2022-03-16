@@ -17,7 +17,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CalendarContract_ExtendedProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_ExtendedProperties(QAndroidJniObject obj);
+		CalendarContract_ExtendedProperties(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

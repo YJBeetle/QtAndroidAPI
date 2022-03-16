@@ -13,9 +13,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StrictMode_ThreadPolicy::StrictMode_ThreadPolicy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

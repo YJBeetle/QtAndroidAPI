@@ -79,9 +79,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AlarmManager::AlarmManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

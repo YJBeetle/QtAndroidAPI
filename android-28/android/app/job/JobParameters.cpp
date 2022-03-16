@@ -20,9 +20,6 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobParameters::JobParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

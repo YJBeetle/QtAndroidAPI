@@ -18,9 +18,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MessageFormat::MessageFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
-	
 	// Constructors
 	MessageFormat::MessageFormat(JString arg0)
 		: java::text::Format(

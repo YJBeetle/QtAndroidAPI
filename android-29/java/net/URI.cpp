@@ -13,9 +13,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URI::URI(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	URI::URI(JString arg0)
 		: JObject(

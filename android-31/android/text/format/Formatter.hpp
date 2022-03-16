@@ -17,7 +17,7 @@ namespace android::text::format
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Formatter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Formatter(QAndroidJniObject obj);
+		Formatter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Formatter();

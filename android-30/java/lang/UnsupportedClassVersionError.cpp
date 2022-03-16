@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedClassVersionError::UnsupportedClassVersionError(QAndroidJniObject obj) : java::lang::ClassFormatError(obj) {}
-	
 	// Constructors
 	UnsupportedClassVersionError::UnsupportedClassVersionError()
 		: java::lang::ClassFormatError(

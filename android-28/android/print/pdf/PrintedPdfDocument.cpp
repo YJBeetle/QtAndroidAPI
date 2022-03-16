@@ -8,9 +8,6 @@ namespace android::print::pdf
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintedPdfDocument::PrintedPdfDocument(QAndroidJniObject obj) : android::graphics::pdf::PdfDocument(obj) {}
-	
 	// Constructors
 	PrintedPdfDocument::PrintedPdfDocument(android::content::Context arg0, android::print::PrintAttributes arg1)
 		: android::graphics::pdf::PdfDocument(

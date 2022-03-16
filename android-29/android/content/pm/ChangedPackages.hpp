@@ -17,7 +17,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChangedPackages(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ChangedPackages(QAndroidJniObject obj);
+		ChangedPackages(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ChangedPackages(jint arg0, JObject arg1);

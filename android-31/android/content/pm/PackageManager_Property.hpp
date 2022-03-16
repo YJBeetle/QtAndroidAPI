@@ -18,7 +18,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageManager_Property(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageManager_Property(QAndroidJniObject obj);
+		PackageManager_Property(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

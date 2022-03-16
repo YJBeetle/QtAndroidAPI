@@ -7,9 +7,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StateListAnimator::StateListAnimator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StateListAnimator::StateListAnimator()
 		: JObject(

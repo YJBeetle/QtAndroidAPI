@@ -77,9 +77,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Criteria::Criteria(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Criteria::Criteria()
 		: JObject(

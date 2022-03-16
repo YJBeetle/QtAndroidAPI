@@ -114,9 +114,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Display::Display(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

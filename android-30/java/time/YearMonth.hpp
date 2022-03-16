@@ -43,7 +43,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit YearMonth(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		YearMonth(QAndroidJniObject obj);
+		YearMonth(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

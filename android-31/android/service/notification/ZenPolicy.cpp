@@ -99,9 +99,6 @@ namespace android::service::notification
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ZenPolicy::ZenPolicy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

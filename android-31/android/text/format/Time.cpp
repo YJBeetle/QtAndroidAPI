@@ -212,9 +212,6 @@ namespace android::text::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Time::Time(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Time::Time()
 		: JObject(

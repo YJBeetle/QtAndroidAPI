@@ -14,7 +14,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaDrm_ProvisionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_ProvisionRequest(QAndroidJniObject obj);
+		MediaDrm_ProvisionRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

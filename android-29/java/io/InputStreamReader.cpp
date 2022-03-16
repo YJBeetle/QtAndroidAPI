@@ -9,9 +9,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputStreamReader::InputStreamReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
-	
 	// Constructors
 	InputStreamReader::InputStreamReader(java::io::InputStream arg0)
 		: java::io::Reader(

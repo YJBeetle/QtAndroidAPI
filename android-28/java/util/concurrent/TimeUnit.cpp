@@ -66,9 +66,6 @@ namespace java::util::concurrent
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TimeUnit::TimeUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

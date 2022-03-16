@@ -20,7 +20,7 @@ namespace android::view::contentcapture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DataRemovalRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DataRemovalRequest_Builder(QAndroidJniObject obj);
+		DataRemovalRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DataRemovalRequest_Builder();

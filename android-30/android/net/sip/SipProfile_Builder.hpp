@@ -17,7 +17,7 @@ namespace android::net::sip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SipProfile_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipProfile_Builder(QAndroidJniObject obj);
+		SipProfile_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SipProfile_Builder(android::net::sip::SipProfile arg0);

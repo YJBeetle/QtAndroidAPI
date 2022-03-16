@@ -16,7 +16,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThreadPoolExecutor_DiscardOldestPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadPoolExecutor_DiscardOldestPolicy(QAndroidJniObject obj);
+		ThreadPoolExecutor_DiscardOldestPolicy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ThreadPoolExecutor_DiscardOldestPolicy();

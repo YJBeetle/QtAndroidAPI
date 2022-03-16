@@ -19,7 +19,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SignalStrengthUpdateRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignalStrengthUpdateRequest(QAndroidJniObject obj);
+		SignalStrengthUpdateRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -18,9 +18,6 @@ namespace android::media::session
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaController::MediaController(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaController::MediaController(android::content::Context arg0, android::media::session::MediaSession_Token arg1)
 		: JObject(

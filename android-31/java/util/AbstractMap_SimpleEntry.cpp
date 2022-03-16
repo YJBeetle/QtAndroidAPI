@@ -6,9 +6,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AbstractMap_SimpleEntry::AbstractMap_SimpleEntry(JObject arg0)
 		: JObject(

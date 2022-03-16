@@ -5,9 +5,6 @@ namespace android::view::translation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TranslationRequest_Builder::TranslationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TranslationRequest_Builder::TranslationRequest_Builder()
 		: JObject(

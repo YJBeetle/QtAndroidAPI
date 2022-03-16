@@ -20,9 +20,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleDateFormat::SimpleDateFormat(QAndroidJniObject obj) : android::icu::text::DateFormat(obj) {}
-	
 	// Constructors
 	SimpleDateFormat::SimpleDateFormat()
 		: android::icu::text::DateFormat(

@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubtitleData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubtitleData(QAndroidJniObject obj);
+		SubtitleData(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SubtitleData(jint arg0, jlong arg1, jlong arg2, JByteArray arg3);

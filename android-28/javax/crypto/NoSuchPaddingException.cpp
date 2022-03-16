@@ -5,9 +5,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NoSuchPaddingException::NoSuchPaddingException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-	
 	// Constructors
 	NoSuchPaddingException::NoSuchPaddingException()
 		: java::security::GeneralSecurityException(

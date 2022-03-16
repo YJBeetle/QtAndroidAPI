@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppOpsManager_OnOpNotedCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppOpsManager_OnOpNotedCallback(QAndroidJniObject obj);
+		AppOpsManager_OnOpNotedCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AppOpsManager_OnOpNotedCallback();

@@ -7,9 +7,6 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StampedLock::StampedLock(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StampedLock::StampedLock()
 		: JObject(

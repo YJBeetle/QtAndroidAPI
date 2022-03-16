@@ -28,7 +28,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CopyOnWriteArrayList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CopyOnWriteArrayList(QAndroidJniObject obj);
+		CopyOnWriteArrayList(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CopyOnWriteArrayList();

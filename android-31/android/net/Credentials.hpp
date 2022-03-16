@@ -11,7 +11,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Credentials(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Credentials(QAndroidJniObject obj);
+		Credentials(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Credentials(jint arg0, jint arg1, jint arg2);

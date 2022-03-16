@@ -20,7 +20,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ServiceWorkerController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceWorkerController(QAndroidJniObject obj);
+		ServiceWorkerController(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ServiceWorkerController();

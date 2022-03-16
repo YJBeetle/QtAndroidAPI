@@ -28,7 +28,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_AppTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_AppTask(QAndroidJniObject obj);
+		ActivityManager_AppTask(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -15,7 +15,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UUID(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UUID(QAndroidJniObject obj);
+		UUID(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UUID(jlong arg0, jlong arg1);

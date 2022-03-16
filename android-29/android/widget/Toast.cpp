@@ -21,9 +21,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Toast::Toast(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Toast::Toast(android::content::Context arg0)
 		: JObject(

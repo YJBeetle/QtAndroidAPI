@@ -8,9 +8,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharArrayWriter::CharArrayWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
-	
 	// Constructors
 	CharArrayWriter::CharArrayWriter()
 		: java::io::Writer(

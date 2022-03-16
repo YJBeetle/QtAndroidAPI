@@ -22,7 +22,7 @@ namespace android::hardware::usb
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UsbConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsbConfiguration(QAndroidJniObject obj);
+		UsbConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

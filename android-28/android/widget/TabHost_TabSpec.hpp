@@ -30,7 +30,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TabHost_TabSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TabHost_TabSpec(QAndroidJniObject obj);
+		TabHost_TabSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

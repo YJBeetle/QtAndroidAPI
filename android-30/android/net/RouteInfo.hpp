@@ -27,7 +27,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RouteInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RouteInfo(QAndroidJniObject obj);
+		RouteInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

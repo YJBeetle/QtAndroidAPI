@@ -34,7 +34,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothHeadset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothHeadset(QAndroidJniObject obj);
+		BluetoothHeadset(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

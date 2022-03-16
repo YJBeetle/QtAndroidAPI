@@ -13,7 +13,7 @@ namespace android::view::inspector
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyReader_PropertyTypeMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyReader_PropertyTypeMismatchException(QAndroidJniObject obj);
+		PropertyReader_PropertyTypeMismatchException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2);

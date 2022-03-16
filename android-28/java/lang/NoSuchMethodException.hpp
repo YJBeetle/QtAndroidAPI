@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NoSuchMethodException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchMethodException(QAndroidJniObject obj);
+		NoSuchMethodException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 		
 		// Constructors
 		NoSuchMethodException();

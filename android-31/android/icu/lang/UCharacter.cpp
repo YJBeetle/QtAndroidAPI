@@ -151,9 +151,6 @@ namespace android::icu::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UCharacter::UCharacter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -45,9 +45,6 @@ namespace android::drm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DrmConvertedStatus::DrmConvertedStatus(jint arg0, JByteArray arg1, jint arg2)
 		: JObject(

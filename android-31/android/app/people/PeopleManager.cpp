@@ -6,9 +6,6 @@ namespace android::app::people
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PeopleManager::PeopleManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

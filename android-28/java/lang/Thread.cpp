@@ -37,9 +37,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Thread::Thread(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Thread::Thread()
 		: JObject(

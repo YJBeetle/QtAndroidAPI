@@ -21,7 +21,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkRequest_Builder(QAndroidJniObject obj);
+		NetworkRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkRequest_Builder();

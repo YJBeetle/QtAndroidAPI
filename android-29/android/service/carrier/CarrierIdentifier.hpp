@@ -20,7 +20,7 @@ namespace android::service::carrier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierIdentifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierIdentifier(QAndroidJniObject obj);
+		CarrierIdentifier(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CarrierIdentifier(JByteArray arg0, JString arg1, JString arg2);

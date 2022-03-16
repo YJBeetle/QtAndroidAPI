@@ -632,9 +632,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CallLog_Calls::CallLog_Calls(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CallLog_Calls::CallLog_Calls()
 		: JObject(

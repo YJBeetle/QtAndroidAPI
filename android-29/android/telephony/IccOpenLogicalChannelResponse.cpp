@@ -50,9 +50,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IccOpenLogicalChannelResponse::IccOpenLogicalChannelResponse(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

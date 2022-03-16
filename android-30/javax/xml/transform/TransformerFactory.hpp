@@ -22,7 +22,7 @@ namespace javax::xml::transform
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransformerFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransformerFactory(QAndroidJniObject obj);
+		TransformerFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -12,9 +12,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseBundle::BaseBundle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

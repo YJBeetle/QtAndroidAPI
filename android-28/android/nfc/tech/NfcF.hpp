@@ -17,7 +17,7 @@ namespace android::nfc::tech
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NfcF(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcF(QAndroidJniObject obj);
+		NfcF(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

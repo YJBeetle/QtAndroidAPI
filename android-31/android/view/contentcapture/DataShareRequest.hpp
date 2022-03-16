@@ -23,7 +23,7 @@ namespace android::view::contentcapture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DataShareRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DataShareRequest(QAndroidJniObject obj);
+		DataShareRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DataShareRequest(android::content::LocusId arg0, JString arg1);

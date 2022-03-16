@@ -11,9 +11,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CursorLoader::CursorLoader(QAndroidJniObject obj) : android::content::AsyncTaskLoader(obj) {}
-	
 	// Constructors
 	CursorLoader::CursorLoader(android::content::Context arg0)
 		: android::content::AsyncTaskLoader(

@@ -7,9 +7,6 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UserData_Builder::UserData_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UserData_Builder::UserData_Builder(JString arg0, JString arg1, JString arg2)
 		: JObject(

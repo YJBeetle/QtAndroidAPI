@@ -5,9 +5,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(QAndroidJniObject obj) : android::database::ContentObserver(obj) {}
-	
 	// Constructors
 	Loader_ForceLoadContentObserver::Loader_ForceLoadContentObserver(android::content::Loader arg0)
 		: android::database::ContentObserver(

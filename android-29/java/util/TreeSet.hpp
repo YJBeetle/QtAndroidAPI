@@ -21,7 +21,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TreeSet(const char *className, const char *sig, Ts...agv) : java::util::AbstractSet(className, sig, std::forward<Ts>(agv)...) {}
-		TreeSet(QAndroidJniObject obj);
+		TreeSet(QAndroidJniObject obj) : java::util::AbstractSet(obj) {}
 		
 		// Constructors
 		TreeSet();

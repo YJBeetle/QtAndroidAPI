@@ -17,7 +17,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyEvent_DispatcherState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyEvent_DispatcherState(QAndroidJniObject obj);
+		KeyEvent_DispatcherState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyEvent_DispatcherState();

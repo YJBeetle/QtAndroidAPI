@@ -47,9 +47,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback()
 		: JObject(

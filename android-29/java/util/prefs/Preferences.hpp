@@ -31,7 +31,7 @@ namespace java::util::prefs
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Preferences(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Preferences(QAndroidJniObject obj);
+		Preferences(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

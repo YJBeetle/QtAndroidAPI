@@ -14,7 +14,7 @@ namespace android::database::sqlite
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLiteException(const char *className, const char *sig, Ts...agv) : android::database::SQLException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteException(QAndroidJniObject obj);
+		SQLiteException(QAndroidJniObject obj) : android::database::SQLException(obj) {}
 		
 		// Constructors
 		SQLiteException();

@@ -18,9 +18,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WindowInsets::WindowInsets(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WindowInsets::WindowInsets(android::view::WindowInsets &arg0)
 		: JObject(

@@ -18,7 +18,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiInfo_Builder(QAndroidJniObject obj);
+		WifiInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WifiInfo_Builder();

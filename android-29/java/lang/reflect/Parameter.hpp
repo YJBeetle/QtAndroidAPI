@@ -20,7 +20,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Parameter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Parameter(QAndroidJniObject obj);
+		Parameter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

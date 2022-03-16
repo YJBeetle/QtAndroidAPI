@@ -24,7 +24,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MultiResolutionImageReader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MultiResolutionImageReader(QAndroidJniObject obj);
+		MultiResolutionImageReader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MultiResolutionImageReader(JObject arg0, jint arg1, jint arg2);

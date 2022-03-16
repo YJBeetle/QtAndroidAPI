@@ -16,7 +16,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Event(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Event(QAndroidJniObject obj);
+		Event(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

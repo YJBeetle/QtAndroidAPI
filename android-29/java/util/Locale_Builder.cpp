@@ -6,9 +6,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Locale_Builder::Locale_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Locale_Builder::Locale_Builder()
 		: JObject(

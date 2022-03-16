@@ -5,9 +5,6 @@ namespace android::service::carrier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CarrierMessagingClientService::CarrierMessagingClientService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	CarrierMessagingClientService::CarrierMessagingClientService()
 		: android::app::Service(

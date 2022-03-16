@@ -17,7 +17,7 @@ namespace java::util::concurrent::locks
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LockSupport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LockSupport(QAndroidJniObject obj);
+		LockSupport(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

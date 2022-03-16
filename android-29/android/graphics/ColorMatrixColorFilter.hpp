@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorMatrixColorFilter(const char *className, const char *sig, Ts...agv) : android::graphics::ColorFilter(className, sig, std::forward<Ts>(agv)...) {}
-		ColorMatrixColorFilter(QAndroidJniObject obj);
+		ColorMatrixColorFilter(QAndroidJniObject obj) : android::graphics::ColorFilter(obj) {}
 		
 		// Constructors
 		ColorMatrixColorFilter(JFloatArray arg0);

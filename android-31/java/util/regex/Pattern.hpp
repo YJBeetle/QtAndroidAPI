@@ -42,7 +42,7 @@ namespace java::util::regex
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Pattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Pattern(QAndroidJniObject obj);
+		Pattern(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

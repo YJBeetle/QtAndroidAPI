@@ -18,7 +18,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PictureInPictureUiState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PictureInPictureUiState(QAndroidJniObject obj);
+		PictureInPictureUiState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -6,9 +6,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SoundPool_Builder::SoundPool_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SoundPool_Builder::SoundPool_Builder()
 		: JObject(

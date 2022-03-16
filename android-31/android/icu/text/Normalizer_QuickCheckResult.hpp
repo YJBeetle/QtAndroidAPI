@@ -11,7 +11,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Normalizer_QuickCheckResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer_QuickCheckResult(QAndroidJniObject obj);
+		Normalizer_QuickCheckResult(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

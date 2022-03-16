@@ -11,7 +11,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewPropertyAnimator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewPropertyAnimator(QAndroidJniObject obj);
+		ViewPropertyAnimator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -13,7 +13,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MalformedJsonException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MalformedJsonException(QAndroidJniObject obj);
+		MalformedJsonException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		MalformedJsonException(JString arg0);

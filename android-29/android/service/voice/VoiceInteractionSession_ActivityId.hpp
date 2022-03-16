@@ -13,7 +13,7 @@ namespace android::service::voice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession_ActivityId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_ActivityId(QAndroidJniObject obj);
+		VoiceInteractionSession_ActivityId(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -19,7 +19,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellIdentityLte(const char *className, const char *sig, Ts...agv) : android::telephony::CellIdentity(className, sig, std::forward<Ts>(agv)...) {}
-		CellIdentityLte(QAndroidJniObject obj);
+		CellIdentityLte(QAndroidJniObject obj) : android::telephony::CellIdentity(obj) {}
 		
 		// Constructors
 		

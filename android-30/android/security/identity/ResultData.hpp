@@ -21,7 +21,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResultData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResultData(QAndroidJniObject obj);
+		ResultData(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

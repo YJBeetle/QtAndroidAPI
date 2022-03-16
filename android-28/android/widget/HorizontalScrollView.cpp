@@ -12,9 +12,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	HorizontalScrollView::HorizontalScrollView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
-	
 	// Constructors
 	HorizontalScrollView::HorizontalScrollView(android::content::Context arg0)
 		: android::widget::FrameLayout(

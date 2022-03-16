@@ -13,7 +13,7 @@ namespace android::mtp
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MtpStorageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MtpStorageInfo(QAndroidJniObject obj);
+		MtpStorageInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -34,9 +34,6 @@ namespace android::service::dreams
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DreamService::DreamService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	DreamService::DreamService()
 		: android::app::Service(

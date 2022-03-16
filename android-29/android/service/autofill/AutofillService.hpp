@@ -43,7 +43,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AutofillService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		AutofillService(QAndroidJniObject obj);
+		AutofillService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		AutofillService();

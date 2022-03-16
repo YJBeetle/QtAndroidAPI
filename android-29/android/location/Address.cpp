@@ -16,9 +16,6 @@ namespace android::location
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Address::Address(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Address::Address(java::util::Locale arg0)
 		: JObject(

@@ -4,9 +4,6 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	R_fraction::R_fraction(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	R_fraction::R_fraction()
 		: JObject(

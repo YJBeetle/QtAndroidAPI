@@ -27,7 +27,7 @@ namespace android::service::notification
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationListenerService_Ranking(QAndroidJniObject obj);
+		NotificationListenerService_Ranking(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NotificationListenerService_Ranking();

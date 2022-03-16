@@ -25,9 +25,6 @@ namespace android::os::storage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StorageVolume::StorageVolume(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

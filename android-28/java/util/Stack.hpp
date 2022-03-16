@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Stack(const char *className, const char *sig, Ts...agv) : java::util::Vector(className, sig, std::forward<Ts>(agv)...) {}
-		Stack(QAndroidJniObject obj);
+		Stack(QAndroidJniObject obj) : java::util::Vector(obj) {}
 		
 		// Constructors
 		Stack();

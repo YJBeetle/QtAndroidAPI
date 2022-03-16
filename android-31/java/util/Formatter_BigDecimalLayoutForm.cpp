@@ -22,9 +22,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Formatter_BigDecimalLayoutForm::Formatter_BigDecimalLayoutForm(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

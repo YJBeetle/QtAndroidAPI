@@ -58,7 +58,7 @@ namespace android::os::storage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StorageManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StorageManager(QAndroidJniObject obj);
+		StorageManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

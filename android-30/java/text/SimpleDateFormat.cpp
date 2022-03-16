@@ -21,9 +21,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SimpleDateFormat::SimpleDateFormat(QAndroidJniObject obj) : java::text::DateFormat(obj) {}
-	
 	// Constructors
 	SimpleDateFormat::SimpleDateFormat()
 		: java::text::DateFormat(

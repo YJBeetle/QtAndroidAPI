@@ -18,7 +18,7 @@ namespace android::telephony::data
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TrafficDescriptor_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TrafficDescriptor_Builder(QAndroidJniObject obj);
+		TrafficDescriptor_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TrafficDescriptor_Builder();

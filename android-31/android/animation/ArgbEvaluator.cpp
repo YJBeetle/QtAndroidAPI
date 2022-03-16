@@ -5,9 +5,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArgbEvaluator::ArgbEvaluator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ArgbEvaluator::ArgbEvaluator()
 		: JObject(

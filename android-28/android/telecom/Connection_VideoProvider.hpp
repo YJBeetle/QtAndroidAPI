@@ -41,7 +41,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Connection_VideoProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Connection_VideoProvider(QAndroidJniObject obj);
+		Connection_VideoProvider(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Connection_VideoProvider();

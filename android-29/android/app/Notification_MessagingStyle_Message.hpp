@@ -26,7 +26,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_MessagingStyle_Message(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_MessagingStyle_Message(QAndroidJniObject obj);
+		Notification_MessagingStyle_Message(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Notification_MessagingStyle_Message(JString arg0, jlong arg1, android::app::Person arg2);

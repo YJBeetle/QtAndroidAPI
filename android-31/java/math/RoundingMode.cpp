@@ -70,9 +70,6 @@ namespace java::math
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RoundingMode::RoundingMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

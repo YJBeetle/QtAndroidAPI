@@ -5,9 +5,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ExtendedSSLSession::ExtendedSSLSession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ExtendedSSLSession::ExtendedSSLSession()
 		: JObject(

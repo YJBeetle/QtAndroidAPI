@@ -14,7 +14,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WrappedKeyEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WrappedKeyEntry(QAndroidJniObject obj);
+		WrappedKeyEntry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WrappedKeyEntry(JByteArray arg0, JString arg1, JString arg2, JObject arg3);

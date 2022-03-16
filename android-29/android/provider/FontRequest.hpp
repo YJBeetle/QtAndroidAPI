@@ -13,7 +13,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FontRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontRequest(QAndroidJniObject obj);
+		FontRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FontRequest(JString arg0, JString arg1, JString arg2);

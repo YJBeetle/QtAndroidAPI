@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodec_IncompatibleWithBlockModelException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_IncompatibleWithBlockModelException(QAndroidJniObject obj);
+		MediaCodec_IncompatibleWithBlockModelException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		

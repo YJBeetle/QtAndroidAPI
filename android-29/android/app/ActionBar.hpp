@@ -41,7 +41,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActionBar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActionBar(QAndroidJniObject obj);
+		ActionBar(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ActionBar();

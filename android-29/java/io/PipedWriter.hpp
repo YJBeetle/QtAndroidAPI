@@ -17,7 +17,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PipedWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
-		PipedWriter(QAndroidJniObject obj);
+		PipedWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
 		
 		// Constructors
 		PipedWriter();

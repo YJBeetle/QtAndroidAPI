@@ -6,9 +6,6 @@ namespace android::net::sip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SipException::SipException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	SipException::SipException()
 		: java::lang::Exception(

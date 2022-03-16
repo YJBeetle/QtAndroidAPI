@@ -101,7 +101,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TtsSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TtsSpan(QAndroidJniObject obj);
+		TtsSpan(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TtsSpan(android::os::Parcel arg0);

@@ -63,9 +63,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Rating::Rating(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

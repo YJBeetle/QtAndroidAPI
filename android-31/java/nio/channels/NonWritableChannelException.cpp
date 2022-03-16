@@ -4,9 +4,6 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NonWritableChannelException::NonWritableChannelException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
-	
 	// Constructors
 	NonWritableChannelException::NonWritableChannelException()
 		: java::lang::IllegalStateException(

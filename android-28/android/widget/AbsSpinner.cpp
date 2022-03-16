@@ -10,9 +10,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbsSpinner::AbsSpinner(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
-	
 	// Constructors
 	AbsSpinner::AbsSpinner(android::content::Context arg0)
 		: android::widget::AdapterView(

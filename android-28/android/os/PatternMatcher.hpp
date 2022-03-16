@@ -22,7 +22,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PatternMatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PatternMatcher(QAndroidJniObject obj);
+		PatternMatcher(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PatternMatcher(android::os::Parcel arg0);

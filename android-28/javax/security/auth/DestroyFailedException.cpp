@@ -5,9 +5,6 @@ namespace javax::security::auth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DestroyFailedException::DestroyFailedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	DestroyFailedException::DestroyFailedException()
 		: java::lang::Exception(

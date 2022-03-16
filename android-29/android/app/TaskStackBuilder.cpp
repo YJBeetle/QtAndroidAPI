@@ -12,9 +12,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TaskStackBuilder::TaskStackBuilder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -39,7 +39,7 @@ namespace android::view::textservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpellCheckerInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerInfo(QAndroidJniObject obj);
+		SpellCheckerInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

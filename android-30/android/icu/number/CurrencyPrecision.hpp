@@ -20,7 +20,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CurrencyPrecision(const char *className, const char *sig, Ts...agv) : android::icu::number::Precision(className, sig, std::forward<Ts>(agv)...) {}
-		CurrencyPrecision(QAndroidJniObject obj);
+		CurrencyPrecision(QAndroidJniObject obj) : android::icu::number::Precision(obj) {}
 		
 		// Constructors
 		

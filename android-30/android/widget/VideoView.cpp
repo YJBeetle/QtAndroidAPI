@@ -15,9 +15,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	VideoView::VideoView(QAndroidJniObject obj) : android::view::SurfaceView(obj) {}
-	
 	// Constructors
 	VideoView::VideoView(android::content::Context arg0)
 		: android::view::SurfaceView(

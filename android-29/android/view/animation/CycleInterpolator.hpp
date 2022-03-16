@@ -16,7 +16,7 @@ namespace android::view::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CycleInterpolator(const char *className, const char *sig, Ts...agv) : android::view::animation::BaseInterpolator(className, sig, std::forward<Ts>(agv)...) {}
-		CycleInterpolator(QAndroidJniObject obj);
+		CycleInterpolator(QAndroidJniObject obj) : android::view::animation::BaseInterpolator(obj) {}
 		
 		// Constructors
 		CycleInterpolator(jfloat arg0);

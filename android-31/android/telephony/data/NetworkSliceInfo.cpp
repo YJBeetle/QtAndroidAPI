@@ -92,9 +92,6 @@ namespace android::telephony::data
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkSliceInfo::NetworkSliceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

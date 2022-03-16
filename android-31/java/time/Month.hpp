@@ -39,7 +39,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Month(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Month(QAndroidJniObject obj);
+		Month(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

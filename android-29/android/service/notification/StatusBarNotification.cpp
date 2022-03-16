@@ -17,9 +17,6 @@ namespace android::service::notification
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StatusBarNotification::StatusBarNotification(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StatusBarNotification::StatusBarNotification(android::os::Parcel arg0)
 		: JObject(

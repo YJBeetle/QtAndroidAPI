@@ -28,9 +28,6 @@ namespace android::renderscript
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Short4::Short4(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Short4::Short4()
 		: JObject(

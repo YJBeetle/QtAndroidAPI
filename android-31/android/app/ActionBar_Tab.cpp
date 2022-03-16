@@ -15,9 +15,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ActionBar_Tab::ActionBar_Tab(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActionBar_Tab::ActionBar_Tab()
 		: JObject(

@@ -34,9 +34,6 @@ namespace android::net::rtp
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioGroup::AudioGroup(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AudioGroup::AudioGroup()
 		: JObject(

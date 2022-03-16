@@ -97,9 +97,6 @@ namespace android::graphics::fonts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FontStyle::FontStyle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FontStyle::FontStyle()
 		: JObject(

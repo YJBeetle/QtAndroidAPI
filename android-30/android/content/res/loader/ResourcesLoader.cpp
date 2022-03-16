@@ -5,9 +5,6 @@ namespace android::content::res::loader
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResourcesLoader::ResourcesLoader(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ResourcesLoader::ResourcesLoader()
 		: JObject(

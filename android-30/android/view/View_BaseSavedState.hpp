@@ -21,7 +21,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit View_BaseSavedState(const char *className, const char *sig, Ts...agv) : android::view::AbsSavedState(className, sig, std::forward<Ts>(agv)...) {}
-		View_BaseSavedState(QAndroidJniObject obj);
+		View_BaseSavedState(QAndroidJniObject obj) : android::view::AbsSavedState(obj) {}
 		
 		// Constructors
 		View_BaseSavedState(android::os::Parcel arg0);

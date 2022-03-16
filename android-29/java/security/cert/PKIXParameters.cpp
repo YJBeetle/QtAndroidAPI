@@ -10,9 +10,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PKIXParameters::PKIXParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PKIXParameters::PKIXParameters(java::security::KeyStore arg0)
 		: JObject(

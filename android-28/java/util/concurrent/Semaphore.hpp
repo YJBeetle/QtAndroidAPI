@@ -17,7 +17,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Semaphore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Semaphore(QAndroidJniObject obj);
+		Semaphore(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Semaphore(jint arg0);

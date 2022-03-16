@@ -15,7 +15,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LayoutDirection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LayoutDirection(QAndroidJniObject obj);
+		LayoutDirection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

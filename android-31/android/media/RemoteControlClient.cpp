@@ -141,9 +141,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RemoteControlClient::RemoteControlClient(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0)
 		: JObject(

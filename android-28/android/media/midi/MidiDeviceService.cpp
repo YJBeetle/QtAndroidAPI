@@ -17,9 +17,6 @@ namespace android::media::midi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MidiDeviceService::MidiDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	MidiDeviceService::MidiDeviceService()
 		: android::app::Service(

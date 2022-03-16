@@ -30,9 +30,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
-	
 	// Constructors
 	ViewGroup_MarginLayoutParams::ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams arg0)
 		: android::view::ViewGroup_LayoutParams(

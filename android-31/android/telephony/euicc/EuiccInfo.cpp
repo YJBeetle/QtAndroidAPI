@@ -14,9 +14,6 @@ namespace android::telephony::euicc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EuiccInfo::EuiccInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EuiccInfo::EuiccInfo(JString arg0)
 		: JObject(

@@ -32,7 +32,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FragmentManager_FragmentLifecycleCallbacks(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentManager_FragmentLifecycleCallbacks(QAndroidJniObject obj);
+		FragmentManager_FragmentLifecycleCallbacks(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FragmentManager_FragmentLifecycleCallbacks();

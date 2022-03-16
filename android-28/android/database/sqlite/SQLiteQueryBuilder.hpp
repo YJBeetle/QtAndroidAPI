@@ -27,7 +27,7 @@ namespace android::database::sqlite
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLiteQueryBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteQueryBuilder(QAndroidJniObject obj);
+		SQLiteQueryBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SQLiteQueryBuilder();

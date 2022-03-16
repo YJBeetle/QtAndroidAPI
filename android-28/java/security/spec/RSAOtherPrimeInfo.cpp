@@ -5,9 +5,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RSAOtherPrimeInfo::RSAOtherPrimeInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RSAOtherPrimeInfo::RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
 		: JObject(

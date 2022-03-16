@@ -6,9 +6,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Transition_EpicenterCallback::Transition_EpicenterCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Transition_EpicenterCallback::Transition_EpicenterCallback()
 		: JObject(

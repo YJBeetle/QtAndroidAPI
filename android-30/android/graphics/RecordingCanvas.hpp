@@ -70,7 +70,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RecordingCanvas(const char *className, const char *sig, Ts...agv) : android::graphics::Canvas(className, sig, std::forward<Ts>(agv)...) {}
-		RecordingCanvas(QAndroidJniObject obj);
+		RecordingCanvas(QAndroidJniObject obj) : android::graphics::Canvas(obj) {}
 		
 		// Constructors
 		

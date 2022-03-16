@@ -9,9 +9,6 @@ namespace android::app::usage
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StorageStatsManager::StorageStatsManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

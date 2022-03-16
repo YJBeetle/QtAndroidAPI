@@ -9,9 +9,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Timer::Timer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Timer::Timer()
 		: JObject(

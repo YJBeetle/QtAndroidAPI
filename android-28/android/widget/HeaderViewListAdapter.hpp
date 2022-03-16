@@ -33,7 +33,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HeaderViewListAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HeaderViewListAdapter(QAndroidJniObject obj);
+		HeaderViewListAdapter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, JObject arg2);

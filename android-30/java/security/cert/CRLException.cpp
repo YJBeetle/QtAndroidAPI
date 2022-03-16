@@ -6,9 +6,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CRLException::CRLException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-	
 	// Constructors
 	CRLException::CRLException()
 		: java::security::GeneralSecurityException(

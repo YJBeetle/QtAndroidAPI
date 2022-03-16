@@ -18,7 +18,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodecInfo_AudioCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_AudioCapabilities(QAndroidJniObject obj);
+		MediaCodecInfo_AudioCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -7,9 +7,6 @@ namespace org::xml::sax::ext
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DefaultHandler2::DefaultHandler2(QAndroidJniObject obj) : org::xml::sax::helpers::DefaultHandler(obj) {}
-	
 	// Constructors
 	DefaultHandler2::DefaultHandler2()
 		: org::xml::sax::helpers::DefaultHandler(

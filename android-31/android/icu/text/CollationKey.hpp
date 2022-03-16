@@ -15,7 +15,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CollationKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CollationKey(QAndroidJniObject obj);
+		CollationKey(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CollationKey(JString arg0, JByteArray arg1);

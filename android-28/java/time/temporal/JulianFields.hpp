@@ -14,7 +14,7 @@ namespace java::time::temporal
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JulianFields(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JulianFields(QAndroidJniObject obj);
+		JulianFields(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

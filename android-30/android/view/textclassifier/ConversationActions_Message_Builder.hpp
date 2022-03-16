@@ -29,7 +29,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConversationActions_Message_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationActions_Message_Builder(QAndroidJniObject obj);
+		ConversationActions_Message_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConversationActions_Message_Builder(android::app::Person arg0);

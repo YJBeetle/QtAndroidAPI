@@ -37,7 +37,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RenderNode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RenderNode(QAndroidJniObject obj);
+		RenderNode(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RenderNode(JString arg0);

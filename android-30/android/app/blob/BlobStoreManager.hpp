@@ -25,7 +25,7 @@ namespace android::app::blob
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlobStoreManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BlobStoreManager(QAndroidJniObject obj);
+		BlobStoreManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

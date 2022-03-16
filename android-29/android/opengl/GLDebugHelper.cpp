@@ -33,9 +33,6 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GLDebugHelper::GLDebugHelper(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GLDebugHelper::GLDebugHelper()
 		: JObject(

@@ -6,9 +6,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicMarkableReference::AtomicMarkableReference(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AtomicMarkableReference::AtomicMarkableReference(JObject arg0, jboolean arg1)
 		: JObject(

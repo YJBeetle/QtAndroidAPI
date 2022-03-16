@@ -8,9 +8,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FrameLayout::FrameLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-	
 	// Constructors
 	FrameLayout::FrameLayout(android::content::Context arg0)
 		: android::view::ViewGroup(

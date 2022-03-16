@@ -35,7 +35,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SimpleTimeZone(const char *className, const char *sig, Ts...agv) : java::util::TimeZone(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleTimeZone(QAndroidJniObject obj);
+		SimpleTimeZone(QAndroidJniObject obj) : java::util::TimeZone(obj) {}
 		
 		// Constructors
 		SimpleTimeZone(jint arg0, JString arg1);

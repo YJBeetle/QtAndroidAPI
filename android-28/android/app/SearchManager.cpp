@@ -421,9 +421,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SearchManager::SearchManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

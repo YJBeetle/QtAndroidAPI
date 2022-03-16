@@ -4,9 +4,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertPathTrustManagerParameters::CertPathTrustManagerParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CertPathTrustManagerParameters::CertPathTrustManagerParameters(JObject arg0)
 		: JObject(

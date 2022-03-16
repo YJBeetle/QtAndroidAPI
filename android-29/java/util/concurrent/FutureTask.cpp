@@ -9,9 +9,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FutureTask::FutureTask(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FutureTask::FutureTask(JObject arg0)
 		: JObject(

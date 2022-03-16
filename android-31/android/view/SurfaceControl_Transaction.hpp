@@ -25,7 +25,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SurfaceControl_Transaction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControl_Transaction(QAndroidJniObject obj);
+		SurfaceControl_Transaction(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SurfaceControl_Transaction();

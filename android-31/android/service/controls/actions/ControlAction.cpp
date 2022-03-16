@@ -82,9 +82,6 @@ namespace android::service::controls::actions
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ControlAction::ControlAction(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

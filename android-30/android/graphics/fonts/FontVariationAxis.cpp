@@ -7,9 +7,6 @@ namespace android::graphics::fonts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FontVariationAxis::FontVariationAxis(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FontVariationAxis::FontVariationAxis(JString arg0, jfloat arg1)
 		: JObject(

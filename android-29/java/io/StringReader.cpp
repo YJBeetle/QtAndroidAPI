@@ -6,9 +6,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringReader::StringReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
-	
 	// Constructors
 	StringReader::StringReader(JString arg0)
 		: java::io::Reader(

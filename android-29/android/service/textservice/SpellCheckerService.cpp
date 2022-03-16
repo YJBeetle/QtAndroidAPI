@@ -15,9 +15,6 @@ namespace android::service::textservice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SpellCheckerService::SpellCheckerService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	SpellCheckerService::SpellCheckerService()
 		: android::app::Service(

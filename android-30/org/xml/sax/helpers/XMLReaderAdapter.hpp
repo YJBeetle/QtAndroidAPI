@@ -22,7 +22,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XMLReaderAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XMLReaderAdapter(QAndroidJniObject obj);
+		XMLReaderAdapter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		XMLReaderAdapter();

@@ -13,7 +13,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OptionalDataException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		OptionalDataException(QAndroidJniObject obj);
+		OptionalDataException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
 		
 		// Constructors
 		

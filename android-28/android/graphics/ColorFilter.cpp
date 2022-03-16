@@ -4,9 +4,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ColorFilter::ColorFilter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ColorFilter::ColorFilter()
 		: JObject(

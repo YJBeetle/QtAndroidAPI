@@ -5,9 +5,6 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyReader_PropertyTypeMismatchException::PropertyReader_PropertyTypeMismatchException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	PropertyReader_PropertyTypeMismatchException::PropertyReader_PropertyTypeMismatchException(jint arg0, JString arg1, JString arg2)
 		: java::lang::RuntimeException(

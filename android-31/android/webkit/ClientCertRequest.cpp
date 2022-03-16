@@ -8,9 +8,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ClientCertRequest::ClientCertRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ClientCertRequest::ClientCertRequest()
 		: JObject(

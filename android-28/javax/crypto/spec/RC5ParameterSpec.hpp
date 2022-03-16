@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RC5ParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RC5ParameterSpec(QAndroidJniObject obj);
+		RC5ParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RC5ParameterSpec(jint arg0, jint arg1, jint arg2);

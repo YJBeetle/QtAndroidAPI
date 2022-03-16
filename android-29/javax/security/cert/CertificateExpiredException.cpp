@@ -5,9 +5,6 @@ namespace javax::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CertificateExpiredException::CertificateExpiredException(QAndroidJniObject obj) : javax::security::cert::CertificateException(obj) {}
-	
 	// Constructors
 	CertificateExpiredException::CertificateExpiredException()
 		: javax::security::cert::CertificateException(

@@ -11,7 +11,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CornerPathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		CornerPathEffect(QAndroidJniObject obj);
+		CornerPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
 		
 		// Constructors
 		CornerPathEffect(jfloat arg0);

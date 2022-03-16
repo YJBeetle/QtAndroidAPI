@@ -15,9 +15,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CompletionInfo::CompletionInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, JString arg2)
 		: JObject(

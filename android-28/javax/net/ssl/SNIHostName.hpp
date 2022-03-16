@@ -19,7 +19,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SNIHostName(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SNIServerName(className, sig, std::forward<Ts>(agv)...) {}
-		SNIHostName(QAndroidJniObject obj);
+		SNIHostName(QAndroidJniObject obj) : javax::net::ssl::SNIServerName(obj) {}
 		
 		// Constructors
 		SNIHostName(JByteArray arg0);

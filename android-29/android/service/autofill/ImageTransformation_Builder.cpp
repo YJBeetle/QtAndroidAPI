@@ -8,9 +8,6 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageTransformation_Builder::ImageTransformation_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ImageTransformation_Builder::ImageTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jint arg2)
 		: JObject(

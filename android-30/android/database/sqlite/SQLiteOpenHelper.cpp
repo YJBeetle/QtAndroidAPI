@@ -8,9 +8,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteOpenHelper::SQLiteOpenHelper(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SQLiteOpenHelper::SQLiteOpenHelper(android::content::Context arg0, JString arg1, JObject arg2, jint arg3)
 		: JObject(

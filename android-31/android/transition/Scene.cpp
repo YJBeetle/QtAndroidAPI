@@ -7,9 +7,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Scene::Scene(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Scene::Scene(android::view::ViewGroup arg0)
 		: JObject(

@@ -100,9 +100,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IndianCalendar::IndianCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
-	
 	// Constructors
 	IndianCalendar::IndianCalendar()
 		: android::icu::util::Calendar(

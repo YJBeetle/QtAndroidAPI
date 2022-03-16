@@ -38,9 +38,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Rational::Rational(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	Rational::Rational(jint arg0, jint arg1)
 		: java::lang::Number(

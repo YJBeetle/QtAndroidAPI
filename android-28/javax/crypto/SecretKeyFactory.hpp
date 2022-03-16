@@ -23,7 +23,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SecretKeyFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeyFactory(QAndroidJniObject obj);
+		SecretKeyFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

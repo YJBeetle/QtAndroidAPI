@@ -16,9 +16,6 @@ namespace android::view::animation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LayoutAnimationController_AnimationParameters::LayoutAnimationController_AnimationParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LayoutAnimationController_AnimationParameters::LayoutAnimationController_AnimationParameters()
 		: JObject(

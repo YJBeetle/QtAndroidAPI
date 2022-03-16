@@ -13,7 +13,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MalformedInputException(const char *className, const char *sig, Ts...agv) : java::nio::charset::CharacterCodingException(className, sig, std::forward<Ts>(agv)...) {}
-		MalformedInputException(QAndroidJniObject obj);
+		MalformedInputException(QAndroidJniObject obj) : java::nio::charset::CharacterCodingException(obj) {}
 		
 		// Constructors
 		MalformedInputException(jint arg0);

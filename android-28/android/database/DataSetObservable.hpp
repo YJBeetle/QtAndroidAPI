@@ -11,7 +11,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DataSetObservable(const char *className, const char *sig, Ts...agv) : android::database::Observable(className, sig, std::forward<Ts>(agv)...) {}
-		DataSetObservable(QAndroidJniObject obj);
+		DataSetObservable(QAndroidJniObject obj) : android::database::Observable(obj) {}
 		
 		// Constructors
 		DataSetObservable();

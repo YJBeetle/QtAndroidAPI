@@ -6,9 +6,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
-	
 	// Constructors
 	CipherSuiteNotSupportedException::CipherSuiteNotSupportedException(JString arg0)
 		: android::security::identity::IdentityCredentialException(

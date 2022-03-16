@@ -6,9 +6,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	NumberFormatException::NumberFormatException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	NumberFormatException::NumberFormatException()
 		: java::lang::IllegalArgumentException(

@@ -69,9 +69,6 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WpsInfo::WpsInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WpsInfo::WpsInfo()
 		: JObject(

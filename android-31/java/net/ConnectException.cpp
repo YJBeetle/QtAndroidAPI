@@ -5,9 +5,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConnectException::ConnectException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
-	
 	// Constructors
 	ConnectException::ConnectException()
 		: java::net::SocketException(

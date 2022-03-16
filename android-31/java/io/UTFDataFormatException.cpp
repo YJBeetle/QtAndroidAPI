@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UTFDataFormatException::UTFDataFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	UTFDataFormatException::UTFDataFormatException()
 		: java::io::IOException(

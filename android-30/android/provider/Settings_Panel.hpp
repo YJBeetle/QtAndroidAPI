@@ -17,7 +17,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Settings_Panel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_Panel(QAndroidJniObject obj);
+		Settings_Panel(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -5,9 +5,6 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DataFormatException::DataFormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	DataFormatException::DataFormatException()
 		: java::lang::Exception(

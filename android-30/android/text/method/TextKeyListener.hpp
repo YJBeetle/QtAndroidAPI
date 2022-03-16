@@ -26,7 +26,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::BaseKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		TextKeyListener(QAndroidJniObject obj);
+		TextKeyListener(QAndroidJniObject obj) : android::text::method::BaseKeyListener(obj) {}
 		
 		// Constructors
 		TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1);

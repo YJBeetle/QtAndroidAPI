@@ -16,7 +16,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssStatus_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssStatus_Callback(QAndroidJniObject obj);
+		GnssStatus_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GnssStatus_Callback();

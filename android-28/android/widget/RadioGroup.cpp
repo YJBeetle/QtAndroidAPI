@@ -12,9 +12,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RadioGroup::RadioGroup(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
-	
 	// Constructors
 	RadioGroup::RadioGroup(android::content::Context arg0)
 		: android::widget::LinearLayout(

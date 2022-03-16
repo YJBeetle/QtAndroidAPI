@@ -19,7 +19,7 @@ namespace android::bluetooth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothLeAudio(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothLeAudio(QAndroidJniObject obj);
+		BluetoothLeAudio(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

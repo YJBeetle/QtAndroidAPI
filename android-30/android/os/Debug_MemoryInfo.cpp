@@ -68,9 +68,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Debug_MemoryInfo::Debug_MemoryInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Debug_MemoryInfo::Debug_MemoryInfo()
 		: JObject(

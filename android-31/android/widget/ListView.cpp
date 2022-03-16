@@ -15,9 +15,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ListView::ListView(QAndroidJniObject obj) : android::widget::AbsListView(obj) {}
-	
 	// Constructors
 	ListView::ListView(android::content::Context arg0)
 		: android::widget::AbsListView(

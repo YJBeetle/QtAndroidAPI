@@ -13,7 +13,7 @@ namespace android::sax
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RootElement(const char *className, const char *sig, Ts...agv) : android::sax::Element(className, sig, std::forward<Ts>(agv)...) {}
-		RootElement(QAndroidJniObject obj);
+		RootElement(QAndroidJniObject obj) : android::sax::Element(obj) {}
 		
 		// Constructors
 		RootElement(JString arg0);

@@ -44,7 +44,7 @@ namespace android::inputmethodservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Keyboard_Key(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Keyboard_Key(QAndroidJniObject obj);
+		Keyboard_Key(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Keyboard_Key(android::inputmethodservice::Keyboard_Row arg0);

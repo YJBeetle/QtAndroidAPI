@@ -21,7 +21,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Point(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Point(QAndroidJniObject obj);
+		Point(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Point();

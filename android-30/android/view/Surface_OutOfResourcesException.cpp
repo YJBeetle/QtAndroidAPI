@@ -5,9 +5,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Surface_OutOfResourcesException::Surface_OutOfResourcesException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	Surface_OutOfResourcesException::Surface_OutOfResourcesException()
 		: java::lang::RuntimeException(

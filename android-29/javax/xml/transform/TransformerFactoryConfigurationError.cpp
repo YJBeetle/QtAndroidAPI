@@ -7,9 +7,6 @@ namespace javax::xml::transform
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-	
 	// Constructors
 	TransformerFactoryConfigurationError::TransformerFactoryConfigurationError()
 		: java::lang::Error(

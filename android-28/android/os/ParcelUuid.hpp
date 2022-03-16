@@ -23,7 +23,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParcelUuid(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ParcelUuid(QAndroidJniObject obj);
+		ParcelUuid(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ParcelUuid(java::util::UUID arg0);

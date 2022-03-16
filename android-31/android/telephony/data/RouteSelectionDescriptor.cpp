@@ -57,9 +57,6 @@ namespace android::telephony::data
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RouteSelectionDescriptor::RouteSelectionDescriptor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

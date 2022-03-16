@@ -74,9 +74,6 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TracingConfig::TracingConfig(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

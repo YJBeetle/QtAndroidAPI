@@ -100,9 +100,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HebrewCalendar::HebrewCalendar(QAndroidJniObject obj) : android::icu::util::Calendar(obj) {}
-	
 	// Constructors
 	HebrewCalendar::HebrewCalendar()
 		: android::icu::util::Calendar(

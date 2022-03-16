@@ -5,9 +5,6 @@ namespace java::nio::file::attribute
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UserPrincipalNotFoundException::UserPrincipalNotFoundException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	UserPrincipalNotFoundException::UserPrincipalNotFoundException(JString arg0)
 		: java::io::IOException(

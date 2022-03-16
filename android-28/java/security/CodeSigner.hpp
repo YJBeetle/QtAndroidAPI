@@ -26,7 +26,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CodeSigner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CodeSigner(QAndroidJniObject obj);
+		CodeSigner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1);

@@ -43,7 +43,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FragmentManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentManager(QAndroidJniObject obj);
+		FragmentManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FragmentManager();

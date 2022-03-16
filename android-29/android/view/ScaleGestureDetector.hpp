@@ -24,7 +24,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScaleGestureDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScaleGestureDetector(QAndroidJniObject obj);
+		ScaleGestureDetector(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ScaleGestureDetector(android::content::Context arg0, JObject arg1);

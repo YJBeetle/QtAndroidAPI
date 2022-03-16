@@ -26,7 +26,7 @@ namespace android::service::voice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionSession_Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_Insets(QAndroidJniObject obj);
+		VoiceInteractionSession_Insets(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VoiceInteractionSession_Insets();

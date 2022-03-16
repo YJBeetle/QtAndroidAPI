@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProviderMismatchException::ProviderMismatchException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	ProviderMismatchException::ProviderMismatchException()
 		: java::lang::IllegalArgumentException(

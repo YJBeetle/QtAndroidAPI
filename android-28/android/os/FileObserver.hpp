@@ -26,7 +26,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileObserver(QAndroidJniObject obj);
+		FileObserver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FileObserver(JString arg0);

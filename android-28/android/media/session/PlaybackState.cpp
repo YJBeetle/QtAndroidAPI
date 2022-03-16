@@ -233,9 +233,6 @@ namespace android::media::session
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlaybackState::PlaybackState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

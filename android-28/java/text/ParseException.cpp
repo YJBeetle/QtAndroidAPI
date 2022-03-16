@@ -5,9 +5,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ParseException::ParseException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	ParseException::ParseException(JString arg0, jint arg1)
 		: java::lang::Exception(

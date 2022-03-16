@@ -15,9 +15,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InstallSourceInfo::InstallSourceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

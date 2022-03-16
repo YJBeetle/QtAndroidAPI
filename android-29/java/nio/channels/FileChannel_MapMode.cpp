@@ -29,9 +29,6 @@ namespace java::nio::channels
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FileChannel_MapMode::FileChannel_MapMode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -24,7 +24,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GnssAntennaInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_Builder(QAndroidJniObject obj);
+		GnssAntennaInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GnssAntennaInfo_Builder();

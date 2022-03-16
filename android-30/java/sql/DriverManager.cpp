@@ -13,9 +13,6 @@ namespace java::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DriverManager::DriverManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

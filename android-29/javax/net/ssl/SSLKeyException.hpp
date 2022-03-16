@@ -13,7 +13,7 @@ namespace javax::net::ssl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SSLKeyException(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLKeyException(QAndroidJniObject obj);
+		SSLKeyException(QAndroidJniObject obj) : javax::net::ssl::SSLException(obj) {}
 		
 		// Constructors
 		SSLKeyException(JString arg0);

@@ -11,7 +11,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaFeature(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaFeature(QAndroidJniObject obj);
+		MediaFeature(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaFeature();

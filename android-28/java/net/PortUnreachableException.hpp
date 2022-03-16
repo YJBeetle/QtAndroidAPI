@@ -13,7 +13,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PortUnreachableException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		PortUnreachableException(QAndroidJniObject obj);
+		PortUnreachableException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
 		
 		// Constructors
 		PortUnreachableException();

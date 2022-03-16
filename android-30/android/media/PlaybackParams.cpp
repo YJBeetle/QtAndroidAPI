@@ -34,9 +34,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlaybackParams::PlaybackParams(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PlaybackParams::PlaybackParams()
 		: JObject(

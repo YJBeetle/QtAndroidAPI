@@ -11,7 +11,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PerformanceHintManager_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PerformanceHintManager_Session(QAndroidJniObject obj);
+		PerformanceHintManager_Session(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

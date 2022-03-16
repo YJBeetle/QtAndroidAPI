@@ -14,7 +14,7 @@ namespace android::telephony::mbms
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StreamingServiceCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamingServiceCallback(QAndroidJniObject obj);
+		StreamingServiceCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StreamingServiceCallback();

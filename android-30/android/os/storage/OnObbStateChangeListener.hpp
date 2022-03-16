@@ -21,7 +21,7 @@ namespace android::os::storage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OnObbStateChangeListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OnObbStateChangeListener(QAndroidJniObject obj);
+		OnObbStateChangeListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		OnObbStateChangeListener();

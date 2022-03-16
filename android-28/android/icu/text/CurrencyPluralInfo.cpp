@@ -9,9 +9,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CurrencyPluralInfo::CurrencyPluralInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CurrencyPluralInfo::CurrencyPluralInfo()
 		: JObject(

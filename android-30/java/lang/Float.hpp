@@ -34,7 +34,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Float(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Float(QAndroidJniObject obj);
+		Float(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Float(jdouble arg0);

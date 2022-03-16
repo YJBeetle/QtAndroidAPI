@@ -39,9 +39,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Rect::Rect(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Rect::Rect()
 		: JObject(

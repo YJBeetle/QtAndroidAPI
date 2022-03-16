@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRouteActionProvider(const char *className, const char *sig, Ts...agv) : android::view::ActionProvider(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouteActionProvider(QAndroidJniObject obj);
+		MediaRouteActionProvider(QAndroidJniObject obj) : android::view::ActionProvider(obj) {}
 		
 		// Constructors
 		MediaRouteActionProvider(android::content::Context arg0);

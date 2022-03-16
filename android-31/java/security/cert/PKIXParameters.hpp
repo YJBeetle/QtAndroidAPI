@@ -30,7 +30,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PKIXParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXParameters(QAndroidJniObject obj);
+		PKIXParameters(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PKIXParameters(java::security::KeyStore arg0);

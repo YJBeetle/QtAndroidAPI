@@ -7,9 +7,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(QAndroidJniObject obj) : java::util::concurrent::ThreadPoolExecutor(obj) {}
-	
 	// Constructors
 	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0)
 		: java::util::concurrent::ThreadPoolExecutor(

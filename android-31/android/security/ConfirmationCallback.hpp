@@ -14,7 +14,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfirmationCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationCallback(QAndroidJniObject obj);
+		ConfirmationCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConfirmationCallback();

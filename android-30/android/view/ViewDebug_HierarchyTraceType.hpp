@@ -22,7 +22,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewDebug_HierarchyTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ViewDebug_HierarchyTraceType(QAndroidJniObject obj);
+		ViewDebug_HierarchyTraceType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

@@ -78,9 +78,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SettingsSlicesContract::SettingsSlicesContract(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

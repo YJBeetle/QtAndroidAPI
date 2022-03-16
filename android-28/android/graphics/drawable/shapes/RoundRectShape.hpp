@@ -38,7 +38,7 @@ namespace android::graphics::drawable::shapes
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RoundRectShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::RectShape(className, sig, std::forward<Ts>(agv)...) {}
-		RoundRectShape(QAndroidJniObject obj);
+		RoundRectShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::RectShape(obj) {}
 		
 		// Constructors
 		RoundRectShape(JFloatArray arg0, android::graphics::RectF arg1, JFloatArray arg2);

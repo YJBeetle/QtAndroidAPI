@@ -76,9 +76,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaDescription::MediaDescription(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

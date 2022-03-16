@@ -15,7 +15,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Property(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Property(QAndroidJniObject obj);
+		Property(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Property(JClass arg0, JString arg1);

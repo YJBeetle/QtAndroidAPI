@@ -25,7 +25,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvInputService_RecordingSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputService_RecordingSession(QAndroidJniObject obj);
+		TvInputService_RecordingSession(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TvInputService_RecordingSession(android::content::Context arg0);

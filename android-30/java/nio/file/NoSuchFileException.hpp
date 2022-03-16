@@ -13,7 +13,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NoSuchFileException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchFileException(QAndroidJniObject obj);
+		NoSuchFileException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
 		
 		// Constructors
 		NoSuchFileException(JString arg0);

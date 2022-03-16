@@ -17,7 +17,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Adler32(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Adler32(QAndroidJniObject obj);
+		Adler32(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Adler32();

@@ -13,7 +13,7 @@ namespace javax::security::auth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DestroyFailedException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		DestroyFailedException(QAndroidJniObject obj);
+		DestroyFailedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		DestroyFailedException();

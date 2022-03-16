@@ -19,7 +19,7 @@ namespace android::view::contentcapture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentCaptureSessionId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentCaptureSessionId(QAndroidJniObject obj);
+		ContentCaptureSessionId(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

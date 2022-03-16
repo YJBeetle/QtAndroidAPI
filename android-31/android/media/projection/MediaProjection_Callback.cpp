@@ -4,9 +4,6 @@ namespace android::media::projection
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaProjection_Callback::MediaProjection_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaProjection_Callback::MediaProjection_Callback()
 		: JObject(

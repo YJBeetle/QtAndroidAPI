@@ -8,9 +8,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DirectAction_Builder::DirectAction_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DirectAction_Builder::DirectAction_Builder(JString arg0)
 		: JObject(

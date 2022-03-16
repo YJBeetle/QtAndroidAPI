@@ -46,9 +46,6 @@ namespace android::transition
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Transition::Transition(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Transition::Transition()
 		: JObject(

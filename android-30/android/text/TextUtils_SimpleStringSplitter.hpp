@@ -14,7 +14,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextUtils_SimpleStringSplitter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextUtils_SimpleStringSplitter(QAndroidJniObject obj);
+		TextUtils_SimpleStringSplitter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TextUtils_SimpleStringSplitter(jchar arg0);

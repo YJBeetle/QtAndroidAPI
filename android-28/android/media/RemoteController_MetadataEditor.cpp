@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RemoteController_MetadataEditor::RemoteController_MetadataEditor(QAndroidJniObject obj) : android::media::MediaMetadataEditor(obj) {}
-	
 	// Constructors
 	
 	// Methods

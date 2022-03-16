@@ -6,9 +6,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TypeNotPresentException::TypeNotPresentException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	TypeNotPresentException::TypeNotPresentException(JString arg0, JThrowable arg1)
 		: java::lang::RuntimeException(

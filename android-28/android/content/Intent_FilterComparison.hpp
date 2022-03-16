@@ -17,7 +17,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Intent_FilterComparison(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Intent_FilterComparison(QAndroidJniObject obj);
+		Intent_FilterComparison(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Intent_FilterComparison(android::content::Intent arg0);

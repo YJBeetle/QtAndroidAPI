@@ -30,9 +30,6 @@ namespace android::text::style
 		);
 	}
 	
-	// QAndroidJniObject forward
-	QuoteSpan::QuoteSpan(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	QuoteSpan::QuoteSpan()
 		: JObject(

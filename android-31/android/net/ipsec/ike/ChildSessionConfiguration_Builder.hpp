@@ -16,7 +16,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChildSessionConfiguration_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ChildSessionConfiguration_Builder(QAndroidJniObject obj);
+		ChildSessionConfiguration_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ChildSessionConfiguration_Builder(JObject arg0, JObject arg1);

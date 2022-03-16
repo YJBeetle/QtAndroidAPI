@@ -81,9 +81,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PhoneNumberUtils::PhoneNumberUtils(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PhoneNumberUtils::PhoneNumberUtils()
 		: JObject(

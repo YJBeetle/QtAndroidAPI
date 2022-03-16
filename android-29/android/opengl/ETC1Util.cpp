@@ -8,9 +8,6 @@ namespace android::opengl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ETC1Util::ETC1Util(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ETC1Util::ETC1Util()
 		: JObject(

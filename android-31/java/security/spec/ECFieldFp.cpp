@@ -6,9 +6,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECFieldFp::ECFieldFp(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ECFieldFp::ECFieldFp(java::math::BigInteger arg0)
 		: JObject(

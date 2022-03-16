@@ -11,7 +11,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QAndroidJniObject obj);
+		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener();

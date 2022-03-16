@@ -27,7 +27,7 @@ namespace android::view::translation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TranslationResponseValue(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationResponseValue(QAndroidJniObject obj);
+		TranslationResponseValue(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

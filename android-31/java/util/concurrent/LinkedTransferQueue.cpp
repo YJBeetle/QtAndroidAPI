@@ -10,9 +10,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LinkedTransferQueue::LinkedTransferQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
-	
 	// Constructors
 	LinkedTransferQueue::LinkedTransferQueue()
 		: java::util::AbstractQueue(

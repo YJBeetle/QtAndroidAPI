@@ -56,9 +56,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IDNA::IDNA(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

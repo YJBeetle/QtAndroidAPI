@@ -18,7 +18,7 @@ namespace android::net::http
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X509TrustManagerExtensions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509TrustManagerExtensions(QAndroidJniObject obj);
+		X509TrustManagerExtensions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		X509TrustManagerExtensions(JObject arg0);

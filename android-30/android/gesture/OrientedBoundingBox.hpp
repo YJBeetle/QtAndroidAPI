@@ -17,7 +17,7 @@ namespace android::gesture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OrientedBoundingBox(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OrientedBoundingBox(QAndroidJniObject obj);
+		OrientedBoundingBox(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

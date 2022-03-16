@@ -85,9 +85,6 @@ namespace javax::xml::transform
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OutputKeys::OutputKeys(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -17,7 +17,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Application(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		Application(QAndroidJniObject obj);
+		Application(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
 		
 		// Constructors
 		Application();

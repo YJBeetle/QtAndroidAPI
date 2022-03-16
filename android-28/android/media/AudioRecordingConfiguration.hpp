@@ -26,7 +26,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioRecordingConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioRecordingConfiguration(QAndroidJniObject obj);
+		AudioRecordingConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

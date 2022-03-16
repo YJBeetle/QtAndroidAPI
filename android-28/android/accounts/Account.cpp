@@ -29,9 +29,6 @@ namespace android::accounts
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Account::Account(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Account::Account(android::os::Parcel arg0)
 		: JObject(

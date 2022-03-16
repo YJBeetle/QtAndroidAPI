@@ -6,9 +6,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	URLDecoder::URLDecoder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	URLDecoder::URLDecoder()
 		: JObject(

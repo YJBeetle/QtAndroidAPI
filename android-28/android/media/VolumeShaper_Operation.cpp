@@ -31,9 +31,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VolumeShaper_Operation::VolumeShaper_Operation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

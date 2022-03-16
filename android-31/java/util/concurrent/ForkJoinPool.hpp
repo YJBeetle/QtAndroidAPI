@@ -42,7 +42,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ForkJoinPool(const char *className, const char *sig, Ts...agv) : java::util::concurrent::AbstractExecutorService(className, sig, std::forward<Ts>(agv)...) {}
-		ForkJoinPool(QAndroidJniObject obj);
+		ForkJoinPool(QAndroidJniObject obj) : java::util::concurrent::AbstractExecutorService(obj) {}
 		
 		// Constructors
 		ForkJoinPool();

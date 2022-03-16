@@ -20,9 +20,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, JString arg1, JString arg2)
 		: JObject(

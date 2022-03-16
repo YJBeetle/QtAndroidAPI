@@ -4,9 +4,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder(QAndroidJniObject obj) : android::text::style::TtsSpan_SemioticClassBuilder(obj) {}
-	
 	// Constructors
 	TtsSpan_TimeBuilder::TtsSpan_TimeBuilder()
 		: android::text::style::TtsSpan_SemioticClassBuilder(

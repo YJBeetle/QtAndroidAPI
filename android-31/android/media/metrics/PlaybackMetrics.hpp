@@ -50,7 +50,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PlaybackMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackMetrics(QAndroidJniObject obj);
+		PlaybackMetrics(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

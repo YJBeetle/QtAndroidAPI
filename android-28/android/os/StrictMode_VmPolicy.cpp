@@ -14,9 +14,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StrictMode_VmPolicy::StrictMode_VmPolicy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

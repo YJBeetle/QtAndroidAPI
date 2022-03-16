@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidPathException::InvalidPathException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-	
 	// Constructors
 	InvalidPathException::InvalidPathException(JString arg0, JString arg1)
 		: java::lang::IllegalArgumentException(

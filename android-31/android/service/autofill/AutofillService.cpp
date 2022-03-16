@@ -28,9 +28,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AutofillService::AutofillService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	AutofillService::AutofillService()
 		: android::app::Service(

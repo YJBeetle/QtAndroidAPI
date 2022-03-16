@@ -13,9 +13,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Output::Output(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Output::Output()
 		: JObject(

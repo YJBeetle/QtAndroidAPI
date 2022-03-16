@@ -21,7 +21,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeTrafficSelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeTrafficSelector(QAndroidJniObject obj);
+		IkeTrafficSelector(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IkeTrafficSelector(jint arg0, jint arg1, java::net::InetAddress arg2, java::net::InetAddress arg3);

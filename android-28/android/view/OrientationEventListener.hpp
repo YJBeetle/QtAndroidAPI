@@ -17,7 +17,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OrientationEventListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OrientationEventListener(QAndroidJniObject obj);
+		OrientationEventListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		OrientationEventListener(android::content::Context arg0);

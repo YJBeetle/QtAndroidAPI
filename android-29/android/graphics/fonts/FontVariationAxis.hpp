@@ -15,7 +15,7 @@ namespace android::graphics::fonts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FontVariationAxis(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontVariationAxis(QAndroidJniObject obj);
+		FontVariationAxis(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FontVariationAxis(JString arg0, jfloat arg1);

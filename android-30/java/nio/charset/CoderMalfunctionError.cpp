@@ -5,9 +5,6 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CoderMalfunctionError::CoderMalfunctionError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-	
 	// Constructors
 	CoderMalfunctionError::CoderMalfunctionError(java::lang::Exception arg0)
 		: java::lang::Error(

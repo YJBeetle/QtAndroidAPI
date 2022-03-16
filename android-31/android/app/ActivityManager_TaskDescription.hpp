@@ -23,7 +23,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_TaskDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_TaskDescription(QAndroidJniObject obj);
+		ActivityManager_TaskDescription(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ActivityManager_TaskDescription();

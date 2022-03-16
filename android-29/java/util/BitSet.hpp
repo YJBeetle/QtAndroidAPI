@@ -33,7 +33,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BitSet(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BitSet(QAndroidJniObject obj);
+		BitSet(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BitSet();

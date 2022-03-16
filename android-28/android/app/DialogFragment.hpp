@@ -50,7 +50,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DialogFragment(const char *className, const char *sig, Ts...agv) : android::app::Fragment(className, sig, std::forward<Ts>(agv)...) {}
-		DialogFragment(QAndroidJniObject obj);
+		DialogFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
 		
 		// Constructors
 		DialogFragment();

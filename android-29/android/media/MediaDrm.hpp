@@ -72,7 +72,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaDrm(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm(QAndroidJniObject obj);
+		MediaDrm(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaDrm(java::util::UUID arg0);

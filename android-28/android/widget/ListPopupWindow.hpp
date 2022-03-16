@@ -40,7 +40,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ListPopupWindow(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ListPopupWindow(QAndroidJniObject obj);
+		ListPopupWindow(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ListPopupWindow(android::content::Context arg0);

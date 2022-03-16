@@ -6,9 +6,6 @@ namespace android::companion
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CompanionDeviceManager_Callback::CompanionDeviceManager_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CompanionDeviceManager_Callback::CompanionDeviceManager_Callback()
 		: JObject(

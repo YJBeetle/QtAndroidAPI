@@ -40,7 +40,7 @@ namespace android::gesture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GestureOverlayView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		GestureOverlayView(QAndroidJniObject obj);
+		GestureOverlayView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
 		
 		// Constructors
 		GestureOverlayView(android::content::Context arg0);

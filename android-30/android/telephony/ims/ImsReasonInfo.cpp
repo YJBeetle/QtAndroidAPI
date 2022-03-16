@@ -1225,9 +1225,6 @@ namespace android::telephony::ims
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ImsReasonInfo::ImsReasonInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ImsReasonInfo::ImsReasonInfo(jint arg0, jint arg1, JString arg2)
 		: JObject(

@@ -13,7 +13,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmUtils_ExtendedMetadataParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmUtils_ExtendedMetadataParser(QAndroidJniObject obj);
+		DrmUtils_ExtendedMetadataParser(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

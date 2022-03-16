@@ -24,7 +24,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Picture(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Picture(QAndroidJniObject obj);
+		Picture(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Picture();

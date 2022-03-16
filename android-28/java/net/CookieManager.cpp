@@ -7,9 +7,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CookieManager::CookieManager(QAndroidJniObject obj) : java::net::CookieHandler(obj) {}
-	
 	// Constructors
 	CookieManager::CookieManager()
 		: java::net::CookieHandler(

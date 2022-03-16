@@ -110,9 +110,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	KeyCharacterMap::KeyCharacterMap(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -21,9 +21,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Drawable::Drawable(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Drawable::Drawable()
 		: JObject(

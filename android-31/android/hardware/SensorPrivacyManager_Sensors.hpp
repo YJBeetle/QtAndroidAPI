@@ -13,7 +13,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SensorPrivacyManager_Sensors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SensorPrivacyManager_Sensors(QAndroidJniObject obj);
+		SensorPrivacyManager_Sensors(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

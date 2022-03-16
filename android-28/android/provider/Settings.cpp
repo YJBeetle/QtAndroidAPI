@@ -654,9 +654,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Settings::Settings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Settings::Settings()
 		: JObject(

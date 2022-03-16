@@ -16,9 +16,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NumberingSystem::NumberingSystem(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NumberingSystem::NumberingSystem()
 		: JObject(

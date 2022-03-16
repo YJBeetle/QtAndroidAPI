@@ -17,7 +17,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ULocale_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale_Builder(QAndroidJniObject obj);
+		ULocale_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ULocale_Builder();

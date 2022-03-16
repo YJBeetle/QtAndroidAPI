@@ -12,7 +12,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MutableDouble(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableDouble(QAndroidJniObject obj);
+		MutableDouble(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MutableDouble(jdouble arg0);

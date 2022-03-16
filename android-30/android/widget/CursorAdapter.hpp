@@ -36,7 +36,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CursorAdapter(const char *className, const char *sig, Ts...agv) : android::widget::BaseAdapter(className, sig, std::forward<Ts>(agv)...) {}
-		CursorAdapter(QAndroidJniObject obj);
+		CursorAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
 		
 		// Constructors
 		CursorAdapter(android::content::Context arg0, JObject arg1);

@@ -51,7 +51,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodecInfo_VideoCapabilities_PerformancePoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj);
+		MediaCodecInfo_VideoCapabilities_PerformancePoint(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2);

@@ -25,7 +25,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FocusFinder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FocusFinder(QAndroidJniObject obj);
+		FocusFinder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

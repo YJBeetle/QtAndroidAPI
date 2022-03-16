@@ -32,9 +32,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaActionSound::MediaActionSound(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaActionSound::MediaActionSound()
 		: JObject(

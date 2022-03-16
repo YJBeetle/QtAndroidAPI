@@ -20,7 +20,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScrollingMovementMethod(const char *className, const char *sig, Ts...agv) : android::text::method::BaseMovementMethod(className, sig, std::forward<Ts>(agv)...) {}
-		ScrollingMovementMethod(QAndroidJniObject obj);
+		ScrollingMovementMethod(QAndroidJniObject obj) : android::text::method::BaseMovementMethod(obj) {}
 		
 		// Constructors
 		ScrollingMovementMethod();

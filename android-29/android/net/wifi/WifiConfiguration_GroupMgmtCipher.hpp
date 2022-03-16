@@ -14,7 +14,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiConfiguration_GroupMgmtCipher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_GroupMgmtCipher(QAndroidJniObject obj);
+		WifiConfiguration_GroupMgmtCipher(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

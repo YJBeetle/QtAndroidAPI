@@ -975,9 +975,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaFormat::MediaFormat(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaFormat::MediaFormat()
 		: JObject(

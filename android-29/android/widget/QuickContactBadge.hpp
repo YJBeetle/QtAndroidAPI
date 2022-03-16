@@ -39,7 +39,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit QuickContactBadge(const char *className, const char *sig, Ts...agv) : android::widget::ImageView(className, sig, std::forward<Ts>(agv)...) {}
-		QuickContactBadge(QAndroidJniObject obj);
+		QuickContactBadge(QAndroidJniObject obj) : android::widget::ImageView(obj) {}
 		
 		// Constructors
 		QuickContactBadge(android::content::Context arg0);

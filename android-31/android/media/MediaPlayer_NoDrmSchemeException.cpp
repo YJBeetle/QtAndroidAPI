@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaPlayer_NoDrmSchemeException::MediaPlayer_NoDrmSchemeException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
-	
 	// Constructors
 	MediaPlayer_NoDrmSchemeException::MediaPlayer_NoDrmSchemeException(JString arg0)
 		: android::media::MediaDrmException(

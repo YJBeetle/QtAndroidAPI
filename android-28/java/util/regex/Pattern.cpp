@@ -76,9 +76,6 @@ namespace java::util::regex
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Pattern::Pattern(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

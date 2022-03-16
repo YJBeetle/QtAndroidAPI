@@ -25,7 +25,7 @@ namespace android::view::translation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewTranslationRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewTranslationRequest_Builder(QAndroidJniObject obj);
+		ViewTranslationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0);

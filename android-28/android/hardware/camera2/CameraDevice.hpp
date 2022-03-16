@@ -43,7 +43,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraDevice(QAndroidJniObject obj);
+		CameraDevice(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

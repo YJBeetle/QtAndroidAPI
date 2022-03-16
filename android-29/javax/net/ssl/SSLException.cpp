@@ -6,9 +6,6 @@ namespace javax::net::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SSLException::SSLException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	SSLException::SSLException(JString arg0)
 		: java::io::IOException(

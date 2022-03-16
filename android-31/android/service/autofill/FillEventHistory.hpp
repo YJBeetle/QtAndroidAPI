@@ -22,7 +22,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FillEventHistory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FillEventHistory(QAndroidJniObject obj);
+		FillEventHistory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

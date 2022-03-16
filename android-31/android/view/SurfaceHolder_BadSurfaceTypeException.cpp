@@ -5,9 +5,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException()
 		: java::lang::RuntimeException(

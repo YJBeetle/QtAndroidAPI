@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SparseArray::SparseArray(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SparseArray::SparseArray()
 		: JObject(

@@ -11,7 +11,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyguardManager_KeyguardDismissCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj);
+		KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyguardManager_KeyguardDismissCallback();

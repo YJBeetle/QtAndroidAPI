@@ -24,7 +24,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Byte(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Byte(QAndroidJniObject obj);
+		Byte(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Byte(jbyte arg0);

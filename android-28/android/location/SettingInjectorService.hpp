@@ -21,7 +21,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SettingInjectorService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		SettingInjectorService(QAndroidJniObject obj);
+		SettingInjectorService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		SettingInjectorService(JString arg0);

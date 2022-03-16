@@ -10,9 +10,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyguardManager::KeyguardManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -23,7 +23,7 @@ namespace android::telephony::mbms
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileInfo(QAndroidJniObject obj);
+		FileInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

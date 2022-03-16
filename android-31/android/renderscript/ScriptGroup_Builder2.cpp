@@ -14,9 +14,6 @@ namespace android::renderscript
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScriptGroup_Builder2::ScriptGroup_Builder2(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ScriptGroup_Builder2::ScriptGroup_Builder2(android::renderscript::RenderScript arg0)
 		: JObject(

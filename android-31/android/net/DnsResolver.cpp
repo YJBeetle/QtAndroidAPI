@@ -71,9 +71,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DnsResolver::DnsResolver(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -24,7 +24,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HashMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
-		HashMap(QAndroidJniObject obj);
+		HashMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
 		
 		// Constructors
 		HashMap();

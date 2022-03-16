@@ -25,7 +25,7 @@ namespace android::app::backup
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BackupManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BackupManager(QAndroidJniObject obj);
+		BackupManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BackupManager(android::content::Context arg0);

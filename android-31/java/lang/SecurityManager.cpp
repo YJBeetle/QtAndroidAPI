@@ -13,9 +13,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SecurityManager::SecurityManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SecurityManager::SecurityManager()
 		: JObject(

@@ -6,9 +6,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PathMotion::PathMotion(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PathMotion::PathMotion()
 		: JObject(

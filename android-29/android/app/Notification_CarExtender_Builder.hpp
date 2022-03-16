@@ -25,7 +25,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notification_CarExtender_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_CarExtender_Builder(QAndroidJniObject obj);
+		Notification_CarExtender_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Notification_CarExtender_Builder(JString arg0);

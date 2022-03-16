@@ -5,9 +5,6 @@ namespace android::nfc
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TagLostException::TagLostException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	TagLostException::TagLostException()
 		: java::io::IOException(

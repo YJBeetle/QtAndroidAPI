@@ -43,7 +43,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Conference(const char *className, const char *sig, Ts...agv) : android::telecom::Conferenceable(className, sig, std::forward<Ts>(agv)...) {}
-		Conference(QAndroidJniObject obj);
+		Conference(QAndroidJniObject obj) : android::telecom::Conferenceable(obj) {}
 		
 		// Constructors
 		Conference(android::telecom::PhoneAccountHandle arg0);

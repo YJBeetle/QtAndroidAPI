@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Picture::Picture(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Picture::Picture()
 		: JObject(

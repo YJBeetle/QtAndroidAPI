@@ -36,7 +36,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpSecTransform_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecTransform_Builder(QAndroidJniObject obj);
+		IpSecTransform_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IpSecTransform_Builder(android::content::Context arg0);

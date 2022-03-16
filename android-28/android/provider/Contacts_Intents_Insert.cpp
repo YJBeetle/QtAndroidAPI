@@ -221,9 +221,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Contacts_Intents_Insert::Contacts_Intents_Insert(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Contacts_Intents_Insert::Contacts_Intents_Insert()
 		: JObject(

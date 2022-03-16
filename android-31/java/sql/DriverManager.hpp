@@ -39,7 +39,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DriverManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DriverManager(QAndroidJniObject obj);
+		DriverManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

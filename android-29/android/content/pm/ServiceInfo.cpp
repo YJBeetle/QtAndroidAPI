@@ -118,9 +118,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ServiceInfo::ServiceInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
-	
 	// Constructors
 	ServiceInfo::ServiceInfo()
 		: android::content::pm::ComponentInfo(

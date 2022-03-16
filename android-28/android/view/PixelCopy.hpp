@@ -42,7 +42,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PixelCopy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PixelCopy(QAndroidJniObject obj);
+		PixelCopy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -17,7 +17,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintDocumentInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocumentInfo_Builder(QAndroidJniObject obj);
+		PrintDocumentInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PrintDocumentInfo_Builder(JString arg0);

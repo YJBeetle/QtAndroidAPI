@@ -41,7 +41,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSet(const char *className, const char *sig, Ts...agv) : android::icu::text::UnicodeFilter(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSet(QAndroidJniObject obj);
+		UnicodeSet(QAndroidJniObject obj) : android::icu::text::UnicodeFilter(obj) {}
 		
 		// Constructors
 		UnicodeSet();

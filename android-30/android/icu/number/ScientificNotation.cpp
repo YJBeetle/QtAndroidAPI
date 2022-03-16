@@ -5,9 +5,6 @@ namespace android::icu::number
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ScientificNotation::ScientificNotation(QAndroidJniObject obj) : android::icu::number::Notation(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -23,7 +23,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit XMLFilterImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XMLFilterImpl(QAndroidJniObject obj);
+		XMLFilterImpl(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		XMLFilterImpl();

@@ -7,9 +7,6 @@ namespace java::nio::charset::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharsetProvider::CharsetProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

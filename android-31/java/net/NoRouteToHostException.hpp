@@ -13,7 +13,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NoRouteToHostException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		NoRouteToHostException(QAndroidJniObject obj);
+		NoRouteToHostException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
 		
 		// Constructors
 		NoRouteToHostException();

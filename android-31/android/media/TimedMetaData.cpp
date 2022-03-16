@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TimedMetaData::TimedMetaData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TimedMetaData::TimedMetaData(jlong arg0, JByteArray arg1)
 		: JObject(

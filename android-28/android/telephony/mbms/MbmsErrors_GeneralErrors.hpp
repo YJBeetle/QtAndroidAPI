@@ -18,7 +18,7 @@ namespace android::telephony::mbms
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MbmsErrors_GeneralErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_GeneralErrors(QAndroidJniObject obj);
+		MbmsErrors_GeneralErrors(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

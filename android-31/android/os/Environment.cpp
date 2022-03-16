@@ -198,9 +198,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Environment::Environment(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Environment::Environment()
 		: JObject(

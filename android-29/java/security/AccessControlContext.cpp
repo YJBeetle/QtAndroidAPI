@@ -9,9 +9,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccessControlContext::AccessControlContext(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AccessControlContext::AccessControlContext(JArray arg0)
 		: JObject(

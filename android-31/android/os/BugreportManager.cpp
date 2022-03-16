@@ -6,9 +6,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BugreportManager::BugreportManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

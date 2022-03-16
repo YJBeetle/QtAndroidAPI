@@ -7,9 +7,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PictureInPictureParams_Builder::PictureInPictureParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PictureInPictureParams_Builder::PictureInPictureParams_Builder()
 		: JObject(

@@ -30,9 +30,6 @@ namespace java::nio::file
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StandardCopyOption::StandardCopyOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

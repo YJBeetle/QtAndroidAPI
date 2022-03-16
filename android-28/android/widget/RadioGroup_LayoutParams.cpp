@@ -8,9 +8,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RadioGroup_LayoutParams::RadioGroup_LayoutParams(QAndroidJniObject obj) : android::widget::LinearLayout_LayoutParams(obj) {}
-	
 	// Constructors
 	RadioGroup_LayoutParams::RadioGroup_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
 		: android::widget::LinearLayout_LayoutParams(

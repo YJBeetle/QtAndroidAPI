@@ -7,9 +7,6 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReentrantLock::ReentrantLock(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ReentrantLock::ReentrantLock()
 		: JObject(

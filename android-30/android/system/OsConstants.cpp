@@ -3456,9 +3456,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	OsConstants::OsConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

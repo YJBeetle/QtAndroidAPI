@@ -13,7 +13,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotActiveException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		NotActiveException(QAndroidJniObject obj);
+		NotActiveException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
 		
 		// Constructors
 		NotActiveException();

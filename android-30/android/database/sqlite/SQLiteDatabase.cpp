@@ -104,9 +104,6 @@ namespace android::database::sqlite
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SQLiteDatabase::SQLiteDatabase(QAndroidJniObject obj) : android::database::sqlite::SQLiteClosable(obj) {}
-	
 	// Constructors
 	
 	// Methods

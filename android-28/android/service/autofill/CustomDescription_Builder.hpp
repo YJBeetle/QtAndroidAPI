@@ -24,7 +24,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CustomDescription_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CustomDescription_Builder(QAndroidJniObject obj);
+		CustomDescription_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CustomDescription_Builder(android::widget::RemoteViews arg0);

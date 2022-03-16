@@ -46,7 +46,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Instant(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Instant(QAndroidJniObject obj);
+		Instant(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

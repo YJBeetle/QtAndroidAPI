@@ -21,7 +21,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TreeMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
-		TreeMap(QAndroidJniObject obj);
+		TreeMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
 		
 		// Constructors
 		TreeMap();

@@ -8,9 +8,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ColorSpace_Rgb::ColorSpace_Rgb(QAndroidJniObject obj) : android::graphics::ColorSpace(obj) {}
-	
 	// Constructors
 	ColorSpace_Rgb::ColorSpace_Rgb(JString arg0, JFloatArray arg1, android::graphics::ColorSpace_Rgb_TransferParameters arg2)
 		: android::graphics::ColorSpace(

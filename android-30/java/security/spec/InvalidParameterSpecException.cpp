@@ -5,9 +5,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InvalidParameterSpecException::InvalidParameterSpecException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-	
 	// Constructors
 	InvalidParameterSpecException::InvalidParameterSpecException()
 		: java::security::GeneralSecurityException(

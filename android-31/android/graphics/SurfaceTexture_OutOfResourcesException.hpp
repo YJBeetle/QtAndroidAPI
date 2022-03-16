@@ -13,7 +13,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SurfaceTexture_OutOfResourcesException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceTexture_OutOfResourcesException(QAndroidJniObject obj);
+		SurfaceTexture_OutOfResourcesException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		SurfaceTexture_OutOfResourcesException();

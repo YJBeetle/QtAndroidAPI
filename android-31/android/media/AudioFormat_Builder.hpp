@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioFormat_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioFormat_Builder(QAndroidJniObject obj);
+		AudioFormat_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AudioFormat_Builder();

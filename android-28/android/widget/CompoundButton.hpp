@@ -42,7 +42,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CompoundButton(const char *className, const char *sig, Ts...agv) : android::widget::Button(className, sig, std::forward<Ts>(agv)...) {}
-		CompoundButton(QAndroidJniObject obj);
+		CompoundButton(QAndroidJniObject obj) : android::widget::Button(obj) {}
 		
 		// Constructors
 		CompoundButton(android::content::Context arg0);

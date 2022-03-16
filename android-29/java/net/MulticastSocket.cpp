@@ -9,9 +9,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MulticastSocket::MulticastSocket(QAndroidJniObject obj) : java::net::DatagramSocket(obj) {}
-	
 	// Constructors
 	MulticastSocket::MulticastSocket()
 		: java::net::DatagramSocket(

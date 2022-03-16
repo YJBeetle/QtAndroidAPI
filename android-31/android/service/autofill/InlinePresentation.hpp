@@ -27,7 +27,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InlinePresentation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlinePresentation(QAndroidJniObject obj);
+		InlinePresentation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		InlinePresentation(android::app::slice::Slice arg0, android::widget::inline_::InlinePresentationSpec arg1, jboolean arg2);

@@ -17,7 +17,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintWriterPrinter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintWriterPrinter(QAndroidJniObject obj);
+		PrintWriterPrinter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PrintWriterPrinter(java::io::PrintWriter arg0);

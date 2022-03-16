@@ -4,9 +4,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowInsetsAnimation::WindowInsetsAnimation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WindowInsetsAnimation::WindowInsetsAnimation(jint arg0, JObject arg1, jlong arg2)
 		: JObject(

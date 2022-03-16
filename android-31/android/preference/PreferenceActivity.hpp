@@ -60,7 +60,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PreferenceActivity(const char *className, const char *sig, Ts...agv) : android::app::ListActivity(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceActivity(QAndroidJniObject obj);
+		PreferenceActivity(QAndroidJniObject obj) : android::app::ListActivity(obj) {}
 		
 		// Constructors
 		PreferenceActivity();

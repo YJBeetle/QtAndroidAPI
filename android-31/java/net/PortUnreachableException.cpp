@@ -5,9 +5,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PortUnreachableException::PortUnreachableException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
-	
 	// Constructors
 	PortUnreachableException::PortUnreachableException()
 		: java::net::SocketException(

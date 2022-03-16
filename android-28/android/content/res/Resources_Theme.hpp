@@ -30,7 +30,7 @@ namespace android::content::res
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Resources_Theme(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Resources_Theme(QAndroidJniObject obj);
+		Resources_Theme(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

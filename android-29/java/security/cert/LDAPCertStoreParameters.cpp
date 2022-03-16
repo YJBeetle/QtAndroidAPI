@@ -6,9 +6,6 @@ namespace java::security::cert
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LDAPCertStoreParameters::LDAPCertStoreParameters(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LDAPCertStoreParameters::LDAPCertStoreParameters()
 		: JObject(

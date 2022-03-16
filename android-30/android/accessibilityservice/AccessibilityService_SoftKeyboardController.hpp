@@ -17,7 +17,7 @@ namespace android::accessibilityservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityService_SoftKeyboardController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityService_SoftKeyboardController(QAndroidJniObject obj);
+		AccessibilityService_SoftKeyboardController(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -22,7 +22,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileSystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileSystem(QAndroidJniObject obj);
+		FileSystem(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

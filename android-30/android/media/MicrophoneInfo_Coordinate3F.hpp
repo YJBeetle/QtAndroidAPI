@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MicrophoneInfo_Coordinate3F(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MicrophoneInfo_Coordinate3F(QAndroidJniObject obj);
+		MicrophoneInfo_Coordinate3F(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -27,7 +27,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Toast(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Toast(QAndroidJniObject obj);
+		Toast(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Toast(android::content::Context arg0);

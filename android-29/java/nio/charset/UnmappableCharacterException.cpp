@@ -5,9 +5,6 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnmappableCharacterException::UnmappableCharacterException(QAndroidJniObject obj) : java::nio::charset::CharacterCodingException(obj) {}
-	
 	// Constructors
 	UnmappableCharacterException::UnmappableCharacterException(jint arg0)
 		: java::nio::charset::CharacterCodingException(

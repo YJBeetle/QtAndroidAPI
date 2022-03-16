@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaMuxer_OutputFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMuxer_OutputFormat(QAndroidJniObject obj);
+		MediaMuxer_OutputFormat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

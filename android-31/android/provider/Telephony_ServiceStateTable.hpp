@@ -25,7 +25,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Telephony_ServiceStateTable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_ServiceStateTable(QAndroidJniObject obj);
+		Telephony_ServiceStateTable(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

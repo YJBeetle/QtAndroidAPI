@@ -39,9 +39,6 @@ namespace android::app::appsearch
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppSearchSchema_StringPropertyConfig::AppSearchSchema_StringPropertyConfig(QAndroidJniObject obj) : android::app::appsearch::AppSearchSchema_PropertyConfig(obj) {}
-	
 	// Constructors
 	
 	// Methods

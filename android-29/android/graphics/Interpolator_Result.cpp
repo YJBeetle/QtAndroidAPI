@@ -30,9 +30,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Interpolator_Result::Interpolator_Result(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

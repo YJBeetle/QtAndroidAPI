@@ -19,7 +19,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Locale_FilteringMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Locale_FilteringMode(QAndroidJniObject obj);
+		Locale_FilteringMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

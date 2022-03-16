@@ -13,7 +13,7 @@ namespace android::graphics::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LineBreaker_ParagraphConstraints(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LineBreaker_ParagraphConstraints(QAndroidJniObject obj);
+		LineBreaker_ParagraphConstraints(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LineBreaker_ParagraphConstraints();

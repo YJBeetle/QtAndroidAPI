@@ -17,7 +17,7 @@ namespace android::os::health
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimerStat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TimerStat(QAndroidJniObject obj);
+		TimerStat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TimerStat();

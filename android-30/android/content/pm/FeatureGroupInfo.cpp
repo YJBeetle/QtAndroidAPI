@@ -21,9 +21,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FeatureGroupInfo::FeatureGroupInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FeatureGroupInfo::FeatureGroupInfo()
 		: JObject(

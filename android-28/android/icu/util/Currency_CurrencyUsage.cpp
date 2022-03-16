@@ -22,9 +22,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Currency_CurrencyUsage::Currency_CurrencyUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

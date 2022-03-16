@@ -4,9 +4,6 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InspectionCompanion_UninitializedPropertyMapException::InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	InspectionCompanion_UninitializedPropertyMapException::InspectionCompanion_UninitializedPropertyMapException()
 		: java::lang::RuntimeException(

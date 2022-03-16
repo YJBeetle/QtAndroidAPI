@@ -56,7 +56,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SimpleDateFormat(const char *className, const char *sig, Ts...agv) : java::text::DateFormat(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleDateFormat(QAndroidJniObject obj);
+		SimpleDateFormat(QAndroidJniObject obj) : java::text::DateFormat(obj) {}
 		
 		// Constructors
 		SimpleDateFormat();

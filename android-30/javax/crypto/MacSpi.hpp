@@ -18,7 +18,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MacSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MacSpi(QAndroidJniObject obj);
+		MacSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MacSpi();

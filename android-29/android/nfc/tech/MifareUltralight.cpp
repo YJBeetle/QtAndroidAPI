@@ -34,9 +34,6 @@ namespace android::nfc::tech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MifareUltralight::MifareUltralight(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

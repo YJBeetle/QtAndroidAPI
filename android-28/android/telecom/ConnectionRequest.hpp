@@ -34,7 +34,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectionRequest(QAndroidJniObject obj);
+		ConnectionRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2);

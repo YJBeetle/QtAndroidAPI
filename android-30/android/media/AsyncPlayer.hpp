@@ -25,7 +25,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AsyncPlayer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncPlayer(QAndroidJniObject obj);
+		AsyncPlayer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AsyncPlayer(JString arg0);

@@ -21,7 +21,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiEnterpriseConfig_Eap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig_Eap(QAndroidJniObject obj);
+		WifiEnterpriseConfig_Eap(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

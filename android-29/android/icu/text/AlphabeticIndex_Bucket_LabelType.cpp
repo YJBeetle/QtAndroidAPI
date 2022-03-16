@@ -38,9 +38,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AlphabeticIndex_Bucket_LabelType::AlphabeticIndex_Bucket_LabelType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

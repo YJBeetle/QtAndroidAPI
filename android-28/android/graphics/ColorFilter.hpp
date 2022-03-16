@@ -11,7 +11,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ColorFilter(QAndroidJniObject obj);
+		ColorFilter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ColorFilter();

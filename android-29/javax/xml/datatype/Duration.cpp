@@ -12,9 +12,6 @@ namespace javax::xml::datatype
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Duration::Duration(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Duration::Duration()
 		: JObject(

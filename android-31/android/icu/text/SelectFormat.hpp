@@ -26,7 +26,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SelectFormat(const char *className, const char *sig, Ts...agv) : java::text::Format(className, sig, std::forward<Ts>(agv)...) {}
-		SelectFormat(QAndroidJniObject obj);
+		SelectFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
 		
 		// Constructors
 		SelectFormat(JString arg0);

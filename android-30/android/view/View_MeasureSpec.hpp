@@ -16,7 +16,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit View_MeasureSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		View_MeasureSpec(QAndroidJniObject obj);
+		View_MeasureSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		View_MeasureSpec();

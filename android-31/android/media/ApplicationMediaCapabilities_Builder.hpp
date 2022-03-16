@@ -17,7 +17,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApplicationMediaCapabilities_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationMediaCapabilities_Builder(QAndroidJniObject obj);
+		ApplicationMediaCapabilities_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ApplicationMediaCapabilities_Builder();

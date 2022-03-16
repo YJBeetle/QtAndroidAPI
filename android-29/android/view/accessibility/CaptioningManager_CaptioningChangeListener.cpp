@@ -6,9 +6,6 @@ namespace android::view::accessibility
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CaptioningManager_CaptioningChangeListener::CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CaptioningManager_CaptioningChangeListener::CaptioningManager_CaptioningChangeListener()
 		: JObject(

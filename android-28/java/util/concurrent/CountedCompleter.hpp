@@ -14,7 +14,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CountedCompleter(const char *className, const char *sig, Ts...agv) : java::util::concurrent::ForkJoinTask(className, sig, std::forward<Ts>(agv)...) {}
-		CountedCompleter(QAndroidJniObject obj);
+		CountedCompleter(QAndroidJniObject obj) : java::util::concurrent::ForkJoinTask(obj) {}
 		
 		// Constructors
 		

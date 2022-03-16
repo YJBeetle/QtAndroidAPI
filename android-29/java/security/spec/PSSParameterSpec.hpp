@@ -15,7 +15,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PSSParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PSSParameterSpec(QAndroidJniObject obj);
+		PSSParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PSSParameterSpec(jint arg0);

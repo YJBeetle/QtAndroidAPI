@@ -20,7 +20,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewDebug_RecyclerTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ViewDebug_RecyclerTraceType(QAndroidJniObject obj);
+		ViewDebug_RecyclerTraceType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

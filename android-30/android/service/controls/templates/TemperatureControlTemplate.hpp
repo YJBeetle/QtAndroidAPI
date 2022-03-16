@@ -28,7 +28,7 @@ namespace android::service::controls::templates
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TemperatureControlTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		TemperatureControlTemplate(QAndroidJniObject obj);
+		TemperatureControlTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
 		
 		// Constructors
 		TemperatureControlTemplate(JString arg0, android::service::controls::templates::ControlTemplate arg1, jint arg2, jint arg3, jint arg4);

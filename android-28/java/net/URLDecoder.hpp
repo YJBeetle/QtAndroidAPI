@@ -17,7 +17,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URLDecoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLDecoder(QAndroidJniObject obj);
+		URLDecoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		URLDecoder();

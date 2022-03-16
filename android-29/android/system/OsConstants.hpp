@@ -503,7 +503,7 @@ namespace android::system
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OsConstants(QAndroidJniObject obj);
+		OsConstants(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -37,7 +37,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PlaybackStateEvent(const char *className, const char *sig, Ts...agv) : android::media::metrics::Event(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackStateEvent(QAndroidJniObject obj);
+		PlaybackStateEvent(QAndroidJniObject obj) : android::media::metrics::Event(obj) {}
 		
 		// Constructors
 		

@@ -4,9 +4,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UFormat::UFormat(QAndroidJniObject obj) : java::text::Format(obj) {}
-	
 	// Constructors
 	UFormat::UFormat()
 		: java::text::Format(

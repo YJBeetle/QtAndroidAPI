@@ -31,9 +31,6 @@ namespace android::nfc::cardemulation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HostNfcFService::HostNfcFService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	HostNfcFService::HostNfcFService()
 		: android::app::Service(

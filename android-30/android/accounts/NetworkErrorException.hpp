@@ -14,7 +14,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkErrorException(const char *className, const char *sig, Ts...agv) : android::accounts::AccountsException(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkErrorException(QAndroidJniObject obj);
+		NetworkErrorException(QAndroidJniObject obj) : android::accounts::AccountsException(obj) {}
 		
 		// Constructors
 		NetworkErrorException();

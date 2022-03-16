@@ -14,7 +14,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParsePosition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ParsePosition(QAndroidJniObject obj);
+		ParsePosition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ParsePosition(jint arg0);

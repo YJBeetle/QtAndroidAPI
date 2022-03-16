@@ -24,7 +24,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RoutingSessionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RoutingSessionInfo(QAndroidJniObject obj);
+		RoutingSessionInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

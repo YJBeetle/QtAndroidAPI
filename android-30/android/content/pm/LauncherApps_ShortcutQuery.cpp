@@ -48,9 +48,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LauncherApps_ShortcutQuery::LauncherApps_ShortcutQuery(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LauncherApps_ShortcutQuery::LauncherApps_ShortcutQuery()
 		: JObject(

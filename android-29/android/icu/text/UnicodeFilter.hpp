@@ -13,7 +13,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeFilter(QAndroidJniObject obj);
+		UnicodeFilter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

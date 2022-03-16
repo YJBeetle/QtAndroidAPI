@@ -17,9 +17,6 @@ namespace android::app::blob
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BlobHandle::BlobHandle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

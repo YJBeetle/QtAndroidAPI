@@ -59,9 +59,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaExtractor::MediaExtractor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaExtractor::MediaExtractor()
 		: JObject(

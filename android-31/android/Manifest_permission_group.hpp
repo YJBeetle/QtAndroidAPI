@@ -25,7 +25,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Manifest_permission_group(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest_permission_group(QAndroidJniObject obj);
+		Manifest_permission_group(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Manifest_permission_group();

@@ -22,7 +22,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvTrackInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvTrackInfo_Builder(QAndroidJniObject obj);
+		TvTrackInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TvTrackInfo_Builder(jint arg0, JString arg1);

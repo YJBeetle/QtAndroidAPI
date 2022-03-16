@@ -33,7 +33,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiNetworkSuggestion(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiNetworkSuggestion(QAndroidJniObject obj);
+		WifiNetworkSuggestion(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

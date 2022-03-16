@@ -21,7 +21,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvView_TvInputCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvView_TvInputCallback(QAndroidJniObject obj);
+		TvView_TvInputCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TvView_TvInputCallback();

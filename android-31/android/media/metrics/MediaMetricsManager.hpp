@@ -21,7 +21,7 @@ namespace android::media::metrics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaMetricsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMetricsManager(QAndroidJniObject obj);
+		MediaMetricsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

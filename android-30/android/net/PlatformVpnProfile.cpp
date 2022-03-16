@@ -26,9 +26,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PlatformVpnProfile::PlatformVpnProfile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

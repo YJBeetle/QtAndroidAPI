@@ -5,9 +5,6 @@ namespace javax::crypto::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DHParameterSpec::DHParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DHParameterSpec::DHParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
 		: JObject(

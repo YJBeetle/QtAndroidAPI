@@ -130,9 +130,6 @@ namespace android::mtp
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MtpEvent::MtpEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -45,9 +45,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AudioRecord_MetricsConstants::AudioRecord_MetricsConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

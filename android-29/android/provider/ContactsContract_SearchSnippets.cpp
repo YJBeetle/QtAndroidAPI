@@ -21,9 +21,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets()
 		: JObject(

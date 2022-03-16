@@ -20,7 +20,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_AnrInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationErrorReport_AnrInfo(QAndroidJniObject obj);
+		ApplicationErrorReport_AnrInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ApplicationErrorReport_AnrInfo();

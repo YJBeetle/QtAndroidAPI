@@ -17,7 +17,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchIterator_ElementComparisonType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SearchIterator_ElementComparisonType(QAndroidJniObject obj);
+		SearchIterator_ElementComparisonType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

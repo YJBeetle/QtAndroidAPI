@@ -17,7 +17,7 @@ namespace java::lang::annotation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AnnotationTypeMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		AnnotationTypeMismatchException(QAndroidJniObject obj);
+		AnnotationTypeMismatchException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1);

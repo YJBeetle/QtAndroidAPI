@@ -37,7 +37,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_QuickContact(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_QuickContact(QAndroidJniObject obj);
+		ContactsContract_QuickContact(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContactsContract_QuickContact();

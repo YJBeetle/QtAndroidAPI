@@ -14,9 +14,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

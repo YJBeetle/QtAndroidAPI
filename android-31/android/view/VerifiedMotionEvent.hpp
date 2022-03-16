@@ -22,7 +22,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VerifiedMotionEvent(const char *className, const char *sig, Ts...agv) : android::view::VerifiedInputEvent(className, sig, std::forward<Ts>(agv)...) {}
-		VerifiedMotionEvent(QAndroidJniObject obj);
+		VerifiedMotionEvent(QAndroidJniObject obj) : android::view::VerifiedInputEvent(obj) {}
 		
 		// Constructors
 		

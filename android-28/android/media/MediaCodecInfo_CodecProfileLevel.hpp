@@ -181,7 +181,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCodecInfo_CodecProfileLevel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj);
+		MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaCodecInfo_CodecProfileLevel();

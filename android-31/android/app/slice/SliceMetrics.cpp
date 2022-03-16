@@ -6,9 +6,6 @@ namespace android::app::slice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SliceMetrics::SliceMetrics(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SliceMetrics::SliceMetrics(android::content::Context arg0, android::net::Uri arg1)
 		: JObject(

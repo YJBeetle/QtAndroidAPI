@@ -21,7 +21,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfigurationStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConfigurationStats(QAndroidJniObject obj);
+		ConfigurationStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConfigurationStats(android::app::usage::ConfigurationStats &arg0);

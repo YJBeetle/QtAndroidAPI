@@ -6,9 +6,6 @@ namespace java::util::concurrent::atomic
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicLongArray::AtomicLongArray(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AtomicLongArray::AtomicLongArray(JLongArray arg0)
 		: JObject(

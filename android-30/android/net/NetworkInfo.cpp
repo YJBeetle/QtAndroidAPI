@@ -16,9 +16,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkInfo::NetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NetworkInfo::NetworkInfo(jint arg0, jint arg1, JString arg2, JString arg3)
 		: JObject(

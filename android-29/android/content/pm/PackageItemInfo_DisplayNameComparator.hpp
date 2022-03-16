@@ -21,7 +21,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageItemInfo_DisplayNameComparator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageItemInfo_DisplayNameComparator(QAndroidJniObject obj);
+		PackageItemInfo_DisplayNameComparator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PackageItemInfo_DisplayNameComparator(android::content::pm::PackageManager arg0);

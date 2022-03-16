@@ -22,7 +22,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActivityManager_RecentTaskInfo(const char *className, const char *sig, Ts...agv) : android::app::TaskInfo(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_RecentTaskInfo(QAndroidJniObject obj);
+		ActivityManager_RecentTaskInfo(QAndroidJniObject obj) : android::app::TaskInfo(obj) {}
 		
 		// Constructors
 		ActivityManager_RecentTaskInfo();

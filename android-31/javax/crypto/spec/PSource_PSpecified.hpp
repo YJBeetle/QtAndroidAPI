@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PSource_PSpecified(const char *className, const char *sig, Ts...agv) : javax::crypto::spec::PSource(className, sig, std::forward<Ts>(agv)...) {}
-		PSource_PSpecified(QAndroidJniObject obj);
+		PSource_PSpecified(QAndroidJniObject obj) : javax::crypto::spec::PSource(obj) {}
 		
 		// Constructors
 		PSource_PSpecified(JByteArray arg0);

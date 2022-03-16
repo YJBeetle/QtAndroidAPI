@@ -31,7 +31,7 @@ namespace java::util::jar
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Manifest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest(QAndroidJniObject obj);
+		Manifest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Manifest();

@@ -6,9 +6,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ViewGroupOverlay::ViewGroupOverlay(QAndroidJniObject obj) : android::view::ViewOverlay(obj) {}
-	
 	// Constructors
 	
 	// Methods

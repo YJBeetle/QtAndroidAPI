@@ -11,7 +11,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThreadDeath(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadDeath(QAndroidJniObject obj);
+		ThreadDeath(QAndroidJniObject obj) : java::lang::Error(obj) {}
 		
 		// Constructors
 		ThreadDeath();

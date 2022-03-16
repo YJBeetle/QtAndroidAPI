@@ -11,7 +11,7 @@ namespace android::net::ipsec::ike::exceptions
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InvalidMajorVersionException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeProtocolException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidMajorVersionException(QAndroidJniObject obj);
+		InvalidMajorVersionException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
 		
 		// Constructors
 		InvalidMajorVersionException(jbyte arg0);

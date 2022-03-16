@@ -7,9 +7,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlgorithmParametersSpi::AlgorithmParametersSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AlgorithmParametersSpi::AlgorithmParametersSpi()
 		: JObject(

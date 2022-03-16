@@ -11,7 +11,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CountDownTimer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CountDownTimer(QAndroidJniObject obj);
+		CountDownTimer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CountDownTimer(jlong arg0, jlong arg1);

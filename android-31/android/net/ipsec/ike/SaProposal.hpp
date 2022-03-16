@@ -45,7 +45,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SaProposal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SaProposal(QAndroidJniObject obj);
+		SaProposal(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

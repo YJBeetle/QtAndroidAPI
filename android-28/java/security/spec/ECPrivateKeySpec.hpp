@@ -20,7 +20,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ECPrivateKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ECPrivateKeySpec(QAndroidJniObject obj);
+		ECPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1);

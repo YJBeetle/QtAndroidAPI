@@ -6,9 +6,6 @@ namespace java::lang::invoke
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConstantCallSite::ConstantCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
-	
 	// Constructors
 	ConstantCallSite::ConstantCallSite(java::lang::invoke::MethodHandle arg0)
 		: java::lang::invoke::CallSite(

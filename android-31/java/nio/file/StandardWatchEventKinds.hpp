@@ -15,7 +15,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardWatchEventKinds(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StandardWatchEventKinds(QAndroidJniObject obj);
+		StandardWatchEventKinds(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

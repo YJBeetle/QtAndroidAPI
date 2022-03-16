@@ -25,7 +25,7 @@ namespace java::lang::invoke
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MutableCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
-		MutableCallSite(QAndroidJniObject obj);
+		MutableCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
 		
 		// Constructors
 		MutableCallSite(java::lang::invoke::MethodHandle arg0);

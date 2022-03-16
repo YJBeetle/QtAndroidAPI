@@ -43,7 +43,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ServiceLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceLoader(QAndroidJniObject obj);
+		ServiceLoader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

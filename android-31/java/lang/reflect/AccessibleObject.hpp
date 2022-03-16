@@ -17,7 +17,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibleObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibleObject(QAndroidJniObject obj);
+		AccessibleObject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -13,7 +13,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_NetworkSlicingException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_NetworkSlicingException(QAndroidJniObject obj);
+		TelephonyManager_NetworkSlicingException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		

@@ -150,9 +150,6 @@ namespace java::util::jar
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Attributes_Name::Attributes_Name(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Attributes_Name::Attributes_Name(JString arg0)
 		: JObject(

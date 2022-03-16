@@ -23,7 +23,7 @@ namespace java::nio::file::attribute
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PosixFilePermission(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		PosixFilePermission(QAndroidJniObject obj);
+		PosixFilePermission(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

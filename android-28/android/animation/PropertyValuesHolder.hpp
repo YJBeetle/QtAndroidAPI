@@ -32,7 +32,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PropertyValuesHolder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyValuesHolder(QAndroidJniObject obj);
+		PropertyValuesHolder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

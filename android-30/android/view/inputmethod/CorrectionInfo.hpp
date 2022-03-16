@@ -19,7 +19,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CorrectionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CorrectionInfo(QAndroidJniObject obj);
+		CorrectionInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CorrectionInfo(jint arg0, JString arg1, JString arg2);

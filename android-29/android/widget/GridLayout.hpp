@@ -51,7 +51,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GridLayout(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayout(QAndroidJniObject obj);
+		GridLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
 		
 		// Constructors
 		GridLayout(android::content::Context arg0);

@@ -32,7 +32,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProviderInfo(const char *className, const char *sig, Ts...agv) : android::content::pm::ComponentInfo(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderInfo(QAndroidJniObject obj);
+		ProviderInfo(QAndroidJniObject obj) : android::content::pm::ComponentInfo(obj) {}
 		
 		// Constructors
 		ProviderInfo();

@@ -31,7 +31,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractAccountAuthenticator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractAccountAuthenticator(QAndroidJniObject obj);
+		AbstractAccountAuthenticator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractAccountAuthenticator(android::content::Context arg0);

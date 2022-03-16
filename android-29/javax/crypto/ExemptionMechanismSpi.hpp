@@ -17,7 +17,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExemptionMechanismSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExemptionMechanismSpi(QAndroidJniObject obj);
+		ExemptionMechanismSpi(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ExemptionMechanismSpi();

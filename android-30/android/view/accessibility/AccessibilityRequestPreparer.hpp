@@ -26,7 +26,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityRequestPreparer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityRequestPreparer(QAndroidJniObject obj);
+		AccessibilityRequestPreparer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityRequestPreparer(android::view::View arg0, jint arg1);

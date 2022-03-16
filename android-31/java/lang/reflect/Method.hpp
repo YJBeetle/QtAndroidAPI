@@ -30,7 +30,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Method(const char *className, const char *sig, Ts...agv) : java::lang::reflect::Executable(className, sig, std::forward<Ts>(agv)...) {}
-		Method(QAndroidJniObject obj);
+		Method(QAndroidJniObject obj) : java::lang::reflect::Executable(obj) {}
 		
 		// Constructors
 		

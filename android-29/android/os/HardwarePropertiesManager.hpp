@@ -23,7 +23,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HardwarePropertiesManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HardwarePropertiesManager(QAndroidJniObject obj);
+		HardwarePropertiesManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -43,7 +43,7 @@ namespace android::media::browse
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaBrowser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowser(QAndroidJniObject obj);
+		MediaBrowser(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaBrowser(android::content::Context arg0, android::content::ComponentName arg1, android::media::browse::MediaBrowser_ConnectionCallback arg2, android::os::Bundle arg3);

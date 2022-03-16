@@ -5,9 +5,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AutoTransition::AutoTransition(QAndroidJniObject obj) : android::transition::TransitionSet(obj) {}
-	
 	// Constructors
 	AutoTransition::AutoTransition()
 		: android::transition::TransitionSet(

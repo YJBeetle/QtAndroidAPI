@@ -7,9 +7,6 @@ namespace android::view::textservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextServicesManager::TextServicesManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -22,9 +22,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SavedDatasetsInfo::SavedDatasetsInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SavedDatasetsInfo::SavedDatasetsInfo(JString arg0, jint arg1)
 		: JObject(

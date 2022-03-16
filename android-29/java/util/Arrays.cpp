@@ -18,9 +18,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Arrays::Arrays(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -13,7 +13,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MultiAutoCompleteTextView_CommaTokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MultiAutoCompleteTextView_CommaTokenizer(QAndroidJniObject obj);
+		MultiAutoCompleteTextView_CommaTokenizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MultiAutoCompleteTextView_CommaTokenizer();

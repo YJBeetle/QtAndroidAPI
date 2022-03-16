@@ -67,7 +67,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Canvas(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Canvas(QAndroidJniObject obj);
+		Canvas(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Canvas();

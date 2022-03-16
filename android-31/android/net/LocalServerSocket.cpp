@@ -8,9 +8,6 @@ namespace android::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LocalServerSocket::LocalServerSocket(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LocalServerSocket::LocalServerSocket(java::io::FileDescriptor arg0)
 		: JObject(

@@ -20,7 +20,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GLDebugHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLDebugHelper(QAndroidJniObject obj);
+		GLDebugHelper(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GLDebugHelper();

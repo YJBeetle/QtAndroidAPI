@@ -38,9 +38,6 @@ namespace android::gesture
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GestureOverlayView::GestureOverlayView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
-	
 	// Constructors
 	GestureOverlayView::GestureOverlayView(android::content::Context arg0)
 		: android::widget::FrameLayout(

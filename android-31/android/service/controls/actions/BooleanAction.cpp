@@ -5,9 +5,6 @@ namespace android::service::controls::actions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BooleanAction::BooleanAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-	
 	// Constructors
 	BooleanAction::BooleanAction(JString arg0, jboolean arg1)
 		: android::service::controls::actions::ControlAction(

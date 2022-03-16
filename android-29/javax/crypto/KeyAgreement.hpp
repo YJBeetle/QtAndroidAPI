@@ -31,7 +31,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyAgreement(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyAgreement(QAndroidJniObject obj);
+		KeyAgreement(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

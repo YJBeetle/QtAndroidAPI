@@ -23,9 +23,6 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AssociationRequest::AssociationRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

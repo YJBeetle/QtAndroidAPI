@@ -14,7 +14,7 @@ namespace android::webkit
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URLUtil(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLUtil(QAndroidJniObject obj);
+		URLUtil(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		URLUtil();

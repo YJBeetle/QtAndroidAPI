@@ -26,7 +26,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SharedLibraryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SharedLibraryInfo(QAndroidJniObject obj);
+		SharedLibraryInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

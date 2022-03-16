@@ -17,7 +17,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SetSchemaResponse_MigrationFailure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SetSchemaResponse_MigrationFailure(QAndroidJniObject obj);
+		SetSchemaResponse_MigrationFailure(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SetSchemaResponse_MigrationFailure(JString arg0, JString arg1, JString arg2, android::app::appsearch::AppSearchResult arg3);

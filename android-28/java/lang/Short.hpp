@@ -24,7 +24,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Short(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Short(QAndroidJniObject obj);
+		Short(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Short(JString arg0);

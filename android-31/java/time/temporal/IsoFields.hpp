@@ -17,7 +17,7 @@ namespace java::time::temporal
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IsoFields(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IsoFields(QAndroidJniObject obj);
+		IsoFields(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

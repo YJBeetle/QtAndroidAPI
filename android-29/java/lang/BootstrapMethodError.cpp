@@ -6,9 +6,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BootstrapMethodError::BootstrapMethodError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
-	
 	// Constructors
 	BootstrapMethodError::BootstrapMethodError()
 		: java::lang::LinkageError(

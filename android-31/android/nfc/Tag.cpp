@@ -16,9 +16,6 @@ namespace android::nfc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Tag::Tag(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -5,9 +5,6 @@ namespace javax::security::auth::callback
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedCallbackException::UnsupportedCallbackException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0)
 		: java::lang::Exception(

@@ -16,7 +16,7 @@ namespace android::accessibilityservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GestureDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureDescription(QAndroidJniObject obj);
+		GestureDescription(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

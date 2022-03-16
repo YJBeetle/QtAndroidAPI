@@ -24,7 +24,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Notation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notation(QAndroidJniObject obj);
+		Notation(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

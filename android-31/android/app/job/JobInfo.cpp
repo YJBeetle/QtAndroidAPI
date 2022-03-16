@@ -98,9 +98,6 @@ namespace android::app::job
 		);
 	}
 	
-	// QAndroidJniObject forward
-	JobInfo::JobInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

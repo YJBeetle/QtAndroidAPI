@@ -52,7 +52,7 @@ namespace java::util::jar
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JarFile(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipFile(className, sig, std::forward<Ts>(agv)...) {}
-		JarFile(QAndroidJniObject obj);
+		JarFile(QAndroidJniObject obj) : java::util::zip::ZipFile(obj) {}
 		
 		// Constructors
 		JarFile(java::io::File arg0);

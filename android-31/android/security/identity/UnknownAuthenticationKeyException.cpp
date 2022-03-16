@@ -6,9 +6,6 @@ namespace android::security::identity
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
-	
 	// Constructors
 	UnknownAuthenticationKeyException::UnknownAuthenticationKeyException(JString arg0)
 		: android::security::identity::IdentityCredentialException(

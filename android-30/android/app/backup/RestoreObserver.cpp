@@ -5,9 +5,6 @@ namespace android::app::backup
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RestoreObserver::RestoreObserver(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RestoreObserver::RestoreObserver()
 		: JObject(

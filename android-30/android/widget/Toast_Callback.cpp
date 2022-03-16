@@ -4,9 +4,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Toast_Callback::Toast_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Toast_Callback::Toast_Callback()
 		: JObject(

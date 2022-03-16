@@ -18,7 +18,7 @@ namespace java::beans
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IndexedPropertyChangeEvent(const char *className, const char *sig, Ts...agv) : java::beans::PropertyChangeEvent(className, sig, std::forward<Ts>(agv)...) {}
-		IndexedPropertyChangeEvent(QAndroidJniObject obj);
+		IndexedPropertyChangeEvent(QAndroidJniObject obj) : java::beans::PropertyChangeEvent(obj) {}
 		
 		// Constructors
 		IndexedPropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3, jint arg4);

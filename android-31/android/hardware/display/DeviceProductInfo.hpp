@@ -23,7 +23,7 @@ namespace android::hardware::display
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeviceProductInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceProductInfo(QAndroidJniObject obj);
+		DeviceProductInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4);

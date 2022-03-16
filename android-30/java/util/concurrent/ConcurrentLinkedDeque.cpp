@@ -9,9 +9,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConcurrentLinkedDeque::ConcurrentLinkedDeque(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
-	
 	// Constructors
 	ConcurrentLinkedDeque::ConcurrentLinkedDeque()
 		: java::util::AbstractCollection(

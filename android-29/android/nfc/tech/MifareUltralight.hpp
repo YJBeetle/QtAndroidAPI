@@ -21,7 +21,7 @@ namespace android::nfc::tech
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MifareUltralight(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MifareUltralight(QAndroidJniObject obj);
+		MifareUltralight(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

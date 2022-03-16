@@ -9,9 +9,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InsetDrawable::InsetDrawable(QAndroidJniObject obj) : android::graphics::drawable::DrawableWrapper(obj) {}
-	
 	// Constructors
 	InsetDrawable::InsetDrawable(android::graphics::drawable::Drawable arg0, jfloat arg1)
 		: android::graphics::drawable::DrawableWrapper(

@@ -11,9 +11,6 @@ namespace javax::xml::xpath
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	XPathException::XPathException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	XPathException::XPathException(JString arg0)
 		: java::lang::Exception(

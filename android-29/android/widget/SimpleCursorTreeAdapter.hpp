@@ -31,7 +31,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SimpleCursorTreeAdapter(const char *className, const char *sig, Ts...agv) : android::widget::ResourceCursorTreeAdapter(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleCursorTreeAdapter(QAndroidJniObject obj);
+		SimpleCursorTreeAdapter(QAndroidJniObject obj) : android::widget::ResourceCursorTreeAdapter(obj) {}
 		
 		// Constructors
 		SimpleCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, JArray arg3, JIntArray arg4, jint arg5, JArray arg6, JIntArray arg7);

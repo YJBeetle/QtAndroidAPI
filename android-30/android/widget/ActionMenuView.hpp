@@ -36,7 +36,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ActionMenuView(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		ActionMenuView(QAndroidJniObject obj);
+		ActionMenuView(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
 		
 		// Constructors
 		ActionMenuView(android::content::Context arg0);

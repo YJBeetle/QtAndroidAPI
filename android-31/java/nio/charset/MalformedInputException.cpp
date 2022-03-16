@@ -5,9 +5,6 @@ namespace java::nio::charset
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MalformedInputException::MalformedInputException(QAndroidJniObject obj) : java::nio::charset::CharacterCodingException(obj) {}
-	
 	// Constructors
 	MalformedInputException::MalformedInputException(jint arg0)
 		: java::nio::charset::CharacterCodingException(

@@ -6,9 +6,6 @@ namespace android::app::job
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JobServiceEngine::JobServiceEngine(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	JobServiceEngine::JobServiceEngine(android::app::Service arg0)
 		: JObject(

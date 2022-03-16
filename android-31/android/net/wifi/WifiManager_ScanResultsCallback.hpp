@@ -11,7 +11,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiManager_ScanResultsCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_ScanResultsCallback(QAndroidJniObject obj);
+		WifiManager_ScanResultsCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WifiManager_ScanResultsCallback();

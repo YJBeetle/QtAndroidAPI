@@ -21,7 +21,7 @@ namespace java::util::concurrent::locks
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReentrantReadWriteLock_WriteLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReentrantReadWriteLock_WriteLock(QAndroidJniObject obj);
+		ReentrantReadWriteLock_WriteLock(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

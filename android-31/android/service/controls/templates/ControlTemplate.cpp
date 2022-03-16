@@ -61,9 +61,6 @@ namespace android::service::controls::templates
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ControlTemplate::ControlTemplate(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -5,9 +5,6 @@ namespace java::util::logging
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LoggingPermission::LoggingPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-	
 	// Constructors
 	LoggingPermission::LoggingPermission(JString arg0, JString arg1)
 		: java::security::BasicPermission(

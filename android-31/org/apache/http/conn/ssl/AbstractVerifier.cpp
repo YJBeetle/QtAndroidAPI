@@ -8,9 +8,6 @@ namespace org::apache::http::conn::ssl
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractVerifier::AbstractVerifier(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AbstractVerifier::AbstractVerifier()
 		: JObject(

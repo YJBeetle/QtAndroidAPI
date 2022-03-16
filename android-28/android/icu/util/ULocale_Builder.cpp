@@ -6,9 +6,6 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ULocale_Builder::ULocale_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ULocale_Builder::ULocale_Builder()
 		: JObject(

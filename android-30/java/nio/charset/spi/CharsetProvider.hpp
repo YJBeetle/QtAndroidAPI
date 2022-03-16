@@ -21,7 +21,7 @@ namespace java::nio::charset::spi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CharsetProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharsetProvider(QAndroidJniObject obj);
+		CharsetProvider(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -47,9 +47,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewGroup_LayoutParams::ViewGroup_LayoutParams(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ViewGroup_LayoutParams::ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0)
 		: JObject(

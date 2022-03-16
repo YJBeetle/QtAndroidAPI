@@ -6,9 +6,6 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ProcessedData::ProcessedData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

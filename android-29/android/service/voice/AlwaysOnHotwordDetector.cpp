@@ -61,9 +61,6 @@ namespace android::service::voice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AlwaysOnHotwordDetector::AlwaysOnHotwordDetector(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

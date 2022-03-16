@@ -13,7 +13,7 @@ namespace org::apache::http::conn
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectTimeoutException(const char *className, const char *sig, Ts...agv) : java::io::InterruptedIOException(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectTimeoutException(QAndroidJniObject obj);
+		ConnectTimeoutException(QAndroidJniObject obj) : java::io::InterruptedIOException(obj) {}
 		
 		// Constructors
 		ConnectTimeoutException();

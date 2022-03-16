@@ -11,7 +11,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PathEffect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PathEffect(QAndroidJniObject obj);
+		PathEffect(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PathEffect();

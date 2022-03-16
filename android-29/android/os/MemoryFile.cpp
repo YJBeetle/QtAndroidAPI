@@ -8,9 +8,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MemoryFile::MemoryFile(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MemoryFile::MemoryFile(JString arg0, jint arg1)
 		: JObject(

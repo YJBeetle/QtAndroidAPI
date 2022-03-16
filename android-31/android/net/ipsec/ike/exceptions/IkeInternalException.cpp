@@ -6,9 +6,6 @@ namespace android::net::ipsec::ike::exceptions
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IkeInternalException::IkeInternalException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(obj) {}
-	
 	// Constructors
 	IkeInternalException::IkeInternalException(JThrowable arg0)
 		: android::net::ipsec::ike::exceptions::IkeNonProtocolException(

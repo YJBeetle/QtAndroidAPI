@@ -20,7 +20,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RegionIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RegionIterator(QAndroidJniObject obj);
+		RegionIterator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RegionIterator(android::graphics::Region arg0);

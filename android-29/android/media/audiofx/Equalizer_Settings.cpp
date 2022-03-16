@@ -25,9 +25,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Equalizer_Settings::Equalizer_Settings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Equalizer_Settings::Equalizer_Settings()
 		: JObject(

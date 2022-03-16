@@ -23,7 +23,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlgorithmParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlgorithmParameters(QAndroidJniObject obj);
+		AlgorithmParameters(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

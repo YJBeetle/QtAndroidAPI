@@ -14,7 +14,7 @@ namespace javax::security::auth::callback
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PasswordCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PasswordCallback(QAndroidJniObject obj);
+		PasswordCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PasswordCallback(JString arg0, jboolean arg1);

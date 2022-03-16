@@ -140,9 +140,6 @@ namespace java::time::format
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimeFormatter::DateTimeFormatter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

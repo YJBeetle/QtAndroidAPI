@@ -25,7 +25,7 @@ namespace android::net::wifi::aware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiAwareNetworkSpecifier_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiAwareNetworkSpecifier_Builder(QAndroidJniObject obj);
+		WifiAwareNetworkSpecifier_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WifiAwareNetworkSpecifier_Builder(android::net::wifi::aware::DiscoverySession arg0, android::net::wifi::aware::PeerHandle arg1);

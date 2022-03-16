@@ -8,9 +8,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SyncRequest_Builder::SyncRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SyncRequest_Builder::SyncRequest_Builder()
 		: JObject(

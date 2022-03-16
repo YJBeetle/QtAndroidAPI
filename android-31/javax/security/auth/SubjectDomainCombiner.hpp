@@ -23,7 +23,7 @@ namespace javax::security::auth
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubjectDomainCombiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubjectDomainCombiner(QAndroidJniObject obj);
+		SubjectDomainCombiner(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SubjectDomainCombiner(javax::security::auth::Subject arg0);

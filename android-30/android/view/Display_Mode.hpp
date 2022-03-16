@@ -19,7 +19,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Display_Mode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Display_Mode(QAndroidJniObject obj);
+		Display_Mode(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

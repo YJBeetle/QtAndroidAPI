@@ -24,7 +24,7 @@ namespace android::database::sqlite
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SQLiteProgram(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteClosable(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteProgram(QAndroidJniObject obj);
+		SQLiteProgram(QAndroidJniObject obj) : android::database::sqlite::SQLiteClosable(obj) {}
 		
 		// Constructors
 		

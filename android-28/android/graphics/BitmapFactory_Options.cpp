@@ -148,9 +148,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BitmapFactory_Options::BitmapFactory_Options(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BitmapFactory_Options::BitmapFactory_Options()
 		: JObject(

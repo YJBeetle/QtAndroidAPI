@@ -501,9 +501,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Character::Character(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Character::Character(jchar arg0)
 		: JObject(

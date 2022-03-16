@@ -7,9 +7,6 @@ namespace android::drm
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DrmInfo::DrmInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DrmInfo::DrmInfo(jint arg0, JByteArray arg1, JString arg2)
 		: JObject(

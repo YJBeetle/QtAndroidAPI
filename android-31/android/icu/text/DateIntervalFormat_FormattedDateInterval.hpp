@@ -18,7 +18,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateIntervalFormat_FormattedDateInterval(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateIntervalFormat_FormattedDateInterval(QAndroidJniObject obj);
+		DateIntervalFormat_FormattedDateInterval(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

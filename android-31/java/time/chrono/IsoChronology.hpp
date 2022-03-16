@@ -67,7 +67,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IsoChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
-		IsoChronology(QAndroidJniObject obj);
+		IsoChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
 		
 		// Constructors
 		

@@ -31,7 +31,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TaiwanCalendar(const char *className, const char *sig, Ts...agv) : android::icu::util::GregorianCalendar(className, sig, std::forward<Ts>(agv)...) {}
-		TaiwanCalendar(QAndroidJniObject obj);
+		TaiwanCalendar(QAndroidJniObject obj) : android::icu::util::GregorianCalendar(obj) {}
 		
 		// Constructors
 		TaiwanCalendar();

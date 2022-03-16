@@ -21,7 +21,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Browser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Browser(QAndroidJniObject obj);
+		Browser(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Browser();

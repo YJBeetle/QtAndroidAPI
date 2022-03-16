@@ -10,9 +10,6 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SaveInfo_Builder::SaveInfo_Builder(jint arg0)
 		: JObject(

@@ -18,9 +18,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DropBoxManager_Entry::DropBoxManager_Entry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DropBoxManager_Entry::DropBoxManager_Entry(JString arg0, jlong arg1)
 		: JObject(

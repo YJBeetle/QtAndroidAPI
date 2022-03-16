@@ -20,7 +20,7 @@ namespace android::companion
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AssociationRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssociationRequest(QAndroidJniObject obj);
+		AssociationRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

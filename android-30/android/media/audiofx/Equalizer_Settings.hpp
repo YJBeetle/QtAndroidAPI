@@ -17,7 +17,7 @@ namespace android::media::audiofx
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Equalizer_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Equalizer_Settings(QAndroidJniObject obj);
+		Equalizer_Settings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Equalizer_Settings();

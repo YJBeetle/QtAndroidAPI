@@ -5,9 +5,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	OverScroller::OverScroller(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	OverScroller::OverScroller(android::content::Context arg0)
 		: JObject(

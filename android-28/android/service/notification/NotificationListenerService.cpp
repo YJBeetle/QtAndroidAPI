@@ -247,9 +247,6 @@ namespace android::service::notification
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NotificationListenerService::NotificationListenerService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	NotificationListenerService::NotificationListenerService()
 		: android::app::Service(

@@ -14,7 +14,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CollectionCertStoreParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CollectionCertStoreParameters(QAndroidJniObject obj);
+		CollectionCertStoreParameters(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CollectionCertStoreParameters();

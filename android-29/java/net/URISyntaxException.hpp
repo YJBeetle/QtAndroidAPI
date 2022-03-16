@@ -13,7 +13,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URISyntaxException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		URISyntaxException(QAndroidJniObject obj);
+		URISyntaxException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		URISyntaxException(JString arg0, JString arg1);

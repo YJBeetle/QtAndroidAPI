@@ -28,7 +28,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CaptioningManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptioningManager(QAndroidJniObject obj);
+		CaptioningManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

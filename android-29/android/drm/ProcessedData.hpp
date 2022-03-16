@@ -14,7 +14,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProcessedData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessedData(QAndroidJniObject obj);
+		ProcessedData(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

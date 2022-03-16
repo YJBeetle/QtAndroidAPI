@@ -13,7 +13,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TransactionTooLargeException(const char *className, const char *sig, Ts...agv) : android::os::RemoteException(className, sig, std::forward<Ts>(agv)...) {}
-		TransactionTooLargeException(QAndroidJniObject obj);
+		TransactionTooLargeException(QAndroidJniObject obj) : android::os::RemoteException(obj) {}
 		
 		// Constructors
 		TransactionTooLargeException();

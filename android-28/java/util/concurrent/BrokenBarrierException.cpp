@@ -5,9 +5,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BrokenBarrierException::BrokenBarrierException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	BrokenBarrierException::BrokenBarrierException()
 		: java::lang::Exception(

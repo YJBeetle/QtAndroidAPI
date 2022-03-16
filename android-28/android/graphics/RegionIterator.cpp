@@ -6,9 +6,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RegionIterator::RegionIterator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	RegionIterator::RegionIterator(android::graphics::Region arg0)
 		: JObject(

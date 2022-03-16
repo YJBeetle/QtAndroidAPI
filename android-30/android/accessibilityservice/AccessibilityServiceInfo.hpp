@@ -62,7 +62,7 @@ namespace android::accessibilityservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityServiceInfo(QAndroidJniObject obj);
+		AccessibilityServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityServiceInfo();

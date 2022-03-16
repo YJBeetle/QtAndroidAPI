@@ -30,9 +30,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewOutlineProvider::ViewOutlineProvider(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ViewOutlineProvider::ViewOutlineProvider()
 		: JObject(

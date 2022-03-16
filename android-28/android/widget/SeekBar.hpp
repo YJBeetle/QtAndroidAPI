@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SeekBar(const char *className, const char *sig, Ts...agv) : android::widget::AbsSeekBar(className, sig, std::forward<Ts>(agv)...) {}
-		SeekBar(QAndroidJniObject obj);
+		SeekBar(QAndroidJniObject obj) : android::widget::AbsSeekBar(obj) {}
 		
 		// Constructors
 		SeekBar(android::content::Context arg0);

@@ -13,7 +13,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpSecManager_SecurityParameterIndex(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_SecurityParameterIndex(QAndroidJniObject obj);
+		IpSecManager_SecurityParameterIndex(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

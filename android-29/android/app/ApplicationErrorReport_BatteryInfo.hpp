@@ -21,7 +21,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApplicationErrorReport_BatteryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationErrorReport_BatteryInfo(QAndroidJniObject obj);
+		ApplicationErrorReport_BatteryInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ApplicationErrorReport_BatteryInfo();

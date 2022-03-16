@@ -33,7 +33,7 @@ namespace android::media::session
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaController_TransportControls(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaController_TransportControls(QAndroidJniObject obj);
+		MediaController_TransportControls(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

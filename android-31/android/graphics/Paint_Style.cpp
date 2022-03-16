@@ -30,9 +30,6 @@ namespace android::graphics
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Paint_Style::Paint_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

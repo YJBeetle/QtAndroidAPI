@@ -30,7 +30,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StreamConfigurationMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamConfigurationMap(QAndroidJniObject obj);
+		StreamConfigurationMap(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

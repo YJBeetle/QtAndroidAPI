@@ -80,7 +80,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelecomManager(QAndroidJniObject obj);
+		TelecomManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -11,7 +11,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntegerWidth(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntegerWidth(QAndroidJniObject obj);
+		IntegerWidth(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -18,7 +18,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Rational(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Rational(QAndroidJniObject obj);
+		Rational(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Rational(jint arg0, jint arg1);

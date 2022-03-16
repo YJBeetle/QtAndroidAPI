@@ -5,9 +5,6 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CameraManager_AvailabilityCallback::CameraManager_AvailabilityCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CameraManager_AvailabilityCallback::CameraManager_AvailabilityCallback()
 		: JObject(

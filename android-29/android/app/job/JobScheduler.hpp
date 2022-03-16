@@ -22,7 +22,7 @@ namespace android::app::job
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit JobScheduler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobScheduler(QAndroidJniObject obj);
+		JobScheduler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		JobScheduler();

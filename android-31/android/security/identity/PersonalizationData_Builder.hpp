@@ -22,7 +22,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PersonalizationData_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PersonalizationData_Builder(QAndroidJniObject obj);
+		PersonalizationData_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PersonalizationData_Builder();

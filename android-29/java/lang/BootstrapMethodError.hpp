@@ -14,7 +14,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BootstrapMethodError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		BootstrapMethodError(QAndroidJniObject obj);
+		BootstrapMethodError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
 		
 		// Constructors
 		BootstrapMethodError();

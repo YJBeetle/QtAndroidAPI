@@ -13,9 +13,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputEvent::InputEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ToggleButton::ToggleButton(QAndroidJniObject obj) : android::widget::CompoundButton(obj) {}
-	
 	// Constructors
 	ToggleButton::ToggleButton(android::content::Context arg0)
 		: android::widget::CompoundButton(

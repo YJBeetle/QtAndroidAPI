@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SyncFailedException::SyncFailedException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	SyncFailedException::SyncFailedException(JString arg0)
 		: java::io::IOException(

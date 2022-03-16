@@ -6,9 +6,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CountDownLatch::CountDownLatch(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CountDownLatch::CountDownLatch(jint arg0)
 		: JObject(

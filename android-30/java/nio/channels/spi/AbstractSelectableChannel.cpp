@@ -10,9 +10,6 @@ namespace java::nio::channels::spi
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AbstractSelectableChannel::AbstractSelectableChannel(QAndroidJniObject obj) : java::nio::channels::SelectableChannel(obj) {}
-	
 	// Constructors
 	
 	// Methods

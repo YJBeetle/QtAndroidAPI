@@ -104,9 +104,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails()
 		: JObject(

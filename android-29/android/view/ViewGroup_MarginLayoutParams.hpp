@@ -24,7 +24,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewGroup_MarginLayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		ViewGroup_MarginLayoutParams(QAndroidJniObject obj);
+		ViewGroup_MarginLayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
 		
 		// Constructors
 		ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams arg0);

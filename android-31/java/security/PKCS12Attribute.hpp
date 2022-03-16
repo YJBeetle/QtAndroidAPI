@@ -20,7 +20,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PKCS12Attribute(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PKCS12Attribute(QAndroidJniObject obj);
+		PKCS12Attribute(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PKCS12Attribute(JByteArray arg0);

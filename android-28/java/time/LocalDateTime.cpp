@@ -36,9 +36,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LocalDateTime::LocalDateTime(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

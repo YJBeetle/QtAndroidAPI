@@ -28,7 +28,7 @@ namespace java::lang::invoke
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CallSite(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CallSite(QAndroidJniObject obj);
+		CallSite(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

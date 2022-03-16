@@ -31,9 +31,6 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Resources::Resources(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Resources::Resources(android::content::res::AssetManager arg0, android::util::DisplayMetrics arg1, android::content::res::Configuration arg2)
 		: JObject(

@@ -10,9 +10,6 @@ namespace java::util::zip
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZipInputStream::ZipInputStream(QAndroidJniObject obj) : java::util::zip::InflaterInputStream(obj) {}
-	
 	// Constructors
 	ZipInputStream::ZipInputStream(java::io::InputStream arg0)
 		: java::util::zip::InflaterInputStream(

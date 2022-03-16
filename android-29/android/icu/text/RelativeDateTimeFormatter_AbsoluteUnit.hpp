@@ -26,7 +26,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RelativeDateTimeFormatter_AbsoluteUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeDateTimeFormatter_AbsoluteUnit(QAndroidJniObject obj);
+		RelativeDateTimeFormatter_AbsoluteUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

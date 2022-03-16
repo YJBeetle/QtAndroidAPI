@@ -7,9 +7,6 @@ namespace android::hardware
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SensorEventCallback::SensorEventCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SensorEventCallback::SensorEventCallback()
 		: JObject(

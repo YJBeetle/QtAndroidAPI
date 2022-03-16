@@ -1384,7 +1384,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_attr(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_attr(QAndroidJniObject obj);
+		R_attr(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_attr();

@@ -32,7 +32,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteAction(QAndroidJniObject obj);
+		RemoteAction(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RemoteAction(android::graphics::drawable::Icon arg0, JString arg1, JString arg2, android::app::PendingIntent arg3);

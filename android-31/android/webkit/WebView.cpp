@@ -94,9 +94,6 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WebView::WebView(QAndroidJniObject obj) : android::widget::AbsoluteLayout(obj) {}
-	
 	// Constructors
 	WebView::WebView(android::content::Context arg0)
 		: android::widget::AbsoluteLayout(

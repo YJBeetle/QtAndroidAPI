@@ -7,9 +7,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_MediaStyle::Notification_MediaStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
-	
 	// Constructors
 	Notification_MediaStyle::Notification_MediaStyle()
 		: android::app::Notification_Style(

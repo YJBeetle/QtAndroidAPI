@@ -16,7 +16,7 @@ namespace android::service::notification
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZenPolicy_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZenPolicy_Builder(QAndroidJniObject obj);
+		ZenPolicy_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ZenPolicy_Builder();

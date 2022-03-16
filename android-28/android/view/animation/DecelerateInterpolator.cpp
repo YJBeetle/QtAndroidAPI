@@ -5,9 +5,6 @@ namespace android::view::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DecelerateInterpolator::DecelerateInterpolator(QAndroidJniObject obj) : android::view::animation::BaseInterpolator(obj) {}
-	
 	// Constructors
 	DecelerateInterpolator::DecelerateInterpolator()
 		: android::view::animation::BaseInterpolator(

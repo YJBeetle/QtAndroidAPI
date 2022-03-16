@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorSpace_Adaptation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Adaptation(QAndroidJniObject obj);
+		ColorSpace_Adaptation(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

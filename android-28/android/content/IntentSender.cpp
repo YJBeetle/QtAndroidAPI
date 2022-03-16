@@ -19,9 +19,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	IntentSender::IntentSender(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

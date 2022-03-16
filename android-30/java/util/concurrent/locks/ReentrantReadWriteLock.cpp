@@ -8,9 +8,6 @@ namespace java::util::concurrent::locks
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReentrantReadWriteLock::ReentrantReadWriteLock(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ReentrantReadWriteLock::ReentrantReadWriteLock()
 		: JObject(

@@ -102,9 +102,6 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiManager_AddNetworkResult::WifiManager_AddNetworkResult(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WifiManager_AddNetworkResult::WifiManager_AddNetworkResult(jint arg0, jint arg1)
 		: JObject(

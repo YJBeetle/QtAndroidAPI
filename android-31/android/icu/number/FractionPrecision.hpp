@@ -16,7 +16,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FractionPrecision(const char *className, const char *sig, Ts...agv) : android::icu::number::Precision(className, sig, std::forward<Ts>(agv)...) {}
-		FractionPrecision(QAndroidJniObject obj);
+		FractionPrecision(QAndroidJniObject obj) : android::icu::number::Precision(obj) {}
 		
 		// Constructors
 		

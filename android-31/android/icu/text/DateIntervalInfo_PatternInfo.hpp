@@ -14,7 +14,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DateIntervalInfo_PatternInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateIntervalInfo_PatternInfo(QAndroidJniObject obj);
+		DateIntervalInfo_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2);

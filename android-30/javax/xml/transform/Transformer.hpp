@@ -18,7 +18,7 @@ namespace javax::xml::transform
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Transformer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Transformer(QAndroidJniObject obj);
+		Transformer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

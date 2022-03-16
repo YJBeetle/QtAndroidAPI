@@ -24,9 +24,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GridLayout_LayoutParams::GridLayout_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_MarginLayoutParams(obj) {}
-	
 	// Constructors
 	GridLayout_LayoutParams::GridLayout_LayoutParams()
 		: android::view::ViewGroup_MarginLayoutParams(

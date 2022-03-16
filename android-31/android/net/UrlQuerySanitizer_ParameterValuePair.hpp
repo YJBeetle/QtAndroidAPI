@@ -19,7 +19,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UrlQuerySanitizer_ParameterValuePair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj);
+		UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, JString arg1, JString arg2);

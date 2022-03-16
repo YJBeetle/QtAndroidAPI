@@ -6,9 +6,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	RecursiveAction::RecursiveAction(QAndroidJniObject obj) : java::util::concurrent::ForkJoinTask(obj) {}
-	
 	// Constructors
 	RecursiveAction::RecursiveAction()
 		: java::util::concurrent::ForkJoinTask(

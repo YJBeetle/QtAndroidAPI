@@ -7,9 +7,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CollationKey::CollationKey(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

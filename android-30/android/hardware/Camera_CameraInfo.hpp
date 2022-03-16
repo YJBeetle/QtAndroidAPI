@@ -16,7 +16,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Camera_CameraInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_CameraInfo(QAndroidJniObject obj);
+		Camera_CameraInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Camera_CameraInfo();

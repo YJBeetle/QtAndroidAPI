@@ -18,9 +18,6 @@ namespace android::nfc
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NdefMessage::NdefMessage(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NdefMessage::NdefMessage(JByteArray arg0)
 		: JObject(

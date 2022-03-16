@@ -18,7 +18,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FieldPosition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FieldPosition(QAndroidJniObject obj);
+		FieldPosition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FieldPosition(jint arg0);

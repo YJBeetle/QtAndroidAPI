@@ -7,9 +7,6 @@ namespace android::hardware::camera2
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CaptureResult_Key::CaptureResult_Key(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CaptureResult_Key::CaptureResult_Key(JString arg0, JClass arg1)
 		: JObject(

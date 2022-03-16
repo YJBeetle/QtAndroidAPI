@@ -7,9 +7,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DatePickerDialog::DatePickerDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
-	
 	// Constructors
 	DatePickerDialog::DatePickerDialog(android::content::Context arg0)
 		: android::app::AlertDialog(

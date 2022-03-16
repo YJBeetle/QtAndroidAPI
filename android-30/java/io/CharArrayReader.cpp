@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CharArrayReader::CharArrayReader(QAndroidJniObject obj) : java::io::Reader(obj) {}
-	
 	// Constructors
 	CharArrayReader::CharArrayReader(JCharArray arg0)
 		: java::io::Reader(

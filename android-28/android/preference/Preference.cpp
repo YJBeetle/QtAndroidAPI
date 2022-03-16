@@ -23,9 +23,6 @@ namespace android::preference
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Preference::Preference(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Preference::Preference(android::content::Context arg0)
 		: JObject(

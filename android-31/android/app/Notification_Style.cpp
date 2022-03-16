@@ -8,9 +8,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_Style::Notification_Style(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification_Style::Notification_Style()
 		: JObject(

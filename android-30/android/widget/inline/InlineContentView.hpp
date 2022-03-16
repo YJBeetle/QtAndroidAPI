@@ -16,7 +16,7 @@ namespace android::widget::inline_
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InlineContentView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		InlineContentView(QAndroidJniObject obj);
+		InlineContentView(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
 		
 		// Constructors
 		

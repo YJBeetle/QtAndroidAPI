@@ -45,7 +45,7 @@ namespace android::service::notification
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Condition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Condition(QAndroidJniObject obj);
+		Condition(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Condition(android::os::Parcel arg0);

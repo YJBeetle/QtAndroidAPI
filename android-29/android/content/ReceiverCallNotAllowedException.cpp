@@ -5,9 +5,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
-	
 	// Constructors
 	ReceiverCallNotAllowedException::ReceiverCallNotAllowedException(JString arg0)
 		: android::util::AndroidRuntimeException(

@@ -34,9 +34,6 @@ namespace javax::security::auth::x500
 		);
 	}
 	
-	// QAndroidJniObject forward
-	X500Principal::X500Principal(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	X500Principal::X500Principal(JByteArray arg0)
 		: JObject(

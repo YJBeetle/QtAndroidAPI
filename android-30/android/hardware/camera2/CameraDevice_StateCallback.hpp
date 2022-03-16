@@ -21,7 +21,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraDevice_StateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraDevice_StateCallback(QAndroidJniObject obj);
+		CameraDevice_StateCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CameraDevice_StateCallback();

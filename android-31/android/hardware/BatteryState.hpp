@@ -16,7 +16,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BatteryState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BatteryState(QAndroidJniObject obj);
+		BatteryState(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BatteryState();

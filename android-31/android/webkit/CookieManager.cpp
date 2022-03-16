@@ -7,9 +7,6 @@ namespace android::webkit
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CookieManager::CookieManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CookieManager::CookieManager()
 		: JObject(

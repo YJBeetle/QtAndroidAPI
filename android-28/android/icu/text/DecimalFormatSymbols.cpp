@@ -33,9 +33,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DecimalFormatSymbols::DecimalFormatSymbols(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DecimalFormatSymbols::DecimalFormatSymbols()
 		: JObject(

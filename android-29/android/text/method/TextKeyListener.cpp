@@ -9,9 +9,6 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextKeyListener::TextKeyListener(QAndroidJniObject obj) : android::text::method::BaseKeyListener(obj) {}
-	
 	// Constructors
 	TextKeyListener::TextKeyListener(android::text::method::TextKeyListener_Capitalize arg0, jboolean arg1)
 		: android::text::method::BaseKeyListener(

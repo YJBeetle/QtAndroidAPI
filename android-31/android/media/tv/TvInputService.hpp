@@ -32,7 +32,7 @@ namespace android::media::tv
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TvInputService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputService(QAndroidJniObject obj);
+		TvInputService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		TvInputService();

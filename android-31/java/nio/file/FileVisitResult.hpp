@@ -18,7 +18,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileVisitResult(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		FileVisitResult(QAndroidJniObject obj);
+		FileVisitResult(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

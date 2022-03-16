@@ -23,7 +23,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RecoverableSecurityException(const char *className, const char *sig, Ts...agv) : java::lang::SecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		RecoverableSecurityException(QAndroidJniObject obj);
+		RecoverableSecurityException(QAndroidJniObject obj) : java::lang::SecurityException(obj) {}
 		
 		// Constructors
 		RecoverableSecurityException(JThrowable arg0, JString arg1, android::app::RemoteAction arg2);

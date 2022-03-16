@@ -19,7 +19,7 @@ namespace android::view::textservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextInfo(QAndroidJniObject obj);
+		TextInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TextInfo(android::os::Parcel arg0);

@@ -31,9 +31,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PackageInstaller_SessionParams::PackageInstaller_SessionParams(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PackageInstaller_SessionParams::PackageInstaller_SessionParams(jint arg0)
 		: JObject(

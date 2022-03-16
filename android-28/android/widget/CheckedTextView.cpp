@@ -11,9 +11,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CheckedTextView::CheckedTextView(QAndroidJniObject obj) : android::widget::TextView(obj) {}
-	
 	// Constructors
 	CheckedTextView::CheckedTextView(android::content::Context arg0)
 		: android::widget::TextView(

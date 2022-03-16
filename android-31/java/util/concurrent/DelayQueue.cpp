@@ -10,9 +10,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DelayQueue::DelayQueue(QAndroidJniObject obj) : java::util::AbstractQueue(obj) {}
-	
 	// Constructors
 	DelayQueue::DelayQueue()
 		: java::util::AbstractQueue(

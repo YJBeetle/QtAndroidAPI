@@ -11,9 +11,6 @@ namespace android::service::textservice
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SpellCheckerService_Session::SpellCheckerService_Session(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SpellCheckerService_Session::SpellCheckerService_Session()
 		: JObject(

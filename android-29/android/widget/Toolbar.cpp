@@ -10,9 +10,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Toolbar::Toolbar(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-	
 	// Constructors
 	Toolbar::Toolbar(android::content::Context arg0)
 		: android::view::ViewGroup(

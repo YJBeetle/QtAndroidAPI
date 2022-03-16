@@ -6,9 +6,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyManagementException::KeyManagementException(QAndroidJniObject obj) : java::security::KeyException(obj) {}
-	
 	// Constructors
 	KeyManagementException::KeyManagementException()
 		: java::security::KeyException(

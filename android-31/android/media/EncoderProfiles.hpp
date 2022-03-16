@@ -11,7 +11,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EncoderProfiles(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EncoderProfiles(QAndroidJniObject obj);
+		EncoderProfiles(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

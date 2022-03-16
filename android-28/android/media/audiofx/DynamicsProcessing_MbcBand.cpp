@@ -5,9 +5,6 @@ namespace android::media::audiofx
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DynamicsProcessing_MbcBand::DynamicsProcessing_MbcBand(QAndroidJniObject obj) : android::media::audiofx::DynamicsProcessing_BandBase(obj) {}
-	
 	// Constructors
 	DynamicsProcessing_MbcBand::DynamicsProcessing_MbcBand(android::media::audiofx::DynamicsProcessing_MbcBand &arg0)
 		: android::media::audiofx::DynamicsProcessing_BandBase(

@@ -11,7 +11,7 @@ namespace android::view::inspector
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WindowInspector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInspector(QAndroidJniObject obj);
+		WindowInspector(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

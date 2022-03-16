@@ -14,7 +14,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PBEKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PBEKeySpec(QAndroidJniObject obj);
+		PBEKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PBEKeySpec(JCharArray arg0);

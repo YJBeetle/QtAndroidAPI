@@ -24,7 +24,7 @@ namespace android::hardware::input
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InputManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputManager(QAndroidJniObject obj);
+		InputManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

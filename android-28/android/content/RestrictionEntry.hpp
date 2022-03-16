@@ -33,7 +33,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RestrictionEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RestrictionEntry(QAndroidJniObject obj);
+		RestrictionEntry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RestrictionEntry(android::os::Parcel arg0);

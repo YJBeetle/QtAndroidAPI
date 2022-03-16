@@ -24,7 +24,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FeatureInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FeatureInfo(QAndroidJniObject obj);
+		FeatureInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FeatureInfo();

@@ -18,7 +18,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Exchanger(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Exchanger(QAndroidJniObject obj);
+		Exchanger(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Exchanger();

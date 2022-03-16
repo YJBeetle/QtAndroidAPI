@@ -102,9 +102,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UserDictionary_Words::UserDictionary_Words(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	UserDictionary_Words::UserDictionary_Words()
 		: JObject(

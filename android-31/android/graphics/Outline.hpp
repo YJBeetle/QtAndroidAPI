@@ -20,7 +20,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Outline(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Outline(QAndroidJniObject obj);
+		Outline(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Outline();

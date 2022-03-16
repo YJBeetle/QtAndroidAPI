@@ -14,7 +14,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AtomicStampedReference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicStampedReference(QAndroidJniObject obj);
+		AtomicStampedReference(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AtomicStampedReference(JObject arg0, jint arg1);

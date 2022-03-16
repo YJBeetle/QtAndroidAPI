@@ -13,7 +13,7 @@ namespace android::net::ipsec::ike
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IkeSessionParams_IkeAuthConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_IkeAuthConfig(QAndroidJniObject obj);
+		IkeSessionParams_IkeAuthConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

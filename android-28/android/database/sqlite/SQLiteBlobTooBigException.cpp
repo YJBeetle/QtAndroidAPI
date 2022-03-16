@@ -5,9 +5,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteBlobTooBigException::SQLiteBlobTooBigException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
-	
 	// Constructors
 	SQLiteBlobTooBigException::SQLiteBlobTooBigException()
 		: android::database::sqlite::SQLiteException(

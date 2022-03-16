@@ -14,7 +14,7 @@ namespace java::util::concurrent::atomic
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AtomicLongArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AtomicLongArray(QAndroidJniObject obj);
+		AtomicLongArray(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AtomicLongArray(JLongArray arg0);

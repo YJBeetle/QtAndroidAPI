@@ -13,7 +13,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DuplicateFormatFlagsException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		DuplicateFormatFlagsException(QAndroidJniObject obj);
+		DuplicateFormatFlagsException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
 		
 		// Constructors
 		DuplicateFormatFlagsException(JString arg0);

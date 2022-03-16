@@ -17,7 +17,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardCopyOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		StandardCopyOption(QAndroidJniObject obj);
+		StandardCopyOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

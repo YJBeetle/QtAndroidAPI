@@ -22,9 +22,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AbsSavedState::AbsSavedState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

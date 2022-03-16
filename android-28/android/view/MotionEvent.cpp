@@ -629,9 +629,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MotionEvent::MotionEvent(QAndroidJniObject obj) : android::view::InputEvent(obj) {}
-	
 	// Constructors
 	
 	// Methods

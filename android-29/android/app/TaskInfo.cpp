@@ -61,9 +61,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TaskInfo::TaskInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

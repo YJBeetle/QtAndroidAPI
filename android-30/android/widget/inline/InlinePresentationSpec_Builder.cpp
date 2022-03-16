@@ -7,9 +7,6 @@ namespace android::widget::inline_
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InlinePresentationSpec_Builder::InlinePresentationSpec_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InlinePresentationSpec_Builder::InlinePresentationSpec_Builder(android::util::Size arg0, android::util::Size arg1)
 		: JObject(

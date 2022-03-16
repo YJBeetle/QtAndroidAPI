@@ -39,9 +39,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Connection_RttModifyStatus::Connection_RttModifyStatus(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

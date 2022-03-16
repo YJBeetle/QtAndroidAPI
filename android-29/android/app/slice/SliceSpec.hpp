@@ -19,7 +19,7 @@ namespace android::app::slice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SliceSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SliceSpec(QAndroidJniObject obj);
+		SliceSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SliceSpec(JString arg0, jint arg1);

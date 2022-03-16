@@ -20,7 +20,7 @@ namespace android::graphics::pdf
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PdfDocument_Page(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PdfDocument_Page(QAndroidJniObject obj);
+		PdfDocument_Page(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

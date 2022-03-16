@@ -30,7 +30,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Normalizer2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer2(QAndroidJniObject obj);
+		Normalizer2(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

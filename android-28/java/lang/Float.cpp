@@ -87,9 +87,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Float::Float(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	Float::Float(jdouble arg0)
 		: java::lang::Number(

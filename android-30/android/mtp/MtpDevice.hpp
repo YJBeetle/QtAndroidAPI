@@ -47,7 +47,7 @@ namespace android::mtp
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MtpDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MtpDevice(QAndroidJniObject obj);
+		MtpDevice(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MtpDevice(android::hardware::usb::UsbDevice arg0);

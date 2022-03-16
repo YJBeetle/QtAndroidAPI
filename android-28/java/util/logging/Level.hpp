@@ -28,7 +28,7 @@ namespace java::util::logging
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Level(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Level(QAndroidJniObject obj);
+		Level(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

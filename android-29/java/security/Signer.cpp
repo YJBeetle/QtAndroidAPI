@@ -7,9 +7,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Signer::Signer(QAndroidJniObject obj) : java::security::Identity(obj) {}
-	
 	// Constructors
 	Signer::Signer(JString arg0)
 		: java::security::Identity(

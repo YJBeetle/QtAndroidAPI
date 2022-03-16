@@ -4,9 +4,6 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	R_bool::R_bool(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	R_bool::R_bool()
 		: JObject(

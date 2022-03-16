@@ -34,7 +34,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Long(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		Long(QAndroidJniObject obj);
+		Long(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		Long(JString arg0);

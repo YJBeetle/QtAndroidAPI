@@ -223,9 +223,6 @@ namespace android::media::effect
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EffectFactory::EffectFactory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

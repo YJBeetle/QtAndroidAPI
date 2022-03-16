@@ -19,7 +19,7 @@ namespace java::sql
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DriverPropertyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DriverPropertyInfo(QAndroidJniObject obj);
+		DriverPropertyInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DriverPropertyInfo(JString arg0, JString arg1);

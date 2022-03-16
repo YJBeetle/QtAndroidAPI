@@ -5,9 +5,6 @@ namespace java::nio::channels
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Pipe_SourceChannel::Pipe_SourceChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
-	
 	// Constructors
 	
 	// Methods

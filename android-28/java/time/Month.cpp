@@ -106,9 +106,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Month::Month(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

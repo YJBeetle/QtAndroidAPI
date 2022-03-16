@@ -14,7 +14,7 @@ namespace java::security::cert
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PolicyQualifierInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PolicyQualifierInfo(QAndroidJniObject obj);
+		PolicyQualifierInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PolicyQualifierInfo(JByteArray arg0);

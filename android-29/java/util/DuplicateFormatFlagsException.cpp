@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DuplicateFormatFlagsException::DuplicateFormatFlagsException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
-	
 	// Constructors
 	DuplicateFormatFlagsException::DuplicateFormatFlagsException(JString arg0)
 		: java::util::IllegalFormatException(

@@ -5,9 +5,6 @@ namespace android::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Editable_Factory::Editable_Factory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Editable_Factory::Editable_Factory()
 		: JObject(

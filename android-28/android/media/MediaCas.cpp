@@ -9,9 +9,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaCas::MediaCas(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaCas::MediaCas(jint arg0)
 		: JObject(

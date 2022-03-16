@@ -25,7 +25,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmErrorEvent(const char *className, const char *sig, Ts...agv) : android::drm::DrmEvent(className, sig, std::forward<Ts>(agv)...) {}
-		DrmErrorEvent(QAndroidJniObject obj);
+		DrmErrorEvent(QAndroidJniObject obj) : android::drm::DrmEvent(obj) {}
 		
 		// Constructors
 		DrmErrorEvent(jint arg0, jint arg1, JString arg2);

@@ -20,9 +20,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CrossProfileApps::CrossProfileApps(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -25,7 +25,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormat_Field(QAndroidJniObject obj);
+		NumberFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
 		
 		// Constructors
 		

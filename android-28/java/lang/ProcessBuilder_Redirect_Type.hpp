@@ -19,7 +19,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProcessBuilder_Redirect_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessBuilder_Redirect_Type(QAndroidJniObject obj);
+		ProcessBuilder_Redirect_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

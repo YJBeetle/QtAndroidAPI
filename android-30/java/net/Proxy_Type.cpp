@@ -30,9 +30,6 @@ namespace java::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Proxy_Type::Proxy_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

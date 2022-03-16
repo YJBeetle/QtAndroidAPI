@@ -5,9 +5,6 @@ namespace android::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Element::Element(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

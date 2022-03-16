@@ -20,7 +20,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaSync_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSync_Callback(QAndroidJniObject obj);
+		MediaSync_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaSync_Callback();

@@ -23,7 +23,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PathMeasure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PathMeasure(QAndroidJniObject obj);
+		PathMeasure(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PathMeasure();

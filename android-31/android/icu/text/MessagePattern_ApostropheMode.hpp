@@ -16,7 +16,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessagePattern_ApostropheMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern_ApostropheMode(QAndroidJniObject obj);
+		MessagePattern_ApostropheMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

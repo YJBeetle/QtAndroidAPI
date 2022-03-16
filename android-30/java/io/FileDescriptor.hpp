@@ -14,7 +14,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FileDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileDescriptor(QAndroidJniObject obj);
+		FileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FileDescriptor();

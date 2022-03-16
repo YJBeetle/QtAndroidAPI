@@ -14,7 +14,7 @@ namespace android::print
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintAttributes_Resolution(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes_Resolution(QAndroidJniObject obj);
+		PrintAttributes_Resolution(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PrintAttributes_Resolution(JString arg0, JString arg1, jint arg2, jint arg3);

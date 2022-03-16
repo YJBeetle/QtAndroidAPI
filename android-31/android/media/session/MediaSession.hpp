@@ -68,7 +68,7 @@ namespace android::media::session
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession(QAndroidJniObject obj);
+		MediaSession(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaSession(android::content::Context arg0, JString arg1);

@@ -22,7 +22,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaSession2_ControllerInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSession2_ControllerInfo(QAndroidJniObject obj);
+		MediaSession2_ControllerInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

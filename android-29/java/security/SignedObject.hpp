@@ -23,7 +23,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SignedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignedObject(QAndroidJniObject obj);
+		SignedObject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2);

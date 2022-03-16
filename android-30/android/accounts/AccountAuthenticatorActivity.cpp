@@ -5,9 +5,6 @@ namespace android::accounts
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AccountAuthenticatorActivity::AccountAuthenticatorActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
-	
 	// Constructors
 	AccountAuthenticatorActivity::AccountAuthenticatorActivity()
 		: android::app::Activity(

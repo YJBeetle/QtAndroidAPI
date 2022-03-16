@@ -7,9 +7,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlphabetIndexer::AlphabetIndexer(QAndroidJniObject obj) : android::database::DataSetObserver(obj) {}
-	
 	// Constructors
 	AlphabetIndexer::AlphabetIndexer(JObject arg0, jint arg1, JString arg2)
 		: android::database::DataSetObserver(

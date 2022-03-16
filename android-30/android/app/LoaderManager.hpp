@@ -30,7 +30,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LoaderManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LoaderManager(QAndroidJniObject obj);
+		LoaderManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LoaderManager();

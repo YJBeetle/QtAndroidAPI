@@ -28,7 +28,7 @@ namespace android::view::textservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SpellCheckerSubtype(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerSubtype(QAndroidJniObject obj);
+		SpellCheckerSubtype(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SpellCheckerSubtype(jint arg0, JString arg1, JString arg2);

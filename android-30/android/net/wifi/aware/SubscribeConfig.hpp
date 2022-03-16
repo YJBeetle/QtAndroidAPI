@@ -21,7 +21,7 @@ namespace android::net::wifi::aware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SubscribeConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubscribeConfig(QAndroidJniObject obj);
+		SubscribeConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -8,9 +8,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowInsets::WindowInsets(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WindowInsets::WindowInsets(android::view::WindowInsets &arg0)
 		: JObject(

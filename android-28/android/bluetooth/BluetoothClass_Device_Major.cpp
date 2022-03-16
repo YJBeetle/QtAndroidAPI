@@ -81,9 +81,6 @@ namespace android::bluetooth
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothClass_Device_Major::BluetoothClass_Device_Major(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothClass_Device_Major::BluetoothClass_Device_Major()
 		: JObject(

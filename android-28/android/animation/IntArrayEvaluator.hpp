@@ -14,7 +14,7 @@ namespace android::animation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IntArrayEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IntArrayEvaluator(QAndroidJniObject obj);
+		IntArrayEvaluator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IntArrayEvaluator();

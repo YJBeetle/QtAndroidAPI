@@ -14,7 +14,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StrictMode_ThreadPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMode_ThreadPolicy(QAndroidJniObject obj);
+		StrictMode_ThreadPolicy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

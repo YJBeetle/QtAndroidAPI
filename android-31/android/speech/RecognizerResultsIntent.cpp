@@ -61,9 +61,6 @@ namespace android::speech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RecognizerResultsIntent::RecognizerResultsIntent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

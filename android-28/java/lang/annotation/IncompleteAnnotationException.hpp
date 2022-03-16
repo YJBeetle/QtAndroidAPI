@@ -14,7 +14,7 @@ namespace java::lang::annotation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IncompleteAnnotationException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		IncompleteAnnotationException(QAndroidJniObject obj);
+		IncompleteAnnotationException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		IncompleteAnnotationException(JClass arg0, JString arg1);

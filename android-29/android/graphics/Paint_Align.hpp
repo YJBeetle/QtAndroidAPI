@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Paint_Align(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Align(QAndroidJniObject obj);
+		Paint_Align(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

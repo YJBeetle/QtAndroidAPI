@@ -14,7 +14,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LruCache(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LruCache(QAndroidJniObject obj);
+		LruCache(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LruCache(jint arg0);

@@ -51,9 +51,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	LauncherActivity_ListItem::LauncherActivity_ListItem(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LauncherActivity_ListItem::LauncherActivity_ListItem()
 		: JObject(

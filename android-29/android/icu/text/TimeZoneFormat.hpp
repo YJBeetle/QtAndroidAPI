@@ -58,7 +58,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimeZoneFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneFormat(QAndroidJniObject obj);
+		TimeZoneFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
 		
 		// Constructors
 		

@@ -5,9 +5,6 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IllformedLocaleException::IllformedLocaleException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	IllformedLocaleException::IllformedLocaleException()
 		: java::lang::RuntimeException(

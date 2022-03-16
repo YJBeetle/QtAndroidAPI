@@ -22,7 +22,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmRights(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmRights(QAndroidJniObject obj);
+		DrmRights(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmRights(android::drm::ProcessedData arg0, JString arg1);

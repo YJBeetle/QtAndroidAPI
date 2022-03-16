@@ -6,9 +6,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceControl_Transaction::SurfaceControl_Transaction(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SurfaceControl_Transaction::SurfaceControl_Transaction()
 		: JObject(

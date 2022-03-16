@@ -17,7 +17,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AdapterViewFlipper(const char *className, const char *sig, Ts...agv) : android::widget::AdapterViewAnimator(className, sig, std::forward<Ts>(agv)...) {}
-		AdapterViewFlipper(QAndroidJniObject obj);
+		AdapterViewFlipper(QAndroidJniObject obj) : android::widget::AdapterViewAnimator(obj) {}
 		
 		// Constructors
 		AdapterViewFlipper(android::content::Context arg0);

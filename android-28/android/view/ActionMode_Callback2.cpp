@@ -7,9 +7,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ActionMode_Callback2::ActionMode_Callback2(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ActionMode_Callback2::ActionMode_Callback2()
 		: JObject(

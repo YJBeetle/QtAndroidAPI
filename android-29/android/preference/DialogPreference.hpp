@@ -37,7 +37,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DialogPreference(const char *className, const char *sig, Ts...agv) : android::preference::Preference(className, sig, std::forward<Ts>(agv)...) {}
-		DialogPreference(QAndroidJniObject obj);
+		DialogPreference(QAndroidJniObject obj) : android::preference::Preference(obj) {}
 		
 		// Constructors
 		DialogPreference(android::content::Context arg0);

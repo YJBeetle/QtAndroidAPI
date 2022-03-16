@@ -27,7 +27,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Random(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Random(QAndroidJniObject obj);
+		Random(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Random();

@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Paint_Join(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Join(QAndroidJniObject obj);
+		Paint_Join(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

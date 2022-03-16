@@ -5,9 +5,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CloneNotSupportedException::CloneNotSupportedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	CloneNotSupportedException::CloneNotSupportedException()
 		: java::lang::Exception(

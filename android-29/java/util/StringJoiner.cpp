@@ -8,9 +8,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringJoiner::StringJoiner(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StringJoiner::StringJoiner(JString arg0)
 		: JObject(

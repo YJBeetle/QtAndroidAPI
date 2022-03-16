@@ -14,7 +14,7 @@ namespace android::text::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Rfc822Tokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Rfc822Tokenizer(QAndroidJniObject obj);
+		Rfc822Tokenizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Rfc822Tokenizer();

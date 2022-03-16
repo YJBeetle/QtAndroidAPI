@@ -4,9 +4,6 @@ namespace android::telephony
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TelephonyCallback::TelephonyCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TelephonyCallback::TelephonyCallback()
 		: JObject(

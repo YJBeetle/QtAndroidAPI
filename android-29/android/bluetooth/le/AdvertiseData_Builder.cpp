@@ -7,9 +7,6 @@ namespace android::bluetooth::le
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AdvertiseData_Builder::AdvertiseData_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AdvertiseData_Builder::AdvertiseData_Builder()
 		: JObject(

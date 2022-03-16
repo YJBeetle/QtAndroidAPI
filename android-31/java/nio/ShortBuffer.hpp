@@ -23,7 +23,7 @@ namespace java::nio
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ShortBuffer(const char *className, const char *sig, Ts...agv) : java::nio::Buffer(className, sig, std::forward<Ts>(agv)...) {}
-		ShortBuffer(QAndroidJniObject obj);
+		ShortBuffer(QAndroidJniObject obj) : java::nio::Buffer(obj) {}
 		
 		// Constructors
 		

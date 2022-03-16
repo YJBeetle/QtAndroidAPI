@@ -30,7 +30,7 @@ namespace android::companion
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BluetoothLeDeviceFilter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothLeDeviceFilter_Builder(QAndroidJniObject obj);
+		BluetoothLeDeviceFilter_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		BluetoothLeDeviceFilter_Builder();

@@ -16,7 +16,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SearchEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchEvent(QAndroidJniObject obj);
+		SearchEvent(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SearchEvent(android::view::InputDevice arg0);

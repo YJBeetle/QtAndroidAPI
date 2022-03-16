@@ -5,9 +5,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Edits::Edits(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Edits::Edits()
 		: JObject(

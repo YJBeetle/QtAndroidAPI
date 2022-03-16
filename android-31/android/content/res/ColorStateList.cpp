@@ -18,9 +18,6 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ColorStateList::ColorStateList(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ColorStateList::ColorStateList(JArray arg0, JIntArray arg1)
 		: JObject(

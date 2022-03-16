@@ -48,9 +48,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AlertDialog::AlertDialog(QAndroidJniObject obj) : android::app::Dialog(obj) {}
-	
 	// Constructors
 	
 	// Methods

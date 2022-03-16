@@ -64,9 +64,6 @@ namespace android::net::nsd
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NsdManager::NsdManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

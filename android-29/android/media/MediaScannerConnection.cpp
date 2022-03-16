@@ -8,9 +8,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaScannerConnection::MediaScannerConnection(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaScannerConnection::MediaScannerConnection(android::content::Context arg0, JObject arg1)
 		: JObject(

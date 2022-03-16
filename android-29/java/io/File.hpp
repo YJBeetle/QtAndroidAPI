@@ -36,7 +36,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit File(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		File(QAndroidJniObject obj);
+		File(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		File(JString arg0);

@@ -22,7 +22,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccountAuthenticatorResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccountAuthenticatorResponse(QAndroidJniObject obj);
+		AccountAuthenticatorResponse(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccountAuthenticatorResponse(android::os::Parcel arg0);

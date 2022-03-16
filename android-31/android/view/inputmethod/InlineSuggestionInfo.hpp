@@ -28,7 +28,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InlineSuggestionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestionInfo(QAndroidJniObject obj);
+		InlineSuggestionInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

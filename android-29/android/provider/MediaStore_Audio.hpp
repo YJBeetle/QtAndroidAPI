@@ -13,7 +13,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaStore_Audio(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio(QAndroidJniObject obj);
+		MediaStore_Audio(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaStore_Audio();

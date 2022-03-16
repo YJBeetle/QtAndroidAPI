@@ -17,7 +17,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StrictMode_VmPolicy_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMode_VmPolicy_Builder(QAndroidJniObject obj);
+		StrictMode_VmPolicy_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		StrictMode_VmPolicy_Builder();

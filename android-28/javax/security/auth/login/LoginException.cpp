@@ -5,9 +5,6 @@ namespace javax::security::auth::login
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LoginException::LoginException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-	
 	// Constructors
 	LoginException::LoginException()
 		: java::security::GeneralSecurityException(

@@ -13,9 +13,6 @@ namespace javax::xml::transform::sax
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SAXResult::SAXResult(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SAXResult::SAXResult()
 		: JObject(

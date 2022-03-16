@@ -24,7 +24,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpPrefix(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpPrefix(QAndroidJniObject obj);
+		IpPrefix(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -113,9 +113,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Activity::Activity(QAndroidJniObject obj) : android::view::ContextThemeWrapper(obj) {}
-	
 	// Constructors
 	Activity::Activity()
 		: android::view::ContextThemeWrapper(

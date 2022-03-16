@@ -813,9 +813,6 @@ namespace android::opengl
 		);
 	}
 	
-	// QAndroidJniObject forward
-	EGL14::EGL14(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	EGL14::EGL14()
 		: JObject(

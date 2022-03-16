@@ -39,9 +39,6 @@ namespace android::webkit
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PermissionRequest::PermissionRequest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PermissionRequest::PermissionRequest()
 		: JObject(

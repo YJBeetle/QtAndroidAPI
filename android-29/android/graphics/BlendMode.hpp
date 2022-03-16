@@ -43,7 +43,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BlendMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		BlendMode(QAndroidJniObject obj);
+		BlendMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

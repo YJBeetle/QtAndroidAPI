@@ -46,9 +46,6 @@ namespace android::os::storage
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StorageManager::StorageManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

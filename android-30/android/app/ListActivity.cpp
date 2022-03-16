@@ -7,9 +7,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ListActivity::ListActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
-	
 	// Constructors
 	ListActivity::ListActivity()
 		: android::app::Activity(

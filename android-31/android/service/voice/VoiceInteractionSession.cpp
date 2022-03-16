@@ -89,9 +89,6 @@ namespace android::service::voice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VoiceInteractionSession::VoiceInteractionSession(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0)
 		: JObject(

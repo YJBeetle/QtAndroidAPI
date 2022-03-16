@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TooManyListenersException::TooManyListenersException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	TooManyListenersException::TooManyListenersException()
 		: java::lang::Exception(

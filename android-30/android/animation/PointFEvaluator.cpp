@@ -6,9 +6,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PointFEvaluator::PointFEvaluator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PointFEvaluator::PointFEvaluator()
 		: JObject(

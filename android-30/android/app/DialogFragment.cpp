@@ -42,9 +42,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DialogFragment::DialogFragment(QAndroidJniObject obj) : android::app::Fragment(obj) {}
-	
 	// Constructors
 	DialogFragment::DialogFragment()
 		: android::app::Fragment(

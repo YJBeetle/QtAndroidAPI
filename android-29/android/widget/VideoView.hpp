@@ -50,7 +50,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VideoView(const char *className, const char *sig, Ts...agv) : android::view::SurfaceView(className, sig, std::forward<Ts>(agv)...) {}
-		VideoView(QAndroidJniObject obj);
+		VideoView(QAndroidJniObject obj) : android::view::SurfaceView(obj) {}
 		
 		// Constructors
 		VideoView(android::content::Context arg0);

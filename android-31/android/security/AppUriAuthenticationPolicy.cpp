@@ -15,9 +15,6 @@ namespace android::security
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppUriAuthenticationPolicy::AppUriAuthenticationPolicy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

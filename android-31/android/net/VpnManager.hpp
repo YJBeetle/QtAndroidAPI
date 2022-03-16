@@ -20,7 +20,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VpnManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VpnManager(QAndroidJniObject obj);
+		VpnManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

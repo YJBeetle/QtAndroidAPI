@@ -73,7 +73,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OffsetDateTime(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OffsetDateTime(QAndroidJniObject obj);
+		OffsetDateTime(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

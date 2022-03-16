@@ -6,9 +6,6 @@ namespace android::text::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Rfc822Tokenizer::Rfc822Tokenizer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Rfc822Tokenizer::Rfc822Tokenizer()
 		: JObject(

@@ -97,9 +97,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Half::Half(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	Half::Half(jdouble arg0)
 		: java::lang::Number(

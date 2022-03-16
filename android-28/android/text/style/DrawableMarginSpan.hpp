@@ -33,7 +33,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrawableMarginSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrawableMarginSpan(QAndroidJniObject obj);
+		DrawableMarginSpan(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrawableMarginSpan(android::graphics::drawable::Drawable arg0);

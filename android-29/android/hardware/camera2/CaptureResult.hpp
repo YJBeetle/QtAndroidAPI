@@ -103,7 +103,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CaptureResult(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraMetadata(className, sig, std::forward<Ts>(agv)...) {}
-		CaptureResult(QAndroidJniObject obj);
+		CaptureResult(QAndroidJniObject obj) : android::hardware::camera2::CameraMetadata(obj) {}
 		
 		// Constructors
 		

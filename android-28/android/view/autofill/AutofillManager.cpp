@@ -36,9 +36,6 @@ namespace android::view::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AutofillManager::AutofillManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

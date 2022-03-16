@@ -12,9 +12,6 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TypedArray::TypedArray(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

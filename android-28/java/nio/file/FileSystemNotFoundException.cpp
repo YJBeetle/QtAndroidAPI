@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FileSystemNotFoundException::FileSystemNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	FileSystemNotFoundException::FileSystemNotFoundException()
 		: java::lang::RuntimeException(

@@ -87,9 +87,6 @@ namespace java::lang
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Double::Double(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	Double::Double(jdouble arg0)
 		: java::lang::Number(

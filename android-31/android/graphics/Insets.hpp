@@ -28,7 +28,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Insets(QAndroidJniObject obj);
+		Insets(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

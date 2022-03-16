@@ -14,7 +14,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_RangeInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj);
+		AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityNodeInfo_RangeInfo(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);

@@ -12,9 +12,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ErrnoException::ErrnoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	ErrnoException::ErrnoException(JString arg0, jint arg1)
 		: java::lang::Exception(

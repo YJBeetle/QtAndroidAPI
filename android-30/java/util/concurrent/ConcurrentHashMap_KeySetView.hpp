@@ -16,7 +16,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConcurrentHashMap_KeySetView(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConcurrentHashMap_KeySetView(QAndroidJniObject obj);
+		ConcurrentHashMap_KeySetView(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

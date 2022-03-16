@@ -68,7 +68,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Bitmap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Bitmap(QAndroidJniObject obj);
+		Bitmap(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

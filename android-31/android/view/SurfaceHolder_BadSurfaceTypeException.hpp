@@ -13,7 +13,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SurfaceHolder_BadSurfaceTypeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceHolder_BadSurfaceTypeException(QAndroidJniObject obj);
+		SurfaceHolder_BadSurfaceTypeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		SurfaceHolder_BadSurfaceTypeException();

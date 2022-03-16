@@ -644,9 +644,6 @@ namespace android::content::res
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Configuration::Configuration(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Configuration::Configuration()
 		: JObject(

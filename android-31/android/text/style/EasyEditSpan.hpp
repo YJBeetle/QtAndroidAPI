@@ -24,7 +24,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EasyEditSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EasyEditSpan(QAndroidJniObject obj);
+		EasyEditSpan(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EasyEditSpan();

@@ -11,7 +11,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CharacterCodingException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		CharacterCodingException(QAndroidJniObject obj);
+		CharacterCodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		CharacterCodingException();

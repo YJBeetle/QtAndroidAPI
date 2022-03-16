@@ -22,7 +22,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaScannerConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaScannerConnection(QAndroidJniObject obj);
+		MediaScannerConnection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaScannerConnection(android::content::Context arg0, JObject arg1);

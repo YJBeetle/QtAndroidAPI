@@ -14,9 +14,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SurroundingText::SurroundingText(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SurroundingText::SurroundingText(JString arg0, jint arg1, jint arg2, jint arg3)
 		: JObject(

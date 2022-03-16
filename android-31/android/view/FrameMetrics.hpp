@@ -25,7 +25,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FrameMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FrameMetrics(QAndroidJniObject obj);
+		FrameMetrics(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		FrameMetrics(android::view::FrameMetrics &arg0);

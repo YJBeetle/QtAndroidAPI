@@ -6,9 +6,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Annotation::Annotation(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Annotation::Annotation(JObject arg0)
 		: JObject(

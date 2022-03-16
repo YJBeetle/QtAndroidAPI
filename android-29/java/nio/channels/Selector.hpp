@@ -20,7 +20,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Selector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Selector(QAndroidJniObject obj);
+		Selector(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

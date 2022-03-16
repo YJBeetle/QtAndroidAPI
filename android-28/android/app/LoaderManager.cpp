@@ -10,9 +10,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LoaderManager::LoaderManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LoaderManager::LoaderManager()
 		: JObject(

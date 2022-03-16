@@ -45,9 +45,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Call_Callback::Call_Callback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Call_Callback::Call_Callback()
 		: JObject(

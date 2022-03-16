@@ -36,7 +36,7 @@ namespace android::inputmethodservice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyboardView(const char *className, const char *sig, Ts...agv) : android::view::View(className, sig, std::forward<Ts>(agv)...) {}
-		KeyboardView(QAndroidJniObject obj);
+		KeyboardView(QAndroidJniObject obj) : android::view::View(obj) {}
 		
 		// Constructors
 		KeyboardView(android::content::Context arg0, JObject arg1);

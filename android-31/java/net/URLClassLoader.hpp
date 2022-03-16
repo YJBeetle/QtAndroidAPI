@@ -51,7 +51,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit URLClassLoader(const char *className, const char *sig, Ts...agv) : java::security::SecureClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		URLClassLoader(QAndroidJniObject obj);
+		URLClassLoader(QAndroidJniObject obj) : java::security::SecureClassLoader(obj) {}
 		
 		// Constructors
 		URLClassLoader(JArray arg0);

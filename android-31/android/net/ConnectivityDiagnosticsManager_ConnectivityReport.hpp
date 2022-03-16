@@ -47,7 +47,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConnectivityDiagnosticsManager_ConnectivityReport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectivityDiagnosticsManager_ConnectivityReport(QAndroidJniObject obj);
+		ConnectivityDiagnosticsManager_ConnectivityReport(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConnectivityDiagnosticsManager_ConnectivityReport(android::net::Network arg0, jlong arg1, android::net::LinkProperties arg2, android::net::NetworkCapabilities arg3, android::os::PersistableBundle arg4);

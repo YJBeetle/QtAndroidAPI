@@ -26,7 +26,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyGenerator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyGenerator(QAndroidJniObject obj);
+		KeyGenerator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

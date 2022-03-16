@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RggbChannelVector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RggbChannelVector(QAndroidJniObject obj);
+		RggbChannelVector(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);

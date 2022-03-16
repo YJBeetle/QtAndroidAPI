@@ -13,7 +13,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ReceiverCallNotAllowedException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ReceiverCallNotAllowedException(QAndroidJniObject obj);
+		ReceiverCallNotAllowedException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
 		
 		// Constructors
 		ReceiverCallNotAllowedException(JString arg0);

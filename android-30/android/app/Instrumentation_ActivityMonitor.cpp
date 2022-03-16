@@ -9,9 +9,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor()
 		: JObject(

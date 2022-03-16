@@ -5,9 +5,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SubtitleData::SubtitleData(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SubtitleData::SubtitleData(jint arg0, jlong arg1, jlong arg2, JByteArray arg3)
 		: JObject(

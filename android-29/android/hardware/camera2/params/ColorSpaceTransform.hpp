@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ColorSpaceTransform(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpaceTransform(QAndroidJniObject obj);
+		ColorSpaceTransform(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ColorSpaceTransform(JIntArray arg0);

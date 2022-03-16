@@ -18,7 +18,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ECPoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ECPoint(QAndroidJniObject obj);
+		ECPoint(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ECPoint(java::math::BigInteger arg0, java::math::BigInteger arg1);

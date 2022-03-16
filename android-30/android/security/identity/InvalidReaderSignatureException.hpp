@@ -14,7 +14,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit InvalidReaderSignatureException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidReaderSignatureException(QAndroidJniObject obj);
+		InvalidReaderSignatureException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 		
 		// Constructors
 		InvalidReaderSignatureException(JString arg0);

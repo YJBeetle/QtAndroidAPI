@@ -7,9 +7,6 @@ namespace java::security::spec
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ECParameterSpec::ECParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ECParameterSpec::ECParameterSpec(java::security::spec::EllipticCurve arg0, java::security::spec::ECPoint arg1, java::math::BigInteger arg2, jint arg3)
 		: JObject(

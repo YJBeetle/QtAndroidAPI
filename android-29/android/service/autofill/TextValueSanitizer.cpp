@@ -15,9 +15,6 @@ namespace android::service::autofill
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextValueSanitizer::TextValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern arg0, JString arg1)
 		: JObject(

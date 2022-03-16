@@ -19,7 +19,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierConfigManager_Apn(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_Apn(QAndroidJniObject obj);
+		CarrierConfigManager_Apn(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

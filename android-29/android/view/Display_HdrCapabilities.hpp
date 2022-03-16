@@ -24,7 +24,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Display_HdrCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Display_HdrCapabilities(QAndroidJniObject obj);
+		Display_HdrCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

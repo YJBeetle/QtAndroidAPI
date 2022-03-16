@@ -25,7 +25,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZipEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZipEntry(QAndroidJniObject obj);
+		ZipEntry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ZipEntry(JString arg0);

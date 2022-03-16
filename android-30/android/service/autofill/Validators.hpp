@@ -13,7 +13,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Validators(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Validators(QAndroidJniObject obj);
+		Validators(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

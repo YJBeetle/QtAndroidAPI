@@ -5,9 +5,6 @@ namespace java::nio::file
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AtomicMoveNotSupportedException::AtomicMoveNotSupportedException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
-	
 	// Constructors
 	AtomicMoveNotSupportedException::AtomicMoveNotSupportedException(JString arg0, JString arg1, JString arg2)
 		: java::nio::file::FileSystemException(

@@ -14,7 +14,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Byte3(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Byte3(QAndroidJniObject obj);
+		Byte3(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Byte3();

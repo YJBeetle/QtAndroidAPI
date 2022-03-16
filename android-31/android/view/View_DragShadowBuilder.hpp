@@ -24,7 +24,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit View_DragShadowBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		View_DragShadowBuilder(QAndroidJniObject obj);
+		View_DragShadowBuilder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		View_DragShadowBuilder();

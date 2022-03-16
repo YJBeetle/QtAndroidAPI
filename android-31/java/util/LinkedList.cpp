@@ -9,9 +9,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LinkedList::LinkedList(QAndroidJniObject obj) : java::util::AbstractSequentialList(obj) {}
-	
 	// Constructors
 	LinkedList::LinkedList()
 		: java::util::AbstractSequentialList(

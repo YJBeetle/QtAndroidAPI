@@ -36,9 +36,6 @@ namespace java::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Bidi::Bidi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Bidi::Bidi(JObject arg0)
 		: JObject(

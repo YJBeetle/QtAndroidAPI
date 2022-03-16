@@ -4,9 +4,6 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Manifest::Manifest(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Manifest::Manifest()
 		: JObject(

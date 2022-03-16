@@ -18,9 +18,6 @@ namespace android::view::inputmethod
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputMethodSubtype::InputMethodSubtype(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, JString arg2, JString arg3, JString arg4, jboolean arg5, jboolean arg6)
 		: JObject(

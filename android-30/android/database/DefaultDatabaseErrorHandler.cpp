@@ -5,9 +5,6 @@ namespace android::database
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler()
 		: JObject(

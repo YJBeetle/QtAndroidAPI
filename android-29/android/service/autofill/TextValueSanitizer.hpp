@@ -22,7 +22,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TextValueSanitizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextValueSanitizer(QAndroidJniObject obj);
+		TextValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TextValueSanitizer(java::util::regex::Pattern arg0, JString arg1);

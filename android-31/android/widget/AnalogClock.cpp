@@ -10,9 +10,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AnalogClock::AnalogClock(QAndroidJniObject obj) : android::view::View(obj) {}
-	
 	// Constructors
 	AnalogClock::AnalogClock(android::content::Context arg0)
 		: android::view::View(

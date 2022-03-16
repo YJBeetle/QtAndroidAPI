@@ -60,9 +60,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Surface::Surface(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Surface::Surface(android::graphics::SurfaceTexture arg0)
 		: JObject(

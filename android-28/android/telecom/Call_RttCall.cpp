@@ -26,9 +26,6 @@ namespace android::telecom
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Call_RttCall::Call_RttCall(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

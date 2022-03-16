@@ -12,9 +12,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlertDialog_Builder::AlertDialog_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AlertDialog_Builder::AlertDialog_Builder(android::content::Context arg0)
 		: JObject(

@@ -31,7 +31,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Typeface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Typeface(QAndroidJniObject obj);
+		Typeface(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

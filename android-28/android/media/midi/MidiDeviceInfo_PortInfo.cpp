@@ -19,9 +19,6 @@ namespace android::media::midi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MidiDeviceInfo_PortInfo::MidiDeviceInfo_PortInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

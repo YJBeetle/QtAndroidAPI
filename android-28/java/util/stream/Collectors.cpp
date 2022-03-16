@@ -23,9 +23,6 @@ namespace java::util::stream
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Collectors::Collectors(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

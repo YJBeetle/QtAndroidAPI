@@ -42,9 +42,6 @@ namespace java::io
 		);
 	}
 	
-	// QAndroidJniObject forward
-	File::File(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	File::File(JString arg0)
 		: JObject(

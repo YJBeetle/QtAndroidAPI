@@ -20,7 +20,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj);
+		WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		WifiManager_LocalOnlyHotspotCallback();

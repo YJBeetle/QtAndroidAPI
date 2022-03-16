@@ -15,7 +15,7 @@ namespace android::telephony::ims
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImsException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ImsException(QAndroidJniObject obj);
+		ImsException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		

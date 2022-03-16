@@ -22,7 +22,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Measure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Measure(QAndroidJniObject obj);
+		Measure(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1);

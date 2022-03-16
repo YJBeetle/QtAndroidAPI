@@ -23,9 +23,6 @@ namespace java::util::concurrent
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ForkJoinPool::ForkJoinPool(QAndroidJniObject obj) : java::util::concurrent::AbstractExecutorService(obj) {}
-	
 	// Constructors
 	ForkJoinPool::ForkJoinPool()
 		: java::util::concurrent::AbstractExecutorService(

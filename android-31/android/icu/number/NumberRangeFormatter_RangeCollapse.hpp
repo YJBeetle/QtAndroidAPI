@@ -18,7 +18,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberRangeFormatter_RangeCollapse(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter_RangeCollapse(QAndroidJniObject obj);
+		NumberRangeFormatter_RangeCollapse(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

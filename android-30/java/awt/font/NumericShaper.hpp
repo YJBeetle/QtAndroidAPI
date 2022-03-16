@@ -45,7 +45,7 @@ namespace java::awt::font
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumericShaper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NumericShaper(QAndroidJniObject obj);
+		NumericShaper(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -13,7 +13,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Surface_OutOfResourcesException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		Surface_OutOfResourcesException(QAndroidJniObject obj);
+		Surface_OutOfResourcesException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
 		
 		// Constructors
 		Surface_OutOfResourcesException();

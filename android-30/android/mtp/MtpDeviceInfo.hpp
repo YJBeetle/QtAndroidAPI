@@ -14,7 +14,7 @@ namespace android::mtp
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MtpDeviceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MtpDeviceInfo(QAndroidJniObject obj);
+		MtpDeviceInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

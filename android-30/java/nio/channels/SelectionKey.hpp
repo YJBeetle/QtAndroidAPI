@@ -25,7 +25,7 @@ namespace java::nio::channels
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SelectionKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SelectionKey(QAndroidJniObject obj);
+		SelectionKey(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

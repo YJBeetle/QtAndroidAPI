@@ -7,9 +7,6 @@ namespace android::database::sqlite
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SQLiteProgram::SQLiteProgram(QAndroidJniObject obj) : android::database::sqlite::SQLiteClosable(obj) {}
-	
 	// Constructors
 	
 	// Methods

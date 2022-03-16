@@ -6,9 +6,6 @@ namespace org::xml::sax
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SAXParseException::SAXParseException(QAndroidJniObject obj) : org::xml::sax::SAXException(obj) {}
-	
 	// Constructors
 	SAXParseException::SAXParseException(JString arg0, JObject arg1)
 		: org::xml::sax::SAXException(

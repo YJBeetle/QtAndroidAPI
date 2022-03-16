@@ -24,9 +24,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ProgressDialog::ProgressDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
-	
 	// Constructors
 	ProgressDialog::ProgressDialog(android::content::Context arg0)
 		: android::app::AlertDialog(

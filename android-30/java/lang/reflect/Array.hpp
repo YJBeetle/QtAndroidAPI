@@ -15,7 +15,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Array(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Array(QAndroidJniObject obj);
+		Array(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

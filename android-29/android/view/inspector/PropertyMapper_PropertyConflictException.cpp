@@ -5,9 +5,6 @@ namespace android::view::inspector
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyMapper_PropertyConflictException::PropertyMapper_PropertyConflictException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	PropertyMapper_PropertyConflictException::PropertyMapper_PropertyConflictException(JString arg0, JString arg1, JString arg2)
 		: java::lang::RuntimeException(

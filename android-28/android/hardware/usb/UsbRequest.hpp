@@ -25,7 +25,7 @@ namespace android::hardware::usb
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UsbRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsbRequest(QAndroidJniObject obj);
+		UsbRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UsbRequest();

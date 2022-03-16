@@ -37,7 +37,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessNetworkConstants_UtranBand(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_UtranBand(QAndroidJniObject obj);
+		AccessNetworkConstants_UtranBand(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

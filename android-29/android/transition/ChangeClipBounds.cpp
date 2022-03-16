@@ -9,9 +9,6 @@ namespace android::transition
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ChangeClipBounds::ChangeClipBounds(QAndroidJniObject obj) : android::transition::Transition(obj) {}
-	
 	// Constructors
 	ChangeClipBounds::ChangeClipBounds()
 		: android::transition::Transition(

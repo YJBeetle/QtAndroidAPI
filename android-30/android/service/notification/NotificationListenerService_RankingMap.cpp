@@ -17,9 +17,6 @@ namespace android::service::notification
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NotificationListenerService_RankingMap::NotificationListenerService_RankingMap(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

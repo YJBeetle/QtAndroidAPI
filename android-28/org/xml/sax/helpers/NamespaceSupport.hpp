@@ -17,7 +17,7 @@ namespace org::xml::sax::helpers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NamespaceSupport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NamespaceSupport(QAndroidJniObject obj);
+		NamespaceSupport(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NamespaceSupport();

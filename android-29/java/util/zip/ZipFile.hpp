@@ -36,7 +36,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZipFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ZipFile(QAndroidJniObject obj);
+		ZipFile(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ZipFile(java::io::File arg0);

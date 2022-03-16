@@ -23,9 +23,6 @@ namespace android::view::translation
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TranslationSpec::TranslationSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TranslationSpec::TranslationSpec(android::icu::util::ULocale arg0, jint arg1)
 		: JObject(

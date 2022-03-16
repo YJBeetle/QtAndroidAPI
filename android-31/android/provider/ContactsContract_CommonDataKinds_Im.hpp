@@ -37,7 +37,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Im(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Im(QAndroidJniObject obj);
+		ContactsContract_CommonDataKinds_Im(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

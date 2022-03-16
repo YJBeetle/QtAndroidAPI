@@ -4,9 +4,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DiscretePathEffect::DiscretePathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-	
 	// Constructors
 	DiscretePathEffect::DiscretePathEffect(jfloat arg0, jfloat arg1)
 		: android::graphics::PathEffect(

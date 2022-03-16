@@ -14,7 +14,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractList(const char *className, const char *sig, Ts...agv) : java::util::AbstractCollection(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractList(QAndroidJniObject obj);
+		AbstractList(QAndroidJniObject obj) : java::util::AbstractCollection(obj) {}
 		
 		// Constructors
 		

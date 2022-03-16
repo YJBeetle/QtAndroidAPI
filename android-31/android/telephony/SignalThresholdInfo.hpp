@@ -29,7 +29,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SignalThresholdInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignalThresholdInfo(QAndroidJniObject obj);
+		SignalThresholdInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

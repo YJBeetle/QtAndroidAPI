@@ -10,9 +10,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Typeface_Builder::Typeface_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Typeface_Builder::Typeface_Builder(java::io::File arg0)
 		: JObject(

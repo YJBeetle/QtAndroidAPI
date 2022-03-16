@@ -17,7 +17,7 @@ namespace java::lang::ref
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PhantomReference(const char *className, const char *sig, Ts...agv) : java::lang::ref::Reference(className, sig, std::forward<Ts>(agv)...) {}
-		PhantomReference(QAndroidJniObject obj);
+		PhantomReference(QAndroidJniObject obj) : java::lang::ref::Reference(obj) {}
 		
 		// Constructors
 		PhantomReference(JObject arg0, java::lang::ref::ReferenceQueue arg1);

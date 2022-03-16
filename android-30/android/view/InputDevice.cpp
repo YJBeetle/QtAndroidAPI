@@ -264,9 +264,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InputDevice::InputDevice(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

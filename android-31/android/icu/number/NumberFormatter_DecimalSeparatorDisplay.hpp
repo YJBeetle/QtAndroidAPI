@@ -16,7 +16,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberFormatter_DecimalSeparatorDisplay(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter_DecimalSeparatorDisplay(QAndroidJniObject obj);
+		NumberFormatter_DecimalSeparatorDisplay(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

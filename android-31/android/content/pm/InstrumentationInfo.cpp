@@ -83,9 +83,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	InstrumentationInfo::InstrumentationInfo(QAndroidJniObject obj) : android::content::pm::PackageItemInfo(obj) {}
-	
 	// Constructors
 	InstrumentationInfo::InstrumentationInfo()
 		: android::content::pm::PackageItemInfo(

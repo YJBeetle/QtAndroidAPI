@@ -26,7 +26,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaMetadata_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMetadata_Builder(QAndroidJniObject obj);
+		MediaMetadata_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaMetadata_Builder();

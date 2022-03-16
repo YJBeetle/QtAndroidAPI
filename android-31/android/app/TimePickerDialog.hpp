@@ -24,7 +24,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TimePickerDialog(const char *className, const char *sig, Ts...agv) : android::app::AlertDialog(className, sig, std::forward<Ts>(agv)...) {}
-		TimePickerDialog(QAndroidJniObject obj);
+		TimePickerDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
 		
 		// Constructors
 		TimePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jboolean arg4);

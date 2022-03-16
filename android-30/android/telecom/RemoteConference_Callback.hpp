@@ -28,7 +28,7 @@ namespace android::telecom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RemoteConference_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteConference_Callback(QAndroidJniObject obj);
+		RemoteConference_Callback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RemoteConference_Callback();

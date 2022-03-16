@@ -22,7 +22,7 @@ namespace android::bluetooth::le
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScanFilter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScanFilter_Builder(QAndroidJniObject obj);
+		ScanFilter_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ScanFilter_Builder();

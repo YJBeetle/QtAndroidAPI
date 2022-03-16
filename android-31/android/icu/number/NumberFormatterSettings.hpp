@@ -61,7 +61,7 @@ namespace android::icu::number
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NumberFormatterSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatterSettings(QAndroidJniObject obj);
+		NumberFormatterSettings(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

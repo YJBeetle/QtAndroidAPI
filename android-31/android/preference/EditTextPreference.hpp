@@ -34,7 +34,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EditTextPreference(const char *className, const char *sig, Ts...agv) : android::preference::DialogPreference(className, sig, std::forward<Ts>(agv)...) {}
-		EditTextPreference(QAndroidJniObject obj);
+		EditTextPreference(QAndroidJniObject obj) : android::preference::DialogPreference(obj) {}
 		
 		// Constructors
 		EditTextPreference(android::content::Context arg0);

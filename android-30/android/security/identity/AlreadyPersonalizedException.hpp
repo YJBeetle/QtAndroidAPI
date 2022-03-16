@@ -14,7 +14,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlreadyPersonalizedException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		AlreadyPersonalizedException(QAndroidJniObject obj);
+		AlreadyPersonalizedException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
 		
 		// Constructors
 		AlreadyPersonalizedException(JString arg0);

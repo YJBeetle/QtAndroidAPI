@@ -39,7 +39,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PhoneStateListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PhoneStateListener(QAndroidJniObject obj);
+		PhoneStateListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PhoneStateListener();

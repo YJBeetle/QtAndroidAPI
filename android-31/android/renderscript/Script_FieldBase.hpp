@@ -28,7 +28,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Script_FieldBase(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Script_FieldBase(QAndroidJniObject obj);
+		Script_FieldBase(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

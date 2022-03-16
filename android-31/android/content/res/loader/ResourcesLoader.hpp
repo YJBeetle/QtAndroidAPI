@@ -16,7 +16,7 @@ namespace android::content::res::loader
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ResourcesLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResourcesLoader(QAndroidJniObject obj);
+		ResourcesLoader(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ResourcesLoader();

@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Interpolator_Result(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Interpolator_Result(QAndroidJniObject obj);
+		Interpolator_Result(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

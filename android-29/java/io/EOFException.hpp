@@ -13,7 +13,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EOFException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		EOFException(QAndroidJniObject obj);
+		EOFException(QAndroidJniObject obj) : java::io::IOException(obj) {}
 		
 		// Constructors
 		EOFException();

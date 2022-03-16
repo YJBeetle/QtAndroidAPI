@@ -55,7 +55,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkCapabilities(QAndroidJniObject obj);
+		NetworkCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NetworkCapabilities();

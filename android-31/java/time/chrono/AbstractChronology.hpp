@@ -34,7 +34,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractChronology(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractChronology(QAndroidJniObject obj);
+		AbstractChronology(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

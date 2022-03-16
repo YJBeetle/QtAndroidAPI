@@ -20,7 +20,7 @@ namespace android::transition
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ArcMotion(const char *className, const char *sig, Ts...agv) : android::transition::PathMotion(className, sig, std::forward<Ts>(agv)...) {}
-		ArcMotion(QAndroidJniObject obj);
+		ArcMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
 		
 		// Constructors
 		ArcMotion();

@@ -5,9 +5,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CacheResponse::CacheResponse(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CacheResponse::CacheResponse()
 		: JObject(

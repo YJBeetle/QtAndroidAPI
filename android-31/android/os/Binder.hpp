@@ -30,7 +30,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Binder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Binder(QAndroidJniObject obj);
+		Binder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Binder();

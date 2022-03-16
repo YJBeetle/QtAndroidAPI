@@ -13,7 +13,7 @@ namespace android::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClipboardManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClipboardManager(QAndroidJniObject obj);
+		ClipboardManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ClipboardManager();

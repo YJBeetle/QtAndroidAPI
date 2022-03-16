@@ -30,7 +30,7 @@ namespace javax::security::auth::x500
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit X500Principal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X500Principal(QAndroidJniObject obj);
+		X500Principal(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		X500Principal(JByteArray arg0);

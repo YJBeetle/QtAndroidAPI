@@ -22,7 +22,7 @@ namespace java::util::zip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GZIPInputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::InflaterInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		GZIPInputStream(QAndroidJniObject obj);
+		GZIPInputStream(QAndroidJniObject obj) : java::util::zip::InflaterInputStream(obj) {}
 		
 		// Constructors
 		GZIPInputStream(java::io::InputStream arg0);

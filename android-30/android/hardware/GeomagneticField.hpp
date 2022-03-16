@@ -11,7 +11,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GeomagneticField(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GeomagneticField(QAndroidJniObject obj);
+		GeomagneticField(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3);

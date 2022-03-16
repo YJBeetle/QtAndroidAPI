@@ -17,7 +17,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GLES10Ext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLES10Ext(QAndroidJniObject obj);
+		GLES10Ext(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GLES10Ext();

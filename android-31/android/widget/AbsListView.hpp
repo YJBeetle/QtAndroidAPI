@@ -82,7 +82,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbsListView(const char *className, const char *sig, Ts...agv) : android::widget::AdapterView(className, sig, std::forward<Ts>(agv)...) {}
-		AbsListView(QAndroidJniObject obj);
+		AbsListView(QAndroidJniObject obj) : android::widget::AdapterView(obj) {}
 		
 		// Constructors
 		AbsListView(android::content::Context arg0);

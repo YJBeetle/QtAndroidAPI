@@ -14,9 +14,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	UnsafeStateException::UnsafeStateException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
-	
 	// Constructors
 	
 	// Methods

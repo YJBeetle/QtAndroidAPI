@@ -20,7 +20,7 @@ namespace android::nfc::tech
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NdefFormatable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NdefFormatable(QAndroidJniObject obj);
+		NdefFormatable(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -9,9 +9,6 @@ namespace android::text::style
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(android::os::Parcel arg0)
 		: JObject(

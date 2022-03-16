@@ -84,7 +84,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LauncherApps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps(QAndroidJniObject obj);
+		LauncherApps(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

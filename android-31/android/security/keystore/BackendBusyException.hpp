@@ -14,7 +14,7 @@ namespace android::security::keystore
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BackendBusyException(const char *className, const char *sig, Ts...agv) : java::security::ProviderException(className, sig, std::forward<Ts>(agv)...) {}
-		BackendBusyException(QAndroidJniObject obj);
+		BackendBusyException(QAndroidJniObject obj) : java::security::ProviderException(obj) {}
 		
 		// Constructors
 		BackendBusyException(jlong arg0);

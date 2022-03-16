@@ -20,7 +20,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CaptioningManager_CaptioningChangeListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj);
+		CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CaptioningManager_CaptioningChangeListener();

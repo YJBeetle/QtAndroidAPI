@@ -5,9 +5,6 @@ namespace android::view
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	WindowId_FocusObserver::WindowId_FocusObserver(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WindowId_FocusObserver::WindowId_FocusObserver()
 		: JObject(

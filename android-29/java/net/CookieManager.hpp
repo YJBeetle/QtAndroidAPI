@@ -21,7 +21,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CookieManager(const char *className, const char *sig, Ts...agv) : java::net::CookieHandler(className, sig, std::forward<Ts>(agv)...) {}
-		CookieManager(QAndroidJniObject obj);
+		CookieManager(QAndroidJniObject obj) : java::net::CookieHandler(obj) {}
 		
 		// Constructors
 		CookieManager();

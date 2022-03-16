@@ -14,9 +14,6 @@ namespace android::icu::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AlphabeticIndex::AlphabeticIndex(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AlphabeticIndex::AlphabeticIndex(android::icu::text::RuleBasedCollator arg0)
 		: JObject(

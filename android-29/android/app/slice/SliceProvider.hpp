@@ -51,7 +51,7 @@ namespace android::app::slice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SliceProvider(const char *className, const char *sig, Ts...agv) : android::content::ContentProvider(className, sig, std::forward<Ts>(agv)...) {}
-		SliceProvider(QAndroidJniObject obj);
+		SliceProvider(QAndroidJniObject obj) : android::content::ContentProvider(obj) {}
 		
 		// Constructors
 		SliceProvider();

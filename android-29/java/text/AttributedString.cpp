@@ -12,9 +12,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AttributedString::AttributedString(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	AttributedString::AttributedString(JString arg0)
 		: JObject(

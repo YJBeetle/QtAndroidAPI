@@ -18,7 +18,7 @@ namespace android::service::controls::templates
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ControlButton(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ControlButton(QAndroidJniObject obj);
+		ControlButton(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ControlButton(jboolean arg0, JString arg1);

@@ -69,9 +69,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	HardwarePropertiesManager::HardwarePropertiesManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

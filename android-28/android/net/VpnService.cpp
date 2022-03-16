@@ -26,9 +26,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VpnService::VpnService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	VpnService::VpnService()
 		: android::app::Service(

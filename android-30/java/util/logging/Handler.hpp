@@ -37,7 +37,7 @@ namespace java::util::logging
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Handler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Handler(QAndroidJniObject obj);
+		Handler(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -6,9 +6,6 @@ namespace android::view::displayhash
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	DisplayHashManager::DisplayHashManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

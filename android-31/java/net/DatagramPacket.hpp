@@ -21,7 +21,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DatagramPacket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatagramPacket(QAndroidJniObject obj);
+		DatagramPacket(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DatagramPacket(JByteArray arg0, jint arg1);

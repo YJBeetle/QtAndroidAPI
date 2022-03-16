@@ -20,7 +20,7 @@ namespace android::net::wifi::hotspot2::pps
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HomeSp(QAndroidJniObject obj);
+		HomeSp(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		HomeSp();

@@ -10,9 +10,6 @@ namespace android::media
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	MediaSession2_Builder::MediaSession2_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaSession2_Builder::MediaSession2_Builder(android::content::Context arg0)
 		: JObject(

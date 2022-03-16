@@ -23,7 +23,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UriPermission(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UriPermission(QAndroidJniObject obj);
+		UriPermission(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

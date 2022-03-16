@@ -24,7 +24,7 @@ namespace android::text::method
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LinkMovementMethod(const char *className, const char *sig, Ts...agv) : android::text::method::ScrollingMovementMethod(className, sig, std::forward<Ts>(agv)...) {}
-		LinkMovementMethod(QAndroidJniObject obj);
+		LinkMovementMethod(QAndroidJniObject obj) : android::text::method::ScrollingMovementMethod(obj) {}
 		
 		// Constructors
 		LinkMovementMethod();

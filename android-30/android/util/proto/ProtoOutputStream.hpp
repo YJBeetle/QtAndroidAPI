@@ -51,7 +51,7 @@ namespace android::util::proto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ProtoOutputStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProtoOutputStream(QAndroidJniObject obj);
+		ProtoOutputStream(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ProtoOutputStream();

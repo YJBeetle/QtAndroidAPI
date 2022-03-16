@@ -35,7 +35,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellInfoCdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
-		CellInfoCdma(QAndroidJniObject obj);
+		CellInfoCdma(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
 		
 		// Constructors
 		

@@ -23,7 +23,7 @@ namespace java::io
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ObjectStreamField(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ObjectStreamField(QAndroidJniObject obj);
+		ObjectStreamField(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ObjectStreamField(JString arg0, JClass arg1);

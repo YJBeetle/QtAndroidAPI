@@ -112,7 +112,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ToneGenerator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ToneGenerator(QAndroidJniObject obj);
+		ToneGenerator(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ToneGenerator(jint arg0, jint arg1);

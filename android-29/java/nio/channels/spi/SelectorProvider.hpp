@@ -36,7 +36,7 @@ namespace java::nio::channels::spi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SelectorProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SelectorProvider(QAndroidJniObject obj);
+		SelectorProvider(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

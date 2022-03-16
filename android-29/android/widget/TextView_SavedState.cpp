@@ -14,9 +14,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TextView_SavedState::TextView_SavedState(QAndroidJniObject obj) : android::view::View_BaseSavedState(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -7,9 +7,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IntentFilter_AuthorityEntry::IntentFilter_AuthorityEntry(JString arg0, JString arg1)
 		: JObject(

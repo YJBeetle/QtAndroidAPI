@@ -23,7 +23,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExceptionInInitializerError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		ExceptionInInitializerError(QAndroidJniObject obj);
+		ExceptionInInitializerError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
 		
 		// Constructors
 		ExceptionInInitializerError();

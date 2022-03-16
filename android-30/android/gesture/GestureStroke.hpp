@@ -33,7 +33,7 @@ namespace android::gesture
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GestureStroke(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureStroke(QAndroidJniObject obj);
+		GestureStroke(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GestureStroke(java::util::ArrayList arg0);

@@ -11,7 +11,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FragmentManagerNonConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentManagerNonConfig(QAndroidJniObject obj);
+		FragmentManagerNonConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

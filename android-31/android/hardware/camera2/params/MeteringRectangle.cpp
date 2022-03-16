@@ -30,9 +30,6 @@ namespace android::hardware::camera2::params
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MeteringRectangle::MeteringRectangle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MeteringRectangle::MeteringRectangle(android::graphics::Rect arg0, jint arg1)
 		: JObject(

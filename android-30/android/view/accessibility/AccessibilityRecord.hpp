@@ -22,7 +22,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityRecord(QAndroidJniObject obj);
+		AccessibilityRecord(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityRecord();

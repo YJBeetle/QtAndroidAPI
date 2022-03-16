@@ -26,7 +26,7 @@ namespace android::hardware
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SensorDirectChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SensorDirectChannel(QAndroidJniObject obj);
+		SensorDirectChannel(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

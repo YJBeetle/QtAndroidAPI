@@ -74,7 +74,7 @@ namespace android::os::health
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UidHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UidHealthStats(QAndroidJniObject obj);
+		UidHealthStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

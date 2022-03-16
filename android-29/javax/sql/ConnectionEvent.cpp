@@ -5,9 +5,6 @@ namespace javax::sql
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConnectionEvent::ConnectionEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
-	
 	// Constructors
 	ConnectionEvent::ConnectionEvent(JObject arg0)
 		: java::util::EventObject(

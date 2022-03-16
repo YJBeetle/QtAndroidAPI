@@ -6,9 +6,6 @@ namespace android::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	KeyChainException::KeyChainException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	KeyChainException::KeyChainException()
 		: java::lang::Exception(

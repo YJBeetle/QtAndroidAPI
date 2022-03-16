@@ -45,7 +45,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RingtoneManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RingtoneManager(QAndroidJniObject obj);
+		RingtoneManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		RingtoneManager(android::app::Activity arg0);

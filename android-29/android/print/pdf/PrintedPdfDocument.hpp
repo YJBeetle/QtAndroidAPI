@@ -28,7 +28,7 @@ namespace android::print::pdf
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PrintedPdfDocument(const char *className, const char *sig, Ts...agv) : android::graphics::pdf::PdfDocument(className, sig, std::forward<Ts>(agv)...) {}
-		PrintedPdfDocument(QAndroidJniObject obj);
+		PrintedPdfDocument(QAndroidJniObject obj) : android::graphics::pdf::PdfDocument(obj) {}
 		
 		// Constructors
 		PrintedPdfDocument(android::content::Context arg0, android::print::PrintAttributes arg1);

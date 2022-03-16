@@ -42,7 +42,7 @@ namespace java::math
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BigInteger(const char *className, const char *sig, Ts...agv) : java::lang::Number(className, sig, std::forward<Ts>(agv)...) {}
-		BigInteger(QAndroidJniObject obj);
+		BigInteger(QAndroidJniObject obj) : java::lang::Number(obj) {}
 		
 		// Constructors
 		BigInteger(JByteArray arg0);

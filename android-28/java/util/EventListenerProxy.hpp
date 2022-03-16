@@ -11,7 +11,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EventListenerProxy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventListenerProxy(QAndroidJniObject obj);
+		EventListenerProxy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		EventListenerProxy(JObject arg0);

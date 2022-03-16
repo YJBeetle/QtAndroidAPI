@@ -21,7 +21,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ClipboardManager(const char *className, const char *sig, Ts...agv) : android::text::ClipboardManager(className, sig, std::forward<Ts>(agv)...) {}
-		ClipboardManager(QAndroidJniObject obj);
+		ClipboardManager(QAndroidJniObject obj) : android::text::ClipboardManager(obj) {}
 		
 		// Constructors
 		

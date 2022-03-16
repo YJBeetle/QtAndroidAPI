@@ -23,7 +23,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Rect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Rect(QAndroidJniObject obj);
+		Rect(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Rect();

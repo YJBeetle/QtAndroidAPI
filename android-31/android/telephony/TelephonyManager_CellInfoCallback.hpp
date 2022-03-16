@@ -15,7 +15,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TelephonyManager_CellInfoCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_CellInfoCallback(QAndroidJniObject obj);
+		TelephonyManager_CellInfoCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TelephonyManager_CellInfoCallback();

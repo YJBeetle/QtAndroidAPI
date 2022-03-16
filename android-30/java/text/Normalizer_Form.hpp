@@ -18,7 +18,7 @@ namespace java::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Normalizer_Form(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Normalizer_Form(QAndroidJniObject obj);
+		Normalizer_Form(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

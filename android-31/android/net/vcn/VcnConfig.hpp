@@ -18,7 +18,7 @@ namespace android::net::vcn
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VcnConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VcnConfig(QAndroidJniObject obj);
+		VcnConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

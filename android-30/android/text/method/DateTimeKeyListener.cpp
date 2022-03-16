@@ -14,9 +14,6 @@ namespace android::text::method
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DateTimeKeyListener::DateTimeKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
-	
 	// Constructors
 	DateTimeKeyListener::DateTimeKeyListener()
 		: android::text::method::NumberKeyListener(

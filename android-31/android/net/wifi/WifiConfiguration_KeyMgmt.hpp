@@ -23,7 +23,7 @@ namespace android::net::wifi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WifiConfiguration_KeyMgmt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_KeyMgmt(QAndroidJniObject obj);
+		WifiConfiguration_KeyMgmt(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -7,9 +7,6 @@ namespace android::content
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ContentQueryMap::ContentQueryMap(QAndroidJniObject obj) : java::util::Observable(obj) {}
-	
 	// Constructors
 	ContentQueryMap::ContentQueryMap(JObject arg0, JString arg1, jboolean arg2, android::os::Handler arg3)
 		: java::util::Observable(

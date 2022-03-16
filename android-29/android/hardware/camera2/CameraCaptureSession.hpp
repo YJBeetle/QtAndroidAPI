@@ -36,7 +36,7 @@ namespace android::hardware::camera2
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CameraCaptureSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraCaptureSession(QAndroidJniObject obj);
+		CameraCaptureSession(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		CameraCaptureSession();

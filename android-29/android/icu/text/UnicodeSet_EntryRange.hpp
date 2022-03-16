@@ -15,7 +15,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnicodeSet_EntryRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSet_EntryRange(QAndroidJniObject obj);
+		UnicodeSet_EntryRange(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

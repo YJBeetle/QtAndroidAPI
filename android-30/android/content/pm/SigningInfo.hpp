@@ -18,7 +18,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SigningInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SigningInfo(QAndroidJniObject obj);
+		SigningInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SigningInfo();

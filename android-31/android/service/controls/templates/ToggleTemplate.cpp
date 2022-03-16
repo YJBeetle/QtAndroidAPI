@@ -7,9 +7,6 @@ namespace android::service::controls::templates
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ToggleTemplate::ToggleTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
-	
 	// Constructors
 	ToggleTemplate::ToggleTemplate(JString arg0, android::service::controls::templates::ControlButton arg1)
 		: android::service::controls::templates::ControlTemplate(

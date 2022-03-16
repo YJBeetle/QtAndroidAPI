@@ -13,7 +13,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfirmationNotAvailableException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationNotAvailableException(QAndroidJniObject obj);
+		ConfirmationNotAvailableException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		ConfirmationNotAvailableException();

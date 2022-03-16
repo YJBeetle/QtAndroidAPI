@@ -102,9 +102,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RelativeDateTimeFormatter_AbsoluteUnit::RelativeDateTimeFormatter_AbsoluteUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

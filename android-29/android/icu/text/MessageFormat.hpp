@@ -44,7 +44,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MessageFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
-		MessageFormat(QAndroidJniObject obj);
+		MessageFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
 		
 		// Constructors
 		MessageFormat(JString arg0);

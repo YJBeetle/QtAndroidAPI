@@ -54,9 +54,6 @@ namespace javax::xml::xpath
 		);
 	}
 	
-	// QAndroidJniObject forward
-	XPathConstants::XPathConstants(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

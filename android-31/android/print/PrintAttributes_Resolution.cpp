@@ -6,9 +6,6 @@ namespace android::print
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PrintAttributes_Resolution::PrintAttributes_Resolution(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PrintAttributes_Resolution::PrintAttributes_Resolution(JString arg0, JString arg1, jint arg2, jint arg3)
 		: JObject(

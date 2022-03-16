@@ -98,9 +98,6 @@ namespace android::view
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ViewGroup::ViewGroup(QAndroidJniObject obj) : android::view::View(obj) {}
-	
 	// Constructors
 	ViewGroup::ViewGroup(android::content::Context arg0)
 		: android::view::View(

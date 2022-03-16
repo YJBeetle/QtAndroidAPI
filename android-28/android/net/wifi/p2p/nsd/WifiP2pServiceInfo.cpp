@@ -34,9 +34,6 @@ namespace android::net::wifi::p2p::nsd
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiP2pServiceInfo::WifiP2pServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

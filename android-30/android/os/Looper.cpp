@@ -7,9 +7,6 @@ namespace android::os
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Looper::Looper(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

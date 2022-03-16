@@ -44,7 +44,7 @@ namespace android::media::effect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit EffectFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EffectFactory(QAndroidJniObject obj);
+		EffectFactory(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

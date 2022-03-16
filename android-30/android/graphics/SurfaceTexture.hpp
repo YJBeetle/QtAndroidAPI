@@ -17,7 +17,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SurfaceTexture(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceTexture(QAndroidJniObject obj);
+		SurfaceTexture(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SurfaceTexture(jboolean arg0);

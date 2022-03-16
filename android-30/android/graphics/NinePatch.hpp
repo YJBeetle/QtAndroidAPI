@@ -38,7 +38,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NinePatch(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NinePatch(QAndroidJniObject obj);
+		NinePatch(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NinePatch(android::graphics::Bitmap arg0, JByteArray arg1);

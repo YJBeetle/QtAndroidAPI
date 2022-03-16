@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	UnsupportedEncodingException::UnsupportedEncodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	UnsupportedEncodingException::UnsupportedEncodingException()
 		: java::io::IOException(

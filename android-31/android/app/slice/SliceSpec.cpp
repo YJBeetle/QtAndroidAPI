@@ -15,9 +15,6 @@ namespace android::app::slice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	SliceSpec::SliceSpec(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SliceSpec::SliceSpec(JString arg0, jint arg1)
 		: JObject(

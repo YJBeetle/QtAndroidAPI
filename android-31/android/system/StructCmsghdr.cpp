@@ -24,9 +24,6 @@ namespace android::system
 		);
 	}
 	
-	// QAndroidJniObject forward
-	StructCmsghdr::StructCmsghdr(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, JByteArray arg2)
 		: JObject(

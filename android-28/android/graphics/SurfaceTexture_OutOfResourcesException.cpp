@@ -5,9 +5,6 @@ namespace android::graphics
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	SurfaceTexture_OutOfResourcesException::SurfaceTexture_OutOfResourcesException()
 		: java::lang::Exception(

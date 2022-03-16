@@ -11,9 +11,6 @@ namespace java::util::regex
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Matcher::Matcher(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

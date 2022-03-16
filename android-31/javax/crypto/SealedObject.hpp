@@ -23,7 +23,7 @@ namespace javax::crypto
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SealedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SealedObject(QAndroidJniObject obj);
+		SealedObject(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SealedObject(JObject arg0, javax::crypto::Cipher arg1);

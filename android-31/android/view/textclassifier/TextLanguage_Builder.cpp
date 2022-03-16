@@ -8,9 +8,6 @@ namespace android::view::textclassifier
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TextLanguage_Builder::TextLanguage_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TextLanguage_Builder::TextLanguage_Builder()
 		: JObject(

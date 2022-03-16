@@ -18,7 +18,7 @@ namespace android::view::textclassifier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConversationActions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConversationActions(QAndroidJniObject obj);
+		ConversationActions(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ConversationActions(JObject arg0, JString arg1);

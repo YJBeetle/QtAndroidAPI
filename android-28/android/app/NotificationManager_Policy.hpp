@@ -43,7 +43,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NotificationManager_Policy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationManager_Policy(QAndroidJniObject obj);
+		NotificationManager_Policy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		NotificationManager_Policy(jint arg0, jint arg1, jint arg2);

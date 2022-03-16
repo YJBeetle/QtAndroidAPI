@@ -5,9 +5,6 @@ namespace android::service::controls::templates
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StatelessTemplate::StatelessTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
-	
 	// Constructors
 	StatelessTemplate::StatelessTemplate(JString arg0)
 		: android::service::controls::templates::ControlTemplate(

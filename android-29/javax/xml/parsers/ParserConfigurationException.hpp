@@ -13,7 +13,7 @@ namespace javax::xml::parsers
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ParserConfigurationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ParserConfigurationException(QAndroidJniObject obj);
+		ParserConfigurationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		ParserConfigurationException();

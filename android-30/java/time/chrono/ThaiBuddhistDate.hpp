@@ -45,7 +45,7 @@ namespace java::time::chrono
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ThaiBuddhistDate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ThaiBuddhistDate(QAndroidJniObject obj);
+		ThaiBuddhistDate(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

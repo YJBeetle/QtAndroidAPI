@@ -52,7 +52,7 @@ namespace android::app::admin
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DeviceAdminInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceAdminInfo(QAndroidJniObject obj);
+		DeviceAdminInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);

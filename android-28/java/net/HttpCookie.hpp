@@ -19,7 +19,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit HttpCookie(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HttpCookie(QAndroidJniObject obj);
+		HttpCookie(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		HttpCookie(JString arg0, JString arg1);

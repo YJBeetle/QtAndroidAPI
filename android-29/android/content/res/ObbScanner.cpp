@@ -6,9 +6,6 @@ namespace android::content::res
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ObbScanner::ObbScanner(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

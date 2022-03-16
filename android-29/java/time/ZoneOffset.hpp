@@ -30,7 +30,7 @@ namespace java::time
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ZoneOffset(const char *className, const char *sig, Ts...agv) : java::time::ZoneId(className, sig, std::forward<Ts>(agv)...) {}
-		ZoneOffset(QAndroidJniObject obj);
+		ZoneOffset(QAndroidJniObject obj) : java::time::ZoneId(obj) {}
 		
 		// Constructors
 		

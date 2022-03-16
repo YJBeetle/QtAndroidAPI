@@ -469,9 +469,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaCodecInfo_CodecCapabilities::MediaCodecInfo_CodecCapabilities()
 		: JObject(

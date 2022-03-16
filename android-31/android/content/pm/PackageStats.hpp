@@ -28,7 +28,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PackageStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageStats(QAndroidJniObject obj);
+		PackageStats(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		PackageStats(android::content::pm::PackageStats &arg0);

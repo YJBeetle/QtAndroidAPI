@@ -15,9 +15,6 @@ namespace android::telephony::data
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkSlicingConfig::NetworkSlicingConfig(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NetworkSlicingConfig::NetworkSlicingConfig()
 		: JObject(

@@ -9,9 +9,6 @@ namespace java::util::jar
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	JarEntry::JarEntry(QAndroidJniObject obj) : java::util::zip::ZipEntry(obj) {}
-	
 	// Constructors
 	JarEntry::JarEntry(JString arg0)
 		: java::util::zip::ZipEntry(

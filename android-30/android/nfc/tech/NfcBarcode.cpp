@@ -20,9 +20,6 @@ namespace android::nfc::tech
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NfcBarcode::NfcBarcode(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

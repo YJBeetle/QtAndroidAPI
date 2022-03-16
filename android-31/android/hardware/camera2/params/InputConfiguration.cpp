@@ -6,9 +6,6 @@ namespace android::hardware::camera2::params
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InputConfiguration::InputConfiguration(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	InputConfiguration::InputConfiguration(JObject arg0, jint arg1)
 		: JObject(

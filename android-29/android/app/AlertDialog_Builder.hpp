@@ -32,7 +32,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlertDialog_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlertDialog_Builder(QAndroidJniObject obj);
+		AlertDialog_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AlertDialog_Builder(android::content::Context arg0);

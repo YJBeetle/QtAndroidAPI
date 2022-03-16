@@ -13,7 +13,7 @@ namespace javax::crypto::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IvParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IvParameterSpec(QAndroidJniObject obj);
+		IvParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		IvParameterSpec(JByteArray arg0);

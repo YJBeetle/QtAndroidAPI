@@ -14,7 +14,7 @@ namespace javax::xml::transform::dom
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DOMSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DOMSource(QAndroidJniObject obj);
+		DOMSource(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DOMSource();

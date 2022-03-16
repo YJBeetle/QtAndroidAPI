@@ -747,7 +747,7 @@ namespace android
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit R_style(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_style(QAndroidJniObject obj);
+		R_style(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		R_style();

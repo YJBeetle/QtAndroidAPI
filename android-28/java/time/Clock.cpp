@@ -8,9 +8,6 @@ namespace java::time
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Clock::Clock(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

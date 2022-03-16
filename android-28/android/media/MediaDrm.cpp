@@ -200,9 +200,6 @@ namespace android::media
 		);
 	}
 	
-	// QAndroidJniObject forward
-	MediaDrm::MediaDrm(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	MediaDrm::MediaDrm(java::util::UUID arg0)
 		: JObject(

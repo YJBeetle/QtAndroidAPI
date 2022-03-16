@@ -38,9 +38,6 @@ namespace android::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Xml_Encoding::Xml_Encoding(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

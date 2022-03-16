@@ -14,9 +14,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DnsEvent::DnsEvent(QAndroidJniObject obj) : android::app::admin::NetworkEvent(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -10,9 +10,6 @@ namespace java::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	InetSocketAddress::InetSocketAddress(QAndroidJniObject obj) : java::net::SocketAddress(obj) {}
-	
 	// Constructors
 	InetSocketAddress::InetSocketAddress(jint arg0)
 		: java::net::SocketAddress(

@@ -230,9 +230,6 @@ namespace android::net::wifi
 		);
 	}
 	
-	// QAndroidJniObject forward
-	WifiConfiguration::WifiConfiguration(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	WifiConfiguration::WifiConfiguration()
 		: JObject(

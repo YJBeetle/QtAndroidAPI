@@ -6,9 +6,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CountedCompleter::CountedCompleter(QAndroidJniObject obj) : java::util::concurrent::ForkJoinTask(obj) {}
-	
 	// Constructors
 	
 	// Methods

@@ -26,7 +26,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaRoute2Info_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRoute2Info_Builder(QAndroidJniObject obj);
+		MediaRoute2Info_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MediaRoute2Info_Builder(android::media::MediaRoute2Info arg0);

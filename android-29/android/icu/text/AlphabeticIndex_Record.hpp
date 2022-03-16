@@ -15,7 +15,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AlphabeticIndex_Record(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_Record(QAndroidJniObject obj);
+		AlphabeticIndex_Record(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

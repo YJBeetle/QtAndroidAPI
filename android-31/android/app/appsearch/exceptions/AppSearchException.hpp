@@ -18,7 +18,7 @@ namespace android::app::appsearch::exceptions
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppSearchException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchException(QAndroidJniObject obj);
+		AppSearchException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		AppSearchException(jint arg0);

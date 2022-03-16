@@ -636,7 +636,7 @@ namespace android::icu::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UCharacter_UnicodeBlock(const char *className, const char *sig, Ts...agv) : java::lang::Character_Subset(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacter_UnicodeBlock(QAndroidJniObject obj);
+		UCharacter_UnicodeBlock(QAndroidJniObject obj) : java::lang::Character_Subset(obj) {}
 		
 		// Constructors
 		

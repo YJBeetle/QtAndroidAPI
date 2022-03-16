@@ -15,9 +15,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ResourceBundle::ResourceBundle(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ResourceBundle::ResourceBundle()
 		: JObject(

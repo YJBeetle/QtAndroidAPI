@@ -6,9 +6,6 @@ namespace java::util::concurrent
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ConcurrentSkipListSet::ConcurrentSkipListSet(QAndroidJniObject obj) : java::util::AbstractSet(obj) {}
-	
 	// Constructors
 	ConcurrentSkipListSet::ConcurrentSkipListSet()
 		: java::util::AbstractSet(

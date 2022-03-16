@@ -18,7 +18,7 @@ namespace java::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SplittableRandom(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SplittableRandom(QAndroidJniObject obj);
+		SplittableRandom(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		SplittableRandom();

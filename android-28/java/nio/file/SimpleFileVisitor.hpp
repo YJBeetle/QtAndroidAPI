@@ -21,7 +21,7 @@ namespace java::nio::file
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SimpleFileVisitor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleFileVisitor(QAndroidJniObject obj);
+		SimpleFileVisitor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

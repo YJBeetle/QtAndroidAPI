@@ -11,7 +11,7 @@ namespace android::drm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DrmStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore(QAndroidJniObject obj);
+		DrmStore(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DrmStore();

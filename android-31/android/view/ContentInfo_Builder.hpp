@@ -28,7 +28,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentInfo_Builder(QAndroidJniObject obj);
+		ContentInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentInfo_Builder(android::view::ContentInfo arg0);

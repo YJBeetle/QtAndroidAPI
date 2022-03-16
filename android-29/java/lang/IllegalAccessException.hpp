@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IllegalAccessException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalAccessException(QAndroidJniObject obj);
+		IllegalAccessException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
 		
 		// Constructors
 		IllegalAccessException();

@@ -354,7 +354,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyEvent(const char *className, const char *sig, Ts...agv) : android::view::InputEvent(className, sig, std::forward<Ts>(agv)...) {}
-		KeyEvent(QAndroidJniObject obj);
+		KeyEvent(QAndroidJniObject obj) : android::view::InputEvent(obj) {}
 		
 		// Constructors
 		KeyEvent(android::view::KeyEvent &arg0);

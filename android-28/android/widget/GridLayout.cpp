@@ -118,9 +118,6 @@ namespace android::widget
 		);
 	}
 	
-	// QAndroidJniObject forward
-	GridLayout::GridLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-	
 	// Constructors
 	GridLayout::GridLayout(android::content::Context arg0)
 		: android::view::ViewGroup(

@@ -179,9 +179,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NotificationManager_Policy::NotificationManager_Policy(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	NotificationManager_Policy::NotificationManager_Policy(jint arg0, jint arg1, jint arg2)
 		: JObject(

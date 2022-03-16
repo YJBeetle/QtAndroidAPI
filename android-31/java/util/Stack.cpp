@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Stack::Stack(QAndroidJniObject obj) : java::util::Vector(obj) {}
-	
 	// Constructors
 	Stack::Stack()
 		: java::util::Vector(

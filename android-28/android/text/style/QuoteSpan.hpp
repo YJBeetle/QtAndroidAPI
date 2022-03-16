@@ -32,7 +32,7 @@ namespace android::text::style
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit QuoteSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		QuoteSpan(QAndroidJniObject obj);
+		QuoteSpan(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		QuoteSpan();

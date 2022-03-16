@@ -7,9 +7,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Property::Property(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Property::Property(JClass arg0, JString arg1)
 		: JObject(

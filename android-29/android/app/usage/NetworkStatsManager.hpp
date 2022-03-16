@@ -29,7 +29,7 @@ namespace android::app::usage
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit NetworkStatsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStatsManager(QAndroidJniObject obj);
+		NetworkStatsManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

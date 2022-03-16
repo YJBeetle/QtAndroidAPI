@@ -6,9 +6,6 @@ namespace javax::net
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ServerSocketFactory::ServerSocketFactory(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

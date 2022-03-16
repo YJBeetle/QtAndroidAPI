@@ -7,9 +7,6 @@ namespace android::text::method
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BaseMovementMethod::BaseMovementMethod(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BaseMovementMethod::BaseMovementMethod()
 		: JObject(

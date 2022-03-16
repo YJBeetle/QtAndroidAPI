@@ -14,7 +14,7 @@ namespace java::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyStore_PasswordProtection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_PasswordProtection(QAndroidJniObject obj);
+		KeyStore_PasswordProtection(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		KeyStore_PasswordProtection(JCharArray arg0);

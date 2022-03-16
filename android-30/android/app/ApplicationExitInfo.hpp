@@ -42,7 +42,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ApplicationExitInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApplicationExitInfo(QAndroidJniObject obj);
+		ApplicationExitInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

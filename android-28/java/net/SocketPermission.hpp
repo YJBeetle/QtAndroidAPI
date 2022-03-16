@@ -33,7 +33,7 @@ namespace java::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SocketPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		SocketPermission(QAndroidJniObject obj);
+		SocketPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
 		
 		// Constructors
 		SocketPermission(JString arg0, JString arg1);

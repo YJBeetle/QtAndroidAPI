@@ -12,9 +12,6 @@ namespace android::service::autofill
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	FillResponse_Builder::FillResponse_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FillResponse_Builder::FillResponse_Builder()
 		: JObject(

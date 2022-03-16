@@ -252,9 +252,6 @@ namespace android::content::pm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PackageInfo::PackageInfo(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PackageInfo::PackageInfo()
 		: JObject(

@@ -18,7 +18,7 @@ namespace android::content::pm
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Attribution(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Attribution(QAndroidJniObject obj);
+		Attribution(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

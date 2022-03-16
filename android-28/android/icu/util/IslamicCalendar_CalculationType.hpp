@@ -18,7 +18,7 @@ namespace android::icu::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IslamicCalendar_CalculationType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		IslamicCalendar_CalculationType(QAndroidJniObject obj);
+		IslamicCalendar_CalculationType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

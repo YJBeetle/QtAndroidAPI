@@ -20,7 +20,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit RecoverySystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecoverySystem(QAndroidJniObject obj);
+		RecoverySystem(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

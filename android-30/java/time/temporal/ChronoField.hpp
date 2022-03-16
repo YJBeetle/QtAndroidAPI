@@ -52,7 +52,7 @@ namespace java::time::temporal
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ChronoField(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ChronoField(QAndroidJniObject obj);
+		ChronoField(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

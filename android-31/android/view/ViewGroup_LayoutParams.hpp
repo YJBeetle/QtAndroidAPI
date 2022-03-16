@@ -30,7 +30,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ViewGroup_LayoutParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewGroup_LayoutParams(QAndroidJniObject obj);
+		ViewGroup_LayoutParams(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);

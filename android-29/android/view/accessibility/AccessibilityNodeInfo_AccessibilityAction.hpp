@@ -52,7 +52,7 @@ namespace android::view::accessibility
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessibilityNodeInfo_AccessibilityAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj);
+		AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessibilityNodeInfo_AccessibilityAction(jint arg0, JString arg1);

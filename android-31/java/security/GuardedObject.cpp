@@ -6,9 +6,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GuardedObject::GuardedObject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	GuardedObject::GuardedObject(JObject arg0, JObject arg1)
 		: JObject(

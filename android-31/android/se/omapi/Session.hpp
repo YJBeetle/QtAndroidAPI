@@ -21,7 +21,7 @@ namespace android::se::omapi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Session(QAndroidJniObject obj);
+		Session(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

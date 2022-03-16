@@ -16,7 +16,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SystemClock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SystemClock(QAndroidJniObject obj);
+		SystemClock(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

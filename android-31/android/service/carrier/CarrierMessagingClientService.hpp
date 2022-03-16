@@ -16,7 +16,7 @@ namespace android::service::carrier
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CarrierMessagingClientService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingClientService(QAndroidJniObject obj);
+		CarrierMessagingClientService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		CarrierMessagingClientService();

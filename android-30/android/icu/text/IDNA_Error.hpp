@@ -29,7 +29,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IDNA_Error(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		IDNA_Error(QAndroidJniObject obj);
+		IDNA_Error(QAndroidJniObject obj) : java::lang::Enum(obj) {}
 		
 		// Constructors
 		

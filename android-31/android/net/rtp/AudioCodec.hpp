@@ -22,7 +22,7 @@ namespace android::net::rtp
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioCodec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioCodec(QAndroidJniObject obj);
+		AudioCodec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

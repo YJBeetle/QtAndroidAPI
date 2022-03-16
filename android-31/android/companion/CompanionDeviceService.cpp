@@ -14,9 +14,6 @@ namespace android::companion
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CompanionDeviceService::CompanionDeviceService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	CompanionDeviceService::CompanionDeviceService()
 		: android::app::Service(

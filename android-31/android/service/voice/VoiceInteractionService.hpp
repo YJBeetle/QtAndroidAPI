@@ -40,7 +40,7 @@ namespace android::service::voice
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionService(QAndroidJniObject obj);
+		VoiceInteractionService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		VoiceInteractionService();

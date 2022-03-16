@@ -27,7 +27,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaPlayer_TrackInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaPlayer_TrackInfo(QAndroidJniObject obj);
+		MediaPlayer_TrackInfo(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

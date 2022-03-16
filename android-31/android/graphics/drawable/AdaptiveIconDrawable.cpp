@@ -17,9 +17,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	AdaptiveIconDrawable::AdaptiveIconDrawable(QAndroidJniObject obj) : android::graphics::drawable::Drawable(obj) {}
-	
 	// Constructors
 	AdaptiveIconDrawable::AdaptiveIconDrawable(android::graphics::drawable::Drawable arg0, android::graphics::drawable::Drawable arg1)
 		: android::graphics::drawable::Drawable(

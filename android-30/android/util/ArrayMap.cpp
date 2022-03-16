@@ -6,9 +6,6 @@ namespace android::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ArrayMap::ArrayMap(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	ArrayMap::ArrayMap()
 		: JObject(

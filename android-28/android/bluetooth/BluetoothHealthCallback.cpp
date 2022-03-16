@@ -7,9 +7,6 @@ namespace android::bluetooth
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BluetoothHealthCallback::BluetoothHealthCallback(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothHealthCallback::BluetoothHealthCallback()
 		: JObject(

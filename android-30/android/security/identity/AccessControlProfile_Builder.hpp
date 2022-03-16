@@ -24,7 +24,7 @@ namespace android::security::identity
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessControlProfile_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessControlProfile_Builder(QAndroidJniObject obj);
+		AccessControlProfile_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AccessControlProfile_Builder(android::security::identity::AccessControlProfileId arg0);

@@ -31,7 +31,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DropBoxManager_Entry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DropBoxManager_Entry(QAndroidJniObject obj);
+		DropBoxManager_Entry(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		DropBoxManager_Entry(JString arg0, jlong arg1);

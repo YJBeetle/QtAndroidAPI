@@ -18,7 +18,7 @@ namespace java::time::temporal
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ValueRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ValueRange(QAndroidJniObject obj);
+		ValueRange(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

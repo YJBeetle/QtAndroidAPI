@@ -27,7 +27,7 @@ namespace android::location
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Criteria(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Criteria(QAndroidJniObject obj);
+		Criteria(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Criteria();

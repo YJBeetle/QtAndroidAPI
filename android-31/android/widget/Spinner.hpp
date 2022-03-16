@@ -35,7 +35,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Spinner(const char *className, const char *sig, Ts...agv) : android::widget::AbsSpinner(className, sig, std::forward<Ts>(agv)...) {}
-		Spinner(QAndroidJniObject obj);
+		Spinner(QAndroidJniObject obj) : android::widget::AbsSpinner(obj) {}
 		
 		// Constructors
 		Spinner(android::content::Context arg0);

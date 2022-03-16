@@ -5,9 +5,6 @@ namespace java::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	IntSummaryStatistics::IntSummaryStatistics(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	IntSummaryStatistics::IntSummaryStatistics()
 		: JObject(

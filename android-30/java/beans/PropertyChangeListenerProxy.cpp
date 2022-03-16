@@ -6,9 +6,6 @@ namespace java::beans
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	PropertyChangeListenerProxy::PropertyChangeListenerProxy(QAndroidJniObject obj) : java::util::EventListenerProxy(obj) {}
-	
 	// Constructors
 	PropertyChangeListenerProxy::PropertyChangeListenerProxy(JString arg0, JObject arg1)
 		: java::util::EventListenerProxy(

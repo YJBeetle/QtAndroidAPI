@@ -67,9 +67,6 @@ namespace android::text::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Linkify::Linkify(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Linkify::Linkify()
 		: JObject(

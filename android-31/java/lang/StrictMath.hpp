@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StrictMath(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMath(QAndroidJniObject obj);
+		StrictMath(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

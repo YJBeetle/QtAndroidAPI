@@ -11,9 +11,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Format::Format(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

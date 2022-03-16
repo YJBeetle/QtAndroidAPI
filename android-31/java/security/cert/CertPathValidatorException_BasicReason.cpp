@@ -62,9 +62,6 @@ namespace java::security::cert
 		);
 	}
 	
-	// QAndroidJniObject forward
-	CertPathValidatorException_BasicReason::CertPathValidatorException_BasicReason(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

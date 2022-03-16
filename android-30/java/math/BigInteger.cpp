@@ -50,9 +50,6 @@ namespace java::math
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BigInteger::BigInteger(QAndroidJniObject obj) : java::lang::Number(obj) {}
-	
 	// Constructors
 	BigInteger::BigInteger(JByteArray arg0)
 		: java::lang::Number(

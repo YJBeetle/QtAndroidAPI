@@ -22,9 +22,6 @@ namespace java::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Locale_Category::Locale_Category(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

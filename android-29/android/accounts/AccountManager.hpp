@@ -85,7 +85,7 @@ namespace android::accounts
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccountManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccountManager(QAndroidJniObject obj);
+		AccountManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

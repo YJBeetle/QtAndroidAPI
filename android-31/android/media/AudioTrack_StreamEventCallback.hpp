@@ -16,7 +16,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AudioTrack_StreamEventCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioTrack_StreamEventCallback(QAndroidJniObject obj);
+		AudioTrack_StreamEventCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AudioTrack_StreamEventCallback();

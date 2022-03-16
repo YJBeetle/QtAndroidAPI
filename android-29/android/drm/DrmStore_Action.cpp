@@ -60,9 +60,6 @@ namespace android::drm
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DrmStore_Action::DrmStore_Action(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DrmStore_Action::DrmStore_Action()
 		: JObject(

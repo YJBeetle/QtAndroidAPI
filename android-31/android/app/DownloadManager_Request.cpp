@@ -50,9 +50,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	DownloadManager_Request::DownloadManager_Request(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	DownloadManager_Request::DownloadManager_Request(android::net::Uri arg0)
 		: JObject(

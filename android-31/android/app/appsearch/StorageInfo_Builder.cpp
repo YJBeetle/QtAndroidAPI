@@ -5,9 +5,6 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StorageInfo_Builder::StorageInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StorageInfo_Builder::StorageInfo_Builder()
 		: JObject(

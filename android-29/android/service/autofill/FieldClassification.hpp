@@ -17,7 +17,7 @@ namespace android::service::autofill
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FieldClassification(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FieldClassification(QAndroidJniObject obj);
+		FieldClassification(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

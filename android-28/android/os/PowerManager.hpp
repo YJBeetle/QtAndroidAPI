@@ -31,7 +31,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PowerManager(QAndroidJniObject obj);
+		PowerManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

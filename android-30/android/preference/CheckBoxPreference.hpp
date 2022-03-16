@@ -20,7 +20,7 @@ namespace android::preference
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CheckBoxPreference(const char *className, const char *sig, Ts...agv) : android::preference::TwoStatePreference(className, sig, std::forward<Ts>(agv)...) {}
-		CheckBoxPreference(QAndroidJniObject obj);
+		CheckBoxPreference(QAndroidJniObject obj) : android::preference::TwoStatePreference(obj) {}
 		
 		// Constructors
 		CheckBoxPreference(android::content::Context arg0);

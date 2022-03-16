@@ -8,9 +8,6 @@ namespace java::lang
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Process::Process(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Process::Process()
 		: JObject(

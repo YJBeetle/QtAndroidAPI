@@ -7,9 +7,6 @@ namespace android::graphics::drawable
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Drawable_ConstantState::Drawable_ConstantState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Drawable_ConstantState::Drawable_ConstantState()
 		: JObject(

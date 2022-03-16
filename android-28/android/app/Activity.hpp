@@ -202,7 +202,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Activity(const char *className, const char *sig, Ts...agv) : android::view::ContextThemeWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		Activity(QAndroidJniObject obj);
+		Activity(QAndroidJniObject obj) : android::view::ContextThemeWrapper(obj) {}
 		
 		// Constructors
 		Activity();

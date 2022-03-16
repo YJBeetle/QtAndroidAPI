@@ -11,9 +11,6 @@ namespace android::media::audiofx
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PresetReverb_Settings::PresetReverb_Settings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PresetReverb_Settings::PresetReverb_Settings()
 		: JObject(

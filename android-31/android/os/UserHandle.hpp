@@ -19,7 +19,7 @@ namespace android::os
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UserHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserHandle(QAndroidJniObject obj);
+		UserHandle(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		UserHandle(android::os::Parcel arg0);

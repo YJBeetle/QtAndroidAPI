@@ -24,7 +24,7 @@ namespace android::renderscript
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Type_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Type_Builder(QAndroidJniObject obj);
+		Type_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Type_Builder(android::renderscript::RenderScript arg0, android::renderscript::Element arg1);

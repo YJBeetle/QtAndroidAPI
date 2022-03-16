@@ -16,7 +16,7 @@ namespace android::graphics::drawable
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Animatable2_AnimationCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Animatable2_AnimationCallback(QAndroidJniObject obj);
+		Animatable2_AnimationCallback(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Animatable2_AnimationCallback();

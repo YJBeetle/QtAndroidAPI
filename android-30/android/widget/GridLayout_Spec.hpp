@@ -13,7 +13,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GridLayout_Spec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GridLayout_Spec(QAndroidJniObject obj);
+		GridLayout_Spec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -25,7 +25,7 @@ namespace android::telephony
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AccessNetworkConstants_GeranBand(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_GeranBand(QAndroidJniObject obj);
+		AccessNetworkConstants_GeranBand(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

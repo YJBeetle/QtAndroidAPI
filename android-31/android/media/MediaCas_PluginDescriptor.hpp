@@ -13,7 +13,7 @@ namespace android::media
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MediaCas_PluginDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCas_PluginDescriptor(QAndroidJniObject obj);
+		MediaCas_PluginDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

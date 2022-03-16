@@ -6,9 +6,6 @@ namespace android::app
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	Notification_InboxStyle::Notification_InboxStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
-	
 	// Constructors
 	Notification_InboxStyle::Notification_InboxStyle()
 		: android::app::Notification_Style(

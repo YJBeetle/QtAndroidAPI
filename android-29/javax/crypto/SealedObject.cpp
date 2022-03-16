@@ -9,9 +9,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SealedObject::SealedObject(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SealedObject::SealedObject(JObject arg0, javax::crypto::Cipher arg1)
 		: JObject(

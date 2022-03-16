@@ -25,7 +25,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ImageButton(const char *className, const char *sig, Ts...agv) : android::widget::ImageView(className, sig, std::forward<Ts>(agv)...) {}
-		ImageButton(QAndroidJniObject obj);
+		ImageButton(QAndroidJniObject obj) : android::widget::ImageView(obj) {}
 		
 		// Constructors
 		ImageButton(android::content::Context arg0);

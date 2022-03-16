@@ -30,9 +30,6 @@ namespace android::icu::util
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ULocale_AvailableType::ULocale_AvailableType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

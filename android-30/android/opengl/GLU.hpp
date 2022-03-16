@@ -15,7 +15,7 @@ namespace android::opengl
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GLU(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLU(QAndroidJniObject obj);
+		GLU(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GLU();

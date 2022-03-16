@@ -6,9 +6,6 @@ namespace android::animation
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TypeConverter::TypeConverter(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	TypeConverter::TypeConverter(JClass arg0, JClass arg1)
 		: JObject(

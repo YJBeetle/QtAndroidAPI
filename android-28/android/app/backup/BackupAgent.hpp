@@ -36,7 +36,7 @@ namespace android::app::backup
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BackupAgent(const char *className, const char *sig, Ts...agv) : android::content::ContextWrapper(className, sig, std::forward<Ts>(agv)...) {}
-		BackupAgent(QAndroidJniObject obj);
+		BackupAgent(QAndroidJniObject obj) : android::content::ContextWrapper(obj) {}
 		
 		// Constructors
 		BackupAgent();

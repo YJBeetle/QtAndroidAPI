@@ -9,9 +9,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CipherSpi::CipherSpi(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	CipherSpi::CipherSpi()
 		: JObject(

@@ -4,9 +4,6 @@ namespace android
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	R_xml::R_xml(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	R_xml::R_xml()
 		: JObject(

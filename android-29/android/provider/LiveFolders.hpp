@@ -26,7 +26,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LiveFolders(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LiveFolders(QAndroidJniObject obj);
+		LiveFolders(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

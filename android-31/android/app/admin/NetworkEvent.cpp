@@ -14,9 +14,6 @@ namespace android::app::admin
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NetworkEvent::NetworkEvent(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

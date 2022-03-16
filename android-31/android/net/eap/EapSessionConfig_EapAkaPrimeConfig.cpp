@@ -6,9 +6,6 @@ namespace android::net::eap
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EapSessionConfig_EapAkaPrimeConfig::EapSessionConfig_EapAkaPrimeConfig(QAndroidJniObject obj) : android::net::eap::EapSessionConfig_EapAkaConfig(obj) {}
-	
 	// Constructors
 	
 	// Methods

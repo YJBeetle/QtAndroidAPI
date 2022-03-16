@@ -12,7 +12,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit MutableFloat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MutableFloat(QAndroidJniObject obj);
+		MutableFloat(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		MutableFloat(jfloat arg0);

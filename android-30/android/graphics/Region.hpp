@@ -31,7 +31,7 @@ namespace android::graphics
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Region(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Region(QAndroidJniObject obj);
+		Region(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Region();

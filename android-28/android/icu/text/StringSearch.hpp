@@ -29,7 +29,7 @@ namespace android::icu::text
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StringSearch(const char *className, const char *sig, Ts...agv) : android::icu::text::SearchIterator(className, sig, std::forward<Ts>(agv)...) {}
-		StringSearch(QAndroidJniObject obj);
+		StringSearch(QAndroidJniObject obj) : android::icu::text::SearchIterator(obj) {}
 		
 		// Constructors
 		StringSearch(JString arg0, JString arg1);

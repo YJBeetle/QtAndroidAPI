@@ -1032,9 +1032,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Notification::Notification(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	Notification::Notification()
 		: JObject(

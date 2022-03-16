@@ -14,7 +14,7 @@ namespace android::content
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit OperationApplicationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		OperationApplicationException(QAndroidJniObject obj);
+		OperationApplicationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		OperationApplicationException();

@@ -5,9 +5,6 @@ namespace java::io
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	EOFException::EOFException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-	
 	// Constructors
 	EOFException::EOFException()
 		: java::io::IOException(

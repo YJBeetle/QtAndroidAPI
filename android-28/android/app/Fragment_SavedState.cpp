@@ -14,9 +14,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Fragment_SavedState::Fragment_SavedState(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

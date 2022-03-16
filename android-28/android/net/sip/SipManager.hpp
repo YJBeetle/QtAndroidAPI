@@ -48,7 +48,7 @@ namespace android::net::sip
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit SipManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipManager(QAndroidJniObject obj);
+		SipManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

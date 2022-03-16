@@ -22,7 +22,7 @@ namespace android::bluetooth::le
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ScanRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScanRecord(QAndroidJniObject obj);
+		ScanRecord(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

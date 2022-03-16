@@ -6,9 +6,6 @@ namespace android::app::appsearch
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	SetSchemaResponse_MigrationFailure::SetSchemaResponse_MigrationFailure(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	SetSchemaResponse_MigrationFailure::SetSchemaResponse_MigrationFailure(JString arg0, JString arg1, JString arg2, android::app::appsearch::AppSearchResult arg3)
 		: JObject(

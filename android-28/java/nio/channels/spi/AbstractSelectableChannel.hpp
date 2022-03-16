@@ -30,7 +30,7 @@ namespace java::nio::channels::spi
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractSelectableChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::SelectableChannel(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSelectableChannel(QAndroidJniObject obj);
+		AbstractSelectableChannel(QAndroidJniObject obj) : java::nio::channels::SelectableChannel(obj) {}
 		
 		// Constructors
 		

@@ -13,9 +13,6 @@ namespace java::time::zone
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ZoneOffsetTransitionRule::ZoneOffsetTransitionRule(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

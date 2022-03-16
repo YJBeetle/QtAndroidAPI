@@ -97,9 +97,6 @@ namespace android::os
 		);
 	}
 	
-	// QAndroidJniObject forward
-	FileObserver::FileObserver(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	FileObserver::FileObserver(java::io::File arg0)
 		: JObject(

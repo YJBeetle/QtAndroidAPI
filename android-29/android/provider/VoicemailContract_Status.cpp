@@ -237,9 +237,6 @@ namespace android::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VoicemailContract_Status::VoicemailContract_Status(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

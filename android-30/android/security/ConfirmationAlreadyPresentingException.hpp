@@ -13,7 +13,7 @@ namespace android::security
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ConfirmationAlreadyPresentingException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationAlreadyPresentingException(QAndroidJniObject obj);
+		ConfirmationAlreadyPresentingException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		ConfirmationAlreadyPresentingException();

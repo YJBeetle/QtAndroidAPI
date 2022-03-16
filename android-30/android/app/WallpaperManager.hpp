@@ -71,7 +71,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit WallpaperManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WallpaperManager(QAndroidJniObject obj);
+		WallpaperManager(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

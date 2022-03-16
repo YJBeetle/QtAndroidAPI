@@ -7,9 +7,6 @@ namespace javax::crypto
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CipherOutputStream::CipherOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
-	
 	// Constructors
 	CipherOutputStream::CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1)
 		: java::io::FilterOutputStream(

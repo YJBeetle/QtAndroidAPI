@@ -38,7 +38,7 @@ namespace android::view
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit KeyCharacterMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyCharacterMap(QAndroidJniObject obj);
+		KeyCharacterMap(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

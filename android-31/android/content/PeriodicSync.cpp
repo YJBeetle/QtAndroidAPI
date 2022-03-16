@@ -44,9 +44,6 @@ namespace android::content
 		);
 	}
 	
-	// QAndroidJniObject forward
-	PeriodicSync::PeriodicSync(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	PeriodicSync::PeriodicSync(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jlong arg3)
 		: JObject(

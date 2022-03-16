@@ -54,9 +54,6 @@ namespace android::icu::text
 		);
 	}
 	
-	// QAndroidJniObject forward
-	RelativeDateTimeFormatter_Direction::RelativeDateTimeFormatter_Direction(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-	
 	// Constructors
 	
 	// Methods

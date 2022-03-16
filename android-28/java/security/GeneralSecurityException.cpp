@@ -6,9 +6,6 @@ namespace java::security
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	GeneralSecurityException::GeneralSecurityException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	GeneralSecurityException::GeneralSecurityException()
 		: java::lang::Exception(

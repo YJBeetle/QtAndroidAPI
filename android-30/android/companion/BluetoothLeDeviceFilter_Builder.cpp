@@ -10,9 +10,6 @@ namespace android::companion
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	BluetoothLeDeviceFilter_Builder::BluetoothLeDeviceFilter_Builder(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothLeDeviceFilter_Builder::BluetoothLeDeviceFilter_Builder()
 		: JObject(

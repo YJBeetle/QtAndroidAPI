@@ -26,7 +26,7 @@ namespace android::widget
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit FrameLayout_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_MarginLayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		FrameLayout_LayoutParams(QAndroidJniObject obj);
+		FrameLayout_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_MarginLayoutParams(obj) {}
 		
 		// Constructors
 		FrameLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);

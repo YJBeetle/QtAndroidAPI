@@ -15,9 +15,6 @@ namespace android::bluetooth
 		);
 	}
 	
-	// QAndroidJniObject forward
-	BluetoothHidDeviceAppSdpSettings::BluetoothHidDeviceAppSdpSettings(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	BluetoothHidDeviceAppSdpSettings::BluetoothHidDeviceAppSdpSettings(JString arg0, JString arg1, JString arg2, jbyte arg3, JByteArray arg4)
 		: JObject(

@@ -10,9 +10,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	TableLayout::TableLayout(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
-	
 	// Constructors
 	TableLayout::TableLayout(android::content::Context arg0)
 		: android::widget::LinearLayout(

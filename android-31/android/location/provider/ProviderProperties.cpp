@@ -50,9 +50,6 @@ namespace android::location::provider
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ProviderProperties::ProviderProperties(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

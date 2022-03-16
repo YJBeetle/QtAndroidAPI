@@ -7,9 +7,6 @@ namespace android::icu::util
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	CurrencyAmount::CurrencyAmount(QAndroidJniObject obj) : android::icu::util::Measure(obj) {}
-	
 	// Constructors
 	CurrencyAmount::CurrencyAmount(jdouble arg0, android::icu::util::Currency arg1)
 		: android::icu::util::Measure(

@@ -21,7 +21,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AbstractExecutorService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractExecutorService(QAndroidJniObject obj);
+		AbstractExecutorService(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AbstractExecutorService();

@@ -24,7 +24,7 @@ namespace java::security::spec
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ECParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ECParameterSpec(QAndroidJniObject obj);
+		ECParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ECParameterSpec(java::security::spec::EllipticCurve arg0, java::security::spec::ECPoint arg1, java::math::BigInteger arg2, jint arg3);

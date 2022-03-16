@@ -24,7 +24,7 @@ namespace android::view::translation
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit TranslationSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationSpec(QAndroidJniObject obj);
+		TranslationSpec(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		TranslationSpec(android::icu::util::ULocale arg0, jint arg1);

@@ -54,9 +54,6 @@ namespace android::telephony
 		);
 	}
 	
-	// QAndroidJniObject forward
-	TelephonyManager_CallComposerException::TelephonyManager_CallComposerException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-	
 	// Constructors
 	TelephonyManager_CallComposerException::TelephonyManager_CallComposerException(jint arg0, java::io::IOException arg1)
 		: java::lang::Exception(

@@ -17,7 +17,7 @@ namespace android::app::appsearch
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AppSearchSchema_LongPropertyConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_LongPropertyConfig_Builder(QAndroidJniObject obj);
+		AppSearchSchema_LongPropertyConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		AppSearchSchema_LongPropertyConfig_Builder(JString arg0);

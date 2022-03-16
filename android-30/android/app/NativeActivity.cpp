@@ -24,9 +24,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	NativeActivity::NativeActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
-	
 	// Constructors
 	NativeActivity::NativeActivity()
 		: android::app::Activity(

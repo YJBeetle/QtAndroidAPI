@@ -13,7 +13,7 @@ namespace android::util
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit LogPrinter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LogPrinter(QAndroidJniObject obj);
+		LogPrinter(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		LogPrinter(jint arg0, JString arg1);

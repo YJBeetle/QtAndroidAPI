@@ -33,7 +33,7 @@ namespace android::service::quickaccesswallet
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit QuickAccessWalletService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		QuickAccessWalletService(QAndroidJniObject obj);
+		QuickAccessWalletService(QAndroidJniObject obj) : android::app::Service(obj) {}
 		
 		// Constructors
 		QuickAccessWalletService();

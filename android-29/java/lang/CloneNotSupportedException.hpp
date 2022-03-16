@@ -13,7 +13,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CloneNotSupportedException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		CloneNotSupportedException(QAndroidJniObject obj);
+		CloneNotSupportedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		CloneNotSupportedException();

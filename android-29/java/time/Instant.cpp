@@ -38,9 +38,6 @@ namespace java::time
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Instant::Instant(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

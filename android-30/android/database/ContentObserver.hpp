@@ -20,7 +20,7 @@ namespace android::database
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ContentObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentObserver(QAndroidJniObject obj);
+		ContentObserver(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ContentObserver(android::os::Handler arg0);

@@ -11,9 +11,6 @@ namespace android::preference
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ListPreference::ListPreference(QAndroidJniObject obj) : android::preference::DialogPreference(obj) {}
-	
 	// Constructors
 	ListPreference::ListPreference(android::content::Context arg0)
 		: android::preference::DialogPreference(

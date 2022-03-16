@@ -13,7 +13,7 @@ namespace java::util::concurrent
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit BrokenBarrierException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		BrokenBarrierException(QAndroidJniObject obj);
+		BrokenBarrierException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 		
 		// Constructors
 		BrokenBarrierException();

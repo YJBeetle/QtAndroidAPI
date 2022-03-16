@@ -22,7 +22,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VoiceInteractor_PickOptionRequest_Option(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj);
+		VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		VoiceInteractor_PickOptionRequest_Option(JString arg0, jint arg1);

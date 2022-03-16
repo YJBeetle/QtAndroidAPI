@@ -21,7 +21,7 @@ namespace android::view::inputmethod
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit ExtractedTextRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExtractedTextRequest(QAndroidJniObject obj);
+		ExtractedTextRequest(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		ExtractedTextRequest();

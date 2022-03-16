@@ -16,7 +16,7 @@ namespace android::app
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit AliasActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		AliasActivity(QAndroidJniObject obj);
+		AliasActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
 		
 		// Constructors
 		AliasActivity();

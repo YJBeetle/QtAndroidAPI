@@ -321,9 +321,6 @@ namespace android::app
 		);
 	}
 	
-	// QAndroidJniObject forward
-	AppOpsManager::AppOpsManager(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

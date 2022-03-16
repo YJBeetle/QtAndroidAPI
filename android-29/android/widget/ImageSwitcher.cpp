@@ -8,9 +8,6 @@ namespace android::widget
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	ImageSwitcher::ImageSwitcher(QAndroidJniObject obj) : android::widget::ViewSwitcher(obj) {}
-	
 	// Constructors
 	ImageSwitcher::ImageSwitcher(android::content::Context arg0)
 		: android::widget::ViewSwitcher(

@@ -16,7 +16,7 @@ namespace android::net::vcn
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit VcnGatewayConnectionConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VcnGatewayConnectionConfig(QAndroidJniObject obj);
+		VcnGatewayConnectionConfig(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

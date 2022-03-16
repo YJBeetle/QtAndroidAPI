@@ -6,9 +6,6 @@ namespace java::text
 {
 	// Fields
 	
-	// QAndroidJniObject forward
-	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	StringCharacterIterator::StringCharacterIterator(JString arg0)
 		: JObject(

@@ -31,9 +31,6 @@ namespace android::service::voice
 		);
 	}
 	
-	// QAndroidJniObject forward
-	VoiceInteractionService::VoiceInteractionService(QAndroidJniObject obj) : android::app::Service(obj) {}
-	
 	// Constructors
 	VoiceInteractionService::VoiceInteractionService()
 		: android::app::Service(

@@ -32,9 +32,6 @@ namespace java::util::prefs
 		);
 	}
 	
-	// QAndroidJniObject forward
-	Preferences::Preferences(QAndroidJniObject obj) : JObject(obj) {}
-	
 	// Constructors
 	
 	// Methods

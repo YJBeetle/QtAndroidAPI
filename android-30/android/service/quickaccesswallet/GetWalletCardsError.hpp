@@ -22,7 +22,7 @@ namespace android::service::quickaccesswallet
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit GetWalletCardsError(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetWalletCardsError(QAndroidJniObject obj);
+		GetWalletCardsError(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		GetWalletCardsError(android::graphics::drawable::Icon arg0, JString arg1);

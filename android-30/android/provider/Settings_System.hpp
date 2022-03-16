@@ -130,7 +130,7 @@ namespace android::provider
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Settings_System(const char *className, const char *sig, Ts...agv) : android::provider::Settings_NameValueTable(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_System(QAndroidJniObject obj);
+		Settings_System(QAndroidJniObject obj) : android::provider::Settings_NameValueTable(obj) {}
 		
 		// Constructors
 		Settings_System();

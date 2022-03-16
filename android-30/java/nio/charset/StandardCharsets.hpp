@@ -22,7 +22,7 @@ namespace java::nio::charset
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit StandardCharsets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StandardCharsets(QAndroidJniObject obj);
+		StandardCharsets(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

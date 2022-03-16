@@ -17,7 +17,7 @@ namespace android::net
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit IpSecManager_UdpEncapsulationSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj);
+		IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

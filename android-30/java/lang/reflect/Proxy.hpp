@@ -45,7 +45,7 @@ namespace java::lang::reflect
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Proxy(QAndroidJniObject obj);
+		Proxy(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		

@@ -12,9 +12,6 @@ namespace android::net
 		);
 	}
 	
-	// QAndroidJniObject forward
-	ParseException::ParseException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-	
 	// Constructors
 	
 	// Methods

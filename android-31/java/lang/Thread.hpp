@@ -42,7 +42,7 @@ namespace java::lang
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Thread(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Thread(QAndroidJniObject obj);
+		Thread(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
 		Thread();
