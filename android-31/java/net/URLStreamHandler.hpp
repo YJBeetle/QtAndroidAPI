@@ -1,40 +1,25 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class Proxy;
-}
-namespace java::net
-{
-	class URL;
-}
-namespace java::net
-{
-	class URLConnection;
-}
+#include "../../JString.hpp"
+#include "./InetAddress.def.hpp"
+#include "./Proxy.def.hpp"
+#include "./URL.def.hpp"
+#include "./URLConnection.def.hpp"
+#include "./URLStreamHandler.def.hpp"
 
 namespace java::net
 {
-	class URLStreamHandler : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit URLStreamHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		URLStreamHandler(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		URLStreamHandler();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline URLStreamHandler::URLStreamHandler()
+		: JObject(
+			"java.net.URLStreamHandler",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
 

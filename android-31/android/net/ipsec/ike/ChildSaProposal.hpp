@@ -1,27 +1,48 @@
 #pragma once
 
-#include "./SaProposal.hpp"
-
-class JObject;
+#include "../../../../JObject.hpp"
+#include "./ChildSaProposal.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class ChildSaProposal : public android::net::ipsec::ike::SaProposal
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject ChildSaProposal::getSupportedEncryptionAlgorithms()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ChildSaProposal(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::SaProposal(className, sig, std::forward<Ts>(agv)...) {}
-		ChildSaProposal(QAndroidJniObject obj) : android::net::ipsec::ike::SaProposal(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject getSupportedEncryptionAlgorithms();
-		static JObject getSupportedIntegrityAlgorithms();
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return callStaticObjectMethod(
+			"android.net.ipsec.ike.ChildSaProposal",
+			"getSupportedEncryptionAlgorithms",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject ChildSaProposal::getSupportedIntegrityAlgorithms()
+	{
+		return callStaticObjectMethod(
+			"android.net.ipsec.ike.ChildSaProposal",
+			"getSupportedIntegrityAlgorithms",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jboolean ChildSaProposal::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint ChildSaProposal::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./SaProposal.hpp"
 

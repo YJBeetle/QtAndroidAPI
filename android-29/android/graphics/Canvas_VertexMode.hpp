@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Canvas_VertexMode.def.hpp"
 
 namespace android::graphics
 {
-	class Canvas_VertexMode : public java::lang::Enum
+	// Fields
+	inline android::graphics::Canvas_VertexMode Canvas_VertexMode::TRIANGLES()
 	{
-	public:
-		// Fields
-		static android::graphics::Canvas_VertexMode TRIANGLES();
-		static android::graphics::Canvas_VertexMode TRIANGLE_FAN();
-		static android::graphics::Canvas_VertexMode TRIANGLE_STRIP();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Canvas_VertexMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Canvas_VertexMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Canvas_VertexMode valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Canvas$VertexMode",
+			"TRIANGLES",
+			"Landroid/graphics/Canvas$VertexMode;"
+		);
+	}
+	inline android::graphics::Canvas_VertexMode Canvas_VertexMode::TRIANGLE_FAN()
+	{
+		return getStaticObjectField(
+			"android.graphics.Canvas$VertexMode",
+			"TRIANGLE_FAN",
+			"Landroid/graphics/Canvas$VertexMode;"
+		);
+	}
+	inline android::graphics::Canvas_VertexMode Canvas_VertexMode::TRIANGLE_STRIP()
+	{
+		return getStaticObjectField(
+			"android.graphics.Canvas$VertexMode",
+			"TRIANGLE_STRIP",
+			"Landroid/graphics/Canvas$VertexMode;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Canvas_VertexMode Canvas_VertexMode::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Canvas$VertexMode",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Canvas$VertexMode;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Canvas_VertexMode::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Canvas$VertexMode",
+			"values",
+			"()[Landroid/graphics/Canvas$VertexMode;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

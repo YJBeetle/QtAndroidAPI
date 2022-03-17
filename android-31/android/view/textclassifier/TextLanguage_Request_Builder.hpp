@@ -1,34 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view::textclassifier
-{
-	class TextLanguage_Request;
-}
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "./TextLanguage_Request.def.hpp"
+#include "../../../JString.hpp"
+#include "./TextLanguage_Request_Builder.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextLanguage_Request_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline TextLanguage_Request_Builder::TextLanguage_Request_Builder(JString arg0)
+		: JObject(
+			"android.view.textclassifier.TextLanguage$Request$Builder",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::view::textclassifier::TextLanguage_Request TextLanguage_Request_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextLanguage_Request_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextLanguage_Request_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TextLanguage_Request_Builder(JString arg0);
-		
-		// Methods
-		android::view::textclassifier::TextLanguage_Request build() const;
-		android::view::textclassifier::TextLanguage_Request_Builder setExtras(android::os::Bundle arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/textclassifier/TextLanguage$Request;"
+		);
+	}
+	inline android::view::textclassifier::TextLanguage_Request_Builder TextLanguage_Request_Builder::setExtras(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLanguage$Request$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

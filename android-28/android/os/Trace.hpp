@@ -1,25 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Trace.def.hpp"
 
 namespace android::os
 {
-	class Trace : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Trace::beginSection(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Trace(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Trace(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static void beginSection(JString arg0);
-		static void endSection();
-	};
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"beginSection",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Trace::endSection()
+	{
+		callStaticMethod<void>(
+			"android.os.Trace",
+			"endSection",
+			"()V"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

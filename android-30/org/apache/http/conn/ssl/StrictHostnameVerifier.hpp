@@ -1,27 +1,40 @@
 #pragma once
 
-#include "./AbstractVerifier.hpp"
-
-class JArray;
-class JString;
+#include "../../../../../JArray.hpp"
+#include "../../../../../JString.hpp"
+#include "./StrictHostnameVerifier.def.hpp"
 
 namespace org::apache::http::conn::ssl
 {
-	class StrictHostnameVerifier : public org::apache::http::conn::ssl::AbstractVerifier
+	// Fields
+	
+	// Constructors
+	inline StrictHostnameVerifier::StrictHostnameVerifier()
+		: org::apache::http::conn::ssl::AbstractVerifier(
+			"org.apache.http.conn.ssl.StrictHostnameVerifier",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString StrictHostnameVerifier::toString() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StrictHostnameVerifier(const char *className, const char *sig, Ts...agv) : org::apache::http::conn::ssl::AbstractVerifier(className, sig, std::forward<Ts>(agv)...) {}
-		StrictHostnameVerifier(QAndroidJniObject obj) : org::apache::http::conn::ssl::AbstractVerifier(obj) {}
-		
-		// Constructors
-		StrictHostnameVerifier();
-		
-		// Methods
-		JString toString() const;
-		void verify(JString arg0, JArray arg1, JArray arg2) const;
-	};
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void StrictHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2) const
+	{
+		callMethod<void>(
+			"verify",
+			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object<jarray>()
+		);
+	}
 } // namespace org::apache::http::conn::ssl
+
+// Base class headers
+#include "./AbstractVerifier.hpp"
 

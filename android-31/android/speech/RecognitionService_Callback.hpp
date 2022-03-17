@@ -1,45 +1,95 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::content
-{
-	class AttributionSource;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::speech
-{
-	class RecognitionService;
-}
+#include "../../JByteArray.hpp"
+#include "../content/AttributionSource.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./RecognitionService.def.hpp"
+#include "./RecognitionService_Callback.def.hpp"
 
 namespace android::speech
 {
-	class RecognitionService_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void RecognitionService_Callback::beginningOfSpeech() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RecognitionService_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RecognitionService_Callback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void beginningOfSpeech() const;
-		void bufferReceived(JByteArray arg0) const;
-		void endOfSpeech() const;
-		void error(jint arg0) const;
-		android::content::AttributionSource getCallingAttributionSource() const;
-		jint getCallingUid() const;
-		void partialResults(android::os::Bundle arg0) const;
-		void readyForSpeech(android::os::Bundle arg0) const;
-		void results(android::os::Bundle arg0) const;
-		void rmsChanged(jfloat arg0) const;
-	};
+		callMethod<void>(
+			"beginningOfSpeech",
+			"()V"
+		);
+	}
+	inline void RecognitionService_Callback::bufferReceived(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"bufferReceived",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void RecognitionService_Callback::endOfSpeech() const
+	{
+		callMethod<void>(
+			"endOfSpeech",
+			"()V"
+		);
+	}
+	inline void RecognitionService_Callback::error(jint arg0) const
+	{
+		callMethod<void>(
+			"error",
+			"(I)V",
+			arg0
+		);
+	}
+	inline android::content::AttributionSource RecognitionService_Callback::getCallingAttributionSource() const
+	{
+		return callObjectMethod(
+			"getCallingAttributionSource",
+			"()Landroid/content/AttributionSource;"
+		);
+	}
+	inline jint RecognitionService_Callback::getCallingUid() const
+	{
+		return callMethod<jint>(
+			"getCallingUid",
+			"()I"
+		);
+	}
+	inline void RecognitionService_Callback::partialResults(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"partialResults",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline void RecognitionService_Callback::readyForSpeech(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"readyForSpeech",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline void RecognitionService_Callback::results(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"results",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline void RecognitionService_Callback::rmsChanged(jfloat arg0) const
+	{
+		callMethod<void>(
+			"rmsChanged",
+			"(F)V",
+			arg0
+		);
+	}
 } // namespace android::speech
+
+// Base class headers
 

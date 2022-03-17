@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./ReflectiveOperationException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InstantiationException.def.hpp"
 
 namespace java::lang
 {
-	class InstantiationException : public java::lang::ReflectiveOperationException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InstantiationException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		InstantiationException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
-		
-		// Constructors
-		InstantiationException();
-		InstantiationException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InstantiationException::InstantiationException()
+		: java::lang::ReflectiveOperationException(
+			"java.lang.InstantiationException",
+			"()V"
+		) {}
+	inline InstantiationException::InstantiationException(JString arg0)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.InstantiationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./ReflectiveOperationException.hpp"
 

@@ -1,34 +1,46 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./BatchUpdates.def.hpp"
+#include "../../widget/RemoteViews.def.hpp"
+#include "./BatchUpdates_Builder.def.hpp"
 
 namespace android::service::autofill
 {
-	class BatchUpdates;
-}
-namespace android::widget
-{
-	class RemoteViews;
-}
-
-namespace android::service::autofill
-{
-	class BatchUpdates_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline BatchUpdates_Builder::BatchUpdates_Builder()
+		: JObject(
+			"android.service.autofill.BatchUpdates$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::service::autofill::BatchUpdates BatchUpdates_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BatchUpdates_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BatchUpdates_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		BatchUpdates_Builder();
-		
-		// Methods
-		android::service::autofill::BatchUpdates build() const;
-		android::service::autofill::BatchUpdates_Builder transformChild(jint arg0, JObject arg1) const;
-		android::service::autofill::BatchUpdates_Builder updateTemplate(android::widget::RemoteViews arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/service/autofill/BatchUpdates;"
+		);
+	}
+	inline android::service::autofill::BatchUpdates_Builder BatchUpdates_Builder::transformChild(jint arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"transformChild",
+			"(ILandroid/service/autofill/Transformation;)Landroid/service/autofill/BatchUpdates$Builder;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline android::service::autofill::BatchUpdates_Builder BatchUpdates_Builder::updateTemplate(android::widget::RemoteViews arg0) const
+	{
+		return callObjectMethod(
+			"updateTemplate",
+			"(Landroid/widget/RemoteViews;)Landroid/service/autofill/BatchUpdates$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

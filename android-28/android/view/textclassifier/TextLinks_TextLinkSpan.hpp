@@ -1,33 +1,40 @@
 #pragma once
 
-#include "../../text/style/ClickableSpan.hpp"
-
-namespace android::view
-{
-	class View;
-}
-namespace android::view::textclassifier
-{
-	class TextLinks_TextLink;
-}
+#include "../View.def.hpp"
+#include "./TextLinks_TextLink.def.hpp"
+#include "./TextLinks_TextLinkSpan.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextLinks_TextLinkSpan : public android::text::style::ClickableSpan
+	// Fields
+	
+	// Constructors
+	inline TextLinks_TextLinkSpan::TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0)
+		: android::text::style::ClickableSpan(
+			"android.view.textclassifier.TextLinks$TextLinkSpan",
+			"(Landroid/view/textclassifier/TextLinks$TextLink;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::view::textclassifier::TextLinks_TextLink TextLinks_TextLinkSpan::getTextLink() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextLinks_TextLinkSpan(const char *className, const char *sig, Ts...agv) : android::text::style::ClickableSpan(className, sig, std::forward<Ts>(agv)...) {}
-		TextLinks_TextLinkSpan(QAndroidJniObject obj) : android::text::style::ClickableSpan(obj) {}
-		
-		// Constructors
-		TextLinks_TextLinkSpan(android::view::textclassifier::TextLinks_TextLink arg0);
-		
-		// Methods
-		android::view::textclassifier::TextLinks_TextLink getTextLink() const;
-		void onClick(android::view::View arg0) const;
-	};
+		return callObjectMethod(
+			"getTextLink",
+			"()Landroid/view/textclassifier/TextLinks$TextLink;"
+		);
+	}
+	inline void TextLinks_TextLinkSpan::onClick(android::view::View arg0) const
+	{
+		callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
+#include "../../text/style/CharacterStyle.hpp"
+#include "../../text/style/ClickableSpan.hpp"
 

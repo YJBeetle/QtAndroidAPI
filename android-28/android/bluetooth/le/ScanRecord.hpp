@@ -1,42 +1,91 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::os
-{
-	class ParcelUuid;
-}
-namespace android::util
-{
-	class SparseArray;
-}
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../os/ParcelUuid.def.hpp"
+#include "../../util/SparseArray.def.hpp"
+#include "../../../JString.hpp"
+#include "./ScanRecord.def.hpp"
 
 namespace android::bluetooth::le
 {
-	class ScanRecord : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint ScanRecord::getAdvertiseFlags() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScanRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScanRecord(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getAdvertiseFlags() const;
-		JByteArray getBytes() const;
-		JString getDeviceName() const;
-		JByteArray getManufacturerSpecificData(jint arg0) const;
-		android::util::SparseArray getManufacturerSpecificData() const;
-		JByteArray getServiceData(android::os::ParcelUuid arg0) const;
-		JObject getServiceData() const;
-		JObject getServiceUuids() const;
-		jint getTxPowerLevel() const;
-		JString toString() const;
-	};
+		return callMethod<jint>(
+			"getAdvertiseFlags",
+			"()I"
+		);
+	}
+	inline JByteArray ScanRecord::getBytes() const
+	{
+		return callObjectMethod(
+			"getBytes",
+			"()[B"
+		);
+	}
+	inline JString ScanRecord::getDeviceName() const
+	{
+		return callObjectMethod(
+			"getDeviceName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JByteArray ScanRecord::getManufacturerSpecificData(jint arg0) const
+	{
+		return callObjectMethod(
+			"getManufacturerSpecificData",
+			"(I)[B",
+			arg0
+		);
+	}
+	inline android::util::SparseArray ScanRecord::getManufacturerSpecificData() const
+	{
+		return callObjectMethod(
+			"getManufacturerSpecificData",
+			"()Landroid/util/SparseArray;"
+		);
+	}
+	inline JByteArray ScanRecord::getServiceData(android::os::ParcelUuid arg0) const
+	{
+		return callObjectMethod(
+			"getServiceData",
+			"(Landroid/os/ParcelUuid;)[B",
+			arg0.object()
+		);
+	}
+	inline JObject ScanRecord::getServiceData() const
+	{
+		return callObjectMethod(
+			"getServiceData",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JObject ScanRecord::getServiceUuids() const
+	{
+		return callObjectMethod(
+			"getServiceUuids",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint ScanRecord::getTxPowerLevel() const
+	{
+		return callMethod<jint>(
+			"getTxPowerLevel",
+			"()I"
+		);
+	}
+	inline JString ScanRecord::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::bluetooth::le
+
+// Base class headers
 

@@ -1,46 +1,79 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view
-{
-	class ContentInfo;
-}
+#include "../content/ClipData.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./ContentInfo.def.hpp"
+#include "./ContentInfo_Builder.def.hpp"
 
 namespace android::view
 {
-	class ContentInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ContentInfo_Builder::ContentInfo_Builder(android::view::ContentInfo arg0)
+		: JObject(
+			"android.view.ContentInfo$Builder",
+			"(Landroid/view/ContentInfo;)V",
+			arg0.object()
+		) {}
+	inline ContentInfo_Builder::ContentInfo_Builder(android::content::ClipData arg0, jint arg1)
+		: JObject(
+			"android.view.ContentInfo$Builder",
+			"(Landroid/content/ClipData;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline android::view::ContentInfo ContentInfo_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ContentInfo_Builder(android::view::ContentInfo arg0);
-		ContentInfo_Builder(android::content::ClipData arg0, jint arg1);
-		
-		// Methods
-		android::view::ContentInfo build() const;
-		android::view::ContentInfo_Builder setClip(android::content::ClipData arg0) const;
-		android::view::ContentInfo_Builder setExtras(android::os::Bundle arg0) const;
-		android::view::ContentInfo_Builder setFlags(jint arg0) const;
-		android::view::ContentInfo_Builder setLinkUri(android::net::Uri arg0) const;
-		android::view::ContentInfo_Builder setSource(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/ContentInfo;"
+		);
+	}
+	inline android::view::ContentInfo_Builder ContentInfo_Builder::setClip(android::content::ClipData arg0) const
+	{
+		return callObjectMethod(
+			"setClip",
+			"(Landroid/content/ClipData;)Landroid/view/ContentInfo$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::ContentInfo_Builder ContentInfo_Builder::setExtras(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/ContentInfo$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::ContentInfo_Builder ContentInfo_Builder::setFlags(jint arg0) const
+	{
+		return callObjectMethod(
+			"setFlags",
+			"(I)Landroid/view/ContentInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::view::ContentInfo_Builder ContentInfo_Builder::setLinkUri(android::net::Uri arg0) const
+	{
+		return callObjectMethod(
+			"setLinkUri",
+			"(Landroid/net/Uri;)Landroid/view/ContentInfo$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::ContentInfo_Builder ContentInfo_Builder::setSource(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSource",
+			"(I)Landroid/view/ContentInfo$Builder;",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

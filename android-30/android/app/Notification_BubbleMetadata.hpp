@@ -1,46 +1,99 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./PendingIntent.def.hpp"
+#include "../graphics/drawable/Icon.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./Notification_BubbleMetadata.def.hpp"
 
 namespace android::app
 {
-	class PendingIntent;
-}
-namespace android::graphics::drawable
-{
-	class Icon;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::app
-{
-	class Notification_BubbleMetadata : public JObject
+	// Fields
+	inline JObject Notification_BubbleMetadata::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_BubbleMetadata(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_BubbleMetadata(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean getAutoExpandBubble() const;
-		android::app::PendingIntent getDeleteIntent() const;
-		jint getDesiredHeight() const;
-		jint getDesiredHeightResId() const;
-		android::graphics::drawable::Icon getIcon() const;
-		android::app::PendingIntent getIntent() const;
-		JString getShortcutId() const;
-		jboolean isNotificationSuppressed() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.Notification$BubbleMetadata",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint Notification_BubbleMetadata::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean Notification_BubbleMetadata::getAutoExpandBubble() const
+	{
+		return callMethod<jboolean>(
+			"getAutoExpandBubble",
+			"()Z"
+		);
+	}
+	inline android::app::PendingIntent Notification_BubbleMetadata::getDeleteIntent() const
+	{
+		return callObjectMethod(
+			"getDeleteIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	inline jint Notification_BubbleMetadata::getDesiredHeight() const
+	{
+		return callMethod<jint>(
+			"getDesiredHeight",
+			"()I"
+		);
+	}
+	inline jint Notification_BubbleMetadata::getDesiredHeightResId() const
+	{
+		return callMethod<jint>(
+			"getDesiredHeightResId",
+			"()I"
+		);
+	}
+	inline android::graphics::drawable::Icon Notification_BubbleMetadata::getIcon() const
+	{
+		return callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	inline android::app::PendingIntent Notification_BubbleMetadata::getIntent() const
+	{
+		return callObjectMethod(
+			"getIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	inline JString Notification_BubbleMetadata::getShortcutId() const
+	{
+		return callObjectMethod(
+			"getShortcutId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean Notification_BubbleMetadata::isNotificationSuppressed() const
+	{
+		return callMethod<jboolean>(
+			"isNotificationSuppressed",
+			"()Z"
+		);
+	}
+	inline void Notification_BubbleMetadata::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

@@ -1,33 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
+#include "../content/Context.def.hpp"
+#include "./OrientationEventListener.def.hpp"
 
 namespace android::view
 {
-	class OrientationEventListener : public JObject
+	// Fields
+	inline jint OrientationEventListener::ORIENTATION_UNKNOWN()
 	{
-	public:
-		// Fields
-		static jint ORIENTATION_UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OrientationEventListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OrientationEventListener(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		OrientationEventListener(android::content::Context arg0);
-		OrientationEventListener(android::content::Context arg0, jint arg1);
-		
-		// Methods
-		jboolean canDetectOrientation() const;
-		void disable() const;
-		void enable() const;
-		void onOrientationChanged(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.view.OrientationEventListener",
+			"ORIENTATION_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline OrientationEventListener::OrientationEventListener(android::content::Context arg0)
+		: JObject(
+			"android.view.OrientationEventListener",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline OrientationEventListener::OrientationEventListener(android::content::Context arg0, jint arg1)
+		: JObject(
+			"android.view.OrientationEventListener",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean OrientationEventListener::canDetectOrientation() const
+	{
+		return callMethod<jboolean>(
+			"canDetectOrientation",
+			"()Z"
+		);
+	}
+	inline void OrientationEventListener::disable() const
+	{
+		callMethod<void>(
+			"disable",
+			"()V"
+		);
+	}
+	inline void OrientationEventListener::enable() const
+	{
+		callMethod<void>(
+			"enable",
+			"()V"
+		);
+	}
+	inline void OrientationEventListener::onOrientationChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onOrientationChanged",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

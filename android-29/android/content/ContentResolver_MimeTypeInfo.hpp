@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics::drawable
-{
-	class Icon;
-}
-class JString;
+#include "../graphics/drawable/Icon.def.hpp"
+#include "../../JString.hpp"
+#include "./ContentResolver_MimeTypeInfo.def.hpp"
 
 namespace android::content
 {
-	class ContentResolver_MimeTypeInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString ContentResolver_MimeTypeInfo::getContentDescription() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentResolver_MimeTypeInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentResolver_MimeTypeInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getContentDescription() const;
-		android::graphics::drawable::Icon getIcon() const;
-		JString getLabel() const;
-	};
+		return callObjectMethod(
+			"getContentDescription",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::graphics::drawable::Icon ContentResolver_MimeTypeInfo::getIcon() const
+	{
+		return callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	inline JString ContentResolver_MimeTypeInfo::getLabel() const
+	{
+		return callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

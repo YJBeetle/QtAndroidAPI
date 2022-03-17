@@ -1,31 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./CalendarContract_Calendars.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_Calendars : public JObject
+	// Fields
+	inline JString CalendarContract_Calendars::CALENDAR_LOCATION()
 	{
-	public:
-		// Fields
-		static JString CALENDAR_LOCATION();
-		static android::net::Uri CONTENT_URI();
-		static JString DEFAULT_SORT_ORDER();
-		static JString NAME();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CalendarContract_Calendars(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_Calendars(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$Calendars",
+			"CALENDAR_LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri CalendarContract_Calendars::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$Calendars",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString CalendarContract_Calendars::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$Calendars",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CalendarContract_Calendars::NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.CalendarContract$Calendars",
+			"NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

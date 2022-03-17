@@ -1,25 +1,30 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ProviderMismatchException.def.hpp"
 
 namespace java::nio::file
 {
-	class ProviderMismatchException : public java::lang::IllegalArgumentException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProviderMismatchException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderMismatchException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-		
-		// Constructors
-		ProviderMismatchException();
-		ProviderMismatchException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ProviderMismatchException::ProviderMismatchException()
+		: java::lang::IllegalArgumentException(
+			"java.nio.file.ProviderMismatchException",
+			"()V"
+		) {}
+	inline ProviderMismatchException::ProviderMismatchException(JString arg0)
+		: java::lang::IllegalArgumentException(
+			"java.nio.file.ProviderMismatchException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

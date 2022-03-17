@@ -1,34 +1,42 @@
 #pragma once
 
-#include "./VoiceInteractionSession_Request.hpp"
-
-namespace android::app
-{
-	class VoiceInteractor_Prompt;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
+#include "../../app/VoiceInteractor_Prompt.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "./VoiceInteractionSession_ConfirmationRequest.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_ConfirmationRequest : public android::service::voice::VoiceInteractionSession_Request
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString VoiceInteractionSession_ConfirmationRequest::getPrompt() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_ConfirmationRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_ConfirmationRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getPrompt() const;
-		android::app::VoiceInteractor_Prompt getVoicePrompt() const;
-		void sendConfirmationResult(jboolean arg0, android::os::Bundle arg1) const;
-	};
+		return callObjectMethod(
+			"getPrompt",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::app::VoiceInteractor_Prompt VoiceInteractionSession_ConfirmationRequest::getVoicePrompt() const
+	{
+		return callObjectMethod(
+			"getVoicePrompt",
+			"()Landroid/app/VoiceInteractor$Prompt;"
+		);
+	}
+	inline void VoiceInteractionSession_ConfirmationRequest::sendConfirmationResult(jboolean arg0, android::os::Bundle arg1) const
+	{
+		callMethod<void>(
+			"sendConfirmationResult",
+			"(ZLandroid/os/Bundle;)V",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
+#include "./VoiceInteractionSession_Request.hpp"
 

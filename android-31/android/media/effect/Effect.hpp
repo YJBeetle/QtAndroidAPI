@@ -1,30 +1,64 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./Effect.def.hpp"
 
 namespace android::media::effect
 {
-	class Effect : public JObject
+	// Fields
+	
+	// Constructors
+	inline Effect::Effect()
+		: JObject(
+			"android.media.effect.Effect",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void Effect::apply(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Effect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Effect(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Effect();
-		
-		// Methods
-		void apply(jint arg0, jint arg1, jint arg2, jint arg3) const;
-		JString getName() const;
-		void release() const;
-		void setParameter(JString arg0, JObject arg1) const;
-		void setUpdateListener(JObject arg0) const;
-	};
+		callMethod<void>(
+			"apply",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JString Effect::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Effect::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline void Effect::setParameter(JString arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setParameter",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			arg0.object<jstring>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void Effect::setUpdateListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setUpdateListener",
+			"(Landroid/media/effect/EffectUpdateListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media::effect
+
+// Base class headers
 

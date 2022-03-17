@@ -1,37 +1,71 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
-namespace java::util
-{
-	class Locale;
-}
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "../../java/util/Locale.def.hpp"
+#include "./Geocoder.def.hpp"
 
 namespace android::location
 {
-	class Geocoder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Geocoder::Geocoder(android::content::Context arg0)
+		: JObject(
+			"android.location.Geocoder",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline Geocoder::Geocoder(android::content::Context arg0, java::util::Locale arg1)
+		: JObject(
+			"android.location.Geocoder",
+			"(Landroid/content/Context;Ljava/util/Locale;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jboolean Geocoder::isPresent()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Geocoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Geocoder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Geocoder(android::content::Context arg0);
-		Geocoder(android::content::Context arg0, java::util::Locale arg1);
-		
-		// Methods
-		static jboolean isPresent();
-		JObject getFromLocation(jdouble arg0, jdouble arg1, jint arg2) const;
-		JObject getFromLocationName(JString arg0, jint arg1) const;
-		JObject getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5) const;
-	};
+		return callStaticMethod<jboolean>(
+			"android.location.Geocoder",
+			"isPresent",
+			"()Z"
+		);
+	}
+	inline JObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"getFromLocation",
+			"(DDI)Ljava/util/List;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline JObject Geocoder::getFromLocationName(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getFromLocationName",
+			"(Ljava/lang/String;I)Ljava/util/List;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline JObject Geocoder::getFromLocationName(JString arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5) const
+	{
+		return callObjectMethod(
+			"getFromLocationName",
+			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

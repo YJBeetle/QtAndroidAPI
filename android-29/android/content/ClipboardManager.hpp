@@ -1,41 +1,93 @@
 #pragma once
 
-#include "../text/ClipboardManager.hpp"
+#include "./ClipData.def.hpp"
+#include "./ClipDescription.def.hpp"
+#include "../../JString.hpp"
+#include "./ClipboardManager.def.hpp"
 
 namespace android::content
 {
-	class ClipData;
-}
-namespace android::content
-{
-	class ClipDescription;
-}
-class JString;
-
-namespace android::content
-{
-	class ClipboardManager : public android::text::ClipboardManager
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void ClipboardManager::addPrimaryClipChangedListener(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClipboardManager(const char *className, const char *sig, Ts...agv) : android::text::ClipboardManager(className, sig, std::forward<Ts>(agv)...) {}
-		ClipboardManager(QAndroidJniObject obj) : android::text::ClipboardManager(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void addPrimaryClipChangedListener(JObject arg0) const;
-		void clearPrimaryClip() const;
-		android::content::ClipData getPrimaryClip() const;
-		android::content::ClipDescription getPrimaryClipDescription() const;
-		JString getText() const;
-		jboolean hasPrimaryClip() const;
-		jboolean hasText() const;
-		void removePrimaryClipChangedListener(JObject arg0) const;
-		void setPrimaryClip(android::content::ClipData arg0) const;
-		void setText(JString arg0) const;
-	};
+		callMethod<void>(
+			"addPrimaryClipChangedListener",
+			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ClipboardManager::clearPrimaryClip() const
+	{
+		callMethod<void>(
+			"clearPrimaryClip",
+			"()V"
+		);
+	}
+	inline android::content::ClipData ClipboardManager::getPrimaryClip() const
+	{
+		return callObjectMethod(
+			"getPrimaryClip",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline android::content::ClipDescription ClipboardManager::getPrimaryClipDescription() const
+	{
+		return callObjectMethod(
+			"getPrimaryClipDescription",
+			"()Landroid/content/ClipDescription;"
+		);
+	}
+	inline JString ClipboardManager::getText() const
+	{
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jboolean ClipboardManager::hasPrimaryClip() const
+	{
+		return callMethod<jboolean>(
+			"hasPrimaryClip",
+			"()Z"
+		);
+	}
+	inline jboolean ClipboardManager::hasText() const
+	{
+		return callMethod<jboolean>(
+			"hasText",
+			"()Z"
+		);
+	}
+	inline void ClipboardManager::removePrimaryClipChangedListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"removePrimaryClipChangedListener",
+			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
+			arg0.object()
+		);
+	}
+	inline void ClipboardManager::setPrimaryClip(android::content::ClipData arg0) const
+	{
+		callMethod<void>(
+			"setPrimaryClip",
+			"(Landroid/content/ClipData;)V",
+			arg0.object()
+		);
+	}
+	inline void ClipboardManager::setText(JString arg0) const
+	{
+		callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::content
+
+// Base class headers
+#include "../text/ClipboardManager.hpp"
 

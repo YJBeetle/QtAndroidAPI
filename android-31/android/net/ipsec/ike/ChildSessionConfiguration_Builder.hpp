@@ -1,28 +1,30 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./ChildSessionConfiguration.def.hpp"
+#include "./ChildSessionConfiguration_Builder.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class ChildSessionConfiguration;
-}
-
-namespace android::net::ipsec::ike
-{
-	class ChildSessionConfiguration_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ChildSessionConfiguration_Builder::ChildSessionConfiguration_Builder(JObject arg0, JObject arg1)
+		: JObject(
+			"android.net.ipsec.ike.ChildSessionConfiguration$Builder",
+			"(Ljava/util/List;Ljava/util/List;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::net::ipsec::ike::ChildSessionConfiguration ChildSessionConfiguration_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ChildSessionConfiguration_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ChildSessionConfiguration_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ChildSessionConfiguration_Builder(JObject arg0, JObject arg1);
-		
-		// Methods
-		android::net::ipsec::ike::ChildSessionConfiguration build() const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/net/ipsec/ike/ChildSessionConfiguration;"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
 

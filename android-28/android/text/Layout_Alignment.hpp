@@ -1,31 +1,75 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Layout_Alignment.def.hpp"
 
 namespace android::text
 {
-	class Layout_Alignment : public java::lang::Enum
+	// Fields
+	inline android::text::Layout_Alignment Layout_Alignment::ALIGN_CENTER()
 	{
-	public:
-		// Fields
-		static android::text::Layout_Alignment ALIGN_CENTER();
-		static android::text::Layout_Alignment ALIGN_LEFT();
-		static android::text::Layout_Alignment ALIGN_NORMAL();
-		static android::text::Layout_Alignment ALIGN_OPPOSITE();
-		static android::text::Layout_Alignment ALIGN_RIGHT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Layout_Alignment(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Layout_Alignment(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::text::Layout_Alignment valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.text.Layout$Alignment",
+			"ALIGN_CENTER",
+			"Landroid/text/Layout$Alignment;"
+		);
+	}
+	inline android::text::Layout_Alignment Layout_Alignment::ALIGN_LEFT()
+	{
+		return getStaticObjectField(
+			"android.text.Layout$Alignment",
+			"ALIGN_LEFT",
+			"Landroid/text/Layout$Alignment;"
+		);
+	}
+	inline android::text::Layout_Alignment Layout_Alignment::ALIGN_NORMAL()
+	{
+		return getStaticObjectField(
+			"android.text.Layout$Alignment",
+			"ALIGN_NORMAL",
+			"Landroid/text/Layout$Alignment;"
+		);
+	}
+	inline android::text::Layout_Alignment Layout_Alignment::ALIGN_OPPOSITE()
+	{
+		return getStaticObjectField(
+			"android.text.Layout$Alignment",
+			"ALIGN_OPPOSITE",
+			"Landroid/text/Layout$Alignment;"
+		);
+	}
+	inline android::text::Layout_Alignment Layout_Alignment::ALIGN_RIGHT()
+	{
+		return getStaticObjectField(
+			"android.text.Layout$Alignment",
+			"ALIGN_RIGHT",
+			"Landroid/text/Layout$Alignment;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::text::Layout_Alignment Layout_Alignment::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.text.Layout$Alignment",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Layout_Alignment::values()
+	{
+		return callStaticObjectMethod(
+			"android.text.Layout$Alignment",
+			"values",
+			"()[Landroid/text/Layout$Alignment;"
+		);
+	}
 } // namespace android::text
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

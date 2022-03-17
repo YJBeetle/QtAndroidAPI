@@ -1,28 +1,53 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
+#include "../../JByteArray.hpp"
+#include "./SubtitleData.def.hpp"
 
 namespace android::media
 {
-	class SubtitleData : public JObject
+	// Fields
+	
+	// Constructors
+	inline SubtitleData::SubtitleData(jint arg0, jlong arg1, jlong arg2, JByteArray arg3)
+		: JObject(
+			"android.media.SubtitleData",
+			"(IJJ[B)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline JByteArray SubtitleData::getData() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubtitleData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubtitleData(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SubtitleData(jint arg0, jlong arg1, jlong arg2, JByteArray arg3);
-		
-		// Methods
-		JByteArray getData() const;
-		jlong getDurationUs() const;
-		jlong getStartTimeUs() const;
-		jint getTrackIndex() const;
-	};
+		return callObjectMethod(
+			"getData",
+			"()[B"
+		);
+	}
+	inline jlong SubtitleData::getDurationUs() const
+	{
+		return callMethod<jlong>(
+			"getDurationUs",
+			"()J"
+		);
+	}
+	inline jlong SubtitleData::getStartTimeUs() const
+	{
+		return callMethod<jlong>(
+			"getStartTimeUs",
+			"()J"
+		);
+	}
+	inline jint SubtitleData::getTrackIndex() const
+	{
+		return callMethod<jint>(
+			"getTrackIndex",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

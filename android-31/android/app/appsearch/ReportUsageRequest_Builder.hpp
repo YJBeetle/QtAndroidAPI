@@ -1,30 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ReportUsageRequest.def.hpp"
+#include "../../../JString.hpp"
+#include "./ReportUsageRequest_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class ReportUsageRequest;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class ReportUsageRequest_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ReportUsageRequest_Builder::ReportUsageRequest_Builder(JString arg0, JString arg1)
+		: JObject(
+			"android.app.appsearch.ReportUsageRequest$Builder",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::ReportUsageRequest ReportUsageRequest_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ReportUsageRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReportUsageRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ReportUsageRequest_Builder(JString arg0, JString arg1);
-		
-		// Methods
-		android::app::appsearch::ReportUsageRequest build() const;
-		android::app::appsearch::ReportUsageRequest_Builder setUsageTimestampMillis(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/ReportUsageRequest;"
+		);
+	}
+	inline android::app::appsearch::ReportUsageRequest_Builder ReportUsageRequest_Builder::setUsageTimestampMillis(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setUsageTimestampMillis",
+			"(J)Landroid/app/appsearch/ReportUsageRequest$Builder;",
+			arg0
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

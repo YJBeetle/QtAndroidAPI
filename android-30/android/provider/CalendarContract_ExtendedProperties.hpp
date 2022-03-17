@@ -1,27 +1,24 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
+#include "../net/Uri.def.hpp"
+#include "./CalendarContract_ExtendedProperties.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_ExtendedProperties : public JObject
+	// Fields
+	inline android::net::Uri CalendarContract_ExtendedProperties::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CalendarContract_ExtendedProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_ExtendedProperties(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$ExtendedProperties",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,62 +1,143 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::app
-{
-	class Activity;
-}
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::telephony::euicc
-{
-	class DownloadableSubscription;
-}
-namespace android::telephony::euicc
-{
-	class EuiccInfo;
-}
-class JString;
+#include "../../app/Activity.def.hpp"
+#include "../../app/PendingIntent.def.hpp"
+#include "../../content/Context.def.hpp"
+#include "../../content/Intent.def.hpp"
+#include "./DownloadableSubscription.def.hpp"
+#include "./EuiccInfo.def.hpp"
+#include "../../../JString.hpp"
+#include "./EuiccManager.def.hpp"
 
 namespace android::telephony::euicc
 {
-	class EuiccManager : public JObject
+	// Fields
+	inline JString EuiccManager::ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS()
 	{
-	public:
-		// Fields
-		static JString ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS();
-		static JString ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE();
-		static jint EMBEDDED_SUBSCRIPTION_RESULT_ERROR();
-		static jint EMBEDDED_SUBSCRIPTION_RESULT_OK();
-		static jint EMBEDDED_SUBSCRIPTION_RESULT_RESOLVABLE_ERROR();
-		static JString EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE();
-		static JString EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION();
-		static JString META_DATA_CARRIER_ICON();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EuiccManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EuiccManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void deleteSubscription(jint arg0, android::app::PendingIntent arg1) const;
-		void downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2) const;
-		JString getEid() const;
-		android::telephony::euicc::EuiccInfo getEuiccInfo() const;
-		jboolean isEnabled() const;
-		void startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3) const;
-		void switchToSubscription(jint arg0, android::app::PendingIntent arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.euicc.EuiccManager",
+			"ACTION_MANAGE_EMBEDDED_SUBSCRIPTIONS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EuiccManager::ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE()
+	{
+		return getStaticObjectField(
+			"android.telephony.euicc.EuiccManager",
+			"ACTION_NOTIFY_CARRIER_SETUP_INCOMPLETE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.euicc.EuiccManager",
+			"EMBEDDED_SUBSCRIPTION_RESULT_ERROR"
+		);
+	}
+	inline jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_OK()
+	{
+		return getStaticField<jint>(
+			"android.telephony.euicc.EuiccManager",
+			"EMBEDDED_SUBSCRIPTION_RESULT_OK"
+		);
+	}
+	inline jint EuiccManager::EMBEDDED_SUBSCRIPTION_RESULT_RESOLVABLE_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.euicc.EuiccManager",
+			"EMBEDDED_SUBSCRIPTION_RESULT_RESOLVABLE_ERROR"
+		);
+	}
+	inline JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE()
+	{
+		return getStaticObjectField(
+			"android.telephony.euicc.EuiccManager",
+			"EXTRA_EMBEDDED_SUBSCRIPTION_DETAILED_CODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EuiccManager::EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION()
+	{
+		return getStaticObjectField(
+			"android.telephony.euicc.EuiccManager",
+			"EXTRA_EMBEDDED_SUBSCRIPTION_DOWNLOADABLE_SUBSCRIPTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EuiccManager::META_DATA_CARRIER_ICON()
+	{
+		return getStaticObjectField(
+			"android.telephony.euicc.EuiccManager",
+			"META_DATA_CARRIER_ICON",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void EuiccManager::deleteSubscription(jint arg0, android::app::PendingIntent arg1) const
+	{
+		callMethod<void>(
+			"deleteSubscription",
+			"(ILandroid/app/PendingIntent;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void EuiccManager::downloadSubscription(android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, android::app::PendingIntent arg2) const
+	{
+		callMethod<void>(
+			"downloadSubscription",
+			"(Landroid/telephony/euicc/DownloadableSubscription;ZLandroid/app/PendingIntent;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline JString EuiccManager::getEid() const
+	{
+		return callObjectMethod(
+			"getEid",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::telephony::euicc::EuiccInfo EuiccManager::getEuiccInfo() const
+	{
+		return callObjectMethod(
+			"getEuiccInfo",
+			"()Landroid/telephony/euicc/EuiccInfo;"
+		);
+	}
+	inline jboolean EuiccManager::isEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline void EuiccManager::startResolutionActivity(android::app::Activity arg0, jint arg1, android::content::Intent arg2, android::app::PendingIntent arg3) const
+	{
+		callMethod<void>(
+			"startResolutionActivity",
+			"(Landroid/app/Activity;ILandroid/content/Intent;Landroid/app/PendingIntent;)V",
+			arg0.object(),
+			arg1,
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline void EuiccManager::switchToSubscription(jint arg0, android::app::PendingIntent arg1) const
+	{
+		callMethod<void>(
+			"switchToSubscription",
+			"(ILandroid/app/PendingIntent;)V",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::telephony::euicc
+
+// Base class headers
 

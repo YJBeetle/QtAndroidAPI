@@ -1,33 +1,33 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
-namespace java::lang
-{
-	class Void;
-}
-namespace java::nio::charset
-{
-	class Charset;
-}
+#include "../../../../JString.hpp"
+#include "../../../lang/Void.def.hpp"
+#include "../Charset.def.hpp"
+#include "./CharsetProvider.def.hpp"
 
 namespace java::nio::charset::spi
 {
-	class CharsetProvider : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::charset::Charset CharsetProvider::charsetForName(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CharsetProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharsetProvider(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::nio::charset::Charset charsetForName(JString arg0) const;
-		JObject charsets() const;
-	};
+		return callObjectMethod(
+			"charsetForName",
+			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject CharsetProvider::charsets() const
+	{
+		return callObjectMethod(
+			"charsets",
+			"()Ljava/util/Iterator;"
+		);
+	}
 } // namespace java::nio::charset::spi
+
+// Base class headers
 

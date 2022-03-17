@@ -1,43 +1,92 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Xml_Encoding.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../java/io/Reader.def.hpp"
+#include "../../JString.hpp"
+#include "./Xml.def.hpp"
 
 namespace android::util
 {
-	class Xml_Encoding;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class Reader;
-}
-class JString;
-
-namespace android::util
-{
-	class Xml : public JObject
+	// Fields
+	inline JString Xml::FEATURE_RELAXED()
 	{
-	public:
-		// Fields
-		static JString FEATURE_RELAXED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Xml(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Xml(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject asAttributeSet(JObject arg0);
-		static android::util::Xml_Encoding findEncodingByName(JString arg0);
-		static JObject newPullParser();
-		static JObject newSerializer();
-		static void parse(java::io::Reader arg0, JObject arg1);
-		static void parse(JString arg0, JObject arg1);
-		static void parse(java::io::InputStream arg0, android::util::Xml_Encoding arg1, JObject arg2);
-	};
+		return getStaticObjectField(
+			"android.util.Xml",
+			"FEATURE_RELAXED",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject Xml::asAttributeSet(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.Xml",
+			"asAttributeSet",
+			"(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;",
+			arg0.object()
+		);
+	}
+	inline android::util::Xml_Encoding Xml::findEncodingByName(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.Xml",
+			"findEncodingByName",
+			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject Xml::newPullParser()
+	{
+		return callStaticObjectMethod(
+			"android.util.Xml",
+			"newPullParser",
+			"()Lorg/xmlpull/v1/XmlPullParser;"
+		);
+	}
+	inline JObject Xml::newSerializer()
+	{
+		return callStaticObjectMethod(
+			"android.util.Xml",
+			"newSerializer",
+			"()Lorg/xmlpull/v1/XmlSerializer;"
+		);
+	}
+	inline void Xml::parse(java::io::Reader arg0, JObject arg1)
+	{
+		callStaticMethod<void>(
+			"android.util.Xml",
+			"parse",
+			"(Ljava/io/Reader;Lorg/xml/sax/ContentHandler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void Xml::parse(JString arg0, JObject arg1)
+	{
+		callStaticMethod<void>(
+			"android.util.Xml",
+			"parse",
+			"(Ljava/lang/String;Lorg/xml/sax/ContentHandler;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void Xml::parse(java::io::InputStream arg0, android::util::Xml_Encoding arg1, JObject arg2)
+	{
+		callStaticMethod<void>(
+			"android.util.Xml",
+			"parse",
+			"(Ljava/io/InputStream;Landroid/util/Xml$Encoding;Lorg/xml/sax/ContentHandler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

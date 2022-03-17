@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
+#include "../../JIntArray.hpp"
+#include "./RenderScript_RSMessageHandler.def.hpp"
 
 namespace android::renderscript
 {
-	class RenderScript_RSMessageHandler : public JObject
+	// Fields
+	
+	// Constructors
+	inline RenderScript_RSMessageHandler::RenderScript_RSMessageHandler()
+		: JObject(
+			"android.renderscript.RenderScript$RSMessageHandler",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void RenderScript_RSMessageHandler::run() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RenderScript_RSMessageHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_RSMessageHandler(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		RenderScript_RSMessageHandler();
-		
-		// Methods
-		void run() const;
-	};
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

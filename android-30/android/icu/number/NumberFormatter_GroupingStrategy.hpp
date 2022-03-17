@@ -1,31 +1,75 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./NumberFormatter_GroupingStrategy.def.hpp"
 
 namespace android::icu::number
 {
-	class NumberFormatter_GroupingStrategy : public java::lang::Enum
+	// Fields
+	inline android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::AUTO()
 	{
-	public:
-		// Fields
-		static android::icu::number::NumberFormatter_GroupingStrategy AUTO();
-		static android::icu::number::NumberFormatter_GroupingStrategy MIN2();
-		static android::icu::number::NumberFormatter_GroupingStrategy OFF();
-		static android::icu::number::NumberFormatter_GroupingStrategy ON_ALIGNED();
-		static android::icu::number::NumberFormatter_GroupingStrategy THOUSANDS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NumberFormatter_GroupingStrategy(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter_GroupingStrategy(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::NumberFormatter_GroupingStrategy valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"AUTO",
+			"Landroid/icu/number/NumberFormatter$GroupingStrategy;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::MIN2()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"MIN2",
+			"Landroid/icu/number/NumberFormatter$GroupingStrategy;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::OFF()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"OFF",
+			"Landroid/icu/number/NumberFormatter$GroupingStrategy;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::ON_ALIGNED()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"ON_ALIGNED",
+			"Landroid/icu/number/NumberFormatter$GroupingStrategy;"
+		);
+	}
+	inline android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::THOUSANDS()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"THOUSANDS",
+			"Landroid/icu/number/NumberFormatter$GroupingStrategy;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::NumberFormatter_GroupingStrategy NumberFormatter_GroupingStrategy::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/number/NumberFormatter$GroupingStrategy;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray NumberFormatter_GroupingStrategy::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter$GroupingStrategy",
+			"values",
+			"()[Landroid/icu/number/NumberFormatter$GroupingStrategy;"
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

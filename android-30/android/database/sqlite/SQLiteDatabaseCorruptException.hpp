@@ -1,25 +1,31 @@
 #pragma once
 
-#include "./SQLiteException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SQLiteDatabaseCorruptException.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteDatabaseCorruptException : public android::database::sqlite::SQLiteException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SQLiteDatabaseCorruptException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteDatabaseCorruptException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
-		
-		// Constructors
-		SQLiteDatabaseCorruptException();
-		SQLiteDatabaseCorruptException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException()
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteDatabaseCorruptException",
+			"()V"
+		) {}
+	inline SQLiteDatabaseCorruptException::SQLiteDatabaseCorruptException(JString arg0)
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteDatabaseCorruptException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::database::sqlite
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
+#include "./SQLiteException.hpp"
 

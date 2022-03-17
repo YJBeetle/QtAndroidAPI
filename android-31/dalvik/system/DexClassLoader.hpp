@@ -1,28 +1,28 @@
 #pragma once
 
-#include "./BaseDexClassLoader.hpp"
-
-namespace java::lang
-{
-	class ClassLoader;
-}
-class JString;
+#include "../../java/lang/ClassLoader.def.hpp"
+#include "../../JString.hpp"
+#include "./DexClassLoader.def.hpp"
 
 namespace dalvik::system
 {
-	class DexClassLoader : public dalvik::system::BaseDexClassLoader
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DexClassLoader(const char *className, const char *sig, Ts...agv) : dalvik::system::BaseDexClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		DexClassLoader(QAndroidJniObject obj) : dalvik::system::BaseDexClassLoader(obj) {}
-		
-		// Constructors
-		DexClassLoader(JString arg0, JString arg1, JString arg2, java::lang::ClassLoader arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DexClassLoader::DexClassLoader(JString arg0, JString arg1, JString arg2, java::lang::ClassLoader arg3)
+		: dalvik::system::BaseDexClassLoader(
+			"dalvik.system.DexClassLoader",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object()
+		) {}
+	
+	// Methods
 } // namespace dalvik::system
+
+// Base class headers
+#include "../../java/lang/ClassLoader.hpp"
+#include "./BaseDexClassLoader.hpp"
 

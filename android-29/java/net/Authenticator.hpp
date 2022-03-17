@@ -1,47 +1,117 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::net
-{
-	class Authenticator_RequestorType;
-}
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class PasswordAuthentication;
-}
-namespace java::net
-{
-	class URL;
-}
+#include "../../JString.hpp"
+#include "./Authenticator_RequestorType.def.hpp"
+#include "./InetAddress.def.hpp"
+#include "./PasswordAuthentication.def.hpp"
+#include "./URL.def.hpp"
+#include "./Authenticator.def.hpp"
 
 namespace java::net
 {
-	class Authenticator : public JObject
+	// Fields
+	
+	// Constructors
+	inline Authenticator::Authenticator()
+		: JObject(
+			"java.net.Authenticator",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::net::Authenticator Authenticator::getDefault()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Authenticator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Authenticator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Authenticator();
-		
-		// Methods
-		static java::net::Authenticator getDefault();
-		static java::net::PasswordAuthentication requestPasswordAuthentication(java::net::InetAddress arg0, jint arg1, JString arg2, JString arg3, JString arg4);
-		static java::net::PasswordAuthentication requestPasswordAuthentication(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5);
-		static java::net::PasswordAuthentication requestPasswordAuthentication(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7);
-		static java::net::PasswordAuthentication requestPasswordAuthentication(java::net::Authenticator arg0, JString arg1, java::net::InetAddress arg2, jint arg3, JString arg4, JString arg5, JString arg6, java::net::URL arg7, java::net::Authenticator_RequestorType arg8);
-		static void setDefault(java::net::Authenticator arg0);
-		java::net::PasswordAuthentication requestPasswordAuthenticationInstance(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7) const;
-	};
+		return callStaticObjectMethod(
+			"java.net.Authenticator",
+			"getDefault",
+			"()Ljava/net/Authenticator;"
+		);
+	}
+	inline java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(java::net::InetAddress arg0, jint arg1, JString arg2, JString arg3, JString arg4)
+	{
+		return callStaticObjectMethod(
+			"java.net.Authenticator",
+			"requestPasswordAuthentication",
+			"(Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/net/PasswordAuthentication;",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>(),
+			arg3.object<jstring>(),
+			arg4.object<jstring>()
+		);
+	}
+	inline java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5)
+	{
+		return callStaticObjectMethod(
+			"java.net.Authenticator",
+			"requestPasswordAuthentication",
+			"(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/net/PasswordAuthentication;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2,
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jstring>()
+		);
+	}
+	inline java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7)
+	{
+		return callStaticObjectMethod(
+			"java.net.Authenticator",
+			"requestPasswordAuthentication",
+			"(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2,
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
+			arg6.object(),
+			arg7.object()
+		);
+	}
+	inline java::net::PasswordAuthentication Authenticator::requestPasswordAuthentication(java::net::Authenticator arg0, JString arg1, java::net::InetAddress arg2, jint arg3, JString arg4, JString arg5, JString arg6, java::net::URL arg7, java::net::Authenticator_RequestorType arg8)
+	{
+		return callStaticObjectMethod(
+			"java.net.Authenticator",
+			"requestPasswordAuthentication",
+			"(Ljava/net/Authenticator;Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3,
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
+			arg6.object<jstring>(),
+			arg7.object(),
+			arg8.object()
+		);
+	}
+	inline void Authenticator::setDefault(java::net::Authenticator arg0)
+	{
+		callStaticMethod<void>(
+			"java.net.Authenticator",
+			"setDefault",
+			"(Ljava/net/Authenticator;)V",
+			arg0.object()
+		);
+	}
+	inline java::net::PasswordAuthentication Authenticator::requestPasswordAuthenticationInstance(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7) const
+	{
+		return callObjectMethod(
+			"requestPasswordAuthenticationInstance",
+			"(Ljava/lang/String;Ljava/net/InetAddress;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/net/Authenticator$RequestorType;)Ljava/net/PasswordAuthentication;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2,
+			arg3.object<jstring>(),
+			arg4.object<jstring>(),
+			arg5.object<jstring>(),
+			arg6.object(),
+			arg7.object()
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

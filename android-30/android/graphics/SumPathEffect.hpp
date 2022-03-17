@@ -1,27 +1,24 @@
 #pragma once
 
-#include "./PathEffect.hpp"
+#include "./PathEffect.def.hpp"
+#include "./SumPathEffect.def.hpp"
 
 namespace android::graphics
 {
-	class PathEffect;
-}
-
-namespace android::graphics
-{
-	class SumPathEffect : public android::graphics::PathEffect
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SumPathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		SumPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-		
-		// Constructors
-		SumPathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SumPathEffect::SumPathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1)
+		: android::graphics::PathEffect(
+			"android.graphics.SumPathEffect",
+			"(Landroid/graphics/PathEffect;Landroid/graphics/PathEffect;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./PathEffect.hpp"
 

@@ -1,42 +1,42 @@
 #pragma once
 
-#include "../../lang/Thread.hpp"
-
-namespace java::lang
-{
-	class ClassLoader;
-}
-namespace java::lang
-{
-	class ThreadGroup;
-}
-class JThrowable;
-namespace java::security
-{
-	class AccessControlContext;
-}
-namespace java::util::concurrent
-{
-	class ForkJoinPool;
-}
+#include "../../lang/ClassLoader.def.hpp"
+#include "../../lang/ThreadGroup.def.hpp"
+#include "../../../JThrowable.hpp"
+#include "../../security/AccessControlContext.def.hpp"
+#include "./ForkJoinPool.def.hpp"
+#include "./ForkJoinWorkerThread.def.hpp"
 
 namespace java::util::concurrent
 {
-	class ForkJoinWorkerThread : public java::lang::Thread
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::concurrent::ForkJoinPool ForkJoinWorkerThread::getPool() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ForkJoinWorkerThread(const char *className, const char *sig, Ts...agv) : java::lang::Thread(className, sig, std::forward<Ts>(agv)...) {}
-		ForkJoinWorkerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::util::concurrent::ForkJoinPool getPool() const;
-		jint getPoolIndex() const;
-		void run() const;
-	};
+		return callObjectMethod(
+			"getPool",
+			"()Ljava/util/concurrent/ForkJoinPool;"
+		);
+	}
+	inline jint ForkJoinWorkerThread::getPoolIndex() const
+	{
+		return callMethod<jint>(
+			"getPoolIndex",
+			"()I"
+		);
+	}
+	inline void ForkJoinWorkerThread::run() const
+	{
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Thread.hpp"
 

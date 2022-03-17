@@ -1,42 +1,50 @@
 #pragma once
 
-#include "../../app/Dialog.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::widget
-{
-	class AdapterView;
-}
-class JString;
+#include "../../content/Context.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../view/View.def.hpp"
+#include "../../widget/AdapterView.def.hpp"
+#include "../../../JString.hpp"
+#include "./CharacterPickerDialog.def.hpp"
 
 namespace android::text::method
 {
-	class CharacterPickerDialog : public android::app::Dialog
+	// Fields
+	
+	// Constructors
+	inline CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, JString arg3, jboolean arg4)
+		: android::app::Dialog(
+			"android.text.method.CharacterPickerDialog",
+			"(Landroid/content/Context;Landroid/view/View;Landroid/text/Editable;Ljava/lang/String;Z)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object<jstring>(),
+			arg4
+		) {}
+	
+	// Methods
+	inline void CharacterPickerDialog::onClick(android::view::View arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CharacterPickerDialog(const char *className, const char *sig, Ts...agv) : android::app::Dialog(className, sig, std::forward<Ts>(agv)...) {}
-		CharacterPickerDialog(QAndroidJniObject obj) : android::app::Dialog(obj) {}
-		
-		// Constructors
-		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, JString arg3, jboolean arg4);
-		
-		// Methods
-		void onClick(android::view::View arg0) const;
-		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const;
-	};
+		callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
+	inline void CharacterPickerDialog::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const
+	{
+		callMethod<void>(
+			"onItemClick",
+			"(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "../../app/Dialog.hpp"
 

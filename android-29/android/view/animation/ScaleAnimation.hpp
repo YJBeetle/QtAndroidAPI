@@ -1,35 +1,69 @@
 #pragma once
 
-#include "./Animation.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view::animation
-{
-	class Transformation;
-}
+#include "../../content/Context.def.hpp"
+#include "./Transformation.def.hpp"
+#include "./ScaleAnimation.def.hpp"
 
 namespace android::view::animation
 {
-	class ScaleAnimation : public android::view::animation::Animation
+	// Fields
+	
+	// Constructors
+	inline ScaleAnimation::ScaleAnimation(android::content::Context arg0, JObject arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.ScaleAnimation",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline ScaleAnimation::ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+		: android::view::animation::Animation(
+			"android.view.animation.ScaleAnimation",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	inline ScaleAnimation::ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
+		: android::view::animation::Animation(
+			"android.view.animation.ScaleAnimation",
+			"(FFFFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		) {}
+	inline ScaleAnimation::ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7)
+		: android::view::animation::Animation(
+			"android.view.animation.ScaleAnimation",
+			"(FFFFIFIF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		) {}
+	
+	// Methods
+	inline void ScaleAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScaleAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		ScaleAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
-		
-		// Constructors
-		ScaleAnimation(android::content::Context arg0, JObject arg1);
-		ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
-		ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7);
-		
-		// Methods
-		void initialize(jint arg0, jint arg1, jint arg2, jint arg3) const;
-	};
+		callMethod<void>(
+			"initialize",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./Animation.hpp"
 

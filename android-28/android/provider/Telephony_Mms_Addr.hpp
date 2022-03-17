@@ -1,28 +1,56 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Telephony_Mms_Addr.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_Mms_Addr : public JObject
+	// Fields
+	inline JString Telephony_Mms_Addr::ADDRESS()
 	{
-	public:
-		// Fields
-		static JString ADDRESS();
-		static JString CHARSET();
-		static JString CONTACT_ID();
-		static JString MSG_ID();
-		static JString TYPE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Telephony_Mms_Addr(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Mms_Addr(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Addr",
+			"ADDRESS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Addr::CHARSET()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Addr",
+			"CHARSET",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Addr::CONTACT_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Addr",
+			"CONTACT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Addr::MSG_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Addr",
+			"MSG_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Addr::TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Addr",
+			"TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

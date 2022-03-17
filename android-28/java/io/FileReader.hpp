@@ -1,40 +1,53 @@
 #pragma once
 
-#include "./InputStreamReader.hpp"
+#include "./File.def.hpp"
+#include "./FileDescriptor.def.hpp"
+#include "../../JString.hpp"
+#include "../nio/charset/Charset.def.hpp"
+#include "./FileReader.def.hpp"
 
 namespace java::io
 {
-	class File;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JString;
-namespace java::nio::charset
-{
-	class Charset;
-}
-
-namespace java::io
-{
-	class FileReader : public java::io::InputStreamReader
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileReader(const char *className, const char *sig, Ts...agv) : java::io::InputStreamReader(className, sig, std::forward<Ts>(agv)...) {}
-		FileReader(QAndroidJniObject obj) : java::io::InputStreamReader(obj) {}
-		
-		// Constructors
-		FileReader(java::io::File arg0);
-		FileReader(java::io::FileDescriptor arg0);
-		FileReader(JString arg0);
-		FileReader(java::io::File arg0, java::nio::charset::Charset arg1);
-		FileReader(JString arg0, java::nio::charset::Charset arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline FileReader::FileReader(java::io::File arg0)
+		: java::io::InputStreamReader(
+			"java.io.FileReader",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline FileReader::FileReader(java::io::FileDescriptor arg0)
+		: java::io::InputStreamReader(
+			"java.io.FileReader",
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.object()
+		) {}
+	inline FileReader::FileReader(JString arg0)
+		: java::io::InputStreamReader(
+			"java.io.FileReader",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline FileReader::FileReader(java::io::File arg0, java::nio::charset::Charset arg1)
+		: java::io::InputStreamReader(
+			"java.io.FileReader",
+			"(Ljava/io/File;Ljava/nio/charset/Charset;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline FileReader::FileReader(JString arg0, java::nio::charset::Charset arg1)
+		: java::io::InputStreamReader(
+			"java.io.FileReader",
+			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "./Reader.hpp"
+#include "./InputStreamReader.hpp"
 

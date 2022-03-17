@@ -1,48 +1,94 @@
 #pragma once
 
-#include "./spi/AbstractSelectableChannel.hpp"
-
-class JObject;
-namespace java::net
-{
-	class ServerSocket;
-}
-namespace java::net
-{
-	class SocketAddress;
-}
-namespace java::nio::channels
-{
-	class SocketChannel;
-}
-namespace java::nio::channels::spi
-{
-	class SelectorProvider;
-}
+#include "../../../JObject.hpp"
+#include "../../net/ServerSocket.def.hpp"
+#include "../../net/SocketAddress.def.hpp"
+#include "./SocketChannel.def.hpp"
+#include "./spi/SelectorProvider.def.hpp"
+#include "./ServerSocketChannel.def.hpp"
 
 namespace java::nio::channels
 {
-	class ServerSocketChannel : public java::nio::channels::spi::AbstractSelectableChannel
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::channels::ServerSocketChannel ServerSocketChannel::open()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ServerSocketChannel(const char *className, const char *sig, Ts...agv) : java::nio::channels::spi::AbstractSelectableChannel(className, sig, std::forward<Ts>(agv)...) {}
-		ServerSocketChannel(QAndroidJniObject obj) : java::nio::channels::spi::AbstractSelectableChannel(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::channels::ServerSocketChannel open();
-		static java::nio::channels::ServerSocketChannel open(JObject arg0);
-		java::nio::channels::SocketChannel accept() const;
-		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0) const;
-		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1) const;
-		java::net::SocketAddress getLocalAddress() const;
-		java::nio::channels::ServerSocketChannel setOption(JObject arg0, JObject arg1) const;
-		java::net::ServerSocket socket() const;
-		jint validOps() const;
-	};
+		return callStaticObjectMethod(
+			"java.nio.channels.ServerSocketChannel",
+			"open",
+			"()Ljava/nio/channels/ServerSocketChannel;"
+		);
+	}
+	inline java::nio::channels::ServerSocketChannel ServerSocketChannel::open(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.channels.ServerSocketChannel",
+			"open",
+			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/ServerSocketChannel;",
+			arg0.object()
+		);
+	}
+	inline java::nio::channels::SocketChannel ServerSocketChannel::accept() const
+	{
+		return callObjectMethod(
+			"accept",
+			"()Ljava/nio/channels/SocketChannel;"
+		);
+	}
+	inline java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0) const
+	{
+		return callObjectMethod(
+			"bind",
+			"(Ljava/net/SocketAddress;)Ljava/nio/channels/ServerSocketChannel;",
+			arg0.object()
+		);
+	}
+	inline java::nio::channels::ServerSocketChannel ServerSocketChannel::bind(java::net::SocketAddress arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"bind",
+			"(Ljava/net/SocketAddress;I)Ljava/nio/channels/ServerSocketChannel;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline java::net::SocketAddress ServerSocketChannel::getLocalAddress() const
+	{
+		return callObjectMethod(
+			"getLocalAddress",
+			"()Ljava/net/SocketAddress;"
+		);
+	}
+	inline java::nio::channels::ServerSocketChannel ServerSocketChannel::setOption(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"setOption",
+			"(Ljava/net/SocketOption;Ljava/lang/Object;)Ljava/nio/channels/ServerSocketChannel;",
+			arg0.object(),
+			arg1.object<jobject>()
+		);
+	}
+	inline java::net::ServerSocket ServerSocketChannel::socket() const
+	{
+		return callObjectMethod(
+			"socket",
+			"()Ljava/net/ServerSocket;"
+		);
+	}
+	inline jint ServerSocketChannel::validOps() const
+	{
+		return callMethod<jint>(
+			"validOps",
+			"()I"
+		);
+	}
 } // namespace java::nio::channels
+
+// Base class headers
+#include "./spi/AbstractInterruptibleChannel.hpp"
+#include "./SelectableChannel.hpp"
+#include "./spi/AbstractSelectableChannel.hpp"
 

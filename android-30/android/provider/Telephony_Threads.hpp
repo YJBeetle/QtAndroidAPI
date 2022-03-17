@@ -1,37 +1,68 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Telephony_Threads.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_Threads : public JObject
+	// Fields
+	inline jint Telephony_Threads::BROADCAST_THREAD()
 	{
-	public:
-		// Fields
-		static jint BROADCAST_THREAD();
-		static jint COMMON_THREAD();
-		static android::net::Uri CONTENT_URI();
-		static android::net::Uri OBSOLETE_THREADS_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Telephony_Threads(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Threads(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jlong getOrCreateThreadId(android::content::Context arg0, JString arg1);
-		static jlong getOrCreateThreadId(android::content::Context arg0, JObject arg1);
-	};
+		return getStaticField<jint>(
+			"android.provider.Telephony$Threads",
+			"BROADCAST_THREAD"
+		);
+	}
+	inline jint Telephony_Threads::COMMON_THREAD()
+	{
+		return getStaticField<jint>(
+			"android.provider.Telephony$Threads",
+			"COMMON_THREAD"
+		);
+	}
+	inline android::net::Uri Telephony_Threads::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Threads",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri Telephony_Threads::OBSOLETE_THREADS_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Threads",
+			"OBSOLETE_THREADS_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, JString arg1)
+	{
+		return callStaticMethod<jlong>(
+			"android.provider.Telephony$Threads",
+			"getOrCreateThreadId",
+			"(Landroid/content/Context;Ljava/lang/String;)J",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, JObject arg1)
+	{
+		return callStaticMethod<jlong>(
+			"android.provider.Telephony$Threads",
+			"getOrCreateThreadId",
+			"(Landroid/content/Context;Ljava/util/Set;)J",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

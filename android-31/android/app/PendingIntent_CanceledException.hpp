@@ -1,30 +1,36 @@
 #pragma once
 
-#include "../util/AndroidException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../java/lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "./PendingIntent_CanceledException.def.hpp"
 
 namespace android::app
 {
-	class PendingIntent_CanceledException : public android::util::AndroidException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PendingIntent_CanceledException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		PendingIntent_CanceledException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-		
-		// Constructors
-		PendingIntent_CanceledException();
-		PendingIntent_CanceledException(java::lang::Exception arg0);
-		PendingIntent_CanceledException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PendingIntent_CanceledException::PendingIntent_CanceledException()
+		: android::util::AndroidException(
+			"android.app.PendingIntent$CanceledException",
+			"()V"
+		) {}
+	inline PendingIntent_CanceledException::PendingIntent_CanceledException(java::lang::Exception arg0)
+		: android::util::AndroidException(
+			"android.app.PendingIntent$CanceledException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	inline PendingIntent_CanceledException::PendingIntent_CanceledException(JString arg0)
+		: android::util::AndroidException(
+			"android.app.PendingIntent$CanceledException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::app
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
 

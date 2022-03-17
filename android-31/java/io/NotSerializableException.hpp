@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NotSerializableException.def.hpp"
 
 namespace java::io
 {
-	class NotSerializableException : public java::io::ObjectStreamException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotSerializableException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		NotSerializableException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-		
-		// Constructors
-		NotSerializableException();
-		NotSerializableException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NotSerializableException::NotSerializableException()
+		: java::io::ObjectStreamException(
+			"java.io.NotSerializableException",
+			"()V"
+		) {}
+	inline NotSerializableException::NotSerializableException(JString arg0)
+		: java::io::ObjectStreamException(
+			"java.io.NotSerializableException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

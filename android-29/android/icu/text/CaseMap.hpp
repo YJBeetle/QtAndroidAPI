@@ -1,43 +1,58 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CaseMap_Fold.def.hpp"
+#include "./CaseMap_Lower.def.hpp"
+#include "./CaseMap_Title.def.hpp"
+#include "./CaseMap_Upper.def.hpp"
+#include "./CaseMap.def.hpp"
 
 namespace android::icu::text
 {
-	class CaseMap_Fold;
-}
-namespace android::icu::text
-{
-	class CaseMap_Lower;
-}
-namespace android::icu::text
-{
-	class CaseMap_Title;
-}
-namespace android::icu::text
-{
-	class CaseMap_Upper;
-}
-
-namespace android::icu::text
-{
-	class CaseMap : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::CaseMap_Fold CaseMap::fold()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CaseMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaseMap(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::CaseMap_Fold fold();
-		static android::icu::text::CaseMap_Lower toLower();
-		static android::icu::text::CaseMap_Title toTitle();
-		static android::icu::text::CaseMap_Upper toUpper();
-		android::icu::text::CaseMap omitUnchangedText() const;
-	};
+		return callStaticObjectMethod(
+			"android.icu.text.CaseMap",
+			"fold",
+			"()Landroid/icu/text/CaseMap$Fold;"
+		);
+	}
+	inline android::icu::text::CaseMap_Lower CaseMap::toLower()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.CaseMap",
+			"toLower",
+			"()Landroid/icu/text/CaseMap$Lower;"
+		);
+	}
+	inline android::icu::text::CaseMap_Title CaseMap::toTitle()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.CaseMap",
+			"toTitle",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	inline android::icu::text::CaseMap_Upper CaseMap::toUpper()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.CaseMap",
+			"toUpper",
+			"()Landroid/icu/text/CaseMap$Upper;"
+		);
+	}
+	inline android::icu::text::CaseMap CaseMap::omitUnchangedText() const
+	{
+		return callObjectMethod(
+			"omitUnchangedText",
+			"()Landroid/icu/text/CaseMap;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

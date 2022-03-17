@@ -1,26 +1,32 @@
 #pragma once
 
-#include "./IdentityCredentialException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./DocTypeNotSupportedException.def.hpp"
 
 namespace android::security::identity
 {
-	class DocTypeNotSupportedException : public android::security::identity::IdentityCredentialException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DocTypeNotSupportedException(const char *className, const char *sig, Ts...agv) : android::security::identity::IdentityCredentialException(className, sig, std::forward<Ts>(agv)...) {}
-		DocTypeNotSupportedException(QAndroidJniObject obj) : android::security::identity::IdentityCredentialException(obj) {}
-		
-		// Constructors
-		DocTypeNotSupportedException(JString arg0);
-		DocTypeNotSupportedException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DocTypeNotSupportedException::DocTypeNotSupportedException(JString arg0)
+		: android::security::identity::IdentityCredentialException(
+			"android.security.identity.DocTypeNotSupportedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline DocTypeNotSupportedException::DocTypeNotSupportedException(JString arg0, JThrowable arg1)
+		: android::security::identity::IdentityCredentialException(
+			"android.security.identity.DocTypeNotSupportedException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security::identity
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./IdentityCredentialException.hpp"
 

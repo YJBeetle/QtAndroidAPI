@@ -1,0 +1,28 @@
+#pragma once
+
+#include "../../../JObject.hpp"
+
+namespace java::util::concurrent
+{
+	class ThreadPoolExecutor;
+}
+
+namespace java::util::concurrent
+{
+	class ThreadPoolExecutor_DiscardPolicy : public JObject
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ThreadPoolExecutor_DiscardPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		ThreadPoolExecutor_DiscardPolicy(QAndroidJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		ThreadPoolExecutor_DiscardPolicy();
+		
+		// Methods
+		void rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1) const;
+	};
+} // namespace java::util::concurrent
+

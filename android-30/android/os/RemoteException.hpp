@@ -1,31 +1,44 @@
 #pragma once
 
-#include "../util/AndroidException.hpp"
-
-namespace java::lang
-{
-	class RuntimeException;
-}
-class JString;
+#include "../../java/lang/RuntimeException.def.hpp"
+#include "../../JString.hpp"
+#include "./RemoteException.def.hpp"
 
 namespace android::os
 {
-	class RemoteException : public android::util::AndroidException
+	// Fields
+	
+	// Constructors
+	inline RemoteException::RemoteException()
+		: android::util::AndroidException(
+			"android.os.RemoteException",
+			"()V"
+		) {}
+	inline RemoteException::RemoteException(JString arg0)
+		: android::util::AndroidException(
+			"android.os.RemoteException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline java::lang::RuntimeException RemoteException::rethrowAsRuntimeException() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RemoteException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-		
-		// Constructors
-		RemoteException();
-		RemoteException(JString arg0);
-		
-		// Methods
-		java::lang::RuntimeException rethrowAsRuntimeException() const;
-		java::lang::RuntimeException rethrowFromSystemServer() const;
-	};
+		return callObjectMethod(
+			"rethrowAsRuntimeException",
+			"()Ljava/lang/RuntimeException;"
+		);
+	}
+	inline java::lang::RuntimeException RemoteException::rethrowFromSystemServer() const
+	{
+		return callObjectMethod(
+			"rethrowFromSystemServer",
+			"()Ljava/lang/RuntimeException;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
 

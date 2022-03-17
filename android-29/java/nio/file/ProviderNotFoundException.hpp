@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../lang/RuntimeException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ProviderNotFoundException.def.hpp"
 
 namespace java::nio::file
 {
-	class ProviderNotFoundException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProviderNotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ProviderNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		ProviderNotFoundException();
-		ProviderNotFoundException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ProviderNotFoundException::ProviderNotFoundException()
+		: java::lang::RuntimeException(
+			"java.nio.file.ProviderNotFoundException",
+			"()V"
+		) {}
+	inline ProviderNotFoundException::ProviderNotFoundException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.nio.file.ProviderNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 

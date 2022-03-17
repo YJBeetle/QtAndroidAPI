@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LocaleData_PaperSize.def.hpp"
 
 namespace android::icu::util
 {
-	class LocaleData_PaperSize : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint LocaleData_PaperSize::getHeight() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocaleData_PaperSize(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LocaleData_PaperSize(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getHeight() const;
-		jint getWidth() const;
-	};
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint LocaleData_PaperSize::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
 

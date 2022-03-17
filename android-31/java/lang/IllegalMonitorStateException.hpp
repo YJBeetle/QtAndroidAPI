@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalMonitorStateException.def.hpp"
 
 namespace java::lang
 {
-	class IllegalMonitorStateException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IllegalMonitorStateException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalMonitorStateException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		IllegalMonitorStateException();
-		IllegalMonitorStateException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IllegalMonitorStateException::IllegalMonitorStateException()
+		: java::lang::RuntimeException(
+			"java.lang.IllegalMonitorStateException",
+			"()V"
+		) {}
+	inline IllegalMonitorStateException::IllegalMonitorStateException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.IllegalMonitorStateException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

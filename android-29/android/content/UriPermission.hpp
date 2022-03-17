@@ -1,40 +1,84 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./UriPermission.def.hpp"
 
 namespace android::content
 {
-	class UriPermission : public JObject
+	// Fields
+	inline JObject UriPermission::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jlong INVALID_TIME();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UriPermission(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UriPermission(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jlong getPersistedTime() const;
-		android::net::Uri getUri() const;
-		jboolean isReadPermission() const;
-		jboolean isWritePermission() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.UriPermission",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jlong UriPermission::INVALID_TIME()
+	{
+		return getStaticField<jlong>(
+			"android.content.UriPermission",
+			"INVALID_TIME"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint UriPermission::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jlong UriPermission::getPersistedTime() const
+	{
+		return callMethod<jlong>(
+			"getPersistedTime",
+			"()J"
+		);
+	}
+	inline android::net::Uri UriPermission::getUri() const
+	{
+		return callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jboolean UriPermission::isReadPermission() const
+	{
+		return callMethod<jboolean>(
+			"isReadPermission",
+			"()Z"
+		);
+	}
+	inline jboolean UriPermission::isWritePermission() const
+	{
+		return callMethod<jboolean>(
+			"isWritePermission",
+			"()Z"
+		);
+	}
+	inline JString UriPermission::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void UriPermission::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

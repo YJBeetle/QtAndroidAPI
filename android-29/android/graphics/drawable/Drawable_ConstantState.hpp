@@ -1,40 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::content::res
-{
-	class Resources_Theme;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
+#include "../../content/res/Resources.def.hpp"
+#include "../../content/res/Resources_Theme.def.hpp"
+#include "./Drawable.def.hpp"
+#include "./Drawable_ConstantState.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class Drawable_ConstantState : public JObject
+	// Fields
+	
+	// Constructors
+	inline Drawable_ConstantState::Drawable_ConstantState()
+		: JObject(
+			"android.graphics.drawable.Drawable$ConstantState",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean Drawable_ConstantState::canApplyTheme() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Drawable_ConstantState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Drawable_ConstantState(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Drawable_ConstantState();
-		
-		// Methods
-		jboolean canApplyTheme() const;
-		jint getChangingConfigurations() const;
-		android::graphics::drawable::Drawable newDrawable() const;
-		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0) const;
-		android::graphics::drawable::Drawable newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1) const;
-	};
+		return callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
+	}
+	inline jint Drawable_ConstantState::getChangingConfigurations() const
+	{
+		return callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
+	}
+	inline android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable() const
+	{
+		return callObjectMethod(
+			"newDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0) const
+	{
+		return callObjectMethod(
+			"newDrawable",
+			"(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::drawable::Drawable Drawable_ConstantState::newDrawable(android::content::res::Resources arg0, android::content::res::Resources_Theme arg1) const
+	{
+		return callObjectMethod(
+			"newDrawable",
+			"(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
 

@@ -1,29 +1,63 @@
 #pragma once
 
-#include "../TransformerFactory.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./SAXTransformerFactory.def.hpp"
 
 namespace javax::xml::transform::sax
 {
-	class SAXTransformerFactory : public javax::xml::transform::TransformerFactory
+	// Fields
+	inline JString SAXTransformerFactory::FEATURE()
 	{
-	public:
-		// Fields
-		static JString FEATURE();
-		static JString FEATURE_XMLFILTER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SAXTransformerFactory(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerFactory(className, sig, std::forward<Ts>(agv)...) {}
-		SAXTransformerFactory(QAndroidJniObject obj) : javax::xml::transform::TransformerFactory(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject newTemplatesHandler() const;
-		JObject newTransformerHandler() const;
-		JObject newTransformerHandler(JObject arg0) const;
-		JObject newXMLFilter(JObject arg0) const;
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.sax.SAXTransformerFactory",
+			"FEATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SAXTransformerFactory::FEATURE_XMLFILTER()
+	{
+		return getStaticObjectField(
+			"javax.xml.transform.sax.SAXTransformerFactory",
+			"FEATURE_XMLFILTER",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject SAXTransformerFactory::newTemplatesHandler() const
+	{
+		return callObjectMethod(
+			"newTemplatesHandler",
+			"()Ljavax/xml/transform/sax/TemplatesHandler;"
+		);
+	}
+	inline JObject SAXTransformerFactory::newTransformerHandler() const
+	{
+		return callObjectMethod(
+			"newTransformerHandler",
+			"()Ljavax/xml/transform/sax/TransformerHandler;"
+		);
+	}
+	inline JObject SAXTransformerFactory::newTransformerHandler(JObject arg0) const
+	{
+		return callObjectMethod(
+			"newTransformerHandler",
+			"(Ljavax/xml/transform/Source;)Ljavax/xml/transform/sax/TransformerHandler;",
+			arg0.object()
+		);
+	}
+	inline JObject SAXTransformerFactory::newXMLFilter(JObject arg0) const
+	{
+		return callObjectMethod(
+			"newXMLFilter",
+			"(Ljavax/xml/transform/Source;)Lorg/xml/sax/XMLFilter;",
+			arg0.object()
+		);
+	}
 } // namespace javax::xml::transform::sax
+
+// Base class headers
+#include "../TransformerFactory.hpp"
 

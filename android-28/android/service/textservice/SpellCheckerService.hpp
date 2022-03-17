@@ -1,35 +1,49 @@
 #pragma once
 
-#include "../../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::service::textservice
-{
-	class SpellCheckerService_Session;
-}
-class JString;
+#include "../../content/Intent.def.hpp"
+#include "./SpellCheckerService_Session.def.hpp"
+#include "../../../JString.hpp"
+#include "./SpellCheckerService.def.hpp"
 
 namespace android::service::textservice
 {
-	class SpellCheckerService : public android::app::Service
+	// Fields
+	inline JString SpellCheckerService::SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString SERVICE_INTERFACE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SpellCheckerService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerService(QAndroidJniObject obj) : android::app::Service(obj) {}
-		
-		// Constructors
-		SpellCheckerService();
-		
-		// Methods
-		android::service::textservice::SpellCheckerService_Session createSession() const;
-		JObject onBind(android::content::Intent arg0) const;
-	};
+		return getStaticObjectField(
+			"android.service.textservice.SpellCheckerService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline SpellCheckerService::SpellCheckerService()
+		: android::app::Service(
+			"android.service.textservice.SpellCheckerService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::service::textservice::SpellCheckerService_Session SpellCheckerService::createSession() const
+	{
+		return callObjectMethod(
+			"createSession",
+			"()Landroid/service/textservice/SpellCheckerService$Session;"
+		);
+	}
+	inline JObject SpellCheckerService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
 } // namespace android::service::textservice
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../../app/Service.hpp"
 

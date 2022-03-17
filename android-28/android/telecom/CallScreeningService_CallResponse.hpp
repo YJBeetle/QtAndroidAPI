@@ -1,25 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CallScreeningService_CallResponse.def.hpp"
 
 namespace android::telecom
 {
-	class CallScreeningService_CallResponse : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean CallScreeningService_CallResponse::getDisallowCall() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CallScreeningService_CallResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CallScreeningService_CallResponse(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean getDisallowCall() const;
-		jboolean getRejectCall() const;
-		jboolean getSkipCallLog() const;
-		jboolean getSkipNotification() const;
-	};
+		return callMethod<jboolean>(
+			"getDisallowCall",
+			"()Z"
+		);
+	}
+	inline jboolean CallScreeningService_CallResponse::getRejectCall() const
+	{
+		return callMethod<jboolean>(
+			"getRejectCall",
+			"()Z"
+		);
+	}
+	inline jboolean CallScreeningService_CallResponse::getSkipCallLog() const
+	{
+		return callMethod<jboolean>(
+			"getSkipCallLog",
+			"()Z"
+		);
+	}
+	inline jboolean CallScreeningService_CallResponse::getSkipNotification() const
+	{
+		return callMethod<jboolean>(
+			"getSkipNotification",
+			"()Z"
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

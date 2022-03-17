@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./SSLEngineResult_Status.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLEngineResult_Status : public java::lang::Enum
+	// Fields
+	inline javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::BUFFER_OVERFLOW()
 	{
-	public:
-		// Fields
-		static javax::net::ssl::SSLEngineResult_Status BUFFER_OVERFLOW();
-		static javax::net::ssl::SSLEngineResult_Status BUFFER_UNDERFLOW();
-		static javax::net::ssl::SSLEngineResult_Status CLOSED();
-		static javax::net::ssl::SSLEngineResult_Status OK();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLEngineResult_Status(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngineResult_Status(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static javax::net::ssl::SSLEngineResult_Status valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"BUFFER_OVERFLOW",
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
+	inline javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::BUFFER_UNDERFLOW()
+	{
+		return getStaticObjectField(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"BUFFER_UNDERFLOW",
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
+	inline javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::CLOSED()
+	{
+		return getStaticObjectField(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"CLOSED",
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
+	inline javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::OK()
+	{
+		return getStaticObjectField(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"OK",
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline javax::net::ssl::SSLEngineResult_Status SSLEngineResult_Status::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"valueOf",
+			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray SSLEngineResult_Status::values()
+	{
+		return callStaticObjectMethod(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"values",
+			"()[Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

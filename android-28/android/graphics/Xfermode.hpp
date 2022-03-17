@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Xfermode.def.hpp"
 
 namespace android::graphics
 {
-	class Xfermode : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Xfermode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Xfermode(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Xfermode();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Xfermode::Xfermode()
+		: JObject(
+			"android.graphics.Xfermode",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
 

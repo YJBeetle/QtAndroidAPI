@@ -1,32 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_Groups.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Groups : public JObject
+	// Fields
+	inline JString ContactsContract_Groups::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static android::net::Uri CONTENT_SUMMARY_URI();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Groups(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Groups(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject newEntityIterator(JObject arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Groups",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Groups::CONTENT_SUMMARY_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Groups",
+			"CONTENT_SUMMARY_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract_Groups::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Groups",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_Groups::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$Groups",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject ContactsContract_Groups::newEntityIterator(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.ContactsContract$Groups",
+			"newEntityIterator",
+			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
+			arg0.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

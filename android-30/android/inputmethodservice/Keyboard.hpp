@@ -1,62 +1,185 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::inputmethodservice
-{
-	class Keyboard_Key;
-}
-namespace android::inputmethodservice
-{
-	class Keyboard_Row;
-}
-class JString;
+#include "../../JIntArray.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/res/Resources.def.hpp"
+#include "./Keyboard_Key.def.hpp"
+#include "./Keyboard_Row.def.hpp"
+#include "../../JString.hpp"
+#include "./Keyboard.def.hpp"
 
 namespace android::inputmethodservice
 {
-	class Keyboard : public JObject
+	// Fields
+	inline jint Keyboard::EDGE_BOTTOM()
 	{
-	public:
-		// Fields
-		static jint EDGE_BOTTOM();
-		static jint EDGE_LEFT();
-		static jint EDGE_RIGHT();
-		static jint EDGE_TOP();
-		static jint KEYCODE_ALT();
-		static jint KEYCODE_CANCEL();
-		static jint KEYCODE_DELETE();
-		static jint KEYCODE_DONE();
-		static jint KEYCODE_MODE_CHANGE();
-		static jint KEYCODE_SHIFT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Keyboard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Keyboard(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Keyboard(android::content::Context arg0, jint arg1);
-		Keyboard(android::content::Context arg0, jint arg1, jint arg2);
-		Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		Keyboard(android::content::Context arg0, jint arg1, JString arg2, jint arg3, jint arg4);
-		
-		// Methods
-		jint getHeight() const;
-		JObject getKeys() const;
-		jint getMinWidth() const;
-		JObject getModifierKeys() const;
-		JIntArray getNearestKeys(jint arg0, jint arg1) const;
-		jint getShiftKeyIndex() const;
-		jboolean isShifted() const;
-		jboolean setShifted(jboolean arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"EDGE_BOTTOM"
+		);
+	}
+	inline jint Keyboard::EDGE_LEFT()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"EDGE_LEFT"
+		);
+	}
+	inline jint Keyboard::EDGE_RIGHT()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"EDGE_RIGHT"
+		);
+	}
+	inline jint Keyboard::EDGE_TOP()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"EDGE_TOP"
+		);
+	}
+	inline jint Keyboard::KEYCODE_ALT()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"KEYCODE_ALT"
+		);
+	}
+	inline jint Keyboard::KEYCODE_CANCEL()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"KEYCODE_CANCEL"
+		);
+	}
+	inline jint Keyboard::KEYCODE_DELETE()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"KEYCODE_DELETE"
+		);
+	}
+	inline jint Keyboard::KEYCODE_DONE()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"KEYCODE_DONE"
+		);
+	}
+	inline jint Keyboard::KEYCODE_MODE_CHANGE()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"KEYCODE_MODE_CHANGE"
+		);
+	}
+	inline jint Keyboard::KEYCODE_SHIFT()
+	{
+		return getStaticField<jint>(
+			"android.inputmethodservice.Keyboard",
+			"KEYCODE_SHIFT"
+		);
+	}
+	
+	// Constructors
+	inline Keyboard::Keyboard(android::content::Context arg0, jint arg1)
+		: JObject(
+			"android.inputmethodservice.Keyboard",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.inputmethodservice.Keyboard",
+			"(Landroid/content/Context;II)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	inline Keyboard::Keyboard(android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+		: JObject(
+			"android.inputmethodservice.Keyboard",
+			"(Landroid/content/Context;IIII)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		) {}
+	inline Keyboard::Keyboard(android::content::Context arg0, jint arg1, JString arg2, jint arg3, jint arg4)
+		: JObject(
+			"android.inputmethodservice.Keyboard",
+			"(Landroid/content/Context;ILjava/lang/CharSequence;II)V",
+			arg0.object(),
+			arg1,
+			arg2.object<jstring>(),
+			arg3,
+			arg4
+		) {}
+	
+	// Methods
+	inline jint Keyboard::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline JObject Keyboard::getKeys() const
+	{
+		return callObjectMethod(
+			"getKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint Keyboard::getMinWidth() const
+	{
+		return callMethod<jint>(
+			"getMinWidth",
+			"()I"
+		);
+	}
+	inline JObject Keyboard::getModifierKeys() const
+	{
+		return callObjectMethod(
+			"getModifierKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JIntArray Keyboard::getNearestKeys(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getNearestKeys",
+			"(II)[I",
+			arg0,
+			arg1
+		);
+	}
+	inline jint Keyboard::getShiftKeyIndex() const
+	{
+		return callMethod<jint>(
+			"getShiftKeyIndex",
+			"()I"
+		);
+	}
+	inline jboolean Keyboard::isShifted() const
+	{
+		return callMethod<jboolean>(
+			"isShifted",
+			"()Z"
+		);
+	}
+	inline jboolean Keyboard::setShifted(jboolean arg0) const
+	{
+		return callMethod<jboolean>(
+			"setShifted",
+			"(Z)Z",
+			arg0
+		);
+	}
 } // namespace android::inputmethodservice
+
+// Base class headers
 

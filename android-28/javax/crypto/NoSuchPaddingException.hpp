@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/security/GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoSuchPaddingException.def.hpp"
 
 namespace javax::crypto
 {
-	class NoSuchPaddingException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NoSuchPaddingException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchPaddingException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		NoSuchPaddingException();
-		NoSuchPaddingException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchPaddingException::NoSuchPaddingException()
+		: java::security::GeneralSecurityException(
+			"javax.crypto.NoSuchPaddingException",
+			"()V"
+		) {}
+	inline NoSuchPaddingException::NoSuchPaddingException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"javax.crypto.NoSuchPaddingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
 

@@ -1,34 +1,98 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_CommonDataKinds_Nickname.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_CommonDataKinds_Nickname : public JObject
+	// Fields
+	inline JString ContactsContract_CommonDataKinds_Nickname::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString EXTRA_ADDRESS_BOOK_INDEX();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static JString NAME();
-		static jint TYPE_DEFAULT();
-		static jint TYPE_INITIALS();
-		static jint TYPE_MAIDEN_NAME();
-		static jint TYPE_MAINDEN_NAME();
-		static jint TYPE_OTHER_NAME();
-		static jint TYPE_SHORT_NAME();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Nickname(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Nickname(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Nickname::EXTRA_ADDRESS_BOOK_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"EXTRA_ADDRESS_BOOK_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Nickname::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Nickname::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Nickname::NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Nickname::TYPE_DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"TYPE_DEFAULT"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Nickname::TYPE_INITIALS()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"TYPE_INITIALS"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Nickname::TYPE_MAIDEN_NAME()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"TYPE_MAIDEN_NAME"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Nickname::TYPE_MAINDEN_NAME()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"TYPE_MAINDEN_NAME"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Nickname::TYPE_OTHER_NAME()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"TYPE_OTHER_NAME"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Nickname::TYPE_SHORT_NAME()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Nickname",
+			"TYPE_SHORT_NAME"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,60 +1,156 @@
 #pragma once
 
-#include "./DatagramSocket.hpp"
+#include "./DatagramPacket.def.hpp"
+#include "./DatagramSocket.def.hpp"
+#include "./InetAddress.def.hpp"
+#include "./NetworkInterface.def.hpp"
+#include "./SocketAddress.def.hpp"
+#include "./MulticastSocket.def.hpp"
 
 namespace java::net
 {
-	class DatagramPacket;
-}
-namespace java::net
-{
-	class DatagramSocket;
-}
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class NetworkInterface;
-}
-namespace java::net
-{
-	class SocketAddress;
-}
-
-namespace java::net
-{
-	class MulticastSocket : public java::net::DatagramSocket
+	// Fields
+	
+	// Constructors
+	inline MulticastSocket::MulticastSocket()
+		: java::net::DatagramSocket(
+			"java.net.MulticastSocket",
+			"()V"
+		) {}
+	inline MulticastSocket::MulticastSocket(jint arg0)
+		: java::net::DatagramSocket(
+			"java.net.MulticastSocket",
+			"(I)V",
+			arg0
+		) {}
+	inline MulticastSocket::MulticastSocket(java::net::SocketAddress arg0)
+		: java::net::DatagramSocket(
+			"java.net.MulticastSocket",
+			"(Ljava/net/SocketAddress;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline java::net::InetAddress MulticastSocket::getInterface() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MulticastSocket(const char *className, const char *sig, Ts...agv) : java::net::DatagramSocket(className, sig, std::forward<Ts>(agv)...) {}
-		MulticastSocket(QAndroidJniObject obj) : java::net::DatagramSocket(obj) {}
-		
-		// Constructors
-		MulticastSocket();
-		MulticastSocket(jint arg0);
-		MulticastSocket(java::net::SocketAddress arg0);
-		
-		// Methods
-		java::net::InetAddress getInterface() const;
-		jboolean getLoopbackMode() const;
-		java::net::NetworkInterface getNetworkInterface() const;
-		jbyte getTTL() const;
-		jint getTimeToLive() const;
-		void joinGroup(java::net::InetAddress arg0) const;
-		void joinGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const;
-		void leaveGroup(java::net::InetAddress arg0) const;
-		void leaveGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const;
-		void send(java::net::DatagramPacket arg0, jbyte arg1) const;
-		void setInterface(java::net::InetAddress arg0) const;
-		void setLoopbackMode(jboolean arg0) const;
-		void setNetworkInterface(java::net::NetworkInterface arg0) const;
-		void setTTL(jbyte arg0) const;
-		void setTimeToLive(jint arg0) const;
-	};
+		return callObjectMethod(
+			"getInterface",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline jboolean MulticastSocket::getLoopbackMode() const
+	{
+		return callMethod<jboolean>(
+			"getLoopbackMode",
+			"()Z"
+		);
+	}
+	inline java::net::NetworkInterface MulticastSocket::getNetworkInterface() const
+	{
+		return callObjectMethod(
+			"getNetworkInterface",
+			"()Ljava/net/NetworkInterface;"
+		);
+	}
+	inline jbyte MulticastSocket::getTTL() const
+	{
+		return callMethod<jbyte>(
+			"getTTL",
+			"()B"
+		);
+	}
+	inline jint MulticastSocket::getTimeToLive() const
+	{
+		return callMethod<jint>(
+			"getTimeToLive",
+			"()I"
+		);
+	}
+	inline void MulticastSocket::joinGroup(java::net::InetAddress arg0) const
+	{
+		callMethod<void>(
+			"joinGroup",
+			"(Ljava/net/InetAddress;)V",
+			arg0.object()
+		);
+	}
+	inline void MulticastSocket::joinGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const
+	{
+		callMethod<void>(
+			"joinGroup",
+			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MulticastSocket::leaveGroup(java::net::InetAddress arg0) const
+	{
+		callMethod<void>(
+			"leaveGroup",
+			"(Ljava/net/InetAddress;)V",
+			arg0.object()
+		);
+	}
+	inline void MulticastSocket::leaveGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const
+	{
+		callMethod<void>(
+			"leaveGroup",
+			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MulticastSocket::send(java::net::DatagramPacket arg0, jbyte arg1) const
+	{
+		callMethod<void>(
+			"send",
+			"(Ljava/net/DatagramPacket;B)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void MulticastSocket::setInterface(java::net::InetAddress arg0) const
+	{
+		callMethod<void>(
+			"setInterface",
+			"(Ljava/net/InetAddress;)V",
+			arg0.object()
+		);
+	}
+	inline void MulticastSocket::setLoopbackMode(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setLoopbackMode",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void MulticastSocket::setNetworkInterface(java::net::NetworkInterface arg0) const
+	{
+		callMethod<void>(
+			"setNetworkInterface",
+			"(Ljava/net/NetworkInterface;)V",
+			arg0.object()
+		);
+	}
+	inline void MulticastSocket::setTTL(jbyte arg0) const
+	{
+		callMethod<void>(
+			"setTTL",
+			"(B)V",
+			arg0
+		);
+	}
+	inline void MulticastSocket::setTimeToLive(jint arg0) const
+	{
+		callMethod<void>(
+			"setTimeToLive",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "./DatagramSocket.hpp"
 

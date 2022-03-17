@@ -1,35 +1,83 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
+#include "./BassBoost_Settings.def.hpp"
+#include "./BassBoost.def.hpp"
 
 namespace android::media::audiofx
 {
-	class BassBoost_Settings;
-}
-
-namespace android::media::audiofx
-{
-	class BassBoost : public android::media::audiofx::AudioEffect
+	// Fields
+	inline jint BassBoost::PARAM_STRENGTH()
 	{
-	public:
-		// Fields
-		static jint PARAM_STRENGTH();
-		static jint PARAM_STRENGTH_SUPPORTED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BassBoost(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		BassBoost(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-		
-		// Constructors
-		BassBoost(jint arg0, jint arg1);
-		
-		// Methods
-		android::media::audiofx::BassBoost_Settings getProperties() const;
-		jshort getRoundedStrength() const;
-		jboolean getStrengthSupported() const;
-		void setParameterListener(JObject arg0) const;
-		void setProperties(android::media::audiofx::BassBoost_Settings arg0) const;
-		void setStrength(jshort arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.media.audiofx.BassBoost",
+			"PARAM_STRENGTH"
+		);
+	}
+	inline jint BassBoost::PARAM_STRENGTH_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.media.audiofx.BassBoost",
+			"PARAM_STRENGTH_SUPPORTED"
+		);
+	}
+	
+	// Constructors
+	inline BassBoost::BassBoost(jint arg0, jint arg1)
+		: android::media::audiofx::AudioEffect(
+			"android.media.audiofx.BassBoost",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline android::media::audiofx::BassBoost_Settings BassBoost::getProperties() const
+	{
+		return callObjectMethod(
+			"getProperties",
+			"()Landroid/media/audiofx/BassBoost$Settings;"
+		);
+	}
+	inline jshort BassBoost::getRoundedStrength() const
+	{
+		return callMethod<jshort>(
+			"getRoundedStrength",
+			"()S"
+		);
+	}
+	inline jboolean BassBoost::getStrengthSupported() const
+	{
+		return callMethod<jboolean>(
+			"getStrengthSupported",
+			"()Z"
+		);
+	}
+	inline void BassBoost::setParameterListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setParameterListener",
+			"(Landroid/media/audiofx/BassBoost$OnParameterChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void BassBoost::setProperties(android::media::audiofx::BassBoost_Settings arg0) const
+	{
+		callMethod<void>(
+			"setProperties",
+			"(Landroid/media/audiofx/BassBoost$Settings;)V",
+			arg0.object()
+		);
+	}
+	inline void BassBoost::setStrength(jshort arg0) const
+	{
+		callMethod<void>(
+			"setStrength",
+			"(S)V",
+			arg0
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

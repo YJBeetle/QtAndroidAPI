@@ -1,25 +1,31 @@
 #pragma once
 
-#include "./AppSearchSchema_PropertyConfig.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./AppSearchSchema_DocumentPropertyConfig.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_DocumentPropertyConfig : public android::app::appsearch::AppSearchSchema_PropertyConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString AppSearchSchema_DocumentPropertyConfig::getSchemaType() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_DocumentPropertyConfig(const char *className, const char *sig, Ts...agv) : android::app::appsearch::AppSearchSchema_PropertyConfig(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_DocumentPropertyConfig(QAndroidJniObject obj) : android::app::appsearch::AppSearchSchema_PropertyConfig(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getSchemaType() const;
-		jboolean shouldIndexNestedProperties() const;
-	};
+		return callObjectMethod(
+			"getSchemaType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean AppSearchSchema_DocumentPropertyConfig::shouldIndexNestedProperties() const
+	{
+		return callMethod<jboolean>(
+			"shouldIndexNestedProperties",
+			"()Z"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
+#include "./AppSearchSchema_PropertyConfig.hpp"
 

@@ -1,36 +1,115 @@
 #pragma once
 
-#include "../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./CryptoPrimitive.def.hpp"
 
 namespace java::security
 {
-	class CryptoPrimitive : public java::lang::Enum
+	// Fields
+	inline java::security::CryptoPrimitive CryptoPrimitive::BLOCK_CIPHER()
 	{
-	public:
-		// Fields
-		static java::security::CryptoPrimitive BLOCK_CIPHER();
-		static java::security::CryptoPrimitive KEY_AGREEMENT();
-		static java::security::CryptoPrimitive KEY_ENCAPSULATION();
-		static java::security::CryptoPrimitive KEY_WRAP();
-		static java::security::CryptoPrimitive MAC();
-		static java::security::CryptoPrimitive MESSAGE_DIGEST();
-		static java::security::CryptoPrimitive PUBLIC_KEY_ENCRYPTION();
-		static java::security::CryptoPrimitive SECURE_RANDOM();
-		static java::security::CryptoPrimitive SIGNATURE();
-		static java::security::CryptoPrimitive STREAM_CIPHER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CryptoPrimitive(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CryptoPrimitive(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::security::CryptoPrimitive valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"BLOCK_CIPHER",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::KEY_AGREEMENT()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"KEY_AGREEMENT",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::KEY_ENCAPSULATION()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"KEY_ENCAPSULATION",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::KEY_WRAP()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"KEY_WRAP",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::MAC()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"MAC",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::MESSAGE_DIGEST()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"MESSAGE_DIGEST",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::PUBLIC_KEY_ENCRYPTION()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"PUBLIC_KEY_ENCRYPTION",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::SECURE_RANDOM()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"SECURE_RANDOM",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::SIGNATURE()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"SIGNATURE",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	inline java::security::CryptoPrimitive CryptoPrimitive::STREAM_CIPHER()
+	{
+		return getStaticObjectField(
+			"java.security.CryptoPrimitive",
+			"STREAM_CIPHER",
+			"Ljava/security/CryptoPrimitive;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::security::CryptoPrimitive CryptoPrimitive::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.CryptoPrimitive",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/security/CryptoPrimitive;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray CryptoPrimitive::values()
+	{
+		return callStaticObjectMethod(
+			"java.security.CryptoPrimitive",
+			"values",
+			"()[Ljava/security/CryptoPrimitive;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Enum.hpp"
 

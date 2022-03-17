@@ -1,29 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./Fragment_SavedState.def.hpp"
 
 namespace android::app
 {
-	class Fragment_SavedState : public JObject
+	// Fields
+	inline JObject Fragment_SavedState::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Fragment_SavedState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Fragment_SavedState(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.Fragment$SavedState",
+			"CREATOR",
+			"Landroid/os/Parcelable$ClassLoaderCreator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint Fragment_SavedState::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void Fragment_SavedState::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

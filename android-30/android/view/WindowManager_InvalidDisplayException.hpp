@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./WindowManager_InvalidDisplayException.def.hpp"
 
 namespace android::view
 {
-	class WindowManager_InvalidDisplayException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WindowManager_InvalidDisplayException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		WindowManager_InvalidDisplayException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		WindowManager_InvalidDisplayException();
-		WindowManager_InvalidDisplayException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException()
+		: java::lang::RuntimeException(
+			"android.view.WindowManager$InvalidDisplayException",
+			"()V"
+		) {}
+	inline WindowManager_InvalidDisplayException::WindowManager_InvalidDisplayException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.view.WindowManager$InvalidDisplayException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::view
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

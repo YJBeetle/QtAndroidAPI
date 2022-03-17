@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-namespace java::nio
-{
-	class IntBuffer;
-}
+#include "../../JIntArray.hpp"
+#include "../../java/nio/IntBuffer.def.hpp"
+#include "./GLES10Ext.def.hpp"
 
 namespace android::opengl
 {
-	class GLES10Ext : public JObject
+	// Fields
+	
+	// Constructors
+	inline GLES10Ext::GLES10Ext()
+		: JObject(
+			"android.opengl.GLES10Ext",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint GLES10Ext::glQueryMatrixxOES(java::nio::IntBuffer arg0, java::nio::IntBuffer arg1)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GLES10Ext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GLES10Ext(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GLES10Ext();
-		
-		// Methods
-		static jint glQueryMatrixxOES(java::nio::IntBuffer arg0, java::nio::IntBuffer arg1);
-		static jint glQueryMatrixxOES(JIntArray arg0, jint arg1, JIntArray arg2, jint arg3);
-	};
+		return callStaticMethod<jint>(
+			"android.opengl.GLES10Ext",
+			"glQueryMatrixxOES",
+			"(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jint GLES10Ext::glQueryMatrixxOES(JIntArray arg0, jint arg1, JIntArray arg2, jint arg3)
+	{
+		return callStaticMethod<jint>(
+			"android.opengl.GLES10Ext",
+			"glQueryMatrixxOES",
+			"([II[II)I",
+			arg0.object<jintArray>(),
+			arg1,
+			arg2.object<jintArray>(),
+			arg3
+		);
+	}
 } // namespace android::opengl
+
+// Base class headers
 

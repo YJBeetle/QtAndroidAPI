@@ -1,34 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AppSearchSchema.def.hpp"
+#include "./AppSearchSchema_PropertyConfig.def.hpp"
+#include "../../../JString.hpp"
+#include "./AppSearchSchema_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema;
-}
-namespace android::app::appsearch
-{
-	class AppSearchSchema_PropertyConfig;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class AppSearchSchema_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppSearchSchema_Builder::AppSearchSchema_Builder(JString arg0)
+		: JObject(
+			"android.app.appsearch.AppSearchSchema$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::AppSearchSchema_Builder AppSearchSchema_Builder::addProperty(android::app::appsearch::AppSearchSchema_PropertyConfig arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AppSearchSchema_Builder(JString arg0);
-		
-		// Methods
-		android::app::appsearch::AppSearchSchema_Builder addProperty(android::app::appsearch::AppSearchSchema_PropertyConfig arg0) const;
-		android::app::appsearch::AppSearchSchema build() const;
-	};
+		return callObjectMethod(
+			"addProperty",
+			"(Landroid/app/appsearch/AppSearchSchema$PropertyConfig;)Landroid/app/appsearch/AppSearchSchema$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::appsearch::AppSearchSchema AppSearchSchema_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/AppSearchSchema;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

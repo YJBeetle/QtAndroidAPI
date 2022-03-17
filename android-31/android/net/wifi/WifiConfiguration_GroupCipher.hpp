@@ -1,33 +1,82 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./WifiConfiguration_GroupCipher.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiConfiguration_GroupCipher : public JObject
+	// Fields
+	inline jint WifiConfiguration_GroupCipher::CCMP()
 	{
-	public:
-		// Fields
-		static jint CCMP();
-		static jint GCMP_128();
-		static jint GCMP_256();
-		static jint SMS4();
-		static jint TKIP();
-		static jint WEP104();
-		static jint WEP40();
-		static JArray strings();
-		static JString varName();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration_GroupCipher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_GroupCipher(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"CCMP"
+		);
+	}
+	inline jint WifiConfiguration_GroupCipher::GCMP_128()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"GCMP_128"
+		);
+	}
+	inline jint WifiConfiguration_GroupCipher::GCMP_256()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"GCMP_256"
+		);
+	}
+	inline jint WifiConfiguration_GroupCipher::SMS4()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"SMS4"
+		);
+	}
+	inline jint WifiConfiguration_GroupCipher::TKIP()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"TKIP"
+		);
+	}
+	inline jint WifiConfiguration_GroupCipher::WEP104()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"WEP104"
+		);
+	}
+	inline jint WifiConfiguration_GroupCipher::WEP40()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"WEP40"
+		);
+	}
+	inline JArray WifiConfiguration_GroupCipher::strings()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"strings",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JString WifiConfiguration_GroupCipher::varName()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$GroupCipher",
+			"varName",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::wifi
+
+// Base class headers
 

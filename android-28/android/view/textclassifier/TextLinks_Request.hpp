@@ -1,41 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class LocaleList;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view::textclassifier
-{
-	class TextClassifier_EntityConfig;
-}
-class JString;
+#include "../../os/LocaleList.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./TextClassifier_EntityConfig.def.hpp"
+#include "../../../JString.hpp"
+#include "./TextLinks_Request.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextLinks_Request : public JObject
+	// Fields
+	inline JObject TextLinks_Request::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextLinks_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextLinks_Request(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::os::LocaleList getDefaultLocales() const;
-		android::view::textclassifier::TextClassifier_EntityConfig getEntityConfig() const;
-		JString getText() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.textclassifier.TextLinks$Request",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint TextLinks_Request::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::LocaleList TextLinks_Request::getDefaultLocales() const
+	{
+		return callObjectMethod(
+			"getDefaultLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	inline android::view::textclassifier::TextClassifier_EntityConfig TextLinks_Request::getEntityConfig() const
+	{
+		return callObjectMethod(
+			"getEntityConfig",
+			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
+		);
+	}
+	inline JString TextLinks_Request::getText() const
+	{
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline void TextLinks_Request::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

@@ -1,27 +1,39 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./IpSecTransform.def.hpp"
 
 namespace android::net
 {
-	class IpSecTransform : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void IpSecTransform::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IpSecTransform(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecTransform(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jboolean equals(JObject arg0) const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jboolean IpSecTransform::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString IpSecTransform::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

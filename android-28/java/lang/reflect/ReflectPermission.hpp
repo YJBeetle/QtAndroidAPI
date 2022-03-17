@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../security/BasicPermission.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ReflectPermission.def.hpp"
 
 namespace java::lang::reflect
 {
-	class ReflectPermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ReflectPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		ReflectPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-		
-		// Constructors
-		ReflectPermission(JString arg0);
-		ReflectPermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ReflectPermission::ReflectPermission(JString arg0)
+		: java::security::BasicPermission(
+			"java.lang.reflect.ReflectPermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ReflectPermission::ReflectPermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"java.lang.reflect.ReflectPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang::reflect
+
+// Base class headers
+#include "../../security/Permission.hpp"
+#include "../../security/BasicPermission.hpp"
 

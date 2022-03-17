@@ -1,23 +1,28 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./EventListenerProxy.def.hpp"
 
 namespace java::util
 {
-	class EventListenerProxy : public JObject
+	// Fields
+	
+	// Constructors
+	inline EventListenerProxy::EventListenerProxy(JObject arg0)
+		: JObject(
+			"java.util.EventListenerProxy",
+			"(Ljava/util/EventListener;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject EventListenerProxy::getListener() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EventListenerProxy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventListenerProxy(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EventListenerProxy(JObject arg0);
-		
-		// Methods
-		JObject getListener() const;
-	};
+		return callObjectMethod(
+			"getListener",
+			"()Ljava/util/EventListener;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

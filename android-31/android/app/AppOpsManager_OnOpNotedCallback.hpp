@@ -1,34 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AsyncNotedAppOp.def.hpp"
+#include "./SyncNotedAppOp.def.hpp"
+#include "./AppOpsManager_OnOpNotedCallback.def.hpp"
 
 namespace android::app
 {
-	class AsyncNotedAppOp;
-}
-namespace android::app
-{
-	class SyncNotedAppOp;
-}
-
-namespace android::app
-{
-	class AppOpsManager_OnOpNotedCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback()
+		: JObject(
+			"android.app.AppOpsManager$OnOpNotedCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void AppOpsManager_OnOpNotedCallback::onAsyncNoted(android::app::AsyncNotedAppOp arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppOpsManager_OnOpNotedCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppOpsManager_OnOpNotedCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AppOpsManager_OnOpNotedCallback();
-		
-		// Methods
-		void onAsyncNoted(android::app::AsyncNotedAppOp arg0) const;
-		void onNoted(android::app::SyncNotedAppOp arg0) const;
-		void onSelfNoted(android::app::SyncNotedAppOp arg0) const;
-	};
+		callMethod<void>(
+			"onAsyncNoted",
+			"(Landroid/app/AsyncNotedAppOp;)V",
+			arg0.object()
+		);
+	}
+	inline void AppOpsManager_OnOpNotedCallback::onNoted(android::app::SyncNotedAppOp arg0) const
+	{
+		callMethod<void>(
+			"onNoted",
+			"(Landroid/app/SyncNotedAppOp;)V",
+			arg0.object()
+		);
+	}
+	inline void AppOpsManager_OnOpNotedCallback::onSelfNoted(android::app::SyncNotedAppOp arg0) const
+	{
+		callMethod<void>(
+			"onSelfNoted",
+			"(Landroid/app/SyncNotedAppOp;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

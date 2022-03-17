@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./RenderScript_ContextType.def.hpp"
 
 namespace android::renderscript
 {
-	class RenderScript_ContextType : public java::lang::Enum
+	// Fields
+	inline android::renderscript::RenderScript_ContextType RenderScript_ContextType::DEBUG()
 	{
-	public:
-		// Fields
-		static android::renderscript::RenderScript_ContextType DEBUG();
-		static android::renderscript::RenderScript_ContextType NORMAL();
-		static android::renderscript::RenderScript_ContextType PROFILE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RenderScript_ContextType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RenderScript_ContextType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::renderscript::RenderScript_ContextType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.renderscript.RenderScript$ContextType",
+			"DEBUG",
+			"Landroid/renderscript/RenderScript$ContextType;"
+		);
+	}
+	inline android::renderscript::RenderScript_ContextType RenderScript_ContextType::NORMAL()
+	{
+		return getStaticObjectField(
+			"android.renderscript.RenderScript$ContextType",
+			"NORMAL",
+			"Landroid/renderscript/RenderScript$ContextType;"
+		);
+	}
+	inline android::renderscript::RenderScript_ContextType RenderScript_ContextType::PROFILE()
+	{
+		return getStaticObjectField(
+			"android.renderscript.RenderScript$ContextType",
+			"PROFILE",
+			"Landroid/renderscript/RenderScript$ContextType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::RenderScript_ContextType RenderScript_ContextType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.RenderScript$ContextType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$ContextType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray RenderScript_ContextType::values()
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.RenderScript$ContextType",
+			"values",
+			"()[Landroid/renderscript/RenderScript$ContextType;"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

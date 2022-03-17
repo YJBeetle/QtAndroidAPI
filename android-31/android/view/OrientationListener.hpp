@@ -1,35 +1,77 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JFloatArray;
-namespace android::content
-{
-	class Context;
-}
+#include "../../JFloatArray.hpp"
+#include "../content/Context.def.hpp"
+#include "./OrientationListener.def.hpp"
 
 namespace android::view
 {
-	class OrientationListener : public JObject
+	// Fields
+	inline jint OrientationListener::ORIENTATION_UNKNOWN()
 	{
-	public:
-		// Fields
-		static jint ORIENTATION_UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OrientationListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OrientationListener(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		OrientationListener(android::content::Context arg0);
-		OrientationListener(android::content::Context arg0, jint arg1);
-		
-		// Methods
-		void disable() const;
-		void enable() const;
-		void onAccuracyChanged(jint arg0, jint arg1) const;
-		void onOrientationChanged(jint arg0) const;
-		void onSensorChanged(jint arg0, JFloatArray arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.view.OrientationListener",
+			"ORIENTATION_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline OrientationListener::OrientationListener(android::content::Context arg0)
+		: JObject(
+			"android.view.OrientationListener",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline OrientationListener::OrientationListener(android::content::Context arg0, jint arg1)
+		: JObject(
+			"android.view.OrientationListener",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void OrientationListener::disable() const
+	{
+		callMethod<void>(
+			"disable",
+			"()V"
+		);
+	}
+	inline void OrientationListener::enable() const
+	{
+		callMethod<void>(
+			"enable",
+			"()V"
+		);
+	}
+	inline void OrientationListener::onAccuracyChanged(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onAccuracyChanged",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void OrientationListener::onOrientationChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onOrientationChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void OrientationListener::onSensorChanged(jint arg0, JFloatArray arg1) const
+	{
+		callMethod<void>(
+			"onSensorChanged",
+			"(I[F)V",
+			arg0,
+			arg1.object<jfloatArray>()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

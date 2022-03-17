@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./IllegalFormatException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalFormatPrecisionException.def.hpp"
 
 namespace java::util
 {
-	class IllegalFormatPrecisionException : public java::util::IllegalFormatException
+	// Fields
+	
+	// Constructors
+	inline IllegalFormatPrecisionException::IllegalFormatPrecisionException(jint arg0)
+		: java::util::IllegalFormatException(
+			"java.util.IllegalFormatPrecisionException",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline JString IllegalFormatPrecisionException::getMessage() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IllegalFormatPrecisionException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalFormatPrecisionException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
-		
-		// Constructors
-		IllegalFormatPrecisionException(jint arg0);
-		
-		// Methods
-		JString getMessage() const;
-		jint getPrecision() const;
-	};
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint IllegalFormatPrecisionException::getPrecision() const
+	{
+		return callMethod<jint>(
+			"getPrecision",
+			"()I"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
+#include "./IllegalFormatException.hpp"
 

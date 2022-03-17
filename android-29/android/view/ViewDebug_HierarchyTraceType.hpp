@@ -1,34 +1,99 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ViewDebug_HierarchyTraceType.def.hpp"
 
 namespace android::view
 {
-	class ViewDebug_HierarchyTraceType : public java::lang::Enum
+	// Fields
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::BUILD_CACHE()
 	{
-	public:
-		// Fields
-		static android::view::ViewDebug_HierarchyTraceType BUILD_CACHE();
-		static android::view::ViewDebug_HierarchyTraceType DRAW();
-		static android::view::ViewDebug_HierarchyTraceType INVALIDATE();
-		static android::view::ViewDebug_HierarchyTraceType INVALIDATE_CHILD();
-		static android::view::ViewDebug_HierarchyTraceType INVALIDATE_CHILD_IN_PARENT();
-		static android::view::ViewDebug_HierarchyTraceType ON_LAYOUT();
-		static android::view::ViewDebug_HierarchyTraceType ON_MEASURE();
-		static android::view::ViewDebug_HierarchyTraceType REQUEST_LAYOUT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewDebug_HierarchyTraceType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ViewDebug_HierarchyTraceType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::view::ViewDebug_HierarchyTraceType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"BUILD_CACHE",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::DRAW()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"DRAW",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::INVALIDATE()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"INVALIDATE",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::INVALIDATE_CHILD()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"INVALIDATE_CHILD",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::INVALIDATE_CHILD_IN_PARENT()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"INVALIDATE_CHILD_IN_PARENT",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::ON_LAYOUT()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"ON_LAYOUT",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::ON_MEASURE()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"ON_MEASURE",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::REQUEST_LAYOUT()
+	{
+		return getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"REQUEST_LAYOUT",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::ViewDebug_HierarchyTraceType ViewDebug_HierarchyTraceType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ViewDebug_HierarchyTraceType::values()
+	{
+		return callStaticObjectMethod(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"values",
+			"()[Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

@@ -1,30 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./WifiConfiguration_KeyMgmt.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiConfiguration_KeyMgmt : public JObject
+	// Fields
+	inline jint WifiConfiguration_KeyMgmt::IEEE8021X()
 	{
-	public:
-		// Fields
-		static jint IEEE8021X();
-		static jint NONE();
-		static jint WPA_EAP();
-		static jint WPA_PSK();
-		static JArray strings();
-		static JString varName();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration_KeyMgmt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_KeyMgmt(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$KeyMgmt",
+			"IEEE8021X"
+		);
+	}
+	inline jint WifiConfiguration_KeyMgmt::NONE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$KeyMgmt",
+			"NONE"
+		);
+	}
+	inline jint WifiConfiguration_KeyMgmt::WPA_EAP()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$KeyMgmt",
+			"WPA_EAP"
+		);
+	}
+	inline jint WifiConfiguration_KeyMgmt::WPA_PSK()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$KeyMgmt",
+			"WPA_PSK"
+		);
+	}
+	inline JArray WifiConfiguration_KeyMgmt::strings()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$KeyMgmt",
+			"strings",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JString WifiConfiguration_KeyMgmt::varName()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$KeyMgmt",
+			"varName",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::wifi
+
+// Base class headers
 

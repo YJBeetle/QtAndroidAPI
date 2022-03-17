@@ -1,36 +1,92 @@
 #pragma once
 
-#include "../../../java/lang/IllegalArgumentException.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./SystemUpdatePolicy_ValidationFailedException.def.hpp"
 
 namespace android::app::admin
 {
-	class SystemUpdatePolicy_ValidationFailedException : public java::lang::IllegalArgumentException
+	// Fields
+	inline JObject SystemUpdatePolicy_ValidationFailedException::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE();
-		static jint ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG();
-		static jint ERROR_DUPLICATE_OR_OVERLAP();
-		static jint ERROR_NEW_FREEZE_PERIOD_TOO_CLOSE();
-		static jint ERROR_NEW_FREEZE_PERIOD_TOO_LONG();
-		static jint ERROR_UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SystemUpdatePolicy_ValidationFailedException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		SystemUpdatePolicy_ValidationFailedException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getErrorCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::ERROR_DUPLICATE_OR_OVERLAP()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"ERROR_DUPLICATE_OR_OVERLAP"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::ERROR_NEW_FREEZE_PERIOD_TOO_CLOSE()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"ERROR_NEW_FREEZE_PERIOD_TOO_CLOSE"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::ERROR_NEW_FREEZE_PERIOD_TOO_LONG()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"ERROR_NEW_FREEZE_PERIOD_TOO_LONG"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::ERROR_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.SystemUpdatePolicy$ValidationFailedException",
+			"ERROR_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SystemUpdatePolicy_ValidationFailedException::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint SystemUpdatePolicy_ValidationFailedException::getErrorCode() const
+	{
+		return callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
+	}
+	inline void SystemUpdatePolicy_ValidationFailedException::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../../../java/lang/IllegalArgumentException.hpp"
 

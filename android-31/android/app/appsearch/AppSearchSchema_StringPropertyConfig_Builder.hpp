@@ -1,32 +1,54 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AppSearchSchema_StringPropertyConfig.def.hpp"
+#include "../../../JString.hpp"
+#include "./AppSearchSchema_StringPropertyConfig_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_StringPropertyConfig;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class AppSearchSchema_StringPropertyConfig_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppSearchSchema_StringPropertyConfig_Builder::AppSearchSchema_StringPropertyConfig_Builder(JString arg0)
+		: JObject(
+			"android.app.appsearch.AppSearchSchema$StringPropertyConfig$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::AppSearchSchema_StringPropertyConfig AppSearchSchema_StringPropertyConfig_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_StringPropertyConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_StringPropertyConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AppSearchSchema_StringPropertyConfig_Builder(JString arg0);
-		
-		// Methods
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig build() const;
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setCardinality(jint arg0) const;
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setIndexingType(jint arg0) const;
-		android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder setTokenizerType(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/AppSearchSchema$StringPropertyConfig;"
+		);
+	}
+	inline android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setCardinality(jint arg0) const
+	{
+		return callObjectMethod(
+			"setCardinality",
+			"(I)Landroid/app/appsearch/AppSearchSchema$StringPropertyConfig$Builder;",
+			arg0
+		);
+	}
+	inline android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setIndexingType(jint arg0) const
+	{
+		return callObjectMethod(
+			"setIndexingType",
+			"(I)Landroid/app/appsearch/AppSearchSchema$StringPropertyConfig$Builder;",
+			arg0
+		);
+	}
+	inline android::app::appsearch::AppSearchSchema_StringPropertyConfig_Builder AppSearchSchema_StringPropertyConfig_Builder::setTokenizerType(jint arg0) const
+	{
+		return callObjectMethod(
+			"setTokenizerType",
+			"(I)Landroid/app/appsearch/AppSearchSchema$StringPropertyConfig$Builder;",
+			arg0
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

@@ -1,29 +1,36 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./WifiAwareSession.def.hpp"
+#include "./AttachCallback.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class WifiAwareSession;
-}
-
-namespace android::net::wifi::aware
-{
-	class AttachCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline AttachCallback::AttachCallback()
+		: JObject(
+			"android.net.wifi.aware.AttachCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void AttachCallback::onAttachFailed() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AttachCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttachCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AttachCallback();
-		
-		// Methods
-		void onAttachFailed() const;
-		void onAttached(android::net::wifi::aware::WifiAwareSession arg0) const;
-	};
+		callMethod<void>(
+			"onAttachFailed",
+			"()V"
+		);
+	}
+	inline void AttachCallback::onAttached(android::net::wifi::aware::WifiAwareSession arg0) const
+	{
+		callMethod<void>(
+			"onAttached",
+			"(Landroid/net/wifi/aware/WifiAwareSession;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 

@@ -1,35 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PlaybackStateEvent.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "./PlaybackStateEvent_Builder.def.hpp"
 
 namespace android::media::metrics
 {
-	class PlaybackStateEvent;
-}
-namespace android::os
-{
-	class Bundle;
-}
-
-namespace android::media::metrics
-{
-	class PlaybackStateEvent_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PlaybackStateEvent_Builder::PlaybackStateEvent_Builder()
+		: JObject(
+			"android.media.metrics.PlaybackStateEvent$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::media::metrics::PlaybackStateEvent PlaybackStateEvent_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlaybackStateEvent_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackStateEvent_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PlaybackStateEvent_Builder();
-		
-		// Methods
-		android::media::metrics::PlaybackStateEvent build() const;
-		android::media::metrics::PlaybackStateEvent_Builder setMetricsBundle(android::os::Bundle arg0) const;
-		android::media::metrics::PlaybackStateEvent_Builder setState(jint arg0) const;
-		android::media::metrics::PlaybackStateEvent_Builder setTimeSinceCreatedMillis(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/metrics/PlaybackStateEvent;"
+		);
+	}
+	inline android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setMetricsBundle(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setMetricsBundle",
+			"(Landroid/os/Bundle;)Landroid/media/metrics/PlaybackStateEvent$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setState(jint arg0) const
+	{
+		return callObjectMethod(
+			"setState",
+			"(I)Landroid/media/metrics/PlaybackStateEvent$Builder;",
+			arg0
+		);
+	}
+	inline android::media::metrics::PlaybackStateEvent_Builder PlaybackStateEvent_Builder::setTimeSinceCreatedMillis(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setTimeSinceCreatedMillis",
+			"(J)Landroid/media/metrics/PlaybackStateEvent$Builder;",
+			arg0
+		);
+	}
 } // namespace android::media::metrics
+
+// Base class headers
 

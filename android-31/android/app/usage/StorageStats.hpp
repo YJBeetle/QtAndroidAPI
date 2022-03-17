@@ -1,33 +1,68 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./StorageStats.def.hpp"
 
 namespace android::app::usage
 {
-	class StorageStats : public JObject
+	// Fields
+	inline JObject StorageStats::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StorageStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StorageStats(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jlong getAppBytes() const;
-		jlong getCacheBytes() const;
-		jlong getDataBytes() const;
-		jlong getExternalCacheBytes() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.usage.StorageStats",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint StorageStats::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jlong StorageStats::getAppBytes() const
+	{
+		return callMethod<jlong>(
+			"getAppBytes",
+			"()J"
+		);
+	}
+	inline jlong StorageStats::getCacheBytes() const
+	{
+		return callMethod<jlong>(
+			"getCacheBytes",
+			"()J"
+		);
+	}
+	inline jlong StorageStats::getDataBytes() const
+	{
+		return callMethod<jlong>(
+			"getDataBytes",
+			"()J"
+		);
+	}
+	inline jlong StorageStats::getExternalCacheBytes() const
+	{
+		return callMethod<jlong>(
+			"getExternalCacheBytes",
+			"()J"
+		);
+	}
+	inline void StorageStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

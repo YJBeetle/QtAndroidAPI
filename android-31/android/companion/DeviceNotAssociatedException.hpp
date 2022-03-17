@@ -1,21 +1,17 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
+#include "./DeviceNotAssociatedException.def.hpp"
 
 namespace android::companion
 {
-	class DeviceNotAssociatedException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DeviceNotAssociatedException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceNotAssociatedException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::companion
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

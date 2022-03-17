@@ -1,31 +1,52 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::math
-{
-	class BigInteger;
-}
+#include "../../math/BigInteger.def.hpp"
+#include "./RSAPublicKeySpec.def.hpp"
 
 namespace java::security::spec
 {
-	class RSAPublicKeySpec : public JObject
+	// Fields
+	
+	// Constructors
+	inline RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
+		: JObject(
+			"java.security.spec.RSAPublicKeySpec",
+			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, JObject arg2)
+		: JObject(
+			"java.security.spec.RSAPublicKeySpec",
+			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline java::math::BigInteger RSAPublicKeySpec::getModulus() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RSAPublicKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RSAPublicKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1);
-		RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, JObject arg2);
-		
-		// Methods
-		java::math::BigInteger getModulus() const;
-		JObject getParams() const;
-		java::math::BigInteger getPublicExponent() const;
-	};
+		return callObjectMethod(
+			"getModulus",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline JObject RSAPublicKeySpec::getParams() const
+	{
+		return callObjectMethod(
+			"getParams",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
+	}
+	inline java::math::BigInteger RSAPublicKeySpec::getPublicExponent() const
+	{
+		return callObjectMethod(
+			"getPublicExponent",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

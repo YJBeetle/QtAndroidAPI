@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../../../java/security/GeneralSecurityException.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./LoginException.def.hpp"
 
 namespace javax::security::auth::login
 {
-	class LoginException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LoginException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		LoginException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		LoginException();
-		LoginException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline LoginException::LoginException()
+		: java::security::GeneralSecurityException(
+			"javax.security.auth.login.LoginException",
+			"()V"
+		) {}
+	inline LoginException::LoginException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"javax.security.auth.login.LoginException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::security::auth::login
+
+// Base class headers
+#include "../../../../java/lang/Exception.hpp"
+#include "../../../../java/security/GeneralSecurityException.hpp"
 

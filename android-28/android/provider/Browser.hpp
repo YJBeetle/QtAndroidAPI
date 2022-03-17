@@ -1,33 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./Browser.def.hpp"
 
 namespace android::provider
 {
-	class Browser : public JObject
+	// Fields
+	inline JString Browser::EXTRA_APPLICATION_ID()
 	{
-	public:
-		// Fields
-		static JString EXTRA_APPLICATION_ID();
-		static JString EXTRA_CREATE_NEW_TAB();
-		static JString EXTRA_HEADERS();
-		static JString INITIAL_ZOOM_LEVEL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Browser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Browser(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Browser();
-		
-		// Methods
-		static void sendString(android::content::Context arg0, JString arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.Browser",
+			"EXTRA_APPLICATION_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Browser::EXTRA_CREATE_NEW_TAB()
+	{
+		return getStaticObjectField(
+			"android.provider.Browser",
+			"EXTRA_CREATE_NEW_TAB",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Browser::EXTRA_HEADERS()
+	{
+		return getStaticObjectField(
+			"android.provider.Browser",
+			"EXTRA_HEADERS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Browser::INITIAL_ZOOM_LEVEL()
+	{
+		return getStaticObjectField(
+			"android.provider.Browser",
+			"INITIAL_ZOOM_LEVEL",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Browser::Browser()
+		: JObject(
+			"android.provider.Browser",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void Browser::sendString(android::content::Context arg0, JString arg1)
+	{
+		callStaticMethod<void>(
+			"android.provider.Browser",
+			"sendString",
+			"(Landroid/content/Context;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

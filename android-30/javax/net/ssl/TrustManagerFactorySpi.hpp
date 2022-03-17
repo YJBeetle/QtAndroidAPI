@@ -1,28 +1,22 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace java::security
-{
-	class KeyStore;
-}
+#include "../../../JArray.hpp"
+#include "../../../java/security/KeyStore.def.hpp"
+#include "./TrustManagerFactorySpi.def.hpp"
 
 namespace javax::net::ssl
 {
-	class TrustManagerFactorySpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TrustManagerFactorySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TrustManagerFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TrustManagerFactorySpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TrustManagerFactorySpi::TrustManagerFactorySpi()
+		: JObject(
+			"javax.net.ssl.TrustManagerFactorySpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::net::ssl
+
+// Base class headers
 

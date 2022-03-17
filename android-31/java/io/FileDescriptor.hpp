@@ -1,27 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./FileDescriptor.def.hpp"
 
 namespace java::io
 {
-	class FileDescriptor : public JObject
+	// Fields
+	inline java::io::FileDescriptor FileDescriptor::err()
 	{
-	public:
-		// Fields
-		static java::io::FileDescriptor err();
-		static java::io::FileDescriptor in();
-		static java::io::FileDescriptor out();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FileDescriptor();
-		
-		// Methods
-		void sync() const;
-		jboolean valid() const;
-	};
+		return getStaticObjectField(
+			"java.io.FileDescriptor",
+			"err",
+			"Ljava/io/FileDescriptor;"
+		);
+	}
+	inline java::io::FileDescriptor FileDescriptor::in()
+	{
+		return getStaticObjectField(
+			"java.io.FileDescriptor",
+			"in",
+			"Ljava/io/FileDescriptor;"
+		);
+	}
+	inline java::io::FileDescriptor FileDescriptor::out()
+	{
+		return getStaticObjectField(
+			"java.io.FileDescriptor",
+			"out",
+			"Ljava/io/FileDescriptor;"
+		);
+	}
+	
+	// Constructors
+	inline FileDescriptor::FileDescriptor()
+		: JObject(
+			"java.io.FileDescriptor",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void FileDescriptor::sync() const
+	{
+		callMethod<void>(
+			"sync",
+			"()V"
+		);
+	}
+	inline jboolean FileDescriptor::valid() const
+	{
+		return callMethod<jboolean>(
+			"valid",
+			"()Z"
+		);
+	}
 } // namespace java::io
+
+// Base class headers
 

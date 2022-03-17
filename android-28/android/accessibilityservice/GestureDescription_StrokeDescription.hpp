@@ -1,33 +1,72 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Path;
-}
+#include "../graphics/Path.def.hpp"
+#include "./GestureDescription_StrokeDescription.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class GestureDescription_StrokeDescription : public JObject
+	// Fields
+	
+	// Constructors
+	inline GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2)
+		: JObject(
+			"android.accessibilityservice.GestureDescription$StrokeDescription",
+			"(Landroid/graphics/Path;JJ)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	inline GestureDescription_StrokeDescription::GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
+		: JObject(
+			"android.accessibilityservice.GestureDescription$StrokeDescription",
+			"(Landroid/graphics/Path;JJZ)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription_StrokeDescription::continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GestureDescription_StrokeDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureDescription_StrokeDescription(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2);
-		GestureDescription_StrokeDescription(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
-		
-		// Methods
-		android::accessibilityservice::GestureDescription_StrokeDescription continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3) const;
-		jlong getDuration() const;
-		android::graphics::Path getPath() const;
-		jlong getStartTime() const;
-		jboolean willContinue() const;
-	};
+		return callObjectMethod(
+			"continueStroke",
+			"(Landroid/graphics/Path;JJZ)Landroid/accessibilityservice/GestureDescription$StrokeDescription;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline jlong GestureDescription_StrokeDescription::getDuration() const
+	{
+		return callMethod<jlong>(
+			"getDuration",
+			"()J"
+		);
+	}
+	inline android::graphics::Path GestureDescription_StrokeDescription::getPath() const
+	{
+		return callObjectMethod(
+			"getPath",
+			"()Landroid/graphics/Path;"
+		);
+	}
+	inline jlong GestureDescription_StrokeDescription::getStartTime() const
+	{
+		return callMethod<jlong>(
+			"getStartTime",
+			"()J"
+		);
+	}
+	inline jboolean GestureDescription_StrokeDescription::willContinue() const
+	{
+		return callMethod<jboolean>(
+			"willContinue",
+			"()Z"
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CarrierMessagingService_SendSmsResult.def.hpp"
 
 namespace android::service::carrier
 {
-	class CarrierMessagingService_SendSmsResult : public JObject
+	// Fields
+	
+	// Constructors
+	inline CarrierMessagingService_SendSmsResult::CarrierMessagingService_SendSmsResult(jint arg0, jint arg1)
+		: JObject(
+			"android.service.carrier.CarrierMessagingService$SendSmsResult",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jint CarrierMessagingService_SendSmsResult::getMessageRef() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CarrierMessagingService_SendSmsResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierMessagingService_SendSmsResult(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CarrierMessagingService_SendSmsResult(jint arg0, jint arg1);
-		
-		// Methods
-		jint getMessageRef() const;
-		jint getSendStatus() const;
-	};
+		return callMethod<jint>(
+			"getMessageRef",
+			"()I"
+		);
+	}
+	inline jint CarrierMessagingService_SendSmsResult::getSendStatus() const
+	{
+		return callMethod<jint>(
+			"getSendStatus",
+			"()I"
+		);
+	}
 } // namespace android::service::carrier
+
+// Base class headers
 

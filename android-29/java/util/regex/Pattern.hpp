@@ -1,65 +1,193 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JIntArray;
-class JArray;
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JString;
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
-namespace java::util::regex
-{
-	class Matcher;
-}
-namespace java::util::regex
-{
-	class PatternSyntaxException;
-}
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "../../lang/StringBuilder.def.hpp"
+#include "./Matcher.def.hpp"
+#include "./PatternSyntaxException.def.hpp"
+#include "./Pattern.def.hpp"
 
 namespace java::util::regex
 {
-	class Pattern : public JObject
+	// Fields
+	inline jint Pattern::CANON_EQ()
 	{
-	public:
-		// Fields
-		static jint CANON_EQ();
-		static jint CASE_INSENSITIVE();
-		static jint COMMENTS();
-		static jint DOTALL();
-		static jint LITERAL();
-		static jint MULTILINE();
-		static jint UNICODE_CASE();
-		static jint UNICODE_CHARACTER_CLASS();
-		static jint UNIX_LINES();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Pattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Pattern(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::util::regex::Pattern compile(JString arg0);
-		static java::util::regex::Pattern compile(JString arg0, jint arg1);
-		static jboolean matches(JString arg0, JString arg1);
-		static JString quote(JString arg0);
-		JObject asMatchPredicate() const;
-		JObject asPredicate() const;
-		jint flags() const;
-		java::util::regex::Matcher matcher(JString arg0) const;
-		JString pattern() const;
-		JArray split(JString arg0) const;
-		JArray split(JString arg0, jint arg1) const;
-		JObject splitAsStream(JString arg0) const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"CANON_EQ"
+		);
+	}
+	inline jint Pattern::CASE_INSENSITIVE()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"CASE_INSENSITIVE"
+		);
+	}
+	inline jint Pattern::COMMENTS()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"COMMENTS"
+		);
+	}
+	inline jint Pattern::DOTALL()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"DOTALL"
+		);
+	}
+	inline jint Pattern::LITERAL()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"LITERAL"
+		);
+	}
+	inline jint Pattern::MULTILINE()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"MULTILINE"
+		);
+	}
+	inline jint Pattern::UNICODE_CASE()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"UNICODE_CASE"
+		);
+	}
+	inline jint Pattern::UNICODE_CHARACTER_CLASS()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"UNICODE_CHARACTER_CLASS"
+		);
+	}
+	inline jint Pattern::UNIX_LINES()
+	{
+		return getStaticField<jint>(
+			"java.util.regex.Pattern",
+			"UNIX_LINES"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::regex::Pattern Pattern::compile(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.regex.Pattern",
+			"compile",
+			"(Ljava/lang/String;)Ljava/util/regex/Pattern;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::util::regex::Pattern Pattern::compile(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.regex.Pattern",
+			"compile",
+			"(Ljava/lang/String;I)Ljava/util/regex/Pattern;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline jboolean Pattern::matches(JString arg0, JString arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"java.util.regex.Pattern",
+			"matches",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;)Z",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JString Pattern::quote(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.regex.Pattern",
+			"quote",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject Pattern::asMatchPredicate() const
+	{
+		return callObjectMethod(
+			"asMatchPredicate",
+			"()Ljava/util/function/Predicate;"
+		);
+	}
+	inline JObject Pattern::asPredicate() const
+	{
+		return callObjectMethod(
+			"asPredicate",
+			"()Ljava/util/function/Predicate;"
+		);
+	}
+	inline jint Pattern::flags() const
+	{
+		return callMethod<jint>(
+			"flags",
+			"()I"
+		);
+	}
+	inline java::util::regex::Matcher Pattern::matcher(JString arg0) const
+	{
+		return callObjectMethod(
+			"matcher",
+			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString Pattern::pattern() const
+	{
+		return callObjectMethod(
+			"pattern",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JArray Pattern::split(JString arg0) const
+	{
+		return callObjectMethod(
+			"split",
+			"(Ljava/lang/CharSequence;)[Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Pattern::split(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"split",
+			"(Ljava/lang/CharSequence;I)[Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline JObject Pattern::splitAsStream(JString arg0) const
+	{
+		return callObjectMethod(
+			"splitAsStream",
+			"(Ljava/lang/CharSequence;)Ljava/util/stream/Stream;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString Pattern::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::regex
+
+// Base class headers
 

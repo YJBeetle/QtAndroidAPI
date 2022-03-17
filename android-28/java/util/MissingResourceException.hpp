@@ -1,27 +1,41 @@
 #pragma once
 
-#include "../lang/RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./MissingResourceException.def.hpp"
 
 namespace java::util
 {
-	class MissingResourceException : public java::lang::RuntimeException
+	// Fields
+	
+	// Constructors
+	inline MissingResourceException::MissingResourceException(JString arg0, JString arg1, JString arg2)
+		: java::lang::RuntimeException(
+			"java.util.MissingResourceException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString MissingResourceException::getClassName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MissingResourceException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		MissingResourceException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		MissingResourceException(JString arg0, JString arg1, JString arg2);
-		
-		// Methods
-		JString getClassName() const;
-		JString getKey() const;
-	};
+		return callObjectMethod(
+			"getClassName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MissingResourceException::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
 

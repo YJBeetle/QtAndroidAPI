@@ -1,27 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./GetByDocumentIdRequest.def.hpp"
 
 namespace android::app::appsearch
 {
-	class GetByDocumentIdRequest : public JObject
+	// Fields
+	inline JString GetByDocumentIdRequest::PROJECTION_SCHEMA_TYPE_WILDCARD()
 	{
-	public:
-		// Fields
-		static JString PROJECTION_SCHEMA_TYPE_WILDCARD();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GetByDocumentIdRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetByDocumentIdRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getIds() const;
-		JString getNamespace() const;
-		JObject getProjections() const;
-	};
+		return getStaticObjectField(
+			"android.app.appsearch.GetByDocumentIdRequest",
+			"PROJECTION_SCHEMA_TYPE_WILDCARD",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject GetByDocumentIdRequest::getIds() const
+	{
+		return callObjectMethod(
+			"getIds",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JString GetByDocumentIdRequest::getNamespace() const
+	{
+		return callObjectMethod(
+			"getNamespace",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject GetByDocumentIdRequest::getProjections() const
+	{
+		return callObjectMethod(
+			"getProjections",
+			"()Ljava/util/Map;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

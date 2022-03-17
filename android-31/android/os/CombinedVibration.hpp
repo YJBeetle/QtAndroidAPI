@@ -1,34 +1,49 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CombinedVibration_ParallelCombination.def.hpp"
+#include "./VibrationEffect.def.hpp"
+#include "./CombinedVibration.def.hpp"
 
 namespace android::os
 {
-	class CombinedVibration_ParallelCombination;
-}
-namespace android::os
-{
-	class VibrationEffect;
-}
-
-namespace android::os
-{
-	class CombinedVibration : public JObject
+	// Fields
+	inline JObject CombinedVibration::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CombinedVibration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CombinedVibration(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::os::CombinedVibration createParallel(android::os::VibrationEffect arg0);
-		static android::os::CombinedVibration_ParallelCombination startParallel();
-		jint describeContents() const;
-	};
+		return getStaticObjectField(
+			"android.os.CombinedVibration",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::CombinedVibration CombinedVibration::createParallel(android::os::VibrationEffect arg0)
+	{
+		return callStaticObjectMethod(
+			"android.os.CombinedVibration",
+			"createParallel",
+			"(Landroid/os/VibrationEffect;)Landroid/os/CombinedVibration;",
+			arg0.object()
+		);
+	}
+	inline android::os::CombinedVibration_ParallelCombination CombinedVibration::startParallel()
+	{
+		return callStaticObjectMethod(
+			"android.os.CombinedVibration",
+			"startParallel",
+			"()Landroid/os/CombinedVibration$ParallelCombination;"
+		);
+	}
+	inline jint CombinedVibration::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

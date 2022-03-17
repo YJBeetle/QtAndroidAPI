@@ -1,36 +1,77 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
-namespace java::util
-{
-	class HashMap;
-}
+#include "../../JString.hpp"
+#include "../../java/util/HashMap.def.hpp"
+#include "./DrmEvent.def.hpp"
 
 namespace android::drm
 {
-	class DrmEvent : public JObject
+	// Fields
+	inline JString DrmEvent::DRM_INFO_OBJECT()
 	{
-	public:
-		// Fields
-		static JString DRM_INFO_OBJECT();
-		static JString DRM_INFO_STATUS_OBJECT();
-		static jint TYPE_ALL_RIGHTS_REMOVED();
-		static jint TYPE_DRM_INFO_PROCESSED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmEvent(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getAttribute(JString arg0) const;
-		JString getMessage() const;
-		jint getType() const;
-		jint getUniqueId() const;
-	};
+		return getStaticObjectField(
+			"android.drm.DrmEvent",
+			"DRM_INFO_OBJECT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString DrmEvent::DRM_INFO_STATUS_OBJECT()
+	{
+		return getStaticObjectField(
+			"android.drm.DrmEvent",
+			"DRM_INFO_STATUS_OBJECT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint DrmEvent::TYPE_ALL_RIGHTS_REMOVED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmEvent",
+			"TYPE_ALL_RIGHTS_REMOVED"
+		);
+	}
+	inline jint DrmEvent::TYPE_DRM_INFO_PROCESSED()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmEvent",
+			"TYPE_DRM_INFO_PROCESSED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject DrmEvent::getAttribute(JString arg0) const
+	{
+		return callObjectMethod(
+			"getAttribute",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString DrmEvent::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint DrmEvent::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jint DrmEvent::getUniqueId() const
+	{
+		return callMethod<jint>(
+			"getUniqueId",
+			"()I"
+		);
+	}
 } // namespace android::drm
+
+// Base class headers
 

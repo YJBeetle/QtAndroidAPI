@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../io/IOException.hpp"
+#include "./FileLockInterruptionException.def.hpp"
 
 namespace java::nio::channels
 {
-	class FileLockInterruptionException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileLockInterruptionException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		FileLockInterruptionException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		FileLockInterruptionException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline FileLockInterruptionException::FileLockInterruptionException()
+		: java::io::IOException(
+			"java.nio.channels.FileLockInterruptionException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 

@@ -1,37 +1,90 @@
 #pragma once
 
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
+#include "../../../io/ObjectInputStream.def.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
+#include "./DoubleAccumulator.def.hpp"
 
 namespace java::util::concurrent::atomic
 {
-	class DoubleAccumulator : public JObject
+	// Fields
+	
+	// Constructors
+	inline DoubleAccumulator::DoubleAccumulator(JObject arg0, jdouble arg1)
+		: JObject(
+			"java.util.concurrent.atomic.DoubleAccumulator",
+			"(Ljava/util/function/DoubleBinaryOperator;D)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void DoubleAccumulator::accumulate(jdouble arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DoubleAccumulator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DoubleAccumulator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DoubleAccumulator(JObject arg0, jdouble arg1);
-		
-		// Methods
-		void accumulate(jdouble arg0) const;
-		jdouble doubleValue() const;
-		jfloat floatValue() const;
-		jdouble get() const;
-		jdouble getThenReset() const;
-		jint intValue() const;
-		jlong longValue() const;
-		void reset() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"accumulate",
+			"(D)V",
+			arg0
+		);
+	}
+	inline jdouble DoubleAccumulator::doubleValue() const
+	{
+		return callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	inline jfloat DoubleAccumulator::floatValue() const
+	{
+		return callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
+	inline jdouble DoubleAccumulator::get() const
+	{
+		return callMethod<jdouble>(
+			"get",
+			"()D"
+		);
+	}
+	inline jdouble DoubleAccumulator::getThenReset() const
+	{
+		return callMethod<jdouble>(
+			"getThenReset",
+			"()D"
+		);
+	}
+	inline jint DoubleAccumulator::intValue() const
+	{
+		return callMethod<jint>(
+			"intValue",
+			"()I"
+		);
+	}
+	inline jlong DoubleAccumulator::longValue() const
+	{
+		return callMethod<jlong>(
+			"longValue",
+			"()J"
+		);
+	}
+	inline void DoubleAccumulator::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline JString DoubleAccumulator::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::concurrent::atomic
+
+// Base class headers
+#include "../../../lang/Number.hpp"
 

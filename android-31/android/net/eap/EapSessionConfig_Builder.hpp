@@ -1,40 +1,86 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::net::eap
-{
-	class EapSessionConfig;
-}
-class JString;
-namespace java::security::cert
-{
-	class X509Certificate;
-}
+#include "../../../JByteArray.hpp"
+#include "./EapSessionConfig.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/security/cert/X509Certificate.def.hpp"
+#include "./EapSessionConfig_Builder.def.hpp"
 
 namespace android::net::eap
 {
-	class EapSessionConfig_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline EapSessionConfig_Builder::EapSessionConfig_Builder()
+		: JObject(
+			"android.net.eap.EapSessionConfig$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::eap::EapSessionConfig EapSessionConfig_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EapSessionConfig_Builder();
-		
-		// Methods
-		android::net::eap::EapSessionConfig build() const;
-		android::net::eap::EapSessionConfig_Builder setEapAkaConfig(jint arg0, jint arg1) const;
-		android::net::eap::EapSessionConfig_Builder setEapAkaPrimeConfig(jint arg0, jint arg1, JString arg2, jboolean arg3) const;
-		android::net::eap::EapSessionConfig_Builder setEapIdentity(JByteArray arg0) const;
-		android::net::eap::EapSessionConfig_Builder setEapMsChapV2Config(JString arg0, JString arg1) const;
-		android::net::eap::EapSessionConfig_Builder setEapSimConfig(jint arg0, jint arg1) const;
-		android::net::eap::EapSessionConfig_Builder setEapTtlsConfig(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/net/eap/EapSessionConfig;"
+		);
+	}
+	inline android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapAkaConfig(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setEapAkaConfig",
+			"(II)Landroid/net/eap/EapSessionConfig$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapAkaPrimeConfig(jint arg0, jint arg1, JString arg2, jboolean arg3) const
+	{
+		return callObjectMethod(
+			"setEapAkaPrimeConfig",
+			"(IILjava/lang/String;Z)Landroid/net/eap/EapSessionConfig$Builder;",
+			arg0,
+			arg1,
+			arg2.object<jstring>(),
+			arg3
+		);
+	}
+	inline android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapIdentity(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"setEapIdentity",
+			"([B)Landroid/net/eap/EapSessionConfig$Builder;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapMsChapV2Config(JString arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"setEapMsChapV2Config",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/eap/EapSessionConfig$Builder;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapSimConfig(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setEapSimConfig",
+			"(II)Landroid/net/eap/EapSessionConfig$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapTtlsConfig(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1) const
+	{
+		return callObjectMethod(
+			"setEapTtlsConfig",
+			"(Ljava/security/cert/X509Certificate;Landroid/net/eap/EapSessionConfig;)Landroid/net/eap/EapSessionConfig$Builder;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::net::eap
+
+// Base class headers
 

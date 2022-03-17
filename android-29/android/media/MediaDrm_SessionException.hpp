@@ -1,27 +1,46 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaDrm_SessionException.def.hpp"
 
 namespace android::media
 {
-	class MediaDrm_SessionException : public java::lang::RuntimeException
+	// Fields
+	inline jint MediaDrm_SessionException::ERROR_RESOURCE_CONTENTION()
 	{
-	public:
-		// Fields
-		static jint ERROR_RESOURCE_CONTENTION();
-		static jint ERROR_UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_SessionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_SessionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		MediaDrm_SessionException(jint arg0, JString arg1);
-		
-		// Methods
-		jint getErrorCode() const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaDrm$SessionException",
+			"ERROR_RESOURCE_CONTENTION"
+		);
+	}
+	inline jint MediaDrm_SessionException::ERROR_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaDrm$SessionException",
+			"ERROR_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline MediaDrm_SessionException::MediaDrm_SessionException(jint arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"android.media.MediaDrm$SessionException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint MediaDrm_SessionException::getErrorCode() const
+	{
+		return callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

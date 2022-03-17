@@ -1,27 +1,24 @@
 #pragma once
 
-#include "./PathEffect.hpp"
+#include "./PathEffect.def.hpp"
+#include "./ComposePathEffect.def.hpp"
 
 namespace android::graphics
 {
-	class PathEffect;
-}
-
-namespace android::graphics
-{
-	class ComposePathEffect : public android::graphics::PathEffect
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ComposePathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		ComposePathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-		
-		// Constructors
-		ComposePathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ComposePathEffect::ComposePathEffect(android::graphics::PathEffect arg0, android::graphics::PathEffect arg1)
+		: android::graphics::PathEffect(
+			"android.graphics.ComposePathEffect",
+			"(Landroid/graphics/PathEffect;Landroid/graphics/PathEffect;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./PathEffect.hpp"
 

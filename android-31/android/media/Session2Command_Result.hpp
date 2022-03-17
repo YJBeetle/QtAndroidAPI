@@ -1,32 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
+#include "../os/Bundle.def.hpp"
+#include "./Session2Command_Result.def.hpp"
 
 namespace android::media
 {
-	class Session2Command_Result : public JObject
+	// Fields
+	inline jint Session2Command_Result::RESULT_ERROR_UNKNOWN_ERROR()
 	{
-	public:
-		// Fields
-		static jint RESULT_ERROR_UNKNOWN_ERROR();
-		static jint RESULT_INFO_SKIPPED();
-		static jint RESULT_SUCCESS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Session2Command_Result(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Session2Command_Result(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Session2Command_Result(jint arg0, android::os::Bundle arg1);
-		
-		// Methods
-		jint getResultCode() const;
-		android::os::Bundle getResultData() const;
-	};
+		return getStaticField<jint>(
+			"android.media.Session2Command$Result",
+			"RESULT_ERROR_UNKNOWN_ERROR"
+		);
+	}
+	inline jint Session2Command_Result::RESULT_INFO_SKIPPED()
+	{
+		return getStaticField<jint>(
+			"android.media.Session2Command$Result",
+			"RESULT_INFO_SKIPPED"
+		);
+	}
+	inline jint Session2Command_Result::RESULT_SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.media.Session2Command$Result",
+			"RESULT_SUCCESS"
+		);
+	}
+	
+	// Constructors
+	inline Session2Command_Result::Session2Command_Result(jint arg0, android::os::Bundle arg1)
+		: JObject(
+			"android.media.Session2Command$Result",
+			"(ILandroid/os/Bundle;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jint Session2Command_Result::getResultCode() const
+	{
+		return callMethod<jint>(
+			"getResultCode",
+			"()I"
+		);
+	}
+	inline android::os::Bundle Session2Command_Result::getResultData() const
+	{
+		return callObjectMethod(
+			"getResultData",
+			"()Landroid/os/Bundle;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

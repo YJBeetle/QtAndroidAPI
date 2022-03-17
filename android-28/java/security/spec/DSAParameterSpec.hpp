@@ -1,30 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::math
-{
-	class BigInteger;
-}
+#include "../../math/BigInteger.def.hpp"
+#include "./DSAParameterSpec.def.hpp"
 
 namespace java::security::spec
 {
-	class DSAParameterSpec : public JObject
+	// Fields
+	
+	// Constructors
+	inline DSAParameterSpec::DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
+		: JObject(
+			"java.security.spec.DSAParameterSpec",
+			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline java::math::BigInteger DSAParameterSpec::getG() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DSAParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DSAParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
-		
-		// Methods
-		java::math::BigInteger getG() const;
-		java::math::BigInteger getP() const;
-		java::math::BigInteger getQ() const;
-	};
+		return callObjectMethod(
+			"getG",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger DSAParameterSpec::getP() const
+	{
+		return callObjectMethod(
+			"getP",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger DSAParameterSpec::getQ() const
+	{
+		return callObjectMethod(
+			"getQ",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

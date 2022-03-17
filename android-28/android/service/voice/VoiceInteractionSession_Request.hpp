@@ -1,33 +1,59 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "./VoiceInteractionSession_Request.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_Request : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void VoiceInteractionSession_Request::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_Request(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		JString getCallingPackage() const;
-		jint getCallingUid() const;
-		android::os::Bundle getExtras() const;
-		jboolean isActive() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline JString VoiceInteractionSession_Request::getCallingPackage() const
+	{
+		return callObjectMethod(
+			"getCallingPackage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint VoiceInteractionSession_Request::getCallingUid() const
+	{
+		return callMethod<jint>(
+			"getCallingUid",
+			"()I"
+		);
+	}
+	inline android::os::Bundle VoiceInteractionSession_Request::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jboolean VoiceInteractionSession_Request::isActive() const
+	{
+		return callMethod<jboolean>(
+			"isActive",
+			"()Z"
+		);
+	}
+	inline JString VoiceInteractionSession_Request::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
 

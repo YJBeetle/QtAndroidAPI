@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./Currency_CurrencyUsage.def.hpp"
 
 namespace android::icu::util
 {
-	class Currency_CurrencyUsage : public java::lang::Enum
+	// Fields
+	inline android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::CASH()
 	{
-	public:
-		// Fields
-		static android::icu::util::Currency_CurrencyUsage CASH();
-		static android::icu::util::Currency_CurrencyUsage STANDARD();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Currency_CurrencyUsage(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Currency_CurrencyUsage(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::Currency_CurrencyUsage valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.util.Currency$CurrencyUsage",
+			"CASH",
+			"Landroid/icu/util/Currency$CurrencyUsage;"
+		);
+	}
+	inline android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::STANDARD()
+	{
+		return getStaticObjectField(
+			"android.icu.util.Currency$CurrencyUsage",
+			"STANDARD",
+			"Landroid/icu/util/Currency$CurrencyUsage;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::Currency_CurrencyUsage Currency_CurrencyUsage::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.Currency$CurrencyUsage",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/util/Currency$CurrencyUsage;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Currency_CurrencyUsage::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.Currency$CurrencyUsage",
+			"values",
+			"()[Landroid/icu/util/Currency$CurrencyUsage;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

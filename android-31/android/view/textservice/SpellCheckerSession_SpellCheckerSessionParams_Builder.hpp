@@ -1,40 +1,62 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view::textservice
-{
-	class SpellCheckerSession_SpellCheckerSessionParams;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../os/Bundle.def.hpp"
+#include "./SpellCheckerSession_SpellCheckerSessionParams.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./SpellCheckerSession_SpellCheckerSessionParams_Builder.def.hpp"
 
 namespace android::view::textservice
 {
-	class SpellCheckerSession_SpellCheckerSessionParams_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline SpellCheckerSession_SpellCheckerSessionParams_Builder::SpellCheckerSession_SpellCheckerSessionParams_Builder()
+		: JObject(
+			"android.view.textservice.SpellCheckerSession$SpellCheckerSessionParams$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams SpellCheckerSession_SpellCheckerSessionParams_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SpellCheckerSession_SpellCheckerSessionParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerSession_SpellCheckerSessionParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SpellCheckerSession_SpellCheckerSessionParams_Builder();
-		
-		// Methods
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams build() const;
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setExtras(android::os::Bundle arg0) const;
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setLocale(java::util::Locale arg0) const;
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setShouldReferToSpellCheckerLanguageSettings(jboolean arg0) const;
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setSupportedAttributes(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams;"
+		);
+	}
+	inline android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setExtras(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setLocale(java::util::Locale arg0) const
+	{
+		return callObjectMethod(
+			"setLocale",
+			"(Ljava/util/Locale;)Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setShouldReferToSpellCheckerLanguageSettings(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setShouldReferToSpellCheckerLanguageSettings",
+			"(Z)Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams$Builder;",
+			arg0
+		);
+	}
+	inline android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder SpellCheckerSession_SpellCheckerSessionParams_Builder::setSupportedAttributes(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSupportedAttributes",
+			"(I)Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams$Builder;",
+			arg0
+		);
+	}
 } // namespace android::view::textservice
+
+// Base class headers
 

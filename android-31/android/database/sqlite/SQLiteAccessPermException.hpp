@@ -1,25 +1,31 @@
 #pragma once
 
-#include "./SQLiteException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SQLiteAccessPermException.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteAccessPermException : public android::database::sqlite::SQLiteException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SQLiteAccessPermException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteAccessPermException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
-		
-		// Constructors
-		SQLiteAccessPermException();
-		SQLiteAccessPermException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLiteAccessPermException::SQLiteAccessPermException()
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteAccessPermException",
+			"()V"
+		) {}
+	inline SQLiteAccessPermException::SQLiteAccessPermException(JString arg0)
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteAccessPermException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::database::sqlite
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
+#include "./SQLiteException.hpp"
 

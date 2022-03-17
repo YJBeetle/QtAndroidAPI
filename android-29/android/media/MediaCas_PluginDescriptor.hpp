@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCas_PluginDescriptor.def.hpp"
 
 namespace android::media
 {
-	class MediaCas_PluginDescriptor : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString MediaCas_PluginDescriptor::getName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCas_PluginDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCas_PluginDescriptor(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getName() const;
-		jint getSystemId() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MediaCas_PluginDescriptor::getSystemId() const
+	{
+		return callMethod<jint>(
+			"getSystemId",
+			"()I"
+		);
+	}
+	inline JString MediaCas_PluginDescriptor::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

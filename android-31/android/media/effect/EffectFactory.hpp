@@ -1,56 +1,250 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Effect.def.hpp"
+#include "../../../JString.hpp"
+#include "./EffectFactory.def.hpp"
 
 namespace android::media::effect
 {
-	class Effect;
-}
-class JString;
-
-namespace android::media::effect
-{
-	class EffectFactory : public JObject
+	// Fields
+	inline JString EffectFactory::EFFECT_AUTOFIX()
 	{
-	public:
-		// Fields
-		static JString EFFECT_AUTOFIX();
-		static JString EFFECT_BACKDROPPER();
-		static JString EFFECT_BITMAPOVERLAY();
-		static JString EFFECT_BLACKWHITE();
-		static JString EFFECT_BRIGHTNESS();
-		static JString EFFECT_CONTRAST();
-		static JString EFFECT_CROP();
-		static JString EFFECT_CROSSPROCESS();
-		static JString EFFECT_DOCUMENTARY();
-		static JString EFFECT_DUOTONE();
-		static JString EFFECT_FILLLIGHT();
-		static JString EFFECT_FISHEYE();
-		static JString EFFECT_FLIP();
-		static JString EFFECT_GRAIN();
-		static JString EFFECT_GRAYSCALE();
-		static JString EFFECT_LOMOISH();
-		static JString EFFECT_NEGATIVE();
-		static JString EFFECT_POSTERIZE();
-		static JString EFFECT_REDEYE();
-		static JString EFFECT_ROTATE();
-		static JString EFFECT_SATURATE();
-		static JString EFFECT_SEPIA();
-		static JString EFFECT_SHARPEN();
-		static JString EFFECT_STRAIGHTEN();
-		static JString EFFECT_TEMPERATURE();
-		static JString EFFECT_TINT();
-		static JString EFFECT_VIGNETTE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EffectFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EffectFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isEffectSupported(JString arg0);
-		android::media::effect::Effect createEffect(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_AUTOFIX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_BACKDROPPER()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_BACKDROPPER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_BITMAPOVERLAY()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_BITMAPOVERLAY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_BLACKWHITE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_BLACKWHITE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_BRIGHTNESS()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_BRIGHTNESS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_CONTRAST()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_CONTRAST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_CROP()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_CROP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_CROSSPROCESS()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_CROSSPROCESS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_DOCUMENTARY()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_DOCUMENTARY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_DUOTONE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_DUOTONE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_FILLLIGHT()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_FILLLIGHT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_FISHEYE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_FISHEYE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_FLIP()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_FLIP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_GRAIN()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_GRAIN",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_GRAYSCALE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_GRAYSCALE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_LOMOISH()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_LOMOISH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_NEGATIVE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_NEGATIVE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_POSTERIZE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_POSTERIZE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_REDEYE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_REDEYE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_ROTATE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_ROTATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_SATURATE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_SATURATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_SEPIA()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_SEPIA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_SHARPEN()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_SHARPEN",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_STRAIGHTEN()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_STRAIGHTEN",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_TEMPERATURE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_TEMPERATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_TINT()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_TINT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString EffectFactory::EFFECT_VIGNETTE()
+	{
+		return getStaticObjectField(
+			"android.media.effect.EffectFactory",
+			"EFFECT_VIGNETTE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EffectFactory::isEffectSupported(JString arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.effect.EffectFactory",
+			"isEffectSupported",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::media::effect::Effect EffectFactory::createEffect(JString arg0) const
+	{
+		return callObjectMethod(
+			"createEffect",
+			"(Ljava/lang/String;)Landroid/media/effect/Effect;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::media::effect
+
+// Base class headers
 

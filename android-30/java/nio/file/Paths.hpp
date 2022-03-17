@@ -1,30 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
-namespace java::net
-{
-	class URI;
-}
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../net/URI.def.hpp"
+#include "./Paths.def.hpp"
 
 namespace java::nio::file
 {
-	class Paths : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject Paths::get(java::net::URI arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Paths(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Paths(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject get(java::net::URI arg0);
-		static JObject get(JString arg0, JArray arg1);
-	};
+		return callStaticObjectMethod(
+			"java.nio.file.Paths",
+			"get",
+			"(Ljava/net/URI;)Ljava/nio/file/Path;",
+			arg0.object()
+		);
+	}
+	inline JObject Paths::get(JString arg0, JArray arg1)
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.Paths",
+			"get",
+			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
 

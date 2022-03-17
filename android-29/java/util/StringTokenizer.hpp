@@ -1,34 +1,82 @@
 #pragma once
 
+#include "../../JIntArray.hpp"
 #include "../../JObject.hpp"
-
-class JIntArray;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./StringTokenizer.def.hpp"
 
 namespace java::util
 {
-	class StringTokenizer : public JObject
+	// Fields
+	
+	// Constructors
+	inline StringTokenizer::StringTokenizer(JString arg0)
+		: JObject(
+			"java.util.StringTokenizer",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline StringTokenizer::StringTokenizer(JString arg0, JString arg1)
+		: JObject(
+			"java.util.StringTokenizer",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	inline StringTokenizer::StringTokenizer(JString arg0, JString arg1, jboolean arg2)
+		: JObject(
+			"java.util.StringTokenizer",
+			"(Ljava/lang/String;Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline jint StringTokenizer::countTokens() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StringTokenizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StringTokenizer(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		StringTokenizer(JString arg0);
-		StringTokenizer(JString arg0, JString arg1);
-		StringTokenizer(JString arg0, JString arg1, jboolean arg2);
-		
-		// Methods
-		jint countTokens() const;
-		jboolean hasMoreElements() const;
-		jboolean hasMoreTokens() const;
-		JObject nextElement() const;
-		JString nextToken() const;
-		JString nextToken(JString arg0) const;
-	};
+		return callMethod<jint>(
+			"countTokens",
+			"()I"
+		);
+	}
+	inline jboolean StringTokenizer::hasMoreElements() const
+	{
+		return callMethod<jboolean>(
+			"hasMoreElements",
+			"()Z"
+		);
+	}
+	inline jboolean StringTokenizer::hasMoreTokens() const
+	{
+		return callMethod<jboolean>(
+			"hasMoreTokens",
+			"()Z"
+		);
+	}
+	inline JObject StringTokenizer::nextElement() const
+	{
+		return callObjectMethod(
+			"nextElement",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString StringTokenizer::nextToken() const
+	{
+		return callObjectMethod(
+			"nextToken",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString StringTokenizer::nextToken(JString arg0) const
+	{
+		return callObjectMethod(
+			"nextToken",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

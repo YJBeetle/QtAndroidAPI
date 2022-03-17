@@ -1,28 +1,26 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ObbInfo.def.hpp"
+#include "../../../JString.hpp"
+#include "./ObbScanner.def.hpp"
 
 namespace android::content::res
 {
-	class ObbInfo;
-}
-class JString;
-
-namespace android::content::res
-{
-	class ObbScanner : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::content::res::ObbInfo ObbScanner::getObbInfo(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ObbScanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ObbScanner(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::content::res::ObbInfo getObbInfo(JString arg0);
-	};
+		return callStaticObjectMethod(
+			"android.content.res.ObbScanner",
+			"getObbInfo",
+			"(Ljava/lang/String;)Landroid/content/res/ObbInfo;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::content::res
+
+// Base class headers
 

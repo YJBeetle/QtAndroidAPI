@@ -1,79 +1,244 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JArray;
-namespace android::app::job
-{
-	class JobWorkItem;
-}
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::net
-{
-	class Network;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::os
-{
-	class PersistableBundle;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "./JobWorkItem.def.hpp"
+#include "../../content/ClipData.def.hpp"
+#include "../../net/Network.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../os/PersistableBundle.def.hpp"
+#include "./JobParameters.def.hpp"
 
 namespace android::app::job
 {
-	class JobParameters : public JObject
+	// Fields
+	inline JObject JobParameters::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint STOP_REASON_APP_STANDBY();
-		static jint STOP_REASON_BACKGROUND_RESTRICTION();
-		static jint STOP_REASON_CANCELLED_BY_APP();
-		static jint STOP_REASON_CONSTRAINT_BATTERY_NOT_LOW();
-		static jint STOP_REASON_CONSTRAINT_CHARGING();
-		static jint STOP_REASON_CONSTRAINT_CONNECTIVITY();
-		static jint STOP_REASON_CONSTRAINT_DEVICE_IDLE();
-		static jint STOP_REASON_CONSTRAINT_STORAGE_NOT_LOW();
-		static jint STOP_REASON_DEVICE_STATE();
-		static jint STOP_REASON_PREEMPT();
-		static jint STOP_REASON_QUOTA();
-		static jint STOP_REASON_SYSTEM_PROCESSING();
-		static jint STOP_REASON_TIMEOUT();
-		static jint STOP_REASON_UNDEFINED();
-		static jint STOP_REASON_USER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JobParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobParameters(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void completeWork(android::app::job::JobWorkItem arg0) const;
-		android::app::job::JobWorkItem dequeueWork() const;
-		jint describeContents() const;
-		android::content::ClipData getClipData() const;
-		jint getClipGrantFlags() const;
-		android::os::PersistableBundle getExtras() const;
-		jint getJobId() const;
-		android::net::Network getNetwork() const;
-		jint getStopReason() const;
-		android::os::Bundle getTransientExtras() const;
-		JArray getTriggeredContentAuthorities() const;
-		JArray getTriggeredContentUris() const;
-		jboolean isExpeditedJob() const;
-		jboolean isOverrideDeadlineExpired() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.job.JobParameters",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_APP_STANDBY()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_APP_STANDBY"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_BACKGROUND_RESTRICTION()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_BACKGROUND_RESTRICTION"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_CANCELLED_BY_APP()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_CANCELLED_BY_APP"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_CONSTRAINT_BATTERY_NOT_LOW()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_CONSTRAINT_BATTERY_NOT_LOW"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_CONSTRAINT_CHARGING()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_CONSTRAINT_CHARGING"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_CONSTRAINT_CONNECTIVITY()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_CONSTRAINT_CONNECTIVITY"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_CONSTRAINT_DEVICE_IDLE()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_CONSTRAINT_DEVICE_IDLE"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_CONSTRAINT_STORAGE_NOT_LOW()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_CONSTRAINT_STORAGE_NOT_LOW"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_DEVICE_STATE()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_DEVICE_STATE"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_PREEMPT()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_PREEMPT"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_QUOTA()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_QUOTA"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_SYSTEM_PROCESSING()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_SYSTEM_PROCESSING"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_TIMEOUT()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_TIMEOUT"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_UNDEFINED()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_UNDEFINED"
+		);
+	}
+	inline jint JobParameters::STOP_REASON_USER()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobParameters",
+			"STOP_REASON_USER"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void JobParameters::completeWork(android::app::job::JobWorkItem arg0) const
+	{
+		callMethod<void>(
+			"completeWork",
+			"(Landroid/app/job/JobWorkItem;)V",
+			arg0.object()
+		);
+	}
+	inline android::app::job::JobWorkItem JobParameters::dequeueWork() const
+	{
+		return callObjectMethod(
+			"dequeueWork",
+			"()Landroid/app/job/JobWorkItem;"
+		);
+	}
+	inline jint JobParameters::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::content::ClipData JobParameters::getClipData() const
+	{
+		return callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline jint JobParameters::getClipGrantFlags() const
+	{
+		return callMethod<jint>(
+			"getClipGrantFlags",
+			"()I"
+		);
+	}
+	inline android::os::PersistableBundle JobParameters::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	inline jint JobParameters::getJobId() const
+	{
+		return callMethod<jint>(
+			"getJobId",
+			"()I"
+		);
+	}
+	inline android::net::Network JobParameters::getNetwork() const
+	{
+		return callObjectMethod(
+			"getNetwork",
+			"()Landroid/net/Network;"
+		);
+	}
+	inline jint JobParameters::getStopReason() const
+	{
+		return callMethod<jint>(
+			"getStopReason",
+			"()I"
+		);
+	}
+	inline android::os::Bundle JobParameters::getTransientExtras() const
+	{
+		return callObjectMethod(
+			"getTransientExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JArray JobParameters::getTriggeredContentAuthorities() const
+	{
+		return callObjectMethod(
+			"getTriggeredContentAuthorities",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray JobParameters::getTriggeredContentUris() const
+	{
+		return callObjectMethod(
+			"getTriggeredContentUris",
+			"()[Landroid/net/Uri;"
+		);
+	}
+	inline jboolean JobParameters::isExpeditedJob() const
+	{
+		return callMethod<jboolean>(
+			"isExpeditedJob",
+			"()Z"
+		);
+	}
+	inline jboolean JobParameters::isOverrideDeadlineExpired() const
+	{
+		return callMethod<jboolean>(
+			"isOverrideDeadlineExpired",
+			"()Z"
+		);
+	}
+	inline void JobParameters::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::job
+
+// Base class headers
 

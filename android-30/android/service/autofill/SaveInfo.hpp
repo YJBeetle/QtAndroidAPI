@@ -1,48 +1,167 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./SaveInfo.def.hpp"
 
 namespace android::service::autofill
 {
-	class SaveInfo : public JObject
+	// Fields
+	inline JObject SaveInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint FLAG_DELAY_SAVE();
-		static jint FLAG_DONT_SAVE_ON_FINISH();
-		static jint FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE();
-		static jint NEGATIVE_BUTTON_STYLE_CANCEL();
-		static jint NEGATIVE_BUTTON_STYLE_NEVER();
-		static jint NEGATIVE_BUTTON_STYLE_REJECT();
-		static jint POSITIVE_BUTTON_STYLE_CONTINUE();
-		static jint POSITIVE_BUTTON_STYLE_SAVE();
-		static jint SAVE_DATA_TYPE_ADDRESS();
-		static jint SAVE_DATA_TYPE_CREDIT_CARD();
-		static jint SAVE_DATA_TYPE_DEBIT_CARD();
-		static jint SAVE_DATA_TYPE_EMAIL_ADDRESS();
-		static jint SAVE_DATA_TYPE_GENERIC();
-		static jint SAVE_DATA_TYPE_GENERIC_CARD();
-		static jint SAVE_DATA_TYPE_PASSWORD();
-		static jint SAVE_DATA_TYPE_PAYMENT_CARD();
-		static jint SAVE_DATA_TYPE_USERNAME();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SaveInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.autofill.SaveInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint SaveInfo::FLAG_DELAY_SAVE()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"FLAG_DELAY_SAVE"
+		);
+	}
+	inline jint SaveInfo::FLAG_DONT_SAVE_ON_FINISH()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"FLAG_DONT_SAVE_ON_FINISH"
+		);
+	}
+	inline jint SaveInfo::FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE"
+		);
+	}
+	inline jint SaveInfo::NEGATIVE_BUTTON_STYLE_CANCEL()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"NEGATIVE_BUTTON_STYLE_CANCEL"
+		);
+	}
+	inline jint SaveInfo::NEGATIVE_BUTTON_STYLE_NEVER()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"NEGATIVE_BUTTON_STYLE_NEVER"
+		);
+	}
+	inline jint SaveInfo::NEGATIVE_BUTTON_STYLE_REJECT()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"NEGATIVE_BUTTON_STYLE_REJECT"
+		);
+	}
+	inline jint SaveInfo::POSITIVE_BUTTON_STYLE_CONTINUE()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"POSITIVE_BUTTON_STYLE_CONTINUE"
+		);
+	}
+	inline jint SaveInfo::POSITIVE_BUTTON_STYLE_SAVE()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"POSITIVE_BUTTON_STYLE_SAVE"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_ADDRESS()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_ADDRESS"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_CREDIT_CARD()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_CREDIT_CARD"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_DEBIT_CARD()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_DEBIT_CARD"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_EMAIL_ADDRESS()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_EMAIL_ADDRESS"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_GENERIC()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_GENERIC"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_GENERIC_CARD()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_GENERIC_CARD"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_PASSWORD()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_PASSWORD"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_PAYMENT_CARD()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_PAYMENT_CARD"
+		);
+	}
+	inline jint SaveInfo::SAVE_DATA_TYPE_USERNAME()
+	{
+		return getStaticField<jint>(
+			"android.service.autofill.SaveInfo",
+			"SAVE_DATA_TYPE_USERNAME"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SaveInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString SaveInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void SaveInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

@@ -1,30 +1,61 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./MediaTimestamp.def.hpp"
 
 namespace android::media
 {
-	class MediaTimestamp : public JObject
+	// Fields
+	inline android::media::MediaTimestamp MediaTimestamp::TIMESTAMP_UNKNOWN()
 	{
-	public:
-		// Fields
-		static android::media::MediaTimestamp TIMESTAMP_UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaTimestamp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaTimestamp(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jlong getAnchorMediaTimeUs() const;
-		jlong getAnchorSytemNanoTime() const;
-		jfloat getMediaClockRate() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.media.MediaTimestamp",
+			"TIMESTAMP_UNKNOWN",
+			"Landroid/media/MediaTimestamp;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MediaTimestamp::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jlong MediaTimestamp::getAnchorMediaTimeUs() const
+	{
+		return callMethod<jlong>(
+			"getAnchorMediaTimeUs",
+			"()J"
+		);
+	}
+	inline jlong MediaTimestamp::getAnchorSytemNanoTime() const
+	{
+		return callMethod<jlong>(
+			"getAnchorSytemNanoTime",
+			"()J"
+		);
+	}
+	inline jfloat MediaTimestamp::getMediaClockRate() const
+	{
+		return callMethod<jfloat>(
+			"getMediaClockRate",
+			"()F"
+		);
+	}
+	inline JString MediaTimestamp::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

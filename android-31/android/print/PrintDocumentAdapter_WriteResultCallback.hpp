@@ -1,27 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./PrintDocumentAdapter_WriteResultCallback.def.hpp"
 
 namespace android::print
 {
-	class PrintDocumentAdapter_WriteResultCallback : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintDocumentAdapter_WriteResultCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocumentAdapter_WriteResultCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void onWriteCancelled() const;
-		void onWriteFailed(JString arg0) const;
-		void onWriteFinished(JArray arg0) const;
-	};
+		callMethod<void>(
+			"onWriteCancelled",
+			"()V"
+		);
+	}
+	inline void PrintDocumentAdapter_WriteResultCallback::onWriteFailed(JString arg0) const
+	{
+		callMethod<void>(
+			"onWriteFailed",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void PrintDocumentAdapter_WriteResultCallback::onWriteFinished(JArray arg0) const
+	{
+		callMethod<void>(
+			"onWriteFinished",
+			"([Landroid/print/PageRange;)V",
+			arg0.object<jarray>()
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

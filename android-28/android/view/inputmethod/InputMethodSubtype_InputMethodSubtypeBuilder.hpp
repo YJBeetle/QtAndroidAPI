@@ -1,39 +1,109 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./InputMethodSubtype.def.hpp"
+#include "../../../JString.hpp"
+#include "./InputMethodSubtype_InputMethodSubtypeBuilder.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InputMethodSubtype;
-}
-class JString;
-
-namespace android::view::inputmethod
-{
-	class InputMethodSubtype_InputMethodSubtypeBuilder : public JObject
+	// Fields
+	
+	// Constructors
+	inline InputMethodSubtype_InputMethodSubtypeBuilder::InputMethodSubtype_InputMethodSubtypeBuilder()
+		: JObject(
+			"android.view.inputmethod.InputMethodSubtype$InputMethodSubtypeBuilder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::view::inputmethod::InputMethodSubtype InputMethodSubtype_InputMethodSubtypeBuilder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InputMethodSubtype_InputMethodSubtypeBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputMethodSubtype_InputMethodSubtypeBuilder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		InputMethodSubtype_InputMethodSubtypeBuilder();
-		
-		// Methods
-		android::view::inputmethod::InputMethodSubtype build() const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAsciiCapable(jboolean arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setIsAuxiliary(jboolean arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setLanguageTag(JString arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setOverridesImplicitlyEnabledSubtype(jboolean arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeExtraValue(JString arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeIconResId(jint arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeId(jint arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeLocale(JString arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeMode(JString arg0) const;
-		android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder setSubtypeNameResId(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/inputmethod/InputMethodSubtype;"
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setIsAsciiCapable(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setIsAsciiCapable",
+			"(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setIsAuxiliary(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setIsAuxiliary",
+			"(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setLanguageTag(JString arg0) const
+	{
+		return callObjectMethod(
+			"setLanguageTag",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setOverridesImplicitlyEnabledSubtype(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setOverridesImplicitlyEnabledSubtype",
+			"(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeExtraValue(JString arg0) const
+	{
+		return callObjectMethod(
+			"setSubtypeExtraValue",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeIconResId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSubtypeIconResId",
+			"(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSubtypeId",
+			"(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeLocale(JString arg0) const
+	{
+		return callObjectMethod(
+			"setSubtypeLocale",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeMode(JString arg0) const
+	{
+		return callObjectMethod(
+			"setSubtypeMode",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype_InputMethodSubtypeBuilder InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeNameResId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSubtypeNameResId",
+			"(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			arg0
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

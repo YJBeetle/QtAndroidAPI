@@ -1,32 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WebMessage.def.hpp"
+#include "./WebMessagePort.def.hpp"
+#include "./WebMessagePort_WebMessageCallback.def.hpp"
 
 namespace android::webkit
 {
-	class WebMessage;
-}
-namespace android::webkit
-{
-	class WebMessagePort;
-}
-
-namespace android::webkit
-{
-	class WebMessagePort_WebMessageCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebMessagePort_WebMessageCallback::WebMessagePort_WebMessageCallback()
+		: JObject(
+			"android.webkit.WebMessagePort$WebMessageCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WebMessagePort_WebMessageCallback::onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebMessagePort_WebMessageCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebMessagePort_WebMessageCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		WebMessagePort_WebMessageCallback();
-		
-		// Methods
-		void onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1) const;
-	};
+		callMethod<void>(
+			"onMessage",
+			"(Landroid/webkit/WebMessagePort;Landroid/webkit/WebMessage;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

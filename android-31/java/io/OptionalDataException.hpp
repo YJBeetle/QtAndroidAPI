@@ -1,23 +1,30 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
+#include "./OptionalDataException.def.hpp"
 
 namespace java::io
 {
-	class OptionalDataException : public java::io::ObjectStreamException
+	// Fields
+	inline jboolean OptionalDataException::eof()
 	{
-	public:
-		// Fields
-		jboolean eof();
-		jint length();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OptionalDataException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		OptionalDataException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getField<jboolean>(
+			"eof"
+		);
+	}
+	inline jint OptionalDataException::length()
+	{
+		return getField<jint>(
+			"length"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

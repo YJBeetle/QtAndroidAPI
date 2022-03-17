@@ -1,41 +1,69 @@
 #pragma once
 
-#include "./Dialog.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::view
-{
-	class Display;
-}
+#include "../content/Context.def.hpp"
+#include "../content/res/Resources.def.hpp"
+#include "../view/Display.def.hpp"
+#include "./Presentation.def.hpp"
 
 namespace android::app
 {
-	class Presentation : public android::app::Dialog
+	// Fields
+	
+	// Constructors
+	inline Presentation::Presentation(android::content::Context arg0, android::view::Display arg1)
+		: android::app::Dialog(
+			"android.app.Presentation",
+			"(Landroid/content/Context;Landroid/view/Display;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline Presentation::Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2)
+		: android::app::Dialog(
+			"android.app.Presentation",
+			"(Landroid/content/Context;Landroid/view/Display;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		) {}
+	
+	// Methods
+	inline android::view::Display Presentation::getDisplay() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Presentation(const char *className, const char *sig, Ts...agv) : android::app::Dialog(className, sig, std::forward<Ts>(agv)...) {}
-		Presentation(QAndroidJniObject obj) : android::app::Dialog(obj) {}
-		
-		// Constructors
-		Presentation(android::content::Context arg0, android::view::Display arg1);
-		Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2);
-		
-		// Methods
-		android::view::Display getDisplay() const;
-		android::content::res::Resources getResources() const;
-		void onDisplayChanged() const;
-		void onDisplayRemoved() const;
-		void show() const;
-	};
+		return callObjectMethod(
+			"getDisplay",
+			"()Landroid/view/Display;"
+		);
+	}
+	inline android::content::res::Resources Presentation::getResources() const
+	{
+		return callObjectMethod(
+			"getResources",
+			"()Landroid/content/res/Resources;"
+		);
+	}
+	inline void Presentation::onDisplayChanged() const
+	{
+		callMethod<void>(
+			"onDisplayChanged",
+			"()V"
+		);
+	}
+	inline void Presentation::onDisplayRemoved() const
+	{
+		callMethod<void>(
+			"onDisplayRemoved",
+			"()V"
+		);
+	}
+	inline void Presentation::show() const
+	{
+		callMethod<void>(
+			"show",
+			"()V"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./Dialog.hpp"
 

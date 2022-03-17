@@ -1,0 +1,36 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+namespace android::media
+{
+	class AudioPlaybackCaptureConfiguration;
+}
+namespace android::media::projection
+{
+	class MediaProjection;
+}
+
+namespace android::media
+{
+	class AudioPlaybackCaptureConfiguration_Builder : public JObject
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit AudioPlaybackCaptureConfiguration_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		AudioPlaybackCaptureConfiguration_Builder(QAndroidJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		AudioPlaybackCaptureConfiguration_Builder(android::media::projection::MediaProjection arg0);
+		
+		// Methods
+		android::media::AudioPlaybackCaptureConfiguration_Builder addMatchingUid(jint arg0) const;
+		android::media::AudioPlaybackCaptureConfiguration_Builder addMatchingUsage(jint arg0) const;
+		android::media::AudioPlaybackCaptureConfiguration build() const;
+		android::media::AudioPlaybackCaptureConfiguration_Builder excludeUid(jint arg0) const;
+		android::media::AudioPlaybackCaptureConfiguration_Builder excludeUsage(jint arg0) const;
+	};
+} // namespace android::media
+

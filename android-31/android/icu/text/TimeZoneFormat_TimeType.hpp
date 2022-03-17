@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./TimeZoneFormat_TimeType.def.hpp"
 
 namespace android::icu::text
 {
-	class TimeZoneFormat_TimeType : public java::lang::Enum
+	// Fields
+	inline android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::DAYLIGHT()
 	{
-	public:
-		// Fields
-		static android::icu::text::TimeZoneFormat_TimeType DAYLIGHT();
-		static android::icu::text::TimeZoneFormat_TimeType STANDARD();
-		static android::icu::text::TimeZoneFormat_TimeType UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZoneFormat_TimeType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneFormat_TimeType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::TimeZoneFormat_TimeType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$TimeType",
+			"DAYLIGHT",
+			"Landroid/icu/text/TimeZoneFormat$TimeType;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::STANDARD()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$TimeType",
+			"STANDARD",
+			"Landroid/icu/text/TimeZoneFormat$TimeType;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::UNKNOWN()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$TimeType",
+			"UNKNOWN",
+			"Landroid/icu/text/TimeZoneFormat$TimeType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::TimeZoneFormat_TimeType TimeZoneFormat_TimeType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$TimeType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$TimeType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TimeZoneFormat_TimeType::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$TimeType",
+			"values",
+			"()[Landroid/icu/text/TimeZoneFormat$TimeType;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

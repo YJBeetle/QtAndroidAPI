@@ -1,37 +1,67 @@
 #pragma once
 
-#include "../../java/io/FilterOutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
-namespace javax::crypto
-{
-	class Cipher;
-}
+#include "../../JByteArray.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "./Cipher.def.hpp"
+#include "./CipherOutputStream.def.hpp"
 
 namespace javax::crypto
 {
-	class CipherOutputStream : public java::io::FilterOutputStream
+	// Fields
+	
+	// Constructors
+	inline CipherOutputStream::CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1)
+		: java::io::FilterOutputStream(
+			"javax.crypto.CipherOutputStream",
+			"(Ljava/io/OutputStream;Ljavax/crypto/Cipher;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void CipherOutputStream::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CipherOutputStream(const char *className, const char *sig, Ts...agv) : java::io::FilterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		CipherOutputStream(QAndroidJniObject obj) : java::io::FilterOutputStream(obj) {}
-		
-		// Constructors
-		CipherOutputStream(java::io::OutputStream arg0, javax::crypto::Cipher arg1);
-		
-		// Methods
-		void close() const;
-		void flush() const;
-		void write(JByteArray arg0) const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void CipherOutputStream::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline void CipherOutputStream::write(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void CipherOutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void CipherOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/io/OutputStream.hpp"
+#include "../../java/io/FilterOutputStream.hpp"
 

@@ -1,42 +1,102 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
+#include "../../../JCharArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JCharArray;
-class JIntArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./Signature.def.hpp"
 
 namespace android::content::pm
 {
-	class Signature : public JObject
+	// Fields
+	inline JObject Signature::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Signature(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Signature(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Signature(JByteArray arg0);
-		Signature(JString arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JByteArray toByteArray() const;
-		JCharArray toChars() const;
-		JCharArray toChars(JCharArray arg0, JIntArray arg1) const;
-		JString toCharsString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.Signature",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline Signature::Signature(JByteArray arg0)
+		: JObject(
+			"android.content.pm.Signature",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	inline Signature::Signature(JString arg0)
+		: JObject(
+			"android.content.pm.Signature",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint Signature::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean Signature::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Signature::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JByteArray Signature::toByteArray() const
+	{
+		return callObjectMethod(
+			"toByteArray",
+			"()[B"
+		);
+	}
+	inline JCharArray Signature::toChars() const
+	{
+		return callObjectMethod(
+			"toChars",
+			"()[C"
+		);
+	}
+	inline JCharArray Signature::toChars(JCharArray arg0, JIntArray arg1) const
+	{
+		return callObjectMethod(
+			"toChars",
+			"([C[I)[C",
+			arg0.object<jcharArray>(),
+			arg1.object<jintArray>()
+		);
+	}
+	inline JString Signature::toCharsString() const
+	{
+		return callObjectMethod(
+			"toCharsString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Signature::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

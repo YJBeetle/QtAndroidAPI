@@ -1,31 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./PrintDocumentInfo.def.hpp"
+#include "../../JString.hpp"
+#include "./PrintDocumentInfo_Builder.def.hpp"
 
 namespace android::print
 {
-	class PrintDocumentInfo;
-}
-class JString;
-
-namespace android::print
-{
-	class PrintDocumentInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PrintDocumentInfo_Builder::PrintDocumentInfo_Builder(JString arg0)
+		: JObject(
+			"android.print.PrintDocumentInfo$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::print::PrintDocumentInfo PrintDocumentInfo_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintDocumentInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintDocumentInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PrintDocumentInfo_Builder(JString arg0);
-		
-		// Methods
-		android::print::PrintDocumentInfo build() const;
-		android::print::PrintDocumentInfo_Builder setContentType(jint arg0) const;
-		android::print::PrintDocumentInfo_Builder setPageCount(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/print/PrintDocumentInfo;"
+		);
+	}
+	inline android::print::PrintDocumentInfo_Builder PrintDocumentInfo_Builder::setContentType(jint arg0) const
+	{
+		return callObjectMethod(
+			"setContentType",
+			"(I)Landroid/print/PrintDocumentInfo$Builder;",
+			arg0
+		);
+	}
+	inline android::print::PrintDocumentInfo_Builder PrintDocumentInfo_Builder::setPageCount(jint arg0) const
+	{
+		return callObjectMethod(
+			"setPageCount",
+			"(I)Landroid/print/PrintDocumentInfo$Builder;",
+			arg0
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

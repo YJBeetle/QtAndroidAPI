@@ -1,25 +1,18 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./Certificate_CertificateRep.def.hpp"
 
 namespace java::security::cert
 {
-	class Certificate_CertificateRep : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Certificate_CertificateRep(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Certificate_CertificateRep(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::security::cert
+
+// Base class headers
 

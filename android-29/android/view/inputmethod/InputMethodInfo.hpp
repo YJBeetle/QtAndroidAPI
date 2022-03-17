@@ -1,77 +1,177 @@
 #pragma once
 
+#include "../../content/ComponentName.def.hpp"
+#include "../../content/Context.def.hpp"
+#include "../../content/pm/PackageManager.def.hpp"
+#include "../../content/pm/ResolveInfo.def.hpp"
+#include "../../content/pm/ServiceInfo.def.hpp"
+#include "../../graphics/drawable/Drawable.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./InputMethodSubtype.def.hpp"
+#include "../../../JString.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content::pm
-{
-	class PackageManager;
-}
-namespace android::content::pm
-{
-	class ResolveInfo;
-}
-namespace android::content::pm
-{
-	class ServiceInfo;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view::inputmethod
-{
-	class InputMethodSubtype;
-}
-class JString;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./InputMethodInfo.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InputMethodInfo : public JObject
+	// Fields
+	inline JObject InputMethodInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InputMethodInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InputMethodInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
-		InputMethodInfo(JString arg0, JString arg1, JString arg2, JString arg3);
-		
-		// Methods
-		jint describeContents() const;
-		void dump(JObject arg0, JString arg1) const;
-		jboolean equals(JObject arg0) const;
-		android::content::ComponentName getComponent() const;
-		JString getId() const;
-		jint getIsDefaultResourceId() const;
-		JString getPackageName() const;
-		android::content::pm::ServiceInfo getServiceInfo() const;
-		JString getServiceName() const;
-		JString getSettingsActivity() const;
-		android::view::inputmethod::InputMethodSubtype getSubtypeAt(jint arg0) const;
-		jint getSubtypeCount() const;
-		jint hashCode() const;
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
-		JString loadLabel(android::content::pm::PackageManager arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.InputMethodInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline InputMethodInfo::InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
+		: JObject(
+			"android.view.inputmethod.InputMethodInfo",
+			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline InputMethodInfo::InputMethodInfo(JString arg0, JString arg1, JString arg2, JString arg3)
+		: JObject(
+			"android.view.inputmethod.InputMethodInfo",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint InputMethodInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void InputMethodInfo::dump(JObject arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jboolean InputMethodInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::content::ComponentName InputMethodInfo::getComponent() const
+	{
+		return callObjectMethod(
+			"getComponent",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	inline JString InputMethodInfo::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint InputMethodInfo::getIsDefaultResourceId() const
+	{
+		return callMethod<jint>(
+			"getIsDefaultResourceId",
+			"()I"
+		);
+	}
+	inline JString InputMethodInfo::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::content::pm::ServiceInfo InputMethodInfo::getServiceInfo() const
+	{
+		return callObjectMethod(
+			"getServiceInfo",
+			"()Landroid/content/pm/ServiceInfo;"
+		);
+	}
+	inline JString InputMethodInfo::getServiceName() const
+	{
+		return callObjectMethod(
+			"getServiceName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString InputMethodInfo::getSettingsActivity() const
+	{
+		return callObjectMethod(
+			"getSettingsActivity",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::view::inputmethod::InputMethodSubtype InputMethodInfo::getSubtypeAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"getSubtypeAt",
+			"(I)Landroid/view/inputmethod/InputMethodSubtype;",
+			arg0
+		);
+	}
+	inline jint InputMethodInfo::getSubtypeCount() const
+	{
+		return callMethod<jint>(
+			"getSubtypeCount",
+			"()I"
+		);
+	}
+	inline jint InputMethodInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline android::graphics::drawable::Drawable InputMethodInfo::loadIcon(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.object()
+		);
+	}
+	inline JString InputMethodInfo::loadLabel(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline JString InputMethodInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void InputMethodInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

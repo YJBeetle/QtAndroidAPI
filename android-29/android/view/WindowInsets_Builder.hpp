@@ -1,43 +1,84 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Insets;
-}
-namespace android::view
-{
-	class DisplayCutout;
-}
-namespace android::view
-{
-	class WindowInsets;
-}
+#include "../graphics/Insets.def.hpp"
+#include "./DisplayCutout.def.hpp"
+#include "./WindowInsets.def.hpp"
+#include "./WindowInsets_Builder.def.hpp"
 
 namespace android::view
 {
-	class WindowInsets_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline WindowInsets_Builder::WindowInsets_Builder()
+		: JObject(
+			"android.view.WindowInsets$Builder",
+			"()V"
+		) {}
+	inline WindowInsets_Builder::WindowInsets_Builder(android::view::WindowInsets arg0)
+		: JObject(
+			"android.view.WindowInsets$Builder",
+			"(Landroid/view/WindowInsets;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::view::WindowInsets WindowInsets_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WindowInsets_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsets_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		WindowInsets_Builder();
-		WindowInsets_Builder(android::view::WindowInsets arg0);
-		
-		// Methods
-		android::view::WindowInsets build() const;
-		android::view::WindowInsets_Builder setDisplayCutout(android::view::DisplayCutout arg0) const;
-		android::view::WindowInsets_Builder setMandatorySystemGestureInsets(android::graphics::Insets arg0) const;
-		android::view::WindowInsets_Builder setStableInsets(android::graphics::Insets arg0) const;
-		android::view::WindowInsets_Builder setSystemGestureInsets(android::graphics::Insets arg0) const;
-		android::view::WindowInsets_Builder setSystemWindowInsets(android::graphics::Insets arg0) const;
-		android::view::WindowInsets_Builder setTappableElementInsets(android::graphics::Insets arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/WindowInsets;"
+		);
+	}
+	inline android::view::WindowInsets_Builder WindowInsets_Builder::setDisplayCutout(android::view::DisplayCutout arg0) const
+	{
+		return callObjectMethod(
+			"setDisplayCutout",
+			"(Landroid/view/DisplayCutout;)Landroid/view/WindowInsets$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::WindowInsets_Builder WindowInsets_Builder::setMandatorySystemGestureInsets(android::graphics::Insets arg0) const
+	{
+		return callObjectMethod(
+			"setMandatorySystemGestureInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::WindowInsets_Builder WindowInsets_Builder::setStableInsets(android::graphics::Insets arg0) const
+	{
+		return callObjectMethod(
+			"setStableInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::WindowInsets_Builder WindowInsets_Builder::setSystemGestureInsets(android::graphics::Insets arg0) const
+	{
+		return callObjectMethod(
+			"setSystemGestureInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::WindowInsets_Builder WindowInsets_Builder::setSystemWindowInsets(android::graphics::Insets arg0) const
+	{
+		return callObjectMethod(
+			"setSystemWindowInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::view::WindowInsets_Builder WindowInsets_Builder::setTappableElementInsets(android::graphics::Insets arg0) const
+	{
+		return callObjectMethod(
+			"setTappableElementInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

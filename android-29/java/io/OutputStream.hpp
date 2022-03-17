@@ -1,30 +1,69 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
+#include "../../JByteArray.hpp"
+#include "./OutputStream.def.hpp"
 
 namespace java::io
 {
-	class OutputStream : public JObject
+	// Fields
+	
+	// Constructors
+	inline OutputStream::OutputStream()
+		: JObject(
+			"java.io.OutputStream",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::io::OutputStream OutputStream::nullOutputStream()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OutputStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OutputStream(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		OutputStream();
-		
-		// Methods
-		static java::io::OutputStream nullOutputStream();
-		void close() const;
-		void flush() const;
-		void write(JByteArray arg0) const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		return callStaticObjectMethod(
+			"java.io.OutputStream",
+			"nullOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
+	}
+	inline void OutputStream::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void OutputStream::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline void OutputStream::write(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void OutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void OutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::io
+
+// Base class headers
 

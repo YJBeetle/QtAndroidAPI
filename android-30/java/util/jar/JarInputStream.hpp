@@ -1,46 +1,69 @@
 #pragma once
 
-#include "../zip/ZipInputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class InputStream;
-}
-class JString;
-namespace java::util::jar
-{
-	class JarEntry;
-}
-namespace java::util::jar
-{
-	class Manifest;
-}
-namespace java::util::zip
-{
-	class ZipEntry;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/InputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "./JarEntry.def.hpp"
+#include "./Manifest.def.hpp"
+#include "../zip/ZipEntry.def.hpp"
+#include "./JarInputStream.def.hpp"
 
 namespace java::util::jar
 {
-	class JarInputStream : public java::util::zip::ZipInputStream
+	// Fields
+	
+	// Constructors
+	inline JarInputStream::JarInputStream(java::io::InputStream arg0)
+		: java::util::zip::ZipInputStream(
+			"java.util.jar.JarInputStream",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		) {}
+	inline JarInputStream::JarInputStream(java::io::InputStream arg0, jboolean arg1)
+		: java::util::zip::ZipInputStream(
+			"java.util.jar.JarInputStream",
+			"(Ljava/io/InputStream;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline java::util::jar::Manifest JarInputStream::getManifest() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JarInputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		JarInputStream(QAndroidJniObject obj) : java::util::zip::ZipInputStream(obj) {}
-		
-		// Constructors
-		JarInputStream(java::io::InputStream arg0);
-		JarInputStream(java::io::InputStream arg0, jboolean arg1);
-		
-		// Methods
-		java::util::jar::Manifest getManifest() const;
-		java::util::zip::ZipEntry getNextEntry() const;
-		java::util::jar::JarEntry getNextJarEntry() const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		return callObjectMethod(
+			"getManifest",
+			"()Ljava/util/jar/Manifest;"
+		);
+	}
+	inline java::util::zip::ZipEntry JarInputStream::getNextEntry() const
+	{
+		return callObjectMethod(
+			"getNextEntry",
+			"()Ljava/util/zip/ZipEntry;"
+		);
+	}
+	inline java::util::jar::JarEntry JarInputStream::getNextJarEntry() const
+	{
+		return callObjectMethod(
+			"getNextJarEntry",
+			"()Ljava/util/jar/JarEntry;"
+		);
+	}
+	inline jint JarInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::jar
+
+// Base class headers
+#include "../../io/InputStream.hpp"
+#include "../../io/FilterInputStream.hpp"
+#include "../zip/InflaterInputStream.hpp"
+#include "../zip/ZipInputStream.hpp"
 

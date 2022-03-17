@@ -1,33 +1,71 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JCharArray;
-class JArray;
-class JString;
-class JString;
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./StringJoiner.def.hpp"
 
 namespace java::util
 {
-	class StringJoiner : public JObject
+	// Fields
+	
+	// Constructors
+	inline StringJoiner::StringJoiner(JString arg0)
+		: JObject(
+			"java.util.StringJoiner",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		) {}
+	inline StringJoiner::StringJoiner(JString arg0, JString arg1, JString arg2)
+		: JObject(
+			"java.util.StringJoiner",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline java::util::StringJoiner StringJoiner::add(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StringJoiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StringJoiner(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		StringJoiner(JString arg0);
-		StringJoiner(JString arg0, JString arg1, JString arg2);
-		
-		// Methods
-		java::util::StringJoiner add(JString arg0) const;
-		jint length() const;
-		java::util::StringJoiner merge(java::util::StringJoiner arg0) const;
-		java::util::StringJoiner setEmptyValue(JString arg0) const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"add",
+			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint StringJoiner::length() const
+	{
+		return callMethod<jint>(
+			"length",
+			"()I"
+		);
+	}
+	inline java::util::StringJoiner StringJoiner::merge(java::util::StringJoiner arg0) const
+	{
+		return callObjectMethod(
+			"merge",
+			"(Ljava/util/StringJoiner;)Ljava/util/StringJoiner;",
+			arg0.object()
+		);
+	}
+	inline java::util::StringJoiner StringJoiner::setEmptyValue(JString arg0) const
+	{
+		return callObjectMethod(
+			"setEmptyValue",
+			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString StringJoiner::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

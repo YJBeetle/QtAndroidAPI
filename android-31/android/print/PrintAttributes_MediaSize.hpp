@@ -1,134 +1,859 @@
 #pragma once
 
+#include "../content/pm/PackageManager.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::content::pm
-{
-	class PackageManager;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./PrintAttributes_MediaSize.def.hpp"
 
 namespace android::print
 {
-	class PrintAttributes_MediaSize : public JObject
+	// Fields
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ANSI_C()
 	{
-	public:
-		// Fields
-		static android::print::PrintAttributes_MediaSize ANSI_C();
-		static android::print::PrintAttributes_MediaSize ANSI_D();
-		static android::print::PrintAttributes_MediaSize ANSI_E();
-		static android::print::PrintAttributes_MediaSize ANSI_F();
-		static android::print::PrintAttributes_MediaSize ISO_A0();
-		static android::print::PrintAttributes_MediaSize ISO_A1();
-		static android::print::PrintAttributes_MediaSize ISO_A10();
-		static android::print::PrintAttributes_MediaSize ISO_A2();
-		static android::print::PrintAttributes_MediaSize ISO_A3();
-		static android::print::PrintAttributes_MediaSize ISO_A4();
-		static android::print::PrintAttributes_MediaSize ISO_A5();
-		static android::print::PrintAttributes_MediaSize ISO_A6();
-		static android::print::PrintAttributes_MediaSize ISO_A7();
-		static android::print::PrintAttributes_MediaSize ISO_A8();
-		static android::print::PrintAttributes_MediaSize ISO_A9();
-		static android::print::PrintAttributes_MediaSize ISO_B0();
-		static android::print::PrintAttributes_MediaSize ISO_B1();
-		static android::print::PrintAttributes_MediaSize ISO_B10();
-		static android::print::PrintAttributes_MediaSize ISO_B2();
-		static android::print::PrintAttributes_MediaSize ISO_B3();
-		static android::print::PrintAttributes_MediaSize ISO_B4();
-		static android::print::PrintAttributes_MediaSize ISO_B5();
-		static android::print::PrintAttributes_MediaSize ISO_B6();
-		static android::print::PrintAttributes_MediaSize ISO_B7();
-		static android::print::PrintAttributes_MediaSize ISO_B8();
-		static android::print::PrintAttributes_MediaSize ISO_B9();
-		static android::print::PrintAttributes_MediaSize ISO_C0();
-		static android::print::PrintAttributes_MediaSize ISO_C1();
-		static android::print::PrintAttributes_MediaSize ISO_C10();
-		static android::print::PrintAttributes_MediaSize ISO_C2();
-		static android::print::PrintAttributes_MediaSize ISO_C3();
-		static android::print::PrintAttributes_MediaSize ISO_C4();
-		static android::print::PrintAttributes_MediaSize ISO_C5();
-		static android::print::PrintAttributes_MediaSize ISO_C6();
-		static android::print::PrintAttributes_MediaSize ISO_C7();
-		static android::print::PrintAttributes_MediaSize ISO_C8();
-		static android::print::PrintAttributes_MediaSize ISO_C9();
-		static android::print::PrintAttributes_MediaSize JIS_B0();
-		static android::print::PrintAttributes_MediaSize JIS_B1();
-		static android::print::PrintAttributes_MediaSize JIS_B10();
-		static android::print::PrintAttributes_MediaSize JIS_B2();
-		static android::print::PrintAttributes_MediaSize JIS_B3();
-		static android::print::PrintAttributes_MediaSize JIS_B4();
-		static android::print::PrintAttributes_MediaSize JIS_B5();
-		static android::print::PrintAttributes_MediaSize JIS_B6();
-		static android::print::PrintAttributes_MediaSize JIS_B7();
-		static android::print::PrintAttributes_MediaSize JIS_B8();
-		static android::print::PrintAttributes_MediaSize JIS_B9();
-		static android::print::PrintAttributes_MediaSize JIS_EXEC();
-		static android::print::PrintAttributes_MediaSize JPN_CHOU2();
-		static android::print::PrintAttributes_MediaSize JPN_CHOU3();
-		static android::print::PrintAttributes_MediaSize JPN_CHOU4();
-		static android::print::PrintAttributes_MediaSize JPN_HAGAKI();
-		static android::print::PrintAttributes_MediaSize JPN_KAHU();
-		static android::print::PrintAttributes_MediaSize JPN_KAKU2();
-		static android::print::PrintAttributes_MediaSize JPN_OE_PHOTO_L();
-		static android::print::PrintAttributes_MediaSize JPN_OUFUKU();
-		static android::print::PrintAttributes_MediaSize JPN_YOU4();
-		static android::print::PrintAttributes_MediaSize NA_ARCH_A();
-		static android::print::PrintAttributes_MediaSize NA_ARCH_B();
-		static android::print::PrintAttributes_MediaSize NA_ARCH_C();
-		static android::print::PrintAttributes_MediaSize NA_ARCH_D();
-		static android::print::PrintAttributes_MediaSize NA_ARCH_E();
-		static android::print::PrintAttributes_MediaSize NA_ARCH_E1();
-		static android::print::PrintAttributes_MediaSize NA_FOOLSCAP();
-		static android::print::PrintAttributes_MediaSize NA_GOVT_LETTER();
-		static android::print::PrintAttributes_MediaSize NA_INDEX_3X5();
-		static android::print::PrintAttributes_MediaSize NA_INDEX_4X6();
-		static android::print::PrintAttributes_MediaSize NA_INDEX_5X8();
-		static android::print::PrintAttributes_MediaSize NA_JUNIOR_LEGAL();
-		static android::print::PrintAttributes_MediaSize NA_LEDGER();
-		static android::print::PrintAttributes_MediaSize NA_LEGAL();
-		static android::print::PrintAttributes_MediaSize NA_LETTER();
-		static android::print::PrintAttributes_MediaSize NA_MONARCH();
-		static android::print::PrintAttributes_MediaSize NA_QUARTO();
-		static android::print::PrintAttributes_MediaSize NA_SUPER_B();
-		static android::print::PrintAttributes_MediaSize NA_TABLOID();
-		static android::print::PrintAttributes_MediaSize OM_DAI_PA_KAI();
-		static android::print::PrintAttributes_MediaSize OM_JUURO_KU_KAI();
-		static android::print::PrintAttributes_MediaSize OM_PA_KAI();
-		static android::print::PrintAttributes_MediaSize PRC_1();
-		static android::print::PrintAttributes_MediaSize PRC_10();
-		static android::print::PrintAttributes_MediaSize PRC_16K();
-		static android::print::PrintAttributes_MediaSize PRC_2();
-		static android::print::PrintAttributes_MediaSize PRC_3();
-		static android::print::PrintAttributes_MediaSize PRC_4();
-		static android::print::PrintAttributes_MediaSize PRC_5();
-		static android::print::PrintAttributes_MediaSize PRC_6();
-		static android::print::PrintAttributes_MediaSize PRC_7();
-		static android::print::PrintAttributes_MediaSize PRC_8();
-		static android::print::PrintAttributes_MediaSize PRC_9();
-		static android::print::PrintAttributes_MediaSize ROC_16K();
-		static android::print::PrintAttributes_MediaSize ROC_8K();
-		static android::print::PrintAttributes_MediaSize UNKNOWN_LANDSCAPE();
-		static android::print::PrintAttributes_MediaSize UNKNOWN_PORTRAIT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintAttributes_MediaSize(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes_MediaSize(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PrintAttributes_MediaSize(JString arg0, JString arg1, jint arg2, jint arg3);
-		
-		// Methods
-		android::print::PrintAttributes_MediaSize asLandscape() const;
-		android::print::PrintAttributes_MediaSize asPortrait() const;
-		jboolean equals(JObject arg0) const;
-		jint getHeightMils() const;
-		JString getId() const;
-		JString getLabel(android::content::pm::PackageManager arg0) const;
-		jint getWidthMils() const;
-		jint hashCode() const;
-		jboolean isPortrait() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ANSI_C",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ANSI_D()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ANSI_D",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ANSI_E()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ANSI_E",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ANSI_F()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ANSI_F",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A0()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A0",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A1()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A1",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A10()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A10",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A3()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A3",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A5()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A5",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A6()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A6",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A7()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A7",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A8()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A8",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_A9()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_A9",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B0()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B0",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B1()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B1",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B10()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B10",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B3()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B3",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B5()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B5",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B6()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B6",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B7()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B7",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B8()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B8",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_B9()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_B9",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C0()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C0",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C1()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C1",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C10()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C10",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C3()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C3",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C5()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C5",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C6()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C6",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C7()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C7",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C8()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C8",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ISO_C9()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ISO_C9",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B0()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B0",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B1()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B1",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B10()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B10",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B3()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B3",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B5()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B5",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B6()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B6",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B7()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B7",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B8()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B8",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_B9()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_B9",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JIS_EXEC()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JIS_EXEC",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_CHOU2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_CHOU2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_CHOU3()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_CHOU3",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_CHOU4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_CHOU4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_HAGAKI()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_HAGAKI",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_KAHU()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_KAHU",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_KAKU2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_KAKU2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_OE_PHOTO_L()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_OE_PHOTO_L",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_OUFUKU()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_OUFUKU",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::JPN_YOU4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"JPN_YOU4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_ARCH_A()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_ARCH_A",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_ARCH_B()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_ARCH_B",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_ARCH_C()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_ARCH_C",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_ARCH_D()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_ARCH_D",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_ARCH_E()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_ARCH_E",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_ARCH_E1()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_ARCH_E1",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_FOOLSCAP()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_FOOLSCAP",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_GOVT_LETTER()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_GOVT_LETTER",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_INDEX_3X5()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_INDEX_3X5",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_INDEX_4X6()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_INDEX_4X6",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_INDEX_5X8()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_INDEX_5X8",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_JUNIOR_LEGAL()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_JUNIOR_LEGAL",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_LEDGER()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_LEDGER",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_LEGAL()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_LEGAL",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_LETTER()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_LETTER",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_MONARCH()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_MONARCH",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_QUARTO()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_QUARTO",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_SUPER_B()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_SUPER_B",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::NA_TABLOID()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"NA_TABLOID",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::OM_DAI_PA_KAI()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"OM_DAI_PA_KAI",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::OM_JUURO_KU_KAI()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"OM_JUURO_KU_KAI",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::OM_PA_KAI()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"OM_PA_KAI",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_1()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_1",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_10()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_10",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_16K()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_16K",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_2()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_2",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_3()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_3",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_4()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_4",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_5()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_5",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_6()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_6",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_7()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_7",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_8()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_8",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::PRC_9()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"PRC_9",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ROC_16K()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ROC_16K",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::ROC_8K()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"ROC_8K",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::UNKNOWN_LANDSCAPE()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"UNKNOWN_LANDSCAPE",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::UNKNOWN_PORTRAIT()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes$MediaSize",
+			"UNKNOWN_PORTRAIT",
+			"Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	
+	// Constructors
+	inline PrintAttributes_MediaSize::PrintAttributes_MediaSize(JString arg0, JString arg1, jint arg2, jint arg3)
+		: JObject(
+			"android.print.PrintAttributes$MediaSize",
+			"(Ljava/lang/String;Ljava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asLandscape() const
+	{
+		return callObjectMethod(
+			"asLandscape",
+			"()Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asPortrait() const
+	{
+		return callObjectMethod(
+			"asPortrait",
+			"()Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline jboolean PrintAttributes_MediaSize::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PrintAttributes_MediaSize::getHeightMils() const
+	{
+		return callMethod<jint>(
+			"getHeightMils",
+			"()I"
+		);
+	}
+	inline JString PrintAttributes_MediaSize::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString PrintAttributes_MediaSize::getLabel(android::content::pm::PackageManager arg0) const
+	{
+		return callObjectMethod(
+			"getLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline jint PrintAttributes_MediaSize::getWidthMils() const
+	{
+		return callMethod<jint>(
+			"getWidthMils",
+			"()I"
+		);
+	}
+	inline jint PrintAttributes_MediaSize::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean PrintAttributes_MediaSize::isPortrait() const
+	{
+		return callMethod<jboolean>(
+			"isPortrait",
+			"()Z"
+		);
+	}
+	inline JString PrintAttributes_MediaSize::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

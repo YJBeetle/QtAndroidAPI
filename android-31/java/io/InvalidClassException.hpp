@@ -1,27 +1,46 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InvalidClassException.def.hpp"
 
 namespace java::io
 {
-	class InvalidClassException : public java::io::ObjectStreamException
+	// Fields
+	inline JString InvalidClassException::classname()
 	{
-	public:
-		// Fields
-		JString classname();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InvalidClassException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidClassException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-		
-		// Constructors
-		InvalidClassException(JString arg0);
-		InvalidClassException(JString arg0, JString arg1);
-		
-		// Methods
-		JString getMessage() const;
-	};
+		return getObjectField(
+			"classname",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline InvalidClassException::InvalidClassException(JString arg0)
+		: java::io::ObjectStreamException(
+			"java.io.InvalidClassException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline InvalidClassException::InvalidClassException(JString arg0, JString arg1)
+		: java::io::ObjectStreamException(
+			"java.io.InvalidClassException",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString InvalidClassException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

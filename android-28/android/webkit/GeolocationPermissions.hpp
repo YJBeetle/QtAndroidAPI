@@ -1,29 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./GeolocationPermissions.def.hpp"
 
 namespace android::webkit
 {
-	class GeolocationPermissions : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::webkit::GeolocationPermissions GeolocationPermissions::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GeolocationPermissions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GeolocationPermissions(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::webkit::GeolocationPermissions getInstance();
-		void allow(JString arg0) const;
-		void clear(JString arg0) const;
-		void clearAll() const;
-		void getAllowed(JString arg0, JObject arg1) const;
-		void getOrigins(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.webkit.GeolocationPermissions",
+			"getInstance",
+			"()Landroid/webkit/GeolocationPermissions;"
+		);
+	}
+	inline void GeolocationPermissions::allow(JString arg0) const
+	{
+		callMethod<void>(
+			"allow",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void GeolocationPermissions::clear(JString arg0) const
+	{
+		callMethod<void>(
+			"clear",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void GeolocationPermissions::clearAll() const
+	{
+		callMethod<void>(
+			"clearAll",
+			"()V"
+		);
+	}
+	inline void GeolocationPermissions::getAllowed(JString arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"getAllowed",
+			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void GeolocationPermissions::getOrigins(JObject arg0) const
+	{
+		callMethod<void>(
+			"getOrigins",
+			"(Landroid/webkit/ValueCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

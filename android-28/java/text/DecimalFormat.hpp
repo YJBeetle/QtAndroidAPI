@@ -1,117 +1,383 @@
 #pragma once
 
-#include "./NumberFormat.hpp"
-
-class JCharArray;
-class JArray;
-class JBooleanArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::lang
-{
-	class Number;
-}
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuffer;
-}
-namespace java::math
-{
-	class BigDecimal;
-}
-namespace java::math
-{
-	class BigInteger;
-}
-namespace java::math
-{
-	class RoundingMode;
-}
-namespace java::text
-{
-	class DecimalFormatSymbols;
-}
-namespace java::text
-{
-	class FieldPosition;
-}
-namespace java::text
-{
-	class Format_Field;
-}
-namespace java::text
-{
-	class ParsePosition;
-}
-namespace java::util
-{
-	class Currency;
-}
+#include "../../JCharArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JBooleanArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../lang/Number.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../lang/StringBuffer.def.hpp"
+#include "../math/BigDecimal.def.hpp"
+#include "../math/BigInteger.def.hpp"
+#include "../math/RoundingMode.def.hpp"
+#include "./DecimalFormatSymbols.def.hpp"
+#include "./FieldPosition.def.hpp"
+#include "./Format_Field.def.hpp"
+#include "./ParsePosition.def.hpp"
+#include "../util/Currency.def.hpp"
+#include "./DecimalFormat.def.hpp"
 
 namespace java::text
 {
-	class DecimalFormat : public java::text::NumberFormat
+	// Fields
+	
+	// Constructors
+	inline DecimalFormat::DecimalFormat()
+		: java::text::NumberFormat(
+			"java.text.DecimalFormat",
+			"()V"
+		) {}
+	inline DecimalFormat::DecimalFormat(JString arg0)
+		: java::text::NumberFormat(
+			"java.text.DecimalFormat",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline DecimalFormat::DecimalFormat(JString arg0, java::text::DecimalFormatSymbols arg1)
+		: java::text::NumberFormat(
+			"java.text.DecimalFormat",
+			"(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void DecimalFormat::applyLocalizedPattern(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DecimalFormat(const char *className, const char *sig, Ts...agv) : java::text::NumberFormat(className, sig, std::forward<Ts>(agv)...) {}
-		DecimalFormat(QAndroidJniObject obj) : java::text::NumberFormat(obj) {}
-		
-		// Constructors
-		DecimalFormat();
-		DecimalFormat(JString arg0);
-		DecimalFormat(JString arg0, java::text::DecimalFormatSymbols arg1);
-		
-		// Methods
-		void applyLocalizedPattern(JString arg0) const;
-		void applyPattern(JString arg0) const;
-		JObject clone() const;
-		jboolean equals(JObject arg0) const;
-		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
-		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
-		JObject formatToCharacterIterator(JObject arg0) const;
-		java::util::Currency getCurrency() const;
-		java::text::DecimalFormatSymbols getDecimalFormatSymbols() const;
-		jint getGroupingSize() const;
-		jint getMaximumFractionDigits() const;
-		jint getMaximumIntegerDigits() const;
-		jint getMinimumFractionDigits() const;
-		jint getMinimumIntegerDigits() const;
-		jint getMultiplier() const;
-		JString getNegativePrefix() const;
-		JString getNegativeSuffix() const;
-		JString getPositivePrefix() const;
-		JString getPositiveSuffix() const;
-		java::math::RoundingMode getRoundingMode() const;
-		jint hashCode() const;
-		jboolean isDecimalSeparatorAlwaysShown() const;
-		jboolean isParseBigDecimal() const;
-		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1) const;
-		void setCurrency(java::util::Currency arg0) const;
-		void setDecimalFormatSymbols(java::text::DecimalFormatSymbols arg0) const;
-		void setDecimalSeparatorAlwaysShown(jboolean arg0) const;
-		void setGroupingSize(jint arg0) const;
-		void setGroupingUsed(jboolean arg0) const;
-		void setMaximumFractionDigits(jint arg0) const;
-		void setMaximumIntegerDigits(jint arg0) const;
-		void setMinimumFractionDigits(jint arg0) const;
-		void setMinimumIntegerDigits(jint arg0) const;
-		void setMultiplier(jint arg0) const;
-		void setNegativePrefix(JString arg0) const;
-		void setNegativeSuffix(JString arg0) const;
-		void setParseBigDecimal(jboolean arg0) const;
-		void setPositivePrefix(JString arg0) const;
-		void setPositiveSuffix(JString arg0) const;
-		void setRoundingMode(java::math::RoundingMode arg0) const;
-		JString toLocalizedPattern() const;
-		JString toPattern() const;
-	};
+		callMethod<void>(
+			"applyLocalizedPattern",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DecimalFormat::applyPattern(JString arg0) const
+	{
+		callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject DecimalFormat::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jboolean DecimalFormat::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(DLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline java::lang::StringBuffer DecimalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0.object<jobject>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(JLjava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JObject DecimalFormat::formatToCharacterIterator(JObject arg0) const
+	{
+		return callObjectMethod(
+			"formatToCharacterIterator",
+			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::util::Currency DecimalFormat::getCurrency() const
+	{
+		return callObjectMethod(
+			"getCurrency",
+			"()Ljava/util/Currency;"
+		);
+	}
+	inline java::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols() const
+	{
+		return callObjectMethod(
+			"getDecimalFormatSymbols",
+			"()Ljava/text/DecimalFormatSymbols;"
+		);
+	}
+	inline jint DecimalFormat::getGroupingSize() const
+	{
+		return callMethod<jint>(
+			"getGroupingSize",
+			"()I"
+		);
+	}
+	inline jint DecimalFormat::getMaximumFractionDigits() const
+	{
+		return callMethod<jint>(
+			"getMaximumFractionDigits",
+			"()I"
+		);
+	}
+	inline jint DecimalFormat::getMaximumIntegerDigits() const
+	{
+		return callMethod<jint>(
+			"getMaximumIntegerDigits",
+			"()I"
+		);
+	}
+	inline jint DecimalFormat::getMinimumFractionDigits() const
+	{
+		return callMethod<jint>(
+			"getMinimumFractionDigits",
+			"()I"
+		);
+	}
+	inline jint DecimalFormat::getMinimumIntegerDigits() const
+	{
+		return callMethod<jint>(
+			"getMinimumIntegerDigits",
+			"()I"
+		);
+	}
+	inline jint DecimalFormat::getMultiplier() const
+	{
+		return callMethod<jint>(
+			"getMultiplier",
+			"()I"
+		);
+	}
+	inline JString DecimalFormat::getNegativePrefix() const
+	{
+		return callObjectMethod(
+			"getNegativePrefix",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DecimalFormat::getNegativeSuffix() const
+	{
+		return callObjectMethod(
+			"getNegativeSuffix",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DecimalFormat::getPositivePrefix() const
+	{
+		return callObjectMethod(
+			"getPositivePrefix",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DecimalFormat::getPositiveSuffix() const
+	{
+		return callObjectMethod(
+			"getPositiveSuffix",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::math::RoundingMode DecimalFormat::getRoundingMode() const
+	{
+		return callObjectMethod(
+			"getRoundingMode",
+			"()Ljava/math/RoundingMode;"
+		);
+	}
+	inline jint DecimalFormat::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean DecimalFormat::isDecimalSeparatorAlwaysShown() const
+	{
+		return callMethod<jboolean>(
+			"isDecimalSeparatorAlwaysShown",
+			"()Z"
+		);
+	}
+	inline jboolean DecimalFormat::isParseBigDecimal() const
+	{
+		return callMethod<jboolean>(
+			"isParseBigDecimal",
+			"()Z"
+		);
+	}
+	inline java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void DecimalFormat::setCurrency(java::util::Currency arg0) const
+	{
+		callMethod<void>(
+			"setCurrency",
+			"(Ljava/util/Currency;)V",
+			arg0.object()
+		);
+	}
+	inline void DecimalFormat::setDecimalFormatSymbols(java::text::DecimalFormatSymbols arg0) const
+	{
+		callMethod<void>(
+			"setDecimalFormatSymbols",
+			"(Ljava/text/DecimalFormatSymbols;)V",
+			arg0.object()
+		);
+	}
+	inline void DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDecimalSeparatorAlwaysShown",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setGroupingSize(jint arg0) const
+	{
+		callMethod<void>(
+			"setGroupingSize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setGroupingUsed(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setGroupingUsed",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setMaximumFractionDigits(jint arg0) const
+	{
+		callMethod<void>(
+			"setMaximumFractionDigits",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setMaximumIntegerDigits(jint arg0) const
+	{
+		callMethod<void>(
+			"setMaximumIntegerDigits",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setMinimumFractionDigits(jint arg0) const
+	{
+		callMethod<void>(
+			"setMinimumFractionDigits",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setMinimumIntegerDigits(jint arg0) const
+	{
+		callMethod<void>(
+			"setMinimumIntegerDigits",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setMultiplier(jint arg0) const
+	{
+		callMethod<void>(
+			"setMultiplier",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setNegativePrefix(JString arg0) const
+	{
+		callMethod<void>(
+			"setNegativePrefix",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DecimalFormat::setNegativeSuffix(JString arg0) const
+	{
+		callMethod<void>(
+			"setNegativeSuffix",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DecimalFormat::setParseBigDecimal(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setParseBigDecimal",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void DecimalFormat::setPositivePrefix(JString arg0) const
+	{
+		callMethod<void>(
+			"setPositivePrefix",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DecimalFormat::setPositiveSuffix(JString arg0) const
+	{
+		callMethod<void>(
+			"setPositiveSuffix",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void DecimalFormat::setRoundingMode(java::math::RoundingMode arg0) const
+	{
+		callMethod<void>(
+			"setRoundingMode",
+			"(Ljava/math/RoundingMode;)V",
+			arg0.object()
+		);
+	}
+	inline JString DecimalFormat::toLocalizedPattern() const
+	{
+		return callObjectMethod(
+			"toLocalizedPattern",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DecimalFormat::toPattern() const
+	{
+		return callObjectMethod(
+			"toPattern",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::text
+
+// Base class headers
+#include "./Format.hpp"
+#include "./NumberFormat.hpp"
 

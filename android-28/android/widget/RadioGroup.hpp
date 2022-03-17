@@ -1,65 +1,133 @@
 #pragma once
 
-#include "./LinearLayout.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace android::view
-{
-	class ViewStructure;
-}
-namespace android::view::autofill
-{
-	class AutofillValue;
-}
-namespace android::widget
-{
-	class LinearLayout_LayoutParams;
-}
-namespace android::widget
-{
-	class RadioGroup_LayoutParams;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../view/View.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "../view/ViewStructure.def.hpp"
+#include "../view/autofill/AutofillValue.def.hpp"
+#include "./LinearLayout_LayoutParams.def.hpp"
+#include "./RadioGroup_LayoutParams.def.hpp"
+#include "../../JString.hpp"
+#include "./RadioGroup.def.hpp"
 
 namespace android::widget
 {
-	class RadioGroup : public android::widget::LinearLayout
+	// Fields
+	
+	// Constructors
+	inline RadioGroup::RadioGroup(android::content::Context arg0)
+		: android::widget::LinearLayout(
+			"android.widget.RadioGroup",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline RadioGroup::RadioGroup(android::content::Context arg0, JObject arg1)
+		: android::widget::LinearLayout(
+			"android.widget.RadioGroup",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void RadioGroup::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RadioGroup(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		RadioGroup(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
-		
-		// Constructors
-		RadioGroup(android::content::Context arg0);
-		RadioGroup(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const;
-		void autofill(android::view::autofill::AutofillValue arg0) const;
-		void check(jint arg0) const;
-		void clearCheck() const;
-		android::widget::RadioGroup_LayoutParams generateLayoutParams(JObject arg0) const;
-		JString getAccessibilityClassName() const;
-		jint getAutofillType() const;
-		android::view::autofill::AutofillValue getAutofillValue() const;
-		jint getCheckedRadioButtonId() const;
-		void onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const;
-		void setOnCheckedChangeListener(JObject arg0) const;
-		void setOnHierarchyChangeListener(JObject arg0) const;
-	};
+		callMethod<void>(
+			"addView",
+			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void RadioGroup::autofill(android::view::autofill::AutofillValue arg0) const
+	{
+		callMethod<void>(
+			"autofill",
+			"(Landroid/view/autofill/AutofillValue;)V",
+			arg0.object()
+		);
+	}
+	inline void RadioGroup::check(jint arg0) const
+	{
+		callMethod<void>(
+			"check",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void RadioGroup::clearCheck() const
+	{
+		callMethod<void>(
+			"clearCheck",
+			"()V"
+		);
+	}
+	inline android::widget::RadioGroup_LayoutParams RadioGroup::generateLayoutParams(JObject arg0) const
+	{
+		return callObjectMethod(
+			"generateLayoutParams",
+			"(Landroid/util/AttributeSet;)Landroid/widget/RadioGroup$LayoutParams;",
+			arg0.object()
+		);
+	}
+	inline JString RadioGroup::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint RadioGroup::getAutofillType() const
+	{
+		return callMethod<jint>(
+			"getAutofillType",
+			"()I"
+		);
+	}
+	inline android::view::autofill::AutofillValue RadioGroup::getAutofillValue() const
+	{
+		return callObjectMethod(
+			"getAutofillValue",
+			"()Landroid/view/autofill/AutofillValue;"
+		);
+	}
+	inline jint RadioGroup::getCheckedRadioButtonId() const
+	{
+		return callMethod<jint>(
+			"getCheckedRadioButtonId",
+			"()I"
+		);
+	}
+	inline void RadioGroup::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onProvideAutofillStructure",
+			"(Landroid/view/ViewStructure;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void RadioGroup::setOnCheckedChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnCheckedChangeListener",
+			"(Landroid/widget/RadioGroup$OnCheckedChangeListener;)V",
+			arg0.object()
+		);
+	}
+	inline void RadioGroup::setOnHierarchyChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnHierarchyChangeListener",
+			"(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "./LinearLayout.hpp"
 

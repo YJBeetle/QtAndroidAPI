@@ -1,29 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./RcsUceAdapter.def.hpp"
+#include "../../../JString.hpp"
+#include "./ImsRcsManager.def.hpp"
 
 namespace android::telephony::ims
 {
-	class RcsUceAdapter;
-}
-class JString;
-
-namespace android::telephony::ims
-{
-	class ImsRcsManager : public JObject
+	// Fields
+	inline JString ImsRcsManager::ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN()
 	{
-	public:
-		// Fields
-		static JString ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ImsRcsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImsRcsManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::telephony::ims::RcsUceAdapter getUceAdapter() const;
-	};
+		return getStaticObjectField(
+			"android.telephony.ims.ImsRcsManager",
+			"ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::telephony::ims::RcsUceAdapter ImsRcsManager::getUceAdapter() const
+	{
+		return callObjectMethod(
+			"getUceAdapter",
+			"()Landroid/telephony/ims/RcsUceAdapter;"
+		);
+	}
 } // namespace android::telephony::ims
+
+// Base class headers
 

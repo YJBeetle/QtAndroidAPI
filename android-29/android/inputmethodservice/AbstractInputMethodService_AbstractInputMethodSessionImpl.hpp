@@ -1,42 +1,83 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AbstractInputMethodService.def.hpp"
+#include "../view/KeyEvent.def.hpp"
+#include "../view/MotionEvent.def.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.def.hpp"
 
 namespace android::inputmethodservice
 {
-	class AbstractInputMethodService;
-}
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
-
-namespace android::inputmethodservice
-{
-	class AbstractInputMethodService_AbstractInputMethodSessionImpl : public JObject
+	// Fields
+	
+	// Constructors
+	inline AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0)
+		: JObject(
+			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodSessionImpl",
+			"(Landroid/inputmethodservice/AbstractInputMethodService;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractInputMethodService_AbstractInputMethodSessionImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractInputMethodService_AbstractInputMethodSessionImpl(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0);
-		
-		// Methods
-		void dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const;
-		void dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2) const;
-		void dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const;
-		jboolean isEnabled() const;
-		jboolean isRevoked() const;
-		void revokeSelf() const;
-		void setEnabled(jboolean arg0) const;
-	};
+		callMethod<void>(
+			"dispatchGenericMotionEvent",
+			"(ILandroid/view/MotionEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"dispatchKeyEvent",
+			"(ILandroid/view/KeyEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"dispatchTrackballEvent",
+			"(ILandroid/view/MotionEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isRevoked() const
+	{
+		return callMethod<jboolean>(
+			"isRevoked",
+			"()Z"
+		);
+	}
+	inline void AbstractInputMethodService_AbstractInputMethodSessionImpl::revokeSelf() const
+	{
+		callMethod<void>(
+			"revokeSelf",
+			"()V"
+		);
+	}
+	inline void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::inputmethodservice
+
+// Base class headers
 

@@ -1,43 +1,103 @@
 #pragma once
 
+#include "./PrintJobId.def.hpp"
+#include "./PrintJobInfo.def.hpp"
 #include "../../JObject.hpp"
+#include "./PrintJob.def.hpp"
 
 namespace android::print
 {
-	class PrintJobId;
-}
-namespace android::print
-{
-	class PrintJobInfo;
-}
-class JObject;
-
-namespace android::print
-{
-	class PrintJob : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void PrintJob::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintJob(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintJob(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		jboolean equals(JObject arg0) const;
-		android::print::PrintJobId getId() const;
-		android::print::PrintJobInfo getInfo() const;
-		jint hashCode() const;
-		jboolean isBlocked() const;
-		jboolean isCancelled() const;
-		jboolean isCompleted() const;
-		jboolean isFailed() const;
-		jboolean isQueued() const;
-		jboolean isStarted() const;
-		void restart() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline jboolean PrintJob::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::print::PrintJobId PrintJob::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Landroid/print/PrintJobId;"
+		);
+	}
+	inline android::print::PrintJobInfo PrintJob::getInfo() const
+	{
+		return callObjectMethod(
+			"getInfo",
+			"()Landroid/print/PrintJobInfo;"
+		);
+	}
+	inline jint PrintJob::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean PrintJob::isBlocked() const
+	{
+		return callMethod<jboolean>(
+			"isBlocked",
+			"()Z"
+		);
+	}
+	inline jboolean PrintJob::isCancelled() const
+	{
+		return callMethod<jboolean>(
+			"isCancelled",
+			"()Z"
+		);
+	}
+	inline jboolean PrintJob::isCompleted() const
+	{
+		return callMethod<jboolean>(
+			"isCompleted",
+			"()Z"
+		);
+	}
+	inline jboolean PrintJob::isFailed() const
+	{
+		return callMethod<jboolean>(
+			"isFailed",
+			"()Z"
+		);
+	}
+	inline jboolean PrintJob::isQueued() const
+	{
+		return callMethod<jboolean>(
+			"isQueued",
+			"()Z"
+		);
+	}
+	inline jboolean PrintJob::isStarted() const
+	{
+		return callMethod<jboolean>(
+			"isStarted",
+			"()Z"
+		);
+	}
+	inline void PrintJob::restart() const
+	{
+		callMethod<void>(
+			"restart",
+			"()V"
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

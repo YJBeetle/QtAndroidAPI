@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./RSRuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./RSInvalidStateException.def.hpp"
 
 namespace android::renderscript
 {
-	class RSInvalidStateException : public android::renderscript::RSRuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RSInvalidStateException(const char *className, const char *sig, Ts...agv) : android::renderscript::RSRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		RSInvalidStateException(QAndroidJniObject obj) : android::renderscript::RSRuntimeException(obj) {}
-		
-		// Constructors
-		RSInvalidStateException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline RSInvalidStateException::RSInvalidStateException(JString arg0)
+		: android::renderscript::RSRuntimeException(
+			"android.renderscript.RSInvalidStateException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "./RSRuntimeException.hpp"
 

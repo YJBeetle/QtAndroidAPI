@@ -1,28 +1,43 @@
 #pragma once
 
-#include "./GeneralSecurityException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./KeyException.def.hpp"
 
 namespace java::security
 {
-	class KeyException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		KeyException();
-		KeyException(JString arg0);
-		KeyException(JThrowable arg0);
-		KeyException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyException::KeyException()
+		: java::security::GeneralSecurityException(
+			"java.security.KeyException",
+			"()V"
+		) {}
+	inline KeyException::KeyException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.KeyException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline KeyException::KeyException(JThrowable arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.KeyException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline KeyException::KeyException(JString arg0, JThrowable arg1)
+		: java::security::GeneralSecurityException(
+			"java.security.KeyException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./GeneralSecurityException.hpp"
 

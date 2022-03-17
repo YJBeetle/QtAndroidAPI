@@ -1,27 +1,36 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./FormatException.def.hpp"
 
 namespace android::nfc
 {
-	class FormatException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		FormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		FormatException();
-		FormatException(JString arg0);
-		FormatException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline FormatException::FormatException()
+		: java::lang::Exception(
+			"android.nfc.FormatException",
+			"()V"
+		) {}
+	inline FormatException::FormatException(JString arg0)
+		: java::lang::Exception(
+			"android.nfc.FormatException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline FormatException::FormatException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"android.nfc.FormatException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::nfc
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

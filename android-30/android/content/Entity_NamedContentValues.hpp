@@ -1,33 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ContentValues.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "./Entity_NamedContentValues.def.hpp"
 
 namespace android::content
 {
-	class ContentValues;
-}
-namespace android::net
-{
-	class Uri;
-}
-
-namespace android::content
-{
-	class Entity_NamedContentValues : public JObject
+	// Fields
+	inline android::net::Uri Entity_NamedContentValues::uri()
 	{
-	public:
-		// Fields
-		android::net::Uri uri();
-		android::content::ContentValues values();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Entity_NamedContentValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Entity_NamedContentValues(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1);
-		
-		// Methods
-	};
+		return getObjectField(
+			"uri",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::content::ContentValues Entity_NamedContentValues::values()
+	{
+		return getObjectField(
+			"values",
+			"Landroid/content/ContentValues;"
+		);
+	}
+	
+	// Constructors
+	inline Entity_NamedContentValues::Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1)
+		: JObject(
+			"android.content.Entity$NamedContentValues",
+			"(Landroid/net/Uri;Landroid/content/ContentValues;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::content
+
+// Base class headers
 

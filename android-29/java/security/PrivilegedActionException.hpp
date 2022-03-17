@@ -1,39 +1,41 @@
 #pragma once
 
-#include "../lang/Exception.hpp"
-
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "./PrivilegedActionException.def.hpp"
 
 namespace java::security
 {
-	class PrivilegedActionException : public java::lang::Exception
+	// Fields
+	
+	// Constructors
+	inline PrivilegedActionException::PrivilegedActionException(java::lang::Exception arg0)
+		: java::lang::Exception(
+			"java.security.PrivilegedActionException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline java::lang::Exception PrivilegedActionException::getException() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrivilegedActionException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		PrivilegedActionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		PrivilegedActionException(java::lang::Exception arg0);
-		
-		// Methods
-		java::lang::Exception getException() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getException",
+			"()Ljava/lang/Exception;"
+		);
+	}
+	inline JString PrivilegedActionException::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
 

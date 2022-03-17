@@ -1,28 +1,42 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./KeyChainException.def.hpp"
 
 namespace android::security
 {
-	class KeyChainException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyChainException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		KeyChainException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		KeyChainException();
-		KeyChainException(JString arg0);
-		KeyChainException(JThrowable arg0);
-		KeyChainException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyChainException::KeyChainException()
+		: java::lang::Exception(
+			"android.security.KeyChainException",
+			"()V"
+		) {}
+	inline KeyChainException::KeyChainException(JString arg0)
+		: java::lang::Exception(
+			"android.security.KeyChainException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline KeyChainException::KeyChainException(JThrowable arg0)
+		: java::lang::Exception(
+			"android.security.KeyChainException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline KeyChainException::KeyChainException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"android.security.KeyChainException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace android::security
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

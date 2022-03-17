@@ -1,24 +1,23 @@
 #pragma once
 
-#include "../lang/Error.hpp"
-
-class JThrowable;
+#include "../../JThrowable.hpp"
+#include "./IOError.def.hpp"
 
 namespace java::io
 {
-	class IOError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IOError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		IOError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-		
-		// Constructors
-		IOError(JThrowable arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IOError::IOError(JThrowable arg0)
+		: java::lang::Error(
+			"java.io.IOError",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Error.hpp"
 

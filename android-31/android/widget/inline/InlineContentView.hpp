@@ -1,36 +1,69 @@
 #pragma once
 
-#include "../../view/ViewGroup.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::view
-{
-	class SurfaceControl;
-}
+#include "../../graphics/Rect.def.hpp"
+#include "../../view/SurfaceControl.def.hpp"
+#include "./InlineContentView.def.hpp"
 
 namespace android::widget::inline_
 {
-	class InlineContentView : public android::view::ViewGroup
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::SurfaceControl InlineContentView::getSurfaceControl() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InlineContentView(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		InlineContentView(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::view::SurfaceControl getSurfaceControl() const;
-		jboolean isZOrderedOnTop() const;
-		void onLayout(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
-		void setClipBounds(android::graphics::Rect arg0) const;
-		void setSurfaceControlCallback(JObject arg0) const;
-		jboolean setZOrderedOnTop(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"getSurfaceControl",
+			"()Landroid/view/SurfaceControl;"
+		);
+	}
+	inline jboolean InlineContentView::isZOrderedOnTop() const
+	{
+		return callMethod<jboolean>(
+			"isZOrderedOnTop",
+			"()Z"
+		);
+	}
+	inline void InlineContentView::onLayout(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
+	{
+		callMethod<void>(
+			"onLayout",
+			"(ZIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	inline void InlineContentView::setClipBounds(android::graphics::Rect arg0) const
+	{
+		callMethod<void>(
+			"setClipBounds",
+			"(Landroid/graphics/Rect;)V",
+			arg0.object()
+		);
+	}
+	inline void InlineContentView::setSurfaceControlCallback(JObject arg0) const
+	{
+		callMethod<void>(
+			"setSurfaceControlCallback",
+			"(Landroid/widget/inline/InlineContentView$SurfaceControlCallback;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean InlineContentView::setZOrderedOnTop(jboolean arg0) const
+	{
+		return callMethod<jboolean>(
+			"setZOrderedOnTop",
+			"(Z)Z",
+			arg0
+		);
+	}
 } // namespace android::widget::inline_
+
+// Base class headers
+#include "../../view/View.hpp"
+#include "../../view/ViewGroup.hpp"
 

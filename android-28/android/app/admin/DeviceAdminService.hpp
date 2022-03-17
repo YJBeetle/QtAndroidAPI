@@ -1,28 +1,32 @@
 #pragma once
 
-#include "../Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
+#include "../../content/Intent.def.hpp"
+#include "./DeviceAdminService.def.hpp"
 
 namespace android::app::admin
 {
-	class DeviceAdminService : public android::app::Service
+	// Fields
+	
+	// Constructors
+	inline DeviceAdminService::DeviceAdminService()
+		: android::app::Service(
+			"android.app.admin.DeviceAdminService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject DeviceAdminService::onBind(android::content::Intent arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DeviceAdminService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceAdminService(QAndroidJniObject obj) : android::app::Service(obj) {}
-		
-		// Constructors
-		DeviceAdminService();
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-	};
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
+#include "../../content/Context.hpp"
+#include "../../content/ContextWrapper.hpp"
+#include "../Service.hpp"
 

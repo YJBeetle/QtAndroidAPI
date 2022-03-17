@@ -1,30 +1,58 @@
 #pragma once
 
-#include "./TransformerException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./TransformerConfigurationException.def.hpp"
 
 namespace javax::xml::transform
 {
-	class TransformerConfigurationException : public javax::xml::transform::TransformerException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransformerConfigurationException(const char *className, const char *sig, Ts...agv) : javax::xml::transform::TransformerException(className, sig, std::forward<Ts>(agv)...) {}
-		TransformerConfigurationException(QAndroidJniObject obj) : javax::xml::transform::TransformerException(obj) {}
-		
-		// Constructors
-		TransformerConfigurationException();
-		TransformerConfigurationException(JString arg0);
-		TransformerConfigurationException(JThrowable arg0);
-		TransformerConfigurationException(JString arg0, JThrowable arg1);
-		TransformerConfigurationException(JString arg0, JObject arg1);
-		TransformerConfigurationException(JString arg0, JObject arg1, JThrowable arg2);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline TransformerConfigurationException::TransformerConfigurationException()
+		: javax::xml::transform::TransformerException(
+			"javax.xml.transform.TransformerConfigurationException",
+			"()V"
+		) {}
+	inline TransformerConfigurationException::TransformerConfigurationException(JString arg0)
+		: javax::xml::transform::TransformerException(
+			"javax.xml.transform.TransformerConfigurationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline TransformerConfigurationException::TransformerConfigurationException(JThrowable arg0)
+		: javax::xml::transform::TransformerException(
+			"javax.xml.transform.TransformerConfigurationException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline TransformerConfigurationException::TransformerConfigurationException(JString arg0, JThrowable arg1)
+		: javax::xml::transform::TransformerException(
+			"javax.xml.transform.TransformerConfigurationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	inline TransformerConfigurationException::TransformerConfigurationException(JString arg0, JObject arg1)
+		: javax::xml::transform::TransformerException(
+			"javax.xml.transform.TransformerConfigurationException",
+			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	inline TransformerConfigurationException::TransformerConfigurationException(JString arg0, JObject arg1, JThrowable arg2)
+		: javax::xml::transform::TransformerException(
+			"javax.xml.transform.TransformerConfigurationException",
+			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace javax::xml::transform
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./TransformerException.hpp"
 

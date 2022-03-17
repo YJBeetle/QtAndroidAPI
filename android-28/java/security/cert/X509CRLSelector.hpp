@@ -1,68 +1,165 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
-namespace java::math
-{
-	class BigInteger;
-}
-namespace java::security::cert
-{
-	class CRL;
-}
-namespace java::security::cert
-{
-	class X509Certificate;
-}
-namespace java::util
-{
-	class Date;
-}
-namespace java::util
-{
-	class HashSet;
-}
-namespace javax::security::auth::x500
-{
-	class X500Principal;
-}
+#include "../../../JString.hpp"
+#include "../../math/BigInteger.def.hpp"
+#include "./CRL.def.hpp"
+#include "./X509Certificate.def.hpp"
+#include "../../util/Date.def.hpp"
+#include "../../util/HashSet.def.hpp"
+#include "../../../javax/security/auth/x500/X500Principal.def.hpp"
+#include "./X509CRLSelector.def.hpp"
 
 namespace java::security::cert
 {
-	class X509CRLSelector : public JObject
+	// Fields
+	
+	// Constructors
+	inline X509CRLSelector::X509CRLSelector()
+		: JObject(
+			"java.security.cert.X509CRLSelector",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void X509CRLSelector::addIssuer(javax::security::auth::x500::X500Principal arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit X509CRLSelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509CRLSelector(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		X509CRLSelector();
-		
-		// Methods
-		void addIssuer(javax::security::auth::x500::X500Principal arg0) const;
-		void addIssuerName(JByteArray arg0) const;
-		void addIssuerName(JString arg0) const;
-		JObject clone() const;
-		java::security::cert::X509Certificate getCertificateChecking() const;
-		java::util::Date getDateAndTime() const;
-		JObject getIssuerNames() const;
-		JObject getIssuers() const;
-		java::math::BigInteger getMaxCRL() const;
-		java::math::BigInteger getMinCRL() const;
-		jboolean match(java::security::cert::CRL arg0) const;
-		void setCertificateChecking(java::security::cert::X509Certificate arg0) const;
-		void setDateAndTime(java::util::Date arg0) const;
-		void setIssuerNames(JObject arg0) const;
-		void setIssuers(JObject arg0) const;
-		void setMaxCRLNumber(java::math::BigInteger arg0) const;
-		void setMinCRLNumber(java::math::BigInteger arg0) const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"addIssuer",
+			"(Ljavax/security/auth/x500/X500Principal;)V",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::addIssuerName(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"addIssuerName",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void X509CRLSelector::addIssuerName(JString arg0) const
+	{
+		callMethod<void>(
+			"addIssuerName",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject X509CRLSelector::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline java::security::cert::X509Certificate X509CRLSelector::getCertificateChecking() const
+	{
+		return callObjectMethod(
+			"getCertificateChecking",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	inline java::util::Date X509CRLSelector::getDateAndTime() const
+	{
+		return callObjectMethod(
+			"getDateAndTime",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline JObject X509CRLSelector::getIssuerNames() const
+	{
+		return callObjectMethod(
+			"getIssuerNames",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JObject X509CRLSelector::getIssuers() const
+	{
+		return callObjectMethod(
+			"getIssuers",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline java::math::BigInteger X509CRLSelector::getMaxCRL() const
+	{
+		return callObjectMethod(
+			"getMaxCRL",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger X509CRLSelector::getMinCRL() const
+	{
+		return callObjectMethod(
+			"getMinCRL",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline jboolean X509CRLSelector::match(java::security::cert::CRL arg0) const
+	{
+		return callMethod<jboolean>(
+			"match",
+			"(Ljava/security/cert/CRL;)Z",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::setCertificateChecking(java::security::cert::X509Certificate arg0) const
+	{
+		callMethod<void>(
+			"setCertificateChecking",
+			"(Ljava/security/cert/X509Certificate;)V",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::setDateAndTime(java::util::Date arg0) const
+	{
+		callMethod<void>(
+			"setDateAndTime",
+			"(Ljava/util/Date;)V",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::setIssuerNames(JObject arg0) const
+	{
+		callMethod<void>(
+			"setIssuerNames",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::setIssuers(JObject arg0) const
+	{
+		callMethod<void>(
+			"setIssuers",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::setMaxCRLNumber(java::math::BigInteger arg0) const
+	{
+		callMethod<void>(
+			"setMaxCRLNumber",
+			"(Ljava/math/BigInteger;)V",
+			arg0.object()
+		);
+	}
+	inline void X509CRLSelector::setMinCRLNumber(java::math::BigInteger arg0) const
+	{
+		callMethod<void>(
+			"setMinCRLNumber",
+			"(Ljava/math/BigInteger;)V",
+			arg0.object()
+		);
+	}
+	inline JString X509CRLSelector::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

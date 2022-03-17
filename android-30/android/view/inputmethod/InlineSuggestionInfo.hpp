@@ -1,48 +1,133 @@
 #pragma once
 
+#include "../../../JArray.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../widget/inline/InlinePresentationSpec.def.hpp"
 #include "../../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::widget::inline_
-{
-	class InlinePresentationSpec;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./InlineSuggestionInfo.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestionInfo : public JObject
+	// Fields
+	inline JObject InlineSuggestionInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static JString SOURCE_AUTOFILL();
-		static JString SOURCE_PLATFORM();
-		static JString TYPE_ACTION();
-		static JString TYPE_SUGGESTION();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InlineSuggestionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InlineSuggestionInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JArray getAutofillHints() const;
-		android::widget::inline_::InlinePresentationSpec getInlinePresentationSpec() const;
-		JString getSource() const;
-		JString getType() const;
-		jint hashCode() const;
-		jboolean isPinned() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline JString InlineSuggestionInfo::SOURCE_AUTOFILL()
+	{
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionInfo",
+			"SOURCE_AUTOFILL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString InlineSuggestionInfo::SOURCE_PLATFORM()
+	{
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionInfo",
+			"SOURCE_PLATFORM",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString InlineSuggestionInfo::TYPE_ACTION()
+	{
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionInfo",
+			"TYPE_ACTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString InlineSuggestionInfo::TYPE_SUGGESTION()
+	{
+		return getStaticObjectField(
+			"android.view.inputmethod.InlineSuggestionInfo",
+			"TYPE_SUGGESTION",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint InlineSuggestionInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean InlineSuggestionInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JArray InlineSuggestionInfo::getAutofillHints() const
+	{
+		return callObjectMethod(
+			"getAutofillHints",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline android::widget::inline_::InlinePresentationSpec InlineSuggestionInfo::getInlinePresentationSpec() const
+	{
+		return callObjectMethod(
+			"getInlinePresentationSpec",
+			"()Landroid/widget/inline/InlinePresentationSpec;"
+		);
+	}
+	inline JString InlineSuggestionInfo::getSource() const
+	{
+		return callObjectMethod(
+			"getSource",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString InlineSuggestionInfo::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint InlineSuggestionInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean InlineSuggestionInfo::isPinned() const
+	{
+		return callMethod<jboolean>(
+			"isPinned",
+			"()Z"
+		);
+	}
+	inline JString InlineSuggestionInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void InlineSuggestionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

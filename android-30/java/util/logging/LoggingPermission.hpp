@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../../security/BasicPermission.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./LoggingPermission.def.hpp"
 
 namespace java::util::logging
 {
-	class LoggingPermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LoggingPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		LoggingPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-		
-		// Constructors
-		LoggingPermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline LoggingPermission::LoggingPermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"java.util.logging.LoggingPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util::logging
+
+// Base class headers
+#include "../../security/Permission.hpp"
+#include "../../security/BasicPermission.hpp"
 

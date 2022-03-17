@@ -1,24 +1,26 @@
 #pragma once
 
-#include "../../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PropertyMapper_PropertyConflictException.def.hpp"
 
 namespace android::view::inspector
 {
-	class PropertyMapper_PropertyConflictException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PropertyMapper_PropertyConflictException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyMapper_PropertyConflictException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		PropertyMapper_PropertyConflictException(JString arg0, JString arg1, JString arg2);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PropertyMapper_PropertyConflictException::PropertyMapper_PropertyConflictException(JString arg0, JString arg1, JString arg2)
+		: java::lang::RuntimeException(
+			"android.view.inspector.PropertyMapper$PropertyConflictException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::view::inspector
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 

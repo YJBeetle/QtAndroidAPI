@@ -1,37 +1,79 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
-namespace java::math
-{
-	class BigInteger;
-}
+#include "../../../JString.hpp"
+#include "../../math/BigInteger.def.hpp"
+#include "./EllipticCurve.def.hpp"
 
 namespace java::security::spec
 {
-	class EllipticCurve : public JObject
+	// Fields
+	
+	// Constructors
+	inline EllipticCurve::EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
+		: JObject(
+			"java.security.spec.EllipticCurve",
+			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	inline EllipticCurve::EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, JByteArray arg3)
+		: JObject(
+			"java.security.spec.EllipticCurve",
+			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline jboolean EllipticCurve::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EllipticCurve(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EllipticCurve(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
-		EllipticCurve(JObject arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, JByteArray arg3);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		java::math::BigInteger getA() const;
-		java::math::BigInteger getB() const;
-		JObject getField() const;
-		JByteArray getSeed() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::math::BigInteger EllipticCurve::getA() const
+	{
+		return callObjectMethod(
+			"getA",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger EllipticCurve::getB() const
+	{
+		return callObjectMethod(
+			"getB",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline JObject EllipticCurve::getField() const
+	{
+		return callObjectMethod(
+			"getField",
+			"()Ljava/security/spec/ECField;"
+		);
+	}
+	inline JByteArray EllipticCurve::getSeed() const
+	{
+		return callObjectMethod(
+			"getSeed",
+			"()[B"
+		);
+	}
+	inline jint EllipticCurve::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

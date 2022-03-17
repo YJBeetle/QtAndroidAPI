@@ -1,29 +1,48 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./CollationKey.def.hpp"
 
 namespace java::text
 {
-	class CollationKey : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint CollationKey::compareTo(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CollationKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CollationKey(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint compareTo(JObject arg0) const;
-		jint compareTo(java::text::CollationKey arg0) const;
-		JString getSourceString() const;
-		JByteArray toByteArray() const;
-	};
+		return callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint CollationKey::compareTo(java::text::CollationKey arg0) const
+	{
+		return callMethod<jint>(
+			"compareTo",
+			"(Ljava/text/CollationKey;)I",
+			arg0.object()
+		);
+	}
+	inline JString CollationKey::getSourceString() const
+	{
+		return callObjectMethod(
+			"getSourceString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JByteArray CollationKey::toByteArray() const
+	{
+		return callObjectMethod(
+			"toByteArray",
+			"()[B"
+		);
+	}
 } // namespace java::text
+
+// Base class headers
 

@@ -1,39 +1,26 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::net::wifi::p2p
-{
-	class WifiP2pManager;
-}
-namespace android::os
-{
-	class Binder;
-}
-namespace android::os
-{
-	class Looper;
-}
+#include "../../../content/Context.def.hpp"
+#include "./WifiP2pManager.def.hpp"
+#include "../../../os/Binder.def.hpp"
+#include "../../../os/Looper.def.hpp"
+#include "./WifiP2pManager_Channel.def.hpp"
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pManager_Channel : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void WifiP2pManager_Channel::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiP2pManager_Channel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pManager_Channel(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 } // namespace android::net::wifi::p2p
+
+// Base class headers
 

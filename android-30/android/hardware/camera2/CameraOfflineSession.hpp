@@ -1,23 +1,28 @@
 #pragma once
 
-#include "./CameraCaptureSession.hpp"
+#include "./CameraOfflineSession.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraOfflineSession : public android::hardware::camera2::CameraCaptureSession
+	// Fields
+	
+	// Constructors
+	inline CameraOfflineSession::CameraOfflineSession()
+		: android::hardware::camera2::CameraCaptureSession(
+			"android.hardware.camera2.CameraOfflineSession",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CameraOfflineSession::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraOfflineSession(const char *className, const char *sig, Ts...agv) : android::hardware::camera2::CameraCaptureSession(className, sig, std::forward<Ts>(agv)...) {}
-		CameraOfflineSession(QAndroidJniObject obj) : android::hardware::camera2::CameraCaptureSession(obj) {}
-		
-		// Constructors
-		CameraOfflineSession();
-		
-		// Methods
-		void close() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
+#include "./CameraCaptureSession.hpp"
 

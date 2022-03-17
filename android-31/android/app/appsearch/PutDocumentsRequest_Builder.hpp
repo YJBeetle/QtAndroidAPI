@@ -1,31 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::app::appsearch
-{
-	class PutDocumentsRequest;
-}
+#include "../../../JArray.hpp"
+#include "./PutDocumentsRequest.def.hpp"
+#include "./PutDocumentsRequest_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class PutDocumentsRequest_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline PutDocumentsRequest_Builder::PutDocumentsRequest_Builder()
+		: JObject(
+			"android.app.appsearch.PutDocumentsRequest$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JArray arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PutDocumentsRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PutDocumentsRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PutDocumentsRequest_Builder();
-		
-		// Methods
-		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JArray arg0) const;
-		android::app::appsearch::PutDocumentsRequest_Builder addGenericDocuments(JObject arg0) const;
-		android::app::appsearch::PutDocumentsRequest build() const;
-	};
+		return callObjectMethod(
+			"addGenericDocuments",
+			"([Landroid/app/appsearch/GenericDocument;)Landroid/app/appsearch/PutDocumentsRequest$Builder;",
+			arg0.object<jarray>()
+		);
+	}
+	inline android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JObject arg0) const
+	{
+		return callObjectMethod(
+			"addGenericDocuments",
+			"(Ljava/util/Collection;)Landroid/app/appsearch/PutDocumentsRequest$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::appsearch::PutDocumentsRequest PutDocumentsRequest_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/PutDocumentsRequest;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

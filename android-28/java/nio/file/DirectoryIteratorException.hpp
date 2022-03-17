@@ -1,33 +1,34 @@
 #pragma once
 
-#include "../../util/ConcurrentModificationException.hpp"
-
-namespace java::io
-{
-	class IOException;
-}
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JThrowable;
+#include "../../io/IOException.def.hpp"
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../../JThrowable.hpp"
+#include "./DirectoryIteratorException.def.hpp"
 
 namespace java::nio::file
 {
-	class DirectoryIteratorException : public java::util::ConcurrentModificationException
+	// Fields
+	
+	// Constructors
+	inline DirectoryIteratorException::DirectoryIteratorException(java::io::IOException arg0)
+		: java::util::ConcurrentModificationException(
+			"java.nio.file.DirectoryIteratorException",
+			"(Ljava/io/IOException;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline java::io::IOException DirectoryIteratorException::getCause() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DirectoryIteratorException(const char *className, const char *sig, Ts...agv) : java::util::ConcurrentModificationException(className, sig, std::forward<Ts>(agv)...) {}
-		DirectoryIteratorException(QAndroidJniObject obj) : java::util::ConcurrentModificationException(obj) {}
-		
-		// Constructors
-		DirectoryIteratorException(java::io::IOException arg0);
-		
-		// Methods
-		java::io::IOException getCause() const;
-	};
+		return callObjectMethod(
+			"getCause",
+			"()Ljava/io/IOException;"
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../util/ConcurrentModificationException.hpp"
 

@@ -1,28 +1,43 @@
 #pragma once
 
-#include "./GeneralSecurityException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./NoSuchAlgorithmException.def.hpp"
 
 namespace java::security
 {
-	class NoSuchAlgorithmException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NoSuchAlgorithmException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchAlgorithmException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		NoSuchAlgorithmException();
-		NoSuchAlgorithmException(JString arg0);
-		NoSuchAlgorithmException(JThrowable arg0);
-		NoSuchAlgorithmException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchAlgorithmException::NoSuchAlgorithmException()
+		: java::security::GeneralSecurityException(
+			"java.security.NoSuchAlgorithmException",
+			"()V"
+		) {}
+	inline NoSuchAlgorithmException::NoSuchAlgorithmException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.NoSuchAlgorithmException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline NoSuchAlgorithmException::NoSuchAlgorithmException(JThrowable arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.NoSuchAlgorithmException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline NoSuchAlgorithmException::NoSuchAlgorithmException(JString arg0, JThrowable arg1)
+		: java::security::GeneralSecurityException(
+			"java.security.NoSuchAlgorithmException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./GeneralSecurityException.hpp"
 

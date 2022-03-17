@@ -1,42 +1,112 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../content/ContentResolver.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./SimPhonebookContract_SimRecords.def.hpp"
 
 namespace android::provider
 {
-	class SimPhonebookContract_SimRecords : public JObject
+	// Fields
+	inline JString SimPhonebookContract_SimRecords::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static JString ELEMENTARY_FILE_TYPE();
-		static jint ERROR_NAME_UNSUPPORTED();
-		static JString NAME();
-		static JString PHONE_NUMBER();
-		static JString RECORD_NUMBER();
-		static JString SUBSCRIPTION_ID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SimPhonebookContract_SimRecords(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SimPhonebookContract_SimRecords(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri getContentUri(jint arg0, jint arg1);
-		static jint getEncodedNameLength(android::content::ContentResolver arg0, JString arg1);
-		static android::net::Uri getItemUri(jint arg0, jint arg1, jint arg2);
-	};
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_SimRecords::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_SimRecords::ELEMENTARY_FILE_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"ELEMENTARY_FILE_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint SimPhonebookContract_SimRecords::ERROR_NAME_UNSUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"ERROR_NAME_UNSUPPORTED"
+		);
+	}
+	inline JString SimPhonebookContract_SimRecords::NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_SimRecords::PHONE_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"PHONE_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_SimRecords::RECORD_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"RECORD_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_SimRecords::SUBSCRIPTION_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"SUBSCRIPTION_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri SimPhonebookContract_SimRecords::getContentUri(jint arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"getContentUri",
+			"(II)Landroid/net/Uri;",
+			arg0,
+			arg1
+		);
+	}
+	inline jint SimPhonebookContract_SimRecords::getEncodedNameLength(android::content::ContentResolver arg0, JString arg1)
+	{
+		return callStaticMethod<jint>(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"getEncodedNameLength",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;)I",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::net::Uri SimPhonebookContract_SimRecords::getItemUri(jint arg0, jint arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SimPhonebookContract$SimRecords",
+			"getItemUri",
+			"(III)Landroid/net/Uri;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,35 +1,113 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AccessNetworkConstants_GeranBand.def.hpp"
 
 namespace android::telephony
 {
-	class AccessNetworkConstants_GeranBand : public JObject
+	// Fields
+	inline jint AccessNetworkConstants_GeranBand::BAND_450()
 	{
-	public:
-		// Fields
-		static jint BAND_450();
-		static jint BAND_480();
-		static jint BAND_710();
-		static jint BAND_750();
-		static jint BAND_850();
-		static jint BAND_DCS1800();
-		static jint BAND_E900();
-		static jint BAND_ER900();
-		static jint BAND_P900();
-		static jint BAND_PCS1900();
-		static jint BAND_R900();
-		static jint BAND_T380();
-		static jint BAND_T410();
-		static jint BAND_T810();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessNetworkConstants_GeranBand(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_GeranBand(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_450"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_480()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_480"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_710()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_710"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_750()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_750"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_850()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_850"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_DCS1800()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_DCS1800"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_E900()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_E900"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_ER900()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_ER900"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_P900()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_P900"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_PCS1900()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_PCS1900"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_R900()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_R900"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_T380()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_T380"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_T410()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_T410"
+		);
+	}
+	inline jint AccessNetworkConstants_GeranBand::BAND_T810()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$GeranBand",
+			"BAND_T810"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

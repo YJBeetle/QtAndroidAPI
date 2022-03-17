@@ -1,28 +1,46 @@
 #pragma once
 
-#include "../ReflectiveOperationException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./InvocationTargetException.def.hpp"
 
 namespace java::lang::reflect
 {
-	class InvocationTargetException : public java::lang::ReflectiveOperationException
+	// Fields
+	
+	// Constructors
+	inline InvocationTargetException::InvocationTargetException(JThrowable arg0)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.reflect.InvocationTargetException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline InvocationTargetException::InvocationTargetException(JThrowable arg0, JString arg1)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.reflect.InvocationTargetException",
+			"(Ljava/lang/Throwable;Ljava/lang/String;)V",
+			arg0.object<jthrowable>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JThrowable InvocationTargetException::getCause() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InvocationTargetException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		InvocationTargetException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
-		
-		// Constructors
-		InvocationTargetException(JThrowable arg0);
-		InvocationTargetException(JThrowable arg0, JString arg1);
-		
-		// Methods
-		JThrowable getCause() const;
-		JThrowable getTargetException() const;
-	};
+		return callObjectMethod(
+			"getCause",
+			"()Ljava/lang/Throwable;"
+		);
+	}
+	inline JThrowable InvocationTargetException::getTargetException() const
+	{
+		return callObjectMethod(
+			"getTargetException",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 } // namespace java::lang::reflect
+
+// Base class headers
+#include "../Exception.hpp"
+#include "../ReflectiveOperationException.hpp"
 

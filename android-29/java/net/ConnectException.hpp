@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./SocketException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ConnectException.def.hpp"
 
 namespace java::net
 {
-	class ConnectException : public java::net::SocketException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConnectException(const char *className, const char *sig, Ts...agv) : java::net::SocketException(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectException(QAndroidJniObject obj) : java::net::SocketException(obj) {}
-		
-		// Constructors
-		ConnectException();
-		ConnectException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ConnectException::ConnectException()
+		: java::net::SocketException(
+			"java.net.ConnectException",
+			"()V"
+		) {}
+	inline ConnectException::ConnectException(JString arg0)
+		: java::net::SocketException(
+			"java.net.ConnectException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::net
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../io/IOException.hpp"
+#include "./SocketException.hpp"
 

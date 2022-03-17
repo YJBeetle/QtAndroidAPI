@@ -1,94 +1,206 @@
 #pragma once
 
-#include "./AbstractChronology.hpp"
-
-class JIntArray;
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
-namespace java::lang
-{
-	class Void;
-}
-namespace java::time
-{
-	class Clock;
-}
-namespace java::time
-{
-	class Instant;
-}
-namespace java::time
-{
-	class ZoneId;
-}
-namespace java::time::chrono
-{
-	class HijrahDate;
-}
-namespace java::time::chrono
-{
-	class HijrahEra;
-}
-namespace java::time::format
-{
-	class ResolverStyle;
-}
-namespace java::time::temporal
-{
-	class ChronoField;
-}
-namespace java::time::temporal
-{
-	class ValueRange;
-}
-namespace java::util
-{
-	class Properties;
-}
+#include "../../../JIntArray.hpp"
+#include "../../io/InputStream.def.hpp"
+#include "../../io/ObjectInputStream.def.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../../lang/Void.def.hpp"
+#include "../Clock.def.hpp"
+#include "../Instant.def.hpp"
+#include "../ZoneId.def.hpp"
+#include "./HijrahDate.def.hpp"
+#include "./HijrahEra.def.hpp"
+#include "../format/ResolverStyle.def.hpp"
+#include "../temporal/ChronoField.def.hpp"
+#include "../temporal/ValueRange.def.hpp"
+#include "../../util/Properties.def.hpp"
+#include "./HijrahChronology.def.hpp"
 
 namespace java::time::chrono
 {
-	class HijrahChronology : public java::time::chrono::AbstractChronology
+	// Fields
+	inline java::time::chrono::HijrahChronology HijrahChronology::INSTANCE()
 	{
-	public:
-		// Fields
-		static java::time::chrono::HijrahChronology INSTANCE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HijrahChronology(const char *className, const char *sig, Ts...agv) : java::time::chrono::AbstractChronology(className, sig, std::forward<Ts>(agv)...) {}
-		HijrahChronology(QAndroidJniObject obj) : java::time::chrono::AbstractChronology(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::time::chrono::HijrahDate date(JObject arg0) const;
-		java::time::chrono::HijrahDate date(jint arg0, jint arg1, jint arg2) const;
-		java::time::chrono::HijrahDate date(JObject arg0, jint arg1, jint arg2, jint arg3) const;
-		java::time::chrono::HijrahDate dateEpochDay(jlong arg0) const;
-		java::time::chrono::HijrahDate dateNow() const;
-		java::time::chrono::HijrahDate dateNow(java::time::Clock arg0) const;
-		java::time::chrono::HijrahDate dateNow(java::time::ZoneId arg0) const;
-		java::time::chrono::HijrahDate dateYearDay(jint arg0, jint arg1) const;
-		java::time::chrono::HijrahDate dateYearDay(JObject arg0, jint arg1, jint arg2) const;
-		java::time::chrono::HijrahEra eraOf(jint arg0) const;
-		JObject eras() const;
-		JString getCalendarType() const;
-		JString getId() const;
-		jboolean isLeapYear(jlong arg0) const;
-		JObject localDateTime(JObject arg0) const;
-		jint prolepticYear(JObject arg0, jint arg1) const;
-		java::time::temporal::ValueRange range(java::time::temporal::ChronoField arg0) const;
-		java::time::chrono::HijrahDate resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const;
-		JObject zonedDateTime(JObject arg0) const;
-		JObject zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const;
-	};
+		return getStaticObjectField(
+			"java.time.chrono.HijrahChronology",
+			"INSTANCE",
+			"Ljava/time/chrono/HijrahChronology;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::time::chrono::HijrahDate HijrahChronology::date(JObject arg0) const
+	{
+		return callObjectMethod(
+			"date",
+			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/HijrahDate;",
+			arg0.object()
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::date(jint arg0, jint arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"date",
+			"(III)Ljava/time/chrono/HijrahDate;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		return callObjectMethod(
+			"date",
+			"(Ljava/time/chrono/Era;III)Ljava/time/chrono/HijrahDate;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::dateEpochDay(jlong arg0) const
+	{
+		return callObjectMethod(
+			"dateEpochDay",
+			"(J)Ljava/time/chrono/HijrahDate;",
+			arg0
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::dateNow() const
+	{
+		return callObjectMethod(
+			"dateNow",
+			"()Ljava/time/chrono/HijrahDate;"
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::dateNow(java::time::Clock arg0) const
+	{
+		return callObjectMethod(
+			"dateNow",
+			"(Ljava/time/Clock;)Ljava/time/chrono/HijrahDate;",
+			arg0.object()
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::dateNow(java::time::ZoneId arg0) const
+	{
+		return callObjectMethod(
+			"dateNow",
+			"(Ljava/time/ZoneId;)Ljava/time/chrono/HijrahDate;",
+			arg0.object()
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::dateYearDay(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"dateYearDay",
+			"(II)Ljava/time/chrono/HijrahDate;",
+			arg0,
+			arg1
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::dateYearDay(JObject arg0, jint arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"dateYearDay",
+			"(Ljava/time/chrono/Era;II)Ljava/time/chrono/HijrahDate;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline java::time::chrono::HijrahEra HijrahChronology::eraOf(jint arg0) const
+	{
+		return callObjectMethod(
+			"eraOf",
+			"(I)Ljava/time/chrono/HijrahEra;",
+			arg0
+		);
+	}
+	inline JObject HijrahChronology::eras() const
+	{
+		return callObjectMethod(
+			"eras",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString HijrahChronology::getCalendarType() const
+	{
+		return callObjectMethod(
+			"getCalendarType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString HijrahChronology::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean HijrahChronology::isLeapYear(jlong arg0) const
+	{
+		return callMethod<jboolean>(
+			"isLeapYear",
+			"(J)Z",
+			arg0
+		);
+	}
+	inline JObject HijrahChronology::localDateTime(JObject arg0) const
+	{
+		return callObjectMethod(
+			"localDateTime",
+			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoLocalDateTime;",
+			arg0.object()
+		);
+	}
+	inline jint HijrahChronology::prolepticYear(JObject arg0, jint arg1) const
+	{
+		return callMethod<jint>(
+			"prolepticYear",
+			"(Ljava/time/chrono/Era;I)I",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline java::time::temporal::ValueRange HijrahChronology::range(java::time::temporal::ChronoField arg0) const
+	{
+		return callObjectMethod(
+			"range",
+			"(Ljava/time/temporal/ChronoField;)Ljava/time/temporal/ValueRange;",
+			arg0.object()
+		);
+	}
+	inline java::time::chrono::HijrahDate HijrahChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const
+	{
+		return callObjectMethod(
+			"resolveDate",
+			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/HijrahDate;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject HijrahChronology::zonedDateTime(JObject arg0) const
+	{
+		return callObjectMethod(
+			"zonedDateTime",
+			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoZonedDateTime;",
+			arg0.object()
+		);
+	}
+	inline JObject HijrahChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const
+	{
+		return callObjectMethod(
+			"zonedDateTime",
+			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/chrono/ChronoZonedDateTime;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::time::chrono
+
+// Base class headers
+#include "./AbstractChronology.hpp"
 

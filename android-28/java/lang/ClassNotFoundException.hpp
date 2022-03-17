@@ -1,37 +1,47 @@
 #pragma once
 
-#include "./ReflectiveOperationException.hpp"
-
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JString;
-class JThrowable;
+#include "../../JArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./ClassNotFoundException.def.hpp"
 
 namespace java::lang
 {
-	class ClassNotFoundException : public java::lang::ReflectiveOperationException
+	// Fields
+	
+	// Constructors
+	inline ClassNotFoundException::ClassNotFoundException()
+		: java::lang::ReflectiveOperationException(
+			"java.lang.ClassNotFoundException",
+			"()V"
+		) {}
+	inline ClassNotFoundException::ClassNotFoundException(JString arg0)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.ClassNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ClassNotFoundException::ClassNotFoundException(JString arg0, JThrowable arg1)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.ClassNotFoundException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline JThrowable ClassNotFoundException::getException() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClassNotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		ClassNotFoundException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
-		
-		// Constructors
-		ClassNotFoundException();
-		ClassNotFoundException(JString arg0);
-		ClassNotFoundException(JString arg0, JThrowable arg1);
-		
-		// Methods
-		JThrowable getException() const;
-	};
+		return callObjectMethod(
+			"getException",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./ReflectiveOperationException.hpp"
 

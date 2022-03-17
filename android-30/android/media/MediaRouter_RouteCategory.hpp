@@ -1,34 +1,62 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
-class JString;
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./MediaRouter_RouteCategory.def.hpp"
 
 namespace android::media
 {
-	class MediaRouter_RouteCategory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString MediaRouter_RouteCategory::getName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter_RouteCategory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter_RouteCategory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getName() const;
-		JString getName(android::content::Context arg0) const;
-		JObject getRoutes(JObject arg0) const;
-		jint getSupportedTypes() const;
-		jboolean isGroupable() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString MediaRouter_RouteCategory::getName(android::content::Context arg0) const
+	{
+		return callObjectMethod(
+			"getName",
+			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline JObject MediaRouter_RouteCategory::getRoutes(JObject arg0) const
+	{
+		return callObjectMethod(
+			"getRoutes",
+			"(Ljava/util/List;)Ljava/util/List;",
+			arg0.object()
+		);
+	}
+	inline jint MediaRouter_RouteCategory::getSupportedTypes() const
+	{
+		return callMethod<jint>(
+			"getSupportedTypes",
+			"()I"
+		);
+	}
+	inline jboolean MediaRouter_RouteCategory::isGroupable() const
+	{
+		return callMethod<jboolean>(
+			"isGroupable",
+			"()Z"
+		);
+	}
+	inline JString MediaRouter_RouteCategory::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

@@ -1,26 +1,36 @@
 #pragma once
 
-#include "./Shader.hpp"
-
-class JFloatArray;
-class JIntArray;
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "./SweepGradient.def.hpp"
 
 namespace android::graphics
 {
-	class SweepGradient : public android::graphics::Shader
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SweepGradient(const char *className, const char *sig, Ts...agv) : android::graphics::Shader(className, sig, std::forward<Ts>(agv)...) {}
-		SweepGradient(QAndroidJniObject obj) : android::graphics::Shader(obj) {}
-		
-		// Constructors
-		SweepGradient(jfloat arg0, jfloat arg1, JIntArray arg2, JFloatArray arg3);
-		SweepGradient(jfloat arg0, jfloat arg1, jint arg2, jint arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, JIntArray arg2, JFloatArray arg3)
+		: android::graphics::Shader(
+			"android.graphics.SweepGradient",
+			"(FF[I[F)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3.object<jfloatArray>()
+		) {}
+	inline SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jint arg2, jint arg3)
+		: android::graphics::Shader(
+			"android.graphics.SweepGradient",
+			"(FFII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./Shader.hpp"
 

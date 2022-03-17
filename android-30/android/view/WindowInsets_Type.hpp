@@ -1,30 +1,87 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./WindowInsets_Type.def.hpp"
 
 namespace android::view
 {
-	class WindowInsets_Type : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint WindowInsets_Type::captionBar()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WindowInsets_Type(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WindowInsets_Type(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jint captionBar();
-		static jint displayCutout();
-		static jint ime();
-		static jint mandatorySystemGestures();
-		static jint navigationBars();
-		static jint statusBars();
-		static jint systemBars();
-		static jint systemGestures();
-		static jint tappableElement();
-	};
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"captionBar",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::displayCutout()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"displayCutout",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::ime()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"ime",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::mandatorySystemGestures()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"mandatorySystemGestures",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::navigationBars()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"navigationBars",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::statusBars()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"statusBars",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::systemBars()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"systemBars",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::systemGestures()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"systemGestures",
+			"()I"
+		);
+	}
+	inline jint WindowInsets_Type::tappableElement()
+	{
+		return callStaticMethod<jint>(
+			"android.view.WindowInsets$Type",
+			"tappableElement",
+			"()I"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

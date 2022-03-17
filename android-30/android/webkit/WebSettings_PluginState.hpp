@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./WebSettings_PluginState.def.hpp"
 
 namespace android::webkit
 {
-	class WebSettings_PluginState : public java::lang::Enum
+	// Fields
+	inline android::webkit::WebSettings_PluginState WebSettings_PluginState::OFF()
 	{
-	public:
-		// Fields
-		static android::webkit::WebSettings_PluginState OFF();
-		static android::webkit::WebSettings_PluginState ON();
-		static android::webkit::WebSettings_PluginState ON_DEMAND();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebSettings_PluginState(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		WebSettings_PluginState(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::webkit::WebSettings_PluginState valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.webkit.WebSettings$PluginState",
+			"OFF",
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
+	inline android::webkit::WebSettings_PluginState WebSettings_PluginState::ON()
+	{
+		return getStaticObjectField(
+			"android.webkit.WebSettings$PluginState",
+			"ON",
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
+	inline android::webkit::WebSettings_PluginState WebSettings_PluginState::ON_DEMAND()
+	{
+		return getStaticObjectField(
+			"android.webkit.WebSettings$PluginState",
+			"ON_DEMAND",
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::webkit::WebSettings_PluginState WebSettings_PluginState::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.webkit.WebSettings$PluginState",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/webkit/WebSettings$PluginState;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray WebSettings_PluginState::values()
+	{
+		return callStaticObjectMethod(
+			"android.webkit.WebSettings$PluginState",
+			"values",
+			"()[Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

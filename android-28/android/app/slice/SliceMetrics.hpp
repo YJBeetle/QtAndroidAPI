@@ -1,34 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::net
-{
-	class Uri;
-}
+#include "../../content/Context.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "./SliceMetrics.def.hpp"
 
 namespace android::app::slice
 {
-	class SliceMetrics : public JObject
+	// Fields
+	
+	// Constructors
+	inline SliceMetrics::SliceMetrics(android::content::Context arg0, android::net::Uri arg1)
+		: JObject(
+			"android.app.slice.SliceMetrics",
+			"(Landroid/content/Context;Landroid/net/Uri;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void SliceMetrics::logHidden() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SliceMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SliceMetrics(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SliceMetrics(android::content::Context arg0, android::net::Uri arg1);
-		
-		// Methods
-		void logHidden() const;
-		void logTouch(jint arg0, android::net::Uri arg1) const;
-		void logVisible() const;
-	};
+		callMethod<void>(
+			"logHidden",
+			"()V"
+		);
+	}
+	inline void SliceMetrics::logTouch(jint arg0, android::net::Uri arg1) const
+	{
+		callMethod<void>(
+			"logTouch",
+			"(ILandroid/net/Uri;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void SliceMetrics::logVisible() const
+	{
+		callMethod<void>(
+			"logVisible",
+			"()V"
+		);
+	}
 } // namespace android::app::slice
+
+// Base class headers
 

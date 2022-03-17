@@ -1,47 +1,102 @@
 #pragma once
 
+#include "./IpPrefix.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../java/net/InetAddress.def.hpp"
+#include "./RouteInfo.def.hpp"
 
 namespace android::net
 {
-	class IpPrefix;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
-
-namespace android::net
-{
-	class RouteInfo : public JObject
+	// Fields
+	inline JObject RouteInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RouteInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RouteInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::net::IpPrefix getDestination() const;
-		java::net::InetAddress getGateway() const;
-		JString getInterface() const;
-		jint hashCode() const;
-		jboolean isDefaultRoute() const;
-		jboolean matches(java::net::InetAddress arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.RouteInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint RouteInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean RouteInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::net::IpPrefix RouteInfo::getDestination() const
+	{
+		return callObjectMethod(
+			"getDestination",
+			"()Landroid/net/IpPrefix;"
+		);
+	}
+	inline java::net::InetAddress RouteInfo::getGateway() const
+	{
+		return callObjectMethod(
+			"getGateway",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline JString RouteInfo::getInterface() const
+	{
+		return callObjectMethod(
+			"getInterface",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint RouteInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean RouteInfo::isDefaultRoute() const
+	{
+		return callMethod<jboolean>(
+			"isDefaultRoute",
+			"()Z"
+		);
+	}
+	inline jboolean RouteInfo::matches(java::net::InetAddress arg0) const
+	{
+		return callMethod<jboolean>(
+			"matches",
+			"(Ljava/net/InetAddress;)Z",
+			arg0.object()
+		);
+	}
+	inline JString RouteInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void RouteInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

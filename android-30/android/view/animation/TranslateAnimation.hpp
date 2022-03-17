@@ -1,34 +1,58 @@
 #pragma once
 
-#include "./Animation.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view::animation
-{
-	class Transformation;
-}
+#include "../../content/Context.def.hpp"
+#include "./Transformation.def.hpp"
+#include "./TranslateAnimation.def.hpp"
 
 namespace android::view::animation
 {
-	class TranslateAnimation : public android::view::animation::Animation
+	// Fields
+	
+	// Constructors
+	inline TranslateAnimation::TranslateAnimation(android::content::Context arg0, JObject arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.TranslateAnimation",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline TranslateAnimation::TranslateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+		: android::view::animation::Animation(
+			"android.view.animation.TranslateAnimation",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	inline TranslateAnimation::TranslateAnimation(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7)
+		: android::view::animation::Animation(
+			"android.view.animation.TranslateAnimation",
+			"(IFIFIFIF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		) {}
+	
+	// Methods
+	inline void TranslateAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TranslateAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		TranslateAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
-		
-		// Constructors
-		TranslateAnimation(android::content::Context arg0, JObject arg1);
-		TranslateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		TranslateAnimation(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7);
-		
-		// Methods
-		void initialize(jint arg0, jint arg1, jint arg2, jint arg3) const;
-	};
+		callMethod<void>(
+			"initialize",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./Animation.hpp"
 

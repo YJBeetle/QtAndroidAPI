@@ -1,32 +1,47 @@
 #pragma once
 
-#include "./ControlTemplate.hpp"
+#include "./ControlButton.def.hpp"
+#include "../../../../JString.hpp"
+#include "../../../../JString.hpp"
+#include "./ToggleTemplate.def.hpp"
 
 namespace android::service::controls::templates
 {
-	class ControlButton;
-}
-class JString;
-class JString;
-
-namespace android::service::controls::templates
-{
-	class ToggleTemplate : public android::service::controls::templates::ControlTemplate
+	// Fields
+	
+	// Constructors
+	inline ToggleTemplate::ToggleTemplate(JString arg0, android::service::controls::templates::ControlButton arg1)
+		: android::service::controls::templates::ControlTemplate(
+			"android.service.controls.templates.ToggleTemplate",
+			"(Ljava/lang/String;Landroid/service/controls/templates/ControlButton;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JString ToggleTemplate::getContentDescription() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ToggleTemplate(const char *className, const char *sig, Ts...agv) : android::service::controls::templates::ControlTemplate(className, sig, std::forward<Ts>(agv)...) {}
-		ToggleTemplate(QAndroidJniObject obj) : android::service::controls::templates::ControlTemplate(obj) {}
-		
-		// Constructors
-		ToggleTemplate(JString arg0, android::service::controls::templates::ControlButton arg1);
-		
-		// Methods
-		JString getContentDescription() const;
-		jint getTemplateType() const;
-		jboolean isChecked() const;
-	};
+		return callObjectMethod(
+			"getContentDescription",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint ToggleTemplate::getTemplateType() const
+	{
+		return callMethod<jint>(
+			"getTemplateType",
+			"()I"
+		);
+	}
+	inline jboolean ToggleTemplate::isChecked() const
+	{
+		return callMethod<jboolean>(
+			"isChecked",
+			"()Z"
+		);
+	}
 } // namespace android::service::controls::templates
+
+// Base class headers
+#include "./ControlTemplate.hpp"
 

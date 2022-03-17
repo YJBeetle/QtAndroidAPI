@@ -1,35 +1,44 @@
 #pragma once
 
+#include "../view/View.def.hpp"
+#include "./ListView.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::view
-{
-	class View;
-}
-namespace android::widget
-{
-	class ListView;
-}
-class JObject;
+#include "./ListView_FixedViewInfo.def.hpp"
 
 namespace android::widget
 {
-	class ListView_FixedViewInfo : public JObject
+	// Fields
+	inline JObject ListView_FixedViewInfo::data()
 	{
-	public:
-		// Fields
-		JObject data();
-		jboolean isSelectable();
-		android::view::View view();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ListView_FixedViewInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ListView_FixedViewInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ListView_FixedViewInfo(android::widget::ListView arg0);
-		
-		// Methods
-	};
+		return getObjectField(
+			"data",
+			"Ljava/lang/Object;"
+		);
+	}
+	inline jboolean ListView_FixedViewInfo::isSelectable()
+	{
+		return getField<jboolean>(
+			"isSelectable"
+		);
+	}
+	inline android::view::View ListView_FixedViewInfo::view()
+	{
+		return getObjectField(
+			"view",
+			"Landroid/view/View;"
+		);
+	}
+	
+	// Constructors
+	inline ListView_FixedViewInfo::ListView_FixedViewInfo(android::widget::ListView arg0)
+		: JObject(
+			"android.widget.ListView$FixedViewInfo",
+			"(Landroid/widget/ListView;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
 

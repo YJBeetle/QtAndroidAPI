@@ -1,60 +1,155 @@
 #pragma once
 
-#include "../app/Service.hpp"
-
-namespace android::bluetooth
-{
-	class BluetoothDevice;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::telecom
-{
-	class Call;
-}
-namespace android::telecom
-{
-	class CallAudioState;
-}
-class JString;
+#include "../bluetooth/BluetoothDevice.def.hpp"
+#include "../content/Intent.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./Call.def.hpp"
+#include "./CallAudioState.def.hpp"
+#include "../../JString.hpp"
+#include "./InCallService.def.hpp"
 
 namespace android::telecom
 {
-	class InCallService : public android::app::Service
+	// Fields
+	inline JString InCallService::SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString SERVICE_INTERFACE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InCallService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		InCallService(QAndroidJniObject obj) : android::app::Service(obj) {}
-		
-		// Constructors
-		InCallService();
-		
-		// Methods
-		jboolean canAddCall() const;
-		android::telecom::CallAudioState getCallAudioState() const;
-		JObject getCalls() const;
-		JObject onBind(android::content::Intent arg0) const;
-		void onBringToForeground(jboolean arg0) const;
-		void onCallAdded(android::telecom::Call arg0) const;
-		void onCallAudioStateChanged(android::telecom::CallAudioState arg0) const;
-		void onCallRemoved(android::telecom::Call arg0) const;
-		void onCanAddCallChanged(jboolean arg0) const;
-		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2) const;
-		void onSilenceRinger() const;
-		jboolean onUnbind(android::content::Intent arg0) const;
-		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0) const;
-		void setAudioRoute(jint arg0) const;
-		void setMuted(jboolean arg0) const;
-	};
+		return getStaticObjectField(
+			"android.telecom.InCallService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline InCallService::InCallService()
+		: android::app::Service(
+			"android.telecom.InCallService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean InCallService::canAddCall() const
+	{
+		return callMethod<jboolean>(
+			"canAddCall",
+			"()Z"
+		);
+	}
+	inline android::telecom::CallAudioState InCallService::getCallAudioState() const
+	{
+		return callObjectMethod(
+			"getCallAudioState",
+			"()Landroid/telecom/CallAudioState;"
+		);
+	}
+	inline JObject InCallService::getCalls() const
+	{
+		return callObjectMethod(
+			"getCalls",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject InCallService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void InCallService::onBringToForeground(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onBringToForeground",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void InCallService::onCallAdded(android::telecom::Call arg0) const
+	{
+		callMethod<void>(
+			"onCallAdded",
+			"(Landroid/telecom/Call;)V",
+			arg0.object()
+		);
+	}
+	inline void InCallService::onCallAudioStateChanged(android::telecom::CallAudioState arg0) const
+	{
+		callMethod<void>(
+			"onCallAudioStateChanged",
+			"(Landroid/telecom/CallAudioState;)V",
+			arg0.object()
+		);
+	}
+	inline void InCallService::onCallRemoved(android::telecom::Call arg0) const
+	{
+		callMethod<void>(
+			"onCallRemoved",
+			"(Landroid/telecom/Call;)V",
+			arg0.object()
+		);
+	}
+	inline void InCallService::onCanAddCallChanged(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onCanAddCallChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void InCallService::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2) const
+	{
+		callMethod<void>(
+			"onConnectionEvent",
+			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline void InCallService::onSilenceRinger() const
+	{
+		callMethod<void>(
+			"onSilenceRinger",
+			"()V"
+		);
+	}
+	inline jboolean InCallService::onUnbind(android::content::Intent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onUnbind",
+			"(Landroid/content/Intent;)Z",
+			arg0.object()
+		);
+	}
+	inline void InCallService::requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0) const
+	{
+		callMethod<void>(
+			"requestBluetoothAudio",
+			"(Landroid/bluetooth/BluetoothDevice;)V",
+			arg0.object()
+		);
+	}
+	inline void InCallService::setAudioRoute(jint arg0) const
+	{
+		callMethod<void>(
+			"setAudioRoute",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void InCallService::setMuted(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setMuted",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../app/Service.hpp"
 

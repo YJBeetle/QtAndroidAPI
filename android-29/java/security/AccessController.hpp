@@ -1,52 +1,90 @@
 #pragma once
 
+#include "../../JArray.hpp"
+#include "../../JClass.hpp"
+#include "../lang/Exception.def.hpp"
 #include "../../JObject.hpp"
-
-class JArray;
-class JClass;
-namespace java::lang
-{
-	class Exception;
-}
-class JObject;
-namespace java::security
-{
-	class AccessControlContext;
-}
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PrivilegedActionException;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
+#include "./AccessControlContext.def.hpp"
+#include "./Permission.def.hpp"
+#include "./PrivilegedActionException.def.hpp"
+#include "./ProtectionDomain.def.hpp"
+#include "./AccessController.def.hpp"
 
 namespace java::security
 {
-	class AccessController : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AccessController::checkPermission(java::security::Permission arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessController(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static void checkPermission(java::security::Permission arg0);
-		static JObject doPrivileged(JObject arg0);
-		static JObject doPrivileged(JObject arg0, java::security::AccessControlContext arg1);
-		static JObject doPrivileged(JObject arg0, java::security::AccessControlContext arg1, JArray arg2);
-		static JObject doPrivilegedWithCombiner(JObject arg0);
-		static JObject doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, JArray arg2);
-		static java::security::AccessControlContext getContext();
-	};
+		callStaticMethod<void>(
+			"java.security.AccessController",
+			"checkPermission",
+			"(Ljava/security/Permission;)V",
+			arg0.object()
+		);
+	}
+	inline JObject AccessController::doPrivileged(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.AccessController",
+			"doPrivileged",
+			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.AccessController",
+			"doPrivileged",
+			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject AccessController::doPrivileged(JObject arg0, java::security::AccessControlContext arg1, JArray arg2)
+	{
+		return callStaticObjectMethod(
+			"java.security.AccessController",
+			"doPrivileged",
+			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline JObject AccessController::doPrivilegedWithCombiner(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.AccessController",
+			"doPrivilegedWithCombiner",
+			"(Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject AccessController::doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, JArray arg2)
+	{
+		return callStaticObjectMethod(
+			"java.security.AccessController",
+			"doPrivilegedWithCombiner",
+			"(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;[Ljava/security/Permission;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jarray>()
+		);
+	}
+	inline java::security::AccessControlContext AccessController::getContext()
+	{
+		return callStaticObjectMethod(
+			"java.security.AccessController",
+			"getContext",
+			"()Ljava/security/AccessControlContext;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

@@ -1,32 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./WifiManager.def.hpp"
+#include "../../../JString.hpp"
+#include "./WifiManager_MulticastLock.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiManager;
-}
-class JString;
-
-namespace android::net::wifi
-{
-	class WifiManager_MulticastLock : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void WifiManager_MulticastLock::acquire() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiManager_MulticastLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_MulticastLock(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void acquire() const;
-		jboolean isHeld() const;
-		void release() const;
-		void setReferenceCounted(jboolean arg0) const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"acquire",
+			"()V"
+		);
+	}
+	inline jboolean WifiManager_MulticastLock::isHeld() const
+	{
+		return callMethod<jboolean>(
+			"isHeld",
+			"()Z"
+		);
+	}
+	inline void WifiManager_MulticastLock::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline void WifiManager_MulticastLock::setReferenceCounted(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setReferenceCounted",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline JString WifiManager_MulticastLock::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::net::wifi
+
+// Base class headers
 

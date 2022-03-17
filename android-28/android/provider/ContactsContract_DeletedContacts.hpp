@@ -1,28 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
+#include "../net/Uri.def.hpp"
+#include "./ContactsContract_DeletedContacts.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_DeletedContacts : public JObject
+	// Fields
+	inline android::net::Uri ContactsContract_DeletedContacts::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		static jlong DAYS_KEPT_MILLISECONDS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_DeletedContacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_DeletedContacts(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$DeletedContacts",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jlong ContactsContract_DeletedContacts::DAYS_KEPT_MILLISECONDS()
+	{
+		return getStaticField<jlong>(
+			"android.provider.ContactsContract$DeletedContacts",
+			"DAYS_KEPT_MILLISECONDS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

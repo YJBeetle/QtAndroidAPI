@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Spliterators_AbstractSpliterator.def.hpp"
 
 namespace java::util
 {
-	class Spliterators_AbstractSpliterator : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint Spliterators_AbstractSpliterator::characteristics() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Spliterators_AbstractSpliterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Spliterators_AbstractSpliterator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint characteristics() const;
-		jlong estimateSize() const;
-		JObject trySplit() const;
-	};
+		return callMethod<jint>(
+			"characteristics",
+			"()I"
+		);
+	}
+	inline jlong Spliterators_AbstractSpliterator::estimateSize() const
+	{
+		return callMethod<jlong>(
+			"estimateSize",
+			"()J"
+		);
+	}
+	inline JObject Spliterators_AbstractSpliterator::trySplit() const
+	{
+		return callObjectMethod(
+			"trySplit",
+			"()Ljava/util/Spliterator;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

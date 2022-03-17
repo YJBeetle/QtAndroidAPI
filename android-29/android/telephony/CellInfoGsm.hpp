@@ -1,44 +1,81 @@
 #pragma once
 
-#include "./CellInfo.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::telephony
-{
-	class CellIdentityGsm;
-}
-namespace android::telephony
-{
-	class CellSignalStrengthGsm;
-}
-class JObject;
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "./CellIdentityGsm.def.hpp"
+#include "./CellSignalStrengthGsm.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./CellInfoGsm.def.hpp"
 
 namespace android::telephony
 {
-	class CellInfoGsm : public android::telephony::CellInfo
+	// Fields
+	inline JObject CellInfoGsm::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CellInfoGsm(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
-		CellInfoGsm(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::telephony::CellIdentityGsm getCellIdentity() const;
-		android::telephony::CellSignalStrengthGsm getCellSignalStrength() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.CellInfoGsm",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint CellInfoGsm::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean CellInfoGsm::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::telephony::CellIdentityGsm CellInfoGsm::getCellIdentity() const
+	{
+		return callObjectMethod(
+			"getCellIdentity",
+			"()Landroid/telephony/CellIdentityGsm;"
+		);
+	}
+	inline android::telephony::CellSignalStrengthGsm CellInfoGsm::getCellSignalStrength() const
+	{
+		return callObjectMethod(
+			"getCellSignalStrength",
+			"()Landroid/telephony/CellSignalStrengthGsm;"
+		);
+	}
+	inline jint CellInfoGsm::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString CellInfoGsm::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void CellInfoGsm::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
+#include "./CellInfo.hpp"
 

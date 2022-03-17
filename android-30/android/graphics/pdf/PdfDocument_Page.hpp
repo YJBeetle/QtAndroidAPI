@@ -1,32 +1,31 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics::pdf
-{
-	class PdfDocument_PageInfo;
-}
+#include "../Canvas.def.hpp"
+#include "./PdfDocument_PageInfo.def.hpp"
+#include "./PdfDocument_Page.def.hpp"
 
 namespace android::graphics::pdf
 {
-	class PdfDocument_Page : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Canvas PdfDocument_Page::getCanvas() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PdfDocument_Page(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PdfDocument_Page(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::Canvas getCanvas() const;
-		android::graphics::pdf::PdfDocument_PageInfo getInfo() const;
-	};
+		return callObjectMethod(
+			"getCanvas",
+			"()Landroid/graphics/Canvas;"
+		);
+	}
+	inline android::graphics::pdf::PdfDocument_PageInfo PdfDocument_Page::getInfo() const
+	{
+		return callObjectMethod(
+			"getInfo",
+			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
+		);
+	}
 } // namespace android::graphics::pdf
+
+// Base class headers
 

@@ -1,27 +1,25 @@
 #pragma once
 
-#include "./DiscoverySession.hpp"
+#include "./SubscribeConfig.def.hpp"
+#include "./SubscribeDiscoverySession.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class SubscribeConfig;
-}
-
-namespace android::net::wifi::aware
-{
-	class SubscribeDiscoverySession : public android::net::wifi::aware::DiscoverySession
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void SubscribeDiscoverySession::updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubscribeDiscoverySession(const char *className, const char *sig, Ts...agv) : android::net::wifi::aware::DiscoverySession(className, sig, std::forward<Ts>(agv)...) {}
-		SubscribeDiscoverySession(QAndroidJniObject obj) : android::net::wifi::aware::DiscoverySession(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0) const;
-	};
+		callMethod<void>(
+			"updateSubscribe",
+			"(Landroid/net/wifi/aware/SubscribeConfig;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
+#include "./DiscoverySession.hpp"
 

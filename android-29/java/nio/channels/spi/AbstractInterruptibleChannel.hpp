@@ -1,29 +1,31 @@
 #pragma once
 
 #include "../../../../JObject.hpp"
-
-class JObject;
-namespace java::lang
-{
-	class Thread;
-}
+#include "../../../lang/Thread.def.hpp"
+#include "./AbstractInterruptibleChannel.def.hpp"
 
 namespace java::nio::channels::spi
 {
-	class AbstractInterruptibleChannel : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AbstractInterruptibleChannel::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractInterruptibleChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractInterruptibleChannel(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jboolean isOpen() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jboolean AbstractInterruptibleChannel::isOpen() const
+	{
+		return callMethod<jboolean>(
+			"isOpen",
+			"()Z"
+		);
+	}
 } // namespace java::nio::channels::spi
+
+// Base class headers
 

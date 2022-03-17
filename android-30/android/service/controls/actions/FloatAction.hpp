@@ -1,27 +1,46 @@
 #pragma once
 
-#include "./ControlAction.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./FloatAction.def.hpp"
 
 namespace android::service::controls::actions
 {
-	class FloatAction : public android::service::controls::actions::ControlAction
+	// Fields
+	
+	// Constructors
+	inline FloatAction::FloatAction(JString arg0, jfloat arg1)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.FloatAction",
+			"(Ljava/lang/String;F)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline FloatAction::FloatAction(JString arg0, jfloat arg1, JString arg2)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.FloatAction",
+			"(Ljava/lang/String;FLjava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint FloatAction::getActionType() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FloatAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		FloatAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-		
-		// Constructors
-		FloatAction(JString arg0, jfloat arg1);
-		FloatAction(JString arg0, jfloat arg1, JString arg2);
-		
-		// Methods
-		jint getActionType() const;
-		jfloat getNewValue() const;
-	};
+		return callMethod<jint>(
+			"getActionType",
+			"()I"
+		);
+	}
+	inline jfloat FloatAction::getNewValue() const
+	{
+		return callMethod<jfloat>(
+			"getNewValue",
+			"()F"
+		);
+	}
 } // namespace android::service::controls::actions
+
+// Base class headers
+#include "./ControlAction.hpp"
 

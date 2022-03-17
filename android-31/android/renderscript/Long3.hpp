@@ -1,26 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Long3.def.hpp"
 
 namespace android::renderscript
 {
-	class Long3 : public JObject
+	// Fields
+	inline jlong Long3::x()
 	{
-	public:
-		// Fields
-		jlong x();
-		jlong y();
-		jlong z();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Long3(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Long3(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Long3();
-		Long3(jlong arg0, jlong arg1, jlong arg2);
-		
-		// Methods
-	};
+		return getField<jlong>(
+			"x"
+		);
+	}
+	inline jlong Long3::y()
+	{
+		return getField<jlong>(
+			"y"
+		);
+	}
+	inline jlong Long3::z()
+	{
+		return getField<jlong>(
+			"z"
+		);
+	}
+	
+	// Constructors
+	inline Long3::Long3()
+		: JObject(
+			"android.renderscript.Long3",
+			"()V"
+		) {}
+	inline Long3::Long3(jlong arg0, jlong arg1, jlong arg2)
+		: JObject(
+			"android.renderscript.Long3",
+			"(JJJ)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

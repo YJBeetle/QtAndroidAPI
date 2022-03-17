@@ -1,39 +1,69 @@
 #pragma once
 
-#include "./Permission.hpp"
-
-class JObject;
-class JString;
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./Permission.def.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "./AllPermission.def.hpp"
 
 namespace java::security
 {
-	class AllPermission : public java::security::Permission
+	// Fields
+	
+	// Constructors
+	inline AllPermission::AllPermission()
+		: java::security::Permission(
+			"java.security.AllPermission",
+			"()V"
+		) {}
+	inline AllPermission::AllPermission(JString arg0, JString arg1)
+		: java::security::Permission(
+			"java.security.AllPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jboolean AllPermission::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AllPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		AllPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
-		
-		// Constructors
-		AllPermission();
-		AllPermission(JString arg0, JString arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getActions() const;
-		jint hashCode() const;
-		jboolean implies(java::security::Permission arg0) const;
-		java::security::PermissionCollection newPermissionCollection() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString AllPermission::getActions() const
+	{
+		return callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint AllPermission::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean AllPermission::implies(java::security::Permission arg0) const
+	{
+		return callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/Permission;)Z",
+			arg0.object()
+		);
+	}
+	inline java::security::PermissionCollection AllPermission::newPermissionCollection() const
+	{
+		return callObjectMethod(
+			"newPermissionCollection",
+			"()Ljava/security/PermissionCollection;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
+#include "./Permission.hpp"
 

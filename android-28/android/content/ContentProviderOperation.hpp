@@ -1,68 +1,175 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JArray;
-namespace android::content
-{
-	class ContentProvider;
-}
-namespace android::content
-{
-	class ContentProviderOperation_Builder;
-}
-namespace android::content
-{
-	class ContentProviderResult;
-}
-namespace android::content
-{
-	class ContentValues;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "./ContentProvider.def.hpp"
+#include "./ContentProviderOperation_Builder.def.hpp"
+#include "./ContentProviderResult.def.hpp"
+#include "./ContentValues.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./ContentProviderOperation.def.hpp"
 
 namespace android::content
 {
-	class ContentProviderOperation : public JObject
+	// Fields
+	inline JObject ContentProviderOperation::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentProviderOperation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentProviderOperation(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::content::ContentProviderOperation_Builder newAssertQuery(android::net::Uri arg0);
-		static android::content::ContentProviderOperation_Builder newDelete(android::net::Uri arg0);
-		static android::content::ContentProviderOperation_Builder newInsert(android::net::Uri arg0);
-		static android::content::ContentProviderOperation_Builder newUpdate(android::net::Uri arg0);
-		android::content::ContentProviderResult apply(android::content::ContentProvider arg0, JArray arg1, jint arg2) const;
-		jint describeContents() const;
-		android::net::Uri getUri() const;
-		jboolean isAssertQuery() const;
-		jboolean isDelete() const;
-		jboolean isInsert() const;
-		jboolean isReadOperation() const;
-		jboolean isUpdate() const;
-		jboolean isWriteOperation() const;
-		jboolean isYieldAllowed() const;
-		JArray resolveSelectionArgsBackReferences(JArray arg0, jint arg1) const;
-		android::content::ContentValues resolveValueBackReferences(JArray arg0, jint arg1) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.ContentProviderOperation",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::content::ContentProviderOperation_Builder ContentProviderOperation::newAssertQuery(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newAssertQuery",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::content::ContentProviderOperation_Builder ContentProviderOperation::newDelete(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newDelete",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::content::ContentProviderOperation_Builder ContentProviderOperation::newInsert(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newInsert",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::content::ContentProviderOperation_Builder ContentProviderOperation::newUpdate(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.content.ContentProviderOperation",
+			"newUpdate",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::content::ContentProviderResult ContentProviderOperation::apply(android::content::ContentProvider arg0, JArray arg1, jint arg2) const
+	{
+		return callObjectMethod(
+			"apply",
+			"(Landroid/content/ContentProvider;[Landroid/content/ContentProviderResult;I)Landroid/content/ContentProviderResult;",
+			arg0.object(),
+			arg1.object<jarray>(),
+			arg2
+		);
+	}
+	inline jint ContentProviderOperation::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::net::Uri ContentProviderOperation::getUri() const
+	{
+		return callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jboolean ContentProviderOperation::isAssertQuery() const
+	{
+		return callMethod<jboolean>(
+			"isAssertQuery",
+			"()Z"
+		);
+	}
+	inline jboolean ContentProviderOperation::isDelete() const
+	{
+		return callMethod<jboolean>(
+			"isDelete",
+			"()Z"
+		);
+	}
+	inline jboolean ContentProviderOperation::isInsert() const
+	{
+		return callMethod<jboolean>(
+			"isInsert",
+			"()Z"
+		);
+	}
+	inline jboolean ContentProviderOperation::isReadOperation() const
+	{
+		return callMethod<jboolean>(
+			"isReadOperation",
+			"()Z"
+		);
+	}
+	inline jboolean ContentProviderOperation::isUpdate() const
+	{
+		return callMethod<jboolean>(
+			"isUpdate",
+			"()Z"
+		);
+	}
+	inline jboolean ContentProviderOperation::isWriteOperation() const
+	{
+		return callMethod<jboolean>(
+			"isWriteOperation",
+			"()Z"
+		);
+	}
+	inline jboolean ContentProviderOperation::isYieldAllowed() const
+	{
+		return callMethod<jboolean>(
+			"isYieldAllowed",
+			"()Z"
+		);
+	}
+	inline JArray ContentProviderOperation::resolveSelectionArgsBackReferences(JArray arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"resolveSelectionArgsBackReferences",
+			"([Landroid/content/ContentProviderResult;I)[Ljava/lang/String;",
+			arg0.object<jarray>(),
+			arg1
+		);
+	}
+	inline android::content::ContentValues ContentProviderOperation::resolveValueBackReferences(JArray arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"resolveValueBackReferences",
+			"([Landroid/content/ContentProviderResult;I)Landroid/content/ContentValues;",
+			arg0.object<jarray>(),
+			arg1
+		);
+	}
+	inline JString ContentProviderOperation::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ContentProviderOperation::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

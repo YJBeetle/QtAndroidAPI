@@ -1,36 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Handler;
-}
+#include "../net/Uri.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "./ContentObserver.def.hpp"
 
 namespace android::database
 {
-	class ContentObserver : public JObject
+	// Fields
+	
+	// Constructors
+	inline ContentObserver::ContentObserver(android::os::Handler arg0)
+		: JObject(
+			"android.database.ContentObserver",
+			"(Landroid/os/Handler;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean ContentObserver::deliverSelfNotifications() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentObserver(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ContentObserver(android::os::Handler arg0);
-		
-		// Methods
-		jboolean deliverSelfNotifications() const;
-		void dispatchChange(jboolean arg0) const;
-		void dispatchChange(jboolean arg0, android::net::Uri arg1) const;
-		void onChange(jboolean arg0) const;
-		void onChange(jboolean arg0, android::net::Uri arg1) const;
-	};
+		return callMethod<jboolean>(
+			"deliverSelfNotifications",
+			"()Z"
+		);
+	}
+	inline void ContentObserver::dispatchChange(jboolean arg0) const
+	{
+		callMethod<void>(
+			"dispatchChange",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ContentObserver::dispatchChange(jboolean arg0, android::net::Uri arg1) const
+	{
+		callMethod<void>(
+			"dispatchChange",
+			"(ZLandroid/net/Uri;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void ContentObserver::onChange(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onChange",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ContentObserver::onChange(jboolean arg0, android::net::Uri arg1) const
+	{
+		callMethod<void>(
+			"onChange",
+			"(ZLandroid/net/Uri;)V",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::database
+
+// Base class headers
 

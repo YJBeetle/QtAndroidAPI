@@ -1,44 +1,166 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./MathContext.def.hpp"
 
 namespace android::icu::math
 {
-	class MathContext : public JObject
+	// Fields
+	inline android::icu::math::MathContext MathContext::DEFAULT()
 	{
-	public:
-		// Fields
-		static android::icu::math::MathContext DEFAULT();
-		static jint ENGINEERING();
-		static jint PLAIN();
-		static jint ROUND_CEILING();
-		static jint ROUND_DOWN();
-		static jint ROUND_FLOOR();
-		static jint ROUND_HALF_DOWN();
-		static jint ROUND_HALF_EVEN();
-		static jint ROUND_HALF_UP();
-		static jint ROUND_UNNECESSARY();
-		static jint ROUND_UP();
-		static jint SCIENTIFIC();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MathContext(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MathContext(jint arg0);
-		MathContext(jint arg0, jint arg1);
-		MathContext(jint arg0, jint arg1, jboolean arg2);
-		MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3);
-		
-		// Methods
-		jint getDigits() const;
-		jint getForm() const;
-		jboolean getLostDigits() const;
-		jint getRoundingMode() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.icu.math.MathContext",
+			"DEFAULT",
+			"Landroid/icu/math/MathContext;"
+		);
+	}
+	inline jint MathContext::ENGINEERING()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ENGINEERING"
+		);
+	}
+	inline jint MathContext::PLAIN()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"PLAIN"
+		);
+	}
+	inline jint MathContext::ROUND_CEILING()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_CEILING"
+		);
+	}
+	inline jint MathContext::ROUND_DOWN()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_DOWN"
+		);
+	}
+	inline jint MathContext::ROUND_FLOOR()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_FLOOR"
+		);
+	}
+	inline jint MathContext::ROUND_HALF_DOWN()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_HALF_DOWN"
+		);
+	}
+	inline jint MathContext::ROUND_HALF_EVEN()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_HALF_EVEN"
+		);
+	}
+	inline jint MathContext::ROUND_HALF_UP()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_HALF_UP"
+		);
+	}
+	inline jint MathContext::ROUND_UNNECESSARY()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_UNNECESSARY"
+		);
+	}
+	inline jint MathContext::ROUND_UP()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"ROUND_UP"
+		);
+	}
+	inline jint MathContext::SCIENTIFIC()
+	{
+		return getStaticField<jint>(
+			"android.icu.math.MathContext",
+			"SCIENTIFIC"
+		);
+	}
+	
+	// Constructors
+	inline MathContext::MathContext(jint arg0)
+		: JObject(
+			"android.icu.math.MathContext",
+			"(I)V",
+			arg0
+		) {}
+	inline MathContext::MathContext(jint arg0, jint arg1)
+		: JObject(
+			"android.icu.math.MathContext",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	inline MathContext::MathContext(jint arg0, jint arg1, jboolean arg2)
+		: JObject(
+			"android.icu.math.MathContext",
+			"(IIZ)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	inline MathContext::MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3)
+		: JObject(
+			"android.icu.math.MathContext",
+			"(IIZI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline jint MathContext::getDigits() const
+	{
+		return callMethod<jint>(
+			"getDigits",
+			"()I"
+		);
+	}
+	inline jint MathContext::getForm() const
+	{
+		return callMethod<jint>(
+			"getForm",
+			"()I"
+		);
+	}
+	inline jboolean MathContext::getLostDigits() const
+	{
+		return callMethod<jboolean>(
+			"getLostDigits",
+			"()Z"
+		);
+	}
+	inline jint MathContext::getRoundingMode() const
+	{
+		return callMethod<jint>(
+			"getRoundingMode",
+			"()I"
+		);
+	}
+	inline JString MathContext::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::math
+
+// Base class headers
 

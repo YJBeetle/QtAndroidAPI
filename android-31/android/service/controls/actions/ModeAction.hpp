@@ -1,27 +1,46 @@
 #pragma once
 
-#include "./ControlAction.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./ModeAction.def.hpp"
 
 namespace android::service::controls::actions
 {
-	class ModeAction : public android::service::controls::actions::ControlAction
+	// Fields
+	
+	// Constructors
+	inline ModeAction::ModeAction(JString arg0, jint arg1)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.ModeAction",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline ModeAction::ModeAction(JString arg0, jint arg1, JString arg2)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.ModeAction",
+			"(Ljava/lang/String;ILjava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint ModeAction::getActionType() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ModeAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		ModeAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-		
-		// Constructors
-		ModeAction(JString arg0, jint arg1);
-		ModeAction(JString arg0, jint arg1, JString arg2);
-		
-		// Methods
-		jint getActionType() const;
-		jint getNewMode() const;
-	};
+		return callMethod<jint>(
+			"getActionType",
+			"()I"
+		);
+	}
+	inline jint ModeAction::getNewMode() const
+	{
+		return callMethod<jint>(
+			"getNewMode",
+			"()I"
+		);
+	}
 } // namespace android::service::controls::actions
+
+// Base class headers
+#include "./ControlAction.hpp"
 

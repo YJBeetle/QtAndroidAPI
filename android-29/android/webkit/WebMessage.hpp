@@ -1,28 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./WebMessage.def.hpp"
 
 namespace android::webkit
 {
-	class WebMessage : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebMessage::WebMessage(JString arg0)
+		: JObject(
+			"android.webkit.WebMessage",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline WebMessage::WebMessage(JString arg0, JArray arg1)
+		: JObject(
+			"android.webkit.WebMessage",
+			"(Ljava/lang/String;[Landroid/webkit/WebMessagePort;)V",
+			arg0.object<jstring>(),
+			arg1.object<jarray>()
+		) {}
+	
+	// Methods
+	inline JString WebMessage::getData() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebMessage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebMessage(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		WebMessage(JString arg0);
-		WebMessage(JString arg0, JArray arg1);
-		
-		// Methods
-		JString getData() const;
-		JArray getPorts() const;
-	};
+		return callObjectMethod(
+			"getData",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JArray WebMessage::getPorts() const
+	{
+		return callObjectMethod(
+			"getPorts",
+			"()[Landroid/webkit/WebMessagePort;"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

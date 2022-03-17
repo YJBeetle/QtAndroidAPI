@@ -1,32 +1,34 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BugreportManager_BugreportCallback.def.hpp"
+#include "./ParcelFileDescriptor.def.hpp"
+#include "./BugreportManager.def.hpp"
 
 namespace android::os
 {
-	class BugreportManager_BugreportCallback;
-}
-namespace android::os
-{
-	class ParcelFileDescriptor;
-}
-
-namespace android::os
-{
-	class BugreportManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void BugreportManager::cancelBugreport() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BugreportManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BugreportManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancelBugreport() const;
-		void startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2) const;
-	};
+		callMethod<void>(
+			"cancelBugreport",
+			"()V"
+		);
+	}
+	inline void BugreportManager::startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2) const
+	{
+		callMethod<void>(
+			"startConnectivityBugreport",
+			"(Landroid/os/ParcelFileDescriptor;Ljava/util/concurrent/Executor;Landroid/os/BugreportManager$BugreportCallback;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

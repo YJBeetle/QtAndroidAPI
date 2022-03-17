@@ -1,28 +1,46 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCodec_ParameterDescriptor.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec_ParameterDescriptor : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MediaCodec_ParameterDescriptor::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodec_ParameterDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_ParameterDescriptor(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getName() const;
-		jint getType() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString MediaCodec_ParameterDescriptor::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MediaCodec_ParameterDescriptor::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline jint MediaCodec_ParameterDescriptor::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

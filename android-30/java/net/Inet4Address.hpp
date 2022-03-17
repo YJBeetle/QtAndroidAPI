@@ -1,39 +1,118 @@
 #pragma once
 
-#include "./InetAddress.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./Inet4Address.def.hpp"
 
 namespace java::net
 {
-	class Inet4Address : public java::net::InetAddress
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean Inet4Address::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Inet4Address(const char *className, const char *sig, Ts...agv) : java::net::InetAddress(className, sig, std::forward<Ts>(agv)...) {}
-		Inet4Address(QAndroidJniObject obj) : java::net::InetAddress(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JByteArray getAddress() const;
-		JString getHostAddress() const;
-		jint hashCode() const;
-		jboolean isAnyLocalAddress() const;
-		jboolean isLinkLocalAddress() const;
-		jboolean isLoopbackAddress() const;
-		jboolean isMCGlobal() const;
-		jboolean isMCLinkLocal() const;
-		jboolean isMCNodeLocal() const;
-		jboolean isMCOrgLocal() const;
-		jboolean isMCSiteLocal() const;
-		jboolean isMulticastAddress() const;
-		jboolean isSiteLocalAddress() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JByteArray Inet4Address::getAddress() const
+	{
+		return callObjectMethod(
+			"getAddress",
+			"()[B"
+		);
+	}
+	inline JString Inet4Address::getHostAddress() const
+	{
+		return callObjectMethod(
+			"getHostAddress",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint Inet4Address::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean Inet4Address::isAnyLocalAddress() const
+	{
+		return callMethod<jboolean>(
+			"isAnyLocalAddress",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isLinkLocalAddress() const
+	{
+		return callMethod<jboolean>(
+			"isLinkLocalAddress",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isLoopbackAddress() const
+	{
+		return callMethod<jboolean>(
+			"isLoopbackAddress",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isMCGlobal() const
+	{
+		return callMethod<jboolean>(
+			"isMCGlobal",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isMCLinkLocal() const
+	{
+		return callMethod<jboolean>(
+			"isMCLinkLocal",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isMCNodeLocal() const
+	{
+		return callMethod<jboolean>(
+			"isMCNodeLocal",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isMCOrgLocal() const
+	{
+		return callMethod<jboolean>(
+			"isMCOrgLocal",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isMCSiteLocal() const
+	{
+		return callMethod<jboolean>(
+			"isMCSiteLocal",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isMulticastAddress() const
+	{
+		return callMethod<jboolean>(
+			"isMulticastAddress",
+			"()Z"
+		);
+	}
+	inline jboolean Inet4Address::isSiteLocalAddress() const
+	{
+		return callMethod<jboolean>(
+			"isSiteLocalAddress",
+			"()Z"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "./InetAddress.hpp"
 

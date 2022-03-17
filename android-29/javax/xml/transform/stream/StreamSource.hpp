@@ -1,53 +1,145 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-namespace java::io
-{
-	class File;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class Reader;
-}
-class JString;
+#include "../../../../java/io/File.def.hpp"
+#include "../../../../java/io/InputStream.def.hpp"
+#include "../../../../java/io/Reader.def.hpp"
+#include "../../../../JString.hpp"
+#include "./StreamSource.def.hpp"
 
 namespace javax::xml::transform::stream
 {
-	class StreamSource : public JObject
+	// Fields
+	inline JString StreamSource::FEATURE()
 	{
-	public:
-		// Fields
-		static JString FEATURE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StreamSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamSource(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		StreamSource();
-		StreamSource(java::io::File arg0);
-		StreamSource(java::io::InputStream arg0);
-		StreamSource(java::io::Reader arg0);
-		StreamSource(JString arg0);
-		StreamSource(java::io::InputStream arg0, JString arg1);
-		StreamSource(java::io::Reader arg0, JString arg1);
-		
-		// Methods
-		java::io::InputStream getInputStream() const;
-		JString getPublicId() const;
-		java::io::Reader getReader() const;
-		JString getSystemId() const;
-		jboolean isEmpty() const;
-		void setInputStream(java::io::InputStream arg0) const;
-		void setPublicId(JString arg0) const;
-		void setReader(java::io::Reader arg0) const;
-		void setSystemId(java::io::File arg0) const;
-		void setSystemId(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.stream.StreamSource",
+			"FEATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline StreamSource::StreamSource()
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"()V"
+		) {}
+	inline StreamSource::StreamSource(java::io::File arg0)
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline StreamSource::StreamSource(java::io::InputStream arg0)
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		) {}
+	inline StreamSource::StreamSource(java::io::Reader arg0)
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/Reader;)V",
+			arg0.object()
+		) {}
+	inline StreamSource::StreamSource(JString arg0)
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline StreamSource::StreamSource(java::io::InputStream arg0, JString arg1)
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/InputStream;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	inline StreamSource::StreamSource(java::io::Reader arg0, JString arg1)
+		: JObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/Reader;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline java::io::InputStream StreamSource::getInputStream() const
+	{
+		return callObjectMethod(
+			"getInputStream",
+			"()Ljava/io/InputStream;"
+		);
+	}
+	inline JString StreamSource::getPublicId() const
+	{
+		return callObjectMethod(
+			"getPublicId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::io::Reader StreamSource::getReader() const
+	{
+		return callObjectMethod(
+			"getReader",
+			"()Ljava/io/Reader;"
+		);
+	}
+	inline JString StreamSource::getSystemId() const
+	{
+		return callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean StreamSource::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline void StreamSource::setInputStream(java::io::InputStream arg0) const
+	{
+		callMethod<void>(
+			"setInputStream",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		);
+	}
+	inline void StreamSource::setPublicId(JString arg0) const
+	{
+		callMethod<void>(
+			"setPublicId",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void StreamSource::setReader(java::io::Reader arg0) const
+	{
+		callMethod<void>(
+			"setReader",
+			"(Ljava/io/Reader;)V",
+			arg0.object()
+		);
+	}
+	inline void StreamSource::setSystemId(java::io::File arg0) const
+	{
+		callMethod<void>(
+			"setSystemId",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		);
+	}
+	inline void StreamSource::setSystemId(JString arg0) const
+	{
+		callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace javax::xml::transform::stream
+
+// Base class headers
 

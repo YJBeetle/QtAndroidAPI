@@ -1,33 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::content
-{
-	class ContentResolver;
-}
-namespace android::net
-{
-	class Uri;
-}
+#include "../../JArray.hpp"
+#include "../content/ContentResolver.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "./CalendarContract_Attendees.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_Attendees : public JObject
+	// Fields
+	inline android::net::Uri CalendarContract_Attendees::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CalendarContract_Attendees(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_Attendees(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject query(android::content::ContentResolver arg0, jlong arg1, JArray arg2);
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$Attendees",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject CalendarContract_Attendees::query(android::content::ContentResolver arg0, jlong arg1, JArray arg2)
+	{
+		return callStaticObjectMethod(
+			"android.provider.CalendarContract$Attendees",
+			"query",
+			"(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0.object(),
+			arg1,
+			arg2.object<jarray>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

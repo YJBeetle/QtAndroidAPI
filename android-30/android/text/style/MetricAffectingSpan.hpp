@@ -1,33 +1,38 @@
 #pragma once
 
-#include "./CharacterStyle.hpp"
-
-namespace android::text
-{
-	class TextPaint;
-}
-namespace android::text::style
-{
-	class CharacterStyle;
-}
+#include "../TextPaint.def.hpp"
+#include "./CharacterStyle.def.hpp"
+#include "./MetricAffectingSpan.def.hpp"
 
 namespace android::text::style
 {
-	class MetricAffectingSpan : public android::text::style::CharacterStyle
+	// Fields
+	
+	// Constructors
+	inline MetricAffectingSpan::MetricAffectingSpan()
+		: android::text::style::CharacterStyle(
+			"android.text.style.MetricAffectingSpan",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::style::MetricAffectingSpan MetricAffectingSpan::getUnderlying() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MetricAffectingSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		MetricAffectingSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
-		
-		// Constructors
-		MetricAffectingSpan();
-		
-		// Methods
-		android::text::style::MetricAffectingSpan getUnderlying() const;
-		void updateMeasureState(android::text::TextPaint arg0) const;
-	};
+		return callObjectMethod(
+			"getUnderlying",
+			"()Landroid/text/style/MetricAffectingSpan;"
+		);
+	}
+	inline void MetricAffectingSpan::updateMeasureState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
 

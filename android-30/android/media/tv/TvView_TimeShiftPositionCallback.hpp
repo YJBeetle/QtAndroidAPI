@@ -1,26 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TvView_TimeShiftPositionCallback.def.hpp"
 
 namespace android::media::tv
 {
-	class TvView_TimeShiftPositionCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline TvView_TimeShiftPositionCallback::TvView_TimeShiftPositionCallback()
+		: JObject(
+			"android.media.tv.TvView$TimeShiftPositionCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvView_TimeShiftPositionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvView_TimeShiftPositionCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TvView_TimeShiftPositionCallback();
-		
-		// Methods
-		void onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1) const;
-		void onTimeShiftStartPositionChanged(JString arg0, jlong arg1) const;
-	};
+		callMethod<void>(
+			"onTimeShiftCurrentPositionChanged",
+			"(Ljava/lang/String;J)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(JString arg0, jlong arg1) const
+	{
+		callMethod<void>(
+			"onTimeShiftStartPositionChanged",
+			"(Ljava/lang/String;J)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::media::tv
+
+// Base class headers
 

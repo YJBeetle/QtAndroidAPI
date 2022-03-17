@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ParseException.def.hpp"
 
 namespace android::net
 {
-	class ParseException : public java::lang::RuntimeException
+	// Fields
+	inline JString ParseException::response()
 	{
-	public:
-		// Fields
-		JString response();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ParseException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ParseException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getObjectField(
+			"response",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

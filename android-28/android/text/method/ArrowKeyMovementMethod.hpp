@@ -1,40 +1,68 @@
 #pragma once
 
-#include "./BaseMovementMethod.hpp"
-
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
-namespace android::widget
-{
-	class TextView;
-}
+#include "../../view/KeyEvent.def.hpp"
+#include "../../view/MotionEvent.def.hpp"
+#include "../../widget/TextView.def.hpp"
+#include "./ArrowKeyMovementMethod.def.hpp"
 
 namespace android::text::method
 {
-	class ArrowKeyMovementMethod : public android::text::method::BaseMovementMethod
+	// Fields
+	
+	// Constructors
+	inline ArrowKeyMovementMethod::ArrowKeyMovementMethod()
+		: android::text::method::BaseMovementMethod(
+			"android.text.method.ArrowKeyMovementMethod",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject ArrowKeyMovementMethod::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ArrowKeyMovementMethod(const char *className, const char *sig, Ts...agv) : android::text::method::BaseMovementMethod(className, sig, std::forward<Ts>(agv)...) {}
-		ArrowKeyMovementMethod(QAndroidJniObject obj) : android::text::method::BaseMovementMethod(obj) {}
-		
-		// Constructors
-		ArrowKeyMovementMethod();
-		
-		// Methods
-		static JObject getInstance();
-		jboolean canSelectArbitrarily() const;
-		void initialize(android::widget::TextView arg0, JObject arg1) const;
-		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const;
-		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const;
-	};
+		return callStaticObjectMethod(
+			"android.text.method.ArrowKeyMovementMethod",
+			"getInstance",
+			"()Landroid/text/method/MovementMethod;"
+		);
+	}
+	inline jboolean ArrowKeyMovementMethod::canSelectArbitrarily() const
+	{
+		return callMethod<jboolean>(
+			"canSelectArbitrarily",
+			"()Z"
+		);
+	}
+	inline void ArrowKeyMovementMethod::initialize(android::widget::TextView arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"initialize",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void ArrowKeyMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"onTakeFocus",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline jboolean ArrowKeyMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
+	{
+		return callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./BaseMovementMethod.hpp"
 

@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./EGLObjectHandle.hpp"
-
-class JObject;
+#include "../../JObject.hpp"
+#include "./EGLSurface.def.hpp"
 
 namespace android::opengl
 {
-	class EGLSurface : public android::opengl::EGLObjectHandle
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EGLSurface::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EGLSurface(const char *className, const char *sig, Ts...agv) : android::opengl::EGLObjectHandle(className, sig, std::forward<Ts>(agv)...) {}
-		EGLSurface(QAndroidJniObject obj) : android::opengl::EGLObjectHandle(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace android::opengl
+
+// Base class headers
+#include "./EGLObjectHandle.hpp"
 

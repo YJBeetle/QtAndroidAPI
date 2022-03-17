@@ -1,28 +1,30 @@
 #pragma once
 
-#include "./TextClassifierEvent_Builder.hpp"
+#include "./TextClassifierEvent_LanguageDetectionEvent.def.hpp"
+#include "./TextClassifierEvent_LanguageDetectionEvent_Builder.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassifierEvent_LanguageDetectionEvent;
-}
-
-namespace android::view::textclassifier
-{
-	class TextClassifierEvent_LanguageDetectionEvent_Builder : public android::view::textclassifier::TextClassifierEvent_Builder
+	// Fields
+	
+	// Constructors
+	inline TextClassifierEvent_LanguageDetectionEvent_Builder::TextClassifierEvent_LanguageDetectionEvent_Builder(jint arg0)
+		: android::view::textclassifier::TextClassifierEvent_Builder(
+			"android.view.textclassifier.TextClassifierEvent$LanguageDetectionEvent$Builder",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline android::view::textclassifier::TextClassifierEvent_LanguageDetectionEvent TextClassifierEvent_LanguageDetectionEvent_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextClassifierEvent_LanguageDetectionEvent_Builder(const char *className, const char *sig, Ts...agv) : android::view::textclassifier::TextClassifierEvent_Builder(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassifierEvent_LanguageDetectionEvent_Builder(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent_Builder(obj) {}
-		
-		// Constructors
-		TextClassifierEvent_LanguageDetectionEvent_Builder(jint arg0);
-		
-		// Methods
-		android::view::textclassifier::TextClassifierEvent_LanguageDetectionEvent build() const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/textclassifier/TextClassifierEvent$LanguageDetectionEvent;"
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
+#include "./TextClassifierEvent_Builder.hpp"
 

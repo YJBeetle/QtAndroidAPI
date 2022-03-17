@@ -1,28 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
+#include "../net/Uri.def.hpp"
+#include "./CalendarContract_CalendarEntity.def.hpp"
 
 namespace android::provider
 {
-	class CalendarContract_CalendarEntity : public JObject
+	// Fields
+	inline android::net::Uri CalendarContract_CalendarEntity::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CalendarContract_CalendarEntity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CalendarContract_CalendarEntity(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject newEntityIterator(JObject arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.CalendarContract$CalendarEntity",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject CalendarContract_CalendarEntity::newEntityIterator(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.CalendarContract$CalendarEntity",
+			"newEntityIterator",
+			"(Landroid/database/Cursor;)Landroid/content/EntityIterator;",
+			arg0.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

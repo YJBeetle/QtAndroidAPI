@@ -1,23 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./UiTranslationManager.def.hpp"
 
 namespace android::view::translation
 {
-	class UiTranslationManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void UiTranslationManager::registerUiTranslationStateCallback(JObject arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UiTranslationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UiTranslationManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void registerUiTranslationStateCallback(JObject arg0, JObject arg1) const;
-		void unregisterUiTranslationStateCallback(JObject arg0) const;
-	};
+		callMethod<void>(
+			"registerUiTranslationStateCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/view/translation/UiTranslationStateCallback;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void UiTranslationManager::unregisterUiTranslationStateCallback(JObject arg0) const
+	{
+		callMethod<void>(
+			"unregisterUiTranslationStateCallback",
+			"(Landroid/view/translation/UiTranslationStateCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view::translation
+
+// Base class headers
 

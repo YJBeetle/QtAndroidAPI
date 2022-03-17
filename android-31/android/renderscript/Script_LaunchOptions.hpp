@@ -1,31 +1,89 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Script_LaunchOptions.def.hpp"
 
 namespace android::renderscript
 {
-	class Script_LaunchOptions : public JObject
+	// Fields
+	
+	// Constructors
+	inline Script_LaunchOptions::Script_LaunchOptions()
+		: JObject(
+			"android.renderscript.Script$LaunchOptions",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint Script_LaunchOptions::getXEnd() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Script_LaunchOptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Script_LaunchOptions(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Script_LaunchOptions();
-		
-		// Methods
-		jint getXEnd() const;
-		jint getXStart() const;
-		jint getYEnd() const;
-		jint getYStart() const;
-		jint getZEnd() const;
-		jint getZStart() const;
-		android::renderscript::Script_LaunchOptions setX(jint arg0, jint arg1) const;
-		android::renderscript::Script_LaunchOptions setY(jint arg0, jint arg1) const;
-		android::renderscript::Script_LaunchOptions setZ(jint arg0, jint arg1) const;
-	};
+		return callMethod<jint>(
+			"getXEnd",
+			"()I"
+		);
+	}
+	inline jint Script_LaunchOptions::getXStart() const
+	{
+		return callMethod<jint>(
+			"getXStart",
+			"()I"
+		);
+	}
+	inline jint Script_LaunchOptions::getYEnd() const
+	{
+		return callMethod<jint>(
+			"getYEnd",
+			"()I"
+		);
+	}
+	inline jint Script_LaunchOptions::getYStart() const
+	{
+		return callMethod<jint>(
+			"getYStart",
+			"()I"
+		);
+	}
+	inline jint Script_LaunchOptions::getZEnd() const
+	{
+		return callMethod<jint>(
+			"getZEnd",
+			"()I"
+		);
+	}
+	inline jint Script_LaunchOptions::getZStart() const
+	{
+		return callMethod<jint>(
+			"getZStart",
+			"()I"
+		);
+	}
+	inline android::renderscript::Script_LaunchOptions Script_LaunchOptions::setX(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setX",
+			"(II)Landroid/renderscript/Script$LaunchOptions;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::renderscript::Script_LaunchOptions Script_LaunchOptions::setY(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setY",
+			"(II)Landroid/renderscript/Script$LaunchOptions;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::renderscript::Script_LaunchOptions Script_LaunchOptions::setZ(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setZ",
+			"(II)Landroid/renderscript/Script$LaunchOptions;",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

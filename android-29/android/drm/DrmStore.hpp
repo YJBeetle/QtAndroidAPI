@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmStore.def.hpp"
 
 namespace android::drm
 {
-	class DrmStore : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DrmStore();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DrmStore::DrmStore()
+		: JObject(
+			"android.drm.DrmStore",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::drm
+
+// Base class headers
 

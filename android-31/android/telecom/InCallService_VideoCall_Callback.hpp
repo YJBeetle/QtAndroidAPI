@@ -1,38 +1,81 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./VideoProfile.def.hpp"
+#include "./VideoProfile_CameraCapabilities.def.hpp"
+#include "./InCallService_VideoCall_Callback.def.hpp"
 
 namespace android::telecom
 {
-	class VideoProfile;
-}
-namespace android::telecom
-{
-	class VideoProfile_CameraCapabilities;
-}
-
-namespace android::telecom
-{
-	class InCallService_VideoCall_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline InCallService_VideoCall_Callback::InCallService_VideoCall_Callback()
+		: JObject(
+			"android.telecom.InCallService$VideoCall$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void InCallService_VideoCall_Callback::onCallDataUsageChanged(jlong arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InCallService_VideoCall_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		InCallService_VideoCall_Callback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		InCallService_VideoCall_Callback();
-		
-		// Methods
-		void onCallDataUsageChanged(jlong arg0) const;
-		void onCallSessionEvent(jint arg0) const;
-		void onCameraCapabilitiesChanged(android::telecom::VideoProfile_CameraCapabilities arg0) const;
-		void onPeerDimensionsChanged(jint arg0, jint arg1) const;
-		void onSessionModifyRequestReceived(android::telecom::VideoProfile arg0) const;
-		void onSessionModifyResponseReceived(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2) const;
-		void onVideoQualityChanged(jint arg0) const;
-	};
+		callMethod<void>(
+			"onCallDataUsageChanged",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void InCallService_VideoCall_Callback::onCallSessionEvent(jint arg0) const
+	{
+		callMethod<void>(
+			"onCallSessionEvent",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void InCallService_VideoCall_Callback::onCameraCapabilitiesChanged(android::telecom::VideoProfile_CameraCapabilities arg0) const
+	{
+		callMethod<void>(
+			"onCameraCapabilitiesChanged",
+			"(Landroid/telecom/VideoProfile$CameraCapabilities;)V",
+			arg0.object()
+		);
+	}
+	inline void InCallService_VideoCall_Callback::onPeerDimensionsChanged(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onPeerDimensionsChanged",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void InCallService_VideoCall_Callback::onSessionModifyRequestReceived(android::telecom::VideoProfile arg0) const
+	{
+		callMethod<void>(
+			"onSessionModifyRequestReceived",
+			"(Landroid/telecom/VideoProfile;)V",
+			arg0.object()
+		);
+	}
+	inline void InCallService_VideoCall_Callback::onSessionModifyResponseReceived(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2) const
+	{
+		callMethod<void>(
+			"onSessionModifyResponseReceived",
+			"(ILandroid/telecom/VideoProfile;Landroid/telecom/VideoProfile;)V",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void InCallService_VideoCall_Callback::onVideoQualityChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onVideoQualityChanged",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

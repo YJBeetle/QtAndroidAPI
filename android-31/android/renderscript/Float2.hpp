@@ -1,25 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Float2.def.hpp"
 
 namespace android::renderscript
 {
-	class Float2 : public JObject
+	// Fields
+	inline jfloat Float2::x()
 	{
-	public:
-		// Fields
-		jfloat x();
-		jfloat y();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Float2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Float2(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Float2();
-		Float2(jfloat arg0, jfloat arg1);
-		
-		// Methods
-	};
+		return getField<jfloat>(
+			"x"
+		);
+	}
+	inline jfloat Float2::y()
+	{
+		return getField<jfloat>(
+			"y"
+		);
+	}
+	
+	// Constructors
+	inline Float2::Float2()
+		: JObject(
+			"android.renderscript.Float2",
+			"()V"
+		) {}
+	inline Float2::Float2(jfloat arg0, jfloat arg1)
+		: JObject(
+			"android.renderscript.Float2",
+			"(FF)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

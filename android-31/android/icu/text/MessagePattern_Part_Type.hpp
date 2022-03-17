@@ -1,41 +1,154 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./MessagePattern_Part_Type.def.hpp"
 
 namespace android::icu::text
 {
-	class MessagePattern_Part_Type : public java::lang::Enum
+	// Fields
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_DOUBLE()
 	{
-	public:
-		// Fields
-		static android::icu::text::MessagePattern_Part_Type ARG_DOUBLE();
-		static android::icu::text::MessagePattern_Part_Type ARG_INT();
-		static android::icu::text::MessagePattern_Part_Type ARG_LIMIT();
-		static android::icu::text::MessagePattern_Part_Type ARG_NAME();
-		static android::icu::text::MessagePattern_Part_Type ARG_NUMBER();
-		static android::icu::text::MessagePattern_Part_Type ARG_SELECTOR();
-		static android::icu::text::MessagePattern_Part_Type ARG_START();
-		static android::icu::text::MessagePattern_Part_Type ARG_STYLE();
-		static android::icu::text::MessagePattern_Part_Type ARG_TYPE();
-		static android::icu::text::MessagePattern_Part_Type INSERT_CHAR();
-		static android::icu::text::MessagePattern_Part_Type MSG_LIMIT();
-		static android::icu::text::MessagePattern_Part_Type MSG_START();
-		static android::icu::text::MessagePattern_Part_Type REPLACE_NUMBER();
-		static android::icu::text::MessagePattern_Part_Type SKIP_SYNTAX();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MessagePattern_Part_Type(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern_Part_Type(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::MessagePattern_Part_Type valueOf(JString arg0);
-		static JArray values();
-		jboolean hasNumericValue() const;
-	};
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_DOUBLE",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_INT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_INT",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_LIMIT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_LIMIT",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_NAME()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_NAME",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_NUMBER",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_SELECTOR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_SELECTOR",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_START()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_START",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_STYLE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_STYLE",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::ARG_TYPE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"ARG_TYPE",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::INSERT_CHAR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"INSERT_CHAR",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::MSG_LIMIT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"MSG_LIMIT",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::MSG_START()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"MSG_START",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::REPLACE_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"REPLACE_NUMBER",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::SKIP_SYNTAX()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$Part$Type",
+			"SKIP_SYNTAX",
+			"Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::MessagePattern_Part_Type MessagePattern_Part_Type::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.MessagePattern$Part$Type",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$Part$Type;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray MessagePattern_Part_Type::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.MessagePattern$Part$Type",
+			"values",
+			"()[Landroid/icu/text/MessagePattern$Part$Type;"
+		);
+	}
+	inline jboolean MessagePattern_Part_Type::hasNumericValue() const
+	{
+		return callMethod<jboolean>(
+			"hasNumericValue",
+			"()Z"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

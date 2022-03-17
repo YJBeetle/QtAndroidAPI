@@ -1,29 +1,51 @@
 #pragma once
 
-#include "../Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./LambdaConversionException.def.hpp"
 
 namespace java::lang::invoke
 {
-	class LambdaConversionException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LambdaConversionException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		LambdaConversionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		LambdaConversionException();
-		LambdaConversionException(JString arg0);
-		LambdaConversionException(JThrowable arg0);
-		LambdaConversionException(JString arg0, JThrowable arg1);
-		LambdaConversionException(JString arg0, JThrowable arg1, jboolean arg2, jboolean arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline LambdaConversionException::LambdaConversionException()
+		: java::lang::Exception(
+			"java.lang.invoke.LambdaConversionException",
+			"()V"
+		) {}
+	inline LambdaConversionException::LambdaConversionException(JString arg0)
+		: java::lang::Exception(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline LambdaConversionException::LambdaConversionException(JThrowable arg0)
+		: java::lang::Exception(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline LambdaConversionException::LambdaConversionException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	inline LambdaConversionException::LambdaConversionException(JString arg0, JThrowable arg1, jboolean arg2, jboolean arg3)
+		: java::lang::Exception(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
 } // namespace java::lang::invoke
+
+// Base class headers
+#include "../Exception.hpp"
 

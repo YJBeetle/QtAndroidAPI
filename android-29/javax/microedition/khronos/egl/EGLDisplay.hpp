@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./EGLDisplay.def.hpp"
 
 namespace javax::microedition::khronos::egl
 {
-	class EGLDisplay : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EGLDisplay(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGLDisplay(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EGLDisplay();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline EGLDisplay::EGLDisplay()
+		: JObject(
+			"javax.microedition.khronos.egl.EGLDisplay",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::microedition::khronos::egl
+
+// Base class headers
 

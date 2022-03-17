@@ -1,35 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::media
-{
-	class MediaCas;
-}
-namespace java::util
-{
-	class ArrayList;
-}
+#include "../../JByteArray.hpp"
+#include "./MediaCas.def.hpp"
+#include "../../java/util/ArrayList.def.hpp"
+#include "./MediaCas_Session.def.hpp"
 
 namespace android::media
 {
-	class MediaCas_Session : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MediaCas_Session::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCas_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCas_Session(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void processEcm(JByteArray arg0) const;
-		void processEcm(JByteArray arg0, jint arg1, jint arg2) const;
-		void setPrivateData(JByteArray arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void MediaCas_Session::processEcm(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"processEcm",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void MediaCas_Session::processEcm(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"processEcm",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void MediaCas_Session::setPrivateData(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"setPrivateData",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

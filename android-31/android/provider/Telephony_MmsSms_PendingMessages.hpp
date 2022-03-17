@@ -1,37 +1,97 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Telephony_MmsSms_PendingMessages.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_MmsSms_PendingMessages : public JObject
+	// Fields
+	inline android::net::Uri Telephony_MmsSms_PendingMessages::CONTENT_URI()
 	{
-	public:
-		// Fields
-		static android::net::Uri CONTENT_URI();
-		static JString DUE_TIME();
-		static JString ERROR_CODE();
-		static JString ERROR_TYPE();
-		static JString LAST_TRY();
-		static JString MSG_ID();
-		static JString MSG_TYPE();
-		static JString PROTO_TYPE();
-		static JString RETRY_INDEX();
-		static JString SUBSCRIPTION_ID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Telephony_MmsSms_PendingMessages(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_MmsSms_PendingMessages(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::DUE_TIME()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"DUE_TIME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::ERROR_CODE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"ERROR_CODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::ERROR_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"ERROR_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::LAST_TRY()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"LAST_TRY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::MSG_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"MSG_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::MSG_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"MSG_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::PROTO_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"PROTO_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::RETRY_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"RETRY_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_MmsSms_PendingMessages::SUBSCRIPTION_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$MmsSms$PendingMessages",
+			"SUBSCRIPTION_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

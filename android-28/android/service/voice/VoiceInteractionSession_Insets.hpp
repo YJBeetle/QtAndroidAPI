@@ -1,37 +1,63 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::graphics
-{
-	class Region;
-}
+#include "../../graphics/Rect.def.hpp"
+#include "../../graphics/Region.def.hpp"
+#include "./VoiceInteractionSession_Insets.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_Insets : public JObject
+	// Fields
+	inline jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_CONTENT()
 	{
-	public:
-		// Fields
-		static jint TOUCHABLE_INSETS_CONTENT();
-		static jint TOUCHABLE_INSETS_FRAME();
-		static jint TOUCHABLE_INSETS_REGION();
-		android::graphics::Rect contentInsets();
-		jint touchableInsets();
-		android::graphics::Region touchableRegion();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_Insets(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		VoiceInteractionSession_Insets();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.service.voice.VoiceInteractionSession$Insets",
+			"TOUCHABLE_INSETS_CONTENT"
+		);
+	}
+	inline jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_FRAME()
+	{
+		return getStaticField<jint>(
+			"android.service.voice.VoiceInteractionSession$Insets",
+			"TOUCHABLE_INSETS_FRAME"
+		);
+	}
+	inline jint VoiceInteractionSession_Insets::TOUCHABLE_INSETS_REGION()
+	{
+		return getStaticField<jint>(
+			"android.service.voice.VoiceInteractionSession$Insets",
+			"TOUCHABLE_INSETS_REGION"
+		);
+	}
+	inline android::graphics::Rect VoiceInteractionSession_Insets::contentInsets()
+	{
+		return getObjectField(
+			"contentInsets",
+			"Landroid/graphics/Rect;"
+		);
+	}
+	inline jint VoiceInteractionSession_Insets::touchableInsets()
+	{
+		return getField<jint>(
+			"touchableInsets"
+		);
+	}
+	inline android::graphics::Region VoiceInteractionSession_Insets::touchableRegion()
+	{
+		return getObjectField(
+			"touchableRegion",
+			"Landroid/graphics/Region;"
+		);
+	}
+	
+	// Constructors
+	inline VoiceInteractionSession_Insets::VoiceInteractionSession_Insets()
+		: JObject(
+			"android.service.voice.VoiceInteractionSession$Insets",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::service::voice
+
+// Base class headers
 

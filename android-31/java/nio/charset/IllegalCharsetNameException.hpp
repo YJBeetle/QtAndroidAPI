@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./IllegalCharsetNameException.def.hpp"
 
 namespace java::nio::charset
 {
-	class IllegalCharsetNameException : public java::lang::IllegalArgumentException
+	// Fields
+	
+	// Constructors
+	inline IllegalCharsetNameException::IllegalCharsetNameException(JString arg0)
+		: java::lang::IllegalArgumentException(
+			"java.nio.charset.IllegalCharsetNameException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString IllegalCharsetNameException::getCharsetName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IllegalCharsetNameException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalCharsetNameException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-		
-		// Constructors
-		IllegalCharsetNameException(JString arg0);
-		
-		// Methods
-		JString getCharsetName() const;
-	};
+		return callObjectMethod(
+			"getCharsetName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::charset
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

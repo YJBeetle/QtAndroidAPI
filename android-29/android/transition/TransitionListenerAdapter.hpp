@@ -1,32 +1,61 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Transition.def.hpp"
+#include "./TransitionListenerAdapter.def.hpp"
 
 namespace android::transition
 {
-	class Transition;
-}
-
-namespace android::transition
-{
-	class TransitionListenerAdapter : public JObject
+	// Fields
+	
+	// Constructors
+	inline TransitionListenerAdapter::TransitionListenerAdapter()
+		: JObject(
+			"android.transition.TransitionListenerAdapter",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TransitionListenerAdapter::onTransitionCancel(android::transition::Transition arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionListenerAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionListenerAdapter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TransitionListenerAdapter();
-		
-		// Methods
-		void onTransitionCancel(android::transition::Transition arg0) const;
-		void onTransitionEnd(android::transition::Transition arg0) const;
-		void onTransitionPause(android::transition::Transition arg0) const;
-		void onTransitionResume(android::transition::Transition arg0) const;
-		void onTransitionStart(android::transition::Transition arg0) const;
-	};
+		callMethod<void>(
+			"onTransitionCancel",
+			"(Landroid/transition/Transition;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionListenerAdapter::onTransitionEnd(android::transition::Transition arg0) const
+	{
+		callMethod<void>(
+			"onTransitionEnd",
+			"(Landroid/transition/Transition;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionListenerAdapter::onTransitionPause(android::transition::Transition arg0) const
+	{
+		callMethod<void>(
+			"onTransitionPause",
+			"(Landroid/transition/Transition;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionListenerAdapter::onTransitionResume(android::transition::Transition arg0) const
+	{
+		callMethod<void>(
+			"onTransitionResume",
+			"(Landroid/transition/Transition;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionListenerAdapter::onTransitionStart(android::transition::Transition arg0) const
+	{
+		callMethod<void>(
+			"onTransitionStart",
+			"(Landroid/transition/Transition;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
 

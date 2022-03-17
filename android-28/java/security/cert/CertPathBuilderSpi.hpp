@@ -1,24 +1,35 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CertPathBuilderSpi.def.hpp"
 
 namespace java::security::cert
 {
-	class CertPathBuilderSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline CertPathBuilderSpi::CertPathBuilderSpi()
+		: JObject(
+			"java.security.cert.CertPathBuilderSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject CertPathBuilderSpi::engineBuild(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CertPathBuilderSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathBuilderSpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CertPathBuilderSpi();
-		
-		// Methods
-		JObject engineBuild(JObject arg0) const;
-		JObject engineGetRevocationChecker() const;
-	};
+		return callObjectMethod(
+			"engineBuild",
+			"(Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathBuilderResult;",
+			arg0.object()
+		);
+	}
+	inline JObject CertPathBuilderSpi::engineGetRevocationChecker() const
+	{
+		return callObjectMethod(
+			"engineGetRevocationChecker",
+			"()Ljava/security/cert/CertPathChecker;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

@@ -1,44 +1,118 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SipProfile.def.hpp"
+#include "./SipSession_Listener.def.hpp"
+#include "../../../JString.hpp"
+#include "./SipSession.def.hpp"
 
 namespace android::net::sip
 {
-	class SipProfile;
-}
-namespace android::net::sip
-{
-	class SipSession_Listener;
-}
-class JString;
-
-namespace android::net::sip
-{
-	class SipSession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void SipSession::answerCall(JString arg0, jint arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SipSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipSession(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void answerCall(JString arg0, jint arg1) const;
-		void changeCall(JString arg0, jint arg1) const;
-		void endCall() const;
-		JString getCallId() const;
-		JString getLocalIp() const;
-		android::net::sip::SipProfile getLocalProfile() const;
-		android::net::sip::SipProfile getPeerProfile() const;
-		jint getState() const;
-		jboolean isInCall() const;
-		void makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2) const;
-		void register_(jint arg0) const;
-		void setListener(android::net::sip::SipSession_Listener arg0) const;
-		void unregister() const;
-	};
+		callMethod<void>(
+			"answerCall",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void SipSession::changeCall(JString arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"changeCall",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void SipSession::endCall() const
+	{
+		callMethod<void>(
+			"endCall",
+			"()V"
+		);
+	}
+	inline JString SipSession::getCallId() const
+	{
+		return callObjectMethod(
+			"getCallId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString SipSession::getLocalIp() const
+	{
+		return callObjectMethod(
+			"getLocalIp",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::sip::SipProfile SipSession::getLocalProfile() const
+	{
+		return callObjectMethod(
+			"getLocalProfile",
+			"()Landroid/net/sip/SipProfile;"
+		);
+	}
+	inline android::net::sip::SipProfile SipSession::getPeerProfile() const
+	{
+		return callObjectMethod(
+			"getPeerProfile",
+			"()Landroid/net/sip/SipProfile;"
+		);
+	}
+	inline jint SipSession::getState() const
+	{
+		return callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	inline jboolean SipSession::isInCall() const
+	{
+		return callMethod<jboolean>(
+			"isInCall",
+			"()Z"
+		);
+	}
+	inline void SipSession::makeCall(android::net::sip::SipProfile arg0, JString arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"makeCall",
+			"(Landroid/net/sip/SipProfile;Ljava/lang/String;I)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2
+		);
+	}
+	inline void SipSession::register_(jint arg0) const
+	{
+		callMethod<void>(
+			"register",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SipSession::setListener(android::net::sip::SipSession_Listener arg0) const
+	{
+		callMethod<void>(
+			"setListener",
+			"(Landroid/net/sip/SipSession$Listener;)V",
+			arg0.object()
+		);
+	}
+	inline void SipSession::unregister() const
+	{
+		callMethod<void>(
+			"unregister",
+			"()V"
+		);
+	}
 } // namespace android::net::sip
+
+// Base class headers
 

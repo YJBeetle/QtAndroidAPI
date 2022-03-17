@@ -1,37 +1,86 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::bluetooth
-{
-	class BluetoothDevice;
-}
-class JString;
+#include "../../JIntArray.hpp"
+#include "./BluetoothDevice.def.hpp"
+#include "../../JString.hpp"
+#include "./BluetoothA2dp.def.hpp"
 
 namespace android::bluetooth
 {
-	class BluetoothA2dp : public JObject
+	// Fields
+	inline JString BluetoothA2dp::ACTION_CONNECTION_STATE_CHANGED()
 	{
-	public:
-		// Fields
-		static JString ACTION_CONNECTION_STATE_CHANGED();
-		static JString ACTION_PLAYING_STATE_CHANGED();
-		static jint STATE_NOT_PLAYING();
-		static jint STATE_PLAYING();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothA2dp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothA2dp(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void finalize() const;
-		JObject getConnectedDevices() const;
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
-		jboolean isA2dpPlaying(android::bluetooth::BluetoothDevice arg0) const;
-	};
+		return getStaticObjectField(
+			"android.bluetooth.BluetoothA2dp",
+			"ACTION_CONNECTION_STATE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString BluetoothA2dp::ACTION_PLAYING_STATE_CHANGED()
+	{
+		return getStaticObjectField(
+			"android.bluetooth.BluetoothA2dp",
+			"ACTION_PLAYING_STATE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint BluetoothA2dp::STATE_NOT_PLAYING()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothA2dp",
+			"STATE_NOT_PLAYING"
+		);
+	}
+	inline jint BluetoothA2dp::STATE_PLAYING()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothA2dp",
+			"STATE_PLAYING"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void BluetoothA2dp::finalize() const
+	{
+		callMethod<void>(
+			"finalize",
+			"()V"
+		);
+	}
+	inline JObject BluetoothA2dp::getConnectedDevices() const
+	{
+		return callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint BluetoothA2dp::getConnectionState(android::bluetooth::BluetoothDevice arg0) const
+	{
+		return callMethod<jint>(
+			"getConnectionState",
+			"(Landroid/bluetooth/BluetoothDevice;)I",
+			arg0.object()
+		);
+	}
+	inline JObject BluetoothA2dp::getDevicesMatchingConnectionStates(JIntArray arg0) const
+	{
+		return callObjectMethod(
+			"getDevicesMatchingConnectionStates",
+			"([I)Ljava/util/List;",
+			arg0.object<jintArray>()
+		);
+	}
+	inline jboolean BluetoothA2dp::isA2dpPlaying(android::bluetooth::BluetoothDevice arg0) const
+	{
+		return callMethod<jboolean>(
+			"isA2dpPlaying",
+			"(Landroid/bluetooth/BluetoothDevice;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::bluetooth
+
+// Base class headers
 

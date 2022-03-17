@@ -1,36 +1,47 @@
 #pragma once
 
-#include "./ResourceBundle.hpp"
-
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class Reader;
-}
-class JObject;
-class JString;
+#include "../io/InputStream.def.hpp"
+#include "../io/Reader.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./PropertyResourceBundle.def.hpp"
 
 namespace java::util
 {
-	class PropertyResourceBundle : public java::util::ResourceBundle
+	// Fields
+	
+	// Constructors
+	inline PropertyResourceBundle::PropertyResourceBundle(java::io::InputStream arg0)
+		: java::util::ResourceBundle(
+			"java.util.PropertyResourceBundle",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		) {}
+	inline PropertyResourceBundle::PropertyResourceBundle(java::io::Reader arg0)
+		: java::util::ResourceBundle(
+			"java.util.PropertyResourceBundle",
+			"(Ljava/io/Reader;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JObject PropertyResourceBundle::getKeys() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PropertyResourceBundle(const char *className, const char *sig, Ts...agv) : java::util::ResourceBundle(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyResourceBundle(QAndroidJniObject obj) : java::util::ResourceBundle(obj) {}
-		
-		// Constructors
-		PropertyResourceBundle(java::io::InputStream arg0);
-		PropertyResourceBundle(java::io::Reader arg0);
-		
-		// Methods
-		JObject getKeys() const;
-		JObject handleGetObject(JString arg0) const;
-	};
+		return callObjectMethod(
+			"getKeys",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline JObject PropertyResourceBundle::handleGetObject(JString arg0) const
+	{
+		return callObjectMethod(
+			"handleGetObject",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./ResourceBundle.hpp"
 

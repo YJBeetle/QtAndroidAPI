@@ -1,25 +1,41 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MediaBrowser_ConnectionCallback.def.hpp"
 
 namespace android::media::browse
 {
-	class MediaBrowser_ConnectionCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback()
+		: JObject(
+			"android.media.browse.MediaBrowser$ConnectionCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaBrowser_ConnectionCallback::onConnected() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaBrowser_ConnectionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowser_ConnectionCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaBrowser_ConnectionCallback();
-		
-		// Methods
-		void onConnected() const;
-		void onConnectionFailed() const;
-		void onConnectionSuspended() const;
-	};
+		callMethod<void>(
+			"onConnected",
+			"()V"
+		);
+	}
+	inline void MediaBrowser_ConnectionCallback::onConnectionFailed() const
+	{
+		callMethod<void>(
+			"onConnectionFailed",
+			"()V"
+		);
+	}
+	inline void MediaBrowser_ConnectionCallback::onConnectionSuspended() const
+	{
+		callMethod<void>(
+			"onConnectionSuspended",
+			"()V"
+		);
+	}
 } // namespace android::media::browse
+
+// Base class headers
 

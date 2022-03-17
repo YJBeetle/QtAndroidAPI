@@ -1,24 +1,34 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_animator.def.hpp"
 
 namespace android
 {
-	class R_animator : public JObject
+	// Fields
+	inline jint R_animator::fade_in()
 	{
-	public:
-		// Fields
-		static jint fade_in();
-		static jint fade_out();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R_animator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_animator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		R_animator();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$animator",
+			"fade_in"
+		);
+	}
+	inline jint R_animator::fade_out()
+	{
+		return getStaticField<jint>(
+			"android.R$animator",
+			"fade_out"
+		);
+	}
+	
+	// Constructors
+	inline R_animator::R_animator()
+		: JObject(
+			"android.R$animator",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

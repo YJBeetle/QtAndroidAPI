@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Matrix.def.hpp"
+#include "./Shader.def.hpp"
 
 namespace android::graphics
 {
-	class Matrix;
-}
-
-namespace android::graphics
-{
-	class Shader : public JObject
+	// Fields
+	
+	// Constructors
+	inline Shader::Shader()
+		: JObject(
+			"android.graphics.Shader",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean Shader::getLocalMatrix(android::graphics::Matrix arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Shader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Shader(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Shader();
-		
-		// Methods
-		jboolean getLocalMatrix(android::graphics::Matrix arg0) const;
-		void setLocalMatrix(android::graphics::Matrix arg0) const;
-	};
+		return callMethod<jboolean>(
+			"getLocalMatrix",
+			"(Landroid/graphics/Matrix;)Z",
+			arg0.object()
+		);
+	}
+	inline void Shader::setLocalMatrix(android::graphics::Matrix arg0) const
+	{
+		callMethod<void>(
+			"setLocalMatrix",
+			"(Landroid/graphics/Matrix;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

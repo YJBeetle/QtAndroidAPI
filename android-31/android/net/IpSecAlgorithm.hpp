@@ -1,49 +1,181 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./IpSecAlgorithm.def.hpp"
 
 namespace android::net
 {
-	class IpSecAlgorithm : public JObject
+	// Fields
+	inline JString IpSecAlgorithm::AUTH_AES_CMAC()
 	{
-	public:
-		// Fields
-		static JString AUTH_AES_CMAC();
-		static JString AUTH_AES_XCBC();
-		static JString AUTH_CRYPT_AES_GCM();
-		static JString AUTH_CRYPT_CHACHA20_POLY1305();
-		static JString AUTH_HMAC_MD5();
-		static JString AUTH_HMAC_SHA1();
-		static JString AUTH_HMAC_SHA256();
-		static JString AUTH_HMAC_SHA384();
-		static JString AUTH_HMAC_SHA512();
-		static JObject CREATOR();
-		static JString CRYPT_AES_CBC();
-		static JString CRYPT_AES_CTR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IpSecAlgorithm(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IpSecAlgorithm(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		IpSecAlgorithm(JString arg0, JByteArray arg1);
-		IpSecAlgorithm(JString arg0, JByteArray arg1, jint arg2);
-		
-		// Methods
-		static JObject getSupportedAlgorithms();
-		jint describeContents() const;
-		JByteArray getKey() const;
-		JString getName() const;
-		jint getTruncationLengthBits() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_AES_CMAC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_AES_XCBC()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_AES_XCBC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_CRYPT_AES_GCM()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_CRYPT_AES_GCM",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_CRYPT_CHACHA20_POLY1305()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_CRYPT_CHACHA20_POLY1305",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_HMAC_MD5()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_HMAC_MD5",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_HMAC_SHA1()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_HMAC_SHA1",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_HMAC_SHA256()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_HMAC_SHA256",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_HMAC_SHA384()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_HMAC_SHA384",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::AUTH_HMAC_SHA512()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"AUTH_HMAC_SHA512",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JObject IpSecAlgorithm::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline JString IpSecAlgorithm::CRYPT_AES_CBC()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"CRYPT_AES_CBC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString IpSecAlgorithm::CRYPT_AES_CTR()
+	{
+		return getStaticObjectField(
+			"android.net.IpSecAlgorithm",
+			"CRYPT_AES_CTR",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline IpSecAlgorithm::IpSecAlgorithm(JString arg0, JByteArray arg1)
+		: JObject(
+			"android.net.IpSecAlgorithm",
+			"(Ljava/lang/String;[B)V",
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>()
+		) {}
+	inline IpSecAlgorithm::IpSecAlgorithm(JString arg0, JByteArray arg1, jint arg2)
+		: JObject(
+			"android.net.IpSecAlgorithm",
+			"(Ljava/lang/String;[BI)V",
+			arg0.object<jstring>(),
+			arg1.object<jbyteArray>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline JObject IpSecAlgorithm::getSupportedAlgorithms()
+	{
+		return callStaticObjectMethod(
+			"android.net.IpSecAlgorithm",
+			"getSupportedAlgorithms",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jint IpSecAlgorithm::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JByteArray IpSecAlgorithm::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()[B"
+		);
+	}
+	inline JString IpSecAlgorithm::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint IpSecAlgorithm::getTruncationLengthBits() const
+	{
+		return callMethod<jint>(
+			"getTruncationLengthBits",
+			"()I"
+		);
+	}
+	inline JString IpSecAlgorithm::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void IpSecAlgorithm::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

@@ -1,32 +1,58 @@
 #pragma once
 
-#include "../../../java/lang/IllegalStateException.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./UnsafeStateException.def.hpp"
 
 namespace android::app::admin
 {
-	class UnsafeStateException : public java::lang::IllegalStateException
+	// Fields
+	inline JObject UnsafeStateException::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnsafeStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsafeStateException(QAndroidJniObject obj) : java::lang::IllegalStateException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString getMessage() const;
-		JObject getReasons() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.admin.UnsafeStateException",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint UnsafeStateException::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString UnsafeStateException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject UnsafeStateException::getReasons() const
+	{
+		return callObjectMethod(
+			"getReasons",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void UnsafeStateException::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../../../java/lang/IllegalStateException.hpp"
 

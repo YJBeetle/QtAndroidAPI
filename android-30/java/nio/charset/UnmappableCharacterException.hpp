@@ -1,26 +1,39 @@
 #pragma once
 
-#include "./CharacterCodingException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./UnmappableCharacterException.def.hpp"
 
 namespace java::nio::charset
 {
-	class UnmappableCharacterException : public java::nio::charset::CharacterCodingException
+	// Fields
+	
+	// Constructors
+	inline UnmappableCharacterException::UnmappableCharacterException(jint arg0)
+		: java::nio::charset::CharacterCodingException(
+			"java.nio.charset.UnmappableCharacterException",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jint UnmappableCharacterException::getInputLength() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnmappableCharacterException(const char *className, const char *sig, Ts...agv) : java::nio::charset::CharacterCodingException(className, sig, std::forward<Ts>(agv)...) {}
-		UnmappableCharacterException(QAndroidJniObject obj) : java::nio::charset::CharacterCodingException(obj) {}
-		
-		// Constructors
-		UnmappableCharacterException(jint arg0);
-		
-		// Methods
-		jint getInputLength() const;
-		JString getMessage() const;
-	};
+		return callMethod<jint>(
+			"getInputLength",
+			"()I"
+		);
+	}
+	inline JString UnmappableCharacterException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::charset
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
+#include "./CharacterCodingException.hpp"
 

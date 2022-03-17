@@ -1,30 +1,39 @@
 #pragma once
 
+#include "../os/Messenger.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Messenger;
-}
-class JObject;
+#include "./VisualVoicemailService_VisualVoicemailTask.def.hpp"
 
 namespace android::telephony
 {
-	class VisualVoicemailService_VisualVoicemailTask : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean VisualVoicemailService_VisualVoicemailTask::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VisualVoicemailService_VisualVoicemailTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailService_VisualVoicemailTask(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		void finish() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline void VisualVoicemailService_VisualVoicemailTask::finish() const
+	{
+		callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
+	inline jint VisualVoicemailService_VisualVoicemailTask::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

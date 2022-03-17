@@ -1,42 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Allocation.def.hpp"
+#include "./Element.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Type.def.hpp"
+#include "./Script_FieldBase.def.hpp"
 
 namespace android::renderscript
 {
-	class Allocation;
-}
-namespace android::renderscript
-{
-	class Element;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Type;
-}
-
-namespace android::renderscript
-{
-	class Script_FieldBase : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::renderscript::Allocation Script_FieldBase::getAllocation() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Script_FieldBase(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Script_FieldBase(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::renderscript::Allocation getAllocation() const;
-		android::renderscript::Element getElement() const;
-		android::renderscript::Type getType() const;
-		void updateAllocation() const;
-	};
+		return callObjectMethod(
+			"getAllocation",
+			"()Landroid/renderscript/Allocation;"
+		);
+	}
+	inline android::renderscript::Element Script_FieldBase::getElement() const
+	{
+		return callObjectMethod(
+			"getElement",
+			"()Landroid/renderscript/Element;"
+		);
+	}
+	inline android::renderscript::Type Script_FieldBase::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Landroid/renderscript/Type;"
+		);
+	}
+	inline void Script_FieldBase::updateAllocation() const
+	{
+		callMethod<void>(
+			"updateAllocation",
+			"()V"
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
 

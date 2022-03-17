@@ -1,24 +1,21 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JClass;
+#include "../../JClass.hpp"
+#include "./SecretKeyFactorySpi.def.hpp"
 
 namespace javax::crypto
 {
-	class SecretKeyFactorySpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecretKeyFactorySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeyFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SecretKeyFactorySpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SecretKeyFactorySpi::SecretKeyFactorySpi()
+		: JObject(
+			"javax.crypto.SecretKeyFactorySpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
 

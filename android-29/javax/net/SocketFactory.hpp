@@ -1,37 +1,73 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class Socket;
-}
+#include "../../JString.hpp"
+#include "../../java/net/InetAddress.def.hpp"
+#include "../../java/net/Socket.def.hpp"
+#include "./SocketFactory.def.hpp"
 
 namespace javax::net
 {
-	class SocketFactory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline javax::net::SocketFactory SocketFactory::getDefault()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SocketFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SocketFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static javax::net::SocketFactory getDefault();
-		java::net::Socket createSocket() const;
-		java::net::Socket createSocket(JString arg0, jint arg1) const;
-		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1) const;
-		java::net::Socket createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const;
-		java::net::Socket createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const;
-	};
+		return callStaticObjectMethod(
+			"javax.net.SocketFactory",
+			"getDefault",
+			"()Ljavax/net/SocketFactory;"
+		);
+	}
+	inline java::net::Socket SocketFactory::createSocket() const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"()Ljava/net/Socket;"
+		);
+	}
+	inline java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"(Ljava/lang/String;I)Ljava/net/Socket;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline java::net::Socket SocketFactory::createSocket(java::net::InetAddress arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"(Ljava/net/InetAddress;I)Ljava/net/Socket;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"(Ljava/lang/String;ILjava/net/InetAddress;I)Ljava/net/Socket;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object(),
+			arg3
+		);
+	}
+	inline java::net::Socket SocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"(Ljava/net/InetAddress;ILjava/net/InetAddress;I)Ljava/net/Socket;",
+			arg0.object(),
+			arg1,
+			arg2.object(),
+			arg3
+		);
+	}
 } // namespace javax::net
+
+// Base class headers
 

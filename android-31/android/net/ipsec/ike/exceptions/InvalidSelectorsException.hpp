@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./IkeProtocolException.hpp"
-
-class JByteArray;
+#include "../../../../../JByteArray.hpp"
+#include "./InvalidSelectorsException.def.hpp"
 
 namespace android::net::ipsec::ike::exceptions
 {
-	class InvalidSelectorsException : public android::net::ipsec::ike::exceptions::IkeProtocolException
+	// Fields
+	
+	// Constructors
+	inline InvalidSelectorsException::InvalidSelectorsException(jint arg0, JByteArray arg1)
+		: android::net::ipsec::ike::exceptions::IkeProtocolException(
+			"android.net.ipsec.ike.exceptions.InvalidSelectorsException",
+			"(I[B)V",
+			arg0,
+			arg1.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline JByteArray InvalidSelectorsException::getIpSecPacketInfo() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InvalidSelectorsException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeProtocolException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidSelectorsException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeProtocolException(obj) {}
-		
-		// Constructors
-		InvalidSelectorsException(jint arg0, JByteArray arg1);
-		
-		// Methods
-		JByteArray getIpSecPacketInfo() const;
-		jint getIpSecSpi() const;
-	};
+		return callObjectMethod(
+			"getIpSecPacketInfo",
+			"()[B"
+		);
+	}
+	inline jint InvalidSelectorsException::getIpSecSpi() const
+	{
+		return callMethod<jint>(
+			"getIpSecSpi",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike::exceptions
+
+// Base class headers
+#include "../../../../../java/lang/Exception.hpp"
+#include "./IkeException.hpp"
+#include "./IkeProtocolException.hpp"
 

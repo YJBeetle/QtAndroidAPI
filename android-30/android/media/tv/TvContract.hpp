@@ -1,66 +1,294 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../../content/ComponentName.def.hpp"
+#include "../../content/Context.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "../../../JString.hpp"
+#include "./TvContract.def.hpp"
 
 namespace android::media::tv
 {
-	class TvContract : public JObject
+	// Fields
+	inline JString TvContract::ACTION_INITIALIZE_PROGRAMS()
 	{
-	public:
-		// Fields
-		static JString ACTION_INITIALIZE_PROGRAMS();
-		static JString ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT();
-		static JString ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED();
-		static JString ACTION_REQUEST_CHANNEL_BROWSABLE();
-		static JString ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED();
-		static JString AUTHORITY();
-		static JString EXTRA_CHANNEL_ID();
-		static JString EXTRA_PREVIEW_PROGRAM_ID();
-		static JString EXTRA_WATCH_NEXT_PROGRAM_ID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri buildChannelLogoUri(android::net::Uri arg0);
-		static android::net::Uri buildChannelLogoUri(jlong arg0);
-		static android::net::Uri buildChannelUri(jlong arg0);
-		static android::net::Uri buildChannelUriForPassthroughInput(JString arg0);
-		static android::net::Uri buildChannelsUriForInput(JString arg0);
-		static JString buildInputId(android::content::ComponentName arg0);
-		static android::net::Uri buildPreviewProgramUri(jlong arg0);
-		static android::net::Uri buildPreviewProgramsUriForChannel(android::net::Uri arg0);
-		static android::net::Uri buildPreviewProgramsUriForChannel(jlong arg0);
-		static android::net::Uri buildProgramUri(jlong arg0);
-		static android::net::Uri buildProgramsUriForChannel(android::net::Uri arg0);
-		static android::net::Uri buildProgramsUriForChannel(jlong arg0);
-		static android::net::Uri buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2);
-		static android::net::Uri buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2);
-		static android::net::Uri buildRecordedProgramUri(jlong arg0);
-		static android::net::Uri buildWatchNextProgramUri(jlong arg0);
-		static jboolean isChannelUri(android::net::Uri arg0);
-		static jboolean isChannelUriForPassthroughInput(android::net::Uri arg0);
-		static jboolean isChannelUriForTunerInput(android::net::Uri arg0);
-		static jboolean isProgramUri(android::net::Uri arg0);
-		static jboolean isRecordedProgramUri(android::net::Uri arg0);
-		static void requestChannelBrowsable(android::content::Context arg0, jlong arg1);
-	};
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"ACTION_INITIALIZE_PROGRAMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"ACTION_PREVIEW_PROGRAM_ADDED_TO_WATCH_NEXT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"ACTION_PREVIEW_PROGRAM_BROWSABLE_DISABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::ACTION_REQUEST_CHANNEL_BROWSABLE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"ACTION_REQUEST_CHANNEL_BROWSABLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"ACTION_WATCH_NEXT_PROGRAM_BROWSABLE_DISABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::AUTHORITY()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::EXTRA_CHANNEL_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"EXTRA_CHANNEL_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::EXTRA_PREVIEW_PROGRAM_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"EXTRA_PREVIEW_PROGRAM_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract::EXTRA_WATCH_NEXT_PROGRAM_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract",
+			"EXTRA_WATCH_NEXT_PROGRAM_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri TvContract::buildChannelLogoUri(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildChannelLogoUri",
+			"(Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.object()
+		);
+	}
+	inline android::net::Uri TvContract::buildChannelLogoUri(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildChannelLogoUri",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildChannelUri(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildChannelUri",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildChannelUriForPassthroughInput(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildChannelUriForPassthroughInput",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::Uri TvContract::buildChannelsUriForInput(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildChannelsUriForInput",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString TvContract::buildInputId(android::content::ComponentName arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildInputId",
+			"(Landroid/content/ComponentName;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline android::net::Uri TvContract::buildPreviewProgramUri(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildPreviewProgramUri",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildPreviewProgramsUriForChannel(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildPreviewProgramsUriForChannel",
+			"(Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.object()
+		);
+	}
+	inline android::net::Uri TvContract::buildPreviewProgramsUriForChannel(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildPreviewProgramsUriForChannel",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildProgramUri(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildProgramUri",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildProgramsUriForChannel(android::net::Uri arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildProgramsUriForChannel",
+			"(Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.object()
+		);
+	}
+	inline android::net::Uri TvContract::buildProgramsUriForChannel(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildProgramsUriForChannel",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildProgramsUriForChannel(android::net::Uri arg0, jlong arg1, jlong arg2)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildProgramsUriForChannel",
+			"(Landroid/net/Uri;JJ)Landroid/net/Uri;",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
+	inline android::net::Uri TvContract::buildProgramsUriForChannel(jlong arg0, jlong arg1, jlong arg2)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildProgramsUriForChannel",
+			"(JJJ)Landroid/net/Uri;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline android::net::Uri TvContract::buildRecordedProgramUri(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildRecordedProgramUri",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline android::net::Uri TvContract::buildWatchNextProgramUri(jlong arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.tv.TvContract",
+			"buildWatchNextProgramUri",
+			"(J)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	inline jboolean TvContract::isChannelUri(android::net::Uri arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.tv.TvContract",
+			"isChannelUri",
+			"(Landroid/net/Uri;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean TvContract::isChannelUriForPassthroughInput(android::net::Uri arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.tv.TvContract",
+			"isChannelUriForPassthroughInput",
+			"(Landroid/net/Uri;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean TvContract::isChannelUriForTunerInput(android::net::Uri arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.tv.TvContract",
+			"isChannelUriForTunerInput",
+			"(Landroid/net/Uri;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean TvContract::isProgramUri(android::net::Uri arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.tv.TvContract",
+			"isProgramUri",
+			"(Landroid/net/Uri;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean TvContract::isRecordedProgramUri(android::net::Uri arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.tv.TvContract",
+			"isRecordedProgramUri",
+			"(Landroid/net/Uri;)Z",
+			arg0.object()
+		);
+	}
+	inline void TvContract::requestChannelBrowsable(android::content::Context arg0, jlong arg1)
+	{
+		callStaticMethod<void>(
+			"android.media.tv.TvContract",
+			"requestChannelBrowsable",
+			"(Landroid/content/Context;J)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::media::tv
+
+// Base class headers
 

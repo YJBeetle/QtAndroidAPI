@@ -1,29 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::view
-{
-	class View;
-}
+#include "../view/View.def.hpp"
+#include "./FragmentContainer.def.hpp"
 
 namespace android::app
 {
-	class FragmentContainer : public JObject
+	// Fields
+	
+	// Constructors
+	inline FragmentContainer::FragmentContainer()
+		: JObject(
+			"android.app.FragmentContainer",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::view::View FragmentContainer::onFindViewById(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FragmentContainer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FragmentContainer(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FragmentContainer();
-		
-		// Methods
-		android::view::View onFindViewById(jint arg0) const;
-		jboolean onHasView() const;
-	};
+		return callObjectMethod(
+			"onFindViewById",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	inline jboolean FragmentContainer::onHasView() const
+	{
+		return callMethod<jboolean>(
+			"onHasView",
+			"()Z"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

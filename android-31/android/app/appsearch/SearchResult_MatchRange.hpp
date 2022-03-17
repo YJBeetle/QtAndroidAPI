@@ -1,30 +1,60 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./SearchResult_MatchRange.def.hpp"
 
 namespace android::app::appsearch
 {
-	class SearchResult_MatchRange : public JObject
+	// Fields
+	
+	// Constructors
+	inline SearchResult_MatchRange::SearchResult_MatchRange(jint arg0, jint arg1)
+		: JObject(
+			"android.app.appsearch.SearchResult$MatchRange",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean SearchResult_MatchRange::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SearchResult_MatchRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResult_MatchRange(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SearchResult_MatchRange(jint arg0, jint arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getEnd() const;
-		jint getStart() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint SearchResult_MatchRange::getEnd() const
+	{
+		return callMethod<jint>(
+			"getEnd",
+			"()I"
+		);
+	}
+	inline jint SearchResult_MatchRange::getStart() const
+	{
+		return callMethod<jint>(
+			"getStart",
+			"()I"
+		);
+	}
+	inline jint SearchResult_MatchRange::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString SearchResult_MatchRange::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

@@ -1,37 +1,96 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./EventStats.def.hpp"
 
 namespace android::app::usage
 {
-	class EventStats : public JObject
+	// Fields
+	inline JObject EventStats::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EventStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventStats(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EventStats(android::app::usage::EventStats &arg0);
-		
-		// Methods
-		void add(android::app::usage::EventStats arg0) const;
-		jint describeContents() const;
-		jint getCount() const;
-		jint getEventType() const;
-		jlong getFirstTimeStamp() const;
-		jlong getLastEventTime() const;
-		jlong getLastTimeStamp() const;
-		jlong getTotalTime() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.usage.EventStats",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline EventStats::EventStats(android::app::usage::EventStats &arg0)
+		: JObject(
+			"android.app.usage.EventStats",
+			"(Landroid/app/usage/EventStats;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void EventStats::add(android::app::usage::EventStats arg0) const
+	{
+		callMethod<void>(
+			"add",
+			"(Landroid/app/usage/EventStats;)V",
+			arg0.object()
+		);
+	}
+	inline jint EventStats::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint EventStats::getCount() const
+	{
+		return callMethod<jint>(
+			"getCount",
+			"()I"
+		);
+	}
+	inline jint EventStats::getEventType() const
+	{
+		return callMethod<jint>(
+			"getEventType",
+			"()I"
+		);
+	}
+	inline jlong EventStats::getFirstTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getFirstTimeStamp",
+			"()J"
+		);
+	}
+	inline jlong EventStats::getLastEventTime() const
+	{
+		return callMethod<jlong>(
+			"getLastEventTime",
+			"()J"
+		);
+	}
+	inline jlong EventStats::getLastTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J"
+		);
+	}
+	inline jlong EventStats::getTotalTime() const
+	{
+		return callMethod<jlong>(
+			"getTotalTime",
+			"()J"
+		);
+	}
+	inline void EventStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

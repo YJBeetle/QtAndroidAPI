@@ -1,26 +1,44 @@
 #pragma once
 
-#include "./WifiP2pServiceRequest.hpp"
-
-class JString;
+#include "../../../../../JString.hpp"
+#include "./WifiP2pDnsSdServiceRequest.def.hpp"
 
 namespace android::net::wifi::p2p::nsd
 {
-	class WifiP2pDnsSdServiceRequest : public android::net::wifi::p2p::nsd::WifiP2pServiceRequest
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::wifi::p2p::nsd::WifiP2pDnsSdServiceRequest WifiP2pDnsSdServiceRequest::newInstance()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiP2pDnsSdServiceRequest(const char *className, const char *sig, Ts...agv) : android::net::wifi::p2p::nsd::WifiP2pServiceRequest(className, sig, std::forward<Ts>(agv)...) {}
-		WifiP2pDnsSdServiceRequest(QAndroidJniObject obj) : android::net::wifi::p2p::nsd::WifiP2pServiceRequest(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::wifi::p2p::nsd::WifiP2pDnsSdServiceRequest newInstance();
-		static android::net::wifi::p2p::nsd::WifiP2pDnsSdServiceRequest newInstance(JString arg0);
-		static android::net::wifi::p2p::nsd::WifiP2pDnsSdServiceRequest newInstance(JString arg0, JString arg1);
-	};
+		return callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest",
+			"newInstance",
+			"()Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;"
+		);
+	}
+	inline android::net::wifi::p2p::nsd::WifiP2pDnsSdServiceRequest WifiP2pDnsSdServiceRequest::newInstance(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest",
+			"newInstance",
+			"(Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::wifi::p2p::nsd::WifiP2pDnsSdServiceRequest WifiP2pDnsSdServiceRequest::newInstance(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
 } // namespace android::net::wifi::p2p::nsd
+
+// Base class headers
+#include "./WifiP2pServiceRequest.hpp"
 

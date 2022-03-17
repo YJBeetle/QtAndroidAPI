@@ -1,26 +1,17 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
+#include "./MediaCasException_1.def.hpp"
+#include "./MediaCasException.def.hpp"
 
 namespace android::media
 {
-	class MediaCasException_1;
-}
-
-namespace android::media
-{
-	class MediaCasException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCasException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

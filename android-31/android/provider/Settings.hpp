@@ -1,141 +1,924 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./Settings.def.hpp"
 
 namespace android::provider
 {
-	class Settings : public JObject
+	// Fields
+	inline JString Settings::ACTION_ACCESSIBILITY_SETTINGS()
 	{
-	public:
-		// Fields
-		static JString ACTION_ACCESSIBILITY_SETTINGS();
-		static JString ACTION_ADD_ACCOUNT();
-		static JString ACTION_AIRPLANE_MODE_SETTINGS();
-		static JString ACTION_APN_SETTINGS();
-		static JString ACTION_APPLICATION_DETAILS_SETTINGS();
-		static JString ACTION_APPLICATION_DEVELOPMENT_SETTINGS();
-		static JString ACTION_APPLICATION_SETTINGS();
-		static JString ACTION_APP_NOTIFICATION_BUBBLE_SETTINGS();
-		static JString ACTION_APP_NOTIFICATION_SETTINGS();
-		static JString ACTION_APP_OPEN_BY_DEFAULT_SETTINGS();
-		static JString ACTION_APP_SEARCH_SETTINGS();
-		static JString ACTION_APP_USAGE_SETTINGS();
-		static JString ACTION_AUTO_ROTATE_SETTINGS();
-		static JString ACTION_BATTERY_SAVER_SETTINGS();
-		static JString ACTION_BIOMETRIC_ENROLL();
-		static JString ACTION_BLUETOOTH_SETTINGS();
-		static JString ACTION_CAPTIONING_SETTINGS();
-		static JString ACTION_CAST_SETTINGS();
-		static JString ACTION_CHANNEL_NOTIFICATION_SETTINGS();
-		static JString ACTION_CONDITION_PROVIDER_SETTINGS();
-		static JString ACTION_DATA_ROAMING_SETTINGS();
-		static JString ACTION_DATA_USAGE_SETTINGS();
-		static JString ACTION_DATE_SETTINGS();
-		static JString ACTION_DEVICE_INFO_SETTINGS();
-		static JString ACTION_DISPLAY_SETTINGS();
-		static JString ACTION_DREAM_SETTINGS();
-		static JString ACTION_FINGERPRINT_ENROLL();
-		static JString ACTION_HARD_KEYBOARD_SETTINGS();
-		static JString ACTION_HOME_SETTINGS();
-		static JString ACTION_IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS();
-		static JString ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS();
-		static JString ACTION_INPUT_METHOD_SETTINGS();
-		static JString ACTION_INPUT_METHOD_SUBTYPE_SETTINGS();
-		static JString ACTION_INTERNAL_STORAGE_SETTINGS();
-		static JString ACTION_LOCALE_SETTINGS();
-		static JString ACTION_LOCATION_SOURCE_SETTINGS();
-		static JString ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS();
-		static JString ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION();
-		static JString ACTION_MANAGE_ALL_SIM_PROFILES_SETTINGS();
-		static JString ACTION_MANAGE_APPLICATIONS_SETTINGS();
-		static JString ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION();
-		static JString ACTION_MANAGE_DEFAULT_APPS_SETTINGS();
-		static JString ACTION_MANAGE_OVERLAY_PERMISSION();
-		static JString ACTION_MANAGE_UNKNOWN_APP_SOURCES();
-		static JString ACTION_MANAGE_WRITE_SETTINGS();
-		static JString ACTION_MEMORY_CARD_SETTINGS();
-		static JString ACTION_NETWORK_OPERATOR_SETTINGS();
-		static JString ACTION_NFCSHARING_SETTINGS();
-		static JString ACTION_NFC_PAYMENT_SETTINGS();
-		static JString ACTION_NFC_SETTINGS();
-		static JString ACTION_NIGHT_DISPLAY_SETTINGS();
-		static JString ACTION_NOTIFICATION_ASSISTANT_SETTINGS();
-		static JString ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS();
-		static JString ACTION_NOTIFICATION_LISTENER_SETTINGS();
-		static JString ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS();
-		static JString ACTION_PRINT_SETTINGS();
-		static JString ACTION_PRIVACY_SETTINGS();
-		static JString ACTION_PROCESS_WIFI_EASY_CONNECT_URI();
-		static JString ACTION_QUICK_ACCESS_WALLET_SETTINGS();
-		static JString ACTION_QUICK_LAUNCH_SETTINGS();
-		static JString ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS();
-		static JString ACTION_REQUEST_MANAGE_MEDIA();
-		static JString ACTION_REQUEST_SCHEDULE_EXACT_ALARM();
-		static JString ACTION_REQUEST_SET_AUTOFILL_SERVICE();
-		static JString ACTION_SEARCH_SETTINGS();
-		static JString ACTION_SECURITY_SETTINGS();
-		static JString ACTION_SETTINGS();
-		static JString ACTION_SHOW_REGULATORY_INFO();
-		static JString ACTION_SHOW_WORK_POLICY_INFO();
-		static JString ACTION_SOUND_SETTINGS();
-		static JString ACTION_STORAGE_VOLUME_ACCESS_SETTINGS();
-		static JString ACTION_SYNC_SETTINGS();
-		static JString ACTION_USAGE_ACCESS_SETTINGS();
-		static JString ACTION_USER_DICTIONARY_SETTINGS();
-		static JString ACTION_VOICE_CONTROL_AIRPLANE_MODE();
-		static JString ACTION_VOICE_CONTROL_BATTERY_SAVER_MODE();
-		static JString ACTION_VOICE_CONTROL_DO_NOT_DISTURB_MODE();
-		static JString ACTION_VOICE_INPUT_SETTINGS();
-		static JString ACTION_VPN_SETTINGS();
-		static JString ACTION_VR_LISTENER_SETTINGS();
-		static JString ACTION_WEBVIEW_SETTINGS();
-		static JString ACTION_WIFI_ADD_NETWORKS();
-		static JString ACTION_WIFI_IP_SETTINGS();
-		static JString ACTION_WIFI_SETTINGS();
-		static JString ACTION_WIRELESS_SETTINGS();
-		static JString ACTION_ZEN_MODE_PRIORITY_SETTINGS();
-		static jint ADD_WIFI_RESULT_ADD_OR_UPDATE_FAILED();
-		static jint ADD_WIFI_RESULT_ALREADY_EXISTS();
-		static jint ADD_WIFI_RESULT_SUCCESS();
-		static JString AUTHORITY();
-		static JString EXTRA_ACCOUNT_TYPES();
-		static JString EXTRA_AIRPLANE_MODE_ENABLED();
-		static JString EXTRA_APP_PACKAGE();
-		static JString EXTRA_AUTHORITIES();
-		static JString EXTRA_BATTERY_SAVER_MODE_ENABLED();
-		static JString EXTRA_BIOMETRIC_AUTHENTICATORS_ALLOWED();
-		static JString EXTRA_CHANNEL_FILTER_LIST();
-		static JString EXTRA_CHANNEL_ID();
-		static JString EXTRA_CONVERSATION_ID();
-		static JString EXTRA_DO_NOT_DISTURB_MODE_ENABLED();
-		static JString EXTRA_DO_NOT_DISTURB_MODE_MINUTES();
-		static JString EXTRA_EASY_CONNECT_ATTEMPTED_SSID();
-		static JString EXTRA_EASY_CONNECT_BAND_LIST();
-		static JString EXTRA_EASY_CONNECT_CHANNEL_LIST();
-		static JString EXTRA_EASY_CONNECT_ERROR_CODE();
-		static JString EXTRA_INPUT_METHOD_ID();
-		static JString EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME();
-		static JString EXTRA_SUB_ID();
-		static JString EXTRA_WIFI_NETWORK_LIST();
-		static JString EXTRA_WIFI_NETWORK_RESULT_LIST();
-		static JString INTENT_CATEGORY_USAGE_ACCESS_CONFIG();
-		static JString METADATA_USAGE_ACCESS_REASON();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Settings(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Settings();
-		
-		// Methods
-		static jboolean canDrawOverlays(android::content::Context arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_ACCESSIBILITY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_ADD_ACCOUNT()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_ADD_ACCOUNT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_AIRPLANE_MODE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_AIRPLANE_MODE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APN_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APN_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APPLICATION_DETAILS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APPLICATION_DETAILS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APPLICATION_DEVELOPMENT_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APPLICATION_DEVELOPMENT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APPLICATION_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APPLICATION_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APP_NOTIFICATION_BUBBLE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APP_NOTIFICATION_BUBBLE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APP_NOTIFICATION_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APP_NOTIFICATION_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APP_OPEN_BY_DEFAULT_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APP_OPEN_BY_DEFAULT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APP_SEARCH_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APP_SEARCH_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_APP_USAGE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_APP_USAGE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_AUTO_ROTATE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_AUTO_ROTATE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_BATTERY_SAVER_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_BATTERY_SAVER_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_BIOMETRIC_ENROLL()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_BIOMETRIC_ENROLL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_BLUETOOTH_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_BLUETOOTH_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_CAPTIONING_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_CAPTIONING_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_CAST_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_CAST_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_CHANNEL_NOTIFICATION_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_CHANNEL_NOTIFICATION_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_CONDITION_PROVIDER_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_CONDITION_PROVIDER_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_DATA_ROAMING_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_DATA_ROAMING_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_DATA_USAGE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_DATA_USAGE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_DATE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_DATE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_DEVICE_INFO_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_DEVICE_INFO_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_DISPLAY_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_DISPLAY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_DREAM_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_DREAM_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_FINGERPRINT_ENROLL()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_FINGERPRINT_ENROLL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_HARD_KEYBOARD_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_HARD_KEYBOARD_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_HOME_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_HOME_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_IGNORE_BACKGROUND_DATA_RESTRICTIONS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_INPUT_METHOD_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_INPUT_METHOD_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_INPUT_METHOD_SUBTYPE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_INPUT_METHOD_SUBTYPE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_INTERNAL_STORAGE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_INTERNAL_STORAGE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_LOCALE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_LOCALE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_LOCATION_SOURCE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_LOCATION_SOURCE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_ALL_SIM_PROFILES_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_ALL_SIM_PROFILES_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_APPLICATIONS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_APPLICATIONS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_DEFAULT_APPS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_DEFAULT_APPS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_OVERLAY_PERMISSION()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_OVERLAY_PERMISSION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_UNKNOWN_APP_SOURCES()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_UNKNOWN_APP_SOURCES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MANAGE_WRITE_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MANAGE_WRITE_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_MEMORY_CARD_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_MEMORY_CARD_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NETWORK_OPERATOR_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NETWORK_OPERATOR_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NFCSHARING_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NFCSHARING_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NFC_PAYMENT_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NFC_PAYMENT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NFC_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NFC_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NIGHT_DISPLAY_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NIGHT_DISPLAY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NOTIFICATION_ASSISTANT_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NOTIFICATION_ASSISTANT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NOTIFICATION_LISTENER_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NOTIFICATION_LISTENER_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_PRINT_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_PRINT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_PRIVACY_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_PRIVACY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_PROCESS_WIFI_EASY_CONNECT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_PROCESS_WIFI_EASY_CONNECT_URI",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_QUICK_ACCESS_WALLET_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_QUICK_ACCESS_WALLET_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_QUICK_LAUNCH_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_QUICK_LAUNCH_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_REQUEST_MANAGE_MEDIA()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_REQUEST_MANAGE_MEDIA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_REQUEST_SCHEDULE_EXACT_ALARM()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_REQUEST_SCHEDULE_EXACT_ALARM",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_REQUEST_SET_AUTOFILL_SERVICE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_REQUEST_SET_AUTOFILL_SERVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SEARCH_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SEARCH_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SECURITY_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SECURITY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SHOW_REGULATORY_INFO()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SHOW_REGULATORY_INFO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SHOW_WORK_POLICY_INFO()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SHOW_WORK_POLICY_INFO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SOUND_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SOUND_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_STORAGE_VOLUME_ACCESS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_STORAGE_VOLUME_ACCESS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_SYNC_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_SYNC_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_USAGE_ACCESS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_USAGE_ACCESS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_USER_DICTIONARY_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_USER_DICTIONARY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_VOICE_CONTROL_AIRPLANE_MODE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_VOICE_CONTROL_AIRPLANE_MODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_VOICE_CONTROL_BATTERY_SAVER_MODE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_VOICE_CONTROL_BATTERY_SAVER_MODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_VOICE_CONTROL_DO_NOT_DISTURB_MODE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_VOICE_CONTROL_DO_NOT_DISTURB_MODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_VOICE_INPUT_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_VOICE_INPUT_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_VPN_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_VPN_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_VR_LISTENER_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_VR_LISTENER_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_WEBVIEW_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_WEBVIEW_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_WIFI_ADD_NETWORKS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_WIFI_ADD_NETWORKS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_WIFI_IP_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_WIFI_IP_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_WIFI_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_WIFI_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_WIRELESS_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_WIRELESS_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::ACTION_ZEN_MODE_PRIORITY_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"ACTION_ZEN_MODE_PRIORITY_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint Settings::ADD_WIFI_RESULT_ADD_OR_UPDATE_FAILED()
+	{
+		return getStaticField<jint>(
+			"android.provider.Settings",
+			"ADD_WIFI_RESULT_ADD_OR_UPDATE_FAILED"
+		);
+	}
+	inline jint Settings::ADD_WIFI_RESULT_ALREADY_EXISTS()
+	{
+		return getStaticField<jint>(
+			"android.provider.Settings",
+			"ADD_WIFI_RESULT_ALREADY_EXISTS"
+		);
+	}
+	inline jint Settings::ADD_WIFI_RESULT_SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.provider.Settings",
+			"ADD_WIFI_RESULT_SUCCESS"
+		);
+	}
+	inline JString Settings::AUTHORITY()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_ACCOUNT_TYPES()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_ACCOUNT_TYPES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_AIRPLANE_MODE_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_AIRPLANE_MODE_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_APP_PACKAGE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_APP_PACKAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_AUTHORITIES()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_AUTHORITIES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_BATTERY_SAVER_MODE_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_BATTERY_SAVER_MODE_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_BIOMETRIC_AUTHENTICATORS_ALLOWED()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_BIOMETRIC_AUTHENTICATORS_ALLOWED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_CHANNEL_FILTER_LIST()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_CHANNEL_FILTER_LIST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_CHANNEL_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_CHANNEL_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_CONVERSATION_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_CONVERSATION_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_DO_NOT_DISTURB_MODE_ENABLED()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_DO_NOT_DISTURB_MODE_ENABLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_DO_NOT_DISTURB_MODE_MINUTES()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_DO_NOT_DISTURB_MODE_MINUTES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_EASY_CONNECT_ATTEMPTED_SSID()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_EASY_CONNECT_ATTEMPTED_SSID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_EASY_CONNECT_BAND_LIST()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_EASY_CONNECT_BAND_LIST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_EASY_CONNECT_CHANNEL_LIST()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_EASY_CONNECT_CHANNEL_LIST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_EASY_CONNECT_ERROR_CODE()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_EASY_CONNECT_ERROR_CODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_INPUT_METHOD_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_INPUT_METHOD_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_SUB_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_SUB_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_WIFI_NETWORK_LIST()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_WIFI_NETWORK_LIST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::EXTRA_WIFI_NETWORK_RESULT_LIST()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"EXTRA_WIFI_NETWORK_RESULT_LIST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::INTENT_CATEGORY_USAGE_ACCESS_CONFIG()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"INTENT_CATEGORY_USAGE_ACCESS_CONFIG",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Settings::METADATA_USAGE_ACCESS_REASON()
+	{
+		return getStaticObjectField(
+			"android.provider.Settings",
+			"METADATA_USAGE_ACCESS_REASON",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Settings::Settings()
+		: JObject(
+			"android.provider.Settings",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean Settings::canDrawOverlays(android::content::Context arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.provider.Settings",
+			"canDrawOverlays",
+			"(Landroid/content/Context;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

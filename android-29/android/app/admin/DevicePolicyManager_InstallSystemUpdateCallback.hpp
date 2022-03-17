@@ -1,30 +1,65 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DevicePolicyManager_InstallSystemUpdateCallback.def.hpp"
 
 namespace android::app::admin
 {
-	class DevicePolicyManager_InstallSystemUpdateCallback : public JObject
+	// Fields
+	inline jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_BATTERY_LOW()
 	{
-	public:
-		// Fields
-		static jint UPDATE_ERROR_BATTERY_LOW();
-		static jint UPDATE_ERROR_FILE_NOT_FOUND();
-		static jint UPDATE_ERROR_INCORRECT_OS_VERSION();
-		static jint UPDATE_ERROR_UNKNOWN();
-		static jint UPDATE_ERROR_UPDATE_FILE_INVALID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DevicePolicyManager_InstallSystemUpdateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DevicePolicyManager_InstallSystemUpdateCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DevicePolicyManager_InstallSystemUpdateCallback();
-		
-		// Methods
-		void onInstallUpdateError(jint arg0, JString arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
+			"UPDATE_ERROR_BATTERY_LOW"
+		);
+	}
+	inline jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_FILE_NOT_FOUND()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
+			"UPDATE_ERROR_FILE_NOT_FOUND"
+		);
+	}
+	inline jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_INCORRECT_OS_VERSION()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
+			"UPDATE_ERROR_INCORRECT_OS_VERSION"
+		);
+	}
+	inline jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
+			"UPDATE_ERROR_UNKNOWN"
+		);
+	}
+	inline jint DevicePolicyManager_InstallSystemUpdateCallback::UPDATE_ERROR_UPDATE_FILE_INVALID()
+	{
+		return getStaticField<jint>(
+			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
+			"UPDATE_ERROR_UPDATE_FILE_INVALID"
+		);
+	}
+	
+	// Constructors
+	inline DevicePolicyManager_InstallSystemUpdateCallback::DevicePolicyManager_InstallSystemUpdateCallback()
+		: JObject(
+			"android.app.admin.DevicePolicyManager$InstallSystemUpdateCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DevicePolicyManager_InstallSystemUpdateCallback::onInstallUpdateError(jint arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"onInstallUpdateError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
 

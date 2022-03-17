@@ -1,44 +1,68 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class IOException;
-}
-namespace java::net
-{
-	class InetSocketAddress;
-}
-namespace java::net
-{
-	class SocketAddress;
-}
-namespace java::net
-{
-	class URI;
-}
+#include "../io/IOException.def.hpp"
+#include "./InetSocketAddress.def.hpp"
+#include "./SocketAddress.def.hpp"
+#include "./URI.def.hpp"
+#include "./ProxySelector.def.hpp"
 
 namespace java::net
 {
-	class ProxySelector : public JObject
+	// Fields
+	
+	// Constructors
+	inline ProxySelector::ProxySelector()
+		: JObject(
+			"java.net.ProxySelector",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::net::ProxySelector ProxySelector::getDefault()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProxySelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProxySelector(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ProxySelector();
-		
-		// Methods
-		static java::net::ProxySelector getDefault();
-		static java::net::ProxySelector of(java::net::InetSocketAddress arg0);
-		static void setDefault(java::net::ProxySelector arg0);
-		void connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2) const;
-		JObject select(java::net::URI arg0) const;
-	};
+		return callStaticObjectMethod(
+			"java.net.ProxySelector",
+			"getDefault",
+			"()Ljava/net/ProxySelector;"
+		);
+	}
+	inline java::net::ProxySelector ProxySelector::of(java::net::InetSocketAddress arg0)
+	{
+		return callStaticObjectMethod(
+			"java.net.ProxySelector",
+			"of",
+			"(Ljava/net/InetSocketAddress;)Ljava/net/ProxySelector;",
+			arg0.object()
+		);
+	}
+	inline void ProxySelector::setDefault(java::net::ProxySelector arg0)
+	{
+		callStaticMethod<void>(
+			"java.net.ProxySelector",
+			"setDefault",
+			"(Ljava/net/ProxySelector;)V",
+			arg0.object()
+		);
+	}
+	inline void ProxySelector::connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2) const
+	{
+		callMethod<void>(
+			"connectFailed",
+			"(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JObject ProxySelector::select(java::net::URI arg0) const
+	{
+		return callObjectMethod(
+			"select",
+			"(Ljava/net/URI;)Ljava/util/List;",
+			arg0.object()
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

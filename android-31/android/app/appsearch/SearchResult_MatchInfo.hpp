@@ -1,34 +1,60 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SearchResult_MatchRange.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./SearchResult_MatchInfo.def.hpp"
 
 namespace android::app::appsearch
 {
-	class SearchResult_MatchRange;
-}
-class JString;
-class JString;
-
-namespace android::app::appsearch
-{
-	class SearchResult_MatchInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString SearchResult_MatchInfo::getExactMatch() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SearchResult_MatchInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResult_MatchInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getExactMatch() const;
-		android::app::appsearch::SearchResult_MatchRange getExactMatchRange() const;
-		JString getFullText() const;
-		JString getPropertyPath() const;
-		JString getSnippet() const;
-		android::app::appsearch::SearchResult_MatchRange getSnippetRange() const;
-	};
+		return callObjectMethod(
+			"getExactMatch",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getExactMatchRange() const
+	{
+		return callObjectMethod(
+			"getExactMatchRange",
+			"()Landroid/app/appsearch/SearchResult$MatchRange;"
+		);
+	}
+	inline JString SearchResult_MatchInfo::getFullText() const
+	{
+		return callObjectMethod(
+			"getFullText",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString SearchResult_MatchInfo::getPropertyPath() const
+	{
+		return callObjectMethod(
+			"getPropertyPath",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString SearchResult_MatchInfo::getSnippet() const
+	{
+		return callObjectMethod(
+			"getSnippet",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::app::appsearch::SearchResult_MatchRange SearchResult_MatchInfo::getSnippetRange() const
+	{
+		return callObjectMethod(
+			"getSnippetRange",
+			"()Landroid/app/appsearch/SearchResult$MatchRange;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

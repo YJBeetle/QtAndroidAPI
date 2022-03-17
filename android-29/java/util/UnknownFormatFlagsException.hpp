@@ -1,26 +1,40 @@
 #pragma once
 
-#include "./IllegalFormatException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UnknownFormatFlagsException.def.hpp"
 
 namespace java::util
 {
-	class UnknownFormatFlagsException : public java::util::IllegalFormatException
+	// Fields
+	
+	// Constructors
+	inline UnknownFormatFlagsException::UnknownFormatFlagsException(JString arg0)
+		: java::util::IllegalFormatException(
+			"java.util.UnknownFormatFlagsException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString UnknownFormatFlagsException::getFlags() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnknownFormatFlagsException(const char *className, const char *sig, Ts...agv) : java::util::IllegalFormatException(className, sig, std::forward<Ts>(agv)...) {}
-		UnknownFormatFlagsException(QAndroidJniObject obj) : java::util::IllegalFormatException(obj) {}
-		
-		// Constructors
-		UnknownFormatFlagsException(JString arg0);
-		
-		// Methods
-		JString getFlags() const;
-		JString getMessage() const;
-	};
+		return callObjectMethod(
+			"getFlags",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString UnknownFormatFlagsException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "../lang/RuntimeException.hpp"
+#include "../lang/IllegalArgumentException.hpp"
+#include "./IllegalFormatException.hpp"
 

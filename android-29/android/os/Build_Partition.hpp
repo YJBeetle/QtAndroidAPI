@@ -1,30 +1,61 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Build_Partition.def.hpp"
 
 namespace android::os
 {
-	class Build_Partition : public JObject
+	// Fields
+	inline JString Build_Partition::PARTITION_NAME_SYSTEM()
 	{
-	public:
-		// Fields
-		static JString PARTITION_NAME_SYSTEM();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Build_Partition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Build_Partition(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jlong getBuildTimeMillis() const;
-		JString getFingerprint() const;
-		JString getName() const;
-		jint hashCode() const;
-	};
+		return getStaticObjectField(
+			"android.os.Build$Partition",
+			"PARTITION_NAME_SYSTEM",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean Build_Partition::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jlong Build_Partition::getBuildTimeMillis() const
+	{
+		return callMethod<jlong>(
+			"getBuildTimeMillis",
+			"()J"
+		);
+	}
+	inline JString Build_Partition::getFingerprint() const
+	{
+		return callObjectMethod(
+			"getFingerprint",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Build_Partition::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint Build_Partition::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

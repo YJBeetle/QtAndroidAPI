@@ -1,25 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Double2.def.hpp"
 
 namespace android::renderscript
 {
-	class Double2 : public JObject
+	// Fields
+	inline jdouble Double2::x()
 	{
-	public:
-		// Fields
-		jdouble x();
-		jdouble y();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Double2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Double2(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Double2();
-		Double2(jdouble arg0, jdouble arg1);
-		
-		// Methods
-	};
+		return getField<jdouble>(
+			"x"
+		);
+	}
+	inline jdouble Double2::y()
+	{
+		return getField<jdouble>(
+			"y"
+		);
+	}
+	
+	// Constructors
+	inline Double2::Double2()
+		: JObject(
+			"android.renderscript.Double2",
+			"()V"
+		) {}
+	inline Double2::Double2(jdouble arg0, jdouble arg1)
+		: JObject(
+			"android.renderscript.Double2",
+			"(DD)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

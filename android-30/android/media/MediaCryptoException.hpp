@@ -1,24 +1,23 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCryptoException.def.hpp"
 
 namespace android::media
 {
-	class MediaCryptoException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCryptoException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCryptoException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		MediaCryptoException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MediaCryptoException::MediaCryptoException(JString arg0)
+		: java::lang::Exception(
+			"android.media.MediaCryptoException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

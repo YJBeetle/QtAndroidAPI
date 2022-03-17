@@ -1,81 +1,153 @@
 #pragma once
 
-#include "../widget/FrameLayout.hpp"
+#include "./AppWidgetProviderInfo.def.hpp"
+#include "../content/ComponentName.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../util/SparseArray.def.hpp"
+#include "../util/SparseIntArray.def.hpp"
+#include "../view/View.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "../widget/FrameLayout_LayoutParams.def.hpp"
+#include "../widget/RemoteViews.def.hpp"
+#include "./AppWidgetHostView.def.hpp"
 
 namespace android::appwidget
 {
-	class AppWidgetProviderInfo;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::util
-{
-	class SparseArray;
-}
-namespace android::util
-{
-	class SparseIntArray;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace android::widget
-{
-	class FrameLayout_LayoutParams;
-}
-namespace android::widget
-{
-	class RemoteViews;
-}
-
-namespace android::appwidget
-{
-	class AppWidgetHostView : public android::widget::FrameLayout
+	// Fields
+	
+	// Constructors
+	inline AppWidgetHostView::AppWidgetHostView(android::content::Context arg0)
+		: android::widget::FrameLayout(
+			"android.appwidget.AppWidgetHostView",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline AppWidgetHostView::AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2)
+		: android::widget::FrameLayout(
+			"android.appwidget.AppWidgetHostView",
+			"(Landroid/content/Context;II)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline android::graphics::Rect AppWidgetHostView::getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppWidgetHostView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		AppWidgetHostView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
-		
-		// Constructors
-		AppWidgetHostView(android::content::Context arg0);
-		AppWidgetHostView(android::content::Context arg0, jint arg1, jint arg2);
-		
-		// Methods
-		static android::graphics::Rect getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2);
-		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0) const;
-		jint getAppWidgetId() const;
-		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo() const;
-		void resetColorResources() const;
-		void setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1) const;
-		void setColorResources(android::util::SparseIntArray arg0) const;
-		void setExecutor(JObject arg0) const;
-		void setOnLightBackground(jboolean arg0) const;
-		void updateAppWidget(android::widget::RemoteViews arg0) const;
-		void updateAppWidgetOptions(android::os::Bundle arg0) const;
-		void updateAppWidgetSize(android::os::Bundle arg0, JObject arg1) const;
-		void updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
-	};
+		return callStaticObjectMethod(
+			"android.appwidget.AppWidgetHostView",
+			"getDefaultPaddingForWidget",
+			"(Landroid/content/Context;Landroid/content/ComponentName;Landroid/graphics/Rect;)Landroid/graphics/Rect;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::widget::FrameLayout_LayoutParams AppWidgetHostView::generateLayoutParams(JObject arg0) const
+	{
+		return callObjectMethod(
+			"generateLayoutParams",
+			"(Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;",
+			arg0.object()
+		);
+	}
+	inline jint AppWidgetHostView::getAppWidgetId() const
+	{
+		return callMethod<jint>(
+			"getAppWidgetId",
+			"()I"
+		);
+	}
+	inline android::appwidget::AppWidgetProviderInfo AppWidgetHostView::getAppWidgetInfo() const
+	{
+		return callObjectMethod(
+			"getAppWidgetInfo",
+			"()Landroid/appwidget/AppWidgetProviderInfo;"
+		);
+	}
+	inline void AppWidgetHostView::resetColorResources() const
+	{
+		callMethod<void>(
+			"resetColorResources",
+			"()V"
+		);
+	}
+	inline void AppWidgetHostView::setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1) const
+	{
+		callMethod<void>(
+			"setAppWidget",
+			"(ILandroid/appwidget/AppWidgetProviderInfo;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void AppWidgetHostView::setColorResources(android::util::SparseIntArray arg0) const
+	{
+		callMethod<void>(
+			"setColorResources",
+			"(Landroid/util/SparseIntArray;)V",
+			arg0.object()
+		);
+	}
+	inline void AppWidgetHostView::setExecutor(JObject arg0) const
+	{
+		callMethod<void>(
+			"setExecutor",
+			"(Ljava/util/concurrent/Executor;)V",
+			arg0.object()
+		);
+	}
+	inline void AppWidgetHostView::setOnLightBackground(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setOnLightBackground",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void AppWidgetHostView::updateAppWidget(android::widget::RemoteViews arg0) const
+	{
+		callMethod<void>(
+			"updateAppWidget",
+			"(Landroid/widget/RemoteViews;)V",
+			arg0.object()
+		);
+	}
+	inline void AppWidgetHostView::updateAppWidgetOptions(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"updateAppWidgetOptions",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"updateAppWidgetSize",
+			"(Landroid/os/Bundle;Ljava/util/List;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
+	{
+		callMethod<void>(
+			"updateAppWidgetSize",
+			"(Landroid/os/Bundle;IIII)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
 } // namespace android::appwidget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "../widget/FrameLayout.hpp"
 

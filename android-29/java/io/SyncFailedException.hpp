@@ -1,24 +1,24 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SyncFailedException.def.hpp"
 
 namespace java::io
 {
-	class SyncFailedException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SyncFailedException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		SyncFailedException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		SyncFailedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SyncFailedException::SyncFailedException(JString arg0)
+		: java::io::IOException(
+			"java.io.SyncFailedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

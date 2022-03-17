@@ -1,30 +1,63 @@
 #pragma once
 
-#include "./InputStream.hpp"
-
-class JByteArray;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "./StringBufferInputStream.def.hpp"
 
 namespace java::io
 {
-	class StringBufferInputStream : public java::io::InputStream
+	// Fields
+	
+	// Constructors
+	inline StringBufferInputStream::StringBufferInputStream(JString arg0)
+		: java::io::InputStream(
+			"java.io.StringBufferInputStream",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint StringBufferInputStream::available() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StringBufferInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		StringBufferInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
-		
-		// Constructors
-		StringBufferInputStream(JString arg0);
-		
-		// Methods
-		jint available() const;
-		jint read() const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-		void reset() const;
-		jlong skip(jlong arg0) const;
-	};
+		return callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	inline jint StringBufferInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint StringBufferInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void StringBufferInputStream::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline jlong StringBufferInputStream::skip(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./InputStream.hpp"
 

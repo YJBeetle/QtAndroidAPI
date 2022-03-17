@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./VirtualMachineError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UnknownError.def.hpp"
 
 namespace java::lang
 {
-	class UnknownError : public java::lang::VirtualMachineError
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnknownError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
-		UnknownError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
-		
-		// Constructors
-		UnknownError();
-		UnknownError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnknownError::UnknownError()
+		: java::lang::VirtualMachineError(
+			"java.lang.UnknownError",
+			"()V"
+		) {}
+	inline UnknownError::UnknownError(JString arg0)
+		: java::lang::VirtualMachineError(
+			"java.lang.UnknownError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./VirtualMachineError.hpp"
 

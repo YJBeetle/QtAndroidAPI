@@ -1,122 +1,311 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::content
-{
-	class IntentSender;
-}
-namespace android::content::pm
-{
-	class ApplicationInfo;
-}
-namespace android::content::pm
-{
-	class LauncherActivityInfo;
-}
-namespace android::content::pm
-{
-	class LauncherApps_Callback;
-}
-namespace android::content::pm
-{
-	class LauncherApps_PinItemRequest;
-}
-namespace android::content::pm
-{
-	class LauncherApps_ShortcutQuery;
-}
-namespace android::content::pm
-{
-	class PackageInstaller_SessionCallback;
-}
-namespace android::content::pm
-{
-	class PackageInstaller_SessionInfo;
-}
-namespace android::content::pm
-{
-	class ShortcutInfo;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Handler;
-}
-namespace android::os
-{
-	class UserHandle;
-}
-class JString;
+#include "../../app/PendingIntent.def.hpp"
+#include "../ComponentName.def.hpp"
+#include "../Intent.def.hpp"
+#include "../IntentSender.def.hpp"
+#include "./ApplicationInfo.def.hpp"
+#include "./LauncherActivityInfo.def.hpp"
+#include "./LauncherApps_Callback.def.hpp"
+#include "./LauncherApps_PinItemRequest.def.hpp"
+#include "./LauncherApps_ShortcutQuery.def.hpp"
+#include "./PackageInstaller_SessionCallback.def.hpp"
+#include "./PackageInstaller_SessionInfo.def.hpp"
+#include "./ShortcutInfo.def.hpp"
+#include "../../graphics/Rect.def.hpp"
+#include "../../graphics/drawable/Drawable.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Handler.def.hpp"
+#include "../../os/UserHandle.def.hpp"
+#include "../../../JString.hpp"
+#include "./LauncherApps.def.hpp"
 
 namespace android::content::pm
 {
-	class LauncherApps : public JObject
+	// Fields
+	inline JString LauncherApps::ACTION_CONFIRM_PIN_APPWIDGET()
 	{
-	public:
-		// Fields
-		static JString ACTION_CONFIRM_PIN_APPWIDGET();
-		static JString ACTION_CONFIRM_PIN_SHORTCUT();
-		static JString EXTRA_PIN_ITEM_REQUEST();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LauncherApps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getActivityList(JString arg0, android::os::UserHandle arg1) const;
-		JObject getAllPackageInstallerSessions() const;
-		android::content::pm::ApplicationInfo getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2) const;
-		android::content::pm::LauncherApps_PinItemRequest getPinItemRequest(android::content::Intent arg0) const;
-		JObject getProfiles() const;
-		android::graphics::drawable::Drawable getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const;
-		android::content::IntentSender getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0) const;
-		JObject getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1) const;
-		android::graphics::drawable::Drawable getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const;
-		android::app::PendingIntent getShortcutIntent(JString arg0, JString arg1, android::os::Bundle arg2, android::os::UserHandle arg3) const;
-		JObject getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1) const;
-		android::os::Bundle getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1) const;
-		jboolean hasShortcutHostPermission() const;
-		jboolean isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
-		jboolean isPackageEnabled(JString arg0, android::os::UserHandle arg1) const;
-		void pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2) const;
-		void registerCallback(android::content::pm::LauncherApps_Callback arg0) const;
-		void registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1) const;
-		void registerPackageInstallerSessionCallback(JObject arg0, android::content::pm::PackageInstaller_SessionCallback arg1) const;
-		android::content::pm::LauncherActivityInfo resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1) const;
-		jboolean shouldHideFromSuggestions(JString arg0, android::os::UserHandle arg1) const;
-		void startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const;
-		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const;
-		void startPackageInstallerSessionDetailsActivity(android::content::pm::PackageInstaller_SessionInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const;
-		void startShortcut(android::content::pm::ShortcutInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const;
-		void startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4) const;
-		void unregisterCallback(android::content::pm::LauncherApps_Callback arg0) const;
-		void unregisterPackageInstallerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.LauncherApps",
+			"ACTION_CONFIRM_PIN_APPWIDGET",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString LauncherApps::ACTION_CONFIRM_PIN_SHORTCUT()
+	{
+		return getStaticObjectField(
+			"android.content.pm.LauncherApps",
+			"ACTION_CONFIRM_PIN_SHORTCUT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString LauncherApps::EXTRA_PIN_ITEM_REQUEST()
+	{
+		return getStaticObjectField(
+			"android.content.pm.LauncherApps",
+			"EXTRA_PIN_ITEM_REQUEST",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JObject LauncherApps::getActivityList(JString arg0, android::os::UserHandle arg1) const
+	{
+		return callObjectMethod(
+			"getActivityList",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JObject LauncherApps::getAllPackageInstallerSessions() const
+	{
+		return callObjectMethod(
+			"getAllPackageInstallerSessions",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::content::pm::ApplicationInfo LauncherApps::getApplicationInfo(JString arg0, jint arg1, android::os::UserHandle arg2) const
+	{
+		return callObjectMethod(
+			"getApplicationInfo",
+			"(Ljava/lang/String;ILandroid/os/UserHandle;)Landroid/content/pm/ApplicationInfo;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline android::content::pm::LauncherApps_PinItemRequest LauncherApps::getPinItemRequest(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"getPinItemRequest",
+			"(Landroid/content/Intent;)Landroid/content/pm/LauncherApps$PinItemRequest;",
+			arg0.object()
+		);
+	}
+	inline JObject LauncherApps::getProfiles() const
+	{
+		return callObjectMethod(
+			"getProfiles",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::graphics::drawable::Drawable LauncherApps::getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getShortcutBadgedIconDrawable",
+			"(Landroid/content/pm/ShortcutInfo;I)Landroid/graphics/drawable/Drawable;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::content::IntentSender LauncherApps::getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0) const
+	{
+		return callObjectMethod(
+			"getShortcutConfigActivityIntent",
+			"(Landroid/content/pm/LauncherActivityInfo;)Landroid/content/IntentSender;",
+			arg0.object()
+		);
+	}
+	inline JObject LauncherApps::getShortcutConfigActivityList(JString arg0, android::os::UserHandle arg1) const
+	{
+		return callObjectMethod(
+			"getShortcutConfigActivityList",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline android::graphics::drawable::Drawable LauncherApps::getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getShortcutIconDrawable",
+			"(Landroid/content/pm/ShortcutInfo;I)Landroid/graphics/drawable/Drawable;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::app::PendingIntent LauncherApps::getShortcutIntent(JString arg0, JString arg1, android::os::Bundle arg2, android::os::UserHandle arg3) const
+	{
+		return callObjectMethod(
+			"getShortcutIntent",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Landroid/os/UserHandle;)Landroid/app/PendingIntent;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline JObject LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1) const
+	{
+		return callObjectMethod(
+			"getShortcuts",
+			"(Landroid/content/pm/LauncherApps$ShortcutQuery;Landroid/os/UserHandle;)Ljava/util/List;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::os::Bundle LauncherApps::getSuspendedPackageLauncherExtras(JString arg0, android::os::UserHandle arg1) const
+	{
+		return callObjectMethod(
+			"getSuspendedPackageLauncherExtras",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)Landroid/os/Bundle;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jboolean LauncherApps::hasShortcutHostPermission() const
+	{
+		return callMethod<jboolean>(
+			"hasShortcutHostPermission",
+			"()Z"
+		);
+	}
+	inline jboolean LauncherApps::isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1) const
+	{
+		return callMethod<jboolean>(
+			"isActivityEnabled",
+			"(Landroid/content/ComponentName;Landroid/os/UserHandle;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean LauncherApps::isPackageEnabled(JString arg0, android::os::UserHandle arg1) const
+	{
+		return callMethod<jboolean>(
+			"isPackageEnabled",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)Z",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps::pinShortcuts(JString arg0, JObject arg1, android::os::UserHandle arg2) const
+	{
+		callMethod<void>(
+			"pinShortcuts",
+			"(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void LauncherApps::registerCallback(android::content::pm::LauncherApps_Callback arg0) const
+	{
+		callMethod<void>(
+			"registerCallback",
+			"(Landroid/content/pm/LauncherApps$Callback;)V",
+			arg0.object()
+		);
+	}
+	inline void LauncherApps::registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"registerCallback",
+			"(Landroid/content/pm/LauncherApps$Callback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps::registerPackageInstallerSessionCallback(JObject arg0, android::content::pm::PackageInstaller_SessionCallback arg1) const
+	{
+		callMethod<void>(
+			"registerPackageInstallerSessionCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/content/pm/PackageInstaller$SessionCallback;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::content::pm::LauncherActivityInfo LauncherApps::resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1) const
+	{
+		return callObjectMethod(
+			"resolveActivity",
+			"(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/pm/LauncherActivityInfo;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean LauncherApps::shouldHideFromSuggestions(JString arg0, android::os::UserHandle arg1) const
+	{
+		return callMethod<jboolean>(
+			"shouldHideFromSuggestions",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)Z",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void LauncherApps::startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const
+	{
+		callMethod<void>(
+			"startAppDetailsActivity",
+			"(Landroid/content/ComponentName;Landroid/os/UserHandle;Landroid/graphics/Rect;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline void LauncherApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3) const
+	{
+		callMethod<void>(
+			"startMainActivity",
+			"(Landroid/content/ComponentName;Landroid/os/UserHandle;Landroid/graphics/Rect;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline void LauncherApps::startPackageInstallerSessionDetailsActivity(android::content::pm::PackageInstaller_SessionInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const
+	{
+		callMethod<void>(
+			"startPackageInstallerSessionDetailsActivity",
+			"(Landroid/content/pm/PackageInstaller$SessionInfo;Landroid/graphics/Rect;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void LauncherApps::startShortcut(android::content::pm::ShortcutInfo arg0, android::graphics::Rect arg1, android::os::Bundle arg2) const
+	{
+		callMethod<void>(
+			"startShortcut",
+			"(Landroid/content/pm/ShortcutInfo;Landroid/graphics/Rect;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void LauncherApps::startShortcut(JString arg0, JString arg1, android::graphics::Rect arg2, android::os::Bundle arg3, android::os::UserHandle arg4) const
+	{
+		callMethod<void>(
+			"startShortcut",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Rect;Landroid/os/Bundle;Landroid/os/UserHandle;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline void LauncherApps::unregisterCallback(android::content::pm::LauncherApps_Callback arg0) const
+	{
+		callMethod<void>(
+			"unregisterCallback",
+			"(Landroid/content/pm/LauncherApps$Callback;)V",
+			arg0.object()
+		);
+	}
+	inline void LauncherApps::unregisterPackageInstallerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0) const
+	{
+		callMethod<void>(
+			"unregisterPackageInstallerSessionCallback",
+			"(Landroid/content/pm/PackageInstaller$SessionCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

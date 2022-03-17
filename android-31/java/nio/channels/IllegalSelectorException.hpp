@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../lang/IllegalArgumentException.hpp"
+#include "./IllegalSelectorException.def.hpp"
 
 namespace java::nio::channels
 {
-	class IllegalSelectorException : public java::lang::IllegalArgumentException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IllegalSelectorException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalArgumentException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalSelectorException(QAndroidJniObject obj) : java::lang::IllegalArgumentException(obj) {}
-		
-		// Constructors
-		IllegalSelectorException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IllegalSelectorException::IllegalSelectorException()
+		: java::lang::IllegalArgumentException(
+			"java.nio.channels.IllegalSelectorException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../../lang/IllegalArgumentException.hpp"
 

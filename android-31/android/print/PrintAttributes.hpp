@@ -1,56 +1,137 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
+#include "./PrintAttributes_Margins.def.hpp"
+#include "./PrintAttributes_MediaSize.def.hpp"
+#include "./PrintAttributes_Resolution.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::print
-{
-	class PrintAttributes_Margins;
-}
-namespace android::print
-{
-	class PrintAttributes_MediaSize;
-}
-namespace android::print
-{
-	class PrintAttributes_Resolution;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./PrintAttributes.def.hpp"
 
 namespace android::print
 {
-	class PrintAttributes : public JObject
+	// Fields
+	inline jint PrintAttributes::COLOR_MODE_COLOR()
 	{
-	public:
-		// Fields
-		static jint COLOR_MODE_COLOR();
-		static jint COLOR_MODE_MONOCHROME();
-		static JObject CREATOR();
-		static jint DUPLEX_MODE_LONG_EDGE();
-		static jint DUPLEX_MODE_NONE();
-		static jint DUPLEX_MODE_SHORT_EDGE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintAttributes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintAttributes(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getColorMode() const;
-		jint getDuplexMode() const;
-		android::print::PrintAttributes_MediaSize getMediaSize() const;
-		android::print::PrintAttributes_Margins getMinMargins() const;
-		android::print::PrintAttributes_Resolution getResolution() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.print.PrintAttributes",
+			"COLOR_MODE_COLOR"
+		);
+	}
+	inline jint PrintAttributes::COLOR_MODE_MONOCHROME()
+	{
+		return getStaticField<jint>(
+			"android.print.PrintAttributes",
+			"COLOR_MODE_MONOCHROME"
+		);
+	}
+	inline JObject PrintAttributes::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.print.PrintAttributes",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint PrintAttributes::DUPLEX_MODE_LONG_EDGE()
+	{
+		return getStaticField<jint>(
+			"android.print.PrintAttributes",
+			"DUPLEX_MODE_LONG_EDGE"
+		);
+	}
+	inline jint PrintAttributes::DUPLEX_MODE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.print.PrintAttributes",
+			"DUPLEX_MODE_NONE"
+		);
+	}
+	inline jint PrintAttributes::DUPLEX_MODE_SHORT_EDGE()
+	{
+		return getStaticField<jint>(
+			"android.print.PrintAttributes",
+			"DUPLEX_MODE_SHORT_EDGE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PrintAttributes::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PrintAttributes::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PrintAttributes::getColorMode() const
+	{
+		return callMethod<jint>(
+			"getColorMode",
+			"()I"
+		);
+	}
+	inline jint PrintAttributes::getDuplexMode() const
+	{
+		return callMethod<jint>(
+			"getDuplexMode",
+			"()I"
+		);
+	}
+	inline android::print::PrintAttributes_MediaSize PrintAttributes::getMediaSize() const
+	{
+		return callObjectMethod(
+			"getMediaSize",
+			"()Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	inline android::print::PrintAttributes_Margins PrintAttributes::getMinMargins() const
+	{
+		return callObjectMethod(
+			"getMinMargins",
+			"()Landroid/print/PrintAttributes$Margins;"
+		);
+	}
+	inline android::print::PrintAttributes_Resolution PrintAttributes::getResolution() const
+	{
+		return callObjectMethod(
+			"getResolution",
+			"()Landroid/print/PrintAttributes$Resolution;"
+		);
+	}
+	inline jint PrintAttributes::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString PrintAttributes::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PrintAttributes::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

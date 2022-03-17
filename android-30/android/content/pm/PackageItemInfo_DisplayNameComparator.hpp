@@ -1,34 +1,42 @@
 #pragma once
 
+#include "./PackageItemInfo.def.hpp"
+#include "./PackageManager.def.hpp"
 #include "../../../JObject.hpp"
+#include "./PackageItemInfo_DisplayNameComparator.def.hpp"
 
 namespace android::content::pm
 {
-	class PackageItemInfo;
-}
-namespace android::content::pm
-{
-	class PackageManager;
-}
-class JObject;
-
-namespace android::content::pm
-{
-	class PackageItemInfo_DisplayNameComparator : public JObject
+	// Fields
+	
+	// Constructors
+	inline PackageItemInfo_DisplayNameComparator::PackageItemInfo_DisplayNameComparator(android::content::pm::PackageManager arg0)
+		: JObject(
+			"android.content.pm.PackageItemInfo$DisplayNameComparator",
+			"(Landroid/content/pm/PackageManager;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint PackageItemInfo_DisplayNameComparator::compare(android::content::pm::PackageItemInfo arg0, android::content::pm::PackageItemInfo arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageItemInfo_DisplayNameComparator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageItemInfo_DisplayNameComparator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PackageItemInfo_DisplayNameComparator(android::content::pm::PackageManager arg0);
-		
-		// Methods
-		jint compare(android::content::pm::PackageItemInfo arg0, android::content::pm::PackageItemInfo arg1) const;
-		jint compare(JObject arg0, JObject arg1) const;
-	};
+		return callMethod<jint>(
+			"compare",
+			"(Landroid/content/pm/PackageItemInfo;Landroid/content/pm/PackageItemInfo;)I",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jint PackageItemInfo_DisplayNameComparator::compare(JObject arg0, JObject arg1) const
+	{
+		return callMethod<jint>(
+			"compare",
+			"(Ljava/lang/Object;Ljava/lang/Object;)I",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

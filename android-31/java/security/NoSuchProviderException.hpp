@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NoSuchProviderException.def.hpp"
 
 namespace java::security
 {
-	class NoSuchProviderException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NoSuchProviderException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		NoSuchProviderException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		NoSuchProviderException();
-		NoSuchProviderException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NoSuchProviderException::NoSuchProviderException()
+		: java::security::GeneralSecurityException(
+			"java.security.NoSuchProviderException",
+			"()V"
+		) {}
+	inline NoSuchProviderException::NoSuchProviderException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.NoSuchProviderException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./GeneralSecurityException.hpp"
 

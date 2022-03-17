@@ -1,39 +1,99 @@
 #pragma once
 
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./VersionedPackage.def.hpp"
 
 namespace android::content::pm
 {
-	class VersionedPackage : public JObject
+	// Fields
+	inline JObject VersionedPackage::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VersionedPackage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VersionedPackage(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		VersionedPackage(JString arg0, jint arg1);
-		VersionedPackage(JString arg0, jlong arg1);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jlong getLongVersionCode() const;
-		JString getPackageName() const;
-		jint getVersionCode() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.VersionedPackage",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline VersionedPackage::VersionedPackage(JString arg0, jint arg1)
+		: JObject(
+			"android.content.pm.VersionedPackage",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline VersionedPackage::VersionedPackage(JString arg0, jlong arg1)
+		: JObject(
+			"android.content.pm.VersionedPackage",
+			"(Ljava/lang/String;J)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jint VersionedPackage::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean VersionedPackage::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jlong VersionedPackage::getLongVersionCode() const
+	{
+		return callMethod<jlong>(
+			"getLongVersionCode",
+			"()J"
+		);
+	}
+	inline JString VersionedPackage::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint VersionedPackage::getVersionCode() const
+	{
+		return callMethod<jint>(
+			"getVersionCode",
+			"()I"
+		);
+	}
+	inline jint VersionedPackage::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString VersionedPackage::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void VersionedPackage::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

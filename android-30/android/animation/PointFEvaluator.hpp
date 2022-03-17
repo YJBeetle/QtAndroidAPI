@@ -1,31 +1,48 @@
 #pragma once
 
+#include "../graphics/PointF.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class PointF;
-}
-class JObject;
+#include "./PointFEvaluator.def.hpp"
 
 namespace android::animation
 {
-	class PointFEvaluator : public JObject
+	// Fields
+	
+	// Constructors
+	inline PointFEvaluator::PointFEvaluator()
+		: JObject(
+			"android.animation.PointFEvaluator",
+			"()V"
+		) {}
+	inline PointFEvaluator::PointFEvaluator(android::graphics::PointF arg0)
+		: JObject(
+			"android.animation.PointFEvaluator",
+			"(Landroid/graphics/PointF;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::PointF PointFEvaluator::evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PointFEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PointFEvaluator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PointFEvaluator();
-		PointFEvaluator(android::graphics::PointF arg0);
-		
-		// Methods
-		android::graphics::PointF evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2) const;
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
-	};
+		return callObjectMethod(
+			"evaluate",
+			"(FLandroid/graphics/PointF;Landroid/graphics/PointF;)Landroid/graphics/PointF;",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JObject PointFEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"evaluate",
+			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
+	}
 } // namespace android::animation
+
+// Base class headers
 

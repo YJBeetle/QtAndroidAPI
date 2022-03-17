@@ -1,26 +1,50 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./BiometricManager.def.hpp"
 
 namespace android::hardware::biometrics
 {
-	class BiometricManager : public JObject
+	// Fields
+	inline jint BiometricManager::BIOMETRIC_ERROR_HW_UNAVAILABLE()
 	{
-	public:
-		// Fields
-		static jint BIOMETRIC_ERROR_HW_UNAVAILABLE();
-		static jint BIOMETRIC_ERROR_NONE_ENROLLED();
-		static jint BIOMETRIC_ERROR_NO_HARDWARE();
-		static jint BIOMETRIC_SUCCESS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BiometricManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint canAuthenticate() const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.biometrics.BiometricManager",
+			"BIOMETRIC_ERROR_HW_UNAVAILABLE"
+		);
+	}
+	inline jint BiometricManager::BIOMETRIC_ERROR_NONE_ENROLLED()
+	{
+		return getStaticField<jint>(
+			"android.hardware.biometrics.BiometricManager",
+			"BIOMETRIC_ERROR_NONE_ENROLLED"
+		);
+	}
+	inline jint BiometricManager::BIOMETRIC_ERROR_NO_HARDWARE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.biometrics.BiometricManager",
+			"BIOMETRIC_ERROR_NO_HARDWARE"
+		);
+	}
+	inline jint BiometricManager::BIOMETRIC_SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.hardware.biometrics.BiometricManager",
+			"BIOMETRIC_SUCCESS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint BiometricManager::canAuthenticate() const
+	{
+		return callMethod<jint>(
+			"canAuthenticate",
+			"()I"
+		);
+	}
 } // namespace android::hardware::biometrics
+
+// Base class headers
 

@@ -1,34 +1,95 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./ControlTemplate.def.hpp"
 
 namespace android::service::controls::templates
 {
-	class ControlTemplate : public JObject
+	// Fields
+	inline jint ControlTemplate::TYPE_ERROR()
 	{
-	public:
-		// Fields
-		static jint TYPE_ERROR();
-		static jint TYPE_NO_TEMPLATE();
-		static jint TYPE_RANGE();
-		static jint TYPE_STATELESS();
-		static jint TYPE_TEMPERATURE();
-		static jint TYPE_TOGGLE();
-		static jint TYPE_TOGGLE_RANGE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ControlTemplate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ControlTemplate(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::service::controls::templates::ControlTemplate getErrorTemplate();
-		static android::service::controls::templates::ControlTemplate getNoTemplateObject();
-		JString getTemplateId() const;
-		jint getTemplateType() const;
-	};
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_ERROR"
+		);
+	}
+	inline jint ControlTemplate::TYPE_NO_TEMPLATE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_NO_TEMPLATE"
+		);
+	}
+	inline jint ControlTemplate::TYPE_RANGE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_RANGE"
+		);
+	}
+	inline jint ControlTemplate::TYPE_STATELESS()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_STATELESS"
+		);
+	}
+	inline jint ControlTemplate::TYPE_TEMPERATURE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_TEMPERATURE"
+		);
+	}
+	inline jint ControlTemplate::TYPE_TOGGLE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_TOGGLE"
+		);
+	}
+	inline jint ControlTemplate::TYPE_TOGGLE_RANGE()
+	{
+		return getStaticField<jint>(
+			"android.service.controls.templates.ControlTemplate",
+			"TYPE_TOGGLE_RANGE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::service::controls::templates::ControlTemplate ControlTemplate::getErrorTemplate()
+	{
+		return callStaticObjectMethod(
+			"android.service.controls.templates.ControlTemplate",
+			"getErrorTemplate",
+			"()Landroid/service/controls/templates/ControlTemplate;"
+		);
+	}
+	inline android::service::controls::templates::ControlTemplate ControlTemplate::getNoTemplateObject()
+	{
+		return callStaticObjectMethod(
+			"android.service.controls.templates.ControlTemplate",
+			"getNoTemplateObject",
+			"()Landroid/service/controls/templates/ControlTemplate;"
+		);
+	}
+	inline JString ControlTemplate::getTemplateId() const
+	{
+		return callObjectMethod(
+			"getTemplateId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ControlTemplate::getTemplateType() const
+	{
+		return callMethod<jint>(
+			"getTemplateType",
+			"()I"
+		);
+	}
 } // namespace android::service::controls::templates
+
+// Base class headers
 

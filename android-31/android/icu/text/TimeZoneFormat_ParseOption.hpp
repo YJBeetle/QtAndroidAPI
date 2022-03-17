@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./TimeZoneFormat_ParseOption.def.hpp"
 
 namespace android::icu::text
 {
-	class TimeZoneFormat_ParseOption : public java::lang::Enum
+	// Fields
+	inline android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::ALL_STYLES()
 	{
-	public:
-		// Fields
-		static android::icu::text::TimeZoneFormat_ParseOption ALL_STYLES();
-		static android::icu::text::TimeZoneFormat_ParseOption TZ_DATABASE_ABBREVIATIONS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZoneFormat_ParseOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneFormat_ParseOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::TimeZoneFormat_ParseOption valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$ParseOption",
+			"ALL_STYLES",
+			"Landroid/icu/text/TimeZoneFormat$ParseOption;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::TZ_DATABASE_ABBREVIATIONS()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$ParseOption",
+			"TZ_DATABASE_ABBREVIATIONS",
+			"Landroid/icu/text/TimeZoneFormat$ParseOption;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::TimeZoneFormat_ParseOption TimeZoneFormat_ParseOption::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$ParseOption",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$ParseOption;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TimeZoneFormat_ParseOption::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$ParseOption",
+			"values",
+			"()[Landroid/icu/text/TimeZoneFormat$ParseOption;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

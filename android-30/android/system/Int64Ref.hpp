@@ -1,26 +1,35 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Int64Ref.def.hpp"
 
 namespace android::system
 {
-	class Int64Ref : public JObject
+	// Fields
+	inline jlong Int64Ref::value()
 	{
-	public:
-		// Fields
-		jlong value();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Int64Ref(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Int64Ref(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Int64Ref(jlong arg0);
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jlong>(
+			"value"
+		);
+	}
+	
+	// Constructors
+	inline Int64Ref::Int64Ref(jlong arg0)
+		: JObject(
+			"android.system.Int64Ref",
+			"(J)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline JString Int64Ref::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::system
+
+// Base class headers
 

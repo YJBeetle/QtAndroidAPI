@@ -1,39 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::transition
-{
-	class Transition;
-}
-namespace android::transition
-{
-	class TransitionValues;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
+#include "../../JArray.hpp"
+#include "./Transition.def.hpp"
+#include "./TransitionValues.def.hpp"
+#include "../view/ViewGroup.def.hpp"
+#include "./TransitionPropagation.def.hpp"
 
 namespace android::transition
 {
-	class TransitionPropagation : public JObject
+	// Fields
+	
+	// Constructors
+	inline TransitionPropagation::TransitionPropagation()
+		: JObject(
+			"android.transition.TransitionPropagation",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TransitionPropagation::captureValues(android::transition::TransitionValues arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionPropagation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionPropagation(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TransitionPropagation();
-		
-		// Methods
-		void captureValues(android::transition::TransitionValues arg0) const;
-		JArray getPropagationProperties() const;
-		jlong getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
-	};
+		callMethod<void>(
+			"captureValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.object()
+		);
+	}
+	inline JArray TransitionPropagation::getPropagationProperties() const
+	{
+		return callObjectMethod(
+			"getPropagationProperties",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jlong TransitionPropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
+	{
+		return callMethod<jlong>(
+			"getStartDelay",
+			"(Landroid/view/ViewGroup;Landroid/transition/Transition;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)J",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
 

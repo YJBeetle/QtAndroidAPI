@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class PrintWriter;
-}
-class JString;
+#include "../../java/io/PrintWriter.def.hpp"
+#include "../../JString.hpp"
+#include "./PrintWriterPrinter.def.hpp"
 
 namespace android::util
 {
-	class PrintWriterPrinter : public JObject
+	// Fields
+	
+	// Constructors
+	inline PrintWriterPrinter::PrintWriterPrinter(java::io::PrintWriter arg0)
+		: JObject(
+			"android.util.PrintWriterPrinter",
+			"(Ljava/io/PrintWriter;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void PrintWriterPrinter::println(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintWriterPrinter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrintWriterPrinter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PrintWriterPrinter(java::io::PrintWriter arg0);
-		
-		// Methods
-		void println(JString arg0) const;
-	};
+		callMethod<void>(
+			"println",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

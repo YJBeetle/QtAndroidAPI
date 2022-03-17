@@ -1,27 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
+#include "../../../JArray.hpp"
+#include "./WifiConfiguration_Status.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiConfiguration_Status : public JObject
+	// Fields
+	inline jint WifiConfiguration_Status::CURRENT()
 	{
-	public:
-		// Fields
-		static jint CURRENT();
-		static jint DISABLED();
-		static jint ENABLED();
-		static JArray strings();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration_Status(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_Status(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$Status",
+			"CURRENT"
+		);
+	}
+	inline jint WifiConfiguration_Status::DISABLED()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$Status",
+			"DISABLED"
+		);
+	}
+	inline jint WifiConfiguration_Status::ENABLED()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$Status",
+			"ENABLED"
+		);
+	}
+	inline JArray WifiConfiguration_Status::strings()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$Status",
+			"strings",
+			"[Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::wifi
+
+// Base class headers
 

@@ -1,29 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaStore_Audio_Artists_Albums.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Audio_Artists_Albums : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaStore_Audio_Artists_Albums::MediaStore_Audio_Artists_Albums()
+		: JObject(
+			"android.provider.MediaStore$Audio$Artists$Albums",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::Uri MediaStore_Audio_Artists_Albums::getContentUri(JString arg0, jlong arg1)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaStore_Audio_Artists_Albums(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Artists_Albums(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaStore_Audio_Artists_Albums();
-		
-		// Methods
-		static android::net::Uri getContentUri(JString arg0, jlong arg1);
-	};
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Artists$Albums",
+			"getContentUri",
+			"(Ljava/lang/String;J)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

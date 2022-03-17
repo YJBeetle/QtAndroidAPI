@@ -1,50 +1,75 @@
 #pragma once
 
-#include "./LinearLayout.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace android::widget
-{
-	class LinearLayout_LayoutParams;
-}
-namespace android::widget
-{
-	class TableRow_LayoutParams;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../view/View.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "./LinearLayout_LayoutParams.def.hpp"
+#include "./TableRow_LayoutParams.def.hpp"
+#include "../../JString.hpp"
+#include "./TableRow.def.hpp"
 
 namespace android::widget
 {
-	class TableRow : public android::widget::LinearLayout
+	// Fields
+	
+	// Constructors
+	inline TableRow::TableRow(android::content::Context arg0)
+		: android::widget::LinearLayout(
+			"android.widget.TableRow",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline TableRow::TableRow(android::content::Context arg0, JObject arg1)
+		: android::widget::LinearLayout(
+			"android.widget.TableRow",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::widget::TableRow_LayoutParams TableRow::generateLayoutParams(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TableRow(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout(className, sig, std::forward<Ts>(agv)...) {}
-		TableRow(QAndroidJniObject obj) : android::widget::LinearLayout(obj) {}
-		
-		// Constructors
-		TableRow(android::content::Context arg0);
-		TableRow(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		android::widget::TableRow_LayoutParams generateLayoutParams(JObject arg0) const;
-		JString getAccessibilityClassName() const;
-		android::view::View getVirtualChildAt(jint arg0) const;
-		jint getVirtualChildCount() const;
-		void setOnHierarchyChangeListener(JObject arg0) const;
-	};
+		return callObjectMethod(
+			"generateLayoutParams",
+			"(Landroid/util/AttributeSet;)Landroid/widget/TableRow$LayoutParams;",
+			arg0.object()
+		);
+	}
+	inline JString TableRow::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::view::View TableRow::getVirtualChildAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"getVirtualChildAt",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	inline jint TableRow::getVirtualChildCount() const
+	{
+		return callMethod<jint>(
+			"getVirtualChildCount",
+			"()I"
+		);
+	}
+	inline void TableRow::setOnHierarchyChangeListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnHierarchyChangeListener",
+			"(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "./LinearLayout.hpp"
 

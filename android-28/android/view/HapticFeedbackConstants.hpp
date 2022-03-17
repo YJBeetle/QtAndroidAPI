@@ -1,32 +1,92 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./HapticFeedbackConstants.def.hpp"
 
 namespace android::view
 {
-	class HapticFeedbackConstants : public JObject
+	// Fields
+	inline jint HapticFeedbackConstants::CLOCK_TICK()
 	{
-	public:
-		// Fields
-		static jint CLOCK_TICK();
-		static jint CONTEXT_CLICK();
-		static jint FLAG_IGNORE_GLOBAL_SETTING();
-		static jint FLAG_IGNORE_VIEW_SETTING();
-		static jint KEYBOARD_PRESS();
-		static jint KEYBOARD_RELEASE();
-		static jint KEYBOARD_TAP();
-		static jint LONG_PRESS();
-		static jint TEXT_HANDLE_MOVE();
-		static jint VIRTUAL_KEY();
-		static jint VIRTUAL_KEY_RELEASE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HapticFeedbackConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HapticFeedbackConstants(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"CLOCK_TICK"
+		);
+	}
+	inline jint HapticFeedbackConstants::CONTEXT_CLICK()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"CONTEXT_CLICK"
+		);
+	}
+	inline jint HapticFeedbackConstants::FLAG_IGNORE_GLOBAL_SETTING()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"FLAG_IGNORE_GLOBAL_SETTING"
+		);
+	}
+	inline jint HapticFeedbackConstants::FLAG_IGNORE_VIEW_SETTING()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"FLAG_IGNORE_VIEW_SETTING"
+		);
+	}
+	inline jint HapticFeedbackConstants::KEYBOARD_PRESS()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"KEYBOARD_PRESS"
+		);
+	}
+	inline jint HapticFeedbackConstants::KEYBOARD_RELEASE()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"KEYBOARD_RELEASE"
+		);
+	}
+	inline jint HapticFeedbackConstants::KEYBOARD_TAP()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"KEYBOARD_TAP"
+		);
+	}
+	inline jint HapticFeedbackConstants::LONG_PRESS()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"LONG_PRESS"
+		);
+	}
+	inline jint HapticFeedbackConstants::TEXT_HANDLE_MOVE()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"TEXT_HANDLE_MOVE"
+		);
+	}
+	inline jint HapticFeedbackConstants::VIRTUAL_KEY()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"VIRTUAL_KEY"
+		);
+	}
+	inline jint HapticFeedbackConstants::VIRTUAL_KEY_RELEASE()
+	{
+		return getStaticField<jint>(
+			"android.view.HapticFeedbackConstants",
+			"VIRTUAL_KEY_RELEASE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::view
+
+// Base class headers
 

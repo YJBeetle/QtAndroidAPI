@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./IncompatibleClassChangeError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InstantiationError.def.hpp"
 
 namespace java::lang
 {
-	class InstantiationError : public java::lang::IncompatibleClassChangeError
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InstantiationError(const char *className, const char *sig, Ts...agv) : java::lang::IncompatibleClassChangeError(className, sig, std::forward<Ts>(agv)...) {}
-		InstantiationError(QAndroidJniObject obj) : java::lang::IncompatibleClassChangeError(obj) {}
-		
-		// Constructors
-		InstantiationError();
-		InstantiationError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InstantiationError::InstantiationError()
+		: java::lang::IncompatibleClassChangeError(
+			"java.lang.InstantiationError",
+			"()V"
+		) {}
+	inline InstantiationError::InstantiationError(JString arg0)
+		: java::lang::IncompatibleClassChangeError(
+			"java.lang.InstantiationError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
+#include "./IncompatibleClassChangeError.hpp"
 

@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./MidiDeviceInfo_PortInfo.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiDeviceInfo_PortInfo : public JObject
+	// Fields
+	inline jint MidiDeviceInfo_PortInfo::TYPE_INPUT()
 	{
-	public:
-		// Fields
-		static jint TYPE_INPUT();
-		static jint TYPE_OUTPUT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiDeviceInfo_PortInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDeviceInfo_PortInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getName() const;
-		jint getPortNumber() const;
-		jint getType() const;
-	};
+		return getStaticField<jint>(
+			"android.media.midi.MidiDeviceInfo$PortInfo",
+			"TYPE_INPUT"
+		);
+	}
+	inline jint MidiDeviceInfo_PortInfo::TYPE_OUTPUT()
+	{
+		return getStaticField<jint>(
+			"android.media.midi.MidiDeviceInfo$PortInfo",
+			"TYPE_OUTPUT"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString MidiDeviceInfo_PortInfo::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MidiDeviceInfo_PortInfo::getPortNumber() const
+	{
+		return callMethod<jint>(
+			"getPortNumber",
+			"()I"
+		);
+	}
+	inline jint MidiDeviceInfo_PortInfo::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
 

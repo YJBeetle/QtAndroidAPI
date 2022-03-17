@@ -1,28 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JCharArray;
+#include "../../JCharArray.hpp"
+#include "./KeyCharacterMap_KeyData.def.hpp"
 
 namespace android::view
 {
-	class KeyCharacterMap_KeyData : public JObject
+	// Fields
+	inline jint KeyCharacterMap_KeyData::META_LENGTH()
 	{
-	public:
-		// Fields
-		static jint META_LENGTH();
-		jchar displayLabel();
-		JCharArray meta();
-		jchar number();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyCharacterMap_KeyData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyCharacterMap_KeyData(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyCharacterMap_KeyData();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.view.KeyCharacterMap$KeyData",
+			"META_LENGTH"
+		);
+	}
+	inline jchar KeyCharacterMap_KeyData::displayLabel()
+	{
+		return getField<jchar>(
+			"displayLabel"
+		);
+	}
+	inline JCharArray KeyCharacterMap_KeyData::meta()
+	{
+		return getObjectField(
+			"meta",
+			"[C"
+		);
+	}
+	inline jchar KeyCharacterMap_KeyData::number()
+	{
+		return getField<jchar>(
+			"number"
+		);
+	}
+	
+	// Constructors
+	inline KeyCharacterMap_KeyData::KeyCharacterMap_KeyData()
+		: JObject(
+			"android.view.KeyCharacterMap$KeyData",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::view
+
+// Base class headers
 

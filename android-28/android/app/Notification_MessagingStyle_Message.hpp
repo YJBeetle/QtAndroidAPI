@@ -1,46 +1,94 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Person.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./Notification_MessagingStyle_Message.def.hpp"
 
 namespace android::app
 {
-	class Person;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-class JString;
-
-namespace android::app
-{
-	class Notification_MessagingStyle_Message : public JObject
+	// Fields
+	
+	// Constructors
+	inline Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(JString arg0, jlong arg1, android::app::Person arg2)
+		: JObject(
+			"android.app.Notification$MessagingStyle$Message",
+			"(Ljava/lang/CharSequence;JLandroid/app/Person;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object()
+		) {}
+	inline Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(JString arg0, jlong arg1, JString arg2)
+		: JObject(
+			"android.app.Notification$MessagingStyle$Message",
+			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString Notification_MessagingStyle_Message::getDataMimeType() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_MessagingStyle_Message(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_MessagingStyle_Message(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Notification_MessagingStyle_Message(JString arg0, jlong arg1, android::app::Person arg2);
-		Notification_MessagingStyle_Message(JString arg0, jlong arg1, JString arg2);
-		
-		// Methods
-		JString getDataMimeType() const;
-		android::net::Uri getDataUri() const;
-		android::os::Bundle getExtras() const;
-		JString getSender() const;
-		android::app::Person getSenderPerson() const;
-		JString getText() const;
-		jlong getTimestamp() const;
-		android::app::Notification_MessagingStyle_Message setData(JString arg0, android::net::Uri arg1) const;
-	};
+		return callObjectMethod(
+			"getDataMimeType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Notification_MessagingStyle_Message::getDataUri() const
+	{
+		return callObjectMethod(
+			"getDataUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline android::os::Bundle Notification_MessagingStyle_Message::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString Notification_MessagingStyle_Message::getSender() const
+	{
+		return callObjectMethod(
+			"getSender",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::app::Person Notification_MessagingStyle_Message::getSenderPerson() const
+	{
+		return callObjectMethod(
+			"getSenderPerson",
+			"()Landroid/app/Person;"
+		);
+	}
+	inline JString Notification_MessagingStyle_Message::getText() const
+	{
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jlong Notification_MessagingStyle_Message::getTimestamp() const
+	{
+		return callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
+	}
+	inline android::app::Notification_MessagingStyle_Message Notification_MessagingStyle_Message::setData(JString arg0, android::net::Uri arg1) const
+	{
+		return callObjectMethod(
+			"setData",
+			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

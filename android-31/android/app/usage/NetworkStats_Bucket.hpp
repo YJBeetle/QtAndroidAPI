@@ -1,50 +1,216 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./NetworkStats_Bucket.def.hpp"
 
 namespace android::app::usage
 {
-	class NetworkStats_Bucket : public JObject
+	// Fields
+	inline jint NetworkStats_Bucket::DEFAULT_NETWORK_ALL()
 	{
-	public:
-		// Fields
-		static jint DEFAULT_NETWORK_ALL();
-		static jint DEFAULT_NETWORK_NO();
-		static jint DEFAULT_NETWORK_YES();
-		static jint METERED_ALL();
-		static jint METERED_NO();
-		static jint METERED_YES();
-		static jint ROAMING_ALL();
-		static jint ROAMING_NO();
-		static jint ROAMING_YES();
-		static jint STATE_ALL();
-		static jint STATE_DEFAULT();
-		static jint STATE_FOREGROUND();
-		static jint TAG_NONE();
-		static jint UID_ALL();
-		static jint UID_REMOVED();
-		static jint UID_TETHERING();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkStats_Bucket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStats_Bucket(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		NetworkStats_Bucket();
-		
-		// Methods
-		jint getDefaultNetworkStatus() const;
-		jlong getEndTimeStamp() const;
-		jint getMetered() const;
-		jint getRoaming() const;
-		jlong getRxBytes() const;
-		jlong getRxPackets() const;
-		jlong getStartTimeStamp() const;
-		jint getState() const;
-		jint getTag() const;
-		jlong getTxBytes() const;
-		jlong getTxPackets() const;
-		jint getUid() const;
-	};
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"DEFAULT_NETWORK_ALL"
+		);
+	}
+	inline jint NetworkStats_Bucket::DEFAULT_NETWORK_NO()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"DEFAULT_NETWORK_NO"
+		);
+	}
+	inline jint NetworkStats_Bucket::DEFAULT_NETWORK_YES()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"DEFAULT_NETWORK_YES"
+		);
+	}
+	inline jint NetworkStats_Bucket::METERED_ALL()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"METERED_ALL"
+		);
+	}
+	inline jint NetworkStats_Bucket::METERED_NO()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"METERED_NO"
+		);
+	}
+	inline jint NetworkStats_Bucket::METERED_YES()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"METERED_YES"
+		);
+	}
+	inline jint NetworkStats_Bucket::ROAMING_ALL()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"ROAMING_ALL"
+		);
+	}
+	inline jint NetworkStats_Bucket::ROAMING_NO()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"ROAMING_NO"
+		);
+	}
+	inline jint NetworkStats_Bucket::ROAMING_YES()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"ROAMING_YES"
+		);
+	}
+	inline jint NetworkStats_Bucket::STATE_ALL()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"STATE_ALL"
+		);
+	}
+	inline jint NetworkStats_Bucket::STATE_DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"STATE_DEFAULT"
+		);
+	}
+	inline jint NetworkStats_Bucket::STATE_FOREGROUND()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"STATE_FOREGROUND"
+		);
+	}
+	inline jint NetworkStats_Bucket::TAG_NONE()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"TAG_NONE"
+		);
+	}
+	inline jint NetworkStats_Bucket::UID_ALL()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"UID_ALL"
+		);
+	}
+	inline jint NetworkStats_Bucket::UID_REMOVED()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"UID_REMOVED"
+		);
+	}
+	inline jint NetworkStats_Bucket::UID_TETHERING()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.NetworkStats$Bucket",
+			"UID_TETHERING"
+		);
+	}
+	
+	// Constructors
+	inline NetworkStats_Bucket::NetworkStats_Bucket()
+		: JObject(
+			"android.app.usage.NetworkStats$Bucket",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint NetworkStats_Bucket::getDefaultNetworkStatus() const
+	{
+		return callMethod<jint>(
+			"getDefaultNetworkStatus",
+			"()I"
+		);
+	}
+	inline jlong NetworkStats_Bucket::getEndTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getEndTimeStamp",
+			"()J"
+		);
+	}
+	inline jint NetworkStats_Bucket::getMetered() const
+	{
+		return callMethod<jint>(
+			"getMetered",
+			"()I"
+		);
+	}
+	inline jint NetworkStats_Bucket::getRoaming() const
+	{
+		return callMethod<jint>(
+			"getRoaming",
+			"()I"
+		);
+	}
+	inline jlong NetworkStats_Bucket::getRxBytes() const
+	{
+		return callMethod<jlong>(
+			"getRxBytes",
+			"()J"
+		);
+	}
+	inline jlong NetworkStats_Bucket::getRxPackets() const
+	{
+		return callMethod<jlong>(
+			"getRxPackets",
+			"()J"
+		);
+	}
+	inline jlong NetworkStats_Bucket::getStartTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getStartTimeStamp",
+			"()J"
+		);
+	}
+	inline jint NetworkStats_Bucket::getState() const
+	{
+		return callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	inline jint NetworkStats_Bucket::getTag() const
+	{
+		return callMethod<jint>(
+			"getTag",
+			"()I"
+		);
+	}
+	inline jlong NetworkStats_Bucket::getTxBytes() const
+	{
+		return callMethod<jlong>(
+			"getTxBytes",
+			"()J"
+		);
+	}
+	inline jlong NetworkStats_Bucket::getTxPackets() const
+	{
+		return callMethod<jlong>(
+			"getTxPackets",
+			"()J"
+		);
+	}
+	inline jint NetworkStats_Bucket::getUid() const
+	{
+		return callMethod<jint>(
+			"getUid",
+			"()I"
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

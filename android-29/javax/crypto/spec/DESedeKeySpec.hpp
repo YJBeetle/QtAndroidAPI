@@ -1,28 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
+#include "../../../JByteArray.hpp"
+#include "./DESedeKeySpec.def.hpp"
 
 namespace javax::crypto::spec
 {
-	class DESedeKeySpec : public JObject
+	// Fields
+	inline jint DESedeKeySpec::DES_EDE_KEY_LEN()
 	{
-	public:
-		// Fields
-		static jint DES_EDE_KEY_LEN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DESedeKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DESedeKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DESedeKeySpec(JByteArray arg0);
-		DESedeKeySpec(JByteArray arg0, jint arg1);
-		
-		// Methods
-		static jboolean isParityAdjusted(JByteArray arg0, jint arg1);
-		JByteArray getKey() const;
-	};
+		return getStaticField<jint>(
+			"javax.crypto.spec.DESedeKeySpec",
+			"DES_EDE_KEY_LEN"
+		);
+	}
+	
+	// Constructors
+	inline DESedeKeySpec::DESedeKeySpec(JByteArray arg0)
+		: JObject(
+			"javax.crypto.spec.DESedeKeySpec",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	inline DESedeKeySpec::DESedeKeySpec(JByteArray arg0, jint arg1)
+		: JObject(
+			"javax.crypto.spec.DESedeKeySpec",
+			"([BI)V",
+			arg0.object<jbyteArray>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean DESedeKeySpec::isParityAdjusted(JByteArray arg0, jint arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"javax.crypto.spec.DESedeKeySpec",
+			"isParityAdjusted",
+			"([BI)Z",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline JByteArray DESedeKeySpec::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()[B"
+		);
+	}
 } // namespace javax::crypto::spec
+
+// Base class headers
 

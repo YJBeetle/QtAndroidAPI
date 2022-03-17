@@ -1,30 +1,76 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BatteryState.def.hpp"
 
 namespace android::hardware
 {
-	class BatteryState : public JObject
+	// Fields
+	inline jint BatteryState::STATUS_CHARGING()
 	{
-	public:
-		// Fields
-		static jint STATUS_CHARGING();
-		static jint STATUS_DISCHARGING();
-		static jint STATUS_FULL();
-		static jint STATUS_NOT_CHARGING();
-		static jint STATUS_UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BatteryState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BatteryState(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		BatteryState();
-		
-		// Methods
-		jfloat getCapacity() const;
-		jint getStatus() const;
-		jboolean isPresent() const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.BatteryState",
+			"STATUS_CHARGING"
+		);
+	}
+	inline jint BatteryState::STATUS_DISCHARGING()
+	{
+		return getStaticField<jint>(
+			"android.hardware.BatteryState",
+			"STATUS_DISCHARGING"
+		);
+	}
+	inline jint BatteryState::STATUS_FULL()
+	{
+		return getStaticField<jint>(
+			"android.hardware.BatteryState",
+			"STATUS_FULL"
+		);
+	}
+	inline jint BatteryState::STATUS_NOT_CHARGING()
+	{
+		return getStaticField<jint>(
+			"android.hardware.BatteryState",
+			"STATUS_NOT_CHARGING"
+		);
+	}
+	inline jint BatteryState::STATUS_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.hardware.BatteryState",
+			"STATUS_UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline BatteryState::BatteryState()
+		: JObject(
+			"android.hardware.BatteryState",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jfloat BatteryState::getCapacity() const
+	{
+		return callMethod<jfloat>(
+			"getCapacity",
+			"()F"
+		);
+	}
+	inline jint BatteryState::getStatus() const
+	{
+		return callMethod<jint>(
+			"getStatus",
+			"()I"
+		);
+	}
+	inline jboolean BatteryState::isPresent() const
+	{
+		return callMethod<jboolean>(
+			"isPresent",
+			"()Z"
+		);
+	}
 } // namespace android::hardware
+
+// Base class headers
 

@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../../java/security/BasicPermission.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./AuthPermission.def.hpp"
 
 namespace javax::security::auth
 {
-	class AuthPermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AuthPermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		AuthPermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-		
-		// Constructors
-		AuthPermission(JString arg0);
-		AuthPermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AuthPermission::AuthPermission(JString arg0)
+		: java::security::BasicPermission(
+			"javax.security.auth.AuthPermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AuthPermission::AuthPermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"javax.security.auth.AuthPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::security::auth
+
+// Base class headers
+#include "../../../java/security/Permission.hpp"
+#include "../../../java/security/BasicPermission.hpp"
 

@@ -1,27 +1,41 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JCharArray;
+#include "../../JCharArray.hpp"
+#include "./CharArrayBuffer.def.hpp"
 
 namespace android::database
 {
-	class CharArrayBuffer : public JObject
+	// Fields
+	inline JCharArray CharArrayBuffer::data()
 	{
-	public:
-		// Fields
-		JCharArray data();
-		jint sizeCopied();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CharArrayBuffer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CharArrayBuffer(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CharArrayBuffer(JCharArray arg0);
-		CharArrayBuffer(jint arg0);
-		
-		// Methods
-	};
+		return getObjectField(
+			"data",
+			"[C"
+		);
+	}
+	inline jint CharArrayBuffer::sizeCopied()
+	{
+		return getField<jint>(
+			"sizeCopied"
+		);
+	}
+	
+	// Constructors
+	inline CharArrayBuffer::CharArrayBuffer(JCharArray arg0)
+		: JObject(
+			"android.database.CharArrayBuffer",
+			"([C)V",
+			arg0.object<jcharArray>()
+		) {}
+	inline CharArrayBuffer::CharArrayBuffer(jint arg0)
+		: JObject(
+			"android.database.CharArrayBuffer",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::database
+
+// Base class headers
 

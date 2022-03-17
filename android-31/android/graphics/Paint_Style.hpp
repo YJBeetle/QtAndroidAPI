@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Paint_Style.def.hpp"
 
 namespace android::graphics
 {
-	class Paint_Style : public java::lang::Enum
+	// Fields
+	inline android::graphics::Paint_Style Paint_Style::FILL()
 	{
-	public:
-		// Fields
-		static android::graphics::Paint_Style FILL();
-		static android::graphics::Paint_Style FILL_AND_STROKE();
-		static android::graphics::Paint_Style STROKE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Paint_Style(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Paint_Style valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Paint$Style",
+			"FILL",
+			"Landroid/graphics/Paint$Style;"
+		);
+	}
+	inline android::graphics::Paint_Style Paint_Style::FILL_AND_STROKE()
+	{
+		return getStaticObjectField(
+			"android.graphics.Paint$Style",
+			"FILL_AND_STROKE",
+			"Landroid/graphics/Paint$Style;"
+		);
+	}
+	inline android::graphics::Paint_Style Paint_Style::STROKE()
+	{
+		return getStaticObjectField(
+			"android.graphics.Paint$Style",
+			"STROKE",
+			"Landroid/graphics/Paint$Style;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Paint_Style Paint_Style::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Paint$Style",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Paint$Style;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Paint_Style::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Paint$Style",
+			"values",
+			"()[Landroid/graphics/Paint$Style;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

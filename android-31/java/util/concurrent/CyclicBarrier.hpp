@@ -1,38 +1,74 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./TimeUnit.def.hpp"
+#include "./locks/ReentrantLock.def.hpp"
+#include "./CyclicBarrier.def.hpp"
 
 namespace java::util::concurrent
 {
-	class TimeUnit;
-}
-namespace java::util::concurrent::locks
-{
-	class ReentrantLock;
-}
-
-namespace java::util::concurrent
-{
-	class CyclicBarrier : public JObject
+	// Fields
+	
+	// Constructors
+	inline CyclicBarrier::CyclicBarrier(jint arg0)
+		: JObject(
+			"java.util.concurrent.CyclicBarrier",
+			"(I)V",
+			arg0
+		) {}
+	inline CyclicBarrier::CyclicBarrier(jint arg0, JObject arg1)
+		: JObject(
+			"java.util.concurrent.CyclicBarrier",
+			"(ILjava/lang/Runnable;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jint CyclicBarrier::await() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CyclicBarrier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CyclicBarrier(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CyclicBarrier(jint arg0);
-		CyclicBarrier(jint arg0, JObject arg1);
-		
-		// Methods
-		jint await() const;
-		jint await(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
-		jint getNumberWaiting() const;
-		jint getParties() const;
-		jboolean isBroken() const;
-		void reset() const;
-	};
+		return callMethod<jint>(
+			"await",
+			"()I"
+		);
+	}
+	inline jint CyclicBarrier::await(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callMethod<jint>(
+			"await",
+			"(JLjava/util/concurrent/TimeUnit;)I",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline jint CyclicBarrier::getNumberWaiting() const
+	{
+		return callMethod<jint>(
+			"getNumberWaiting",
+			"()I"
+		);
+	}
+	inline jint CyclicBarrier::getParties() const
+	{
+		return callMethod<jint>(
+			"getParties",
+			"()I"
+		);
+	}
+	inline jboolean CyclicBarrier::isBroken() const
+	{
+		return callMethod<jboolean>(
+			"isBroken",
+			"()Z"
+		);
+	}
+	inline void CyclicBarrier::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
 

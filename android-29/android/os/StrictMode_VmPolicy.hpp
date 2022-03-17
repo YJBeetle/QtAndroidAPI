@@ -1,29 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::util
-{
-	class HashMap;
-}
+#include "../../JString.hpp"
+#include "../../java/util/HashMap.def.hpp"
+#include "./StrictMode_VmPolicy.def.hpp"
 
 namespace android::os
 {
-	class StrictMode_VmPolicy : public JObject
+	// Fields
+	inline android::os::StrictMode_VmPolicy StrictMode_VmPolicy::LAX()
 	{
-	public:
-		// Fields
-		static android::os::StrictMode_VmPolicy LAX();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StrictMode_VmPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StrictMode_VmPolicy(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.os.StrictMode$VmPolicy",
+			"LAX",
+			"Landroid/os/StrictMode$VmPolicy;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString StrictMode_VmPolicy::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

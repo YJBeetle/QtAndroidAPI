@@ -1,35 +1,102 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./DOMResult.def.hpp"
 
 namespace javax::xml::transform::dom
 {
-	class DOMResult : public JObject
+	// Fields
+	inline JString DOMResult::FEATURE()
 	{
-	public:
-		// Fields
-		static JString FEATURE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DOMResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DOMResult(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DOMResult();
-		DOMResult(JObject arg0);
-		DOMResult(JObject arg0, JString arg1);
-		DOMResult(JObject arg0, JObject arg1);
-		DOMResult(JObject arg0, JObject arg1, JString arg2);
-		
-		// Methods
-		JObject getNextSibling() const;
-		JObject getNode() const;
-		JString getSystemId() const;
-		void setNextSibling(JObject arg0) const;
-		void setNode(JObject arg0) const;
-		void setSystemId(JString arg0) const;
-	};
+		return getStaticObjectField(
+			"javax.xml.transform.dom.DOMResult",
+			"FEATURE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline DOMResult::DOMResult()
+		: JObject(
+			"javax.xml.transform.dom.DOMResult",
+			"()V"
+		) {}
+	inline DOMResult::DOMResult(JObject arg0)
+		: JObject(
+			"javax.xml.transform.dom.DOMResult",
+			"(Lorg/w3c/dom/Node;)V",
+			arg0.object()
+		) {}
+	inline DOMResult::DOMResult(JObject arg0, JString arg1)
+		: JObject(
+			"javax.xml.transform.dom.DOMResult",
+			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	inline DOMResult::DOMResult(JObject arg0, JObject arg1)
+		: JObject(
+			"javax.xml.transform.dom.DOMResult",
+			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline DOMResult::DOMResult(JObject arg0, JObject arg1, JString arg2)
+		: JObject(
+			"javax.xml.transform.dom.DOMResult",
+			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JObject DOMResult::getNextSibling() const
+	{
+		return callObjectMethod(
+			"getNextSibling",
+			"()Lorg/w3c/dom/Node;"
+		);
+	}
+	inline JObject DOMResult::getNode() const
+	{
+		return callObjectMethod(
+			"getNode",
+			"()Lorg/w3c/dom/Node;"
+		);
+	}
+	inline JString DOMResult::getSystemId() const
+	{
+		return callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void DOMResult::setNextSibling(JObject arg0) const
+	{
+		callMethod<void>(
+			"setNextSibling",
+			"(Lorg/w3c/dom/Node;)V",
+			arg0.object()
+		);
+	}
+	inline void DOMResult::setNode(JObject arg0) const
+	{
+		callMethod<void>(
+			"setNode",
+			"(Lorg/w3c/dom/Node;)V",
+			arg0.object()
+		);
+	}
+	inline void DOMResult::setSystemId(JString arg0) const
+	{
+		callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace javax::xml::transform::dom
+
+// Base class headers
 

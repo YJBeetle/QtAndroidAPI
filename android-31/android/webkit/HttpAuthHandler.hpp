@@ -1,26 +1,40 @@
 #pragma once
 
-#include "../os/Handler.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./HttpAuthHandler.def.hpp"
 
 namespace android::webkit
 {
-	class HttpAuthHandler : public android::os::Handler
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void HttpAuthHandler::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HttpAuthHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		HttpAuthHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		void proceed(JString arg0, JString arg1) const;
-		jboolean useHttpAuthUsernamePassword() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline void HttpAuthHandler::proceed(JString arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"proceed",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jboolean HttpAuthHandler::useHttpAuthUsernamePassword() const
+	{
+		return callMethod<jboolean>(
+			"useHttpAuthUsernamePassword",
+			"()Z"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
+#include "../os/Handler.hpp"
 

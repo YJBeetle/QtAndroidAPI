@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R.def.hpp"
 
 namespace android
 {
-	class R : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		R();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline R::R()
+		: JObject(
+			"android.R",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

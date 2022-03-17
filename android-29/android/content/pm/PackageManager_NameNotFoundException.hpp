@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../util/AndroidException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PackageManager_NameNotFoundException.def.hpp"
 
 namespace android::content::pm
 {
-	class PackageManager_NameNotFoundException : public android::util::AndroidException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageManager_NameNotFoundException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		PackageManager_NameNotFoundException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-		
-		// Constructors
-		PackageManager_NameNotFoundException();
-		PackageManager_NameNotFoundException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PackageManager_NameNotFoundException::PackageManager_NameNotFoundException()
+		: android::util::AndroidException(
+			"android.content.pm.PackageManager$NameNotFoundException",
+			"()V"
+		) {}
+	inline PackageManager_NameNotFoundException::PackageManager_NameNotFoundException(JString arg0)
+		: android::util::AndroidException(
+			"android.content.pm.PackageManager$NameNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::content::pm
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../util/AndroidException.hpp"
 

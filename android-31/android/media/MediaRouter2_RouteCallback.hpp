@@ -1,25 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRouter2_RouteCallback.def.hpp"
 
 namespace android::media
 {
-	class MediaRouter2_RouteCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaRouter2_RouteCallback::MediaRouter2_RouteCallback()
+		: JObject(
+			"android.media.MediaRouter2$RouteCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaRouter2_RouteCallback::onRoutesAdded(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter2_RouteCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2_RouteCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaRouter2_RouteCallback();
-		
-		// Methods
-		void onRoutesAdded(JObject arg0) const;
-		void onRoutesChanged(JObject arg0) const;
-		void onRoutesRemoved(JObject arg0) const;
-	};
+		callMethod<void>(
+			"onRoutesAdded",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2_RouteCallback::onRoutesChanged(JObject arg0) const
+	{
+		callMethod<void>(
+			"onRoutesChanged",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2_RouteCallback::onRoutesRemoved(JObject arg0) const
+	{
+		callMethod<void>(
+			"onRoutesRemoved",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

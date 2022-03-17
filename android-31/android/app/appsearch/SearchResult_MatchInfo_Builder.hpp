@@ -1,35 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SearchResult_MatchInfo.def.hpp"
+#include "./SearchResult_MatchRange.def.hpp"
+#include "../../../JString.hpp"
+#include "./SearchResult_MatchInfo_Builder.def.hpp"
 
 namespace android::app::appsearch
 {
-	class SearchResult_MatchInfo;
-}
-namespace android::app::appsearch
-{
-	class SearchResult_MatchRange;
-}
-class JString;
-
-namespace android::app::appsearch
-{
-	class SearchResult_MatchInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(JString arg0)
+		: JObject(
+			"android.app.appsearch.SearchResult$MatchInfo$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::appsearch::SearchResult_MatchInfo SearchResult_MatchInfo_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SearchResult_MatchInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SearchResult_MatchInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SearchResult_MatchInfo_Builder(JString arg0);
-		
-		// Methods
-		android::app::appsearch::SearchResult_MatchInfo build() const;
-		android::app::appsearch::SearchResult_MatchInfo_Builder setExactMatchRange(android::app::appsearch::SearchResult_MatchRange arg0) const;
-		android::app::appsearch::SearchResult_MatchInfo_Builder setSnippetRange(android::app::appsearch::SearchResult_MatchRange arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/appsearch/SearchResult$MatchInfo;"
+		);
+	}
+	inline android::app::appsearch::SearchResult_MatchInfo_Builder SearchResult_MatchInfo_Builder::setExactMatchRange(android::app::appsearch::SearchResult_MatchRange arg0) const
+	{
+		return callObjectMethod(
+			"setExactMatchRange",
+			"(Landroid/app/appsearch/SearchResult$MatchRange;)Landroid/app/appsearch/SearchResult$MatchInfo$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::appsearch::SearchResult_MatchInfo_Builder SearchResult_MatchInfo_Builder::setSnippetRange(android::app::appsearch::SearchResult_MatchRange arg0) const
+	{
+		return callObjectMethod(
+			"setSnippetRange",
+			"(Landroid/app/appsearch/SearchResult$MatchRange;)Landroid/app/appsearch/SearchResult$MatchInfo$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

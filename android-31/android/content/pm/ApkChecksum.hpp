@@ -1,40 +1,78 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-namespace java::security::cert
-{
-	class Certificate;
-}
+#include "../../../JByteArray.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/security/cert/Certificate.def.hpp"
+#include "./ApkChecksum.def.hpp"
 
 namespace android::content::pm
 {
-	class ApkChecksum : public JObject
+	// Fields
+	inline JObject ApkChecksum::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ApkChecksum(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ApkChecksum(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		java::security::cert::Certificate getInstallerCertificate() const;
-		JString getInstallerPackageName() const;
-		JString getSplitName() const;
-		jint getType() const;
-		JByteArray getValue() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.content.pm.ApkChecksum",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint ApkChecksum::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline java::security::cert::Certificate ApkChecksum::getInstallerCertificate() const
+	{
+		return callObjectMethod(
+			"getInstallerCertificate",
+			"()Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JString ApkChecksum::getInstallerPackageName() const
+	{
+		return callObjectMethod(
+			"getInstallerPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString ApkChecksum::getSplitName() const
+	{
+		return callObjectMethod(
+			"getSplitName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint ApkChecksum::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline JByteArray ApkChecksum::getValue() const
+	{
+		return callObjectMethod(
+			"getValue",
+			"()[B"
+		);
+	}
+	inline void ApkChecksum::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

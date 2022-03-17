@@ -1,27 +1,43 @@
 #pragma once
 
-#include "../../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./LinkOption.def.hpp"
 
 namespace java::nio::file
 {
-	class LinkOption : public java::lang::Enum
+	// Fields
+	inline java::nio::file::LinkOption LinkOption::NOFOLLOW_LINKS()
 	{
-	public:
-		// Fields
-		static java::nio::file::LinkOption NOFOLLOW_LINKS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LinkOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		LinkOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::file::LinkOption valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.nio.file.LinkOption",
+			"NOFOLLOW_LINKS",
+			"Ljava/nio/file/LinkOption;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::file::LinkOption LinkOption::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.LinkOption",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/nio/file/LinkOption;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray LinkOption::values()
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.LinkOption",
+			"values",
+			"()[Ljava/nio/file/LinkOption;"
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Enum.hpp"
 

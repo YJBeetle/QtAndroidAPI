@@ -1,36 +1,117 @@
 #pragma once
 
-#include "../JObject.hpp"
-
-class JString;
+#include "../JString.hpp"
+#include "./Manifest_permission_group.def.hpp"
 
 namespace android
 {
-	class Manifest_permission_group : public JObject
+	// Fields
+	inline JString Manifest_permission_group::ACTIVITY_RECOGNITION()
 	{
-	public:
-		// Fields
-		static JString ACTIVITY_RECOGNITION();
-		static JString CALENDAR();
-		static JString CALL_LOG();
-		static JString CAMERA();
-		static JString CONTACTS();
-		static JString LOCATION();
-		static JString MICROPHONE();
-		static JString NEARBY_DEVICES();
-		static JString PHONE();
-		static JString SENSORS();
-		static JString SMS();
-		static JString STORAGE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Manifest_permission_group(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Manifest_permission_group(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Manifest_permission_group();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"ACTIVITY_RECOGNITION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::CALENDAR()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"CALENDAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::CALL_LOG()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"CALL_LOG",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::CAMERA()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"CAMERA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::CONTACTS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"CONTACTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::LOCATION()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::MICROPHONE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"MICROPHONE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::NEARBY_DEVICES()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"NEARBY_DEVICES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::PHONE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"PHONE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::SENSORS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"SENSORS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::SMS()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"SMS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Manifest_permission_group::STORAGE()
+	{
+		return getStaticObjectField(
+			"android.Manifest$permission_group",
+			"STORAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Manifest_permission_group::Manifest_permission_group()
+		: JObject(
+			"android.Manifest$permission_group",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

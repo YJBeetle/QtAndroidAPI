@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./ReplacementTransformationMethod.hpp"
-
-class JCharArray;
+#include "../../../JCharArray.hpp"
+#include "./SingleLineTransformationMethod.def.hpp"
 
 namespace android::text::method
 {
-	class SingleLineTransformationMethod : public android::text::method::ReplacementTransformationMethod
+	// Fields
+	
+	// Constructors
+	inline SingleLineTransformationMethod::SingleLineTransformationMethod()
+		: android::text::method::ReplacementTransformationMethod(
+			"android.text.method.SingleLineTransformationMethod",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::text::method::SingleLineTransformationMethod SingleLineTransformationMethod::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SingleLineTransformationMethod(const char *className, const char *sig, Ts...agv) : android::text::method::ReplacementTransformationMethod(className, sig, std::forward<Ts>(agv)...) {}
-		SingleLineTransformationMethod(QAndroidJniObject obj) : android::text::method::ReplacementTransformationMethod(obj) {}
-		
-		// Constructors
-		SingleLineTransformationMethod();
-		
-		// Methods
-		static android::text::method::SingleLineTransformationMethod getInstance();
-	};
+		return callStaticObjectMethod(
+			"android.text.method.SingleLineTransformationMethod",
+			"getInstance",
+			"()Landroid/text/method/SingleLineTransformationMethod;"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./ReplacementTransformationMethod.hpp"
 

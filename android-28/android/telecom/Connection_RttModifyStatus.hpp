@@ -1,26 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Connection_RttModifyStatus.def.hpp"
 
 namespace android::telecom
 {
-	class Connection_RttModifyStatus : public JObject
+	// Fields
+	inline jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_FAIL()
 	{
-	public:
-		// Fields
-		static jint SESSION_MODIFY_REQUEST_FAIL();
-		static jint SESSION_MODIFY_REQUEST_INVALID();
-		static jint SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE();
-		static jint SESSION_MODIFY_REQUEST_SUCCESS();
-		static jint SESSION_MODIFY_REQUEST_TIMED_OUT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Connection_RttModifyStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Connection_RttModifyStatus(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telecom.Connection$RttModifyStatus",
+			"SESSION_MODIFY_REQUEST_FAIL"
+		);
+	}
+	inline jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_INVALID()
+	{
+		return getStaticField<jint>(
+			"android.telecom.Connection$RttModifyStatus",
+			"SESSION_MODIFY_REQUEST_INVALID"
+		);
+	}
+	inline jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE()
+	{
+		return getStaticField<jint>(
+			"android.telecom.Connection$RttModifyStatus",
+			"SESSION_MODIFY_REQUEST_REJECTED_BY_REMOTE"
+		);
+	}
+	inline jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.telecom.Connection$RttModifyStatus",
+			"SESSION_MODIFY_REQUEST_SUCCESS"
+		);
+	}
+	inline jint Connection_RttModifyStatus::SESSION_MODIFY_REQUEST_TIMED_OUT()
+	{
+		return getStaticField<jint>(
+			"android.telecom.Connection$RttModifyStatus",
+			"SESSION_MODIFY_REQUEST_TIMED_OUT"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telecom
+
+// Base class headers
 

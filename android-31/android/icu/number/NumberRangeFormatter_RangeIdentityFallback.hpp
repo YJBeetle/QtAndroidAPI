@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./NumberRangeFormatter_RangeIdentityFallback.def.hpp"
 
 namespace android::icu::number
 {
-	class NumberRangeFormatter_RangeIdentityFallback : public java::lang::Enum
+	// Fields
+	inline android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::APPROXIMATELY()
 	{
-	public:
-		// Fields
-		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback APPROXIMATELY();
-		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback APPROXIMATELY_OR_SINGLE_VALUE();
-		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback RANGE();
-		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback SINGLE_VALUE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NumberRangeFormatter_RangeIdentityFallback(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter_RangeIdentityFallback(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::NumberRangeFormatter_RangeIdentityFallback valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"APPROXIMATELY",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::APPROXIMATELY_OR_SINGLE_VALUE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"APPROXIMATELY_OR_SINGLE_VALUE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::RANGE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"RANGE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::SINGLE_VALUE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"SINGLE_VALUE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::NumberRangeFormatter_RangeIdentityFallback NumberRangeFormatter_RangeIdentityFallback::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray NumberRangeFormatter_RangeIdentityFallback::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter$RangeIdentityFallback",
+			"values",
+			"()[Landroid/icu/number/NumberRangeFormatter$RangeIdentityFallback;"
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

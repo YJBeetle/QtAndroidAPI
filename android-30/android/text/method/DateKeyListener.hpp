@@ -1,33 +1,63 @@
 #pragma once
 
-#include "./NumberKeyListener.hpp"
-
-class JCharArray;
-namespace java::util
-{
-	class Locale;
-}
+#include "../../../JCharArray.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./DateKeyListener.def.hpp"
 
 namespace android::text::method
 {
-	class DateKeyListener : public android::text::method::NumberKeyListener
+	// Fields
+	inline JCharArray DateKeyListener::CHARACTERS()
 	{
-	public:
-		// Fields
-		static JCharArray CHARACTERS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DateKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::NumberKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		DateKeyListener(QAndroidJniObject obj) : android::text::method::NumberKeyListener(obj) {}
-		
-		// Constructors
-		DateKeyListener();
-		DateKeyListener(java::util::Locale arg0);
-		
-		// Methods
-		static android::text::method::DateKeyListener getInstance();
-		static android::text::method::DateKeyListener getInstance(java::util::Locale arg0);
-		jint getInputType() const;
-	};
+		return getStaticObjectField(
+			"android.text.method.DateKeyListener",
+			"CHARACTERS",
+			"[C"
+		);
+	}
+	
+	// Constructors
+	inline DateKeyListener::DateKeyListener()
+		: android::text::method::NumberKeyListener(
+			"android.text.method.DateKeyListener",
+			"()V"
+		) {}
+	inline DateKeyListener::DateKeyListener(java::util::Locale arg0)
+		: android::text::method::NumberKeyListener(
+			"android.text.method.DateKeyListener",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::text::method::DateKeyListener DateKeyListener::getInstance()
+	{
+		return callStaticObjectMethod(
+			"android.text.method.DateKeyListener",
+			"getInstance",
+			"()Landroid/text/method/DateKeyListener;"
+		);
+	}
+	inline android::text::method::DateKeyListener DateKeyListener::getInstance(java::util::Locale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.text.method.DateKeyListener",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/text/method/DateKeyListener;",
+			arg0.object()
+		);
+	}
+	inline jint DateKeyListener::getInputType() const
+	{
+		return callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
+#include "./NumberKeyListener.hpp"
 

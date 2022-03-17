@@ -1,34 +1,43 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./RangingRequest.def.hpp"
+#include "./RangingResultCallback.def.hpp"
+#include "../../../../JString.hpp"
+#include "./WifiRttManager.def.hpp"
 
 namespace android::net::wifi::rtt
 {
-	class RangingRequest;
-}
-namespace android::net::wifi::rtt
-{
-	class RangingResultCallback;
-}
-class JString;
-
-namespace android::net::wifi::rtt
-{
-	class WifiRttManager : public JObject
+	// Fields
+	inline JString WifiRttManager::ACTION_WIFI_RTT_STATE_CHANGED()
 	{
-	public:
-		// Fields
-		static JString ACTION_WIFI_RTT_STATE_CHANGED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiRttManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiRttManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean isAvailable() const;
-		void startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.rtt.WifiRttManager",
+			"ACTION_WIFI_RTT_STATE_CHANGED",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean WifiRttManager::isAvailable() const
+	{
+		return callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
+	}
+	inline void WifiRttManager::startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2) const
+	{
+		callMethod<void>(
+			"startRanging",
+			"(Landroid/net/wifi/rtt/RangingRequest;Ljava/util/concurrent/Executor;Landroid/net/wifi/rtt/RangingResultCallback;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::net::wifi::rtt
+
+// Base class headers
 

@@ -1,36 +1,64 @@
 #pragma once
 
-#include "../view/ViewGroup.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
+#include "../content/Context.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "./AbsoluteLayout.def.hpp"
 
 namespace android::widget
 {
-	class AbsoluteLayout : public android::view::ViewGroup
+	// Fields
+	
+	// Constructors
+	inline AbsoluteLayout::AbsoluteLayout(android::content::Context arg0)
+		: android::view::ViewGroup(
+			"android.widget.AbsoluteLayout",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline AbsoluteLayout::AbsoluteLayout(android::content::Context arg0, JObject arg1)
+		: android::view::ViewGroup(
+			"android.widget.AbsoluteLayout",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline AbsoluteLayout::AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2)
+		: android::view::ViewGroup(
+			"android.widget.AbsoluteLayout",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		) {}
+	inline AbsoluteLayout::AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: android::view::ViewGroup(
+			"android.widget.AbsoluteLayout",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline android::view::ViewGroup_LayoutParams AbsoluteLayout::generateLayoutParams(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbsoluteLayout(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		AbsoluteLayout(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-		
-		// Constructors
-		AbsoluteLayout(android::content::Context arg0);
-		AbsoluteLayout(android::content::Context arg0, JObject arg1);
-		AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2);
-		AbsoluteLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
-		
-		// Methods
-		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0) const;
-		jboolean shouldDelayChildPressedState() const;
-	};
+		return callObjectMethod(
+			"generateLayoutParams",
+			"(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;",
+			arg0.object()
+		);
+	}
+	inline jboolean AbsoluteLayout::shouldDelayChildPressedState() const
+	{
+		return callMethod<jboolean>(
+			"shouldDelayChildPressedState",
+			"()Z"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 

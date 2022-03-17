@@ -1,45 +1,101 @@
 #pragma once
 
-#include "./ByteBuffer.hpp"
-
-namespace java::io
-{
-	class FileDescriptor;
-}
-namespace java::nio
-{
-	class Buffer;
-}
-namespace java::nio
-{
-	class ByteBuffer;
-}
+#include "../io/FileDescriptor.def.hpp"
+#include "./Buffer.def.hpp"
+#include "./ByteBuffer.def.hpp"
+#include "./MappedByteBuffer.def.hpp"
 
 namespace java::nio
 {
-	class MappedByteBuffer : public java::nio::ByteBuffer
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::MappedByteBuffer MappedByteBuffer::clear() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MappedByteBuffer(const char *className, const char *sig, Ts...agv) : java::nio::ByteBuffer(className, sig, std::forward<Ts>(agv)...) {}
-		MappedByteBuffer(QAndroidJniObject obj) : java::nio::ByteBuffer(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::nio::MappedByteBuffer clear() const;
-		java::nio::MappedByteBuffer flip() const;
-		java::nio::MappedByteBuffer force() const;
-		java::nio::MappedByteBuffer force(jint arg0, jint arg1) const;
-		jboolean isLoaded() const;
-		java::nio::MappedByteBuffer limit(jint arg0) const;
-		java::nio::MappedByteBuffer load() const;
-		java::nio::MappedByteBuffer mark() const;
-		java::nio::MappedByteBuffer position(jint arg0) const;
-		java::nio::MappedByteBuffer reset() const;
-		java::nio::MappedByteBuffer rewind() const;
-	};
+		return callObjectMethod(
+			"clear",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::flip() const
+	{
+		return callObjectMethod(
+			"flip",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::force() const
+	{
+		return callObjectMethod(
+			"force",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::force(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"force",
+			"(II)Ljava/nio/MappedByteBuffer;",
+			arg0,
+			arg1
+		);
+	}
+	inline jboolean MappedByteBuffer::isLoaded() const
+	{
+		return callMethod<jboolean>(
+			"isLoaded",
+			"()Z"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::limit(jint arg0) const
+	{
+		return callObjectMethod(
+			"limit",
+			"(I)Ljava/nio/MappedByteBuffer;",
+			arg0
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::load() const
+	{
+		return callObjectMethod(
+			"load",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::mark() const
+	{
+		return callObjectMethod(
+			"mark",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::position(jint arg0) const
+	{
+		return callObjectMethod(
+			"position",
+			"(I)Ljava/nio/MappedByteBuffer;",
+			arg0
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::reset() const
+	{
+		return callObjectMethod(
+			"reset",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::rewind() const
+	{
+		return callObjectMethod(
+			"rewind",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
 } // namespace java::nio
+
+// Base class headers
+#include "./Buffer.hpp"
+#include "./ByteBuffer.hpp"
 

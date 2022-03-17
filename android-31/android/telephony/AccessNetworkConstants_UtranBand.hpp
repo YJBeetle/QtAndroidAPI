@@ -1,47 +1,197 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AccessNetworkConstants_UtranBand.def.hpp"
 
 namespace android::telephony
 {
-	class AccessNetworkConstants_UtranBand : public JObject
+	// Fields
+	inline jint AccessNetworkConstants_UtranBand::BAND_1()
 	{
-	public:
-		// Fields
-		static jint BAND_1();
-		static jint BAND_10();
-		static jint BAND_11();
-		static jint BAND_12();
-		static jint BAND_13();
-		static jint BAND_14();
-		static jint BAND_19();
-		static jint BAND_2();
-		static jint BAND_20();
-		static jint BAND_21();
-		static jint BAND_22();
-		static jint BAND_25();
-		static jint BAND_26();
-		static jint BAND_3();
-		static jint BAND_4();
-		static jint BAND_5();
-		static jint BAND_6();
-		static jint BAND_7();
-		static jint BAND_8();
-		static jint BAND_9();
-		static jint BAND_A();
-		static jint BAND_B();
-		static jint BAND_C();
-		static jint BAND_D();
-		static jint BAND_E();
-		static jint BAND_F();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessNetworkConstants_UtranBand(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants_UtranBand(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_1"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_10()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_10"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_11()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_11"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_12()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_12"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_13()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_13"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_14()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_14"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_19()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_19"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_2()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_2"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_20()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_20"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_21()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_21"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_22()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_22"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_25()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_25"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_26()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_26"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_3()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_3"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_4()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_4"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_5()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_5"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_6()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_6"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_7()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_7"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_8()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_8"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_9()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_9"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_A()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_A"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_B()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_B"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_C()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_C"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_D()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_D"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_E()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_E"
+		);
+	}
+	inline jint AccessNetworkConstants_UtranBand::BAND_F()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants$UtranBand",
+			"BAND_F"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

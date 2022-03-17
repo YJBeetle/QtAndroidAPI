@@ -1,37 +1,86 @@
 #pragma once
 
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./SliceSpec.def.hpp"
 
 namespace android::app::slice
 {
-	class SliceSpec : public JObject
+	// Fields
+	inline JObject SliceSpec::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SliceSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SliceSpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SliceSpec(JString arg0, jint arg1);
-		
-		// Methods
-		jboolean canRender(android::app::slice::SliceSpec arg0) const;
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getRevision() const;
-		JString getType() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.slice.SliceSpec",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline SliceSpec::SliceSpec(JString arg0, jint arg1)
+		: JObject(
+			"android.app.slice.SliceSpec",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean SliceSpec::canRender(android::app::slice::SliceSpec arg0) const
+	{
+		return callMethod<jboolean>(
+			"canRender",
+			"(Landroid/app/slice/SliceSpec;)Z",
+			arg0.object()
+		);
+	}
+	inline jint SliceSpec::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean SliceSpec::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint SliceSpec::getRevision() const
+	{
+		return callMethod<jint>(
+			"getRevision",
+			"()I"
+		);
+	}
+	inline JString SliceSpec::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString SliceSpec::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void SliceSpec::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::slice
+
+// Base class headers
 

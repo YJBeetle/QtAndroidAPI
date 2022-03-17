@@ -1,39 +1,83 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./JobInfo.def.hpp"
+#include "./JobWorkItem.def.hpp"
+#include "./JobScheduler.def.hpp"
 
 namespace android::app::job
 {
-	class JobInfo;
-}
-namespace android::app::job
-{
-	class JobWorkItem;
-}
-
-namespace android::app::job
-{
-	class JobScheduler : public JObject
+	// Fields
+	inline jint JobScheduler::RESULT_FAILURE()
 	{
-	public:
-		// Fields
-		static jint RESULT_FAILURE();
-		static jint RESULT_SUCCESS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JobScheduler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JobScheduler(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		JobScheduler();
-		
-		// Methods
-		void cancel(jint arg0) const;
-		void cancelAll() const;
-		jint enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1) const;
-		JObject getAllPendingJobs() const;
-		android::app::job::JobInfo getPendingJob(jint arg0) const;
-		jint schedule(android::app::job::JobInfo arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.app.job.JobScheduler",
+			"RESULT_FAILURE"
+		);
+	}
+	inline jint JobScheduler::RESULT_SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.app.job.JobScheduler",
+			"RESULT_SUCCESS"
+		);
+	}
+	
+	// Constructors
+	inline JobScheduler::JobScheduler()
+		: JObject(
+			"android.app.job.JobScheduler",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void JobScheduler::cancel(jint arg0) const
+	{
+		callMethod<void>(
+			"cancel",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void JobScheduler::cancelAll() const
+	{
+		callMethod<void>(
+			"cancelAll",
+			"()V"
+		);
+	}
+	inline jint JobScheduler::enqueue(android::app::job::JobInfo arg0, android::app::job::JobWorkItem arg1) const
+	{
+		return callMethod<jint>(
+			"enqueue",
+			"(Landroid/app/job/JobInfo;Landroid/app/job/JobWorkItem;)I",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JObject JobScheduler::getAllPendingJobs() const
+	{
+		return callObjectMethod(
+			"getAllPendingJobs",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::app::job::JobInfo JobScheduler::getPendingJob(jint arg0) const
+	{
+		return callObjectMethod(
+			"getPendingJob",
+			"(I)Landroid/app/job/JobInfo;",
+			arg0
+		);
+	}
+	inline jint JobScheduler::schedule(android::app::job::JobInfo arg0) const
+	{
+		return callMethod<jint>(
+			"schedule",
+			"(Landroid/app/job/JobInfo;)I",
+			arg0.object()
+		);
+	}
 } // namespace android::app::job
+
+// Base class headers
 

@@ -1,47 +1,52 @@
 #pragma once
 
-#include "./RectShape.hpp"
-
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class Outline;
-}
-namespace android::graphics
-{
-	class Paint;
-}
-namespace android::graphics::drawable::shapes
-{
-	class RectShape;
-}
-namespace android::graphics::drawable::shapes
-{
-	class Shape;
-}
-class JObject;
+#include "../../Canvas.def.hpp"
+#include "../../Outline.def.hpp"
+#include "../../Paint.def.hpp"
+#include "./RectShape.def.hpp"
+#include "./Shape.def.hpp"
+#include "../../../../JObject.hpp"
+#include "./OvalShape.def.hpp"
 
 namespace android::graphics::drawable::shapes
 {
-	class OvalShape : public android::graphics::drawable::shapes::RectShape
+	// Fields
+	
+	// Constructors
+	inline OvalShape::OvalShape()
+		: android::graphics::drawable::shapes::RectShape(
+			"android.graphics.drawable.shapes.OvalShape",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::graphics::drawable::shapes::OvalShape OvalShape::clone() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OvalShape(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::shapes::RectShape(className, sig, std::forward<Ts>(agv)...) {}
-		OvalShape(QAndroidJniObject obj) : android::graphics::drawable::shapes::RectShape(obj) {}
-		
-		// Constructors
-		OvalShape();
-		
-		// Methods
-		android::graphics::drawable::shapes::OvalShape clone() const;
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
-		void getOutline(android::graphics::Outline arg0) const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Landroid/graphics/drawable/shapes/OvalShape;"
+		);
+	}
+	inline void OvalShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void OvalShape::getOutline(android::graphics::Outline arg0) const
+	{
+		callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics::drawable::shapes
+
+// Base class headers
+#include "./Shape.hpp"
+#include "./RectShape.hpp"
 

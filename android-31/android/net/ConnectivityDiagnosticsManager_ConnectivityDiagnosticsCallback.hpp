@@ -1,38 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ConnectivityDiagnosticsManager_ConnectivityReport.def.hpp"
+#include "./ConnectivityDiagnosticsManager_DataStallReport.def.hpp"
+#include "./Network.def.hpp"
+#include "./ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback.def.hpp"
 
 namespace android::net
 {
-	class ConnectivityDiagnosticsManager_ConnectivityReport;
-}
-namespace android::net
-{
-	class ConnectivityDiagnosticsManager_DataStallReport;
-}
-namespace android::net
-{
-	class Network;
-}
-
-namespace android::net
-{
-	class ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback()
+		: JObject(
+			"android.net.ConnectivityDiagnosticsManager$ConnectivityDiagnosticsCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onConnectivityReportAvailable(android::net::ConnectivityDiagnosticsManager_ConnectivityReport arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback();
-		
-		// Methods
-		void onConnectivityReportAvailable(android::net::ConnectivityDiagnosticsManager_ConnectivityReport arg0) const;
-		void onDataStallSuspected(android::net::ConnectivityDiagnosticsManager_DataStallReport arg0) const;
-		void onNetworkConnectivityReported(android::net::Network arg0, jboolean arg1) const;
-	};
+		callMethod<void>(
+			"onConnectivityReportAvailable",
+			"(Landroid/net/ConnectivityDiagnosticsManager$ConnectivityReport;)V",
+			arg0.object()
+		);
+	}
+	inline void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onDataStallSuspected(android::net::ConnectivityDiagnosticsManager_DataStallReport arg0) const
+	{
+		callMethod<void>(
+			"onDataStallSuspected",
+			"(Landroid/net/ConnectivityDiagnosticsManager$DataStallReport;)V",
+			arg0.object()
+		);
+	}
+	inline void ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::onNetworkConnectivityReported(android::net::Network arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"onNetworkConnectivityReported",
+			"(Landroid/net/Network;Z)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

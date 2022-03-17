@@ -1,33 +1,62 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./NetworkEvent.def.hpp"
 
 namespace android::app::admin
 {
-	class NetworkEvent : public JObject
+	// Fields
+	inline JObject NetworkEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jlong getId() const;
-		JString getPackageName() const;
-		jlong getTimestamp() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.admin.NetworkEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint NetworkEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jlong NetworkEvent::getId() const
+	{
+		return callMethod<jlong>(
+			"getId",
+			"()J"
+		);
+	}
+	inline JString NetworkEvent::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong NetworkEvent::getTimestamp() const
+	{
+		return callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
+	}
+	inline void NetworkEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::admin
+
+// Base class headers
 

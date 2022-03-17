@@ -1,34 +1,66 @@
 #pragma once
 
-#include "../../java/lang/Thread.hpp"
+#include "./Looper.def.hpp"
+#include "../../JString.hpp"
+#include "./HandlerThread.def.hpp"
 
 namespace android::os
 {
-	class Looper;
-}
-class JString;
-
-namespace android::os
-{
-	class HandlerThread : public java::lang::Thread
+	// Fields
+	
+	// Constructors
+	inline HandlerThread::HandlerThread(JString arg0)
+		: java::lang::Thread(
+			"android.os.HandlerThread",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline HandlerThread::HandlerThread(JString arg0, jint arg1)
+		: java::lang::Thread(
+			"android.os.HandlerThread",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline android::os::Looper HandlerThread::getLooper() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HandlerThread(const char *className, const char *sig, Ts...agv) : java::lang::Thread(className, sig, std::forward<Ts>(agv)...) {}
-		HandlerThread(QAndroidJniObject obj) : java::lang::Thread(obj) {}
-		
-		// Constructors
-		HandlerThread(JString arg0);
-		HandlerThread(JString arg0, jint arg1);
-		
-		// Methods
-		android::os::Looper getLooper() const;
-		jint getThreadId() const;
-		jboolean quit() const;
-		jboolean quitSafely() const;
-		void run() const;
-	};
+		return callObjectMethod(
+			"getLooper",
+			"()Landroid/os/Looper;"
+		);
+	}
+	inline jint HandlerThread::getThreadId() const
+	{
+		return callMethod<jint>(
+			"getThreadId",
+			"()I"
+		);
+	}
+	inline jboolean HandlerThread::quit() const
+	{
+		return callMethod<jboolean>(
+			"quit",
+			"()Z"
+		);
+	}
+	inline jboolean HandlerThread::quitSafely() const
+	{
+		return callMethod<jboolean>(
+			"quitSafely",
+			"()Z"
+		);
+	}
+	inline void HandlerThread::run() const
+	{
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Thread.hpp"
 

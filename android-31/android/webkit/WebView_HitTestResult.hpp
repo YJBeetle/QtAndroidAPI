@@ -1,35 +1,100 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./WebView_HitTestResult.def.hpp"
 
 namespace android::webkit
 {
-	class WebView_HitTestResult : public JObject
+	// Fields
+	inline jint WebView_HitTestResult::ANCHOR_TYPE()
 	{
-	public:
-		// Fields
-		static jint ANCHOR_TYPE();
-		static jint EDIT_TEXT_TYPE();
-		static jint EMAIL_TYPE();
-		static jint GEO_TYPE();
-		static jint IMAGE_ANCHOR_TYPE();
-		static jint IMAGE_TYPE();
-		static jint PHONE_TYPE();
-		static jint SRC_ANCHOR_TYPE();
-		static jint SRC_IMAGE_ANCHOR_TYPE();
-		static jint UNKNOWN_TYPE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebView_HitTestResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebView_HitTestResult(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getExtra() const;
-		jint getType() const;
-	};
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"ANCHOR_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::EDIT_TEXT_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"EDIT_TEXT_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::EMAIL_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"EMAIL_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::GEO_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"GEO_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::IMAGE_ANCHOR_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"IMAGE_ANCHOR_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::IMAGE_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"IMAGE_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::PHONE_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"PHONE_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::SRC_ANCHOR_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"SRC_ANCHOR_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::SRC_IMAGE_ANCHOR_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"SRC_IMAGE_ANCHOR_TYPE"
+		);
+	}
+	inline jint WebView_HitTestResult::UNKNOWN_TYPE()
+	{
+		return getStaticField<jint>(
+			"android.webkit.WebView$HitTestResult",
+			"UNKNOWN_TYPE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString WebView_HitTestResult::getExtra() const
+	{
+		return callObjectMethod(
+			"getExtra",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint WebView_HitTestResult::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

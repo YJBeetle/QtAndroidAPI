@@ -1,40 +1,79 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Person.def.hpp"
+#include "../graphics/drawable/Icon.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./Person_Builder.def.hpp"
 
 namespace android::app
 {
-	class Person;
-}
-namespace android::graphics::drawable
-{
-	class Icon;
-}
-class JString;
-class JString;
-
-namespace android::app
-{
-	class Person_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Person_Builder::Person_Builder()
+		: JObject(
+			"android.app.Person$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::Person Person_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Person_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Person_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Person_Builder();
-		
-		// Methods
-		android::app::Person build() const;
-		android::app::Person_Builder setBot(jboolean arg0) const;
-		android::app::Person_Builder setIcon(android::graphics::drawable::Icon arg0) const;
-		android::app::Person_Builder setImportant(jboolean arg0) const;
-		android::app::Person_Builder setKey(JString arg0) const;
-		android::app::Person_Builder setName(JString arg0) const;
-		android::app::Person_Builder setUri(JString arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/Person;"
+		);
+	}
+	inline android::app::Person_Builder Person_Builder::setBot(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setBot",
+			"(Z)Landroid/app/Person$Builder;",
+			arg0
+		);
+	}
+	inline android::app::Person_Builder Person_Builder::setIcon(android::graphics::drawable::Icon arg0) const
+	{
+		return callObjectMethod(
+			"setIcon",
+			"(Landroid/graphics/drawable/Icon;)Landroid/app/Person$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::Person_Builder Person_Builder::setImportant(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setImportant",
+			"(Z)Landroid/app/Person$Builder;",
+			arg0
+		);
+	}
+	inline android::app::Person_Builder Person_Builder::setKey(JString arg0) const
+	{
+		return callObjectMethod(
+			"setKey",
+			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::app::Person_Builder Person_Builder::setName(JString arg0) const
+	{
+		return callObjectMethod(
+			"setName",
+			"(Ljava/lang/CharSequence;)Landroid/app/Person$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::app::Person_Builder Person_Builder::setUri(JString arg0) const
+	{
+		return callObjectMethod(
+			"setUri",
+			"(Ljava/lang/String;)Landroid/app/Person$Builder;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

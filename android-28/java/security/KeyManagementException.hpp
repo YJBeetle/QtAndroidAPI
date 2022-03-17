@@ -1,28 +1,44 @@
 #pragma once
 
-#include "./KeyException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./KeyManagementException.def.hpp"
 
 namespace java::security
 {
-	class KeyManagementException : public java::security::KeyException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyManagementException(const char *className, const char *sig, Ts...agv) : java::security::KeyException(className, sig, std::forward<Ts>(agv)...) {}
-		KeyManagementException(QAndroidJniObject obj) : java::security::KeyException(obj) {}
-		
-		// Constructors
-		KeyManagementException();
-		KeyManagementException(JString arg0);
-		KeyManagementException(JThrowable arg0);
-		KeyManagementException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyManagementException::KeyManagementException()
+		: java::security::KeyException(
+			"java.security.KeyManagementException",
+			"()V"
+		) {}
+	inline KeyManagementException::KeyManagementException(JString arg0)
+		: java::security::KeyException(
+			"java.security.KeyManagementException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline KeyManagementException::KeyManagementException(JThrowable arg0)
+		: java::security::KeyException(
+			"java.security.KeyManagementException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline KeyManagementException::KeyManagementException(JString arg0, JThrowable arg1)
+		: java::security::KeyException(
+			"java.security.KeyManagementException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./GeneralSecurityException.hpp"
+#include "./KeyException.hpp"
 

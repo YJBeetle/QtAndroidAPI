@@ -1,27 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CloseGuard.def.hpp"
 
 namespace android::util
 {
-	class CloseGuard : public JObject
+	// Fields
+	
+	// Constructors
+	inline CloseGuard::CloseGuard()
+		: JObject(
+			"android.util.CloseGuard",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CloseGuard::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CloseGuard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CloseGuard(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CloseGuard();
-		
-		// Methods
-		void close() const;
-		void open(JString arg0) const;
-		void warnIfOpen() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void CloseGuard::open(JString arg0) const
+	{
+		callMethod<void>(
+			"open",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void CloseGuard::warnIfOpen() const
+	{
+		callMethod<void>(
+			"warnIfOpen",
+			"()V"
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

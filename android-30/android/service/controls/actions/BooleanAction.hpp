@@ -1,27 +1,46 @@
 #pragma once
 
-#include "./ControlAction.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./BooleanAction.def.hpp"
 
 namespace android::service::controls::actions
 {
-	class BooleanAction : public android::service::controls::actions::ControlAction
+	// Fields
+	
+	// Constructors
+	inline BooleanAction::BooleanAction(JString arg0, jboolean arg1)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.BooleanAction",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	inline BooleanAction::BooleanAction(JString arg0, jboolean arg1, JString arg2)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.BooleanAction",
+			"(Ljava/lang/String;ZLjava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint BooleanAction::getActionType() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BooleanAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		BooleanAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-		
-		// Constructors
-		BooleanAction(JString arg0, jboolean arg1);
-		BooleanAction(JString arg0, jboolean arg1, JString arg2);
-		
-		// Methods
-		jint getActionType() const;
-		jboolean getNewState() const;
-	};
+		return callMethod<jint>(
+			"getActionType",
+			"()I"
+		);
+	}
+	inline jboolean BooleanAction::getNewState() const
+	{
+		return callMethod<jboolean>(
+			"getNewState",
+			"()Z"
+		);
+	}
 } // namespace android::service::controls::actions
+
+// Base class headers
+#include "./ControlAction.hpp"
 

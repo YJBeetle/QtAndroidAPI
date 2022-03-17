@@ -1,26 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GameManager.def.hpp"
 
 namespace android::app
 {
-	class GameManager : public JObject
+	// Fields
+	inline jint GameManager::GAME_MODE_BATTERY()
 	{
-	public:
-		// Fields
-		static jint GAME_MODE_BATTERY();
-		static jint GAME_MODE_PERFORMANCE();
-		static jint GAME_MODE_STANDARD();
-		static jint GAME_MODE_UNSUPPORTED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GameManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GameManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getGameMode() const;
-	};
+		return getStaticField<jint>(
+			"android.app.GameManager",
+			"GAME_MODE_BATTERY"
+		);
+	}
+	inline jint GameManager::GAME_MODE_PERFORMANCE()
+	{
+		return getStaticField<jint>(
+			"android.app.GameManager",
+			"GAME_MODE_PERFORMANCE"
+		);
+	}
+	inline jint GameManager::GAME_MODE_STANDARD()
+	{
+		return getStaticField<jint>(
+			"android.app.GameManager",
+			"GAME_MODE_STANDARD"
+		);
+	}
+	inline jint GameManager::GAME_MODE_UNSUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.app.GameManager",
+			"GAME_MODE_UNSUPPORTED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint GameManager::getGameMode() const
+	{
+		return callMethod<jint>(
+			"getGameMode",
+			"()I"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

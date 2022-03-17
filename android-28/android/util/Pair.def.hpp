@@ -1,0 +1,31 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+class JObject;
+class JString;
+
+namespace android::util
+{
+	class Pair : public JObject
+	{
+	public:
+		// Fields
+		JObject first();
+		JObject second();
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit Pair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		Pair(QAndroidJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		Pair(JObject arg0, JObject arg1);
+		
+		// Methods
+		static android::util::Pair create(JObject arg0, JObject arg1);
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
+	};
+} // namespace android::util
+

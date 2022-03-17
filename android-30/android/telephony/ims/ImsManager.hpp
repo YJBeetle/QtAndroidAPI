@@ -1,36 +1,58 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ImsMmTelManager.def.hpp"
+#include "./ImsRcsManager.def.hpp"
+#include "../../../JString.hpp"
+#include "./ImsManager.def.hpp"
 
 namespace android::telephony::ims
 {
-	class ImsMmTelManager;
-}
-namespace android::telephony::ims
-{
-	class ImsRcsManager;
-}
-class JString;
-
-namespace android::telephony::ims
-{
-	class ImsManager : public JObject
+	// Fields
+	inline JString ImsManager::ACTION_WFC_IMS_REGISTRATION_ERROR()
 	{
-	public:
-		// Fields
-		static JString ACTION_WFC_IMS_REGISTRATION_ERROR();
-		static JString EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE();
-		static JString EXTRA_WFC_REGISTRATION_FAILURE_TITLE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ImsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImsManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::telephony::ims::ImsMmTelManager getImsMmTelManager(jint arg0) const;
-		android::telephony::ims::ImsRcsManager getImsRcsManager(jint arg0) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.ims.ImsManager",
+			"ACTION_WFC_IMS_REGISTRATION_ERROR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ImsManager::EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE()
+	{
+		return getStaticObjectField(
+			"android.telephony.ims.ImsManager",
+			"EXTRA_WFC_REGISTRATION_FAILURE_MESSAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ImsManager::EXTRA_WFC_REGISTRATION_FAILURE_TITLE()
+	{
+		return getStaticObjectField(
+			"android.telephony.ims.ImsManager",
+			"EXTRA_WFC_REGISTRATION_FAILURE_TITLE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::telephony::ims::ImsMmTelManager ImsManager::getImsMmTelManager(jint arg0) const
+	{
+		return callObjectMethod(
+			"getImsMmTelManager",
+			"(I)Landroid/telephony/ims/ImsMmTelManager;",
+			arg0
+		);
+	}
+	inline android::telephony::ims::ImsRcsManager ImsManager::getImsRcsManager(jint arg0) const
+	{
+		return callObjectMethod(
+			"getImsRcsManager",
+			"(I)Landroid/telephony/ims/ImsRcsManager;",
+			arg0
+		);
+	}
 } // namespace android::telephony::ims
+
+// Base class headers
 

@@ -1,42 +1,63 @@
 #pragma once
 
+#include "../io/ObjectInputStream.def.hpp"
 #include "../../JObject.hpp"
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
-namespace java::security::cert
-{
-	class CertPath;
-}
-namespace java::util
-{
-	class Date;
-}
+#include "../../JString.hpp"
+#include "./cert/CertPath.def.hpp"
+#include "../util/Date.def.hpp"
+#include "./Timestamp.def.hpp"
 
 namespace java::security
 {
-	class Timestamp : public JObject
+	// Fields
+	
+	// Constructors
+	inline Timestamp::Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1)
+		: JObject(
+			"java.security.Timestamp",
+			"(Ljava/util/Date;Ljava/security/cert/CertPath;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jboolean Timestamp::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Timestamp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Timestamp(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		java::security::cert::CertPath getSignerCertPath() const;
-		java::util::Date getTimestamp() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::security::cert::CertPath Timestamp::getSignerCertPath() const
+	{
+		return callObjectMethod(
+			"getSignerCertPath",
+			"()Ljava/security/cert/CertPath;"
+		);
+	}
+	inline java::util::Date Timestamp::getTimestamp() const
+	{
+		return callObjectMethod(
+			"getTimestamp",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline jint Timestamp::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString Timestamp::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

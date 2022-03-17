@@ -1,35 +1,54 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CaptioningManager_CaptionStyle.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./CaptioningManager_CaptioningChangeListener.def.hpp"
 
 namespace android::view::accessibility
 {
-	class CaptioningManager_CaptionStyle;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::view::accessibility
-{
-	class CaptioningManager_CaptioningChangeListener : public JObject
+	// Fields
+	
+	// Constructors
+	inline CaptioningManager_CaptioningChangeListener::CaptioningManager_CaptioningChangeListener()
+		: JObject(
+			"android.view.accessibility.CaptioningManager$CaptioningChangeListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CaptioningManager_CaptioningChangeListener::onEnabledChanged(jboolean arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CaptioningManager_CaptioningChangeListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CaptioningManager_CaptioningChangeListener();
-		
-		// Methods
-		void onEnabledChanged(jboolean arg0) const;
-		void onFontScaleChanged(jfloat arg0) const;
-		void onLocaleChanged(java::util::Locale arg0) const;
-		void onUserStyleChanged(android::view::accessibility::CaptioningManager_CaptionStyle arg0) const;
-	};
+		callMethod<void>(
+			"onEnabledChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void CaptioningManager_CaptioningChangeListener::onFontScaleChanged(jfloat arg0) const
+	{
+		callMethod<void>(
+			"onFontScaleChanged",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void CaptioningManager_CaptioningChangeListener::onLocaleChanged(java::util::Locale arg0) const
+	{
+		callMethod<void>(
+			"onLocaleChanged",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		);
+	}
+	inline void CaptioningManager_CaptioningChangeListener::onUserStyleChanged(android::view::accessibility::CaptioningManager_CaptionStyle arg0) const
+	{
+		callMethod<void>(
+			"onUserStyleChanged",
+			"(Landroid/view/accessibility/CaptioningManager$CaptionStyle;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view::accessibility
+
+// Base class headers
 

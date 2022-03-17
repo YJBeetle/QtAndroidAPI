@@ -1,26 +1,49 @@
 #pragma once
 
-#include "./HashSet.hpp"
+#include "./LinkedHashSet.def.hpp"
 
 namespace java::util
 {
-	class LinkedHashSet : public java::util::HashSet
+	// Fields
+	
+	// Constructors
+	inline LinkedHashSet::LinkedHashSet()
+		: java::util::HashSet(
+			"java.util.LinkedHashSet",
+			"()V"
+		) {}
+	inline LinkedHashSet::LinkedHashSet(jint arg0)
+		: java::util::HashSet(
+			"java.util.LinkedHashSet",
+			"(I)V",
+			arg0
+		) {}
+	inline LinkedHashSet::LinkedHashSet(JObject arg0)
+		: java::util::HashSet(
+			"java.util.LinkedHashSet",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		) {}
+	inline LinkedHashSet::LinkedHashSet(jint arg0, jfloat arg1)
+		: java::util::HashSet(
+			"java.util.LinkedHashSet",
+			"(IF)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline JObject LinkedHashSet::spliterator() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LinkedHashSet(const char *className, const char *sig, Ts...agv) : java::util::HashSet(className, sig, std::forward<Ts>(agv)...) {}
-		LinkedHashSet(QAndroidJniObject obj) : java::util::HashSet(obj) {}
-		
-		// Constructors
-		LinkedHashSet();
-		LinkedHashSet(jint arg0);
-		LinkedHashSet(JObject arg0);
-		LinkedHashSet(jint arg0, jfloat arg1);
-		
-		// Methods
-		JObject spliterator() const;
-	};
+		return callObjectMethod(
+			"spliterator",
+			"()Ljava/util/Spliterator;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./AbstractCollection.hpp"
+#include "./AbstractSet.hpp"
+#include "./HashSet.hpp"
 

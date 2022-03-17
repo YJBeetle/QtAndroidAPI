@@ -1,27 +1,52 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Camera_CameraInfo.def.hpp"
 
 namespace android::hardware
 {
-	class Camera_CameraInfo : public JObject
+	// Fields
+	inline jint Camera_CameraInfo::CAMERA_FACING_BACK()
 	{
-	public:
-		// Fields
-		static jint CAMERA_FACING_BACK();
-		static jint CAMERA_FACING_FRONT();
-		jboolean canDisableShutterSound();
-		jint facing();
-		jint orientation();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Camera_CameraInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Camera_CameraInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Camera_CameraInfo();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.hardware.Camera$CameraInfo",
+			"CAMERA_FACING_BACK"
+		);
+	}
+	inline jint Camera_CameraInfo::CAMERA_FACING_FRONT()
+	{
+		return getStaticField<jint>(
+			"android.hardware.Camera$CameraInfo",
+			"CAMERA_FACING_FRONT"
+		);
+	}
+	inline jboolean Camera_CameraInfo::canDisableShutterSound()
+	{
+		return getField<jboolean>(
+			"canDisableShutterSound"
+		);
+	}
+	inline jint Camera_CameraInfo::facing()
+	{
+		return getField<jint>(
+			"facing"
+		);
+	}
+	inline jint Camera_CameraInfo::orientation()
+	{
+		return getField<jint>(
+			"orientation"
+		);
+	}
+	
+	// Constructors
+	inline Camera_CameraInfo::Camera_CameraInfo()
+		: JObject(
+			"android.hardware.Camera$CameraInfo",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::hardware
+
+// Base class headers
 

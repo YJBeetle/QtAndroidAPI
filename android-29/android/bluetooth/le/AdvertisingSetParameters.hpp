@@ -1,51 +1,188 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./AdvertisingSetParameters.def.hpp"
 
 namespace android::bluetooth::le
 {
-	class AdvertisingSetParameters : public JObject
+	// Fields
+	inline JObject AdvertisingSetParameters::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint INTERVAL_HIGH();
-		static jint INTERVAL_LOW();
-		static jint INTERVAL_MAX();
-		static jint INTERVAL_MEDIUM();
-		static jint INTERVAL_MIN();
-		static jint TX_POWER_HIGH();
-		static jint TX_POWER_LOW();
-		static jint TX_POWER_MAX();
-		static jint TX_POWER_MEDIUM();
-		static jint TX_POWER_MIN();
-		static jint TX_POWER_ULTRA_LOW();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AdvertisingSetParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AdvertisingSetParameters(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getInterval() const;
-		jint getPrimaryPhy() const;
-		jint getSecondaryPhy() const;
-		jint getTxPowerLevel() const;
-		jboolean includeTxPower() const;
-		jboolean isAnonymous() const;
-		jboolean isConnectable() const;
-		jboolean isLegacy() const;
-		jboolean isScannable() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint AdvertisingSetParameters::INTERVAL_HIGH()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"INTERVAL_HIGH"
+		);
+	}
+	inline jint AdvertisingSetParameters::INTERVAL_LOW()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"INTERVAL_LOW"
+		);
+	}
+	inline jint AdvertisingSetParameters::INTERVAL_MAX()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"INTERVAL_MAX"
+		);
+	}
+	inline jint AdvertisingSetParameters::INTERVAL_MEDIUM()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"INTERVAL_MEDIUM"
+		);
+	}
+	inline jint AdvertisingSetParameters::INTERVAL_MIN()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"INTERVAL_MIN"
+		);
+	}
+	inline jint AdvertisingSetParameters::TX_POWER_HIGH()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"TX_POWER_HIGH"
+		);
+	}
+	inline jint AdvertisingSetParameters::TX_POWER_LOW()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"TX_POWER_LOW"
+		);
+	}
+	inline jint AdvertisingSetParameters::TX_POWER_MAX()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"TX_POWER_MAX"
+		);
+	}
+	inline jint AdvertisingSetParameters::TX_POWER_MEDIUM()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"TX_POWER_MEDIUM"
+		);
+	}
+	inline jint AdvertisingSetParameters::TX_POWER_MIN()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"TX_POWER_MIN"
+		);
+	}
+	inline jint AdvertisingSetParameters::TX_POWER_ULTRA_LOW()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.le.AdvertisingSetParameters",
+			"TX_POWER_ULTRA_LOW"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint AdvertisingSetParameters::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint AdvertisingSetParameters::getInterval() const
+	{
+		return callMethod<jint>(
+			"getInterval",
+			"()I"
+		);
+	}
+	inline jint AdvertisingSetParameters::getPrimaryPhy() const
+	{
+		return callMethod<jint>(
+			"getPrimaryPhy",
+			"()I"
+		);
+	}
+	inline jint AdvertisingSetParameters::getSecondaryPhy() const
+	{
+		return callMethod<jint>(
+			"getSecondaryPhy",
+			"()I"
+		);
+	}
+	inline jint AdvertisingSetParameters::getTxPowerLevel() const
+	{
+		return callMethod<jint>(
+			"getTxPowerLevel",
+			"()I"
+		);
+	}
+	inline jboolean AdvertisingSetParameters::includeTxPower() const
+	{
+		return callMethod<jboolean>(
+			"includeTxPower",
+			"()Z"
+		);
+	}
+	inline jboolean AdvertisingSetParameters::isAnonymous() const
+	{
+		return callMethod<jboolean>(
+			"isAnonymous",
+			"()Z"
+		);
+	}
+	inline jboolean AdvertisingSetParameters::isConnectable() const
+	{
+		return callMethod<jboolean>(
+			"isConnectable",
+			"()Z"
+		);
+	}
+	inline jboolean AdvertisingSetParameters::isLegacy() const
+	{
+		return callMethod<jboolean>(
+			"isLegacy",
+			"()Z"
+		);
+	}
+	inline jboolean AdvertisingSetParameters::isScannable() const
+	{
+		return callMethod<jboolean>(
+			"isScannable",
+			"()Z"
+		);
+	}
+	inline JString AdvertisingSetParameters::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void AdvertisingSetParameters::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::bluetooth::le
+
+// Base class headers
 

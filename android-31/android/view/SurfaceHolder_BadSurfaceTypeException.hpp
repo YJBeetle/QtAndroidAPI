@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./SurfaceHolder_BadSurfaceTypeException.def.hpp"
 
 namespace android::view
 {
-	class SurfaceHolder_BadSurfaceTypeException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SurfaceHolder_BadSurfaceTypeException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceHolder_BadSurfaceTypeException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		SurfaceHolder_BadSurfaceTypeException();
-		SurfaceHolder_BadSurfaceTypeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException()
+		: java::lang::RuntimeException(
+			"android.view.SurfaceHolder$BadSurfaceTypeException",
+			"()V"
+		) {}
+	inline SurfaceHolder_BadSurfaceTypeException::SurfaceHolder_BadSurfaceTypeException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.view.SurfaceHolder$BadSurfaceTypeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::view
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

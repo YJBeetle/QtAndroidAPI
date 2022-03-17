@@ -1,28 +1,43 @@
 #pragma once
 
-#include "./GeneralSecurityException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./InvalidAlgorithmParameterException.def.hpp"
 
 namespace java::security
 {
-	class InvalidAlgorithmParameterException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InvalidAlgorithmParameterException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidAlgorithmParameterException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		InvalidAlgorithmParameterException();
-		InvalidAlgorithmParameterException(JString arg0);
-		InvalidAlgorithmParameterException(JThrowable arg0);
-		InvalidAlgorithmParameterException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InvalidAlgorithmParameterException::InvalidAlgorithmParameterException()
+		: java::security::GeneralSecurityException(
+			"java.security.InvalidAlgorithmParameterException",
+			"()V"
+		) {}
+	inline InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.InvalidAlgorithmParameterException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(JThrowable arg0)
+		: java::security::GeneralSecurityException(
+			"java.security.InvalidAlgorithmParameterException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline InvalidAlgorithmParameterException::InvalidAlgorithmParameterException(JString arg0, JThrowable arg1)
+		: java::security::GeneralSecurityException(
+			"java.security.InvalidAlgorithmParameterException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./GeneralSecurityException.hpp"
 

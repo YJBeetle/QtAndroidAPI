@@ -1,42 +1,138 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Telephony_Mms_Part.def.hpp"
 
 namespace android::provider
 {
-	class Telephony_Mms_Part : public JObject
+	// Fields
+	inline JString Telephony_Mms_Part::CHARSET()
 	{
-	public:
-		// Fields
-		static JString CHARSET();
-		static JString CONTENT_DISPOSITION();
-		static JString CONTENT_ID();
-		static JString CONTENT_LOCATION();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString CT_START();
-		static JString CT_TYPE();
-		static JString FILENAME();
-		static JString MSG_ID();
-		static JString NAME();
-		static JString SEQ();
-		static JString TEXT();
-		static JString _DATA();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Telephony_Mms_Part(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Telephony_Mms_Part(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri getPartUriForMessage(JString arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CHARSET",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::CONTENT_DISPOSITION()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CONTENT_DISPOSITION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::CONTENT_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CONTENT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::CONTENT_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CONTENT_LOCATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Telephony_Mms_Part::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Telephony_Mms_Part::CT_START()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CT_START",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::CT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"CT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::FILENAME()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"FILENAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::MSG_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"MSG_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::SEQ()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"SEQ",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::TEXT()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"TEXT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Telephony_Mms_Part::_DATA()
+	{
+		return getStaticObjectField(
+			"android.provider.Telephony$Mms$Part",
+			"_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri Telephony_Mms_Part::getPartUriForMessage(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.Telephony$Mms$Part",
+			"getPartUriForMessage",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

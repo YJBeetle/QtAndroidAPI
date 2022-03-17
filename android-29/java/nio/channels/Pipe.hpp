@@ -1,33 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Pipe_SinkChannel.def.hpp"
+#include "./Pipe_SourceChannel.def.hpp"
+#include "./Pipe.def.hpp"
 
 namespace java::nio::channels
 {
-	class Pipe_SinkChannel;
-}
-namespace java::nio::channels
-{
-	class Pipe_SourceChannel;
-}
-
-namespace java::nio::channels
-{
-	class Pipe : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::channels::Pipe Pipe::open()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Pipe(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Pipe(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::channels::Pipe open();
-		java::nio::channels::Pipe_SinkChannel sink() const;
-		java::nio::channels::Pipe_SourceChannel source() const;
-	};
+		return callStaticObjectMethod(
+			"java.nio.channels.Pipe",
+			"open",
+			"()Ljava/nio/channels/Pipe;"
+		);
+	}
+	inline java::nio::channels::Pipe_SinkChannel Pipe::sink() const
+	{
+		return callObjectMethod(
+			"sink",
+			"()Ljava/nio/channels/Pipe$SinkChannel;"
+		);
+	}
+	inline java::nio::channels::Pipe_SourceChannel Pipe::source() const
+	{
+		return callObjectMethod(
+			"source",
+			"()Ljava/nio/channels/Pipe$SourceChannel;"
+		);
+	}
 } // namespace java::nio::channels
+
+// Base class headers
 

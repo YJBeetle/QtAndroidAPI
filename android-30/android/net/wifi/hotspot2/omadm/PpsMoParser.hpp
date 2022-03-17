@@ -1,28 +1,26 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-
-namespace android::net::wifi::hotspot2
-{
-	class PasspointConfiguration;
-}
-class JString;
+#include "../PasspointConfiguration.def.hpp"
+#include "../../../../../JString.hpp"
+#include "./PpsMoParser.def.hpp"
 
 namespace android::net::wifi::hotspot2::omadm
 {
-	class PpsMoParser : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::wifi::hotspot2::PasspointConfiguration PpsMoParser::parseMoText(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PpsMoParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PpsMoParser(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::wifi::hotspot2::PasspointConfiguration parseMoText(JString arg0);
-	};
+		return callStaticObjectMethod(
+			"android.net.wifi.hotspot2.omadm.PpsMoParser",
+			"parseMoText",
+			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::net::wifi::hotspot2::omadm
+
+// Base class headers
 

@@ -1,34 +1,65 @@
 #pragma once
 
-#include "./OutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
-class JObject;
+#include "../../JByteArray.hpp"
+#include "./OutputStream.def.hpp"
+#include "../../JObject.hpp"
+#include "./FilterOutputStream.def.hpp"
 
 namespace java::io
 {
-	class FilterOutputStream : public java::io::OutputStream
+	// Fields
+	
+	// Constructors
+	inline FilterOutputStream::FilterOutputStream(java::io::OutputStream arg0)
+		: java::io::OutputStream(
+			"java.io.FilterOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void FilterOutputStream::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FilterOutputStream(const char *className, const char *sig, Ts...agv) : java::io::OutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		FilterOutputStream(QAndroidJniObject obj) : java::io::OutputStream(obj) {}
-		
-		// Constructors
-		FilterOutputStream(java::io::OutputStream arg0);
-		
-		// Methods
-		void close() const;
-		void flush() const;
-		void write(JByteArray arg0) const;
-		void write(jint arg0) const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void FilterOutputStream::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline void FilterOutputStream::write(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void FilterOutputStream::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void FilterOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./OutputStream.hpp"
 

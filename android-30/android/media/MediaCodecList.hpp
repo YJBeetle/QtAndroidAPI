@@ -1,40 +1,79 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::media
-{
-	class MediaCodecInfo;
-}
-namespace android::media
-{
-	class MediaFormat;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "./MediaCodecInfo.def.hpp"
+#include "./MediaFormat.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaCodecList.def.hpp"
 
 namespace android::media
 {
-	class MediaCodecList : public JObject
+	// Fields
+	inline jint MediaCodecList::ALL_CODECS()
 	{
-	public:
-		// Fields
-		static jint ALL_CODECS();
-		static jint REGULAR_CODECS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecList(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaCodecList(jint arg0);
-		
-		// Methods
-		static jint getCodecCount();
-		static android::media::MediaCodecInfo getCodecInfoAt(jint arg0);
-		JString findDecoderForFormat(android::media::MediaFormat arg0) const;
-		JString findEncoderForFormat(android::media::MediaFormat arg0) const;
-		JArray getCodecInfos() const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaCodecList",
+			"ALL_CODECS"
+		);
+	}
+	inline jint MediaCodecList::REGULAR_CODECS()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecList",
+			"REGULAR_CODECS"
+		);
+	}
+	
+	// Constructors
+	inline MediaCodecList::MediaCodecList(jint arg0)
+		: JObject(
+			"android.media.MediaCodecList",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jint MediaCodecList::getCodecCount()
+	{
+		return callStaticMethod<jint>(
+			"android.media.MediaCodecList",
+			"getCodecCount",
+			"()I"
+		);
+	}
+	inline android::media::MediaCodecInfo MediaCodecList::getCodecInfoAt(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.MediaCodecList",
+			"getCodecInfoAt",
+			"(I)Landroid/media/MediaCodecInfo;",
+			arg0
+		);
+	}
+	inline JString MediaCodecList::findDecoderForFormat(android::media::MediaFormat arg0) const
+	{
+		return callObjectMethod(
+			"findDecoderForFormat",
+			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString MediaCodecList::findEncoderForFormat(android::media::MediaFormat arg0) const
+	{
+		return callObjectMethod(
+			"findEncoderForFormat",
+			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JArray MediaCodecList::getCodecInfos() const
+	{
+		return callObjectMethod(
+			"getCodecInfos",
+			"()[Landroid/media/MediaCodecInfo;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

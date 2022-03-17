@@ -1,27 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./FingerprintManager_CryptoObject.def.hpp"
+#include "./FingerprintManager_AuthenticationResult.def.hpp"
 
 namespace android::hardware::fingerprint
 {
-	class FingerprintManager_CryptoObject;
-}
-
-namespace android::hardware::fingerprint
-{
-	class FingerprintManager_AuthenticationResult : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::hardware::fingerprint::FingerprintManager_CryptoObject FingerprintManager_AuthenticationResult::getCryptoObject() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FingerprintManager_AuthenticationResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FingerprintManager_AuthenticationResult(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::hardware::fingerprint::FingerprintManager_CryptoObject getCryptoObject() const;
-	};
+		return callObjectMethod(
+			"getCryptoObject",
+			"()Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;"
+		);
+	}
 } // namespace android::hardware::fingerprint
+
+// Base class headers
 

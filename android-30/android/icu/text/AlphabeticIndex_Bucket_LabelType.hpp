@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./AlphabeticIndex_Bucket_LabelType.def.hpp"
 
 namespace android::icu::text
 {
-	class AlphabeticIndex_Bucket_LabelType : public java::lang::Enum
+	// Fields
+	inline android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::INFLOW()
 	{
-	public:
-		// Fields
-		static android::icu::text::AlphabeticIndex_Bucket_LabelType INFLOW();
-		static android::icu::text::AlphabeticIndex_Bucket_LabelType NORMAL();
-		static android::icu::text::AlphabeticIndex_Bucket_LabelType OVERFLOW();
-		static android::icu::text::AlphabeticIndex_Bucket_LabelType UNDERFLOW();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlphabeticIndex_Bucket_LabelType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_Bucket_LabelType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::AlphabeticIndex_Bucket_LabelType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
+			"INFLOW",
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
+	}
+	inline android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::NORMAL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
+			"NORMAL",
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
+	}
+	inline android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::OVERFLOW()
+	{
+		return getStaticObjectField(
+			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
+			"OVERFLOW",
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
+	}
+	inline android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::UNDERFLOW()
+	{
+		return getStaticObjectField(
+			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
+			"UNDERFLOW",
+			"Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::AlphabeticIndex_Bucket_LabelType AlphabeticIndex_Bucket_LabelType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray AlphabeticIndex_Bucket_LabelType::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.AlphabeticIndex$Bucket$LabelType",
+			"values",
+			"()[Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

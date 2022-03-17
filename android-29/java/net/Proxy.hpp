@@ -1,39 +1,70 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
-namespace java::net
-{
-	class Proxy_Type;
-}
-namespace java::net
-{
-	class SocketAddress;
-}
+#include "../../JString.hpp"
+#include "./Proxy_Type.def.hpp"
+#include "./SocketAddress.def.hpp"
+#include "./Proxy.def.hpp"
 
 namespace java::net
 {
-	class Proxy : public JObject
+	// Fields
+	inline java::net::Proxy Proxy::NO_PROXY()
 	{
-	public:
-		// Fields
-		static java::net::Proxy NO_PROXY();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Proxy(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1);
-		
-		// Methods
-		java::net::SocketAddress address() const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-		java::net::Proxy_Type type() const;
-	};
+		return getStaticObjectField(
+			"java.net.Proxy",
+			"NO_PROXY",
+			"Ljava/net/Proxy;"
+		);
+	}
+	
+	// Constructors
+	inline Proxy::Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1)
+		: JObject(
+			"java.net.Proxy",
+			"(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline java::net::SocketAddress Proxy::address() const
+	{
+		return callObjectMethod(
+			"address",
+			"()Ljava/net/SocketAddress;"
+		);
+	}
+	inline jboolean Proxy::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Proxy::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString Proxy::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::net::Proxy_Type Proxy::type() const
+	{
+		return callObjectMethod(
+			"type",
+			"()Ljava/net/Proxy$Type;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

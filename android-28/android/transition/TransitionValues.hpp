@@ -1,34 +1,59 @@
 #pragma once
 
+#include "../view/View.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::view
-{
-	class View;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./TransitionValues.def.hpp"
 
 namespace android::transition
 {
-	class TransitionValues : public JObject
+	// Fields
+	inline JObject TransitionValues::values()
 	{
-	public:
-		// Fields
-		JObject values();
-		android::view::View view();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionValues(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TransitionValues();
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getObjectField(
+			"values",
+			"Ljava/util/Map;"
+		);
+	}
+	inline android::view::View TransitionValues::view()
+	{
+		return getObjectField(
+			"view",
+			"Landroid/view/View;"
+		);
+	}
+	
+	// Constructors
+	inline TransitionValues::TransitionValues()
+		: JObject(
+			"android.transition.TransitionValues",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean TransitionValues::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint TransitionValues::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString TransitionValues::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
 

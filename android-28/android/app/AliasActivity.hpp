@@ -1,27 +1,25 @@
 #pragma once
 
-#include "./Activity.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
+#include "../os/Bundle.def.hpp"
+#include "./AliasActivity.def.hpp"
 
 namespace android::app
 {
-	class AliasActivity : public android::app::Activity
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AliasActivity(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		AliasActivity(QAndroidJniObject obj) : android::app::Activity(obj) {}
-		
-		// Constructors
-		AliasActivity();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AliasActivity::AliasActivity()
+		: android::app::Activity(
+			"android.app.AliasActivity",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::app
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
+#include "./Activity.hpp"
 

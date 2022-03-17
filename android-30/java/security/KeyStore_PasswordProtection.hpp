@@ -1,31 +1,66 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JCharArray;
-class JString;
+#include "../../JCharArray.hpp"
+#include "../../JString.hpp"
+#include "./KeyStore_PasswordProtection.def.hpp"
 
 namespace java::security
 {
-	class KeyStore_PasswordProtection : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyStore_PasswordProtection::KeyStore_PasswordProtection(JCharArray arg0)
+		: JObject(
+			"java.security.KeyStore$PasswordProtection",
+			"([C)V",
+			arg0.object<jcharArray>()
+		) {}
+	inline KeyStore_PasswordProtection::KeyStore_PasswordProtection(JCharArray arg0, JString arg1, JObject arg2)
+		: JObject(
+			"java.security.KeyStore$PasswordProtection",
+			"([CLjava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
+			arg0.object<jcharArray>(),
+			arg1.object<jstring>(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline void KeyStore_PasswordProtection::destroy() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyStore_PasswordProtection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_PasswordProtection(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyStore_PasswordProtection(JCharArray arg0);
-		KeyStore_PasswordProtection(JCharArray arg0, JString arg1, JObject arg2);
-		
-		// Methods
-		void destroy() const;
-		JCharArray getPassword() const;
-		JString getProtectionAlgorithm() const;
-		JObject getProtectionParameters() const;
-		jboolean isDestroyed() const;
-	};
+		callMethod<void>(
+			"destroy",
+			"()V"
+		);
+	}
+	inline JCharArray KeyStore_PasswordProtection::getPassword() const
+	{
+		return callObjectMethod(
+			"getPassword",
+			"()[C"
+		);
+	}
+	inline JString KeyStore_PasswordProtection::getProtectionAlgorithm() const
+	{
+		return callObjectMethod(
+			"getProtectionAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject KeyStore_PasswordProtection::getProtectionParameters() const
+	{
+		return callObjectMethod(
+			"getProtectionParameters",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
+	}
+	inline jboolean KeyStore_PasswordProtection::isDestroyed() const
+	{
+		return callMethod<jboolean>(
+			"isDestroyed",
+			"()Z"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

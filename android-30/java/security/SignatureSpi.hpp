@@ -1,39 +1,33 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
-namespace java::security
-{
-	class AlgorithmParameters;
-}
-namespace java::security
-{
-	class SecureRandom;
-}
+#include "../../JString.hpp"
+#include "../nio/ByteBuffer.def.hpp"
+#include "./AlgorithmParameters.def.hpp"
+#include "./SecureRandom.def.hpp"
+#include "./SignatureSpi.def.hpp"
 
 namespace java::security
 {
-	class SignatureSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline SignatureSpi::SignatureSpi()
+		: JObject(
+			"java.security.SignatureSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject SignatureSpi::clone() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SignatureSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignatureSpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SignatureSpi();
-		
-		// Methods
-		JObject clone() const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

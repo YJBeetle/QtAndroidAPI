@@ -1,650 +1,4724 @@
 #pragma once
 
-#include "../../../java/lang/Character_Subset.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./UCharacter_UnicodeBlock.def.hpp"
 
 namespace android::icu::lang
 {
-	class UCharacter_UnicodeBlock : public java::lang::Character_Subset
+	// Fields
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ADLAM()
 	{
-	public:
-		// Fields
-		static android::icu::lang::UCharacter_UnicodeBlock ADLAM();
-		static jint ADLAM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock AEGEAN_NUMBERS();
-		static jint AEGEAN_NUMBERS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock AHOM();
-		static jint AHOM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ALCHEMICAL_SYMBOLS();
-		static jint ALCHEMICAL_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ALPHABETIC_PRESENTATION_FORMS();
-		static jint ALPHABETIC_PRESENTATION_FORMS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ANATOLIAN_HIEROGLYPHS();
-		static jint ANATOLIAN_HIEROGLYPHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ANCIENT_GREEK_MUSICAL_NOTATION();
-		static jint ANCIENT_GREEK_MUSICAL_NOTATION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ANCIENT_GREEK_NUMBERS();
-		static jint ANCIENT_GREEK_NUMBERS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ANCIENT_SYMBOLS();
-		static jint ANCIENT_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARABIC();
-		static android::icu::lang::UCharacter_UnicodeBlock ARABIC_EXTENDED_A();
-		static jint ARABIC_EXTENDED_A_ID();
-		static jint ARABIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS();
-		static jint ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARABIC_PRESENTATION_FORMS_A();
-		static jint ARABIC_PRESENTATION_FORMS_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARABIC_PRESENTATION_FORMS_B();
-		static jint ARABIC_PRESENTATION_FORMS_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARABIC_SUPPLEMENT();
-		static jint ARABIC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARMENIAN();
-		static jint ARMENIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ARROWS();
-		static jint ARROWS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock AVESTAN();
-		static jint AVESTAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BALINESE();
-		static jint BALINESE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BAMUM();
-		static jint BAMUM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BAMUM_SUPPLEMENT();
-		static jint BAMUM_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BASIC_LATIN();
-		static jint BASIC_LATIN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BASSA_VAH();
-		static jint BASSA_VAH_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BATAK();
-		static jint BATAK_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BENGALI();
-		static jint BENGALI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BHAIKSUKI();
-		static jint BHAIKSUKI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BLOCK_ELEMENTS();
-		static jint BLOCK_ELEMENTS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BOPOMOFO();
-		static android::icu::lang::UCharacter_UnicodeBlock BOPOMOFO_EXTENDED();
-		static jint BOPOMOFO_EXTENDED_ID();
-		static jint BOPOMOFO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BOX_DRAWING();
-		static jint BOX_DRAWING_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BRAHMI();
-		static jint BRAHMI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BRAILLE_PATTERNS();
-		static jint BRAILLE_PATTERNS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BUGINESE();
-		static jint BUGINESE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BUHID();
-		static jint BUHID_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock BYZANTINE_MUSICAL_SYMBOLS();
-		static jint BYZANTINE_MUSICAL_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CARIAN();
-		static jint CARIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CAUCASIAN_ALBANIAN();
-		static jint CAUCASIAN_ALBANIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CHAKMA();
-		static jint CHAKMA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CHAM();
-		static jint CHAM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CHEROKEE();
-		static jint CHEROKEE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CHEROKEE_SUPPLEMENT();
-		static jint CHEROKEE_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CHESS_SYMBOLS();
-		static jint CHESS_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CHORASMIAN();
-		static jint CHORASMIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_COMPATIBILITY();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_COMPATIBILITY_FORMS();
-		static jint CJK_COMPATIBILITY_FORMS_ID();
-		static jint CJK_COMPATIBILITY_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_COMPATIBILITY_IDEOGRAPHS();
-		static jint CJK_COMPATIBILITY_IDEOGRAPHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT();
-		static jint CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_RADICALS_SUPPLEMENT();
-		static jint CJK_RADICALS_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_STROKES();
-		static jint CJK_STROKES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_SYMBOLS_AND_PUNCTUATION();
-		static jint CJK_SYMBOLS_AND_PUNCTUATION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G();
-		static jint CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G_ID();
-		static jint CJK_UNIFIED_IDEOGRAPHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COMBINING_DIACRITICAL_MARKS();
-		static android::icu::lang::UCharacter_UnicodeBlock COMBINING_DIACRITICAL_MARKS_EXTENDED();
-		static jint COMBINING_DIACRITICAL_MARKS_EXTENDED_ID();
-		static jint COMBINING_DIACRITICAL_MARKS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COMBINING_DIACRITICAL_MARKS_SUPPLEMENT();
-		static jint COMBINING_DIACRITICAL_MARKS_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COMBINING_HALF_MARKS();
-		static jint COMBINING_HALF_MARKS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COMBINING_MARKS_FOR_SYMBOLS();
-		static jint COMBINING_MARKS_FOR_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COMMON_INDIC_NUMBER_FORMS();
-		static jint COMMON_INDIC_NUMBER_FORMS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CONTROL_PICTURES();
-		static jint CONTROL_PICTURES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COPTIC();
-		static android::icu::lang::UCharacter_UnicodeBlock COPTIC_EPACT_NUMBERS();
-		static jint COPTIC_EPACT_NUMBERS_ID();
-		static jint COPTIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock COUNTING_ROD_NUMERALS();
-		static jint COUNTING_ROD_NUMERALS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CUNEIFORM();
-		static jint CUNEIFORM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CUNEIFORM_NUMBERS_AND_PUNCTUATION();
-		static jint CUNEIFORM_NUMBERS_AND_PUNCTUATION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CURRENCY_SYMBOLS();
-		static jint CURRENCY_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CYPRIOT_SYLLABARY();
-		static jint CYPRIOT_SYLLABARY_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CYRILLIC();
-		static android::icu::lang::UCharacter_UnicodeBlock CYRILLIC_EXTENDED_A();
-		static jint CYRILLIC_EXTENDED_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CYRILLIC_EXTENDED_B();
-		static jint CYRILLIC_EXTENDED_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CYRILLIC_EXTENDED_C();
-		static jint CYRILLIC_EXTENDED_C_ID();
-		static jint CYRILLIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock CYRILLIC_SUPPLEMENT();
-		static android::icu::lang::UCharacter_UnicodeBlock CYRILLIC_SUPPLEMENTARY();
-		static jint CYRILLIC_SUPPLEMENTARY_ID();
-		static jint CYRILLIC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DESERET();
-		static jint DESERET_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DEVANAGARI();
-		static android::icu::lang::UCharacter_UnicodeBlock DEVANAGARI_EXTENDED();
-		static jint DEVANAGARI_EXTENDED_ID();
-		static jint DEVANAGARI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DINGBATS();
-		static jint DINGBATS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DIVES_AKURU();
-		static jint DIVES_AKURU_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DOGRA();
-		static jint DOGRA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DOMINO_TILES();
-		static jint DOMINO_TILES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock DUPLOYAN();
-		static jint DUPLOYAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock EARLY_DYNASTIC_CUNEIFORM();
-		static jint EARLY_DYNASTIC_CUNEIFORM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock EGYPTIAN_HIEROGLYPHS();
-		static jint EGYPTIAN_HIEROGLYPHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS();
-		static jint EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ELBASAN();
-		static jint ELBASAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ELYMAIC();
-		static jint ELYMAIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock EMOTICONS();
-		static jint EMOTICONS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ENCLOSED_ALPHANUMERICS();
-		static jint ENCLOSED_ALPHANUMERICS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ENCLOSED_ALPHANUMERIC_SUPPLEMENT();
-		static jint ENCLOSED_ALPHANUMERIC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ENCLOSED_CJK_LETTERS_AND_MONTHS();
-		static jint ENCLOSED_CJK_LETTERS_AND_MONTHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ENCLOSED_IDEOGRAPHIC_SUPPLEMENT();
-		static jint ENCLOSED_IDEOGRAPHIC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ETHIOPIC();
-		static android::icu::lang::UCharacter_UnicodeBlock ETHIOPIC_EXTENDED();
-		static android::icu::lang::UCharacter_UnicodeBlock ETHIOPIC_EXTENDED_A();
-		static jint ETHIOPIC_EXTENDED_A_ID();
-		static jint ETHIOPIC_EXTENDED_ID();
-		static jint ETHIOPIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ETHIOPIC_SUPPLEMENT();
-		static jint ETHIOPIC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GENERAL_PUNCTUATION();
-		static jint GENERAL_PUNCTUATION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GEOMETRIC_SHAPES();
-		static android::icu::lang::UCharacter_UnicodeBlock GEOMETRIC_SHAPES_EXTENDED();
-		static jint GEOMETRIC_SHAPES_EXTENDED_ID();
-		static jint GEOMETRIC_SHAPES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GEORGIAN();
-		static android::icu::lang::UCharacter_UnicodeBlock GEORGIAN_EXTENDED();
-		static jint GEORGIAN_EXTENDED_ID();
-		static jint GEORGIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GEORGIAN_SUPPLEMENT();
-		static jint GEORGIAN_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GLAGOLITIC();
-		static jint GLAGOLITIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GLAGOLITIC_SUPPLEMENT();
-		static jint GLAGOLITIC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GOTHIC();
-		static jint GOTHIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GRANTHA();
-		static jint GRANTHA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GREEK();
-		static android::icu::lang::UCharacter_UnicodeBlock GREEK_EXTENDED();
-		static jint GREEK_EXTENDED_ID();
-		static jint GREEK_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GUJARATI();
-		static jint GUJARATI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GUNJALA_GONDI();
-		static jint GUNJALA_GONDI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock GURMUKHI();
-		static jint GURMUKHI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HALFWIDTH_AND_FULLWIDTH_FORMS();
-		static jint HALFWIDTH_AND_FULLWIDTH_FORMS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HANGUL_COMPATIBILITY_JAMO();
-		static jint HANGUL_COMPATIBILITY_JAMO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HANGUL_JAMO();
-		static android::icu::lang::UCharacter_UnicodeBlock HANGUL_JAMO_EXTENDED_A();
-		static jint HANGUL_JAMO_EXTENDED_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HANGUL_JAMO_EXTENDED_B();
-		static jint HANGUL_JAMO_EXTENDED_B_ID();
-		static jint HANGUL_JAMO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HANGUL_SYLLABLES();
-		static jint HANGUL_SYLLABLES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HANIFI_ROHINGYA();
-		static jint HANIFI_ROHINGYA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HANUNOO();
-		static jint HANUNOO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HATRAN();
-		static jint HATRAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HEBREW();
-		static jint HEBREW_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HIGH_PRIVATE_USE_SURROGATES();
-		static jint HIGH_PRIVATE_USE_SURROGATES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HIGH_SURROGATES();
-		static jint HIGH_SURROGATES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock HIRAGANA();
-		static jint HIRAGANA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock IDEOGRAPHIC_DESCRIPTION_CHARACTERS();
-		static jint IDEOGRAPHIC_DESCRIPTION_CHARACTERS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION();
-		static jint IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock IMPERIAL_ARAMAIC();
-		static jint IMPERIAL_ARAMAIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock INDIC_SIYAQ_NUMBERS();
-		static jint INDIC_SIYAQ_NUMBERS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock INSCRIPTIONAL_PAHLAVI();
-		static jint INSCRIPTIONAL_PAHLAVI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock INSCRIPTIONAL_PARTHIAN();
-		static jint INSCRIPTIONAL_PARTHIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock INVALID_CODE();
-		static jint INVALID_CODE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock IPA_EXTENSIONS();
-		static jint IPA_EXTENSIONS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock JAVANESE();
-		static jint JAVANESE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KAITHI();
-		static jint KAITHI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KANA_EXTENDED_A();
-		static jint KANA_EXTENDED_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KANA_SUPPLEMENT();
-		static jint KANA_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KANBUN();
-		static jint KANBUN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KANGXI_RADICALS();
-		static jint KANGXI_RADICALS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KANNADA();
-		static jint KANNADA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KATAKANA();
-		static jint KATAKANA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KATAKANA_PHONETIC_EXTENSIONS();
-		static jint KATAKANA_PHONETIC_EXTENSIONS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KAYAH_LI();
-		static jint KAYAH_LI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KHAROSHTHI();
-		static jint KHAROSHTHI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KHITAN_SMALL_SCRIPT();
-		static jint KHITAN_SMALL_SCRIPT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KHMER();
-		static jint KHMER_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KHMER_SYMBOLS();
-		static jint KHMER_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KHOJKI();
-		static jint KHOJKI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock KHUDAWADI();
-		static jint KHUDAWADI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LAO();
-		static jint LAO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_1_SUPPLEMENT();
-		static jint LATIN_1_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_EXTENDED_A();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_EXTENDED_ADDITIONAL();
-		static jint LATIN_EXTENDED_ADDITIONAL_ID();
-		static jint LATIN_EXTENDED_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_EXTENDED_B();
-		static jint LATIN_EXTENDED_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_EXTENDED_C();
-		static jint LATIN_EXTENDED_C_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_EXTENDED_D();
-		static jint LATIN_EXTENDED_D_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LATIN_EXTENDED_E();
-		static jint LATIN_EXTENDED_E_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LEPCHA();
-		static jint LEPCHA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LETTERLIKE_SYMBOLS();
-		static jint LETTERLIKE_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LIMBU();
-		static jint LIMBU_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LINEAR_A();
-		static jint LINEAR_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LINEAR_B_IDEOGRAMS();
-		static jint LINEAR_B_IDEOGRAMS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LINEAR_B_SYLLABARY();
-		static jint LINEAR_B_SYLLABARY_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LISU();
-		static jint LISU_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LISU_SUPPLEMENT();
-		static jint LISU_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LOW_SURROGATES();
-		static jint LOW_SURROGATES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LYCIAN();
-		static jint LYCIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock LYDIAN();
-		static jint LYDIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MAHAJANI();
-		static jint MAHAJANI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MAHJONG_TILES();
-		static jint MAHJONG_TILES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MAKASAR();
-		static jint MAKASAR_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MALAYALAM();
-		static jint MALAYALAM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MANDAIC();
-		static jint MANDAIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MANICHAEAN();
-		static jint MANICHAEAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MARCHEN();
-		static jint MARCHEN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MASARAM_GONDI();
-		static jint MASARAM_GONDI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MATHEMATICAL_ALPHANUMERIC_SYMBOLS();
-		static jint MATHEMATICAL_ALPHANUMERIC_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MATHEMATICAL_OPERATORS();
-		static jint MATHEMATICAL_OPERATORS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MAYAN_NUMERALS();
-		static jint MAYAN_NUMERALS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MEDEFAIDRIN();
-		static jint MEDEFAIDRIN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MEETEI_MAYEK();
-		static android::icu::lang::UCharacter_UnicodeBlock MEETEI_MAYEK_EXTENSIONS();
-		static jint MEETEI_MAYEK_EXTENSIONS_ID();
-		static jint MEETEI_MAYEK_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MENDE_KIKAKUI();
-		static jint MENDE_KIKAKUI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MEROITIC_CURSIVE();
-		static jint MEROITIC_CURSIVE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MEROITIC_HIEROGLYPHS();
-		static jint MEROITIC_HIEROGLYPHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MIAO();
-		static jint MIAO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A();
-		static jint MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B();
-		static jint MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MISCELLANEOUS_SYMBOLS();
-		static android::icu::lang::UCharacter_UnicodeBlock MISCELLANEOUS_SYMBOLS_AND_ARROWS();
-		static jint MISCELLANEOUS_SYMBOLS_AND_ARROWS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS();
-		static jint MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS_ID();
-		static jint MISCELLANEOUS_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MISCELLANEOUS_TECHNICAL();
-		static jint MISCELLANEOUS_TECHNICAL_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MODI();
-		static android::icu::lang::UCharacter_UnicodeBlock MODIFIER_TONE_LETTERS();
-		static jint MODIFIER_TONE_LETTERS_ID();
-		static jint MODI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MONGOLIAN();
-		static jint MONGOLIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MONGOLIAN_SUPPLEMENT();
-		static jint MONGOLIAN_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MRO();
-		static jint MRO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MULTANI();
-		static jint MULTANI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MUSICAL_SYMBOLS();
-		static jint MUSICAL_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MYANMAR();
-		static android::icu::lang::UCharacter_UnicodeBlock MYANMAR_EXTENDED_A();
-		static jint MYANMAR_EXTENDED_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock MYANMAR_EXTENDED_B();
-		static jint MYANMAR_EXTENDED_B_ID();
-		static jint MYANMAR_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NABATAEAN();
-		static jint NABATAEAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NANDINAGARI();
-		static jint NANDINAGARI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NEWA();
-		static jint NEWA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NEW_TAI_LUE();
-		static jint NEW_TAI_LUE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NKO();
-		static jint NKO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NO_BLOCK();
-		static android::icu::lang::UCharacter_UnicodeBlock NUMBER_FORMS();
-		static jint NUMBER_FORMS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NUSHU();
-		static jint NUSHU_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock NYIAKENG_PUACHUE_HMONG();
-		static jint NYIAKENG_PUACHUE_HMONG_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OGHAM();
-		static jint OGHAM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_HUNGARIAN();
-		static jint OLD_HUNGARIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_ITALIC();
-		static jint OLD_ITALIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_NORTH_ARABIAN();
-		static jint OLD_NORTH_ARABIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_PERMIC();
-		static jint OLD_PERMIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_PERSIAN();
-		static jint OLD_PERSIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_SOGDIAN();
-		static jint OLD_SOGDIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_SOUTH_ARABIAN();
-		static jint OLD_SOUTH_ARABIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OLD_TURKIC();
-		static jint OLD_TURKIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OL_CHIKI();
-		static jint OL_CHIKI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OPTICAL_CHARACTER_RECOGNITION();
-		static jint OPTICAL_CHARACTER_RECOGNITION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ORIYA();
-		static jint ORIYA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ORNAMENTAL_DINGBATS();
-		static jint ORNAMENTAL_DINGBATS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OSAGE();
-		static jint OSAGE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OSMANYA();
-		static jint OSMANYA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock OTTOMAN_SIYAQ_NUMBERS();
-		static jint OTTOMAN_SIYAQ_NUMBERS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PAHAWH_HMONG();
-		static jint PAHAWH_HMONG_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PALMYRENE();
-		static jint PALMYRENE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PAU_CIN_HAU();
-		static jint PAU_CIN_HAU_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PHAGS_PA();
-		static jint PHAGS_PA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PHAISTOS_DISC();
-		static jint PHAISTOS_DISC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PHOENICIAN();
-		static jint PHOENICIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PHONETIC_EXTENSIONS();
-		static jint PHONETIC_EXTENSIONS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PHONETIC_EXTENSIONS_SUPPLEMENT();
-		static jint PHONETIC_EXTENSIONS_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PLAYING_CARDS();
-		static jint PLAYING_CARDS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PRIVATE_USE();
-		static android::icu::lang::UCharacter_UnicodeBlock PRIVATE_USE_AREA();
-		static jint PRIVATE_USE_AREA_ID();
-		static jint PRIVATE_USE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock PSALTER_PAHLAVI();
-		static jint PSALTER_PAHLAVI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock REJANG();
-		static jint REJANG_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock RUMI_NUMERAL_SYMBOLS();
-		static jint RUMI_NUMERAL_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock RUNIC();
-		static jint RUNIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SAMARITAN();
-		static jint SAMARITAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SAURASHTRA();
-		static jint SAURASHTRA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SHARADA();
-		static jint SHARADA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SHAVIAN();
-		static jint SHAVIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SHORTHAND_FORMAT_CONTROLS();
-		static jint SHORTHAND_FORMAT_CONTROLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SIDDHAM();
-		static jint SIDDHAM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SINHALA();
-		static android::icu::lang::UCharacter_UnicodeBlock SINHALA_ARCHAIC_NUMBERS();
-		static jint SINHALA_ARCHAIC_NUMBERS_ID();
-		static jint SINHALA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SMALL_FORM_VARIANTS();
-		static jint SMALL_FORM_VARIANTS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SMALL_KANA_EXTENSION();
-		static jint SMALL_KANA_EXTENSION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SOGDIAN();
-		static jint SOGDIAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SORA_SOMPENG();
-		static jint SORA_SOMPENG_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SOYOMBO();
-		static jint SOYOMBO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SPACING_MODIFIER_LETTERS();
-		static jint SPACING_MODIFIER_LETTERS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SPECIALS();
-		static jint SPECIALS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUNDANESE();
-		static jint SUNDANESE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUNDANESE_SUPPLEMENT();
-		static jint SUNDANESE_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPERSCRIPTS_AND_SUBSCRIPTS();
-		static jint SUPERSCRIPTS_AND_SUBSCRIPTS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTAL_ARROWS_A();
-		static jint SUPPLEMENTAL_ARROWS_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTAL_ARROWS_B();
-		static jint SUPPLEMENTAL_ARROWS_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTAL_ARROWS_C();
-		static jint SUPPLEMENTAL_ARROWS_C_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTAL_MATHEMATICAL_OPERATORS();
-		static jint SUPPLEMENTAL_MATHEMATICAL_OPERATORS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTAL_PUNCTUATION();
-		static jint SUPPLEMENTAL_PUNCTUATION_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS();
-		static jint SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTARY_PRIVATE_USE_AREA_A();
-		static jint SUPPLEMENTARY_PRIVATE_USE_AREA_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUPPLEMENTARY_PRIVATE_USE_AREA_B();
-		static jint SUPPLEMENTARY_PRIVATE_USE_AREA_B_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SUTTON_SIGNWRITING();
-		static jint SUTTON_SIGNWRITING_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SYLOTI_NAGRI();
-		static jint SYLOTI_NAGRI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A();
-		static jint SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SYMBOLS_FOR_LEGACY_COMPUTING();
-		static jint SYMBOLS_FOR_LEGACY_COMPUTING_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SYRIAC();
-		static jint SYRIAC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock SYRIAC_SUPPLEMENT();
-		static jint SYRIAC_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAGALOG();
-		static jint TAGALOG_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAGBANWA();
-		static jint TAGBANWA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAGS();
-		static jint TAGS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAI_LE();
-		static jint TAI_LE_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAI_THAM();
-		static jint TAI_THAM_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAI_VIET();
-		static jint TAI_VIET_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAI_XUAN_JING_SYMBOLS();
-		static jint TAI_XUAN_JING_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAKRI();
-		static jint TAKRI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAMIL();
-		static jint TAMIL_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TAMIL_SUPPLEMENT();
-		static jint TAMIL_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TANGUT();
-		static android::icu::lang::UCharacter_UnicodeBlock TANGUT_COMPONENTS();
-		static jint TANGUT_COMPONENTS_ID();
-		static jint TANGUT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TANGUT_SUPPLEMENT();
-		static jint TANGUT_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TELUGU();
-		static jint TELUGU_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock THAANA();
-		static jint THAANA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock THAI();
-		static jint THAI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TIBETAN();
-		static jint TIBETAN_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TIFINAGH();
-		static jint TIFINAGH_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TIRHUTA();
-		static jint TIRHUTA_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock TRANSPORT_AND_MAP_SYMBOLS();
-		static jint TRANSPORT_AND_MAP_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock UGARITIC();
-		static jint UGARITIC_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS();
-		static android::icu::lang::UCharacter_UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED();
-		static jint UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_ID();
-		static jint UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock VAI();
-		static jint VAI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock VARIATION_SELECTORS();
-		static jint VARIATION_SELECTORS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock VARIATION_SELECTORS_SUPPLEMENT();
-		static jint VARIATION_SELECTORS_SUPPLEMENT_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock VEDIC_EXTENSIONS();
-		static jint VEDIC_EXTENSIONS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock VERTICAL_FORMS();
-		static jint VERTICAL_FORMS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock WANCHO();
-		static jint WANCHO_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock WARANG_CITI();
-		static jint WARANG_CITI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock YEZIDI();
-		static jint YEZIDI_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock YIJING_HEXAGRAM_SYMBOLS();
-		static jint YIJING_HEXAGRAM_SYMBOLS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock YI_RADICALS();
-		static jint YI_RADICALS_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock YI_SYLLABLES();
-		static jint YI_SYLLABLES_ID();
-		static android::icu::lang::UCharacter_UnicodeBlock ZANABAZAR_SQUARE();
-		static jint ZANABAZAR_SQUARE_ID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UCharacter_UnicodeBlock(const char *className, const char *sig, Ts...agv) : java::lang::Character_Subset(className, sig, std::forward<Ts>(agv)...) {}
-		UCharacter_UnicodeBlock(QAndroidJniObject obj) : java::lang::Character_Subset(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::lang::UCharacter_UnicodeBlock forName(JString arg0);
-		static android::icu::lang::UCharacter_UnicodeBlock getInstance(jint arg0);
-		static android::icu::lang::UCharacter_UnicodeBlock of(jint arg0);
-		jint getID() const;
-	};
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ADLAM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ADLAM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ADLAM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::AEGEAN_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"AEGEAN_NUMBERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::AEGEAN_NUMBERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"AEGEAN_NUMBERS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::AHOM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"AHOM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::AHOM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"AHOM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ALCHEMICAL_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ALCHEMICAL_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ALCHEMICAL_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ALCHEMICAL_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ALPHABETIC_PRESENTATION_FORMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ALPHABETIC_PRESENTATION_FORMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ALPHABETIC_PRESENTATION_FORMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ALPHABETIC_PRESENTATION_FORMS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANATOLIAN_HIEROGLYPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANATOLIAN_HIEROGLYPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ANATOLIAN_HIEROGLYPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANATOLIAN_HIEROGLYPHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANCIENT_GREEK_MUSICAL_NOTATION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANCIENT_GREEK_MUSICAL_NOTATION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ANCIENT_GREEK_MUSICAL_NOTATION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANCIENT_GREEK_MUSICAL_NOTATION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANCIENT_GREEK_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANCIENT_GREEK_NUMBERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ANCIENT_GREEK_NUMBERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANCIENT_GREEK_NUMBERS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ANCIENT_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANCIENT_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ANCIENT_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ANCIENT_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARABIC_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_EXTENDED_A_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARABIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_PRESENTATION_FORMS_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_PRESENTATION_FORMS_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_PRESENTATION_FORMS_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARABIC_PRESENTATION_FORMS_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_PRESENTATION_FORMS_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARABIC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARABIC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARABIC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARMENIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARMENIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARMENIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARMENIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ARROWS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARROWS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ARROWS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ARROWS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::AVESTAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"AVESTAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::AVESTAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"AVESTAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BALINESE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BALINESE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BALINESE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BALINESE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BAMUM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BAMUM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BAMUM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BAMUM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BAMUM_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BAMUM_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BAMUM_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BAMUM_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BASIC_LATIN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BASIC_LATIN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BASIC_LATIN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BASIC_LATIN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BASSA_VAH()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BASSA_VAH",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BASSA_VAH_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BASSA_VAH_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BATAK()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BATAK",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BATAK_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BATAK_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BENGALI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BENGALI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BENGALI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BENGALI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BHAIKSUKI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BHAIKSUKI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BHAIKSUKI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BHAIKSUKI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BLOCK_ELEMENTS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BLOCK_ELEMENTS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BLOCK_ELEMENTS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BLOCK_ELEMENTS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BOPOMOFO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BOPOMOFO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BOPOMOFO_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BOPOMOFO_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BOPOMOFO_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BOPOMOFO_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BOPOMOFO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BOPOMOFO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BOX_DRAWING()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BOX_DRAWING",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BOX_DRAWING_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BOX_DRAWING_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BRAHMI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BRAHMI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BRAHMI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BRAHMI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BRAILLE_PATTERNS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BRAILLE_PATTERNS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BRAILLE_PATTERNS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BRAILLE_PATTERNS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BUGINESE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BUGINESE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BUGINESE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BUGINESE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BUHID()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BUHID",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BUHID_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BUHID_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::BYZANTINE_MUSICAL_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BYZANTINE_MUSICAL_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::BYZANTINE_MUSICAL_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"BYZANTINE_MUSICAL_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CARIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CARIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CARIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CARIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CAUCASIAN_ALBANIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CAUCASIAN_ALBANIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CAUCASIAN_ALBANIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CAUCASIAN_ALBANIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHAKMA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHAKMA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CHAKMA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHAKMA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHAM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHAM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CHAM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHAM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHEROKEE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHEROKEE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CHEROKEE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHEROKEE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHEROKEE_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHEROKEE_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CHEROKEE_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHEROKEE_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHESS_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHESS_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CHESS_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHESS_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CHORASMIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHORASMIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CHORASMIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CHORASMIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY_FORMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_FORMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_COMPATIBILITY_FORMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_FORMS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_COMPATIBILITY_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_IDEOGRAPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_IDEOGRAPHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_RADICALS_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_RADICALS_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_RADICALS_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_RADICALS_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_STROKES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_STROKES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_STROKES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_STROKES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_SYMBOLS_AND_PUNCTUATION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_SYMBOLS_AND_PUNCTUATION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_SYMBOLS_AND_PUNCTUATION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_SYMBOLS_AND_PUNCTUATION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_DIACRITICAL_MARKS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_DIACRITICAL_MARKS_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_DIACRITICAL_MARKS_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_DIACRITICAL_MARKS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_DIACRITICAL_MARKS_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COMBINING_DIACRITICAL_MARKS_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_DIACRITICAL_MARKS_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_HALF_MARKS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_HALF_MARKS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COMBINING_HALF_MARKS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_HALF_MARKS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMBINING_MARKS_FOR_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_MARKS_FOR_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COMBINING_MARKS_FOR_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMBINING_MARKS_FOR_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COMMON_INDIC_NUMBER_FORMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMMON_INDIC_NUMBER_FORMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COMMON_INDIC_NUMBER_FORMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COMMON_INDIC_NUMBER_FORMS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CONTROL_PICTURES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CONTROL_PICTURES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CONTROL_PICTURES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CONTROL_PICTURES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COPTIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COPTIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COPTIC_EPACT_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COPTIC_EPACT_NUMBERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COPTIC_EPACT_NUMBERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COPTIC_EPACT_NUMBERS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COPTIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COPTIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::COUNTING_ROD_NUMERALS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COUNTING_ROD_NUMERALS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::COUNTING_ROD_NUMERALS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"COUNTING_ROD_NUMERALS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CUNEIFORM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CUNEIFORM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CUNEIFORM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CUNEIFORM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CUNEIFORM_NUMBERS_AND_PUNCTUATION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CUNEIFORM_NUMBERS_AND_PUNCTUATION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CUNEIFORM_NUMBERS_AND_PUNCTUATION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CUNEIFORM_NUMBERS_AND_PUNCTUATION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CURRENCY_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CURRENCY_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CURRENCY_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CURRENCY_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYPRIOT_SYLLABARY()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYPRIOT_SYLLABARY",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYPRIOT_SYLLABARY_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYPRIOT_SYLLABARY_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_EXTENDED_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_EXTENDED_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_EXTENDED_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_C()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_EXTENDED_C",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYRILLIC_EXTENDED_C_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_EXTENDED_C_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYRILLIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENTARY()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_SUPPLEMENTARY",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENTARY_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_SUPPLEMENTARY_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::CYRILLIC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"CYRILLIC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DESERET()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DESERET",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DESERET_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DESERET_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DEVANAGARI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DEVANAGARI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DEVANAGARI_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DEVANAGARI_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DEVANAGARI_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DEVANAGARI_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DEVANAGARI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DEVANAGARI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DINGBATS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DINGBATS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DINGBATS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DINGBATS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DIVES_AKURU()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DIVES_AKURU",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DIVES_AKURU_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DIVES_AKURU_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DOGRA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DOGRA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DOGRA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DOGRA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DOMINO_TILES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DOMINO_TILES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DOMINO_TILES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DOMINO_TILES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::DUPLOYAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DUPLOYAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::DUPLOYAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"DUPLOYAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EARLY_DYNASTIC_CUNEIFORM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EARLY_DYNASTIC_CUNEIFORM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::EARLY_DYNASTIC_CUNEIFORM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EARLY_DYNASTIC_CUNEIFORM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EGYPTIAN_HIEROGLYPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EGYPTIAN_HIEROGLYPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::EGYPTIAN_HIEROGLYPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EGYPTIAN_HIEROGLYPHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ELBASAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ELBASAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ELBASAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ELBASAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ELYMAIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ELYMAIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ELYMAIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ELYMAIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::EMOTICONS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EMOTICONS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::EMOTICONS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"EMOTICONS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERICS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_ALPHANUMERICS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERICS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_ALPHANUMERICS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERIC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_ALPHANUMERIC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ENCLOSED_ALPHANUMERIC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_ALPHANUMERIC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_CJK_LETTERS_AND_MONTHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_CJK_LETTERS_AND_MONTHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ENCLOSED_CJK_LETTERS_AND_MONTHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_CJK_LETTERS_AND_MONTHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ENCLOSED_IDEOGRAPHIC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_IDEOGRAPHIC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ENCLOSED_IDEOGRAPHIC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ENCLOSED_IDEOGRAPHIC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_EXTENDED_A_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ETHIOPIC_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ETHIOPIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ETHIOPIC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ETHIOPIC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ETHIOPIC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GENERAL_PUNCTUATION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GENERAL_PUNCTUATION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GENERAL_PUNCTUATION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GENERAL_PUNCTUATION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEOMETRIC_SHAPES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEOMETRIC_SHAPES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEOMETRIC_SHAPES_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEOMETRIC_SHAPES_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GEOMETRIC_SHAPES_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEOMETRIC_SHAPES_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GEOMETRIC_SHAPES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEOMETRIC_SHAPES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEORGIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEORGIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEORGIAN_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEORGIAN_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GEORGIAN_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEORGIAN_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GEORGIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEORGIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GEORGIAN_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEORGIAN_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GEORGIAN_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GEORGIAN_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GLAGOLITIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GLAGOLITIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GLAGOLITIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GLAGOLITIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GLAGOLITIC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GLAGOLITIC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GLAGOLITIC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GLAGOLITIC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GOTHIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GOTHIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GOTHIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GOTHIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GRANTHA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GRANTHA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GRANTHA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GRANTHA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GREEK()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GREEK",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GREEK_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GREEK_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GREEK_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GREEK_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GREEK_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GREEK_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GUJARATI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GUJARATI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GUJARATI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GUJARATI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GUNJALA_GONDI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GUNJALA_GONDI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GUNJALA_GONDI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GUNJALA_GONDI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::GURMUKHI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GURMUKHI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::GURMUKHI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"GURMUKHI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HALFWIDTH_AND_FULLWIDTH_FORMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HALFWIDTH_AND_FULLWIDTH_FORMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HALFWIDTH_AND_FULLWIDTH_FORMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HALFWIDTH_AND_FULLWIDTH_FORMS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_COMPATIBILITY_JAMO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_COMPATIBILITY_JAMO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANGUL_COMPATIBILITY_JAMO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_COMPATIBILITY_JAMO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_JAMO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_JAMO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_JAMO_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_JAMO_EXTENDED_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_JAMO_EXTENDED_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANGUL_JAMO_EXTENDED_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_JAMO_EXTENDED_B_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANGUL_JAMO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_JAMO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANGUL_SYLLABLES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_SYLLABLES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANGUL_SYLLABLES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANGUL_SYLLABLES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANIFI_ROHINGYA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANIFI_ROHINGYA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANIFI_ROHINGYA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANIFI_ROHINGYA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HANUNOO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANUNOO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HANUNOO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HANUNOO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HATRAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HATRAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HATRAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HATRAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HEBREW()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HEBREW",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HEBREW_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HEBREW_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HIGH_PRIVATE_USE_SURROGATES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HIGH_PRIVATE_USE_SURROGATES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HIGH_PRIVATE_USE_SURROGATES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HIGH_PRIVATE_USE_SURROGATES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HIGH_SURROGATES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HIGH_SURROGATES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HIGH_SURROGATES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HIGH_SURROGATES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::HIRAGANA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HIRAGANA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::HIRAGANA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"HIRAGANA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IDEOGRAPHIC_DESCRIPTION_CHARACTERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IDEOGRAPHIC_DESCRIPTION_CHARACTERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::IDEOGRAPHIC_DESCRIPTION_CHARACTERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IDEOGRAPHIC_DESCRIPTION_CHARACTERS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IMPERIAL_ARAMAIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IMPERIAL_ARAMAIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::IMPERIAL_ARAMAIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IMPERIAL_ARAMAIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INDIC_SIYAQ_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INDIC_SIYAQ_NUMBERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::INDIC_SIYAQ_NUMBERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INDIC_SIYAQ_NUMBERS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INSCRIPTIONAL_PAHLAVI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INSCRIPTIONAL_PAHLAVI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::INSCRIPTIONAL_PAHLAVI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INSCRIPTIONAL_PAHLAVI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INSCRIPTIONAL_PARTHIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INSCRIPTIONAL_PARTHIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::INSCRIPTIONAL_PARTHIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INSCRIPTIONAL_PARTHIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::INVALID_CODE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INVALID_CODE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::INVALID_CODE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"INVALID_CODE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::IPA_EXTENSIONS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IPA_EXTENSIONS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::IPA_EXTENSIONS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"IPA_EXTENSIONS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::JAVANESE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"JAVANESE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::JAVANESE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"JAVANESE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KAITHI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KAITHI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KAITHI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KAITHI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANA_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANA_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KANA_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANA_EXTENDED_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANA_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANA_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KANA_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANA_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANBUN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANBUN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KANBUN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANBUN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANGXI_RADICALS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANGXI_RADICALS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KANGXI_RADICALS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANGXI_RADICALS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KANNADA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANNADA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KANNADA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KANNADA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KATAKANA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KATAKANA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KATAKANA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KATAKANA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KATAKANA_PHONETIC_EXTENSIONS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KATAKANA_PHONETIC_EXTENSIONS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KATAKANA_PHONETIC_EXTENSIONS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KATAKANA_PHONETIC_EXTENSIONS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KAYAH_LI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KAYAH_LI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KAYAH_LI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KAYAH_LI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHAROSHTHI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHAROSHTHI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KHAROSHTHI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHAROSHTHI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHITAN_SMALL_SCRIPT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHITAN_SMALL_SCRIPT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KHITAN_SMALL_SCRIPT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHITAN_SMALL_SCRIPT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHMER()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHMER",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KHMER_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHMER_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHMER_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHMER_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KHMER_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHMER_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHOJKI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHOJKI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KHOJKI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHOJKI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::KHUDAWADI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHUDAWADI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::KHUDAWADI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"KHUDAWADI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LAO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LAO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LAO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LAO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_1_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_1_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_1_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_1_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_ADDITIONAL()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_ADDITIONAL",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_EXTENDED_ADDITIONAL_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_ADDITIONAL_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_EXTENDED_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_C()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_C",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_EXTENDED_C_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_C_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_D()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_D",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_EXTENDED_D_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_D_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LATIN_EXTENDED_E()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_E",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LATIN_EXTENDED_E_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LATIN_EXTENDED_E_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LEPCHA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LEPCHA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LEPCHA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LEPCHA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LETTERLIKE_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LETTERLIKE_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LETTERLIKE_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LETTERLIKE_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LIMBU()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LIMBU",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LIMBU_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LIMBU_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LINEAR_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LINEAR_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LINEAR_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LINEAR_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LINEAR_B_IDEOGRAMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LINEAR_B_IDEOGRAMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LINEAR_B_IDEOGRAMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LINEAR_B_IDEOGRAMS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LINEAR_B_SYLLABARY()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LINEAR_B_SYLLABARY",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LINEAR_B_SYLLABARY_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LINEAR_B_SYLLABARY_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LISU()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LISU",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LISU_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LISU_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LISU_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LISU_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LISU_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LISU_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LOW_SURROGATES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LOW_SURROGATES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LOW_SURROGATES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LOW_SURROGATES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LYCIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LYCIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LYCIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LYCIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::LYDIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LYDIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::LYDIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"LYDIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAHAJANI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAHAJANI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MAHAJANI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAHAJANI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAHJONG_TILES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAHJONG_TILES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MAHJONG_TILES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAHJONG_TILES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAKASAR()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAKASAR",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MAKASAR_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAKASAR_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MALAYALAM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MALAYALAM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MALAYALAM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MALAYALAM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MANDAIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MANDAIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MANDAIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MANDAIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MANICHAEAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MANICHAEAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MANICHAEAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MANICHAEAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MARCHEN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MARCHEN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MARCHEN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MARCHEN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MASARAM_GONDI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MASARAM_GONDI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MASARAM_GONDI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MASARAM_GONDI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MATHEMATICAL_ALPHANUMERIC_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MATHEMATICAL_ALPHANUMERIC_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MATHEMATICAL_ALPHANUMERIC_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MATHEMATICAL_ALPHANUMERIC_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MATHEMATICAL_OPERATORS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MATHEMATICAL_OPERATORS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MATHEMATICAL_OPERATORS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MATHEMATICAL_OPERATORS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MAYAN_NUMERALS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAYAN_NUMERALS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MAYAN_NUMERALS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MAYAN_NUMERALS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEDEFAIDRIN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEDEFAIDRIN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MEDEFAIDRIN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEDEFAIDRIN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEETEI_MAYEK()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEETEI_MAYEK",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEETEI_MAYEK_EXTENSIONS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEETEI_MAYEK_EXTENSIONS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MEETEI_MAYEK_EXTENSIONS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEETEI_MAYEK_EXTENSIONS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MEETEI_MAYEK_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEETEI_MAYEK_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MENDE_KIKAKUI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MENDE_KIKAKUI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MENDE_KIKAKUI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MENDE_KIKAKUI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEROITIC_CURSIVE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEROITIC_CURSIVE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MEROITIC_CURSIVE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEROITIC_CURSIVE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MEROITIC_HIEROGLYPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEROITIC_HIEROGLYPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MEROITIC_HIEROGLYPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MEROITIC_HIEROGLYPHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MIAO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MIAO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MIAO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MIAO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_ARROWS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_SYMBOLS_AND_ARROWS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_ARROWS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_SYMBOLS_AND_ARROWS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MISCELLANEOUS_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MISCELLANEOUS_TECHNICAL()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_TECHNICAL",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MISCELLANEOUS_TECHNICAL_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MISCELLANEOUS_TECHNICAL_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MODI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MODI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MODIFIER_TONE_LETTERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MODIFIER_TONE_LETTERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MODIFIER_TONE_LETTERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MODIFIER_TONE_LETTERS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MODI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MODI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MONGOLIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MONGOLIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MONGOLIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MONGOLIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MONGOLIAN_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MONGOLIAN_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MONGOLIAN_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MONGOLIAN_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MRO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MRO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MRO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MRO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MULTANI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MULTANI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MULTANI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MULTANI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MUSICAL_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MUSICAL_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MUSICAL_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MUSICAL_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MYANMAR()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MYANMAR",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MYANMAR_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MYANMAR_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MYANMAR_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MYANMAR_EXTENDED_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::MYANMAR_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MYANMAR_EXTENDED_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MYANMAR_EXTENDED_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MYANMAR_EXTENDED_B_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::MYANMAR_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"MYANMAR_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NABATAEAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NABATAEAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NABATAEAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NABATAEAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NANDINAGARI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NANDINAGARI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NANDINAGARI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NANDINAGARI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NEWA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NEWA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NEWA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NEWA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NEW_TAI_LUE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NEW_TAI_LUE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NEW_TAI_LUE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NEW_TAI_LUE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NKO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NKO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NKO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NKO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NO_BLOCK()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NO_BLOCK",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NUMBER_FORMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NUMBER_FORMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NUMBER_FORMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NUMBER_FORMS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NUSHU()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NUSHU",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NUSHU_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NUSHU_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::NYIAKENG_PUACHUE_HMONG()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NYIAKENG_PUACHUE_HMONG",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::NYIAKENG_PUACHUE_HMONG_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"NYIAKENG_PUACHUE_HMONG_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OGHAM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OGHAM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OGHAM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OGHAM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_HUNGARIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_HUNGARIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_HUNGARIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_HUNGARIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_ITALIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_ITALIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_ITALIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_ITALIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_NORTH_ARABIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_NORTH_ARABIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_NORTH_ARABIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_NORTH_ARABIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_PERMIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_PERMIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_PERMIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_PERMIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_PERSIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_PERSIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_PERSIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_PERSIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_SOGDIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_SOGDIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_SOGDIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_SOGDIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_SOUTH_ARABIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_SOUTH_ARABIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_SOUTH_ARABIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_SOUTH_ARABIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OLD_TURKIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_TURKIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OLD_TURKIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OLD_TURKIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OL_CHIKI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OL_CHIKI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OL_CHIKI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OL_CHIKI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OPTICAL_CHARACTER_RECOGNITION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OPTICAL_CHARACTER_RECOGNITION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OPTICAL_CHARACTER_RECOGNITION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OPTICAL_CHARACTER_RECOGNITION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ORIYA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ORIYA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ORIYA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ORIYA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ORNAMENTAL_DINGBATS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ORNAMENTAL_DINGBATS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ORNAMENTAL_DINGBATS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ORNAMENTAL_DINGBATS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OSAGE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OSAGE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OSAGE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OSAGE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OSMANYA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OSMANYA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OSMANYA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OSMANYA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::OTTOMAN_SIYAQ_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OTTOMAN_SIYAQ_NUMBERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::OTTOMAN_SIYAQ_NUMBERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"OTTOMAN_SIYAQ_NUMBERS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PAHAWH_HMONG()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PAHAWH_HMONG",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PAHAWH_HMONG_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PAHAWH_HMONG_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PALMYRENE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PALMYRENE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PALMYRENE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PALMYRENE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PAU_CIN_HAU()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PAU_CIN_HAU",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PAU_CIN_HAU_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PAU_CIN_HAU_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHAGS_PA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHAGS_PA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PHAGS_PA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHAGS_PA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHAISTOS_DISC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHAISTOS_DISC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PHAISTOS_DISC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHAISTOS_DISC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHOENICIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHOENICIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PHOENICIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHOENICIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHONETIC_EXTENSIONS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHONETIC_EXTENSIONS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHONETIC_EXTENSIONS_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PHONETIC_EXTENSIONS_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PHONETIC_EXTENSIONS_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PLAYING_CARDS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PLAYING_CARDS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PLAYING_CARDS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PLAYING_CARDS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PRIVATE_USE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PRIVATE_USE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PRIVATE_USE_AREA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PRIVATE_USE_AREA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PRIVATE_USE_AREA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PRIVATE_USE_AREA_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PRIVATE_USE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PRIVATE_USE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::PSALTER_PAHLAVI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PSALTER_PAHLAVI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::PSALTER_PAHLAVI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"PSALTER_PAHLAVI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::REJANG()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"REJANG",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::REJANG_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"REJANG_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::RUMI_NUMERAL_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"RUMI_NUMERAL_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::RUMI_NUMERAL_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"RUMI_NUMERAL_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::RUNIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"RUNIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::RUNIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"RUNIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SAMARITAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SAMARITAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SAMARITAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SAMARITAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SAURASHTRA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SAURASHTRA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SAURASHTRA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SAURASHTRA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SHARADA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SHARADA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SHARADA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SHARADA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SHAVIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SHAVIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SHAVIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SHAVIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SHORTHAND_FORMAT_CONTROLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SHORTHAND_FORMAT_CONTROLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SHORTHAND_FORMAT_CONTROLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SHORTHAND_FORMAT_CONTROLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SIDDHAM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SIDDHAM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SIDDHAM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SIDDHAM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SINHALA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SINHALA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SINHALA_ARCHAIC_NUMBERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SINHALA_ARCHAIC_NUMBERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SINHALA_ARCHAIC_NUMBERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SINHALA_ARCHAIC_NUMBERS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SINHALA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SINHALA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SMALL_FORM_VARIANTS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SMALL_FORM_VARIANTS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SMALL_FORM_VARIANTS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SMALL_FORM_VARIANTS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SMALL_KANA_EXTENSION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SMALL_KANA_EXTENSION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SMALL_KANA_EXTENSION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SMALL_KANA_EXTENSION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SOGDIAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SOGDIAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SOGDIAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SOGDIAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SORA_SOMPENG()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SORA_SOMPENG",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SORA_SOMPENG_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SORA_SOMPENG_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SOYOMBO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SOYOMBO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SOYOMBO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SOYOMBO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SPACING_MODIFIER_LETTERS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SPACING_MODIFIER_LETTERS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SPACING_MODIFIER_LETTERS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SPACING_MODIFIER_LETTERS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SPECIALS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SPECIALS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SPECIALS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SPECIALS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUNDANESE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUNDANESE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUNDANESE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUNDANESE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUNDANESE_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUNDANESE_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUNDANESE_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUNDANESE_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPERSCRIPTS_AND_SUBSCRIPTS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPERSCRIPTS_AND_SUBSCRIPTS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPERSCRIPTS_AND_SUBSCRIPTS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPERSCRIPTS_AND_SUBSCRIPTS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_ARROWS_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_ARROWS_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_ARROWS_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_ARROWS_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_C()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_ARROWS_C",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTAL_ARROWS_C_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_ARROWS_C_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_MATHEMATICAL_OPERATORS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_MATHEMATICAL_OPERATORS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTAL_MATHEMATICAL_OPERATORS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_MATHEMATICAL_OPERATORS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_PUNCTUATION()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_PUNCTUATION",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTAL_PUNCTUATION_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_PUNCTUATION_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTARY_PRIVATE_USE_AREA_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTARY_PRIVATE_USE_AREA_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_B()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTARY_PRIVATE_USE_AREA_B",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUPPLEMENTARY_PRIVATE_USE_AREA_B_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUPPLEMENTARY_PRIVATE_USE_AREA_B_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SUTTON_SIGNWRITING()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUTTON_SIGNWRITING",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SUTTON_SIGNWRITING_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SUTTON_SIGNWRITING_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYLOTI_NAGRI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYLOTI_NAGRI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SYLOTI_NAGRI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYLOTI_NAGRI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYMBOLS_FOR_LEGACY_COMPUTING()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYMBOLS_FOR_LEGACY_COMPUTING",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SYMBOLS_FOR_LEGACY_COMPUTING_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYMBOLS_FOR_LEGACY_COMPUTING_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYRIAC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYRIAC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SYRIAC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYRIAC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::SYRIAC_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYRIAC_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::SYRIAC_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"SYRIAC_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAGALOG()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAGALOG",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAGALOG_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAGALOG_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAGBANWA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAGBANWA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAGBANWA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAGBANWA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAGS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAGS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAGS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAGS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_LE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_LE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAI_LE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_LE_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_THAM()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_THAM",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAI_THAM_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_THAM_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_VIET()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_VIET",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAI_VIET_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_VIET_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAI_XUAN_JING_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_XUAN_JING_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAI_XUAN_JING_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAI_XUAN_JING_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAKRI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAKRI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAKRI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAKRI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAMIL()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAMIL",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAMIL_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAMIL_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TAMIL_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAMIL_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TAMIL_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TAMIL_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TANGUT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TANGUT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TANGUT_COMPONENTS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TANGUT_COMPONENTS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TANGUT_COMPONENTS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TANGUT_COMPONENTS_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TANGUT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TANGUT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TANGUT_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TANGUT_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TANGUT_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TANGUT_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TELUGU()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TELUGU",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TELUGU_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TELUGU_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::THAANA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"THAANA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::THAANA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"THAANA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::THAI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"THAI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::THAI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"THAI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TIBETAN()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TIBETAN",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TIBETAN_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TIBETAN_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TIFINAGH()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TIFINAGH",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TIFINAGH_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TIFINAGH_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TIRHUTA()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TIRHUTA",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TIRHUTA_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TIRHUTA_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::TRANSPORT_AND_MAP_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TRANSPORT_AND_MAP_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::TRANSPORT_AND_MAP_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"TRANSPORT_AND_MAP_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::UGARITIC()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"UGARITIC",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::UGARITIC_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"UGARITIC_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_ID"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VAI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VAI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::VAI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VAI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VARIATION_SELECTORS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VARIATION_SELECTORS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::VARIATION_SELECTORS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VARIATION_SELECTORS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VARIATION_SELECTORS_SUPPLEMENT()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VARIATION_SELECTORS_SUPPLEMENT",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::VARIATION_SELECTORS_SUPPLEMENT_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VARIATION_SELECTORS_SUPPLEMENT_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VEDIC_EXTENSIONS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VEDIC_EXTENSIONS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::VEDIC_EXTENSIONS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VEDIC_EXTENSIONS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::VERTICAL_FORMS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VERTICAL_FORMS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::VERTICAL_FORMS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"VERTICAL_FORMS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::WANCHO()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"WANCHO",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::WANCHO_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"WANCHO_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::WARANG_CITI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"WARANG_CITI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::WARANG_CITI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"WARANG_CITI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YEZIDI()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YEZIDI",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::YEZIDI_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YEZIDI_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YIJING_HEXAGRAM_SYMBOLS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YIJING_HEXAGRAM_SYMBOLS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::YIJING_HEXAGRAM_SYMBOLS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YIJING_HEXAGRAM_SYMBOLS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YI_RADICALS()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YI_RADICALS",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::YI_RADICALS_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YI_RADICALS_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::YI_SYLLABLES()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YI_SYLLABLES",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::YI_SYLLABLES_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"YI_SYLLABLES_ID"
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::ZANABAZAR_SQUARE()
+	{
+		return getStaticObjectField(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ZANABAZAR_SQUARE",
+			"Landroid/icu/lang/UCharacter$UnicodeBlock;"
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::ZANABAZAR_SQUARE_ID()
+	{
+		return getStaticField<jint>(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"ZANABAZAR_SQUARE_ID"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::forName(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"forName",
+			"(Ljava/lang/String;)Landroid/icu/lang/UCharacter$UnicodeBlock;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::getInstance(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"getInstance",
+			"(I)Landroid/icu/lang/UCharacter$UnicodeBlock;",
+			arg0
+		);
+	}
+	inline android::icu::lang::UCharacter_UnicodeBlock UCharacter_UnicodeBlock::of(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"of",
+			"(I)Landroid/icu/lang/UCharacter$UnicodeBlock;",
+			arg0
+		);
+	}
+	inline jint UCharacter_UnicodeBlock::getID() const
+	{
+		return callMethod<jint>(
+			"getID",
+			"()I"
+		);
+	}
 } // namespace android::icu::lang
+
+// Base class headers
+#include "../../../java/lang/Character_Subset.hpp"
 

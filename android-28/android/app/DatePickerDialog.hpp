@@ -1,45 +1,114 @@
 #pragma once
 
-#include "./AlertDialog.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::widget
-{
-	class DatePicker;
-}
+#include "../content/Context.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../widget/DatePicker.def.hpp"
+#include "./DatePickerDialog.def.hpp"
 
 namespace android::app
 {
-	class DatePickerDialog : public android::app::AlertDialog
+	// Fields
+	
+	// Constructors
+	inline DatePickerDialog::DatePickerDialog(android::content::Context arg0)
+		: android::app::AlertDialog(
+			"android.app.DatePickerDialog",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1)
+		: android::app::AlertDialog(
+			"android.app.DatePickerDialog",
+			"(Landroid/content/Context;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline DatePickerDialog::DatePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4)
+		: android::app::AlertDialog(
+			"android.app.DatePickerDialog",
+			"(Landroid/content/Context;Landroid/app/DatePickerDialog$OnDateSetListener;III)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3,
+			arg4
+		) {}
+	inline DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1, JObject arg2, jint arg3, jint arg4, jint arg5)
+		: android::app::AlertDialog(
+			"android.app.DatePickerDialog",
+			"(Landroid/content/Context;ILandroid/app/DatePickerDialog$OnDateSetListener;III)V",
+			arg0.object(),
+			arg1,
+			arg2.object(),
+			arg3,
+			arg4,
+			arg5
+		) {}
+	
+	// Methods
+	inline android::widget::DatePicker DatePickerDialog::getDatePicker() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DatePickerDialog(const char *className, const char *sig, Ts...agv) : android::app::AlertDialog(className, sig, std::forward<Ts>(agv)...) {}
-		DatePickerDialog(QAndroidJniObject obj) : android::app::AlertDialog(obj) {}
-		
-		// Constructors
-		DatePickerDialog(android::content::Context arg0);
-		DatePickerDialog(android::content::Context arg0, jint arg1);
-		DatePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4);
-		DatePickerDialog(android::content::Context arg0, jint arg1, JObject arg2, jint arg3, jint arg4, jint arg5);
-		
-		// Methods
-		android::widget::DatePicker getDatePicker() const;
-		void onClick(JObject arg0, jint arg1) const;
-		void onDateChanged(android::widget::DatePicker arg0, jint arg1, jint arg2, jint arg3) const;
-		void onRestoreInstanceState(android::os::Bundle arg0) const;
-		android::os::Bundle onSaveInstanceState() const;
-		void setOnDateSetListener(JObject arg0) const;
-		void updateDate(jint arg0, jint arg1, jint arg2) const;
-	};
+		return callObjectMethod(
+			"getDatePicker",
+			"()Landroid/widget/DatePicker;"
+		);
+	}
+	inline void DatePickerDialog::onClick(JObject arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onClick",
+			"(Landroid/content/DialogInterface;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void DatePickerDialog::onDateChanged(android::widget::DatePicker arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"onDateChanged",
+			"(Landroid/widget/DatePicker;III)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void DatePickerDialog::onRestoreInstanceState(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline android::os::Bundle DatePickerDialog::onSaveInstanceState() const
+	{
+		return callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline void DatePickerDialog::setOnDateSetListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnDateSetListener",
+			"(Landroid/app/DatePickerDialog$OnDateSetListener;)V",
+			arg0.object()
+		);
+	}
+	inline void DatePickerDialog::updateDate(jint arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"updateDate",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./Dialog.hpp"
+#include "./AlertDialog.hpp"
 

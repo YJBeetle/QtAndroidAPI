@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../lang/Exception.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./BrokenBarrierException.def.hpp"
 
 namespace java::util::concurrent
 {
-	class BrokenBarrierException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BrokenBarrierException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		BrokenBarrierException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		BrokenBarrierException();
-		BrokenBarrierException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline BrokenBarrierException::BrokenBarrierException()
+		: java::lang::Exception(
+			"java.util.concurrent.BrokenBarrierException",
+			"()V"
+		) {}
+	inline BrokenBarrierException::BrokenBarrierException(JString arg0)
+		: java::lang::Exception(
+			"java.util.concurrent.BrokenBarrierException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Exception.hpp"
 

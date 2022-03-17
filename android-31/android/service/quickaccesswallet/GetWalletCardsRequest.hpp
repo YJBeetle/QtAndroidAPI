@@ -1,34 +1,77 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./GetWalletCardsRequest.def.hpp"
 
 namespace android::service::quickaccesswallet
 {
-	class GetWalletCardsRequest : public JObject
+	// Fields
+	inline JObject GetWalletCardsRequest::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GetWalletCardsRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetWalletCardsRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GetWalletCardsRequest(jint arg0, jint arg1, jint arg2, jint arg3);
-		
-		// Methods
-		jint describeContents() const;
-		jint getCardHeightPx() const;
-		jint getCardWidthPx() const;
-		jint getIconSizePx() const;
-		jint getMaxCards() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.quickaccesswallet.GetWalletCardsRequest",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline GetWalletCardsRequest::GetWalletCardsRequest(jint arg0, jint arg1, jint arg2, jint arg3)
+		: JObject(
+			"android.service.quickaccesswallet.GetWalletCardsRequest",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline jint GetWalletCardsRequest::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint GetWalletCardsRequest::getCardHeightPx() const
+	{
+		return callMethod<jint>(
+			"getCardHeightPx",
+			"()I"
+		);
+	}
+	inline jint GetWalletCardsRequest::getCardWidthPx() const
+	{
+		return callMethod<jint>(
+			"getCardWidthPx",
+			"()I"
+		);
+	}
+	inline jint GetWalletCardsRequest::getIconSizePx() const
+	{
+		return callMethod<jint>(
+			"getIconSizePx",
+			"()I"
+		);
+	}
+	inline jint GetWalletCardsRequest::getMaxCards() const
+	{
+		return callMethod<jint>(
+			"getMaxCards",
+			"()I"
+		);
+	}
+	inline void GetWalletCardsRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::quickaccesswallet
+
+// Base class headers
 

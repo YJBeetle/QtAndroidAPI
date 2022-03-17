@@ -1,32 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Charset.def.hpp"
+#include "./StandardCharsets.def.hpp"
 
 namespace java::nio::charset
 {
-	class Charset;
-}
-
-namespace java::nio::charset
-{
-	class StandardCharsets : public JObject
+	// Fields
+	inline java::nio::charset::Charset StandardCharsets::ISO_8859_1()
 	{
-	public:
-		// Fields
-		static java::nio::charset::Charset ISO_8859_1();
-		static java::nio::charset::Charset US_ASCII();
-		static java::nio::charset::Charset UTF_16();
-		static java::nio::charset::Charset UTF_16BE();
-		static java::nio::charset::Charset UTF_16LE();
-		static java::nio::charset::Charset UTF_8();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StandardCharsets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StandardCharsets(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"ISO_8859_1",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	inline java::nio::charset::Charset StandardCharsets::US_ASCII()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"US_ASCII",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	inline java::nio::charset::Charset StandardCharsets::UTF_16()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"UTF_16",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	inline java::nio::charset::Charset StandardCharsets::UTF_16BE()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"UTF_16BE",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	inline java::nio::charset::Charset StandardCharsets::UTF_16LE()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"UTF_16LE",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	inline java::nio::charset::Charset StandardCharsets::UTF_8()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"UTF_8",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::nio::charset
+
+// Base class headers
 

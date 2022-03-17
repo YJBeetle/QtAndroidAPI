@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../../java/lang/RuntimeException.hpp"
+#include "./InspectionCompanion_UninitializedPropertyMapException.def.hpp"
 
 namespace android::view::inspector
 {
-	class InspectionCompanion_UninitializedPropertyMapException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InspectionCompanion_UninitializedPropertyMapException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		InspectionCompanion_UninitializedPropertyMapException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InspectionCompanion_UninitializedPropertyMapException::InspectionCompanion_UninitializedPropertyMapException()
+		: java::lang::RuntimeException(
+			"android.view.inspector.InspectionCompanion$UninitializedPropertyMapException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::view::inspector
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 

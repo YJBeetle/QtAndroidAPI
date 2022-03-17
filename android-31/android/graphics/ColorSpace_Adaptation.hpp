@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./ColorSpace_Adaptation.def.hpp"
 
 namespace android::graphics
 {
-	class ColorSpace_Adaptation : public java::lang::Enum
+	// Fields
+	inline android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::BRADFORD()
 	{
-	public:
-		// Fields
-		static android::graphics::ColorSpace_Adaptation BRADFORD();
-		static android::graphics::ColorSpace_Adaptation CIECAT02();
-		static android::graphics::ColorSpace_Adaptation VON_KRIES();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ColorSpace_Adaptation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Adaptation(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::ColorSpace_Adaptation valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Adaptation",
+			"BRADFORD",
+			"Landroid/graphics/ColorSpace$Adaptation;"
+		);
+	}
+	inline android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::CIECAT02()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Adaptation",
+			"CIECAT02",
+			"Landroid/graphics/ColorSpace$Adaptation;"
+		);
+	}
+	inline android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::VON_KRIES()
+	{
+		return getStaticObjectField(
+			"android.graphics.ColorSpace$Adaptation",
+			"VON_KRIES",
+			"Landroid/graphics/ColorSpace$Adaptation;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace_Adaptation ColorSpace_Adaptation::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$Adaptation",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Adaptation;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ColorSpace_Adaptation::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.ColorSpace$Adaptation",
+			"values",
+			"()[Landroid/graphics/ColorSpace$Adaptation;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

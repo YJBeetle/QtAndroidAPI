@@ -1,26 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmStore_Playback.def.hpp"
 
 namespace android::drm
 {
-	class DrmStore_Playback : public JObject
+	// Fields
+	inline jint DrmStore_Playback::PAUSE()
 	{
-	public:
-		// Fields
-		static jint PAUSE();
-		static jint RESUME();
-		static jint START();
-		static jint STOP();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmStore_Playback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore_Playback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DrmStore_Playback();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Playback",
+			"PAUSE"
+		);
+	}
+	inline jint DrmStore_Playback::RESUME()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Playback",
+			"RESUME"
+		);
+	}
+	inline jint DrmStore_Playback::START()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Playback",
+			"START"
+		);
+	}
+	inline jint DrmStore_Playback::STOP()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Playback",
+			"STOP"
+		);
+	}
+	
+	// Constructors
+	inline DrmStore_Playback::DrmStore_Playback()
+		: JObject(
+			"android.drm.DrmStore$Playback",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::drm
+
+// Base class headers
 

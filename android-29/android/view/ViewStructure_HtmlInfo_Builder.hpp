@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ViewStructure_HtmlInfo.def.hpp"
+#include "../../JString.hpp"
+#include "./ViewStructure_HtmlInfo_Builder.def.hpp"
 
 namespace android::view
 {
-	class ViewStructure_HtmlInfo;
-}
-class JString;
-
-namespace android::view
-{
-	class ViewStructure_HtmlInfo_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder()
+		: JObject(
+			"android.view.ViewStructure$HtmlInfo$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::view::ViewStructure_HtmlInfo_Builder ViewStructure_HtmlInfo_Builder::addAttribute(JString arg0, JString arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewStructure_HtmlInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ViewStructure_HtmlInfo_Builder();
-		
-		// Methods
-		android::view::ViewStructure_HtmlInfo_Builder addAttribute(JString arg0, JString arg1) const;
-		android::view::ViewStructure_HtmlInfo build() const;
-	};
+		return callObjectMethod(
+			"addAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::view::ViewStructure_HtmlInfo ViewStructure_HtmlInfo_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/ViewStructure$HtmlInfo;"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

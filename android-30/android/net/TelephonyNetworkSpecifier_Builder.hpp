@@ -1,29 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TelephonyNetworkSpecifier.def.hpp"
+#include "./TelephonyNetworkSpecifier_Builder.def.hpp"
 
 namespace android::net
 {
-	class TelephonyNetworkSpecifier;
-}
-
-namespace android::net
-{
-	class TelephonyNetworkSpecifier_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline TelephonyNetworkSpecifier_Builder::TelephonyNetworkSpecifier_Builder()
+		: JObject(
+			"android.net.TelephonyNetworkSpecifier$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::TelephonyNetworkSpecifier TelephonyNetworkSpecifier_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TelephonyNetworkSpecifier_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyNetworkSpecifier_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TelephonyNetworkSpecifier_Builder();
-		
-		// Methods
-		android::net::TelephonyNetworkSpecifier build() const;
-		android::net::TelephonyNetworkSpecifier_Builder setSubscriptionId(jint arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/net/TelephonyNetworkSpecifier;"
+		);
+	}
+	inline android::net::TelephonyNetworkSpecifier_Builder TelephonyNetworkSpecifier_Builder::setSubscriptionId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setSubscriptionId",
+			"(I)Landroid/net/TelephonyNetworkSpecifier$Builder;",
+			arg0
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

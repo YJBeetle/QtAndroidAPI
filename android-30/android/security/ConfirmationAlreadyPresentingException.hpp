@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ConfirmationAlreadyPresentingException.def.hpp"
 
 namespace android::security
 {
-	class ConfirmationAlreadyPresentingException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConfirmationAlreadyPresentingException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ConfirmationAlreadyPresentingException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		ConfirmationAlreadyPresentingException();
-		ConfirmationAlreadyPresentingException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException()
+		: java::lang::Exception(
+			"android.security.ConfirmationAlreadyPresentingException",
+			"()V"
+		) {}
+	inline ConfirmationAlreadyPresentingException::ConfirmationAlreadyPresentingException(JString arg0)
+		: java::lang::Exception(
+			"android.security.ConfirmationAlreadyPresentingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::security
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

@@ -1,28 +1,30 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Shader;
-}
+#include "../Shader.def.hpp"
+#include "./ShapeDrawable_ShaderFactory.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class ShapeDrawable_ShaderFactory : public JObject
+	// Fields
+	
+	// Constructors
+	inline ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory()
+		: JObject(
+			"android.graphics.drawable.ShapeDrawable$ShaderFactory",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::graphics::Shader ShapeDrawable_ShaderFactory::resize(jint arg0, jint arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ShapeDrawable_ShaderFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ShapeDrawable_ShaderFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ShapeDrawable_ShaderFactory();
-		
-		// Methods
-		android::graphics::Shader resize(jint arg0, jint arg1) const;
-	};
+		return callObjectMethod(
+			"resize",
+			"(II)Landroid/graphics/Shader;",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
 

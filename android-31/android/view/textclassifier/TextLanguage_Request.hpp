@@ -1,38 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./TextLanguage_Request.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextLanguage_Request : public JObject
+	// Fields
+	inline JObject TextLanguage_Request::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextLanguage_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextLanguage_Request(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString getCallingPackageName() const;
-		android::os::Bundle getExtras() const;
-		JString getText() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.textclassifier.TextLanguage$Request",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint TextLanguage_Request::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString TextLanguage_Request::getCallingPackageName() const
+	{
+		return callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::os::Bundle TextLanguage_Request::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JString TextLanguage_Request::getText() const
+	{
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline void TextLanguage_Request::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

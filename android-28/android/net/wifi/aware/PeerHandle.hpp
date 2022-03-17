@@ -1,25 +1,31 @@
 #pragma once
 
 #include "../../../../JObject.hpp"
-
-class JObject;
+#include "./PeerHandle.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class PeerHandle : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean PeerHandle::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PeerHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PeerHandle(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PeerHandle::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 

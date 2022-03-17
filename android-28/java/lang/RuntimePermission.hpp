@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../security/BasicPermission.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./RuntimePermission.def.hpp"
 
 namespace java::lang
 {
-	class RuntimePermission : public java::security::BasicPermission
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RuntimePermission(const char *className, const char *sig, Ts...agv) : java::security::BasicPermission(className, sig, std::forward<Ts>(agv)...) {}
-		RuntimePermission(QAndroidJniObject obj) : java::security::BasicPermission(obj) {}
-		
-		// Constructors
-		RuntimePermission(JString arg0);
-		RuntimePermission(JString arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline RuntimePermission::RuntimePermission(JString arg0)
+		: java::security::BasicPermission(
+			"java.lang.RuntimePermission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline RuntimePermission::RuntimePermission(JString arg0, JString arg1)
+		: java::security::BasicPermission(
+			"java.lang.RuntimePermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "../security/Permission.hpp"
+#include "../security/BasicPermission.hpp"
 

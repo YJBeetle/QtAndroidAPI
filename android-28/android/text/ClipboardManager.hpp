@@ -1,27 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ClipboardManager.def.hpp"
 
 namespace android::text
 {
-	class ClipboardManager : public JObject
+	// Fields
+	
+	// Constructors
+	inline ClipboardManager::ClipboardManager()
+		: JObject(
+			"android.text.ClipboardManager",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString ClipboardManager::getText() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClipboardManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ClipboardManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ClipboardManager();
-		
-		// Methods
-		JString getText() const;
-		jboolean hasText() const;
-		void setText(JString arg0) const;
-	};
+		return callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jboolean ClipboardManager::hasText() const
+	{
+		return callMethod<jboolean>(
+			"hasText",
+			"()Z"
+		);
+	}
+	inline void ClipboardManager::setText(JString arg0) const
+	{
+		callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::text
+
+// Base class headers
 

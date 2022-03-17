@@ -1,47 +1,138 @@
 #pragma once
 
-#include "../../../java/net/ServerSocket.hpp"
-
-class JArray;
-namespace java::net
-{
-	class InetAddress;
-}
-namespace javax::net::ssl
-{
-	class SSLParameters;
-}
+#include "../../../JArray.hpp"
+#include "../../../java/net/InetAddress.def.hpp"
+#include "./SSLParameters.def.hpp"
+#include "./SSLServerSocket.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLServerSocket : public java::net::ServerSocket
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean SSLServerSocket::getEnableSessionCreation() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLServerSocket(const char *className, const char *sig, Ts...agv) : java::net::ServerSocket(className, sig, std::forward<Ts>(agv)...) {}
-		SSLServerSocket(QAndroidJniObject obj) : java::net::ServerSocket(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean getEnableSessionCreation() const;
-		JArray getEnabledCipherSuites() const;
-		JArray getEnabledProtocols() const;
-		jboolean getNeedClientAuth() const;
-		javax::net::ssl::SSLParameters getSSLParameters() const;
-		JArray getSupportedCipherSuites() const;
-		JArray getSupportedProtocols() const;
-		jboolean getUseClientMode() const;
-		jboolean getWantClientAuth() const;
-		void setEnableSessionCreation(jboolean arg0) const;
-		void setEnabledCipherSuites(JArray arg0) const;
-		void setEnabledProtocols(JArray arg0) const;
-		void setNeedClientAuth(jboolean arg0) const;
-		void setSSLParameters(javax::net::ssl::SSLParameters arg0) const;
-		void setUseClientMode(jboolean arg0) const;
-		void setWantClientAuth(jboolean arg0) const;
-	};
+		return callMethod<jboolean>(
+			"getEnableSessionCreation",
+			"()Z"
+		);
+	}
+	inline JArray SSLServerSocket::getEnabledCipherSuites() const
+	{
+		return callObjectMethod(
+			"getEnabledCipherSuites",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray SSLServerSocket::getEnabledProtocols() const
+	{
+		return callObjectMethod(
+			"getEnabledProtocols",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jboolean SSLServerSocket::getNeedClientAuth() const
+	{
+		return callMethod<jboolean>(
+			"getNeedClientAuth",
+			"()Z"
+		);
+	}
+	inline javax::net::ssl::SSLParameters SSLServerSocket::getSSLParameters() const
+	{
+		return callObjectMethod(
+			"getSSLParameters",
+			"()Ljavax/net/ssl/SSLParameters;"
+		);
+	}
+	inline JArray SSLServerSocket::getSupportedCipherSuites() const
+	{
+		return callObjectMethod(
+			"getSupportedCipherSuites",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray SSLServerSocket::getSupportedProtocols() const
+	{
+		return callObjectMethod(
+			"getSupportedProtocols",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jboolean SSLServerSocket::getUseClientMode() const
+	{
+		return callMethod<jboolean>(
+			"getUseClientMode",
+			"()Z"
+		);
+	}
+	inline jboolean SSLServerSocket::getWantClientAuth() const
+	{
+		return callMethod<jboolean>(
+			"getWantClientAuth",
+			"()Z"
+		);
+	}
+	inline void SSLServerSocket::setEnableSessionCreation(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setEnableSessionCreation",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SSLServerSocket::setEnabledCipherSuites(JArray arg0) const
+	{
+		callMethod<void>(
+			"setEnabledCipherSuites",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void SSLServerSocket::setEnabledProtocols(JArray arg0) const
+	{
+		callMethod<void>(
+			"setEnabledProtocols",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void SSLServerSocket::setNeedClientAuth(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setNeedClientAuth",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SSLServerSocket::setSSLParameters(javax::net::ssl::SSLParameters arg0) const
+	{
+		callMethod<void>(
+			"setSSLParameters",
+			"(Ljavax/net/ssl/SSLParameters;)V",
+			arg0.object()
+		);
+	}
+	inline void SSLServerSocket::setUseClientMode(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setUseClientMode",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SSLServerSocket::setWantClientAuth(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setWantClientAuth",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/net/ServerSocket.hpp"
 

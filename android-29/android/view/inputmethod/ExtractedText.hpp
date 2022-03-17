@@ -1,41 +1,110 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./ExtractedText.def.hpp"
 
 namespace android::view::inputmethod
 {
-	class ExtractedText : public JObject
+	// Fields
+	inline JObject ExtractedText::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint FLAG_SELECTING();
-		static jint FLAG_SINGLE_LINE();
-		jint flags();
-		JString hint();
-		jint partialEndOffset();
-		jint partialStartOffset();
-		jint selectionEnd();
-		jint selectionStart();
-		jint startOffset();
-		JString text();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ExtractedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ExtractedText(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ExtractedText();
-		
-		// Methods
-		jint describeContents() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.inputmethod.ExtractedText",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint ExtractedText::FLAG_SELECTING()
+	{
+		return getStaticField<jint>(
+			"android.view.inputmethod.ExtractedText",
+			"FLAG_SELECTING"
+		);
+	}
+	inline jint ExtractedText::FLAG_SINGLE_LINE()
+	{
+		return getStaticField<jint>(
+			"android.view.inputmethod.ExtractedText",
+			"FLAG_SINGLE_LINE"
+		);
+	}
+	inline jint ExtractedText::flags()
+	{
+		return getField<jint>(
+			"flags"
+		);
+	}
+	inline JString ExtractedText::hint()
+	{
+		return getObjectField(
+			"hint",
+			"Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint ExtractedText::partialEndOffset()
+	{
+		return getField<jint>(
+			"partialEndOffset"
+		);
+	}
+	inline jint ExtractedText::partialStartOffset()
+	{
+		return getField<jint>(
+			"partialStartOffset"
+		);
+	}
+	inline jint ExtractedText::selectionEnd()
+	{
+		return getField<jint>(
+			"selectionEnd"
+		);
+	}
+	inline jint ExtractedText::selectionStart()
+	{
+		return getField<jint>(
+			"selectionStart"
+		);
+	}
+	inline jint ExtractedText::startOffset()
+	{
+		return getField<jint>(
+			"startOffset"
+		);
+	}
+	inline JString ExtractedText::text()
+	{
+		return getObjectField(
+			"text",
+			"Ljava/lang/CharSequence;"
+		);
+	}
+	
+	// Constructors
+	inline ExtractedText::ExtractedText()
+		: JObject(
+			"android.view.inputmethod.ExtractedText",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint ExtractedText::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void ExtractedText::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::inputmethod
+
+// Base class headers
 

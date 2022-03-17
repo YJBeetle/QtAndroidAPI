@@ -1,34 +1,71 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaStore_Audio_Artists.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Audio_Artists : public JObject
+	// Fields
+	inline JString MediaStore_Audio_Artists::CONTENT_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_TYPE();
-		static JString DEFAULT_SORT_ORDER();
-		static JString ENTRY_CONTENT_TYPE();
-		static android::net::Uri EXTERNAL_CONTENT_URI();
-		static android::net::Uri INTERNAL_CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaStore_Audio_Artists(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Artists(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaStore_Audio_Artists();
-		
-		// Methods
-		static android::net::Uri getContentUri(JString arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Artists",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Audio_Artists::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Artists",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Audio_Artists::ENTRY_CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Artists",
+			"ENTRY_CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri MediaStore_Audio_Artists::EXTERNAL_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Artists",
+			"EXTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline android::net::Uri MediaStore_Audio_Artists::INTERNAL_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Artists",
+			"INTERNAL_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	inline MediaStore_Audio_Artists::MediaStore_Audio_Artists()
+		: JObject(
+			"android.provider.MediaStore$Audio$Artists",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::Uri MediaStore_Audio_Artists::getContentUri(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Artists",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

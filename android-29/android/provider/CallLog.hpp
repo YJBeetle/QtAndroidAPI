@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./CallLog.def.hpp"
 
 namespace android::provider
 {
-	class CallLog : public JObject
+	// Fields
+	inline JString CallLog::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CallLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CallLog(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CallLog();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.CallLog",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri CallLog::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.CallLog",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	inline CallLog::CallLog()
+		: JObject(
+			"android.provider.CallLog",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

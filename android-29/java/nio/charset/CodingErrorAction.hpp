@@ -1,27 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./CodingErrorAction.def.hpp"
 
 namespace java::nio::charset
 {
-	class CodingErrorAction : public JObject
+	// Fields
+	inline java::nio::charset::CodingErrorAction CodingErrorAction::IGNORE()
 	{
-	public:
-		// Fields
-		static java::nio::charset::CodingErrorAction IGNORE();
-		static java::nio::charset::CodingErrorAction REPLACE();
-		static java::nio::charset::CodingErrorAction REPORT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CodingErrorAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CodingErrorAction(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"java.nio.charset.CodingErrorAction",
+			"IGNORE",
+			"Ljava/nio/charset/CodingErrorAction;"
+		);
+	}
+	inline java::nio::charset::CodingErrorAction CodingErrorAction::REPLACE()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.CodingErrorAction",
+			"REPLACE",
+			"Ljava/nio/charset/CodingErrorAction;"
+		);
+	}
+	inline java::nio::charset::CodingErrorAction CodingErrorAction::REPORT()
+	{
+		return getStaticObjectField(
+			"java.nio.charset.CodingErrorAction",
+			"REPORT",
+			"Ljava/nio/charset/CodingErrorAction;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString CodingErrorAction::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::charset
+
+// Base class headers
 

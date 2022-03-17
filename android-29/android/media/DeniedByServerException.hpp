@@ -1,24 +1,24 @@
 #pragma once
 
-#include "./MediaDrmException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./DeniedByServerException.def.hpp"
 
 namespace android::media
 {
-	class DeniedByServerException : public android::media::MediaDrmException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DeniedByServerException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		DeniedByServerException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
-		
-		// Constructors
-		DeniedByServerException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DeniedByServerException::DeniedByServerException(JString arg0)
+		: android::media::MediaDrmException(
+			"android.media.DeniedByServerException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "./MediaDrmException.hpp"
 

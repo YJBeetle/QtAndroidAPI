@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ArrayStoreException.def.hpp"
 
 namespace java::lang
 {
-	class ArrayStoreException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ArrayStoreException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ArrayStoreException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		ArrayStoreException();
-		ArrayStoreException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ArrayStoreException::ArrayStoreException()
+		: java::lang::RuntimeException(
+			"java.lang.ArrayStoreException",
+			"()V"
+		) {}
+	inline ArrayStoreException::ArrayStoreException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.ArrayStoreException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

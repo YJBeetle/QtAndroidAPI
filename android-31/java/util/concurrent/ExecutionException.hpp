@@ -1,26 +1,31 @@
 #pragma once
 
-#include "../../lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./ExecutionException.def.hpp"
 
 namespace java::util::concurrent
 {
-	class ExecutionException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ExecutionException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ExecutionException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		ExecutionException(JThrowable arg0);
-		ExecutionException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ExecutionException::ExecutionException(JThrowable arg0)
+		: java::lang::Exception(
+			"java.util.concurrent.ExecutionException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline ExecutionException::ExecutionException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"java.util.concurrent.ExecutionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Exception.hpp"
 

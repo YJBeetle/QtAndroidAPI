@@ -1,46 +1,195 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./TimeZoneFormat_Style.def.hpp"
 
 namespace android::icu::text
 {
-	class TimeZoneFormat_Style : public java::lang::Enum
+	// Fields
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::EXEMPLAR_LOCATION()
 	{
-	public:
-		// Fields
-		static android::icu::text::TimeZoneFormat_Style EXEMPLAR_LOCATION();
-		static android::icu::text::TimeZoneFormat_Style GENERIC_LOCATION();
-		static android::icu::text::TimeZoneFormat_Style GENERIC_LONG();
-		static android::icu::text::TimeZoneFormat_Style GENERIC_SHORT();
-		static android::icu::text::TimeZoneFormat_Style ISO_BASIC_FIXED();
-		static android::icu::text::TimeZoneFormat_Style ISO_BASIC_FULL();
-		static android::icu::text::TimeZoneFormat_Style ISO_BASIC_LOCAL_FIXED();
-		static android::icu::text::TimeZoneFormat_Style ISO_BASIC_LOCAL_FULL();
-		static android::icu::text::TimeZoneFormat_Style ISO_BASIC_LOCAL_SHORT();
-		static android::icu::text::TimeZoneFormat_Style ISO_BASIC_SHORT();
-		static android::icu::text::TimeZoneFormat_Style ISO_EXTENDED_FIXED();
-		static android::icu::text::TimeZoneFormat_Style ISO_EXTENDED_FULL();
-		static android::icu::text::TimeZoneFormat_Style ISO_EXTENDED_LOCAL_FIXED();
-		static android::icu::text::TimeZoneFormat_Style ISO_EXTENDED_LOCAL_FULL();
-		static android::icu::text::TimeZoneFormat_Style LOCALIZED_GMT();
-		static android::icu::text::TimeZoneFormat_Style LOCALIZED_GMT_SHORT();
-		static android::icu::text::TimeZoneFormat_Style SPECIFIC_LONG();
-		static android::icu::text::TimeZoneFormat_Style SPECIFIC_SHORT();
-		static android::icu::text::TimeZoneFormat_Style ZONE_ID();
-		static android::icu::text::TimeZoneFormat_Style ZONE_ID_SHORT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZoneFormat_Style(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneFormat_Style(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::TimeZoneFormat_Style valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"EXEMPLAR_LOCATION",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::GENERIC_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"GENERIC_LOCATION",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::GENERIC_LONG()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"GENERIC_LONG",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::GENERIC_SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"GENERIC_SHORT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_BASIC_FIXED()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_BASIC_FIXED",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_BASIC_FULL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_BASIC_FULL",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_BASIC_LOCAL_FIXED()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_BASIC_LOCAL_FIXED",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_BASIC_LOCAL_FULL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_BASIC_LOCAL_FULL",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_BASIC_LOCAL_SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_BASIC_LOCAL_SHORT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_BASIC_SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_BASIC_SHORT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_EXTENDED_FIXED()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_EXTENDED_FIXED",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_EXTENDED_FULL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_EXTENDED_FULL",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_EXTENDED_LOCAL_FIXED()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_EXTENDED_LOCAL_FIXED",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ISO_EXTENDED_LOCAL_FULL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ISO_EXTENDED_LOCAL_FULL",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::LOCALIZED_GMT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"LOCALIZED_GMT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::LOCALIZED_GMT_SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"LOCALIZED_GMT_SHORT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::SPECIFIC_LONG()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"SPECIFIC_LONG",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::SPECIFIC_SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"SPECIFIC_SHORT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ZONE_ID()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ZONE_ID",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::ZONE_ID_SHORT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.TimeZoneFormat$Style",
+			"ZONE_ID_SHORT",
+			"Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::TimeZoneFormat_Style TimeZoneFormat_Style::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$Style",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$Style;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TimeZoneFormat_Style::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$Style",
+			"values",
+			"()[Landroid/icu/text/TimeZoneFormat$Style;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

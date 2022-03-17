@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../util/AndroidException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Settings_SettingNotFoundException.def.hpp"
 
 namespace android::provider
 {
-	class Settings_SettingNotFoundException : public android::util::AndroidException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Settings_SettingNotFoundException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		Settings_SettingNotFoundException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-		
-		// Constructors
-		Settings_SettingNotFoundException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Settings_SettingNotFoundException::Settings_SettingNotFoundException(JString arg0)
+		: android::util::AndroidException(
+			"android.provider.Settings$SettingNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../util/AndroidException.hpp"
 

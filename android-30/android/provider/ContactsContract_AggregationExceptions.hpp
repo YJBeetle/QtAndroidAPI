@@ -1,36 +1,86 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_AggregationExceptions.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_AggregationExceptions : public JObject
+	// Fields
+	inline JString ContactsContract_AggregationExceptions::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString RAW_CONTACT_ID1();
-		static JString RAW_CONTACT_ID2();
-		static JString TYPE();
-		static jint TYPE_AUTOMATIC();
-		static jint TYPE_KEEP_SEPARATE();
-		static jint TYPE_KEEP_TOGETHER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_AggregationExceptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_AggregationExceptions(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_AggregationExceptions::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_AggregationExceptions::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract_AggregationExceptions::RAW_CONTACT_ID1()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"RAW_CONTACT_ID1",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_AggregationExceptions::RAW_CONTACT_ID2()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"RAW_CONTACT_ID2",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_AggregationExceptions::TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_AggregationExceptions::TYPE_AUTOMATIC()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"TYPE_AUTOMATIC"
+		);
+	}
+	inline jint ContactsContract_AggregationExceptions::TYPE_KEEP_SEPARATE()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"TYPE_KEEP_SEPARATE"
+		);
+	}
+	inline jint ContactsContract_AggregationExceptions::TYPE_KEEP_TOGETHER()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$AggregationExceptions",
+			"TYPE_KEEP_TOGETHER"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

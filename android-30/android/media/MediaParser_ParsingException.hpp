@@ -1,21 +1,17 @@
 #pragma once
 
-#include "../../java/io/IOException.hpp"
+#include "./MediaParser_ParsingException.def.hpp"
 
 namespace android::media
 {
-	class MediaParser_ParsingException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaParser_ParsingException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_ParsingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/io/IOException.hpp"
 

@@ -1,30 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./TextClassificationContext.def.hpp"
+#include "../../../JString.hpp"
+#include "./TextClassificationContext_Builder.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassificationContext;
-}
-class JString;
-
-namespace android::view::textclassifier
-{
-	class TextClassificationContext_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline TextClassificationContext_Builder::TextClassificationContext_Builder(JString arg0, JString arg1)
+		: JObject(
+			"android.view.textclassifier.TextClassificationContext$Builder",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::view::textclassifier::TextClassificationContext TextClassificationContext_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextClassificationContext_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassificationContext_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TextClassificationContext_Builder(JString arg0, JString arg1);
-		
-		// Methods
-		android::view::textclassifier::TextClassificationContext build() const;
-		android::view::textclassifier::TextClassificationContext_Builder setWidgetVersion(JString arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/textclassifier/TextClassificationContext;"
+		);
+	}
+	inline android::view::textclassifier::TextClassificationContext_Builder TextClassificationContext_Builder::setWidgetVersion(JString arg0) const
+	{
+		return callObjectMethod(
+			"setWidgetVersion",
+			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassificationContext$Builder;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

@@ -1,43 +1,87 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::app
-{
-	class Activity;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::nfc
-{
-	class NfcAdapter;
-}
-class JString;
+#include "../../app/Activity.def.hpp"
+#include "../../content/ComponentName.def.hpp"
+#include "../NfcAdapter.def.hpp"
+#include "../../../JString.hpp"
+#include "./NfcFCardEmulation.def.hpp"
 
 namespace android::nfc::cardemulation
 {
-	class NfcFCardEmulation : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::nfc::cardemulation::NfcFCardEmulation NfcFCardEmulation::getInstance(android::nfc::NfcAdapter arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NfcFCardEmulation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NfcFCardEmulation(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::nfc::cardemulation::NfcFCardEmulation getInstance(android::nfc::NfcAdapter arg0);
-		jboolean disableService(android::app::Activity arg0) const;
-		jboolean enableService(android::app::Activity arg0, android::content::ComponentName arg1) const;
-		JString getNfcid2ForService(android::content::ComponentName arg0) const;
-		JString getSystemCodeForService(android::content::ComponentName arg0) const;
-		jboolean registerSystemCodeForService(android::content::ComponentName arg0, JString arg1) const;
-		jboolean setNfcid2ForService(android::content::ComponentName arg0, JString arg1) const;
-		jboolean unregisterSystemCodeForService(android::content::ComponentName arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.nfc.cardemulation.NfcFCardEmulation",
+			"getInstance",
+			"(Landroid/nfc/NfcAdapter;)Landroid/nfc/cardemulation/NfcFCardEmulation;",
+			arg0.object()
+		);
+	}
+	inline jboolean NfcFCardEmulation::disableService(android::app::Activity arg0) const
+	{
+		return callMethod<jboolean>(
+			"disableService",
+			"(Landroid/app/Activity;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean NfcFCardEmulation::enableService(android::app::Activity arg0, android::content::ComponentName arg1) const
+	{
+		return callMethod<jboolean>(
+			"enableService",
+			"(Landroid/app/Activity;Landroid/content/ComponentName;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline JString NfcFCardEmulation::getNfcid2ForService(android::content::ComponentName arg0) const
+	{
+		return callObjectMethod(
+			"getNfcid2ForService",
+			"(Landroid/content/ComponentName;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString NfcFCardEmulation::getSystemCodeForService(android::content::ComponentName arg0) const
+	{
+		return callObjectMethod(
+			"getSystemCodeForService",
+			"(Landroid/content/ComponentName;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline jboolean NfcFCardEmulation::registerSystemCodeForService(android::content::ComponentName arg0, JString arg1) const
+	{
+		return callMethod<jboolean>(
+			"registerSystemCodeForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jboolean NfcFCardEmulation::setNfcid2ForService(android::content::ComponentName arg0, JString arg1) const
+	{
+		return callMethod<jboolean>(
+			"setNfcid2ForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline jboolean NfcFCardEmulation::unregisterSystemCodeForService(android::content::ComponentName arg0) const
+	{
+		return callMethod<jboolean>(
+			"unregisterSystemCodeForService",
+			"(Landroid/content/ComponentName;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::nfc::cardemulation
+
+// Base class headers
 

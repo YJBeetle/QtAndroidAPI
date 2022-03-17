@@ -1,48 +1,89 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::io
-{
-	class InputStream;
-}
-class JString;
-namespace java::security::cert
-{
-	class CRL;
-}
-namespace java::security::cert
-{
-	class CertPath;
-}
-namespace java::security::cert
-{
-	class Certificate;
-}
+#include "../../io/InputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "./CRL.def.hpp"
+#include "./CertPath.def.hpp"
+#include "./Certificate.def.hpp"
+#include "./CertificateFactorySpi.def.hpp"
 
 namespace java::security::cert
 {
-	class CertificateFactorySpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline CertificateFactorySpi::CertificateFactorySpi()
+		: JObject(
+			"java.security.cert.CertificateFactorySpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::security::cert::CRL CertificateFactorySpi::engineGenerateCRL(java::io::InputStream arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CertificateFactorySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CertificateFactorySpi();
-		
-		// Methods
-		java::security::cert::CRL engineGenerateCRL(java::io::InputStream arg0) const;
-		JObject engineGenerateCRLs(java::io::InputStream arg0) const;
-		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0) const;
-		java::security::cert::CertPath engineGenerateCertPath(JObject arg0) const;
-		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, JString arg1) const;
-		java::security::cert::Certificate engineGenerateCertificate(java::io::InputStream arg0) const;
-		JObject engineGenerateCertificates(java::io::InputStream arg0) const;
-		JObject engineGetCertPathEncodings() const;
-	};
+		return callObjectMethod(
+			"engineGenerateCRL",
+			"(Ljava/io/InputStream;)Ljava/security/cert/CRL;",
+			arg0.object()
+		);
+	}
+	inline JObject CertificateFactorySpi::engineGenerateCRLs(java::io::InputStream arg0) const
+	{
+		return callObjectMethod(
+			"engineGenerateCRLs",
+			"(Ljava/io/InputStream;)Ljava/util/Collection;",
+			arg0.object()
+		);
+	}
+	inline java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0) const
+	{
+		return callObjectMethod(
+			"engineGenerateCertPath",
+			"(Ljava/io/InputStream;)Ljava/security/cert/CertPath;",
+			arg0.object()
+		);
+	}
+	inline java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(JObject arg0) const
+	{
+		return callObjectMethod(
+			"engineGenerateCertPath",
+			"(Ljava/util/List;)Ljava/security/cert/CertPath;",
+			arg0.object()
+		);
+	}
+	inline java::security::cert::CertPath CertificateFactorySpi::engineGenerateCertPath(java::io::InputStream arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"engineGenerateCertPath",
+			"(Ljava/io/InputStream;Ljava/lang/String;)Ljava/security/cert/CertPath;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline java::security::cert::Certificate CertificateFactorySpi::engineGenerateCertificate(java::io::InputStream arg0) const
+	{
+		return callObjectMethod(
+			"engineGenerateCertificate",
+			"(Ljava/io/InputStream;)Ljava/security/cert/Certificate;",
+			arg0.object()
+		);
+	}
+	inline JObject CertificateFactorySpi::engineGenerateCertificates(java::io::InputStream arg0) const
+	{
+		return callObjectMethod(
+			"engineGenerateCertificates",
+			"(Ljava/io/InputStream;)Ljava/util/Collection;",
+			arg0.object()
+		);
+	}
+	inline JObject CertificateFactorySpi::engineGetCertPathEncodings() const
+	{
+		return callObjectMethod(
+			"engineGetCertPathEncodings",
+			"()Ljava/util/Iterator;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

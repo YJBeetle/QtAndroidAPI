@@ -1,44 +1,90 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AssistStructure_WindowNode.def.hpp"
+#include "../../content/ComponentName.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./AssistStructure.def.hpp"
 
 namespace android::app::assist
 {
-	class AssistStructure_WindowNode;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::os
-{
-	class Parcel;
-}
-
-namespace android::app::assist
-{
-	class AssistStructure : public JObject
+	// Fields
+	inline JObject AssistStructure::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AssistStructure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AssistStructure(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AssistStructure();
-		
-		// Methods
-		jint describeContents() const;
-		jlong getAcquisitionEndTime() const;
-		jlong getAcquisitionStartTime() const;
-		android::content::ComponentName getActivityComponent() const;
-		android::app::assist::AssistStructure_WindowNode getWindowNodeAt(jint arg0) const;
-		jint getWindowNodeCount() const;
-		jboolean isHomeActivity() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.assist.AssistStructure",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline AssistStructure::AssistStructure()
+		: JObject(
+			"android.app.assist.AssistStructure",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jint AssistStructure::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jlong AssistStructure::getAcquisitionEndTime() const
+	{
+		return callMethod<jlong>(
+			"getAcquisitionEndTime",
+			"()J"
+		);
+	}
+	inline jlong AssistStructure::getAcquisitionStartTime() const
+	{
+		return callMethod<jlong>(
+			"getAcquisitionStartTime",
+			"()J"
+		);
+	}
+	inline android::content::ComponentName AssistStructure::getActivityComponent() const
+	{
+		return callObjectMethod(
+			"getActivityComponent",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	inline android::app::assist::AssistStructure_WindowNode AssistStructure::getWindowNodeAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"getWindowNodeAt",
+			"(I)Landroid/app/assist/AssistStructure$WindowNode;",
+			arg0
+		);
+	}
+	inline jint AssistStructure::getWindowNodeCount() const
+	{
+		return callMethod<jint>(
+			"getWindowNodeCount",
+			"()I"
+		);
+	}
+	inline jboolean AssistStructure::isHomeActivity() const
+	{
+		return callMethod<jboolean>(
+			"isHomeActivity",
+			"()Z"
+		);
+	}
+	inline void AssistStructure::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::assist
+
+// Base class headers
 

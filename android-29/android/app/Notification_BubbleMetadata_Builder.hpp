@@ -1,43 +1,86 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Notification_BubbleMetadata.def.hpp"
+#include "./PendingIntent.def.hpp"
+#include "../graphics/drawable/Icon.def.hpp"
+#include "./Notification_BubbleMetadata_Builder.def.hpp"
 
 namespace android::app
 {
-	class Notification_BubbleMetadata;
-}
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::graphics::drawable
-{
-	class Icon;
-}
-
-namespace android::app
-{
-	class Notification_BubbleMetadata_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder()
+		: JObject(
+			"android.app.Notification$BubbleMetadata$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::Notification_BubbleMetadata Notification_BubbleMetadata_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_BubbleMetadata_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_BubbleMetadata_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Notification_BubbleMetadata_Builder();
-		
-		// Methods
-		android::app::Notification_BubbleMetadata build() const;
-		android::app::Notification_BubbleMetadata_Builder setAutoExpandBubble(jboolean arg0) const;
-		android::app::Notification_BubbleMetadata_Builder setDeleteIntent(android::app::PendingIntent arg0) const;
-		android::app::Notification_BubbleMetadata_Builder setDesiredHeight(jint arg0) const;
-		android::app::Notification_BubbleMetadata_Builder setDesiredHeightResId(jint arg0) const;
-		android::app::Notification_BubbleMetadata_Builder setIcon(android::graphics::drawable::Icon arg0) const;
-		android::app::Notification_BubbleMetadata_Builder setIntent(android::app::PendingIntent arg0) const;
-		android::app::Notification_BubbleMetadata_Builder setSuppressNotification(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/Notification$BubbleMetadata;"
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setAutoExpandBubble(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setAutoExpandBubble",
+			"(Z)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDeleteIntent(android::app::PendingIntent arg0) const
+	{
+		return callObjectMethod(
+			"setDeleteIntent",
+			"(Landroid/app/PendingIntent;)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeight(jint arg0) const
+	{
+		return callObjectMethod(
+			"setDesiredHeight",
+			"(I)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setDesiredHeightResId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setDesiredHeightResId",
+			"(I)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIcon(android::graphics::drawable::Icon arg0) const
+	{
+		return callObjectMethod(
+			"setIcon",
+			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setIntent(android::app::PendingIntent arg0) const
+	{
+		return callObjectMethod(
+			"setIntent",
+			"(Landroid/app/PendingIntent;)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::app::Notification_BubbleMetadata_Builder Notification_BubbleMetadata_Builder::setSuppressNotification(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setSuppressNotification",
+			"(Z)Landroid/app/Notification$BubbleMetadata$Builder;",
+			arg0
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

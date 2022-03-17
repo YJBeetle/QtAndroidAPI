@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./KeyStoreParameter.def.hpp"
 
 namespace android::security
 {
-	class KeyStoreParameter : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean KeyStoreParameter::isEncryptionRequired() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyStoreParameter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStoreParameter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean isEncryptionRequired() const;
-	};
+		return callMethod<jboolean>(
+			"isEncryptionRequired",
+			"()Z"
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

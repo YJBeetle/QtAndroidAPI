@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./CursorJoiner_Result.def.hpp"
 
 namespace android::database
 {
-	class CursorJoiner_Result : public java::lang::Enum
+	// Fields
+	inline android::database::CursorJoiner_Result CursorJoiner_Result::BOTH()
 	{
-	public:
-		// Fields
-		static android::database::CursorJoiner_Result BOTH();
-		static android::database::CursorJoiner_Result LEFT();
-		static android::database::CursorJoiner_Result RIGHT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CursorJoiner_Result(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		CursorJoiner_Result(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::database::CursorJoiner_Result valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.database.CursorJoiner$Result",
+			"BOTH",
+			"Landroid/database/CursorJoiner$Result;"
+		);
+	}
+	inline android::database::CursorJoiner_Result CursorJoiner_Result::LEFT()
+	{
+		return getStaticObjectField(
+			"android.database.CursorJoiner$Result",
+			"LEFT",
+			"Landroid/database/CursorJoiner$Result;"
+		);
+	}
+	inline android::database::CursorJoiner_Result CursorJoiner_Result::RIGHT()
+	{
+		return getStaticObjectField(
+			"android.database.CursorJoiner$Result",
+			"RIGHT",
+			"Landroid/database/CursorJoiner$Result;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::database::CursorJoiner_Result CursorJoiner_Result::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.database.CursorJoiner$Result",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/database/CursorJoiner$Result;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray CursorJoiner_Result::values()
+	{
+		return callStaticObjectMethod(
+			"android.database.CursorJoiner$Result",
+			"values",
+			"()[Landroid/database/CursorJoiner$Result;"
+		);
+	}
 } // namespace android::database
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

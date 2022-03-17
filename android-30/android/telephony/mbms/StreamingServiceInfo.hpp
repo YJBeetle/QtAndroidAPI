@@ -1,29 +1,41 @@
 #pragma once
 
-#include "./ServiceInfo.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./StreamingServiceInfo.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class StreamingServiceInfo : public android::telephony::mbms::ServiceInfo
+	// Fields
+	inline JObject StreamingServiceInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StreamingServiceInfo(const char *className, const char *sig, Ts...agv) : android::telephony::mbms::ServiceInfo(className, sig, std::forward<Ts>(agv)...) {}
-		StreamingServiceInfo(QAndroidJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.mbms.StreamingServiceInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint StreamingServiceInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void StreamingServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
+#include "./ServiceInfo.hpp"
 

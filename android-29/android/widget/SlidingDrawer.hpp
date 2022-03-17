@@ -1,62 +1,191 @@
 #pragma once
 
-#include "../view/ViewGroup.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
-namespace android::view
-{
-	class View;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../graphics/Canvas.def.hpp"
+#include "../view/MotionEvent.def.hpp"
+#include "../view/View.def.hpp"
+#include "../../JString.hpp"
+#include "./SlidingDrawer.def.hpp"
 
 namespace android::widget
 {
-	class SlidingDrawer : public android::view::ViewGroup
+	// Fields
+	inline jint SlidingDrawer::ORIENTATION_HORIZONTAL()
 	{
-	public:
-		// Fields
-		static jint ORIENTATION_HORIZONTAL();
-		static jint ORIENTATION_VERTICAL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SlidingDrawer(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup(className, sig, std::forward<Ts>(agv)...) {}
-		SlidingDrawer(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
-		
-		// Constructors
-		SlidingDrawer(android::content::Context arg0, JObject arg1);
-		SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2);
-		SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
-		
-		// Methods
-		void animateClose() const;
-		void animateOpen() const;
-		void animateToggle() const;
-		void close() const;
-		JString getAccessibilityClassName() const;
-		android::view::View getContent() const;
-		android::view::View getHandle() const;
-		jboolean isMoving() const;
-		jboolean isOpened() const;
-		void lock() const;
-		jboolean onInterceptTouchEvent(android::view::MotionEvent arg0) const;
-		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
-		void open() const;
-		void setOnDrawerCloseListener(JObject arg0) const;
-		void setOnDrawerOpenListener(JObject arg0) const;
-		void setOnDrawerScrollListener(JObject arg0) const;
-		void toggle() const;
-		void unlock() const;
-	};
+		return getStaticField<jint>(
+			"android.widget.SlidingDrawer",
+			"ORIENTATION_HORIZONTAL"
+		);
+	}
+	inline jint SlidingDrawer::ORIENTATION_VERTICAL()
+	{
+		return getStaticField<jint>(
+			"android.widget.SlidingDrawer",
+			"ORIENTATION_VERTICAL"
+		);
+	}
+	
+	// Constructors
+	inline SlidingDrawer::SlidingDrawer(android::content::Context arg0, JObject arg1)
+		: android::view::ViewGroup(
+			"android.widget.SlidingDrawer",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline SlidingDrawer::SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2)
+		: android::view::ViewGroup(
+			"android.widget.SlidingDrawer",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		) {}
+	inline SlidingDrawer::SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: android::view::ViewGroup(
+			"android.widget.SlidingDrawer",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline void SlidingDrawer::animateClose() const
+	{
+		callMethod<void>(
+			"animateClose",
+			"()V"
+		);
+	}
+	inline void SlidingDrawer::animateOpen() const
+	{
+		callMethod<void>(
+			"animateOpen",
+			"()V"
+		);
+	}
+	inline void SlidingDrawer::animateToggle() const
+	{
+		callMethod<void>(
+			"animateToggle",
+			"()V"
+		);
+	}
+	inline void SlidingDrawer::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline JString SlidingDrawer::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::view::View SlidingDrawer::getContent() const
+	{
+		return callObjectMethod(
+			"getContent",
+			"()Landroid/view/View;"
+		);
+	}
+	inline android::view::View SlidingDrawer::getHandle() const
+	{
+		return callObjectMethod(
+			"getHandle",
+			"()Landroid/view/View;"
+		);
+	}
+	inline jboolean SlidingDrawer::isMoving() const
+	{
+		return callMethod<jboolean>(
+			"isMoving",
+			"()Z"
+		);
+	}
+	inline jboolean SlidingDrawer::isOpened() const
+	{
+		return callMethod<jboolean>(
+			"isOpened",
+			"()Z"
+		);
+	}
+	inline void SlidingDrawer::lock() const
+	{
+		callMethod<void>(
+			"lock",
+			"()V"
+		);
+	}
+	inline jboolean SlidingDrawer::onInterceptTouchEvent(android::view::MotionEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onInterceptTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean SlidingDrawer::onTouchEvent(android::view::MotionEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline void SlidingDrawer::open() const
+	{
+		callMethod<void>(
+			"open",
+			"()V"
+		);
+	}
+	inline void SlidingDrawer::setOnDrawerCloseListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnDrawerCloseListener",
+			"(Landroid/widget/SlidingDrawer$OnDrawerCloseListener;)V",
+			arg0.object()
+		);
+	}
+	inline void SlidingDrawer::setOnDrawerOpenListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnDrawerOpenListener",
+			"(Landroid/widget/SlidingDrawer$OnDrawerOpenListener;)V",
+			arg0.object()
+		);
+	}
+	inline void SlidingDrawer::setOnDrawerScrollListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnDrawerScrollListener",
+			"(Landroid/widget/SlidingDrawer$OnDrawerScrollListener;)V",
+			arg0.object()
+		);
+	}
+	inline void SlidingDrawer::toggle() const
+	{
+		callMethod<void>(
+			"toggle",
+			"()V"
+		);
+	}
+	inline void SlidingDrawer::unlock() const
+	{
+		callMethod<void>(
+			"unlock",
+			"()V"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 

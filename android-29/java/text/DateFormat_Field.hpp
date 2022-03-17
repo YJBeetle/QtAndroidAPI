@@ -1,45 +1,180 @@
 #pragma once
 
-#include "./Format_Field.hpp"
-
-class JArray;
-class JObject;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./DateFormat_Field.def.hpp"
 
 namespace java::text
 {
-	class DateFormat_Field : public java::text::Format_Field
+	// Fields
+	inline java::text::DateFormat_Field DateFormat_Field::AM_PM()
 	{
-	public:
-		// Fields
-		static java::text::DateFormat_Field AM_PM();
-		static java::text::DateFormat_Field DAY_OF_MONTH();
-		static java::text::DateFormat_Field DAY_OF_WEEK();
-		static java::text::DateFormat_Field DAY_OF_WEEK_IN_MONTH();
-		static java::text::DateFormat_Field DAY_OF_YEAR();
-		static java::text::DateFormat_Field ERA();
-		static java::text::DateFormat_Field HOUR0();
-		static java::text::DateFormat_Field HOUR1();
-		static java::text::DateFormat_Field HOUR_OF_DAY0();
-		static java::text::DateFormat_Field HOUR_OF_DAY1();
-		static java::text::DateFormat_Field MILLISECOND();
-		static java::text::DateFormat_Field MINUTE();
-		static java::text::DateFormat_Field MONTH();
-		static java::text::DateFormat_Field SECOND();
-		static java::text::DateFormat_Field TIME_ZONE();
-		static java::text::DateFormat_Field WEEK_OF_MONTH();
-		static java::text::DateFormat_Field WEEK_OF_YEAR();
-		static java::text::DateFormat_Field YEAR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DateFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::text::DateFormat_Field ofCalendarField(jint arg0);
-		jint getCalendarField() const;
-	};
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"AM_PM",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::DAY_OF_MONTH()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"DAY_OF_MONTH",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"DAY_OF_WEEK",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK_IN_MONTH()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"DAY_OF_WEEK_IN_MONTH",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::DAY_OF_YEAR()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"DAY_OF_YEAR",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::ERA()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"ERA",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::HOUR0()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"HOUR0",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::HOUR1()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"HOUR1",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY0()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"HOUR_OF_DAY0",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY1()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"HOUR_OF_DAY1",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::MILLISECOND()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"MILLISECOND",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::MINUTE()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"MINUTE",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::MONTH()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"MONTH",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::SECOND()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"SECOND",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::TIME_ZONE()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"TIME_ZONE",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::WEEK_OF_MONTH()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"WEEK_OF_MONTH",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::WEEK_OF_YEAR()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"WEEK_OF_YEAR",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	inline java::text::DateFormat_Field DateFormat_Field::YEAR()
+	{
+		return getStaticObjectField(
+			"java.text.DateFormat$Field",
+			"YEAR",
+			"Ljava/text/DateFormat$Field;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::text::DateFormat_Field DateFormat_Field::ofCalendarField(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.text.DateFormat$Field",
+			"ofCalendarField",
+			"(I)Ljava/text/DateFormat$Field;",
+			arg0
+		);
+	}
+	inline jint DateFormat_Field::getCalendarField() const
+	{
+		return callMethod<jint>(
+			"getCalendarField",
+			"()I"
+		);
+	}
 } // namespace java::text
+
+// Base class headers
+#include "./AttributedCharacterIterator_Attribute.hpp"
+#include "./Format_Field.hpp"
 

@@ -1,27 +1,44 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaDrm_LogMessage.def.hpp"
 
 namespace android::media
 {
-	class MediaDrm_LogMessage : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString MediaDrm_LogMessage::getMessage() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_LogMessage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_LogMessage(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getMessage() const;
-		jint getPriority() const;
-		jlong getTimestampMillis() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MediaDrm_LogMessage::getPriority() const
+	{
+		return callMethod<jint>(
+			"getPriority",
+			"()I"
+		);
+	}
+	inline jlong MediaDrm_LogMessage::getTimestampMillis() const
+	{
+		return callMethod<jlong>(
+			"getTimestampMillis",
+			"()J"
+		);
+	}
+	inline JString MediaDrm_LogMessage::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

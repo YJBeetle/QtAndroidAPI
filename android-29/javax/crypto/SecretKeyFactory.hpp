@@ -1,41 +1,88 @@
 #pragma once
 
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
-namespace java::security
-{
-	class Provider;
-}
-namespace javax::crypto
-{
-	class SecretKeyFactorySpi;
-}
+#include "../../JString.hpp"
+#include "../../java/security/Provider.def.hpp"
+#include "./SecretKeyFactorySpi.def.hpp"
+#include "./SecretKeyFactory.def.hpp"
 
 namespace javax::crypto
 {
-	class SecretKeyFactory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline javax::crypto::SecretKeyFactory SecretKeyFactory::getInstance(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecretKeyFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeyFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static javax::crypto::SecretKeyFactory getInstance(JString arg0);
-		static javax::crypto::SecretKeyFactory getInstance(JString arg0, JString arg1);
-		static javax::crypto::SecretKeyFactory getInstance(JString arg0, java::security::Provider arg1);
-		JObject generateSecret(JObject arg0) const;
-		JString getAlgorithm() const;
-		JObject getKeySpec(JObject arg0, JClass arg1) const;
-		java::security::Provider getProvider() const;
-		JObject translateKey(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"javax.crypto.SecretKeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
+			arg0.object<jstring>()
+		);
+	}
+	inline javax::crypto::SecretKeyFactory SecretKeyFactory::getInstance(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"javax.crypto.SecretKeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline javax::crypto::SecretKeyFactory SecretKeyFactory::getInstance(JString arg0, java::security::Provider arg1)
+	{
+		return callStaticObjectMethod(
+			"javax.crypto.SecretKeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/SecretKeyFactory;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JObject SecretKeyFactory::generateSecret(JObject arg0) const
+	{
+		return callObjectMethod(
+			"generateSecret",
+			"(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;",
+			arg0.object()
+		);
+	}
+	inline JString SecretKeyFactory::getAlgorithm() const
+	{
+		return callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject SecretKeyFactory::getKeySpec(JObject arg0, JClass arg1) const
+	{
+		return callObjectMethod(
+			"getKeySpec",
+			"(Ljavax/crypto/SecretKey;Ljava/lang/Class;)Ljava/security/spec/KeySpec;",
+			arg0.object(),
+			arg1.object<jclass>()
+		);
+	}
+	inline java::security::Provider SecretKeyFactory::getProvider() const
+	{
+		return callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	inline JObject SecretKeyFactory::translateKey(JObject arg0) const
+	{
+		return callObjectMethod(
+			"translateKey",
+			"(Ljavax/crypto/SecretKey;)Ljavax/crypto/SecretKey;",
+			arg0.object()
+		);
+	}
 } // namespace javax::crypto
+
+// Base class headers
 

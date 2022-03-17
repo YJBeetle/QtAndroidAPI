@@ -1,24 +1,35 @@
 #pragma once
 
-#include "./Observable.hpp"
+#include "./DataSetObservable.def.hpp"
 
 namespace android::database
 {
-	class DataSetObservable : public android::database::Observable
+	// Fields
+	
+	// Constructors
+	inline DataSetObservable::DataSetObservable()
+		: android::database::Observable(
+			"android.database.DataSetObservable",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DataSetObservable::notifyChanged() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DataSetObservable(const char *className, const char *sig, Ts...agv) : android::database::Observable(className, sig, std::forward<Ts>(agv)...) {}
-		DataSetObservable(QAndroidJniObject obj) : android::database::Observable(obj) {}
-		
-		// Constructors
-		DataSetObservable();
-		
-		// Methods
-		void notifyChanged() const;
-		void notifyInvalidated() const;
-	};
+		callMethod<void>(
+			"notifyChanged",
+			"()V"
+		);
+	}
+	inline void DataSetObservable::notifyInvalidated() const
+	{
+		callMethod<void>(
+			"notifyInvalidated",
+			"()V"
+		);
+	}
 } // namespace android::database
+
+// Base class headers
+#include "./Observable.hpp"
 

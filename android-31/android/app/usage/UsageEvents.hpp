@@ -1,35 +1,56 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./UsageEvents_Event.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./UsageEvents.def.hpp"
 
 namespace android::app::usage
 {
-	class UsageEvents_Event;
-}
-namespace android::os
-{
-	class Parcel;
-}
-
-namespace android::app::usage
-{
-	class UsageEvents : public JObject
+	// Fields
+	inline JObject UsageEvents::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UsageEvents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsageEvents(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean getNextEvent(android::app::usage::UsageEvents_Event arg0) const;
-		jboolean hasNextEvent() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.usage.UsageEvents",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint UsageEvents::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean UsageEvents::getNextEvent(android::app::usage::UsageEvents_Event arg0) const
+	{
+		return callMethod<jboolean>(
+			"getNextEvent",
+			"(Landroid/app/usage/UsageEvents$Event;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean UsageEvents::hasNextEvent() const
+	{
+		return callMethod<jboolean>(
+			"hasNextEvent",
+			"()Z"
+		);
+	}
+	inline void UsageEvents::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

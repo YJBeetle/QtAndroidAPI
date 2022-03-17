@@ -1,22 +1,22 @@
 #pragma once
 
-#include "./PathEffect.hpp"
+#include "./CornerPathEffect.def.hpp"
 
 namespace android::graphics
 {
-	class CornerPathEffect : public android::graphics::PathEffect
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CornerPathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		CornerPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-		
-		// Constructors
-		CornerPathEffect(jfloat arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CornerPathEffect::CornerPathEffect(jfloat arg0)
+		: android::graphics::PathEffect(
+			"android.graphics.CornerPathEffect",
+			"(F)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./PathEffect.hpp"
 

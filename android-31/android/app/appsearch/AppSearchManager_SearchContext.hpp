@@ -1,24 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./AppSearchManager_SearchContext.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchManager_SearchContext : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString AppSearchManager_SearchContext::getDatabaseName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppSearchManager_SearchContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchManager_SearchContext(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getDatabaseName() const;
-	};
+		return callObjectMethod(
+			"getDatabaseName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

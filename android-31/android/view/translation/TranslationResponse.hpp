@@ -1,42 +1,98 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::util
-{
-	class SparseArray;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../util/SparseArray.def.hpp"
+#include "../../../JString.hpp"
+#include "./TranslationResponse.def.hpp"
 
 namespace android::view::translation
 {
-	class TranslationResponse : public JObject
+	// Fields
+	inline JObject TranslationResponse::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint TRANSLATION_STATUS_CONTEXT_UNSUPPORTED();
-		static jint TRANSLATION_STATUS_SUCCESS();
-		static jint TRANSLATION_STATUS_UNKNOWN_ERROR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TranslationResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationResponse(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::util::SparseArray getTranslationResponseValues() const;
-		jint getTranslationStatus() const;
-		android::util::SparseArray getViewTranslationResponses() const;
-		jboolean isFinalResponse() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.translation.TranslationResponse",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint TranslationResponse::TRANSLATION_STATUS_CONTEXT_UNSUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationResponse",
+			"TRANSLATION_STATUS_CONTEXT_UNSUPPORTED"
+		);
+	}
+	inline jint TranslationResponse::TRANSLATION_STATUS_SUCCESS()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationResponse",
+			"TRANSLATION_STATUS_SUCCESS"
+		);
+	}
+	inline jint TranslationResponse::TRANSLATION_STATUS_UNKNOWN_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationResponse",
+			"TRANSLATION_STATUS_UNKNOWN_ERROR"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint TranslationResponse::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::util::SparseArray TranslationResponse::getTranslationResponseValues() const
+	{
+		return callObjectMethod(
+			"getTranslationResponseValues",
+			"()Landroid/util/SparseArray;"
+		);
+	}
+	inline jint TranslationResponse::getTranslationStatus() const
+	{
+		return callMethod<jint>(
+			"getTranslationStatus",
+			"()I"
+		);
+	}
+	inline android::util::SparseArray TranslationResponse::getViewTranslationResponses() const
+	{
+		return callObjectMethod(
+			"getViewTranslationResponses",
+			"()Landroid/util/SparseArray;"
+		);
+	}
+	inline jboolean TranslationResponse::isFinalResponse() const
+	{
+		return callMethod<jboolean>(
+			"isFinalResponse",
+			"()Z"
+		);
+	}
+	inline JString TranslationResponse::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void TranslationResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::translation
+
+// Base class headers
 

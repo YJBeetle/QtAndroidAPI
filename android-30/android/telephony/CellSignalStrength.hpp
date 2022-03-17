@@ -1,33 +1,87 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./CellSignalStrength.def.hpp"
 
 namespace android::telephony
 {
-	class CellSignalStrength : public JObject
+	// Fields
+	inline jint CellSignalStrength::SIGNAL_STRENGTH_GOOD()
 	{
-	public:
-		// Fields
-		static jint SIGNAL_STRENGTH_GOOD();
-		static jint SIGNAL_STRENGTH_GREAT();
-		static jint SIGNAL_STRENGTH_MODERATE();
-		static jint SIGNAL_STRENGTH_NONE_OR_UNKNOWN();
-		static jint SIGNAL_STRENGTH_POOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CellSignalStrength(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CellSignalStrength(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getAsuLevel() const;
-		jint getDbm() const;
-		jint getLevel() const;
-		jint hashCode() const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.CellSignalStrength",
+			"SIGNAL_STRENGTH_GOOD"
+		);
+	}
+	inline jint CellSignalStrength::SIGNAL_STRENGTH_GREAT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.CellSignalStrength",
+			"SIGNAL_STRENGTH_GREAT"
+		);
+	}
+	inline jint CellSignalStrength::SIGNAL_STRENGTH_MODERATE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.CellSignalStrength",
+			"SIGNAL_STRENGTH_MODERATE"
+		);
+	}
+	inline jint CellSignalStrength::SIGNAL_STRENGTH_NONE_OR_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.CellSignalStrength",
+			"SIGNAL_STRENGTH_NONE_OR_UNKNOWN"
+		);
+	}
+	inline jint CellSignalStrength::SIGNAL_STRENGTH_POOR()
+	{
+		return getStaticField<jint>(
+			"android.telephony.CellSignalStrength",
+			"SIGNAL_STRENGTH_POOR"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean CellSignalStrength::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint CellSignalStrength::getAsuLevel() const
+	{
+		return callMethod<jint>(
+			"getAsuLevel",
+			"()I"
+		);
+	}
+	inline jint CellSignalStrength::getDbm() const
+	{
+		return callMethod<jint>(
+			"getDbm",
+			"()I"
+		);
+	}
+	inline jint CellSignalStrength::getLevel() const
+	{
+		return callMethod<jint>(
+			"getLevel",
+			"()I"
+		);
+	}
+	inline jint CellSignalStrength::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

@@ -1,33 +1,90 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./MessagePattern_ArgType.def.hpp"
 
 namespace android::icu::text
 {
-	class MessagePattern_ArgType : public java::lang::Enum
+	// Fields
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::CHOICE()
 	{
-	public:
-		// Fields
-		static android::icu::text::MessagePattern_ArgType CHOICE();
-		static android::icu::text::MessagePattern_ArgType NONE();
-		static android::icu::text::MessagePattern_ArgType PLURAL();
-		static android::icu::text::MessagePattern_ArgType SELECT();
-		static android::icu::text::MessagePattern_ArgType SELECTORDINAL();
-		static android::icu::text::MessagePattern_ArgType SIMPLE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MessagePattern_ArgType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		MessagePattern_ArgType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::MessagePattern_ArgType valueOf(JString arg0);
-		static JArray values();
-		jboolean hasPluralStyle() const;
-	};
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$ArgType",
+			"CHOICE",
+			"Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::NONE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$ArgType",
+			"NONE",
+			"Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::PLURAL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$ArgType",
+			"PLURAL",
+			"Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SELECT()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$ArgType",
+			"SELECT",
+			"Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SELECTORDINAL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$ArgType",
+			"SELECTORDINAL",
+			"Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::SIMPLE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.MessagePattern$ArgType",
+			"SIMPLE",
+			"Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::MessagePattern_ArgType MessagePattern_ArgType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.MessagePattern$ArgType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ArgType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray MessagePattern_ArgType::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.MessagePattern$ArgType",
+			"values",
+			"()[Landroid/icu/text/MessagePattern$ArgType;"
+		);
+	}
+	inline jboolean MessagePattern_ArgType::hasPluralStyle() const
+	{
+		return callMethod<jboolean>(
+			"hasPluralStyle",
+			"()Z"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

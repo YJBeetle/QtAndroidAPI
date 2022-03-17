@@ -1,31 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./TextLinks.def.hpp"
+#include "../../../JString.hpp"
+#include "./TextLinks_Builder.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextLinks;
-}
-class JString;
-
-namespace android::view::textclassifier
-{
-	class TextLinks_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline TextLinks_Builder::TextLinks_Builder(JString arg0)
+		: JObject(
+			"android.view.textclassifier.TextLinks$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::view::textclassifier::TextLinks_Builder TextLinks_Builder::addLink(jint arg0, jint arg1, JObject arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextLinks_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextLinks_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TextLinks_Builder(JString arg0);
-		
-		// Methods
-		android::view::textclassifier::TextLinks_Builder addLink(jint arg0, jint arg1, JObject arg2) const;
-		android::view::textclassifier::TextLinks build() const;
-		android::view::textclassifier::TextLinks_Builder clearTextLinks() const;
-	};
+		return callObjectMethod(
+			"addLink",
+			"(IILjava/util/Map;)Landroid/view/textclassifier/TextLinks$Builder;",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline android::view::textclassifier::TextLinks TextLinks_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/textclassifier/TextLinks;"
+		);
+	}
+	inline android::view::textclassifier::TextLinks_Builder TextLinks_Builder::clearTextLinks() const
+	{
+		return callObjectMethod(
+			"clearTextLinks",
+			"()Landroid/view/textclassifier/TextLinks$Builder;"
+		);
+	}
 } // namespace android::view::textclassifier
+
+// Base class headers
 

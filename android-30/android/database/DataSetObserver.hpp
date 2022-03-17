@@ -1,24 +1,34 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DataSetObserver.def.hpp"
 
 namespace android::database
 {
-	class DataSetObserver : public JObject
+	// Fields
+	
+	// Constructors
+	inline DataSetObserver::DataSetObserver()
+		: JObject(
+			"android.database.DataSetObserver",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DataSetObserver::onChanged() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DataSetObserver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DataSetObserver(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DataSetObserver();
-		
-		// Methods
-		void onChanged() const;
-		void onInvalidated() const;
-	};
+		callMethod<void>(
+			"onChanged",
+			"()V"
+		);
+	}
+	inline void DataSetObserver::onInvalidated() const
+	{
+		callMethod<void>(
+			"onInvalidated",
+			"()V"
+		);
+	}
 } // namespace android::database
+
+// Base class headers
 

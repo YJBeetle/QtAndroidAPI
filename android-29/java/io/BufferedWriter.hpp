@@ -1,36 +1,81 @@
 #pragma once
 
-#include "./Writer.hpp"
-
-class JCharArray;
-namespace java::io
-{
-	class Writer;
-}
-class JString;
+#include "../../JCharArray.hpp"
+#include "./Writer.def.hpp"
+#include "../../JString.hpp"
+#include "./BufferedWriter.def.hpp"
 
 namespace java::io
 {
-	class BufferedWriter : public java::io::Writer
+	// Fields
+	
+	// Constructors
+	inline BufferedWriter::BufferedWriter(java::io::Writer arg0)
+		: java::io::Writer(
+			"java.io.BufferedWriter",
+			"(Ljava/io/Writer;)V",
+			arg0.object()
+		) {}
+	inline BufferedWriter::BufferedWriter(java::io::Writer arg0, jint arg1)
+		: java::io::Writer(
+			"java.io.BufferedWriter",
+			"(Ljava/io/Writer;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void BufferedWriter::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BufferedWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
-		BufferedWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
-		
-		// Constructors
-		BufferedWriter(java::io::Writer arg0);
-		BufferedWriter(java::io::Writer arg0, jint arg1);
-		
-		// Methods
-		void close() const;
-		void flush() const;
-		void newLine() const;
-		void write(jint arg0) const;
-		void write(JCharArray arg0, jint arg1, jint arg2) const;
-		void write(JString arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void BufferedWriter::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline void BufferedWriter::newLine() const
+	{
+		callMethod<void>(
+			"newLine",
+			"()V"
+		);
+	}
+	inline void BufferedWriter::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void BufferedWriter::write(JCharArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([CII)V",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void BufferedWriter::write(JString arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"(Ljava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./Writer.hpp"
 

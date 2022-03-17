@@ -1,32 +1,53 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BluetoothSocket.def.hpp"
+#include "../../JString.hpp"
+#include "./BluetoothServerSocket.def.hpp"
 
 namespace android::bluetooth
 {
-	class BluetoothSocket;
-}
-class JString;
-
-namespace android::bluetooth
-{
-	class BluetoothServerSocket : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::bluetooth::BluetoothSocket BluetoothServerSocket::accept() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothServerSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothServerSocket(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::bluetooth::BluetoothSocket accept() const;
-		android::bluetooth::BluetoothSocket accept(jint arg0) const;
-		void close() const;
-		jint getPsm() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"accept",
+			"()Landroid/bluetooth/BluetoothSocket;"
+		);
+	}
+	inline android::bluetooth::BluetoothSocket BluetoothServerSocket::accept(jint arg0) const
+	{
+		return callObjectMethod(
+			"accept",
+			"(I)Landroid/bluetooth/BluetoothSocket;",
+			arg0
+		);
+	}
+	inline void BluetoothServerSocket::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint BluetoothServerSocket::getPsm() const
+	{
+		return callMethod<jint>(
+			"getPsm",
+			"()I"
+		);
+	}
+	inline JString BluetoothServerSocket::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::bluetooth
+
+// Base class headers
 

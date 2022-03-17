@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UnsupportedEncodingException.def.hpp"
 
 namespace java::io
 {
-	class UnsupportedEncodingException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnsupportedEncodingException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedEncodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		UnsupportedEncodingException();
-		UnsupportedEncodingException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnsupportedEncodingException::UnsupportedEncodingException()
+		: java::io::IOException(
+			"java.io.UnsupportedEncodingException",
+			"()V"
+		) {}
+	inline UnsupportedEncodingException::UnsupportedEncodingException(JString arg0)
+		: java::io::IOException(
+			"java.io.UnsupportedEncodingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

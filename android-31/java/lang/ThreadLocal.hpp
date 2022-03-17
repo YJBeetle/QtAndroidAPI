@@ -1,36 +1,54 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-namespace java::lang
-{
-	class Thread;
-}
-namespace java::util::concurrent::atomic
-{
-	class AtomicInteger;
-}
+#include "./Thread.def.hpp"
+#include "../util/concurrent/atomic/AtomicInteger.def.hpp"
+#include "./ThreadLocal.def.hpp"
 
 namespace java::lang
 {
-	class ThreadLocal : public JObject
+	// Fields
+	
+	// Constructors
+	inline ThreadLocal::ThreadLocal()
+		: JObject(
+			"java.lang.ThreadLocal",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::lang::ThreadLocal ThreadLocal::withInitial(JObject arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ThreadLocal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ThreadLocal(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ThreadLocal();
-		
-		// Methods
-		static java::lang::ThreadLocal withInitial(JObject arg0);
-		JObject get() const;
-		void remove() const;
-		void set(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"java.lang.ThreadLocal",
+			"withInitial",
+			"(Ljava/util/function/Supplier;)Ljava/lang/ThreadLocal;",
+			arg0.object()
+		);
+	}
+	inline JObject ThreadLocal::get() const
+	{
+		return callObjectMethod(
+			"get",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline void ThreadLocal::remove() const
+	{
+		callMethod<void>(
+			"remove",
+			"()V"
+		);
+	}
+	inline void ThreadLocal::set(JObject arg0) const
+	{
+		callMethod<void>(
+			"set",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
 

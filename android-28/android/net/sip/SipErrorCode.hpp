@@ -1,37 +1,116 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SipErrorCode.def.hpp"
 
 namespace android::net::sip
 {
-	class SipErrorCode : public JObject
+	// Fields
+	inline jint SipErrorCode::CLIENT_ERROR()
 	{
-	public:
-		// Fields
-		static jint CLIENT_ERROR();
-		static jint CROSS_DOMAIN_AUTHENTICATION();
-		static jint DATA_CONNECTION_LOST();
-		static jint INVALID_CREDENTIALS();
-		static jint INVALID_REMOTE_URI();
-		static jint IN_PROGRESS();
-		static jint NO_ERROR();
-		static jint PEER_NOT_REACHABLE();
-		static jint SERVER_ERROR();
-		static jint SERVER_UNREACHABLE();
-		static jint SOCKET_ERROR();
-		static jint TIME_OUT();
-		static jint TRANSACTION_TERMINTED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SipErrorCode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SipErrorCode(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JString toString(jint arg0);
-	};
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"CLIENT_ERROR"
+		);
+	}
+	inline jint SipErrorCode::CROSS_DOMAIN_AUTHENTICATION()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"CROSS_DOMAIN_AUTHENTICATION"
+		);
+	}
+	inline jint SipErrorCode::DATA_CONNECTION_LOST()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"DATA_CONNECTION_LOST"
+		);
+	}
+	inline jint SipErrorCode::INVALID_CREDENTIALS()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"INVALID_CREDENTIALS"
+		);
+	}
+	inline jint SipErrorCode::INVALID_REMOTE_URI()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"INVALID_REMOTE_URI"
+		);
+	}
+	inline jint SipErrorCode::IN_PROGRESS()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"IN_PROGRESS"
+		);
+	}
+	inline jint SipErrorCode::NO_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"NO_ERROR"
+		);
+	}
+	inline jint SipErrorCode::PEER_NOT_REACHABLE()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"PEER_NOT_REACHABLE"
+		);
+	}
+	inline jint SipErrorCode::SERVER_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"SERVER_ERROR"
+		);
+	}
+	inline jint SipErrorCode::SERVER_UNREACHABLE()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"SERVER_UNREACHABLE"
+		);
+	}
+	inline jint SipErrorCode::SOCKET_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"SOCKET_ERROR"
+		);
+	}
+	inline jint SipErrorCode::TIME_OUT()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"TIME_OUT"
+		);
+	}
+	inline jint SipErrorCode::TRANSACTION_TERMINTED()
+	{
+		return getStaticField<jint>(
+			"android.net.sip.SipErrorCode",
+			"TRANSACTION_TERMINTED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString SipErrorCode::toString(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.net.sip.SipErrorCode",
+			"toString",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
 } // namespace android::net::sip
+
+// Base class headers
 

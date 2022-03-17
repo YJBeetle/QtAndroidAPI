@@ -1,44 +1,91 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Canvas.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "./Picture.def.hpp"
 
 namespace android::graphics
 {
-	class Canvas;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-
-namespace android::graphics
-{
-	class Picture : public JObject
+	// Fields
+	
+	// Constructors
+	inline Picture::Picture()
+		: JObject(
+			"android.graphics.Picture",
+			"()V"
+		) {}
+	inline Picture::Picture(android::graphics::Picture &arg0)
+		: JObject(
+			"android.graphics.Picture",
+			"(Landroid/graphics/Picture;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::Picture Picture::createFromStream(java::io::InputStream arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Picture(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Picture(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Picture();
-		Picture(android::graphics::Picture &arg0);
-		
-		// Methods
-		static android::graphics::Picture createFromStream(java::io::InputStream arg0);
-		android::graphics::Canvas beginRecording(jint arg0, jint arg1) const;
-		void draw(android::graphics::Canvas arg0) const;
-		void endRecording() const;
-		jint getHeight() const;
-		jint getWidth() const;
-		jboolean requiresHardwareAcceleration() const;
-		void writeToStream(java::io::OutputStream arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.graphics.Picture",
+			"createFromStream",
+			"(Ljava/io/InputStream;)Landroid/graphics/Picture;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Canvas Picture::beginRecording(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"beginRecording",
+			"(II)Landroid/graphics/Canvas;",
+			arg0,
+			arg1
+		);
+	}
+	inline void Picture::draw(android::graphics::Canvas arg0) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.object()
+		);
+	}
+	inline void Picture::endRecording() const
+	{
+		callMethod<void>(
+			"endRecording",
+			"()V"
+		);
+	}
+	inline jint Picture::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint Picture::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline jboolean Picture::requiresHardwareAcceleration() const
+	{
+		return callMethod<jboolean>(
+			"requiresHardwareAcceleration",
+			"()Z"
+		);
+	}
+	inline void Picture::writeToStream(java::io::OutputStream arg0) const
+	{
+		callMethod<void>(
+			"writeToStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_mipmap.def.hpp"
 
 namespace android
 {
-	class R_mipmap : public JObject
+	// Fields
+	inline jint R_mipmap::sym_def_app_icon()
 	{
-	public:
-		// Fields
-		static jint sym_def_app_icon();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R_mipmap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_mipmap(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		R_mipmap();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$mipmap",
+			"sym_def_app_icon"
+		);
+	}
+	
+	// Constructors
+	inline R_mipmap::R_mipmap()
+		: JObject(
+			"android.R$mipmap",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

@@ -1,27 +1,45 @@
 #pragma once
 
-#include "../../../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./LSException.def.hpp"
 
 namespace org::w3c::dom::ls
 {
-	class LSException : public java::lang::RuntimeException
+	// Fields
+	inline jshort LSException::PARSE_ERR()
 	{
-	public:
-		// Fields
-		static jshort PARSE_ERR();
-		static jshort SERIALIZE_ERR();
-		jshort code();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LSException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		LSException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		LSException(jshort arg0, JString arg1);
-		
-		// Methods
-	};
+		return getStaticField<jshort>(
+			"org.w3c.dom.ls.LSException",
+			"PARSE_ERR"
+		);
+	}
+	inline jshort LSException::SERIALIZE_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.ls.LSException",
+			"SERIALIZE_ERR"
+		);
+	}
+	inline jshort LSException::code()
+	{
+		return getField<jshort>(
+			"code"
+		);
+	}
+	
+	// Constructors
+	inline LSException::LSException(jshort arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"org.w3c.dom.ls.LSException",
+			"(SLjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace org::w3c::dom::ls
+
+// Base class headers
+#include "../../../../java/lang/Exception.hpp"
+#include "../../../../java/lang/RuntimeException.hpp"
 

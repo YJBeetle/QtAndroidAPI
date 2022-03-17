@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AccessNetworkConstants.def.hpp"
 
 namespace android::telephony
 {
-	class AccessNetworkConstants : public JObject
+	// Fields
+	inline jint AccessNetworkConstants::TRANSPORT_TYPE_WLAN()
 	{
-	public:
-		// Fields
-		static jint TRANSPORT_TYPE_WLAN();
-		static jint TRANSPORT_TYPE_WWAN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessNetworkConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessNetworkConstants(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants",
+			"TRANSPORT_TYPE_WLAN"
+		);
+	}
+	inline jint AccessNetworkConstants::TRANSPORT_TYPE_WWAN()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AccessNetworkConstants",
+			"TRANSPORT_TYPE_WWAN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

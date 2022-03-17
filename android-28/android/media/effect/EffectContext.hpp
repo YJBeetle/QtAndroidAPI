@@ -1,29 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./EffectFactory.def.hpp"
+#include "./EffectContext.def.hpp"
 
 namespace android::media::effect
 {
-	class EffectFactory;
-}
-
-namespace android::media::effect
-{
-	class EffectContext : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::effect::EffectContext EffectContext::createWithCurrentGlContext()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EffectContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EffectContext(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::media::effect::EffectContext createWithCurrentGlContext();
-		android::media::effect::EffectFactory getFactory() const;
-		void release() const;
-	};
+		return callStaticObjectMethod(
+			"android.media.effect.EffectContext",
+			"createWithCurrentGlContext",
+			"()Landroid/media/effect/EffectContext;"
+		);
+	}
+	inline android::media::effect::EffectFactory EffectContext::getFactory() const
+	{
+		return callObjectMethod(
+			"getFactory",
+			"()Landroid/media/effect/EffectFactory;"
+		);
+	}
+	inline void EffectContext::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
 } // namespace android::media::effect
+
+// Base class headers
 

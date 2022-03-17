@@ -1,30 +1,69 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./StreamingServiceCallback.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class StreamingServiceCallback : public JObject
+	// Fields
+	inline jint StreamingServiceCallback::SIGNAL_STRENGTH_UNAVAILABLE()
 	{
-	public:
-		// Fields
-		static jint SIGNAL_STRENGTH_UNAVAILABLE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StreamingServiceCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StreamingServiceCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		StreamingServiceCallback();
-		
-		// Methods
-		void onBroadcastSignalStrengthUpdated(jint arg0) const;
-		void onError(jint arg0, JString arg1) const;
-		void onMediaDescriptionUpdated() const;
-		void onStreamMethodUpdated(jint arg0) const;
-		void onStreamStateUpdated(jint arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.StreamingServiceCallback",
+			"SIGNAL_STRENGTH_UNAVAILABLE"
+		);
+	}
+	
+	// Constructors
+	inline StreamingServiceCallback::StreamingServiceCallback()
+		: JObject(
+			"android.telephony.mbms.StreamingServiceCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void StreamingServiceCallback::onBroadcastSignalStrengthUpdated(jint arg0) const
+	{
+		callMethod<void>(
+			"onBroadcastSignalStrengthUpdated",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void StreamingServiceCallback::onError(jint arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"onError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		);
+	}
+	inline void StreamingServiceCallback::onMediaDescriptionUpdated() const
+	{
+		callMethod<void>(
+			"onMediaDescriptionUpdated",
+			"()V"
+		);
+	}
+	inline void StreamingServiceCallback::onStreamMethodUpdated(jint arg0) const
+	{
+		callMethod<void>(
+			"onStreamMethodUpdated",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void StreamingServiceCallback::onStreamStateUpdated(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onStreamStateUpdated",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
 

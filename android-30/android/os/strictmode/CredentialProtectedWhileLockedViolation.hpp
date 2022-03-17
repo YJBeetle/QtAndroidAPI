@@ -1,21 +1,16 @@
 #pragma once
 
-#include "./Violation.hpp"
+#include "./CredentialProtectedWhileLockedViolation.def.hpp"
 
 namespace android::os::strictmode
 {
-	class CredentialProtectedWhileLockedViolation : public android::os::strictmode::Violation
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CredentialProtectedWhileLockedViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		CredentialProtectedWhileLockedViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::os::strictmode
+
+// Base class headers
+#include "./Violation.hpp"
 

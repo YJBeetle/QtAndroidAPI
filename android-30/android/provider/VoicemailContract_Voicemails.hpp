@@ -1,51 +1,209 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./VoicemailContract_Voicemails.def.hpp"
 
 namespace android::provider
 {
-	class VoicemailContract_Voicemails : public JObject
+	// Fields
+	inline JString VoicemailContract_Voicemails::ARCHIVED()
 	{
-	public:
-		// Fields
-		static JString ARCHIVED();
-		static JString BACKED_UP();
-		static android::net::Uri CONTENT_URI();
-		static JString DATE();
-		static JString DELETED();
-		static JString DIRTY();
-		static jint DIRTY_RETAIN();
-		static JString DIR_TYPE();
-		static JString DURATION();
-		static JString HAS_CONTENT();
-		static JString IS_OMTP_VOICEMAIL();
-		static JString IS_READ();
-		static JString ITEM_TYPE();
-		static JString LAST_MODIFIED();
-		static JString MIME_TYPE();
-		static JString NEW();
-		static JString NUMBER();
-		static JString PHONE_ACCOUNT_COMPONENT_NAME();
-		static JString PHONE_ACCOUNT_ID();
-		static JString RESTORED();
-		static JString SOURCE_DATA();
-		static JString SOURCE_PACKAGE();
-		static JString TRANSCRIPTION();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoicemailContract_Voicemails(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoicemailContract_Voicemails(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri buildSourceUri(JString arg0);
-	};
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"ARCHIVED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::BACKED_UP()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"BACKED_UP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri VoicemailContract_Voicemails::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::DATE()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"DATE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::DELETED()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"DELETED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::DIRTY()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"DIRTY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint VoicemailContract_Voicemails::DIRTY_RETAIN()
+	{
+		return getStaticField<jint>(
+			"android.provider.VoicemailContract$Voicemails",
+			"DIRTY_RETAIN"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::DIR_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"DIR_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::DURATION()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"DURATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::HAS_CONTENT()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"HAS_CONTENT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::IS_OMTP_VOICEMAIL()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"IS_OMTP_VOICEMAIL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::IS_READ()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"IS_READ",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::LAST_MODIFIED()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"LAST_MODIFIED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::MIME_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"MIME_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::NEW()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"NEW",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::NUMBER()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::PHONE_ACCOUNT_COMPONENT_NAME()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"PHONE_ACCOUNT_COMPONENT_NAME",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::PHONE_ACCOUNT_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"PHONE_ACCOUNT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::RESTORED()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"RESTORED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::SOURCE_DATA()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"SOURCE_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::SOURCE_PACKAGE()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"SOURCE_PACKAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString VoicemailContract_Voicemails::TRANSCRIPTION()
+	{
+		return getStaticObjectField(
+			"android.provider.VoicemailContract$Voicemails",
+			"TRANSCRIPTION",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri VoicemailContract_Voicemails::buildSourceUri(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.provider.VoicemailContract$Voicemails",
+			"buildSourceUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

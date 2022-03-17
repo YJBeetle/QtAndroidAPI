@@ -1,44 +1,79 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ActivityManager_TaskDescription.def.hpp"
+#include "../content/ComponentName.def.hpp"
+#include "../content/Intent.def.hpp"
+#include "../../JString.hpp"
+#include "./TaskInfo.def.hpp"
 
 namespace android::app
 {
-	class ActivityManager_TaskDescription;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Intent;
-}
-class JString;
-
-namespace android::app
-{
-	class TaskInfo : public JObject
+	// Fields
+	inline android::content::ComponentName TaskInfo::baseActivity()
 	{
-	public:
-		// Fields
-		android::content::ComponentName baseActivity();
-		android::content::Intent baseIntent();
-		jboolean isRunning();
-		jint numActivities();
-		android::content::ComponentName origActivity();
-		android::app::ActivityManager_TaskDescription taskDescription();
-		jint taskId();
-		android::content::ComponentName topActivity();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TaskInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TaskInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getObjectField(
+			"baseActivity",
+			"Landroid/content/ComponentName;"
+		);
+	}
+	inline android::content::Intent TaskInfo::baseIntent()
+	{
+		return getObjectField(
+			"baseIntent",
+			"Landroid/content/Intent;"
+		);
+	}
+	inline jboolean TaskInfo::isRunning()
+	{
+		return getField<jboolean>(
+			"isRunning"
+		);
+	}
+	inline jint TaskInfo::numActivities()
+	{
+		return getField<jint>(
+			"numActivities"
+		);
+	}
+	inline android::content::ComponentName TaskInfo::origActivity()
+	{
+		return getObjectField(
+			"origActivity",
+			"Landroid/content/ComponentName;"
+		);
+	}
+	inline android::app::ActivityManager_TaskDescription TaskInfo::taskDescription()
+	{
+		return getObjectField(
+			"taskDescription",
+			"Landroid/app/ActivityManager$TaskDescription;"
+		);
+	}
+	inline jint TaskInfo::taskId()
+	{
+		return getField<jint>(
+			"taskId"
+		);
+	}
+	inline android::content::ComponentName TaskInfo::topActivity()
+	{
+		return getObjectField(
+			"topActivity",
+			"Landroid/content/ComponentName;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString TaskInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

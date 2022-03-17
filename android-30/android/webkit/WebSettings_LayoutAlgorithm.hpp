@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./WebSettings_LayoutAlgorithm.def.hpp"
 
 namespace android::webkit
 {
-	class WebSettings_LayoutAlgorithm : public java::lang::Enum
+	// Fields
+	inline android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
 	{
-	public:
-		// Fields
-		static android::webkit::WebSettings_LayoutAlgorithm NARROW_COLUMNS();
-		static android::webkit::WebSettings_LayoutAlgorithm NORMAL();
-		static android::webkit::WebSettings_LayoutAlgorithm SINGLE_COLUMN();
-		static android::webkit::WebSettings_LayoutAlgorithm TEXT_AUTOSIZING();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebSettings_LayoutAlgorithm(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		WebSettings_LayoutAlgorithm(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::webkit::WebSettings_LayoutAlgorithm valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"NARROW_COLUMNS",
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
+	inline android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::NORMAL()
+	{
+		return getStaticObjectField(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"NORMAL",
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
+	inline android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::SINGLE_COLUMN()
+	{
+		return getStaticObjectField(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"SINGLE_COLUMN",
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
+	inline android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::TEXT_AUTOSIZING()
+	{
+		return getStaticObjectField(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"TEXT_AUTOSIZING",
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::webkit::WebSettings_LayoutAlgorithm WebSettings_LayoutAlgorithm::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/webkit/WebSettings$LayoutAlgorithm;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray WebSettings_LayoutAlgorithm::values()
+	{
+		return callStaticObjectMethod(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"values",
+			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

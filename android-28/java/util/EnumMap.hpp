@@ -1,56 +1,156 @@
 #pragma once
 
-#include "./AbstractMap.hpp"
-
-class JArray;
-class JObjectArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JClass;
-namespace java::lang
-{
-	class Enum;
-}
-class JObject;
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JClass.hpp"
+#include "../lang/Enum.def.hpp"
+#include "../../JObject.hpp"
+#include "./EnumMap.def.hpp"
 
 namespace java::util
 {
-	class EnumMap : public java::util::AbstractMap
+	// Fields
+	
+	// Constructors
+	inline EnumMap::EnumMap(JClass arg0)
+		: java::util::AbstractMap(
+			"java.util.EnumMap",
+			"(Ljava/lang/Class;)V",
+			arg0.object<jclass>()
+		) {}
+	inline EnumMap::EnumMap(java::util::EnumMap &arg0)
+		: java::util::AbstractMap(
+			"java.util.EnumMap",
+			"(Ljava/util/EnumMap;)V",
+			arg0.object()
+		) {}
+	inline EnumMap::EnumMap(JObject arg0)
+		: java::util::AbstractMap(
+			"java.util.EnumMap",
+			"(Ljava/util/Map;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void EnumMap::clear() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EnumMap(const char *className, const char *sig, Ts...agv) : java::util::AbstractMap(className, sig, std::forward<Ts>(agv)...) {}
-		EnumMap(QAndroidJniObject obj) : java::util::AbstractMap(obj) {}
-		
-		// Constructors
-		EnumMap(JClass arg0);
-		EnumMap(java::util::EnumMap &arg0);
-		EnumMap(JObject arg0);
-		
-		// Methods
-		void clear() const;
-		java::util::EnumMap clone() const;
-		jboolean containsKey(JObject arg0) const;
-		jboolean containsValue(JObject arg0) const;
-		JObject entrySet() const;
-		jboolean equals(JObject arg0) const;
-		JObject get(JObject arg0) const;
-		jint hashCode() const;
-		JObject keySet() const;
-		JObject put(java::lang::Enum arg0, JObject arg1) const;
-		JObject put(JObject arg0, JObject arg1) const;
-		void putAll(JObject arg0) const;
-		JObject remove(JObject arg0) const;
-		jint size() const;
-		JObject values() const;
-	};
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline java::util::EnumMap EnumMap::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Ljava/util/EnumMap;"
+		);
+	}
+	inline jboolean EnumMap::containsKey(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean EnumMap::containsValue(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsValue",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject EnumMap::entrySet() const
+	{
+		return callObjectMethod(
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jboolean EnumMap::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject EnumMap::get(JObject arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint EnumMap::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JObject EnumMap::keySet() const
+	{
+		return callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject EnumMap::put(java::lang::Enum arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"put",
+			"(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JObject EnumMap::put(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"put",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline void EnumMap::putAll(JObject arg0) const
+	{
+		callMethod<void>(
+			"putAll",
+			"(Ljava/util/Map;)V",
+			arg0.object()
+		);
+	}
+	inline JObject EnumMap::remove(JObject arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint EnumMap::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JObject EnumMap::values() const
+	{
+		return callObjectMethod(
+			"values",
+			"()Ljava/util/Collection;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./AbstractMap.hpp"
 

@@ -1,40 +1,87 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::se::omapi
-{
-	class Channel;
-}
-namespace android::se::omapi
-{
-	class Reader;
-}
+#include "../../../JByteArray.hpp"
+#include "./Channel.def.hpp"
+#include "./Reader.def.hpp"
+#include "./Session.def.hpp"
 
 namespace android::se::omapi
 {
-	class Session : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Session::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Session(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void closeChannels() const;
-		JByteArray getATR() const;
-		android::se::omapi::Reader getReader() const;
-		jboolean isClosed() const;
-		android::se::omapi::Channel openBasicChannel(JByteArray arg0) const;
-		android::se::omapi::Channel openBasicChannel(JByteArray arg0, jbyte arg1) const;
-		android::se::omapi::Channel openLogicalChannel(JByteArray arg0) const;
-		android::se::omapi::Channel openLogicalChannel(JByteArray arg0, jbyte arg1) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void Session::closeChannels() const
+	{
+		callMethod<void>(
+			"closeChannels",
+			"()V"
+		);
+	}
+	inline JByteArray Session::getATR() const
+	{
+		return callObjectMethod(
+			"getATR",
+			"()[B"
+		);
+	}
+	inline android::se::omapi::Reader Session::getReader() const
+	{
+		return callObjectMethod(
+			"getReader",
+			"()Landroid/se/omapi/Reader;"
+		);
+	}
+	inline jboolean Session::isClosed() const
+	{
+		return callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
+	}
+	inline android::se::omapi::Channel Session::openBasicChannel(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"openBasicChannel",
+			"([B)Landroid/se/omapi/Channel;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline android::se::omapi::Channel Session::openBasicChannel(JByteArray arg0, jbyte arg1) const
+	{
+		return callObjectMethod(
+			"openBasicChannel",
+			"([BB)Landroid/se/omapi/Channel;",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline android::se::omapi::Channel Session::openLogicalChannel(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"openLogicalChannel",
+			"([B)Landroid/se/omapi/Channel;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline android::se::omapi::Channel Session::openLogicalChannel(JByteArray arg0, jbyte arg1) const
+	{
+		return callObjectMethod(
+			"openLogicalChannel",
+			"([BB)Landroid/se/omapi/Channel;",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
 } // namespace android::se::omapi
+
+// Base class headers
 

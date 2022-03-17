@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MbmsErrors_StreamingErrors.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_StreamingErrors : public JObject
+	// Fields
+	inline jint MbmsErrors_StreamingErrors::ERROR_CONCURRENT_SERVICE_LIMIT_REACHED()
 	{
-	public:
-		// Fields
-		static jint ERROR_CONCURRENT_SERVICE_LIMIT_REACHED();
-		static jint ERROR_DUPLICATE_START_STREAM();
-		static jint ERROR_UNABLE_TO_START_SERVICE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_StreamingErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_StreamingErrors(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$StreamingErrors",
+			"ERROR_CONCURRENT_SERVICE_LIMIT_REACHED"
+		);
+	}
+	inline jint MbmsErrors_StreamingErrors::ERROR_DUPLICATE_START_STREAM()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$StreamingErrors",
+			"ERROR_DUPLICATE_START_STREAM"
+		);
+	}
+	inline jint MbmsErrors_StreamingErrors::ERROR_UNABLE_TO_START_SERVICE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$StreamingErrors",
+			"ERROR_UNABLE_TO_START_SERVICE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony::mbms
+
+// Base class headers
 

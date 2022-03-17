@@ -1,29 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./EncoderProfiles_AudioProfile.def.hpp"
 
 namespace android::media
 {
-	class EncoderProfiles_AudioProfile : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint EncoderProfiles_AudioProfile::getBitrate() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EncoderProfiles_AudioProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EncoderProfiles_AudioProfile(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getBitrate() const;
-		jint getChannels() const;
-		jint getCodec() const;
-		JString getMediaType() const;
-		jint getProfile() const;
-		jint getSampleRate() const;
-	};
+		return callMethod<jint>(
+			"getBitrate",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_AudioProfile::getChannels() const
+	{
+		return callMethod<jint>(
+			"getChannels",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_AudioProfile::getCodec() const
+	{
+		return callMethod<jint>(
+			"getCodec",
+			"()I"
+		);
+	}
+	inline JString EncoderProfiles_AudioProfile::getMediaType() const
+	{
+		return callObjectMethod(
+			"getMediaType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint EncoderProfiles_AudioProfile::getProfile() const
+	{
+		return callMethod<jint>(
+			"getProfile",
+			"()I"
+		);
+	}
+	inline jint EncoderProfiles_AudioProfile::getSampleRate() const
+	{
+		return callMethod<jint>(
+			"getSampleRate",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

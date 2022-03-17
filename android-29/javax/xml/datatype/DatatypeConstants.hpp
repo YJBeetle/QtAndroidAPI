@@ -1,66 +1,286 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./DatatypeConstants_Field.def.hpp"
+#include "../namespace/QName.def.hpp"
+#include "./DatatypeConstants.def.hpp"
 
 namespace javax::xml::datatype
 {
-	class DatatypeConstants_Field;
-}
-namespace javax::xml::namespace_
-{
-	class QName;
-}
-
-namespace javax::xml::datatype
-{
-	class DatatypeConstants : public JObject
+	// Fields
+	inline jint DatatypeConstants::APRIL()
 	{
-	public:
-		// Fields
-		static jint APRIL();
-		static jint AUGUST();
-		static javax::xml::namespace_::QName DATE();
-		static javax::xml::namespace_::QName DATETIME();
-		static javax::xml::datatype::DatatypeConstants_Field DAYS();
-		static jint DECEMBER();
-		static javax::xml::namespace_::QName DURATION();
-		static javax::xml::namespace_::QName DURATION_DAYTIME();
-		static javax::xml::namespace_::QName DURATION_YEARMONTH();
-		static jint EQUAL();
-		static jint FEBRUARY();
-		static jint FIELD_UNDEFINED();
-		static javax::xml::namespace_::QName GDAY();
-		static javax::xml::namespace_::QName GMONTH();
-		static javax::xml::namespace_::QName GMONTHDAY();
-		static jint GREATER();
-		static javax::xml::namespace_::QName GYEAR();
-		static javax::xml::namespace_::QName GYEARMONTH();
-		static javax::xml::datatype::DatatypeConstants_Field HOURS();
-		static jint INDETERMINATE();
-		static jint JANUARY();
-		static jint JULY();
-		static jint JUNE();
-		static jint LESSER();
-		static jint MARCH();
-		static jint MAX_TIMEZONE_OFFSET();
-		static jint MAY();
-		static javax::xml::datatype::DatatypeConstants_Field MINUTES();
-		static jint MIN_TIMEZONE_OFFSET();
-		static javax::xml::datatype::DatatypeConstants_Field MONTHS();
-		static jint NOVEMBER();
-		static jint OCTOBER();
-		static javax::xml::datatype::DatatypeConstants_Field SECONDS();
-		static jint SEPTEMBER();
-		static javax::xml::namespace_::QName TIME();
-		static javax::xml::datatype::DatatypeConstants_Field YEARS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DatatypeConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeConstants(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"APRIL"
+		);
+	}
+	inline jint DatatypeConstants::AUGUST()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"AUGUST"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::DATE()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"DATE",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::DATETIME()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"DATETIME",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::DAYS()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"DAYS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	inline jint DatatypeConstants::DECEMBER()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"DECEMBER"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::DURATION()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"DURATION",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::DURATION_DAYTIME()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"DURATION_DAYTIME",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::DURATION_YEARMONTH()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"DURATION_YEARMONTH",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline jint DatatypeConstants::EQUAL()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"EQUAL"
+		);
+	}
+	inline jint DatatypeConstants::FEBRUARY()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"FEBRUARY"
+		);
+	}
+	inline jint DatatypeConstants::FIELD_UNDEFINED()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"FIELD_UNDEFINED"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::GDAY()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GDAY",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::GMONTH()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GMONTH",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::GMONTHDAY()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GMONTHDAY",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline jint DatatypeConstants::GREATER()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"GREATER"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::GYEAR()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GYEAR",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::GYEARMONTH()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GYEARMONTH",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::HOURS()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"HOURS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	inline jint DatatypeConstants::INDETERMINATE()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"INDETERMINATE"
+		);
+	}
+	inline jint DatatypeConstants::JANUARY()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"JANUARY"
+		);
+	}
+	inline jint DatatypeConstants::JULY()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"JULY"
+		);
+	}
+	inline jint DatatypeConstants::JUNE()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"JUNE"
+		);
+	}
+	inline jint DatatypeConstants::LESSER()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"LESSER"
+		);
+	}
+	inline jint DatatypeConstants::MARCH()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"MARCH"
+		);
+	}
+	inline jint DatatypeConstants::MAX_TIMEZONE_OFFSET()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"MAX_TIMEZONE_OFFSET"
+		);
+	}
+	inline jint DatatypeConstants::MAY()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"MAY"
+		);
+	}
+	inline javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::MINUTES()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"MINUTES",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	inline jint DatatypeConstants::MIN_TIMEZONE_OFFSET()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"MIN_TIMEZONE_OFFSET"
+		);
+	}
+	inline javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::MONTHS()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"MONTHS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	inline jint DatatypeConstants::NOVEMBER()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"NOVEMBER"
+		);
+	}
+	inline jint DatatypeConstants::OCTOBER()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"OCTOBER"
+		);
+	}
+	inline javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::SECONDS()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"SECONDS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	inline jint DatatypeConstants::SEPTEMBER()
+	{
+		return getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"SEPTEMBER"
+		);
+	}
+	inline javax::xml::namespace_::QName DatatypeConstants::TIME()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"TIME",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::datatype::DatatypeConstants_Field DatatypeConstants::YEARS()
+	{
+		return getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"YEARS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace javax::xml::datatype
+
+// Base class headers
 

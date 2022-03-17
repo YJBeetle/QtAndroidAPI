@@ -1,164 +1,975 @@
 #pragma once
 
-#include "./BaseObj.hpp"
-
-class JByteArray;
-class JFloatArray;
-class JIntArray;
-class JArray;
-class JArray;
-class JShortArray;
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::renderscript
-{
-	class Allocation_MipmapControl;
-}
-namespace android::renderscript
-{
-	class Element;
-}
-namespace android::renderscript
-{
-	class FieldPacker;
-}
-namespace android::renderscript
-{
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Type;
-}
-namespace android::view
-{
-	class Surface;
-}
-class JObject;
-class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
+#include "../../JByteArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JShortArray.hpp"
+#include "../content/res/Resources.def.hpp"
+#include "../graphics/Bitmap.def.hpp"
+#include "./Allocation_MipmapControl.def.hpp"
+#include "./Element.def.hpp"
+#include "./FieldPacker.def.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Type.def.hpp"
+#include "../view/Surface.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "./Allocation.def.hpp"
 
 namespace android::renderscript
 {
-	class Allocation : public android::renderscript::BaseObj
+	// Fields
+	inline jint Allocation::USAGE_GRAPHICS_CONSTANTS()
 	{
-	public:
-		// Fields
-		static jint USAGE_GRAPHICS_CONSTANTS();
-		static jint USAGE_GRAPHICS_RENDER_TARGET();
-		static jint USAGE_GRAPHICS_TEXTURE();
-		static jint USAGE_GRAPHICS_VERTEX();
-		static jint USAGE_IO_INPUT();
-		static jint USAGE_IO_OUTPUT();
-		static jint USAGE_SCRIPT();
-		static jint USAGE_SHARED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Allocation(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		Allocation(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JArray createAllocations(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, jint arg2, jint arg3);
-		static android::renderscript::Allocation createCubemapFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1);
-		static android::renderscript::Allocation createCubemapFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3);
-		static android::renderscript::Allocation createCubemapFromCubeFaces(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::graphics::Bitmap arg2, android::graphics::Bitmap arg3, android::graphics::Bitmap arg4, android::graphics::Bitmap arg5, android::graphics::Bitmap arg6);
-		static android::renderscript::Allocation createCubemapFromCubeFaces(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::graphics::Bitmap arg2, android::graphics::Bitmap arg3, android::graphics::Bitmap arg4, android::graphics::Bitmap arg5, android::graphics::Bitmap arg6, android::renderscript::Allocation_MipmapControl arg7, jint arg8);
-		static android::renderscript::Allocation createFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1);
-		static android::renderscript::Allocation createFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3);
-		static android::renderscript::Allocation createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2);
-		static android::renderscript::Allocation createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2, android::renderscript::Allocation_MipmapControl arg3, jint arg4);
-		static android::renderscript::Allocation createFromString(android::renderscript::RenderScript arg0, JString arg1, jint arg2);
-		static android::renderscript::Allocation createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2);
-		static android::renderscript::Allocation createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3);
-		static android::renderscript::Allocation createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1);
-		static android::renderscript::Allocation createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, jint arg2);
-		static android::renderscript::Allocation createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3);
-		void copy1DRangeFrom(jint arg0, jint arg1, JByteArray arg2) const;
-		void copy1DRangeFrom(jint arg0, jint arg1, JFloatArray arg2) const;
-		void copy1DRangeFrom(jint arg0, jint arg1, JIntArray arg2) const;
-		void copy1DRangeFrom(jint arg0, jint arg1, JShortArray arg2) const;
-		void copy1DRangeFrom(jint arg0, jint arg1, JObject arg2) const;
-		void copy1DRangeFrom(jint arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3) const;
-		void copy1DRangeFromUnchecked(jint arg0, jint arg1, JByteArray arg2) const;
-		void copy1DRangeFromUnchecked(jint arg0, jint arg1, JFloatArray arg2) const;
-		void copy1DRangeFromUnchecked(jint arg0, jint arg1, JIntArray arg2) const;
-		void copy1DRangeFromUnchecked(jint arg0, jint arg1, JShortArray arg2) const;
-		void copy1DRangeFromUnchecked(jint arg0, jint arg1, JObject arg2) const;
-		void copy1DRangeTo(jint arg0, jint arg1, JByteArray arg2) const;
-		void copy1DRangeTo(jint arg0, jint arg1, JFloatArray arg2) const;
-		void copy1DRangeTo(jint arg0, jint arg1, JIntArray arg2) const;
-		void copy1DRangeTo(jint arg0, jint arg1, JShortArray arg2) const;
-		void copy1DRangeTo(jint arg0, jint arg1, JObject arg2) const;
-		void copy1DRangeToUnchecked(jint arg0, jint arg1, JByteArray arg2) const;
-		void copy1DRangeToUnchecked(jint arg0, jint arg1, JFloatArray arg2) const;
-		void copy1DRangeToUnchecked(jint arg0, jint arg1, JIntArray arg2) const;
-		void copy1DRangeToUnchecked(jint arg0, jint arg1, JShortArray arg2) const;
-		void copy1DRangeToUnchecked(jint arg0, jint arg1, JObject arg2) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, android::graphics::Bitmap arg2) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4) const;
-		void copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6) const;
-		void copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const;
-		void copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4) const;
-		void copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const;
-		void copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4) const;
-		void copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4) const;
-		void copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6) const;
-		void copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::renderscript::Allocation arg6, jint arg7, jint arg8, jint arg9) const;
-		void copy3DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6) const;
-		void copyFrom(JByteArray arg0) const;
-		void copyFrom(JFloatArray arg0) const;
-		void copyFrom(JIntArray arg0) const;
-		void copyFrom(JArray arg0) const;
-		void copyFrom(JShortArray arg0) const;
-		void copyFrom(android::graphics::Bitmap arg0) const;
-		void copyFrom(android::renderscript::Allocation arg0) const;
-		void copyFrom(JObject arg0) const;
-		void copyFromUnchecked(JByteArray arg0) const;
-		void copyFromUnchecked(JFloatArray arg0) const;
-		void copyFromUnchecked(JIntArray arg0) const;
-		void copyFromUnchecked(JShortArray arg0) const;
-		void copyFromUnchecked(JObject arg0) const;
-		void copyTo(JByteArray arg0) const;
-		void copyTo(JFloatArray arg0) const;
-		void copyTo(JIntArray arg0) const;
-		void copyTo(JShortArray arg0) const;
-		void copyTo(android::graphics::Bitmap arg0) const;
-		void copyTo(JObject arg0) const;
-		void destroy() const;
-		void generateMipmaps() const;
-		java::nio::ByteBuffer getByteBuffer() const;
-		jint getBytesSize() const;
-		android::renderscript::Element getElement() const;
-		jlong getStride() const;
-		android::view::Surface getSurface() const;
-		jlong getTimeStamp() const;
-		android::renderscript::Type getType() const;
-		jint getUsage() const;
-		void ioReceive() const;
-		void ioSend() const;
-		void resize(jint arg0) const;
-		void setAutoPadding(jboolean arg0) const;
-		void setFromFieldPacker(jint arg0, android::renderscript::FieldPacker arg1) const;
-		void setFromFieldPacker(jint arg0, jint arg1, android::renderscript::FieldPacker arg2) const;
-		void setFromFieldPacker(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::FieldPacker arg4) const;
-		void setOnBufferAvailableListener(JObject arg0) const;
-		void setSurface(android::view::Surface arg0) const;
-		void syncAll(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_GRAPHICS_CONSTANTS"
+		);
+	}
+	inline jint Allocation::USAGE_GRAPHICS_RENDER_TARGET()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_GRAPHICS_RENDER_TARGET"
+		);
+	}
+	inline jint Allocation::USAGE_GRAPHICS_TEXTURE()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_GRAPHICS_TEXTURE"
+		);
+	}
+	inline jint Allocation::USAGE_GRAPHICS_VERTEX()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_GRAPHICS_VERTEX"
+		);
+	}
+	inline jint Allocation::USAGE_IO_INPUT()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_IO_INPUT"
+		);
+	}
+	inline jint Allocation::USAGE_IO_OUTPUT()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_IO_OUTPUT"
+		);
+	}
+	inline jint Allocation::USAGE_SCRIPT()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_SCRIPT"
+		);
+	}
+	inline jint Allocation::USAGE_SHARED()
+	{
+		return getStaticField<jint>(
+			"android.renderscript.Allocation",
+			"USAGE_SHARED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JArray Allocation::createAllocations(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, jint arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createAllocations",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;II)[Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createCubemapFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createCubemapFromBitmap",
+			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createCubemapFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createCubemapFromBitmap",
+			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createCubemapFromCubeFaces(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::graphics::Bitmap arg2, android::graphics::Bitmap arg3, android::graphics::Bitmap arg4, android::graphics::Bitmap arg5, android::graphics::Bitmap arg6)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createCubemapFromCubeFaces",
+			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object()
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createCubemapFromCubeFaces(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::graphics::Bitmap arg2, android::graphics::Bitmap arg3, android::graphics::Bitmap arg4, android::graphics::Bitmap arg5, android::graphics::Bitmap arg6, android::renderscript::Allocation_MipmapControl arg7, jint arg8)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createCubemapFromCubeFaces",
+			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object(),
+			arg6.object(),
+			arg7.object(),
+			arg8
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createFromBitmap",
+			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createFromBitmap(android::renderscript::RenderScript arg0, android::graphics::Bitmap arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createFromBitmap",
+			"(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createFromBitmapResource",
+			"(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createFromBitmapResource(android::renderscript::RenderScript arg0, android::content::res::Resources arg1, jint arg2, android::renderscript::Allocation_MipmapControl arg3, jint arg4)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createFromBitmapResource",
+			"(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;ILandroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object(),
+			arg4
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createFromString(android::renderscript::RenderScript arg0, JString arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createFromString",
+			"(Landroid/renderscript/RenderScript;Ljava/lang/String;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createSized",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createSized(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createSized",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createTyped",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createTyped",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline android::renderscript::Allocation Allocation::createTyped(android::renderscript::RenderScript arg0, android::renderscript::Type arg1, android::renderscript::Allocation_MipmapControl arg2, jint arg3)
+	{
+		return callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createTyped",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		);
+	}
+	inline void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JByteArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFrom",
+			"(II[B)V",
+			arg0,
+			arg1,
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JFloatArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFrom",
+			"(II[F)V",
+			arg0,
+			arg1,
+			arg2.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JIntArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFrom",
+			"(II[I)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JShortArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFrom",
+			"(II[S)V",
+			arg0,
+			arg1,
+			arg2.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFrom(jint arg0, jint arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFrom",
+			"(IILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2.object<jobject>()
+		);
+	}
+	inline void Allocation::copy1DRangeFrom(jint arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"copy1DRangeFrom",
+			"(IILandroid/renderscript/Allocation;I)V",
+			arg0,
+			arg1,
+			arg2.object(),
+			arg3
+		);
+	}
+	inline void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JByteArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFromUnchecked",
+			"(II[B)V",
+			arg0,
+			arg1,
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JFloatArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFromUnchecked",
+			"(II[F)V",
+			arg0,
+			arg1,
+			arg2.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JIntArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFromUnchecked",
+			"(II[I)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JShortArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFromUnchecked",
+			"(II[S)V",
+			arg0,
+			arg1,
+			arg2.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeFromUnchecked(jint arg0, jint arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeFromUnchecked",
+			"(IILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2.object<jobject>()
+		);
+	}
+	inline void Allocation::copy1DRangeTo(jint arg0, jint arg1, JByteArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeTo",
+			"(II[B)V",
+			arg0,
+			arg1,
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeTo(jint arg0, jint arg1, JFloatArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeTo",
+			"(II[F)V",
+			arg0,
+			arg1,
+			arg2.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeTo(jint arg0, jint arg1, JIntArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeTo",
+			"(II[I)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeTo(jint arg0, jint arg1, JShortArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeTo",
+			"(II[S)V",
+			arg0,
+			arg1,
+			arg2.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeTo(jint arg0, jint arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeTo",
+			"(IILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2.object<jobject>()
+		);
+	}
+	inline void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JByteArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeToUnchecked",
+			"(II[B)V",
+			arg0,
+			arg1,
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JFloatArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeToUnchecked",
+			"(II[F)V",
+			arg0,
+			arg1,
+			arg2.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JIntArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeToUnchecked",
+			"(II[I)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JShortArray arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeToUnchecked",
+			"(II[S)V",
+			arg0,
+			arg1,
+			arg2.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copy1DRangeToUnchecked(jint arg0, jint arg1, JObject arg2) const
+	{
+		callMethod<void>(
+			"copy1DRangeToUnchecked",
+			"(IILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2.object<jobject>()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, android::graphics::Bitmap arg2) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IILandroid/graphics/Bitmap;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IIII[B)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IIII[F)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IIII[I)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jintArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IIII[S)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IIIILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jobject>()
+		);
+	}
+	inline void Allocation::copy2DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6) const
+	{
+		callMethod<void>(
+			"copy2DRangeFrom",
+			"(IIIILandroid/renderscript/Allocation;II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object(),
+			arg5,
+			arg6
+		);
+	}
+	inline void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JByteArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeTo",
+			"(IIII[B)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JFloatArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeTo",
+			"(IIII[F)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JIntArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeTo",
+			"(IIII[I)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jintArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JShortArray arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeTo",
+			"(IIII[S)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copy2DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, JObject arg4) const
+	{
+		callMethod<void>(
+			"copy2DRangeTo",
+			"(IIIILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jobject>()
+		);
+	}
+	inline void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6) const
+	{
+		callMethod<void>(
+			"copy3DRangeFrom",
+			"(IIIIIILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6.object<jobject>()
+		);
+	}
+	inline void Allocation::copy3DRangeFrom(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, android::renderscript::Allocation arg6, jint arg7, jint arg8, jint arg9) const
+	{
+		callMethod<void>(
+			"copy3DRangeFrom",
+			"(IIIIIILandroid/renderscript/Allocation;III)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6.object(),
+			arg7,
+			arg8,
+			arg9
+		);
+	}
+	inline void Allocation::copy3DRangeTo(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JObject arg6) const
+	{
+		callMethod<void>(
+			"copy3DRangeTo",
+			"(IIIIIILjava/lang/Object;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6.object<jobject>()
+		);
+	}
+	inline void Allocation::copyFrom(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copyFrom(JFloatArray arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"([F)V",
+			arg0.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copyFrom(JIntArray arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"([I)V",
+			arg0.object<jintArray>()
+		);
+	}
+	inline void Allocation::copyFrom(JArray arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"([Landroid/renderscript/BaseObj;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void Allocation::copyFrom(JShortArray arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"([S)V",
+			arg0.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copyFrom(android::graphics::Bitmap arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.object()
+		);
+	}
+	inline void Allocation::copyFrom(android::renderscript::Allocation arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.object()
+		);
+	}
+	inline void Allocation::copyFrom(JObject arg0) const
+	{
+		callMethod<void>(
+			"copyFrom",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void Allocation::copyFromUnchecked(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"copyFromUnchecked",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copyFromUnchecked(JFloatArray arg0) const
+	{
+		callMethod<void>(
+			"copyFromUnchecked",
+			"([F)V",
+			arg0.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copyFromUnchecked(JIntArray arg0) const
+	{
+		callMethod<void>(
+			"copyFromUnchecked",
+			"([I)V",
+			arg0.object<jintArray>()
+		);
+	}
+	inline void Allocation::copyFromUnchecked(JShortArray arg0) const
+	{
+		callMethod<void>(
+			"copyFromUnchecked",
+			"([S)V",
+			arg0.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copyFromUnchecked(JObject arg0) const
+	{
+		callMethod<void>(
+			"copyFromUnchecked",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void Allocation::copyTo(JByteArray arg0) const
+	{
+		callMethod<void>(
+			"copyTo",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void Allocation::copyTo(JFloatArray arg0) const
+	{
+		callMethod<void>(
+			"copyTo",
+			"([F)V",
+			arg0.object<jfloatArray>()
+		);
+	}
+	inline void Allocation::copyTo(JIntArray arg0) const
+	{
+		callMethod<void>(
+			"copyTo",
+			"([I)V",
+			arg0.object<jintArray>()
+		);
+	}
+	inline void Allocation::copyTo(JShortArray arg0) const
+	{
+		callMethod<void>(
+			"copyTo",
+			"([S)V",
+			arg0.object<jshortArray>()
+		);
+	}
+	inline void Allocation::copyTo(android::graphics::Bitmap arg0) const
+	{
+		callMethod<void>(
+			"copyTo",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.object()
+		);
+	}
+	inline void Allocation::copyTo(JObject arg0) const
+	{
+		callMethod<void>(
+			"copyTo",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void Allocation::destroy() const
+	{
+		callMethod<void>(
+			"destroy",
+			"()V"
+		);
+	}
+	inline void Allocation::generateMipmaps() const
+	{
+		callMethod<void>(
+			"generateMipmaps",
+			"()V"
+		);
+	}
+	inline java::nio::ByteBuffer Allocation::getByteBuffer() const
+	{
+		return callObjectMethod(
+			"getByteBuffer",
+			"()Ljava/nio/ByteBuffer;"
+		);
+	}
+	inline jint Allocation::getBytesSize() const
+	{
+		return callMethod<jint>(
+			"getBytesSize",
+			"()I"
+		);
+	}
+	inline android::renderscript::Element Allocation::getElement() const
+	{
+		return callObjectMethod(
+			"getElement",
+			"()Landroid/renderscript/Element;"
+		);
+	}
+	inline jlong Allocation::getStride() const
+	{
+		return callMethod<jlong>(
+			"getStride",
+			"()J"
+		);
+	}
+	inline android::view::Surface Allocation::getSurface() const
+	{
+		return callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
+	inline jlong Allocation::getTimeStamp() const
+	{
+		return callMethod<jlong>(
+			"getTimeStamp",
+			"()J"
+		);
+	}
+	inline android::renderscript::Type Allocation::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Landroid/renderscript/Type;"
+		);
+	}
+	inline jint Allocation::getUsage() const
+	{
+		return callMethod<jint>(
+			"getUsage",
+			"()I"
+		);
+	}
+	inline void Allocation::ioReceive() const
+	{
+		callMethod<void>(
+			"ioReceive",
+			"()V"
+		);
+	}
+	inline void Allocation::ioSend() const
+	{
+		callMethod<void>(
+			"ioSend",
+			"()V"
+		);
+	}
+	inline void Allocation::resize(jint arg0) const
+	{
+		callMethod<void>(
+			"resize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Allocation::setAutoPadding(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAutoPadding",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Allocation::setFromFieldPacker(jint arg0, android::renderscript::FieldPacker arg1) const
+	{
+		callMethod<void>(
+			"setFromFieldPacker",
+			"(ILandroid/renderscript/FieldPacker;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void Allocation::setFromFieldPacker(jint arg0, jint arg1, android::renderscript::FieldPacker arg2) const
+	{
+		callMethod<void>(
+			"setFromFieldPacker",
+			"(IILandroid/renderscript/FieldPacker;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void Allocation::setFromFieldPacker(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::FieldPacker arg4) const
+	{
+		callMethod<void>(
+			"setFromFieldPacker",
+			"(IIIILandroid/renderscript/FieldPacker;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.object()
+		);
+	}
+	inline void Allocation::setOnBufferAvailableListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnBufferAvailableListener",
+			"(Landroid/renderscript/Allocation$OnBufferAvailableListener;)V",
+			arg0.object()
+		);
+	}
+	inline void Allocation::setSurface(android::view::Surface arg0) const
+	{
+		callMethod<void>(
+			"setSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.object()
+		);
+	}
+	inline void Allocation::syncAll(jint arg0) const
+	{
+		callMethod<void>(
+			"syncAll",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::renderscript
+
+// Base class headers
+#include "./BaseObj.hpp"
 

@@ -1,26 +1,35 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ViewStructure_HtmlInfo.def.hpp"
 
 namespace android::view
 {
-	class ViewStructure_HtmlInfo : public JObject
+	// Fields
+	
+	// Constructors
+	inline ViewStructure_HtmlInfo::ViewStructure_HtmlInfo()
+		: JObject(
+			"android.view.ViewStructure$HtmlInfo",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject ViewStructure_HtmlInfo::getAttributes() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewStructure_HtmlInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewStructure_HtmlInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ViewStructure_HtmlInfo();
-		
-		// Methods
-		JObject getAttributes() const;
-		JString getTag() const;
-	};
+		return callObjectMethod(
+			"getAttributes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString ViewStructure_HtmlInfo::getTag() const
+	{
+		return callObjectMethod(
+			"getTag",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

@@ -1,32 +1,70 @@
 #pragma once
 
+#include "../../../JByteArray.hpp"
 #include "../../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./SecretKeySpec.def.hpp"
 
 namespace javax::crypto::spec
 {
-	class SecretKeySpec : public JObject
+	// Fields
+	
+	// Constructors
+	inline SecretKeySpec::SecretKeySpec(JByteArray arg0, JString arg1)
+		: JObject(
+			"javax.crypto.spec.SecretKeySpec",
+			"([BLjava/lang/String;)V",
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>()
+		) {}
+	inline SecretKeySpec::SecretKeySpec(JByteArray arg0, jint arg1, jint arg2, JString arg3)
+		: JObject(
+			"javax.crypto.spec.SecretKeySpec",
+			"([BIILjava/lang/String;)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jboolean SecretKeySpec::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecretKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecretKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SecretKeySpec(JByteArray arg0, JString arg1);
-		SecretKeySpec(JByteArray arg0, jint arg1, jint arg2, JString arg3);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getAlgorithm() const;
-		JByteArray getEncoded() const;
-		JString getFormat() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString SecretKeySpec::getAlgorithm() const
+	{
+		return callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JByteArray SecretKeySpec::getEncoded() const
+	{
+		return callObjectMethod(
+			"getEncoded",
+			"()[B"
+		);
+	}
+	inline JString SecretKeySpec::getFormat() const
+	{
+		return callObjectMethod(
+			"getFormat",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint SecretKeySpec::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace javax::crypto::spec
+
+// Base class headers
 

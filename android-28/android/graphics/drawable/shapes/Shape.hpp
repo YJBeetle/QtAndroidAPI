@@ -1,43 +1,78 @@
 #pragma once
 
+#include "../../Canvas.def.hpp"
+#include "../../Outline.def.hpp"
+#include "../../Paint.def.hpp"
 #include "../../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class Outline;
-}
-namespace android::graphics
-{
-	class Paint;
-}
-class JObject;
+#include "./Shape.def.hpp"
 
 namespace android::graphics::drawable::shapes
 {
-	class Shape : public JObject
+	// Fields
+	
+	// Constructors
+	inline Shape::Shape()
+		: JObject(
+			"android.graphics.drawable.shapes.Shape",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::graphics::drawable::shapes::Shape Shape::clone() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Shape(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Shape(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Shape();
-		
-		// Methods
-		android::graphics::drawable::shapes::Shape clone() const;
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
-		jfloat getHeight() const;
-		void getOutline(android::graphics::Outline arg0) const;
-		jfloat getWidth() const;
-		jboolean hasAlpha() const;
-		void resize(jfloat arg0, jfloat arg1) const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Landroid/graphics/drawable/shapes/Shape;"
+		);
+	}
+	inline void Shape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jfloat Shape::getHeight() const
+	{
+		return callMethod<jfloat>(
+			"getHeight",
+			"()F"
+		);
+	}
+	inline void Shape::getOutline(android::graphics::Outline arg0) const
+	{
+		callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.object()
+		);
+	}
+	inline jfloat Shape::getWidth() const
+	{
+		return callMethod<jfloat>(
+			"getWidth",
+			"()F"
+		);
+	}
+	inline jboolean Shape::hasAlpha() const
+	{
+		return callMethod<jboolean>(
+			"hasAlpha",
+			"()Z"
+		);
+	}
+	inline void Shape::resize(jfloat arg0, jfloat arg1) const
+	{
+		callMethod<void>(
+			"resize",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::graphics::drawable::shapes
+
+// Base class headers
 

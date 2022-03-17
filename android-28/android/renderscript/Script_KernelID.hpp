@@ -1,30 +1,18 @@
 #pragma once
 
-#include "./BaseObj.hpp"
+#include "./RenderScript.def.hpp"
+#include "./Script.def.hpp"
+#include "./Script_KernelID.def.hpp"
 
 namespace android::renderscript
 {
-	class RenderScript;
-}
-namespace android::renderscript
-{
-	class Script;
-}
-
-namespace android::renderscript
-{
-	class Script_KernelID : public android::renderscript::BaseObj
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Script_KernelID(const char *className, const char *sig, Ts...agv) : android::renderscript::BaseObj(className, sig, std::forward<Ts>(agv)...) {}
-		Script_KernelID(QAndroidJniObject obj) : android::renderscript::BaseObj(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
+#include "./BaseObj.hpp"
 

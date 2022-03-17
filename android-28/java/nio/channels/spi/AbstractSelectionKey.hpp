@@ -1,23 +1,30 @@
 #pragma once
 
-#include "../SelectionKey.hpp"
+#include "./AbstractSelectionKey.def.hpp"
 
 namespace java::nio::channels::spi
 {
-	class AbstractSelectionKey : public java::nio::channels::SelectionKey
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AbstractSelectionKey::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractSelectionKey(const char *className, const char *sig, Ts...agv) : java::nio::channels::SelectionKey(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSelectionKey(QAndroidJniObject obj) : java::nio::channels::SelectionKey(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		jboolean isValid() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline jboolean AbstractSelectionKey::isValid() const
+	{
+		return callMethod<jboolean>(
+			"isValid",
+			"()Z"
+		);
+	}
 } // namespace java::nio::channels::spi
+
+// Base class headers
+#include "../SelectionKey.hpp"
 

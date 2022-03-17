@@ -1,38 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Notification.def.hpp"
+#include "./Notification_Builder.def.hpp"
+#include "../widget/RemoteViews.def.hpp"
+#include "../../JString.hpp"
+#include "./Notification_Style.def.hpp"
 
 namespace android::app
 {
-	class Notification;
-}
-namespace android::app
-{
-	class Notification_Builder;
-}
-namespace android::widget
-{
-	class RemoteViews;
-}
-class JString;
-
-namespace android::app
-{
-	class Notification_Style : public JObject
+	// Fields
+	
+	// Constructors
+	inline Notification_Style::Notification_Style()
+		: JObject(
+			"android.app.Notification$Style",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::Notification Notification_Style::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_Style(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_Style(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Notification_Style();
-		
-		// Methods
-		android::app::Notification build() const;
-		void setBuilder(android::app::Notification_Builder arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/app/Notification;"
+		);
+	}
+	inline void Notification_Style::setBuilder(android::app::Notification_Builder arg0) const
+	{
+		callMethod<void>(
+			"setBuilder",
+			"(Landroid/app/Notification$Builder;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

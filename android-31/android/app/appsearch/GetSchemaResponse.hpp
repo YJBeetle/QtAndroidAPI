@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./GetSchemaResponse.def.hpp"
 
 namespace android::app::appsearch
 {
-	class GetSchemaResponse : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject GetSchemaResponse::getSchemas() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GetSchemaResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GetSchemaResponse(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getSchemas() const;
-		jint getVersion() const;
-	};
+		return callObjectMethod(
+			"getSchemas",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jint GetSchemaResponse::getVersion() const
+	{
+		return callMethod<jint>(
+			"getVersion",
+			"()I"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

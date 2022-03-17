@@ -1,42 +1,124 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Matrix;
-}
-class JString;
+#include "../../graphics/Matrix.def.hpp"
+#include "../../../JString.hpp"
+#include "./Transformation.def.hpp"
 
 namespace android::view::animation
 {
-	class Transformation : public JObject
+	// Fields
+	inline jint Transformation::TYPE_ALPHA()
 	{
-	public:
-		// Fields
-		static jint TYPE_ALPHA();
-		static jint TYPE_BOTH();
-		static jint TYPE_IDENTITY();
-		static jint TYPE_MATRIX();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Transformation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Transformation(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Transformation();
-		
-		// Methods
-		void clear() const;
-		void compose(android::view::animation::Transformation arg0) const;
-		jfloat getAlpha() const;
-		android::graphics::Matrix getMatrix() const;
-		jint getTransformationType() const;
-		void set(android::view::animation::Transformation arg0) const;
-		void setAlpha(jfloat arg0) const;
-		void setTransformationType(jint arg0) const;
-		JString toShortString() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.view.animation.Transformation",
+			"TYPE_ALPHA"
+		);
+	}
+	inline jint Transformation::TYPE_BOTH()
+	{
+		return getStaticField<jint>(
+			"android.view.animation.Transformation",
+			"TYPE_BOTH"
+		);
+	}
+	inline jint Transformation::TYPE_IDENTITY()
+	{
+		return getStaticField<jint>(
+			"android.view.animation.Transformation",
+			"TYPE_IDENTITY"
+		);
+	}
+	inline jint Transformation::TYPE_MATRIX()
+	{
+		return getStaticField<jint>(
+			"android.view.animation.Transformation",
+			"TYPE_MATRIX"
+		);
+	}
+	
+	// Constructors
+	inline Transformation::Transformation()
+		: JObject(
+			"android.view.animation.Transformation",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void Transformation::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline void Transformation::compose(android::view::animation::Transformation arg0) const
+	{
+		callMethod<void>(
+			"compose",
+			"(Landroid/view/animation/Transformation;)V",
+			arg0.object()
+		);
+	}
+	inline jfloat Transformation::getAlpha() const
+	{
+		return callMethod<jfloat>(
+			"getAlpha",
+			"()F"
+		);
+	}
+	inline android::graphics::Matrix Transformation::getMatrix() const
+	{
+		return callObjectMethod(
+			"getMatrix",
+			"()Landroid/graphics/Matrix;"
+		);
+	}
+	inline jint Transformation::getTransformationType() const
+	{
+		return callMethod<jint>(
+			"getTransformationType",
+			"()I"
+		);
+	}
+	inline void Transformation::set(android::view::animation::Transformation arg0) const
+	{
+		callMethod<void>(
+			"set",
+			"(Landroid/view/animation/Transformation;)V",
+			arg0.object()
+		);
+	}
+	inline void Transformation::setAlpha(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void Transformation::setTransformationType(jint arg0) const
+	{
+		callMethod<void>(
+			"setTransformationType",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JString Transformation::toShortString() const
+	{
+		return callObjectMethod(
+			"toShortString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Transformation::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
 

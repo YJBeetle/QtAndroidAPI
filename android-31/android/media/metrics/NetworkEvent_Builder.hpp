@@ -1,35 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./NetworkEvent.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "./NetworkEvent_Builder.def.hpp"
 
 namespace android::media::metrics
 {
-	class NetworkEvent;
-}
-namespace android::os
-{
-	class Bundle;
-}
-
-namespace android::media::metrics
-{
-	class NetworkEvent_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline NetworkEvent_Builder::NetworkEvent_Builder()
+		: JObject(
+			"android.media.metrics.NetworkEvent$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::media::metrics::NetworkEvent NetworkEvent_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkEvent_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkEvent_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		NetworkEvent_Builder();
-		
-		// Methods
-		android::media::metrics::NetworkEvent build() const;
-		android::media::metrics::NetworkEvent_Builder setMetricsBundle(android::os::Bundle arg0) const;
-		android::media::metrics::NetworkEvent_Builder setNetworkType(jint arg0) const;
-		android::media::metrics::NetworkEvent_Builder setTimeSinceCreatedMillis(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/media/metrics/NetworkEvent;"
+		);
+	}
+	inline android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setMetricsBundle(android::os::Bundle arg0) const
+	{
+		return callObjectMethod(
+			"setMetricsBundle",
+			"(Landroid/os/Bundle;)Landroid/media/metrics/NetworkEvent$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setNetworkType(jint arg0) const
+	{
+		return callObjectMethod(
+			"setNetworkType",
+			"(I)Landroid/media/metrics/NetworkEvent$Builder;",
+			arg0
+		);
+	}
+	inline android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setTimeSinceCreatedMillis(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setTimeSinceCreatedMillis",
+			"(J)Landroid/media/metrics/NetworkEvent$Builder;",
+			arg0
+		);
+	}
 } // namespace android::media::metrics
+
+// Base class headers
 

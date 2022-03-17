@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../java/lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "./RemoteViews_ActionException.def.hpp"
 
 namespace android::widget
 {
-	class RemoteViews_ActionException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RemoteViews_ActionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteViews_ActionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		RemoteViews_ActionException(java::lang::Exception arg0);
-		RemoteViews_ActionException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline RemoteViews_ActionException::RemoteViews_ActionException(java::lang::Exception arg0)
+		: java::lang::RuntimeException(
+			"android.widget.RemoteViews$ActionException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	inline RemoteViews_ActionException::RemoteViews_ActionException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.widget.RemoteViews$ActionException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

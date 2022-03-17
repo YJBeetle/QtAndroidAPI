@@ -1,29 +1,47 @@
 #pragma once
 
+#include "../../../JClass.hpp"
 #include "../../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./CameraCharacteristics_Key.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraCharacteristics_Key : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean CameraCharacteristics_Key::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraCharacteristics_Key(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraCharacteristics_Key(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getName() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString CameraCharacteristics_Key::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint CameraCharacteristics_Key::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString CameraCharacteristics_Key::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

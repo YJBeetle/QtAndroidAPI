@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./AsyncTask_Status.def.hpp"
 
 namespace android::os
 {
-	class AsyncTask_Status : public java::lang::Enum
+	// Fields
+	inline android::os::AsyncTask_Status AsyncTask_Status::FINISHED()
 	{
-	public:
-		// Fields
-		static android::os::AsyncTask_Status FINISHED();
-		static android::os::AsyncTask_Status PENDING();
-		static android::os::AsyncTask_Status RUNNING();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AsyncTask_Status(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AsyncTask_Status(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::os::AsyncTask_Status valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.os.AsyncTask$Status",
+			"FINISHED",
+			"Landroid/os/AsyncTask$Status;"
+		);
+	}
+	inline android::os::AsyncTask_Status AsyncTask_Status::PENDING()
+	{
+		return getStaticObjectField(
+			"android.os.AsyncTask$Status",
+			"PENDING",
+			"Landroid/os/AsyncTask$Status;"
+		);
+	}
+	inline android::os::AsyncTask_Status AsyncTask_Status::RUNNING()
+	{
+		return getStaticObjectField(
+			"android.os.AsyncTask$Status",
+			"RUNNING",
+			"Landroid/os/AsyncTask$Status;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::AsyncTask_Status AsyncTask_Status::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.os.AsyncTask$Status",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray AsyncTask_Status::values()
+	{
+		return callStaticObjectMethod(
+			"android.os.AsyncTask$Status",
+			"values",
+			"()[Landroid/os/AsyncTask$Status;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

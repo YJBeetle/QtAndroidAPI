@@ -1,23 +1,33 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
+#include "./AcousticEchoCanceler.def.hpp"
 
 namespace android::media::audiofx
 {
-	class AcousticEchoCanceler : public android::media::audiofx::AudioEffect
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::audiofx::AcousticEchoCanceler AcousticEchoCanceler::create(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AcousticEchoCanceler(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		AcousticEchoCanceler(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::media::audiofx::AcousticEchoCanceler create(jint arg0);
-		static jboolean isAvailable();
-	};
+		return callStaticObjectMethod(
+			"android.media.audiofx.AcousticEchoCanceler",
+			"create",
+			"(I)Landroid/media/audiofx/AcousticEchoCanceler;",
+			arg0
+		);
+	}
+	inline jboolean AcousticEchoCanceler::isAvailable()
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.audiofx.AcousticEchoCanceler",
+			"isAvailable",
+			"()Z"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

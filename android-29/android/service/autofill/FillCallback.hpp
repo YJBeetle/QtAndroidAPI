@@ -1,29 +1,33 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./FillResponse.def.hpp"
+#include "../../../JString.hpp"
+#include "./FillCallback.def.hpp"
 
 namespace android::service::autofill
 {
-	class FillResponse;
-}
-class JString;
-
-namespace android::service::autofill
-{
-	class FillCallback : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void FillCallback::onFailure(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FillCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FillCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void onFailure(JString arg0) const;
-		void onSuccess(android::service::autofill::FillResponse arg0) const;
-	};
+		callMethod<void>(
+			"onFailure",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void FillCallback::onSuccess(android::service::autofill::FillResponse arg0) const
+	{
+		callMethod<void>(
+			"onSuccess",
+			"(Landroid/service/autofill/FillResponse;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

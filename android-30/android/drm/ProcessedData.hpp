@@ -1,27 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "./ProcessedData.def.hpp"
 
 namespace android::drm
 {
-	class ProcessedData : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString ProcessedData::getAccountId() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProcessedData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessedData(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getAccountId() const;
-		JByteArray getData() const;
-		JString getSubscriptionId() const;
-	};
+		return callObjectMethod(
+			"getAccountId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JByteArray ProcessedData::getData() const
+	{
+		return callObjectMethod(
+			"getData",
+			"()[B"
+		);
+	}
+	inline JString ProcessedData::getSubscriptionId() const
+	{
+		return callObjectMethod(
+			"getSubscriptionId",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::drm
+
+// Base class headers
 

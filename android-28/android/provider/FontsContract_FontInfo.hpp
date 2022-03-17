@@ -1,33 +1,59 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::net
-{
-	class Uri;
-}
+#include "../../JArray.hpp"
+#include "../net/Uri.def.hpp"
+#include "./FontsContract_FontInfo.def.hpp"
 
 namespace android::provider
 {
-	class FontsContract_FontInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JArray FontsContract_FontInfo::getAxes() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FontsContract_FontInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontsContract_FontInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JArray getAxes() const;
-		jint getResultCode() const;
-		jint getTtcIndex() const;
-		android::net::Uri getUri() const;
-		jint getWeight() const;
-		jboolean isItalic() const;
-	};
+		return callObjectMethod(
+			"getAxes",
+			"()[Landroid/graphics/fonts/FontVariationAxis;"
+		);
+	}
+	inline jint FontsContract_FontInfo::getResultCode() const
+	{
+		return callMethod<jint>(
+			"getResultCode",
+			"()I"
+		);
+	}
+	inline jint FontsContract_FontInfo::getTtcIndex() const
+	{
+		return callMethod<jint>(
+			"getTtcIndex",
+			"()I"
+		);
+	}
+	inline android::net::Uri FontsContract_FontInfo::getUri() const
+	{
+		return callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline jint FontsContract_FontInfo::getWeight() const
+	{
+		return callMethod<jint>(
+			"getWeight",
+			"()I"
+		);
+	}
+	inline jboolean FontsContract_FontInfo::isItalic() const
+	{
+		return callMethod<jboolean>(
+			"isItalic",
+			"()Z"
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

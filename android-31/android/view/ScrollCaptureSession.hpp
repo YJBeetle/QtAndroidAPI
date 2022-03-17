@@ -1,38 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Point;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::view
-{
-	class Surface;
-}
+#include "../graphics/Point.def.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "./Surface.def.hpp"
+#include "./ScrollCaptureSession.def.hpp"
 
 namespace android::view
 {
-	class ScrollCaptureSession : public JObject
+	// Fields
+	
+	// Constructors
+	inline ScrollCaptureSession::ScrollCaptureSession(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Point arg2)
+		: JObject(
+			"android.view.ScrollCaptureSession",
+			"(Landroid/view/Surface;Landroid/graphics/Rect;Landroid/graphics/Point;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::Point ScrollCaptureSession::getPositionInWindow() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScrollCaptureSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScrollCaptureSession(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ScrollCaptureSession(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Point arg2);
-		
-		// Methods
-		android::graphics::Point getPositionInWindow() const;
-		android::graphics::Rect getScrollBounds() const;
-		android::view::Surface getSurface() const;
-	};
+		return callObjectMethod(
+			"getPositionInWindow",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	inline android::graphics::Rect ScrollCaptureSession::getScrollBounds() const
+	{
+		return callObjectMethod(
+			"getScrollBounds",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	inline android::view::Surface ScrollCaptureSession::getSurface() const
+	{
+		return callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

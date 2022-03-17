@@ -1,28 +1,56 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CarrierConfigManager_ImsServiceEntitlement.def.hpp"
 
 namespace android::telephony
 {
-	class CarrierConfigManager_ImsServiceEntitlement : public JObject
+	// Fields
+	inline JString CarrierConfigManager_ImsServiceEntitlement::KEY_ENTITLEMENT_SERVER_URL_STRING()
 	{
-	public:
-		// Fields
-		static JString KEY_ENTITLEMENT_SERVER_URL_STRING();
-		static JString KEY_FCM_SENDER_ID_STRING();
-		static JString KEY_IMS_PROVISIONING_BOOL();
-		static JString KEY_PREFIX();
-		static JString KEY_SHOW_VOWIFI_WEBVIEW_BOOL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_ImsServiceEntitlement(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_ImsServiceEntitlement(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$ImsServiceEntitlement",
+			"KEY_ENTITLEMENT_SERVER_URL_STRING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CarrierConfigManager_ImsServiceEntitlement::KEY_FCM_SENDER_ID_STRING()
+	{
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$ImsServiceEntitlement",
+			"KEY_FCM_SENDER_ID_STRING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CarrierConfigManager_ImsServiceEntitlement::KEY_IMS_PROVISIONING_BOOL()
+	{
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$ImsServiceEntitlement",
+			"KEY_IMS_PROVISIONING_BOOL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CarrierConfigManager_ImsServiceEntitlement::KEY_PREFIX()
+	{
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$ImsServiceEntitlement",
+			"KEY_PREFIX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CarrierConfigManager_ImsServiceEntitlement::KEY_SHOW_VOWIFI_WEBVIEW_BOOL()
+	{
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$ImsServiceEntitlement",
+			"KEY_SHOW_VOWIFI_WEBVIEW_BOOL",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

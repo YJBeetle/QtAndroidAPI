@@ -1,33 +1,82 @@
 #pragma once
 
 #include "../../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./MmTelFeature_MmTelCapabilities.def.hpp"
 
 namespace android::telephony::ims::feature
 {
-	class MmTelFeature_MmTelCapabilities : public JObject
+	// Fields
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_CALL_COMPOSER()
 	{
-	public:
-		// Fields
-		static jint CAPABILITY_TYPE_CALL_COMPOSER();
-		static jint CAPABILITY_TYPE_SMS();
-		static jint CAPABILITY_TYPE_UT();
-		static jint CAPABILITY_TYPE_VIDEO();
-		static jint CAPABILITY_TYPE_VOICE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MmTelFeature_MmTelCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MmTelFeature_MmTelCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		jboolean isCapable(jint arg0) const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_CALL_COMPOSER"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_SMS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_SMS"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_UT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_UT"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_VIDEO()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_VIDEO"
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::CAPABILITY_TYPE_VOICE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.ims.feature.MmTelFeature$MmTelCapabilities",
+			"CAPABILITY_TYPE_VOICE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MmTelFeature_MmTelCapabilities::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint MmTelFeature_MmTelCapabilities::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean MmTelFeature_MmTelCapabilities::isCapable(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isCapable",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline JString MmTelFeature_MmTelCapabilities::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::telephony::ims::feature
+
+// Base class headers
 

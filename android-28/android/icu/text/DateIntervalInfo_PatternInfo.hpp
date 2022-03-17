@@ -1,31 +1,68 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./DateIntervalInfo_PatternInfo.def.hpp"
 
 namespace android::icu::text
 {
-	class DateIntervalInfo_PatternInfo : public JObject
+	// Fields
+	
+	// Constructors
+	inline DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2)
+		: JObject(
+			"android.icu.text.DateIntervalInfo$PatternInfo",
+			"(Ljava/lang/String;Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	
+	// Methods
+	inline jboolean DateIntervalInfo_PatternInfo::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DateIntervalInfo_PatternInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DateIntervalInfo_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DateIntervalInfo_PatternInfo(JString arg0, JString arg1, jboolean arg2);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jboolean firstDateInPtnIsLaterDate() const;
-		JString getFirstPart() const;
-		JString getSecondPart() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate() const
+	{
+		return callMethod<jboolean>(
+			"firstDateInPtnIsLaterDate",
+			"()Z"
+		);
+	}
+	inline JString DateIntervalInfo_PatternInfo::getFirstPart() const
+	{
+		return callObjectMethod(
+			"getFirstPart",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DateIntervalInfo_PatternInfo::getSecondPart() const
+	{
+		return callObjectMethod(
+			"getSecondPart",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint DateIntervalInfo_PatternInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString DateIntervalInfo_PatternInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

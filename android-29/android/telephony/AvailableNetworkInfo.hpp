@@ -1,42 +1,122 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./AvailableNetworkInfo.def.hpp"
 
 namespace android::telephony
 {
-	class AvailableNetworkInfo : public JObject
+	// Fields
+	inline JObject AvailableNetworkInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint PRIORITY_HIGH();
-		static jint PRIORITY_LOW();
-		static jint PRIORITY_MED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AvailableNetworkInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AvailableNetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JObject getBands() const;
-		JObject getMccMncs() const;
-		jint getPriority() const;
-		jint getSubId() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.AvailableNetworkInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint AvailableNetworkInfo::PRIORITY_HIGH()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AvailableNetworkInfo",
+			"PRIORITY_HIGH"
+		);
+	}
+	inline jint AvailableNetworkInfo::PRIORITY_LOW()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AvailableNetworkInfo",
+			"PRIORITY_LOW"
+		);
+	}
+	inline jint AvailableNetworkInfo::PRIORITY_MED()
+	{
+		return getStaticField<jint>(
+			"android.telephony.AvailableNetworkInfo",
+			"PRIORITY_MED"
+		);
+	}
+	
+	// Constructors
+	inline AvailableNetworkInfo::AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3)
+		: JObject(
+			"android.telephony.AvailableNetworkInfo",
+			"(IILjava/util/List;Ljava/util/List;)V",
+			arg0,
+			arg1,
+			arg2.object(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline jint AvailableNetworkInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean AvailableNetworkInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject AvailableNetworkInfo::getBands() const
+	{
+		return callObjectMethod(
+			"getBands",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject AvailableNetworkInfo::getMccMncs() const
+	{
+		return callObjectMethod(
+			"getMccMncs",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint AvailableNetworkInfo::getPriority() const
+	{
+		return callMethod<jint>(
+			"getPriority",
+			"()I"
+		);
+	}
+	inline jint AvailableNetworkInfo::getSubId() const
+	{
+		return callMethod<jint>(
+			"getSubId",
+			"()I"
+		);
+	}
+	inline jint AvailableNetworkInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString AvailableNetworkInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void AvailableNetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

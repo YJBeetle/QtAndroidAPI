@@ -1,52 +1,83 @@
 #pragma once
 
-#include "./CellInfo.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::telephony
-{
-	class CellIdentity;
-}
-namespace android::telephony
-{
-	class CellIdentityCdma;
-}
-namespace android::telephony
-{
-	class CellSignalStrength;
-}
-namespace android::telephony
-{
-	class CellSignalStrengthCdma;
-}
-class JObject;
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "./CellIdentity.def.hpp"
+#include "./CellIdentityCdma.def.hpp"
+#include "./CellSignalStrength.def.hpp"
+#include "./CellSignalStrengthCdma.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./CellInfoCdma.def.hpp"
 
 namespace android::telephony
 {
-	class CellInfoCdma : public android::telephony::CellInfo
+	// Fields
+	inline JObject CellInfoCdma::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CellInfoCdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellInfo(className, sig, std::forward<Ts>(agv)...) {}
-		CellInfoCdma(QAndroidJniObject obj) : android::telephony::CellInfo(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::telephony::CellIdentityCdma getCellIdentity() const;
-		android::telephony::CellSignalStrengthCdma getCellSignalStrength() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.CellInfoCdma",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint CellInfoCdma::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean CellInfoCdma::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::telephony::CellIdentityCdma CellInfoCdma::getCellIdentity() const
+	{
+		return callObjectMethod(
+			"getCellIdentity",
+			"()Landroid/telephony/CellIdentityCdma;"
+		);
+	}
+	inline android::telephony::CellSignalStrengthCdma CellInfoCdma::getCellSignalStrength() const
+	{
+		return callObjectMethod(
+			"getCellSignalStrength",
+			"()Landroid/telephony/CellSignalStrengthCdma;"
+		);
+	}
+	inline jint CellInfoCdma::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString CellInfoCdma::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void CellInfoCdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
+#include "./CellInfo.hpp"
 

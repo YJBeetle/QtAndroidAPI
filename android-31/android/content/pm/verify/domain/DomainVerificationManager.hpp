@@ -1,28 +1,25 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
+#include "./DomainVerificationUserState.def.hpp"
+#include "../../../../../JString.hpp"
+#include "./DomainVerificationManager.def.hpp"
 
 namespace android::content::pm::verify::domain
 {
-	class DomainVerificationUserState;
-}
-class JString;
-
-namespace android::content::pm::verify::domain
-{
-	class DomainVerificationManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::content::pm::verify::domain::DomainVerificationUserState DomainVerificationManager::getDomainVerificationUserState(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DomainVerificationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DomainVerificationManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::content::pm::verify::domain::DomainVerificationUserState getDomainVerificationUserState(JString arg0) const;
-	};
+		return callObjectMethod(
+			"getDomainVerificationUserState",
+			"(Ljava/lang/String;)Landroid/content/pm/verify/domain/DomainVerificationUserState;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::content::pm::verify::domain
+
+// Base class headers
 

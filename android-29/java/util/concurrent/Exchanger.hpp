@@ -1,31 +1,41 @@
 #pragma once
 
+#include "../../../JArray.hpp"
 #include "../../../JObject.hpp"
-
-class JArray;
-class JObject;
-namespace java::util::concurrent
-{
-	class TimeUnit;
-}
+#include "./TimeUnit.def.hpp"
+#include "./Exchanger.def.hpp"
 
 namespace java::util::concurrent
 {
-	class Exchanger : public JObject
+	// Fields
+	
+	// Constructors
+	inline Exchanger::Exchanger()
+		: JObject(
+			"java.util.concurrent.Exchanger",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject Exchanger::exchange(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Exchanger(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Exchanger(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Exchanger();
-		
-		// Methods
-		JObject exchange(JObject arg0) const;
-		JObject exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
-	};
+		return callObjectMethod(
+			"exchange",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject Exchanger::exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
+	{
+		return callObjectMethod(
+			"exchange",
+			"(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1,
+			arg2.object()
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
 

@@ -1,228 +1,1448 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./MediaCodecInfo_CodecProfileLevel.def.hpp"
 
 namespace android::media
 {
-	class MediaCodecInfo_CodecProfileLevel : public JObject
+	// Fields
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectELD()
 	{
-	public:
-		// Fields
-		static jint AACObjectELD();
-		static jint AACObjectERLC();
-		static jint AACObjectERScalable();
-		static jint AACObjectHE();
-		static jint AACObjectHE_PS();
-		static jint AACObjectLC();
-		static jint AACObjectLD();
-		static jint AACObjectLTP();
-		static jint AACObjectMain();
-		static jint AACObjectSSR();
-		static jint AACObjectScalable();
-		static jint AACObjectXHE();
-		static jint AV1Level2();
-		static jint AV1Level21();
-		static jint AV1Level22();
-		static jint AV1Level23();
-		static jint AV1Level3();
-		static jint AV1Level31();
-		static jint AV1Level32();
-		static jint AV1Level33();
-		static jint AV1Level4();
-		static jint AV1Level41();
-		static jint AV1Level42();
-		static jint AV1Level43();
-		static jint AV1Level5();
-		static jint AV1Level51();
-		static jint AV1Level52();
-		static jint AV1Level53();
-		static jint AV1Level6();
-		static jint AV1Level61();
-		static jint AV1Level62();
-		static jint AV1Level63();
-		static jint AV1Level7();
-		static jint AV1Level71();
-		static jint AV1Level72();
-		static jint AV1Level73();
-		static jint AV1ProfileMain10();
-		static jint AV1ProfileMain10HDR10();
-		static jint AV1ProfileMain10HDR10Plus();
-		static jint AV1ProfileMain8();
-		static jint AVCLevel1();
-		static jint AVCLevel11();
-		static jint AVCLevel12();
-		static jint AVCLevel13();
-		static jint AVCLevel1b();
-		static jint AVCLevel2();
-		static jint AVCLevel21();
-		static jint AVCLevel22();
-		static jint AVCLevel3();
-		static jint AVCLevel31();
-		static jint AVCLevel32();
-		static jint AVCLevel4();
-		static jint AVCLevel41();
-		static jint AVCLevel42();
-		static jint AVCLevel5();
-		static jint AVCLevel51();
-		static jint AVCLevel52();
-		static jint AVCLevel6();
-		static jint AVCLevel61();
-		static jint AVCLevel62();
-		static jint AVCProfileBaseline();
-		static jint AVCProfileConstrainedBaseline();
-		static jint AVCProfileConstrainedHigh();
-		static jint AVCProfileExtended();
-		static jint AVCProfileHigh();
-		static jint AVCProfileHigh10();
-		static jint AVCProfileHigh422();
-		static jint AVCProfileHigh444();
-		static jint AVCProfileMain();
-		static jint DolbyVisionLevelFhd24();
-		static jint DolbyVisionLevelFhd30();
-		static jint DolbyVisionLevelFhd60();
-		static jint DolbyVisionLevelHd24();
-		static jint DolbyVisionLevelHd30();
-		static jint DolbyVisionLevelUhd24();
-		static jint DolbyVisionLevelUhd30();
-		static jint DolbyVisionLevelUhd48();
-		static jint DolbyVisionLevelUhd60();
-		static jint DolbyVisionProfileDvavPen();
-		static jint DolbyVisionProfileDvavPer();
-		static jint DolbyVisionProfileDvavSe();
-		static jint DolbyVisionProfileDvheDen();
-		static jint DolbyVisionProfileDvheDer();
-		static jint DolbyVisionProfileDvheDtb();
-		static jint DolbyVisionProfileDvheDth();
-		static jint DolbyVisionProfileDvheDtr();
-		static jint DolbyVisionProfileDvheSt();
-		static jint DolbyVisionProfileDvheStn();
-		static jint H263Level10();
-		static jint H263Level20();
-		static jint H263Level30();
-		static jint H263Level40();
-		static jint H263Level45();
-		static jint H263Level50();
-		static jint H263Level60();
-		static jint H263Level70();
-		static jint H263ProfileBackwardCompatible();
-		static jint H263ProfileBaseline();
-		static jint H263ProfileH320Coding();
-		static jint H263ProfileHighCompression();
-		static jint H263ProfileHighLatency();
-		static jint H263ProfileISWV2();
-		static jint H263ProfileISWV3();
-		static jint H263ProfileInterlace();
-		static jint H263ProfileInternet();
-		static jint HEVCHighTierLevel1();
-		static jint HEVCHighTierLevel2();
-		static jint HEVCHighTierLevel21();
-		static jint HEVCHighTierLevel3();
-		static jint HEVCHighTierLevel31();
-		static jint HEVCHighTierLevel4();
-		static jint HEVCHighTierLevel41();
-		static jint HEVCHighTierLevel5();
-		static jint HEVCHighTierLevel51();
-		static jint HEVCHighTierLevel52();
-		static jint HEVCHighTierLevel6();
-		static jint HEVCHighTierLevel61();
-		static jint HEVCHighTierLevel62();
-		static jint HEVCMainTierLevel1();
-		static jint HEVCMainTierLevel2();
-		static jint HEVCMainTierLevel21();
-		static jint HEVCMainTierLevel3();
-		static jint HEVCMainTierLevel31();
-		static jint HEVCMainTierLevel4();
-		static jint HEVCMainTierLevel41();
-		static jint HEVCMainTierLevel5();
-		static jint HEVCMainTierLevel51();
-		static jint HEVCMainTierLevel52();
-		static jint HEVCMainTierLevel6();
-		static jint HEVCMainTierLevel61();
-		static jint HEVCMainTierLevel62();
-		static jint HEVCProfileMain();
-		static jint HEVCProfileMain10();
-		static jint HEVCProfileMain10HDR10();
-		static jint HEVCProfileMain10HDR10Plus();
-		static jint HEVCProfileMainStill();
-		static jint MPEG2LevelH14();
-		static jint MPEG2LevelHL();
-		static jint MPEG2LevelHP();
-		static jint MPEG2LevelLL();
-		static jint MPEG2LevelML();
-		static jint MPEG2Profile422();
-		static jint MPEG2ProfileHigh();
-		static jint MPEG2ProfileMain();
-		static jint MPEG2ProfileSNR();
-		static jint MPEG2ProfileSimple();
-		static jint MPEG2ProfileSpatial();
-		static jint MPEG4Level0();
-		static jint MPEG4Level0b();
-		static jint MPEG4Level1();
-		static jint MPEG4Level2();
-		static jint MPEG4Level3();
-		static jint MPEG4Level3b();
-		static jint MPEG4Level4();
-		static jint MPEG4Level4a();
-		static jint MPEG4Level5();
-		static jint MPEG4Level6();
-		static jint MPEG4ProfileAdvancedCoding();
-		static jint MPEG4ProfileAdvancedCore();
-		static jint MPEG4ProfileAdvancedRealTime();
-		static jint MPEG4ProfileAdvancedScalable();
-		static jint MPEG4ProfileAdvancedSimple();
-		static jint MPEG4ProfileBasicAnimated();
-		static jint MPEG4ProfileCore();
-		static jint MPEG4ProfileCoreScalable();
-		static jint MPEG4ProfileHybrid();
-		static jint MPEG4ProfileMain();
-		static jint MPEG4ProfileNbit();
-		static jint MPEG4ProfileScalableTexture();
-		static jint MPEG4ProfileSimple();
-		static jint MPEG4ProfileSimpleFBA();
-		static jint MPEG4ProfileSimpleFace();
-		static jint MPEG4ProfileSimpleScalable();
-		static jint VP8Level_Version0();
-		static jint VP8Level_Version1();
-		static jint VP8Level_Version2();
-		static jint VP8Level_Version3();
-		static jint VP8ProfileMain();
-		static jint VP9Level1();
-		static jint VP9Level11();
-		static jint VP9Level2();
-		static jint VP9Level21();
-		static jint VP9Level3();
-		static jint VP9Level31();
-		static jint VP9Level4();
-		static jint VP9Level41();
-		static jint VP9Level5();
-		static jint VP9Level51();
-		static jint VP9Level52();
-		static jint VP9Level6();
-		static jint VP9Level61();
-		static jint VP9Level62();
-		static jint VP9Profile0();
-		static jint VP9Profile1();
-		static jint VP9Profile2();
-		static jint VP9Profile2HDR();
-		static jint VP9Profile2HDR10Plus();
-		static jint VP9Profile3();
-		static jint VP9Profile3HDR();
-		static jint VP9Profile3HDR10Plus();
-		jint level();
-		jint profile();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_CodecProfileLevel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaCodecInfo_CodecProfileLevel();
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectELD"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectERLC()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectERLC"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectERScalable()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectERScalable"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectHE()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectHE"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectHE_PS()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectHE_PS"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectLC()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectLC"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectLD()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectLD"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectLTP()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectLTP"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectMain()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectMain"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectSSR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectSSR"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectScalable()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectScalable"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AACObjectXHE()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AACObjectXHE"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level21()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level21"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level22()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level22"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level23()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level23"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level31()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level31"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level32()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level32"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level33()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level33"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level4"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level41()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level41"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level42()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level42"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level43()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level43"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level5()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level5"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level51()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level51"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level52()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level52"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level53()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level53"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level6()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level6"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level61()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level61"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level62()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level62"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level63()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level63"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level7()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level7"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level71()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level71"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level72()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level72"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1Level73()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1Level73"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1ProfileMain10()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1ProfileMain10"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1ProfileMain10HDR10()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1ProfileMain10HDR10"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1ProfileMain10HDR10Plus()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1ProfileMain10HDR10Plus"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AV1ProfileMain8()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AV1ProfileMain8"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel11()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel11"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel12()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel12"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel13()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel13"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel1b()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel1b"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel21()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel21"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel22()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel22"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel31()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel31"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel32()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel32"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel4"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel41()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel41"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel42()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel42"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel5()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel5"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel51()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel51"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel52()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel52"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel6()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel6"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel61()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel61"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCLevel62()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCLevel62"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileBaseline()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileBaseline"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileConstrainedBaseline()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileConstrainedBaseline"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileConstrainedHigh()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileConstrainedHigh"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileExtended()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileExtended"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileHigh()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileHigh"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileHigh10()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileHigh10"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileHigh422()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileHigh422"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileHigh444()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileHigh444"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::AVCProfileMain()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"AVCProfileMain"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelFhd24()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelFhd24"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelFhd30()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelFhd30"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelFhd60()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelFhd60"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelHd24()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelHd24"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelHd30()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelHd30"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelUhd24()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelUhd24"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelUhd30()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelUhd30"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelUhd48()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelUhd48"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionLevelUhd60()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionLevelUhd60"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvavPen()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvavPen"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvavPer()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvavPer"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvavSe()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvavSe"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheDen()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheDen"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheDer()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheDer"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheDtb()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheDtb"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheDth()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheDth"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheDtr()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheDtr"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheSt()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheSt"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::DolbyVisionProfileDvheStn()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"DolbyVisionProfileDvheStn"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level10()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level10"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level20()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level20"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level30()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level30"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level40()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level40"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level45()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level45"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level50()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level50"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level60()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level60"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263Level70()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263Level70"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileBackwardCompatible()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileBackwardCompatible"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileBaseline()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileBaseline"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileH320Coding()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileH320Coding"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileHighCompression()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileHighCompression"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileHighLatency()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileHighLatency"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileISWV2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileISWV2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileISWV3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileISWV3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileInterlace()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileInterlace"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::H263ProfileInternet()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"H263ProfileInternet"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel21()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel21"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel31()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel31"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel4"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel41()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel41"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel5()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel5"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel51()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel51"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel52()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel52"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel6()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel6"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel61()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel61"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCHighTierLevel62()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCHighTierLevel62"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel21()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel21"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel31()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel31"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel4"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel41()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel41"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel5()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel5"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel51()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel51"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel52()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel52"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel6()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel6"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel61()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel61"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCMainTierLevel62()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCMainTierLevel62"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCProfileMain()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCProfileMain"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCProfileMain10()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCProfileMain10"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCProfileMain10HDR10()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCProfileMain10HDR10"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCProfileMain10HDR10Plus()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCProfileMain10HDR10Plus"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::HEVCProfileMainStill()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"HEVCProfileMainStill"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2LevelH14()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2LevelH14"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2LevelHL()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2LevelHL"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2LevelHP()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2LevelHP"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2LevelLL()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2LevelLL"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2LevelML()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2LevelML"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2Profile422()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2Profile422"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2ProfileHigh()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2ProfileHigh"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2ProfileMain()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2ProfileMain"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2ProfileSNR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2ProfileSNR"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2ProfileSimple()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2ProfileSimple"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG2ProfileSpatial()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG2ProfileSpatial"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level0()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level0"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level0b()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level0b"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level3b()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level3b"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level4"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level4a()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level4a"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level5()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level5"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4Level6()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4Level6"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileAdvancedCoding()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileAdvancedCoding"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileAdvancedCore()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileAdvancedCore"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileAdvancedRealTime()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileAdvancedRealTime"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileAdvancedScalable()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileAdvancedScalable"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileAdvancedSimple()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileAdvancedSimple"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileBasicAnimated()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileBasicAnimated"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileCore()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileCore"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileCoreScalable()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileCoreScalable"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileHybrid()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileHybrid"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileMain()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileMain"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileNbit()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileNbit"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileScalableTexture()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileScalableTexture"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileSimple()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileSimple"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileSimpleFBA()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileSimpleFBA"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileSimpleFace()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileSimpleFace"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::MPEG4ProfileSimpleScalable()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"MPEG4ProfileSimpleScalable"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP8Level_Version0()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP8Level_Version0"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP8Level_Version1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP8Level_Version1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP8Level_Version2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP8Level_Version2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP8Level_Version3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP8Level_Version3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP8ProfileMain()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP8ProfileMain"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level11()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level11"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level21()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level21"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level31()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level31"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level4"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level41()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level41"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level5()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level5"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level51()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level51"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level52()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level52"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level6()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level6"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level61()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level61"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Level62()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Level62"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile0()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile0"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile1()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile1"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile2()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile2"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile2HDR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile2HDR"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile2HDR10Plus()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile2HDR10Plus"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile3()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile3"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile3HDR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile3HDR"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::VP9Profile3HDR10Plus()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"VP9Profile3HDR10Plus"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::level()
+	{
+		return getField<jint>(
+			"level"
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::profile()
+	{
+		return getField<jint>(
+			"profile"
+		);
+	}
+	
+	// Constructors
+	inline MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel()
+		: JObject(
+			"android.media.MediaCodecInfo$CodecProfileLevel",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean MediaCodecInfo_CodecProfileLevel::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint MediaCodecInfo_CodecProfileLevel::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

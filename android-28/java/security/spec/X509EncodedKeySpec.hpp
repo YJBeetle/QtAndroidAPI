@@ -1,28 +1,45 @@
 #pragma once
 
-#include "./EncodedKeySpec.hpp"
-
-class JByteArray;
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
+#include "./X509EncodedKeySpec.def.hpp"
 
 namespace java::security::spec
 {
-	class X509EncodedKeySpec : public java::security::spec::EncodedKeySpec
+	// Fields
+	
+	// Constructors
+	inline X509EncodedKeySpec::X509EncodedKeySpec(JByteArray arg0)
+		: java::security::spec::EncodedKeySpec(
+			"java.security.spec.X509EncodedKeySpec",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	inline X509EncodedKeySpec::X509EncodedKeySpec(JByteArray arg0, JString arg1)
+		: java::security::spec::EncodedKeySpec(
+			"java.security.spec.X509EncodedKeySpec",
+			"([BLjava/lang/String;)V",
+			arg0.object<jbyteArray>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JByteArray X509EncodedKeySpec::getEncoded() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit X509EncodedKeySpec(const char *className, const char *sig, Ts...agv) : java::security::spec::EncodedKeySpec(className, sig, std::forward<Ts>(agv)...) {}
-		X509EncodedKeySpec(QAndroidJniObject obj) : java::security::spec::EncodedKeySpec(obj) {}
-		
-		// Constructors
-		X509EncodedKeySpec(JByteArray arg0);
-		X509EncodedKeySpec(JByteArray arg0, JString arg1);
-		
-		// Methods
-		JByteArray getEncoded() const;
-		JString getFormat() const;
-	};
+		return callObjectMethod(
+			"getEncoded",
+			"()[B"
+		);
+	}
+	inline JString X509EncodedKeySpec::getFormat() const
+	{
+		return callObjectMethod(
+			"getFormat",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
+#include "./EncodedKeySpec.hpp"
 

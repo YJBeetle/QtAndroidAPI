@@ -1,38 +1,83 @@
 #pragma once
 
-#include "../../../java/util/EventObject.hpp"
-
-class JArray;
-class JArray;
-class JString;
-namespace javax::net::ssl
-{
-	class SSLSocket;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./SSLSocket.def.hpp"
+#include "./HandshakeCompletedEvent.def.hpp"
 
 namespace javax::net::ssl
 {
-	class HandshakeCompletedEvent : public java::util::EventObject
+	// Fields
+	
+	// Constructors
+	inline HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1)
+		: java::util::EventObject(
+			"javax.net.ssl.HandshakeCompletedEvent",
+			"(Ljavax/net/ssl/SSLSocket;Ljavax/net/ssl/SSLSession;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JString HandshakeCompletedEvent::getCipherSuite() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HandshakeCompletedEvent(const char *className, const char *sig, Ts...agv) : java::util::EventObject(className, sig, std::forward<Ts>(agv)...) {}
-		HandshakeCompletedEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
-		
-		// Constructors
-		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1);
-		
-		// Methods
-		JString getCipherSuite() const;
-		JArray getLocalCertificates() const;
-		JObject getLocalPrincipal() const;
-		JArray getPeerCertificateChain() const;
-		JArray getPeerCertificates() const;
-		JObject getPeerPrincipal() const;
-		JObject getSession() const;
-		javax::net::ssl::SSLSocket getSocket() const;
-	};
+		return callObjectMethod(
+			"getCipherSuite",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JArray HandshakeCompletedEvent::getLocalCertificates() const
+	{
+		return callObjectMethod(
+			"getLocalCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JObject HandshakeCompletedEvent::getLocalPrincipal() const
+	{
+		return callObjectMethod(
+			"getLocalPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline JArray HandshakeCompletedEvent::getPeerCertificateChain() const
+	{
+		return callObjectMethod(
+			"getPeerCertificateChain",
+			"()[Ljavax/security/cert/X509Certificate;"
+		);
+	}
+	inline JArray HandshakeCompletedEvent::getPeerCertificates() const
+	{
+		return callObjectMethod(
+			"getPeerCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JObject HandshakeCompletedEvent::getPeerPrincipal() const
+	{
+		return callObjectMethod(
+			"getPeerPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline JObject HandshakeCompletedEvent::getSession() const
+	{
+		return callObjectMethod(
+			"getSession",
+			"()Ljavax/net/ssl/SSLSession;"
+		);
+	}
+	inline javax::net::ssl::SSLSocket HandshakeCompletedEvent::getSocket() const
+	{
+		return callObjectMethod(
+			"getSocket",
+			"()Ljavax/net/ssl/SSLSocket;"
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/util/EventObject.hpp"
 

@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../../JArray.hpp"
+#include "../../../../JString.hpp"
+#include "./AclEntryFlag.def.hpp"
 
 namespace java::nio::file::attribute
 {
-	class AclEntryFlag : public java::lang::Enum
+	// Fields
+	inline java::nio::file::attribute::AclEntryFlag AclEntryFlag::DIRECTORY_INHERIT()
 	{
-	public:
-		// Fields
-		static java::nio::file::attribute::AclEntryFlag DIRECTORY_INHERIT();
-		static java::nio::file::attribute::AclEntryFlag FILE_INHERIT();
-		static java::nio::file::attribute::AclEntryFlag INHERIT_ONLY();
-		static java::nio::file::attribute::AclEntryFlag NO_PROPAGATE_INHERIT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AclEntryFlag(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		AclEntryFlag(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::file::attribute::AclEntryFlag valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.nio.file.attribute.AclEntryFlag",
+			"DIRECTORY_INHERIT",
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
+	}
+	inline java::nio::file::attribute::AclEntryFlag AclEntryFlag::FILE_INHERIT()
+	{
+		return getStaticObjectField(
+			"java.nio.file.attribute.AclEntryFlag",
+			"FILE_INHERIT",
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
+	}
+	inline java::nio::file::attribute::AclEntryFlag AclEntryFlag::INHERIT_ONLY()
+	{
+		return getStaticObjectField(
+			"java.nio.file.attribute.AclEntryFlag",
+			"INHERIT_ONLY",
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
+	}
+	inline java::nio::file::attribute::AclEntryFlag AclEntryFlag::NO_PROPAGATE_INHERIT()
+	{
+		return getStaticObjectField(
+			"java.nio.file.attribute.AclEntryFlag",
+			"NO_PROPAGATE_INHERIT",
+			"Ljava/nio/file/attribute/AclEntryFlag;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::file::attribute::AclEntryFlag AclEntryFlag::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.attribute.AclEntryFlag",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryFlag;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray AclEntryFlag::values()
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.attribute.AclEntryFlag",
+			"values",
+			"()[Ljava/nio/file/attribute/AclEntryFlag;"
+		);
+	}
 } // namespace java::nio::file::attribute
+
+// Base class headers
+#include "../../../lang/Enum.hpp"
 

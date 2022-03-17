@@ -1,35 +1,63 @@
 #pragma once
 
-#include "./Animation.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view::animation
-{
-	class Transformation;
-}
+#include "../../content/Context.def.hpp"
+#include "./Transformation.def.hpp"
+#include "./RotateAnimation.def.hpp"
 
 namespace android::view::animation
 {
-	class RotateAnimation : public android::view::animation::Animation
+	// Fields
+	
+	// Constructors
+	inline RotateAnimation::RotateAnimation(android::content::Context arg0, JObject arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.RotateAnimation",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline RotateAnimation::RotateAnimation(jfloat arg0, jfloat arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.RotateAnimation",
+			"(FF)V",
+			arg0,
+			arg1
+		) {}
+	inline RotateAnimation::RotateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+		: android::view::animation::Animation(
+			"android.view.animation.RotateAnimation",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	inline RotateAnimation::RotateAnimation(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5)
+		: android::view::animation::Animation(
+			"android.view.animation.RotateAnimation",
+			"(FFIFIF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		) {}
+	
+	// Methods
+	inline void RotateAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RotateAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		RotateAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
-		
-		// Constructors
-		RotateAnimation(android::content::Context arg0, JObject arg1);
-		RotateAnimation(jfloat arg0, jfloat arg1);
-		RotateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		RotateAnimation(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5);
-		
-		// Methods
-		void initialize(jint arg0, jint arg1, jint arg2, jint arg3) const;
-	};
+		callMethod<void>(
+			"initialize",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./Animation.hpp"
 

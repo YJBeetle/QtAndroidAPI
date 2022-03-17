@@ -1,25 +1,30 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NotActiveException.def.hpp"
 
 namespace java::io
 {
-	class NotActiveException : public java::io::ObjectStreamException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotActiveException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		NotActiveException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-		
-		// Constructors
-		NotActiveException();
-		NotActiveException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NotActiveException::NotActiveException()
+		: java::io::ObjectStreamException(
+			"java.io.NotActiveException",
+			"()V"
+		) {}
+	inline NotActiveException::NotActiveException(JString arg0)
+		: java::io::ObjectStreamException(
+			"java.io.NotActiveException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

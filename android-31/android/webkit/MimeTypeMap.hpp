@@ -1,29 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MimeTypeMap.def.hpp"
 
 namespace android::webkit
 {
-	class MimeTypeMap : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString MimeTypeMap::getFileExtensionFromUrl(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MimeTypeMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MimeTypeMap(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JString getFileExtensionFromUrl(JString arg0);
-		static android::webkit::MimeTypeMap getSingleton();
-		JString getExtensionFromMimeType(JString arg0) const;
-		JString getMimeTypeFromExtension(JString arg0) const;
-		jboolean hasExtension(JString arg0) const;
-		jboolean hasMimeType(JString arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.webkit.MimeTypeMap",
+			"getFileExtensionFromUrl",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::webkit::MimeTypeMap MimeTypeMap::getSingleton()
+	{
+		return callStaticObjectMethod(
+			"android.webkit.MimeTypeMap",
+			"getSingleton",
+			"()Landroid/webkit/MimeTypeMap;"
+		);
+	}
+	inline JString MimeTypeMap::getExtensionFromMimeType(JString arg0) const
+	{
+		return callObjectMethod(
+			"getExtensionFromMimeType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString MimeTypeMap::getMimeTypeFromExtension(JString arg0) const
+	{
+		return callObjectMethod(
+			"getMimeTypeFromExtension",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean MimeTypeMap::hasExtension(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasExtension",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean MimeTypeMap::hasMimeType(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasMimeType",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

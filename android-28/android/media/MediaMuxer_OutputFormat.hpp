@@ -1,25 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaMuxer_OutputFormat.def.hpp"
 
 namespace android::media
 {
-	class MediaMuxer_OutputFormat : public JObject
+	// Fields
+	inline jint MediaMuxer_OutputFormat::MUXER_OUTPUT_3GPP()
 	{
-	public:
-		// Fields
-		static jint MUXER_OUTPUT_3GPP();
-		static jint MUXER_OUTPUT_HEIF();
-		static jint MUXER_OUTPUT_MPEG_4();
-		static jint MUXER_OUTPUT_WEBM();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaMuxer_OutputFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaMuxer_OutputFormat(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.media.MediaMuxer$OutputFormat",
+			"MUXER_OUTPUT_3GPP"
+		);
+	}
+	inline jint MediaMuxer_OutputFormat::MUXER_OUTPUT_HEIF()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaMuxer$OutputFormat",
+			"MUXER_OUTPUT_HEIF"
+		);
+	}
+	inline jint MediaMuxer_OutputFormat::MUXER_OUTPUT_MPEG_4()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaMuxer$OutputFormat",
+			"MUXER_OUTPUT_MPEG_4"
+		);
+	}
+	inline jint MediaMuxer_OutputFormat::MUXER_OUTPUT_WEBM()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaMuxer$OutputFormat",
+			"MUXER_OUTPUT_WEBM"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

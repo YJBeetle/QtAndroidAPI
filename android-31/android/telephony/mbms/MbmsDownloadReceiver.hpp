@@ -1,32 +1,32 @@
 #pragma once
 
-#include "../../content/BroadcastReceiver.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
+#include "../../content/Context.def.hpp"
+#include "../../content/Intent.def.hpp"
+#include "./MbmsDownloadReceiver.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsDownloadReceiver : public android::content::BroadcastReceiver
+	// Fields
+	
+	// Constructors
+	inline MbmsDownloadReceiver::MbmsDownloadReceiver()
+		: android::content::BroadcastReceiver(
+			"android.telephony.mbms.MbmsDownloadReceiver",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MbmsDownloadReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsDownloadReceiver(const char *className, const char *sig, Ts...agv) : android::content::BroadcastReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsDownloadReceiver(QAndroidJniObject obj) : android::content::BroadcastReceiver(obj) {}
-		
-		// Constructors
-		MbmsDownloadReceiver();
-		
-		// Methods
-		void onReceive(android::content::Context arg0, android::content::Intent arg1) const;
-	};
+		callMethod<void>(
+			"onReceive",
+			"(Landroid/content/Context;Landroid/content/Intent;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
+#include "../../content/BroadcastReceiver.hpp"
 

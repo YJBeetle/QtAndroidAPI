@@ -1,36 +1,57 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JFloatArray;
-namespace android::graphics
-{
-	class ColorSpace;
-}
-namespace android::graphics
-{
-	class ColorSpace_RenderIntent;
-}
+#include "../../JFloatArray.hpp"
+#include "./ColorSpace.def.hpp"
+#include "./ColorSpace_RenderIntent.def.hpp"
+#include "./ColorSpace_Connector.def.hpp"
 
 namespace android::graphics
 {
-	class ColorSpace_Connector : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::ColorSpace ColorSpace_Connector::getDestination() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ColorSpace_Connector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ColorSpace_Connector(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::ColorSpace getDestination() const;
-		android::graphics::ColorSpace_RenderIntent getRenderIntent() const;
-		android::graphics::ColorSpace getSource() const;
-		JFloatArray transform(JFloatArray arg0) const;
-		JFloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2) const;
-	};
+		return callObjectMethod(
+			"getDestination",
+			"()Landroid/graphics/ColorSpace;"
+		);
+	}
+	inline android::graphics::ColorSpace_RenderIntent ColorSpace_Connector::getRenderIntent() const
+	{
+		return callObjectMethod(
+			"getRenderIntent",
+			"()Landroid/graphics/ColorSpace$RenderIntent;"
+		);
+	}
+	inline android::graphics::ColorSpace ColorSpace_Connector::getSource() const
+	{
+		return callObjectMethod(
+			"getSource",
+			"()Landroid/graphics/ColorSpace;"
+		);
+	}
+	inline JFloatArray ColorSpace_Connector::transform(JFloatArray arg0) const
+	{
+		return callObjectMethod(
+			"transform",
+			"([F)[F",
+			arg0.object<jfloatArray>()
+		);
+	}
+	inline JFloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2) const
+	{
+		return callObjectMethod(
+			"transform",
+			"(FFF)[F",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

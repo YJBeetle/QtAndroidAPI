@@ -1,30 +1,39 @@
 #pragma once
 
-#include "./TextView.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./DigitalClock.def.hpp"
 
 namespace android::widget
 {
-	class DigitalClock : public android::widget::TextView
+	// Fields
+	
+	// Constructors
+	inline DigitalClock::DigitalClock(android::content::Context arg0)
+		: android::widget::TextView(
+			"android.widget.DigitalClock",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline DigitalClock::DigitalClock(android::content::Context arg0, JObject arg1)
+		: android::widget::TextView(
+			"android.widget.DigitalClock",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JString DigitalClock::getAccessibilityClassName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DigitalClock(const char *className, const char *sig, Ts...agv) : android::widget::TextView(className, sig, std::forward<Ts>(agv)...) {}
-		DigitalClock(QAndroidJniObject obj) : android::widget::TextView(obj) {}
-		
-		// Constructors
-		DigitalClock(android::content::Context arg0);
-		DigitalClock(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		JString getAccessibilityClassName() const;
-	};
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "./TextView.hpp"
 

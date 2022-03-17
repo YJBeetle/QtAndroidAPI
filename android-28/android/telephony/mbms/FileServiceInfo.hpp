@@ -1,30 +1,48 @@
 #pragma once
 
-#include "./ServiceInfo.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Parcel.def.hpp"
+#include "./FileServiceInfo.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class FileServiceInfo : public android::telephony::mbms::ServiceInfo
+	// Fields
+	inline JObject FileServiceInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileServiceInfo(const char *className, const char *sig, Ts...agv) : android::telephony::mbms::ServiceInfo(className, sig, std::forward<Ts>(agv)...) {}
-		FileServiceInfo(QAndroidJniObject obj) : android::telephony::mbms::ServiceInfo(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JObject getFiles() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.mbms.FileServiceInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint FileServiceInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JObject FileServiceInfo::getFiles() const
+	{
+		return callObjectMethod(
+			"getFiles",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void FileServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
+#include "./ServiceInfo.hpp"
 

@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./UnicodeSetSpanner_TrimOption.def.hpp"
 
 namespace android::icu::text
 {
-	class UnicodeSetSpanner_TrimOption : public java::lang::Enum
+	// Fields
+	inline android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::BOTH()
 	{
-	public:
-		// Fields
-		static android::icu::text::UnicodeSetSpanner_TrimOption BOTH();
-		static android::icu::text::UnicodeSetSpanner_TrimOption LEADING();
-		static android::icu::text::UnicodeSetSpanner_TrimOption TRAILING();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnicodeSetSpanner_TrimOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetSpanner_TrimOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::UnicodeSetSpanner_TrimOption valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.UnicodeSetSpanner$TrimOption",
+			"BOTH",
+			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
+	}
+	inline android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::LEADING()
+	{
+		return getStaticObjectField(
+			"android.icu.text.UnicodeSetSpanner$TrimOption",
+			"LEADING",
+			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
+	}
+	inline android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::TRAILING()
+	{
+		return getStaticObjectField(
+			"android.icu.text.UnicodeSetSpanner$TrimOption",
+			"TRAILING",
+			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::UnicodeSetSpanner_TrimOption UnicodeSetSpanner_TrimOption::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.UnicodeSetSpanner$TrimOption",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$TrimOption;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray UnicodeSetSpanner_TrimOption::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.UnicodeSetSpanner$TrimOption",
+			"values",
+			"()[Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

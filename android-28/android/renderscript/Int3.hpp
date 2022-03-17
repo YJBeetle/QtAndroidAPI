@@ -1,26 +1,46 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Int3.def.hpp"
 
 namespace android::renderscript
 {
-	class Int3 : public JObject
+	// Fields
+	inline jint Int3::x()
 	{
-	public:
-		// Fields
-		jint x();
-		jint y();
-		jint z();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Int3(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Int3(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Int3();
-		Int3(jint arg0, jint arg1, jint arg2);
-		
-		// Methods
-	};
+		return getField<jint>(
+			"x"
+		);
+	}
+	inline jint Int3::y()
+	{
+		return getField<jint>(
+			"y"
+		);
+	}
+	inline jint Int3::z()
+	{
+		return getField<jint>(
+			"z"
+		);
+	}
+	
+	// Constructors
+	inline Int3::Int3()
+		: JObject(
+			"android.renderscript.Int3",
+			"()V"
+		) {}
+	inline Int3::Int3(jint arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.renderscript.Int3",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

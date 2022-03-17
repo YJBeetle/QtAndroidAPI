@@ -1,39 +1,51 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::os
-{
-	class UserHandle;
-}
-class JString;
+#include "../ComponentName.def.hpp"
+#include "../../graphics/drawable/Drawable.def.hpp"
+#include "../../os/UserHandle.def.hpp"
+#include "../../../JString.hpp"
+#include "./CrossProfileApps.def.hpp"
 
 namespace android::content::pm
 {
-	class CrossProfileApps : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::drawable::Drawable CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CrossProfileApps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CrossProfileApps(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::drawable::Drawable getProfileSwitchingIconDrawable(android::os::UserHandle arg0) const;
-		JString getProfileSwitchingLabel(android::os::UserHandle arg0) const;
-		JObject getTargetUserProfiles() const;
-		void startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
-	};
+		return callObjectMethod(
+			"getProfileSwitchingIconDrawable",
+			"(Landroid/os/UserHandle;)Landroid/graphics/drawable/Drawable;",
+			arg0.object()
+		);
+	}
+	inline JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0) const
+	{
+		return callObjectMethod(
+			"getProfileSwitchingLabel",
+			"(Landroid/os/UserHandle;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline JObject CrossProfileApps::getTargetUserProfiles() const
+	{
+		return callObjectMethod(
+			"getTargetUserProfiles",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void CrossProfileApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1) const
+	{
+		callMethod<void>(
+			"startMainActivity",
+			"(Landroid/content/ComponentName;Landroid/os/UserHandle;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

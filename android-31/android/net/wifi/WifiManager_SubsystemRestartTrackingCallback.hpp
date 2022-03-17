@@ -1,24 +1,34 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./WifiManager_SubsystemRestartTrackingCallback.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiManager_SubsystemRestartTrackingCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline WifiManager_SubsystemRestartTrackingCallback::WifiManager_SubsystemRestartTrackingCallback()
+		: JObject(
+			"android.net.wifi.WifiManager$SubsystemRestartTrackingCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void WifiManager_SubsystemRestartTrackingCallback::onSubsystemRestarted() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiManager_SubsystemRestartTrackingCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiManager_SubsystemRestartTrackingCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		WifiManager_SubsystemRestartTrackingCallback();
-		
-		// Methods
-		void onSubsystemRestarted() const;
-		void onSubsystemRestarting() const;
-	};
+		callMethod<void>(
+			"onSubsystemRestarted",
+			"()V"
+		);
+	}
+	inline void WifiManager_SubsystemRestartTrackingCallback::onSubsystemRestarting() const
+	{
+		callMethod<void>(
+			"onSubsystemRestarting",
+			"()V"
+		);
+	}
 } // namespace android::net::wifi
+
+// Base class headers
 

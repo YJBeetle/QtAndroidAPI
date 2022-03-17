@@ -1,58 +1,120 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
-namespace android::view::accessibility
-{
-	class AccessibilityEvent;
-}
-namespace android::view::accessibility
-{
-	class AccessibilityNodeInfo;
-}
-namespace android::view::accessibility
-{
-	class AccessibilityNodeProvider;
-}
-class JString;
+#include "../os/Bundle.def.hpp"
+#include "./View.def.hpp"
+#include "./ViewGroup.def.hpp"
+#include "./accessibility/AccessibilityEvent.def.hpp"
+#include "./accessibility/AccessibilityNodeInfo.def.hpp"
+#include "./accessibility/AccessibilityNodeProvider.def.hpp"
+#include "../../JString.hpp"
+#include "./View_AccessibilityDelegate.def.hpp"
 
 namespace android::view
 {
-	class View_AccessibilityDelegate : public JObject
+	// Fields
+	
+	// Constructors
+	inline View_AccessibilityDelegate::View_AccessibilityDelegate()
+		: JObject(
+			"android.view.View$AccessibilityDelegate",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void View_AccessibilityDelegate::addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit View_AccessibilityDelegate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		View_AccessibilityDelegate(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		View_AccessibilityDelegate();
-		
-		// Methods
-		void addExtraDataToAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3) const;
-		jboolean dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
-		android::view::accessibility::AccessibilityNodeProvider getAccessibilityNodeProvider(android::view::View arg0) const;
-		void onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
-		void onInitializeAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1) const;
-		void onPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
-		jboolean onRequestSendAccessibilityEvent(android::view::ViewGroup arg0, android::view::View arg1, android::view::accessibility::AccessibilityEvent arg2) const;
-		jboolean performAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2) const;
-		void sendAccessibilityEvent(android::view::View arg0, jint arg1) const;
-		void sendAccessibilityEventUnchecked(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const;
-	};
+		callMethod<void>(
+			"addExtraDataToAccessibilityNodeInfo",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jstring>(),
+			arg3.object()
+		);
+	}
+	inline jboolean View_AccessibilityDelegate::dispatchPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
+	{
+		return callMethod<jboolean>(
+			"dispatchPopulateAccessibilityEvent",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::view::accessibility::AccessibilityNodeProvider View_AccessibilityDelegate::getAccessibilityNodeProvider(android::view::View arg0) const
+	{
+		return callObjectMethod(
+			"getAccessibilityNodeProvider",
+			"(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeProvider;",
+			arg0.object()
+		);
+	}
+	inline void View_AccessibilityDelegate::onInitializeAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
+	{
+		callMethod<void>(
+			"onInitializeAccessibilityEvent",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void View_AccessibilityDelegate::onInitializeAccessibilityNodeInfo(android::view::View arg0, android::view::accessibility::AccessibilityNodeInfo arg1) const
+	{
+		callMethod<void>(
+			"onInitializeAccessibilityNodeInfo",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void View_AccessibilityDelegate::onPopulateAccessibilityEvent(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
+	{
+		callMethod<void>(
+			"onPopulateAccessibilityEvent",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean View_AccessibilityDelegate::onRequestSendAccessibilityEvent(android::view::ViewGroup arg0, android::view::View arg1, android::view::accessibility::AccessibilityEvent arg2) const
+	{
+		return callMethod<jboolean>(
+			"onRequestSendAccessibilityEvent",
+			"(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline jboolean View_AccessibilityDelegate::performAccessibilityAction(android::view::View arg0, jint arg1, android::os::Bundle arg2) const
+	{
+		return callMethod<jboolean>(
+			"performAccessibilityAction",
+			"(Landroid/view/View;ILandroid/os/Bundle;)Z",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void View_AccessibilityDelegate::sendAccessibilityEvent(android::view::View arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"sendAccessibilityEvent",
+			"(Landroid/view/View;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void View_AccessibilityDelegate::sendAccessibilityEventUnchecked(android::view::View arg0, android::view::accessibility::AccessibilityEvent arg1) const
+	{
+		callMethod<void>(
+			"sendAccessibilityEventUnchecked",
+			"(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

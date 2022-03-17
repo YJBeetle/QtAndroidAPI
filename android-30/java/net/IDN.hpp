@@ -1,33 +1,69 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::lang
-{
-	class StringBuffer;
-}
+#include "../../JString.hpp"
+#include "../lang/StringBuffer.def.hpp"
+#include "./IDN.def.hpp"
 
 namespace java::net
 {
-	class IDN : public JObject
+	// Fields
+	inline jint IDN::ALLOW_UNASSIGNED()
 	{
-	public:
-		// Fields
-		static jint ALLOW_UNASSIGNED();
-		static jint USE_STD3_ASCII_RULES();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IDN(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IDN(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JString toASCII(JString arg0);
-		static JString toASCII(JString arg0, jint arg1);
-		static JString toUnicode(JString arg0);
-		static JString toUnicode(JString arg0, jint arg1);
-	};
+		return getStaticField<jint>(
+			"java.net.IDN",
+			"ALLOW_UNASSIGNED"
+		);
+	}
+	inline jint IDN::USE_STD3_ASCII_RULES()
+	{
+		return getStaticField<jint>(
+			"java.net.IDN",
+			"USE_STD3_ASCII_RULES"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString IDN::toASCII(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.net.IDN",
+			"toASCII",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString IDN::toASCII(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"java.net.IDN",
+			"toASCII",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline JString IDN::toUnicode(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.net.IDN",
+			"toUnicode",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString IDN::toUnicode(JString arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"java.net.IDN",
+			"toUnicode",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

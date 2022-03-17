@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./FieldClassification_Match.def.hpp"
 
 namespace android::service::autofill
 {
-	class FieldClassification_Match : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString FieldClassification_Match::getCategoryId() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FieldClassification_Match(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FieldClassification_Match(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getCategoryId() const;
-		jfloat getScore() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getCategoryId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jfloat FieldClassification_Match::getScore() const
+	{
+		return callMethod<jfloat>(
+			"getScore",
+			"()F"
+		);
+	}
+	inline JString FieldClassification_Match::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

@@ -1,45 +1,125 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MessageQueue.def.hpp"
+#include "../../JString.hpp"
+#include "../../java/lang/Thread.def.hpp"
+#include "./Looper.def.hpp"
 
 namespace android::os
 {
-	class MessageQueue;
-}
-class JString;
-namespace java::lang
-{
-	class Thread;
-}
-
-namespace android::os
-{
-	class Looper : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::Looper Looper::getMainLooper()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Looper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Looper(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::os::Looper getMainLooper();
-		static void loop();
-		static android::os::Looper myLooper();
-		static android::os::MessageQueue myQueue();
-		static void prepare();
-		static void prepareMainLooper();
-		void dump(JObject arg0, JString arg1) const;
-		android::os::MessageQueue getQueue() const;
-		java::lang::Thread getThread() const;
-		jboolean isCurrentThread() const;
-		void quit() const;
-		void quitSafely() const;
-		void setMessageLogging(JObject arg0) const;
-		JString toString() const;
-	};
+		return callStaticObjectMethod(
+			"android.os.Looper",
+			"getMainLooper",
+			"()Landroid/os/Looper;"
+		);
+	}
+	inline void Looper::loop()
+	{
+		callStaticMethod<void>(
+			"android.os.Looper",
+			"loop",
+			"()V"
+		);
+	}
+	inline android::os::Looper Looper::myLooper()
+	{
+		return callStaticObjectMethod(
+			"android.os.Looper",
+			"myLooper",
+			"()Landroid/os/Looper;"
+		);
+	}
+	inline android::os::MessageQueue Looper::myQueue()
+	{
+		return callStaticObjectMethod(
+			"android.os.Looper",
+			"myQueue",
+			"()Landroid/os/MessageQueue;"
+		);
+	}
+	inline void Looper::prepare()
+	{
+		callStaticMethod<void>(
+			"android.os.Looper",
+			"prepare",
+			"()V"
+		);
+	}
+	inline void Looper::prepareMainLooper()
+	{
+		callStaticMethod<void>(
+			"android.os.Looper",
+			"prepareMainLooper",
+			"()V"
+		);
+	}
+	inline void Looper::dump(JObject arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::os::MessageQueue Looper::getQueue() const
+	{
+		return callObjectMethod(
+			"getQueue",
+			"()Landroid/os/MessageQueue;"
+		);
+	}
+	inline java::lang::Thread Looper::getThread() const
+	{
+		return callObjectMethod(
+			"getThread",
+			"()Ljava/lang/Thread;"
+		);
+	}
+	inline jboolean Looper::isCurrentThread() const
+	{
+		return callMethod<jboolean>(
+			"isCurrentThread",
+			"()Z"
+		);
+	}
+	inline void Looper::quit() const
+	{
+		callMethod<void>(
+			"quit",
+			"()V"
+		);
+	}
+	inline void Looper::quitSafely() const
+	{
+		callMethod<void>(
+			"quitSafely",
+			"()V"
+		);
+	}
+	inline void Looper::setMessageLogging(JObject arg0) const
+	{
+		callMethod<void>(
+			"setMessageLogging",
+			"(Landroid/util/Printer;)V",
+			arg0.object()
+		);
+	}
+	inline JString Looper::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

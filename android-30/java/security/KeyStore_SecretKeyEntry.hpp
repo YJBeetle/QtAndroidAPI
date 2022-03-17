@@ -1,28 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./KeyStore_SecretKeyEntry.def.hpp"
 
 namespace java::security
 {
-	class KeyStore_SecretKeyEntry : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(JObject arg0)
+		: JObject(
+			"java.security.KeyStore$SecretKeyEntry",
+			"(Ljavax/crypto/SecretKey;)V",
+			arg0.object()
+		) {}
+	inline KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(JObject arg0, JObject arg1)
+		: JObject(
+			"java.security.KeyStore$SecretKeyEntry",
+			"(Ljavax/crypto/SecretKey;Ljava/util/Set;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JObject KeyStore_SecretKeyEntry::getAttributes() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyStore_SecretKeyEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStore_SecretKeyEntry(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyStore_SecretKeyEntry(JObject arg0);
-		KeyStore_SecretKeyEntry(JObject arg0, JObject arg1);
-		
-		// Methods
-		JObject getAttributes() const;
-		JObject getSecretKey() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getAttributes",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JObject KeyStore_SecretKeyEntry::getSecretKey() const
+	{
+		return callObjectMethod(
+			"getSecretKey",
+			"()Ljavax/crypto/SecretKey;"
+		);
+	}
+	inline JString KeyStore_SecretKeyEntry::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

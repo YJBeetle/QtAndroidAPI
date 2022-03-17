@@ -1,37 +1,84 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./PermissionRequest.def.hpp"
 
 namespace android::webkit
 {
-	class PermissionRequest : public JObject
+	// Fields
+	inline JString PermissionRequest::RESOURCE_AUDIO_CAPTURE()
 	{
-	public:
-		// Fields
-		static JString RESOURCE_AUDIO_CAPTURE();
-		static JString RESOURCE_MIDI_SYSEX();
-		static JString RESOURCE_PROTECTED_MEDIA_ID();
-		static JString RESOURCE_VIDEO_CAPTURE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PermissionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PermissionRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PermissionRequest();
-		
-		// Methods
-		void deny() const;
-		android::net::Uri getOrigin() const;
-		JArray getResources() const;
-		void grant(JArray arg0) const;
-	};
+		return getStaticObjectField(
+			"android.webkit.PermissionRequest",
+			"RESOURCE_AUDIO_CAPTURE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString PermissionRequest::RESOURCE_MIDI_SYSEX()
+	{
+		return getStaticObjectField(
+			"android.webkit.PermissionRequest",
+			"RESOURCE_MIDI_SYSEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString PermissionRequest::RESOURCE_PROTECTED_MEDIA_ID()
+	{
+		return getStaticObjectField(
+			"android.webkit.PermissionRequest",
+			"RESOURCE_PROTECTED_MEDIA_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString PermissionRequest::RESOURCE_VIDEO_CAPTURE()
+	{
+		return getStaticObjectField(
+			"android.webkit.PermissionRequest",
+			"RESOURCE_VIDEO_CAPTURE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline PermissionRequest::PermissionRequest()
+		: JObject(
+			"android.webkit.PermissionRequest",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void PermissionRequest::deny() const
+	{
+		callMethod<void>(
+			"deny",
+			"()V"
+		);
+	}
+	inline android::net::Uri PermissionRequest::getOrigin() const
+	{
+		return callObjectMethod(
+			"getOrigin",
+			"()Landroid/net/Uri;"
+		);
+	}
+	inline JArray PermissionRequest::getResources() const
+	{
+		return callObjectMethod(
+			"getResources",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline void PermissionRequest::grant(JArray arg0) const
+	{
+		callMethod<void>(
+			"grant",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

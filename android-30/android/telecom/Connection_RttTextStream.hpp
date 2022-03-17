@@ -1,26 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./Connection_RttTextStream.def.hpp"
 
 namespace android::telecom
 {
-	class Connection_RttTextStream : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString Connection_RttTextStream::read() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Connection_RttTextStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Connection_RttTextStream(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString read() const;
-		JString readImmediately() const;
-		void write(JString arg0) const;
-	};
+		return callObjectMethod(
+			"read",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Connection_RttTextStream::readImmediately() const
+	{
+		return callObjectMethod(
+			"readImmediately",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Connection_RttTextStream::write(JString arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

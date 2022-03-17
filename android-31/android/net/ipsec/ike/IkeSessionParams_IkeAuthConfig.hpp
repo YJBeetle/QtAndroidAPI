@@ -1,25 +1,31 @@
 #pragma once
 
 #include "../../../../JObject.hpp"
-
-class JObject;
+#include "./IkeSessionParams_IkeAuthConfig.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionParams_IkeAuthConfig : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean IkeSessionParams_IkeAuthConfig::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeSessionParams_IkeAuthConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_IkeAuthConfig(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint IkeSessionParams_IkeAuthConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
 

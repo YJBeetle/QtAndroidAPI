@@ -1,37 +1,83 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
-namespace java::security
-{
-	class PermissionCollection;
-}
+#include "../../JString.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "./Permission.def.hpp"
 
 namespace java::security
 {
-	class Permission : public JObject
+	// Fields
+	
+	// Constructors
+	inline Permission::Permission(JString arg0)
+		: JObject(
+			"java.security.Permission",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline void Permission::checkGuard(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Permission(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Permission(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Permission(JString arg0);
-		
-		// Methods
-		void checkGuard(JObject arg0) const;
-		jboolean equals(JObject arg0) const;
-		JString getActions() const;
-		JString getName() const;
-		jint hashCode() const;
-		jboolean implies(java::security::Permission arg0) const;
-		java::security::PermissionCollection newPermissionCollection() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"checkGuard",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean Permission::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString Permission::getActions() const
+	{
+		return callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Permission::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint Permission::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean Permission::implies(java::security::Permission arg0) const
+	{
+		return callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/Permission;)Z",
+			arg0.object()
+		);
+	}
+	inline java::security::PermissionCollection Permission::newPermissionCollection() const
+	{
+		return callObjectMethod(
+			"newPermissionCollection",
+			"()Ljava/security/PermissionCollection;"
+		);
+	}
+	inline JString Permission::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

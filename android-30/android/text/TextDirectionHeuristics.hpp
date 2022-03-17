@@ -1,28 +1,68 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./TextDirectionHeuristics.def.hpp"
 
 namespace android::text
 {
-	class TextDirectionHeuristics : public JObject
+	// Fields
+	inline JObject TextDirectionHeuristics::ANYRTL_LTR()
 	{
-	public:
-		// Fields
-		static JObject ANYRTL_LTR();
-		static JObject FIRSTSTRONG_LTR();
-		static JObject FIRSTSTRONG_RTL();
-		static JObject LOCALE();
-		static JObject LTR();
-		static JObject RTL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextDirectionHeuristics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextDirectionHeuristics(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TextDirectionHeuristics();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.text.TextDirectionHeuristics",
+			"ANYRTL_LTR",
+			"Landroid/text/TextDirectionHeuristic;"
+		);
+	}
+	inline JObject TextDirectionHeuristics::FIRSTSTRONG_LTR()
+	{
+		return getStaticObjectField(
+			"android.text.TextDirectionHeuristics",
+			"FIRSTSTRONG_LTR",
+			"Landroid/text/TextDirectionHeuristic;"
+		);
+	}
+	inline JObject TextDirectionHeuristics::FIRSTSTRONG_RTL()
+	{
+		return getStaticObjectField(
+			"android.text.TextDirectionHeuristics",
+			"FIRSTSTRONG_RTL",
+			"Landroid/text/TextDirectionHeuristic;"
+		);
+	}
+	inline JObject TextDirectionHeuristics::LOCALE()
+	{
+		return getStaticObjectField(
+			"android.text.TextDirectionHeuristics",
+			"LOCALE",
+			"Landroid/text/TextDirectionHeuristic;"
+		);
+	}
+	inline JObject TextDirectionHeuristics::LTR()
+	{
+		return getStaticObjectField(
+			"android.text.TextDirectionHeuristics",
+			"LTR",
+			"Landroid/text/TextDirectionHeuristic;"
+		);
+	}
+	inline JObject TextDirectionHeuristics::RTL()
+	{
+		return getStaticObjectField(
+			"android.text.TextDirectionHeuristics",
+			"RTL",
+			"Landroid/text/TextDirectionHeuristic;"
+		);
+	}
+	
+	// Constructors
+	inline TextDirectionHeuristics::TextDirectionHeuristics()
+		: JObject(
+			"android.text.TextDirectionHeuristics",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::text
+
+// Base class headers
 

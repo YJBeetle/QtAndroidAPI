@@ -1,36 +1,57 @@
 #pragma once
 
-#include "../app/Service.hpp"
-
-namespace android::content
-{
-	class Intent;
-}
-namespace android::speech
-{
-	class RecognitionService_Callback;
-}
-class JString;
+#include "../content/Intent.def.hpp"
+#include "./RecognitionService_Callback.def.hpp"
+#include "../../JString.hpp"
+#include "./RecognitionService.def.hpp"
 
 namespace android::speech
 {
-	class RecognitionService : public android::app::Service
+	// Fields
+	inline JString RecognitionService::SERVICE_INTERFACE()
 	{
-	public:
-		// Fields
-		static JString SERVICE_INTERFACE();
-		static JString SERVICE_META_DATA();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RecognitionService(const char *className, const char *sig, Ts...agv) : android::app::Service(className, sig, std::forward<Ts>(agv)...) {}
-		RecognitionService(QAndroidJniObject obj) : android::app::Service(obj) {}
-		
-		// Constructors
-		RecognitionService();
-		
-		// Methods
-		JObject onBind(android::content::Intent arg0) const;
-		void onDestroy() const;
-	};
+		return getStaticObjectField(
+			"android.speech.RecognitionService",
+			"SERVICE_INTERFACE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString RecognitionService::SERVICE_META_DATA()
+	{
+		return getStaticObjectField(
+			"android.speech.RecognitionService",
+			"SERVICE_META_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline RecognitionService::RecognitionService()
+		: android::app::Service(
+			"android.speech.RecognitionService",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject RecognitionService::onBind(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.object()
+		);
+	}
+	inline void RecognitionService::onDestroy() const
+	{
+		callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
+	}
 } // namespace android::speech
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../app/Service.hpp"
 

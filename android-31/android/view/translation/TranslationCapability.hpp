@@ -1,44 +1,112 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view::translation
-{
-	class TranslationSpec;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "./TranslationSpec.def.hpp"
+#include "../../../JString.hpp"
+#include "./TranslationCapability.def.hpp"
 
 namespace android::view::translation
 {
-	class TranslationCapability : public JObject
+	// Fields
+	inline JObject TranslationCapability::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint STATE_AVAILABLE_TO_DOWNLOAD();
-		static jint STATE_DOWNLOADING();
-		static jint STATE_NOT_AVAILABLE();
-		static jint STATE_ON_DEVICE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TranslationCapability(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TranslationCapability(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::view::translation::TranslationSpec getSourceSpec() const;
-		jint getState() const;
-		jint getSupportedTranslationFlags() const;
-		android::view::translation::TranslationSpec getTargetSpec() const;
-		jboolean isUiTranslationEnabled() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.translation.TranslationCapability",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint TranslationCapability::STATE_AVAILABLE_TO_DOWNLOAD()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationCapability",
+			"STATE_AVAILABLE_TO_DOWNLOAD"
+		);
+	}
+	inline jint TranslationCapability::STATE_DOWNLOADING()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationCapability",
+			"STATE_DOWNLOADING"
+		);
+	}
+	inline jint TranslationCapability::STATE_NOT_AVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationCapability",
+			"STATE_NOT_AVAILABLE"
+		);
+	}
+	inline jint TranslationCapability::STATE_ON_DEVICE()
+	{
+		return getStaticField<jint>(
+			"android.view.translation.TranslationCapability",
+			"STATE_ON_DEVICE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint TranslationCapability::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::view::translation::TranslationSpec TranslationCapability::getSourceSpec() const
+	{
+		return callObjectMethod(
+			"getSourceSpec",
+			"()Landroid/view/translation/TranslationSpec;"
+		);
+	}
+	inline jint TranslationCapability::getState() const
+	{
+		return callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	inline jint TranslationCapability::getSupportedTranslationFlags() const
+	{
+		return callMethod<jint>(
+			"getSupportedTranslationFlags",
+			"()I"
+		);
+	}
+	inline android::view::translation::TranslationSpec TranslationCapability::getTargetSpec() const
+	{
+		return callObjectMethod(
+			"getTargetSpec",
+			"()Landroid/view/translation/TranslationSpec;"
+		);
+	}
+	inline jboolean TranslationCapability::isUiTranslationEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isUiTranslationEnabled",
+			"()Z"
+		);
+	}
+	inline JString TranslationCapability::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void TranslationCapability::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::translation
+
+// Base class headers
 

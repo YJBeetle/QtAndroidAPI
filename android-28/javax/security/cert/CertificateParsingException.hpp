@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./CertificateException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./CertificateParsingException.def.hpp"
 
 namespace javax::security::cert
 {
-	class CertificateParsingException : public javax::security::cert::CertificateException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CertificateParsingException(const char *className, const char *sig, Ts...agv) : javax::security::cert::CertificateException(className, sig, std::forward<Ts>(agv)...) {}
-		CertificateParsingException(QAndroidJniObject obj) : javax::security::cert::CertificateException(obj) {}
-		
-		// Constructors
-		CertificateParsingException();
-		CertificateParsingException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CertificateParsingException::CertificateParsingException()
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateParsingException",
+			"()V"
+		) {}
+	inline CertificateParsingException::CertificateParsingException(JString arg0)
+		: javax::security::cert::CertificateException(
+			"javax.security.cert.CertificateParsingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::security::cert
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./CertificateException.hpp"
 

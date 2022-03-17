@@ -1,45 +1,159 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./UsageEvents.def.hpp"
+#include "../../../JString.hpp"
+#include "./UsageStatsManager.def.hpp"
 
 namespace android::app::usage
 {
-	class UsageEvents;
-}
-class JString;
-
-namespace android::app::usage
-{
-	class UsageStatsManager : public JObject
+	// Fields
+	inline jint UsageStatsManager::INTERVAL_BEST()
 	{
-	public:
-		// Fields
-		static jint INTERVAL_BEST();
-		static jint INTERVAL_DAILY();
-		static jint INTERVAL_MONTHLY();
-		static jint INTERVAL_WEEKLY();
-		static jint INTERVAL_YEARLY();
-		static jint STANDBY_BUCKET_ACTIVE();
-		static jint STANDBY_BUCKET_FREQUENT();
-		static jint STANDBY_BUCKET_RARE();
-		static jint STANDBY_BUCKET_RESTRICTED();
-		static jint STANDBY_BUCKET_WORKING_SET();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UsageStatsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UsageStatsManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getAppStandbyBucket() const;
-		jboolean isAppInactive(JString arg0) const;
-		JObject queryAndAggregateUsageStats(jlong arg0, jlong arg1) const;
-		JObject queryConfigurations(jint arg0, jlong arg1, jlong arg2) const;
-		JObject queryEventStats(jint arg0, jlong arg1, jlong arg2) const;
-		android::app::usage::UsageEvents queryEvents(jlong arg0, jlong arg1) const;
-		android::app::usage::UsageEvents queryEventsForSelf(jlong arg0, jlong arg1) const;
-		JObject queryUsageStats(jint arg0, jlong arg1, jlong arg2) const;
-	};
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"INTERVAL_BEST"
+		);
+	}
+	inline jint UsageStatsManager::INTERVAL_DAILY()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"INTERVAL_DAILY"
+		);
+	}
+	inline jint UsageStatsManager::INTERVAL_MONTHLY()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"INTERVAL_MONTHLY"
+		);
+	}
+	inline jint UsageStatsManager::INTERVAL_WEEKLY()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"INTERVAL_WEEKLY"
+		);
+	}
+	inline jint UsageStatsManager::INTERVAL_YEARLY()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"INTERVAL_YEARLY"
+		);
+	}
+	inline jint UsageStatsManager::STANDBY_BUCKET_ACTIVE()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"STANDBY_BUCKET_ACTIVE"
+		);
+	}
+	inline jint UsageStatsManager::STANDBY_BUCKET_FREQUENT()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"STANDBY_BUCKET_FREQUENT"
+		);
+	}
+	inline jint UsageStatsManager::STANDBY_BUCKET_RARE()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"STANDBY_BUCKET_RARE"
+		);
+	}
+	inline jint UsageStatsManager::STANDBY_BUCKET_RESTRICTED()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"STANDBY_BUCKET_RESTRICTED"
+		);
+	}
+	inline jint UsageStatsManager::STANDBY_BUCKET_WORKING_SET()
+	{
+		return getStaticField<jint>(
+			"android.app.usage.UsageStatsManager",
+			"STANDBY_BUCKET_WORKING_SET"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint UsageStatsManager::getAppStandbyBucket() const
+	{
+		return callMethod<jint>(
+			"getAppStandbyBucket",
+			"()I"
+		);
+	}
+	inline jboolean UsageStatsManager::isAppInactive(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"isAppInactive",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1) const
+	{
+		return callObjectMethod(
+			"queryAndAggregateUsageStats",
+			"(JJ)Ljava/util/Map;",
+			arg0,
+			arg1
+		);
+	}
+	inline JObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2) const
+	{
+		return callObjectMethod(
+			"queryConfigurations",
+			"(IJJ)Ljava/util/List;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline JObject UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2) const
+	{
+		return callObjectMethod(
+			"queryEventStats",
+			"(IJJ)Ljava/util/List;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline android::app::usage::UsageEvents UsageStatsManager::queryEvents(jlong arg0, jlong arg1) const
+	{
+		return callObjectMethod(
+			"queryEvents",
+			"(JJ)Landroid/app/usage/UsageEvents;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::app::usage::UsageEvents UsageStatsManager::queryEventsForSelf(jlong arg0, jlong arg1) const
+	{
+		return callObjectMethod(
+			"queryEventsForSelf",
+			"(JJ)Landroid/app/usage/UsageEvents;",
+			arg0,
+			arg1
+		);
+	}
+	inline JObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2) const
+	{
+		return callObjectMethod(
+			"queryUsageStats",
+			"(IJJ)Ljava/util/List;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

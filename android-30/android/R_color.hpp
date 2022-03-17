@@ -1,50 +1,216 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_color.def.hpp"
 
 namespace android
 {
-	class R_color : public JObject
+	// Fields
+	inline jint R_color::background_dark()
 	{
-	public:
-		// Fields
-		static jint background_dark();
-		static jint background_light();
-		static jint black();
-		static jint darker_gray();
-		static jint holo_blue_bright();
-		static jint holo_blue_dark();
-		static jint holo_blue_light();
-		static jint holo_green_dark();
-		static jint holo_green_light();
-		static jint holo_orange_dark();
-		static jint holo_orange_light();
-		static jint holo_purple();
-		static jint holo_red_dark();
-		static jint holo_red_light();
-		static jint primary_text_dark();
-		static jint primary_text_dark_nodisable();
-		static jint primary_text_light();
-		static jint primary_text_light_nodisable();
-		static jint secondary_text_dark();
-		static jint secondary_text_dark_nodisable();
-		static jint secondary_text_light();
-		static jint secondary_text_light_nodisable();
-		static jint tab_indicator_text();
-		static jint tertiary_text_dark();
-		static jint tertiary_text_light();
-		static jint transparent();
-		static jint white();
-		static jint widget_edittext_dark();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R_color(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_color(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		R_color();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$color",
+			"background_dark"
+		);
+	}
+	inline jint R_color::background_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"background_light"
+		);
+	}
+	inline jint R_color::black()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"black"
+		);
+	}
+	inline jint R_color::darker_gray()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"darker_gray"
+		);
+	}
+	inline jint R_color::holo_blue_bright()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_blue_bright"
+		);
+	}
+	inline jint R_color::holo_blue_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_blue_dark"
+		);
+	}
+	inline jint R_color::holo_blue_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_blue_light"
+		);
+	}
+	inline jint R_color::holo_green_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_green_dark"
+		);
+	}
+	inline jint R_color::holo_green_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_green_light"
+		);
+	}
+	inline jint R_color::holo_orange_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_orange_dark"
+		);
+	}
+	inline jint R_color::holo_orange_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_orange_light"
+		);
+	}
+	inline jint R_color::holo_purple()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_purple"
+		);
+	}
+	inline jint R_color::holo_red_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_red_dark"
+		);
+	}
+	inline jint R_color::holo_red_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"holo_red_light"
+		);
+	}
+	inline jint R_color::primary_text_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"primary_text_dark"
+		);
+	}
+	inline jint R_color::primary_text_dark_nodisable()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"primary_text_dark_nodisable"
+		);
+	}
+	inline jint R_color::primary_text_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"primary_text_light"
+		);
+	}
+	inline jint R_color::primary_text_light_nodisable()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"primary_text_light_nodisable"
+		);
+	}
+	inline jint R_color::secondary_text_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"secondary_text_dark"
+		);
+	}
+	inline jint R_color::secondary_text_dark_nodisable()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"secondary_text_dark_nodisable"
+		);
+	}
+	inline jint R_color::secondary_text_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"secondary_text_light"
+		);
+	}
+	inline jint R_color::secondary_text_light_nodisable()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"secondary_text_light_nodisable"
+		);
+	}
+	inline jint R_color::tab_indicator_text()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"tab_indicator_text"
+		);
+	}
+	inline jint R_color::tertiary_text_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"tertiary_text_dark"
+		);
+	}
+	inline jint R_color::tertiary_text_light()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"tertiary_text_light"
+		);
+	}
+	inline jint R_color::transparent()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"transparent"
+		);
+	}
+	inline jint R_color::white()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"white"
+		);
+	}
+	inline jint R_color::widget_edittext_dark()
+	{
+		return getStaticField<jint>(
+			"android.R$color",
+			"widget_edittext_dark"
+		);
+	}
+	
+	// Constructors
+	inline R_color::R_color()
+		: JObject(
+			"android.R$color",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

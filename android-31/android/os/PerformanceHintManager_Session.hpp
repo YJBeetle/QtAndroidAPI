@@ -1,24 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./PerformanceHintManager_Session.def.hpp"
 
 namespace android::os
 {
-	class PerformanceHintManager_Session : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void PerformanceHintManager_Session::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PerformanceHintManager_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PerformanceHintManager_Session(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void reportActualWorkDuration(jlong arg0) const;
-		void updateTargetWorkDuration(jlong arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void PerformanceHintManager_Session::reportActualWorkDuration(jlong arg0) const
+	{
+		callMethod<void>(
+			"reportActualWorkDuration",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void PerformanceHintManager_Session::updateTargetWorkDuration(jlong arg0) const
+	{
+		callMethod<void>(
+			"updateTargetWorkDuration",
+			"(J)V",
+			arg0
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

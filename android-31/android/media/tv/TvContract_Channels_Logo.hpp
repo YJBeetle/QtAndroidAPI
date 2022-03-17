@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./TvContract_Channels_Logo.def.hpp"
 
 namespace android::media::tv
 {
-	class TvContract_Channels_Logo : public JObject
+	// Fields
+	inline JString TvContract_Channels_Logo::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvContract_Channels_Logo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TvContract_Channels_Logo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Channels$Logo",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media::tv
+
+// Base class headers
 

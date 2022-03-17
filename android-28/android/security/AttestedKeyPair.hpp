@@ -1,29 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace java::security
-{
-	class KeyPair;
-}
+#include "../../JArray.hpp"
+#include "../../java/security/KeyPair.def.hpp"
+#include "./AttestedKeyPair.def.hpp"
 
 namespace android::security
 {
-	class AttestedKeyPair : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject AttestedKeyPair::getAttestationRecord() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AttestedKeyPair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttestedKeyPair(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getAttestationRecord() const;
-		java::security::KeyPair getKeyPair() const;
-	};
+		return callObjectMethod(
+			"getAttestationRecord",
+			"()Ljava/util/List;"
+		);
+	}
+	inline java::security::KeyPair AttestedKeyPair::getKeyPair() const
+	{
+		return callObjectMethod(
+			"getKeyPair",
+			"()Ljava/security/KeyPair;"
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

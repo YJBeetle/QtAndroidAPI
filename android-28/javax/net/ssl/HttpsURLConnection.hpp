@@ -1,50 +1,128 @@
 #pragma once
 
-#include "../../../java/net/HttpURLConnection.hpp"
-
-class JArray;
-class JString;
-namespace java::net
-{
-	class URL;
-}
-namespace java::util
-{
-	class Optional;
-}
-namespace javax::net::ssl
-{
-	class SSLSocketFactory;
-}
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/net/URL.def.hpp"
+#include "../../../java/util/Optional.def.hpp"
+#include "./SSLSocketFactory.def.hpp"
+#include "./HttpsURLConnection.def.hpp"
 
 namespace javax::net::ssl
 {
-	class HttpsURLConnection : public java::net::HttpURLConnection
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject HttpsURLConnection::getDefaultHostnameVerifier()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HttpsURLConnection(const char *className, const char *sig, Ts...agv) : java::net::HttpURLConnection(className, sig, std::forward<Ts>(agv)...) {}
-		HttpsURLConnection(QAndroidJniObject obj) : java::net::HttpURLConnection(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject getDefaultHostnameVerifier();
-		static javax::net::ssl::SSLSocketFactory getDefaultSSLSocketFactory();
-		static void setDefaultHostnameVerifier(JObject arg0);
-		static void setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
-		JString getCipherSuite() const;
-		JObject getHostnameVerifier() const;
-		JArray getLocalCertificates() const;
-		JObject getLocalPrincipal() const;
-		JObject getPeerPrincipal() const;
-		java::util::Optional getSSLSession() const;
-		javax::net::ssl::SSLSocketFactory getSSLSocketFactory() const;
-		JArray getServerCertificates() const;
-		void setHostnameVerifier(JObject arg0) const;
-		void setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0) const;
-	};
+		return callStaticObjectMethod(
+			"javax.net.ssl.HttpsURLConnection",
+			"getDefaultHostnameVerifier",
+			"()Ljavax/net/ssl/HostnameVerifier;"
+		);
+	}
+	inline javax::net::ssl::SSLSocketFactory HttpsURLConnection::getDefaultSSLSocketFactory()
+	{
+		return callStaticObjectMethod(
+			"javax.net.ssl.HttpsURLConnection",
+			"getDefaultSSLSocketFactory",
+			"()Ljavax/net/ssl/SSLSocketFactory;"
+		);
+	}
+	inline void HttpsURLConnection::setDefaultHostnameVerifier(JObject arg0)
+	{
+		callStaticMethod<void>(
+			"javax.net.ssl.HttpsURLConnection",
+			"setDefaultHostnameVerifier",
+			"(Ljavax/net/ssl/HostnameVerifier;)V",
+			arg0.object()
+		);
+	}
+	inline void HttpsURLConnection::setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0)
+	{
+		callStaticMethod<void>(
+			"javax.net.ssl.HttpsURLConnection",
+			"setDefaultSSLSocketFactory",
+			"(Ljavax/net/ssl/SSLSocketFactory;)V",
+			arg0.object()
+		);
+	}
+	inline JString HttpsURLConnection::getCipherSuite() const
+	{
+		return callObjectMethod(
+			"getCipherSuite",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject HttpsURLConnection::getHostnameVerifier() const
+	{
+		return callObjectMethod(
+			"getHostnameVerifier",
+			"()Ljavax/net/ssl/HostnameVerifier;"
+		);
+	}
+	inline JArray HttpsURLConnection::getLocalCertificates() const
+	{
+		return callObjectMethod(
+			"getLocalCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JObject HttpsURLConnection::getLocalPrincipal() const
+	{
+		return callObjectMethod(
+			"getLocalPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline JObject HttpsURLConnection::getPeerPrincipal() const
+	{
+		return callObjectMethod(
+			"getPeerPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline java::util::Optional HttpsURLConnection::getSSLSession() const
+	{
+		return callObjectMethod(
+			"getSSLSession",
+			"()Ljava/util/Optional;"
+		);
+	}
+	inline javax::net::ssl::SSLSocketFactory HttpsURLConnection::getSSLSocketFactory() const
+	{
+		return callObjectMethod(
+			"getSSLSocketFactory",
+			"()Ljavax/net/ssl/SSLSocketFactory;"
+		);
+	}
+	inline JArray HttpsURLConnection::getServerCertificates() const
+	{
+		return callObjectMethod(
+			"getServerCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		);
+	}
+	inline void HttpsURLConnection::setHostnameVerifier(JObject arg0) const
+	{
+		callMethod<void>(
+			"setHostnameVerifier",
+			"(Ljavax/net/ssl/HostnameVerifier;)V",
+			arg0.object()
+		);
+	}
+	inline void HttpsURLConnection::setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0) const
+	{
+		callMethod<void>(
+			"setSSLSocketFactory",
+			"(Ljavax/net/ssl/SSLSocketFactory;)V",
+			arg0.object()
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/net/URLConnection.hpp"
+#include "../../../java/net/HttpURLConnection.hpp"
 

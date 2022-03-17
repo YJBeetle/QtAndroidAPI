@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./SSLException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SSLPeerUnverifiedException.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLPeerUnverifiedException : public javax::net::ssl::SSLException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLPeerUnverifiedException(const char *className, const char *sig, Ts...agv) : javax::net::ssl::SSLException(className, sig, std::forward<Ts>(agv)...) {}
-		SSLPeerUnverifiedException(QAndroidJniObject obj) : javax::net::ssl::SSLException(obj) {}
-		
-		// Constructors
-		SSLPeerUnverifiedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SSLPeerUnverifiedException::SSLPeerUnverifiedException(JString arg0)
+		: javax::net::ssl::SSLException(
+			"javax.net.ssl.SSLPeerUnverifiedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::net::ssl
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/io/IOException.hpp"
+#include "./SSLException.hpp"
 

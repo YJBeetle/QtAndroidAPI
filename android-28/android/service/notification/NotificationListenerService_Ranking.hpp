@@ -1,44 +1,128 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::app
-{
-	class NotificationChannel;
-}
-class JString;
-class JString;
+#include "../../app/NotificationChannel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./NotificationListenerService_Ranking.def.hpp"
 
 namespace android::service::notification
 {
-	class NotificationListenerService_Ranking : public JObject
+	// Fields
+	inline jint NotificationListenerService_Ranking::USER_SENTIMENT_NEGATIVE()
 	{
-	public:
-		// Fields
-		static jint USER_SENTIMENT_NEGATIVE();
-		static jint USER_SENTIMENT_NEUTRAL();
-		static jint USER_SENTIMENT_POSITIVE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationListenerService_Ranking(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		NotificationListenerService_Ranking();
-		
-		// Methods
-		jboolean canShowBadge() const;
-		android::app::NotificationChannel getChannel() const;
-		jint getImportance() const;
-		JString getImportanceExplanation() const;
-		JString getKey() const;
-		JString getOverrideGroupKey() const;
-		jint getRank() const;
-		jint getSuppressedVisualEffects() const;
-		jint getUserSentiment() const;
-		jboolean isAmbient() const;
-		jboolean isSuspended() const;
-		jboolean matchesInterruptionFilter() const;
-	};
+		return getStaticField<jint>(
+			"android.service.notification.NotificationListenerService$Ranking",
+			"USER_SENTIMENT_NEGATIVE"
+		);
+	}
+	inline jint NotificationListenerService_Ranking::USER_SENTIMENT_NEUTRAL()
+	{
+		return getStaticField<jint>(
+			"android.service.notification.NotificationListenerService$Ranking",
+			"USER_SENTIMENT_NEUTRAL"
+		);
+	}
+	inline jint NotificationListenerService_Ranking::USER_SENTIMENT_POSITIVE()
+	{
+		return getStaticField<jint>(
+			"android.service.notification.NotificationListenerService$Ranking",
+			"USER_SENTIMENT_POSITIVE"
+		);
+	}
+	
+	// Constructors
+	inline NotificationListenerService_Ranking::NotificationListenerService_Ranking()
+		: JObject(
+			"android.service.notification.NotificationListenerService$Ranking",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean NotificationListenerService_Ranking::canShowBadge() const
+	{
+		return callMethod<jboolean>(
+			"canShowBadge",
+			"()Z"
+		);
+	}
+	inline android::app::NotificationChannel NotificationListenerService_Ranking::getChannel() const
+	{
+		return callObjectMethod(
+			"getChannel",
+			"()Landroid/app/NotificationChannel;"
+		);
+	}
+	inline jint NotificationListenerService_Ranking::getImportance() const
+	{
+		return callMethod<jint>(
+			"getImportance",
+			"()I"
+		);
+	}
+	inline JString NotificationListenerService_Ranking::getImportanceExplanation() const
+	{
+		return callObjectMethod(
+			"getImportanceExplanation",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString NotificationListenerService_Ranking::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString NotificationListenerService_Ranking::getOverrideGroupKey() const
+	{
+		return callObjectMethod(
+			"getOverrideGroupKey",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint NotificationListenerService_Ranking::getRank() const
+	{
+		return callMethod<jint>(
+			"getRank",
+			"()I"
+		);
+	}
+	inline jint NotificationListenerService_Ranking::getSuppressedVisualEffects() const
+	{
+		return callMethod<jint>(
+			"getSuppressedVisualEffects",
+			"()I"
+		);
+	}
+	inline jint NotificationListenerService_Ranking::getUserSentiment() const
+	{
+		return callMethod<jint>(
+			"getUserSentiment",
+			"()I"
+		);
+	}
+	inline jboolean NotificationListenerService_Ranking::isAmbient() const
+	{
+		return callMethod<jboolean>(
+			"isAmbient",
+			"()Z"
+		);
+	}
+	inline jboolean NotificationListenerService_Ranking::isSuspended() const
+	{
+		return callMethod<jboolean>(
+			"isSuspended",
+			"()Z"
+		);
+	}
+	inline jboolean NotificationListenerService_Ranking::matchesInterruptionFilter() const
+	{
+		return callMethod<jboolean>(
+			"matchesInterruptionFilter",
+			"()Z"
+		);
+	}
 } // namespace android::service::notification
+
+// Base class headers
 

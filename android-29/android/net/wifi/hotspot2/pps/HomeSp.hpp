@@ -1,43 +1,121 @@
 #pragma once
 
+#include "../../../../../JLongArray.hpp"
+#include "../../../../os/Parcel.def.hpp"
 #include "../../../../../JObject.hpp"
-
-class JLongArray;
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../../../JString.hpp"
+#include "./HomeSp.def.hpp"
 
 namespace android::net::wifi::hotspot2::pps
 {
-	class HomeSp : public JObject
+	// Fields
+	inline JObject HomeSp::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HomeSp(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		HomeSp();
-		HomeSp(android::net::wifi::hotspot2::pps::HomeSp &arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JString getFqdn() const;
-		JString getFriendlyName() const;
-		JLongArray getRoamingConsortiumOis() const;
-		jint hashCode() const;
-		void setFqdn(JString arg0) const;
-		void setFriendlyName(JString arg0) const;
-		void setRoamingConsortiumOis(JLongArray arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.hotspot2.pps.HomeSp",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline HomeSp::HomeSp()
+		: JObject(
+			"android.net.wifi.hotspot2.pps.HomeSp",
+			"()V"
+		) {}
+	inline HomeSp::HomeSp(android::net::wifi::hotspot2::pps::HomeSp &arg0)
+		: JObject(
+			"android.net.wifi.hotspot2.pps.HomeSp",
+			"(Landroid/net/wifi/hotspot2/pps/HomeSp;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint HomeSp::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean HomeSp::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString HomeSp::getFqdn() const
+	{
+		return callObjectMethod(
+			"getFqdn",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString HomeSp::getFriendlyName() const
+	{
+		return callObjectMethod(
+			"getFriendlyName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JLongArray HomeSp::getRoamingConsortiumOis() const
+	{
+		return callObjectMethod(
+			"getRoamingConsortiumOis",
+			"()[J"
+		);
+	}
+	inline jint HomeSp::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void HomeSp::setFqdn(JString arg0) const
+	{
+		callMethod<void>(
+			"setFqdn",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void HomeSp::setFriendlyName(JString arg0) const
+	{
+		callMethod<void>(
+			"setFriendlyName",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void HomeSp::setRoamingConsortiumOis(JLongArray arg0) const
+	{
+		callMethod<void>(
+			"setRoamingConsortiumOis",
+			"([J)V",
+			arg0.object<jlongArray>()
+		);
+	}
+	inline JString HomeSp::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void HomeSp::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi::hotspot2::pps
+
+// Base class headers
 

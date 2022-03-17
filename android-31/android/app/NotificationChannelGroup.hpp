@@ -1,43 +1,122 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./NotificationChannelGroup.def.hpp"
 
 namespace android::app
 {
-	class NotificationChannelGroup : public JObject
+	// Fields
+	inline JObject NotificationChannelGroup::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationChannelGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationChannelGroup(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		NotificationChannelGroup(JString arg0, JString arg1);
-		
-		// Methods
-		android::app::NotificationChannelGroup clone() const;
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JObject getChannels() const;
-		JString getDescription() const;
-		JString getId() const;
-		JString getName() const;
-		jint hashCode() const;
-		jboolean isBlocked() const;
-		void setDescription(JString arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.NotificationChannelGroup",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline NotificationChannelGroup::NotificationChannelGroup(JString arg0, JString arg1)
+		: JObject(
+			"android.app.NotificationChannelGroup",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::app::NotificationChannelGroup NotificationChannelGroup::clone() const
+	{
+		return callObjectMethod(
+			"clone",
+			"()Landroid/app/NotificationChannelGroup;"
+		);
+	}
+	inline jint NotificationChannelGroup::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean NotificationChannelGroup::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject NotificationChannelGroup::getChannels() const
+	{
+		return callObjectMethod(
+			"getChannels",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString NotificationChannelGroup::getDescription() const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString NotificationChannelGroup::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString NotificationChannelGroup::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint NotificationChannelGroup::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean NotificationChannelGroup::isBlocked() const
+	{
+		return callMethod<jboolean>(
+			"isBlocked",
+			"()Z"
+		);
+	}
+	inline void NotificationChannelGroup::setDescription(JString arg0) const
+	{
+		callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString NotificationChannelGroup::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void NotificationChannelGroup::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

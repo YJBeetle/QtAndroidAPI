@@ -1,30 +1,30 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JObject;
-namespace java::nio
-{
-	class ByteBuffer;
-}
+#include "../nio/ByteBuffer.def.hpp"
+#include "./MessageDigestSpi.def.hpp"
 
 namespace java::security
 {
-	class MessageDigestSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline MessageDigestSpi::MessageDigestSpi()
+		: JObject(
+			"java.security.MessageDigestSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject MessageDigestSpi::clone() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MessageDigestSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MessageDigestSpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MessageDigestSpi();
-		
-		// Methods
-		JObject clone() const;
-	};
+		return callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

@@ -1,26 +1,33 @@
 #pragma once
 
-#include "../DateTimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./UnsupportedTemporalTypeException.def.hpp"
 
 namespace java::time::temporal
 {
-	class UnsupportedTemporalTypeException : public java::time::DateTimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnsupportedTemporalTypeException(const char *className, const char *sig, Ts...agv) : java::time::DateTimeException(className, sig, std::forward<Ts>(agv)...) {}
-		UnsupportedTemporalTypeException(QAndroidJniObject obj) : java::time::DateTimeException(obj) {}
-		
-		// Constructors
-		UnsupportedTemporalTypeException(JString arg0);
-		UnsupportedTemporalTypeException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UnsupportedTemporalTypeException::UnsupportedTemporalTypeException(JString arg0)
+		: java::time::DateTimeException(
+			"java.time.temporal.UnsupportedTemporalTypeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline UnsupportedTemporalTypeException::UnsupportedTemporalTypeException(JString arg0, JThrowable arg1)
+		: java::time::DateTimeException(
+			"java.time.temporal.UnsupportedTemporalTypeException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::time::temporal
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../DateTimeException.hpp"
 

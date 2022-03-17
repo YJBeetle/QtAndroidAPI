@@ -1,41 +1,70 @@
 #pragma once
 
-#include "./ViewSwitcher.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../view/View.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "../../JString.hpp"
+#include "./TextSwitcher.def.hpp"
 
 namespace android::widget
 {
-	class TextSwitcher : public android::widget::ViewSwitcher
+	// Fields
+	
+	// Constructors
+	inline TextSwitcher::TextSwitcher(android::content::Context arg0)
+		: android::widget::ViewSwitcher(
+			"android.widget.TextSwitcher",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline TextSwitcher::TextSwitcher(android::content::Context arg0, JObject arg1)
+		: android::widget::ViewSwitcher(
+			"android.widget.TextSwitcher",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline void TextSwitcher::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextSwitcher(const char *className, const char *sig, Ts...agv) : android::widget::ViewSwitcher(className, sig, std::forward<Ts>(agv)...) {}
-		TextSwitcher(QAndroidJniObject obj) : android::widget::ViewSwitcher(obj) {}
-		
-		// Constructors
-		TextSwitcher(android::content::Context arg0);
-		TextSwitcher(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const;
-		JString getAccessibilityClassName() const;
-		void setCurrentText(JString arg0) const;
-		void setText(JString arg0) const;
-	};
+		callMethod<void>(
+			"addView",
+			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline JString TextSwitcher::getAccessibilityClassName() const
+	{
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline void TextSwitcher::setCurrentText(JString arg0) const
+	{
+		callMethod<void>(
+			"setCurrentText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void TextSwitcher::setText(JString arg0) const
+	{
+		callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "./FrameLayout.hpp"
+#include "./ViewAnimator.hpp"
+#include "./ViewSwitcher.hpp"
 

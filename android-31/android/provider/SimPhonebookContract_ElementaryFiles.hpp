@@ -1,42 +1,135 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./SimPhonebookContract_ElementaryFiles.def.hpp"
 
 namespace android::provider
 {
-	class SimPhonebookContract_ElementaryFiles : public JObject
+	// Fields
+	inline JString SimPhonebookContract_ElementaryFiles::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static jint EF_ADN();
-		static jint EF_FDN();
-		static jint EF_SDN();
-		static JString EF_TYPE();
-		static jint EF_UNKNOWN();
-		static JString MAX_RECORDS();
-		static JString NAME_MAX_LENGTH();
-		static JString PHONE_NUMBER_MAX_LENGTH();
-		static JString RECORD_COUNT();
-		static JString SLOT_INDEX();
-		static JString SUBSCRIPTION_ID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SimPhonebookContract_ElementaryFiles(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SimPhonebookContract_ElementaryFiles(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::net::Uri getItemUri(jint arg0, jint arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri SimPhonebookContract_ElementaryFiles::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jint SimPhonebookContract_ElementaryFiles::EF_ADN()
+	{
+		return getStaticField<jint>(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"EF_ADN"
+		);
+	}
+	inline jint SimPhonebookContract_ElementaryFiles::EF_FDN()
+	{
+		return getStaticField<jint>(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"EF_FDN"
+		);
+	}
+	inline jint SimPhonebookContract_ElementaryFiles::EF_SDN()
+	{
+		return getStaticField<jint>(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"EF_SDN"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::EF_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"EF_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint SimPhonebookContract_ElementaryFiles::EF_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"EF_UNKNOWN"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::MAX_RECORDS()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"MAX_RECORDS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::NAME_MAX_LENGTH()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"NAME_MAX_LENGTH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::PHONE_NUMBER_MAX_LENGTH()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"PHONE_NUMBER_MAX_LENGTH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::RECORD_COUNT()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"RECORD_COUNT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::SLOT_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"SLOT_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SimPhonebookContract_ElementaryFiles::SUBSCRIPTION_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"SUBSCRIPTION_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::Uri SimPhonebookContract_ElementaryFiles::getItemUri(jint arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.SimPhonebookContract$ElementaryFiles",
+			"getItemUri",
+			"(II)Landroid/net/Uri;",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

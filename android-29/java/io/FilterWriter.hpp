@@ -1,33 +1,61 @@
 #pragma once
 
-#include "./Writer.hpp"
-
-class JCharArray;
-namespace java::io
-{
-	class Writer;
-}
-class JString;
+#include "../../JCharArray.hpp"
+#include "./Writer.def.hpp"
+#include "../../JString.hpp"
+#include "./FilterWriter.def.hpp"
 
 namespace java::io
 {
-	class FilterWriter : public java::io::Writer
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void FilterWriter::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FilterWriter(const char *className, const char *sig, Ts...agv) : java::io::Writer(className, sig, std::forward<Ts>(agv)...) {}
-		FilterWriter(QAndroidJniObject obj) : java::io::Writer(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void flush() const;
-		void write(jint arg0) const;
-		void write(JCharArray arg0, jint arg1, jint arg2) const;
-		void write(JString arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void FilterWriter::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline void FilterWriter::write(jint arg0) const
+	{
+		callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void FilterWriter::write(JCharArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([CII)V",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void FilterWriter::write(JString arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"(Ljava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./Writer.hpp"
 

@@ -1,33 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Font.def.hpp"
+#include "./FontFamily.def.hpp"
+#include "./FontFamily_Builder.def.hpp"
 
 namespace android::graphics::fonts
 {
-	class Font;
-}
-namespace android::graphics::fonts
-{
-	class FontFamily;
-}
-
-namespace android::graphics::fonts
-{
-	class FontFamily_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline FontFamily_Builder::FontFamily_Builder(android::graphics::fonts::Font arg0)
+		: JObject(
+			"android.graphics.fonts.FontFamily$Builder",
+			"(Landroid/graphics/fonts/Font;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::fonts::FontFamily_Builder FontFamily_Builder::addFont(android::graphics::fonts::Font arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FontFamily_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontFamily_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FontFamily_Builder(android::graphics::fonts::Font arg0);
-		
-		// Methods
-		android::graphics::fonts::FontFamily_Builder addFont(android::graphics::fonts::Font arg0) const;
-		android::graphics::fonts::FontFamily build() const;
-	};
+		return callObjectMethod(
+			"addFont",
+			"(Landroid/graphics/fonts/Font;)Landroid/graphics/fonts/FontFamily$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::fonts::FontFamily FontFamily_Builder::build() const
+	{
+		return callObjectMethod(
+			"build",
+			"()Landroid/graphics/fonts/FontFamily;"
+		);
+	}
 } // namespace android::graphics::fonts
+
+// Base class headers
 

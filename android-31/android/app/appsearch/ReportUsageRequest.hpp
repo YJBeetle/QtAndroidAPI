@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ReportUsageRequest.def.hpp"
 
 namespace android::app::appsearch
 {
-	class ReportUsageRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString ReportUsageRequest::getDocumentId() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ReportUsageRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReportUsageRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getDocumentId() const;
-		JString getNamespace() const;
-		jlong getUsageTimestampMillis() const;
-	};
+		return callObjectMethod(
+			"getDocumentId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString ReportUsageRequest::getNamespace() const
+	{
+		return callObjectMethod(
+			"getNamespace",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong ReportUsageRequest::getUsageTimestampMillis() const
+	{
+		return callMethod<jlong>(
+			"getUsageTimestampMillis",
+			"()J"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
 

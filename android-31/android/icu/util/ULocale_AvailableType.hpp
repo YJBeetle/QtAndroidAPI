@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./ULocale_AvailableType.def.hpp"
 
 namespace android::icu::util
 {
-	class ULocale_AvailableType : public java::lang::Enum
+	// Fields
+	inline android::icu::util::ULocale_AvailableType ULocale_AvailableType::DEFAULT()
 	{
-	public:
-		// Fields
-		static android::icu::util::ULocale_AvailableType DEFAULT();
-		static android::icu::util::ULocale_AvailableType ONLY_LEGACY_ALIASES();
-		static android::icu::util::ULocale_AvailableType WITH_LEGACY_ALIASES();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ULocale_AvailableType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		ULocale_AvailableType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::ULocale_AvailableType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.util.ULocale$AvailableType",
+			"DEFAULT",
+			"Landroid/icu/util/ULocale$AvailableType;"
+		);
+	}
+	inline android::icu::util::ULocale_AvailableType ULocale_AvailableType::ONLY_LEGACY_ALIASES()
+	{
+		return getStaticObjectField(
+			"android.icu.util.ULocale$AvailableType",
+			"ONLY_LEGACY_ALIASES",
+			"Landroid/icu/util/ULocale$AvailableType;"
+		);
+	}
+	inline android::icu::util::ULocale_AvailableType ULocale_AvailableType::WITH_LEGACY_ALIASES()
+	{
+		return getStaticObjectField(
+			"android.icu.util.ULocale$AvailableType",
+			"WITH_LEGACY_ALIASES",
+			"Landroid/icu/util/ULocale$AvailableType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::ULocale_AvailableType ULocale_AvailableType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.ULocale$AvailableType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/util/ULocale$AvailableType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ULocale_AvailableType::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.ULocale$AvailableType",
+			"values",
+			"()[Landroid/icu/util/ULocale$AvailableType;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

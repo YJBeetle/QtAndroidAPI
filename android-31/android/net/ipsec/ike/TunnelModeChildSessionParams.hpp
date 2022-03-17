@@ -1,26 +1,39 @@
 #pragma once
 
-#include "./ChildSessionParams.hpp"
-
-class JObject;
+#include "../../../../JObject.hpp"
+#include "./TunnelModeChildSessionParams.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class TunnelModeChildSessionParams : public android::net::ipsec::ike::ChildSessionParams
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean TunnelModeChildSessionParams::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TunnelModeChildSessionParams(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::ChildSessionParams(className, sig, std::forward<Ts>(agv)...) {}
-		TunnelModeChildSessionParams(QAndroidJniObject obj) : android::net::ipsec::ike::ChildSessionParams(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JObject getConfigurationRequests() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject TunnelModeChildSessionParams::getConfigurationRequests() const
+	{
+		return callObjectMethod(
+			"getConfigurationRequests",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint TunnelModeChildSessionParams::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./ChildSessionParams.hpp"
 

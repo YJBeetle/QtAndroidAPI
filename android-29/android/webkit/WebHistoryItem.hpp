@@ -1,33 +1,51 @@
 #pragma once
 
+#include "../graphics/Bitmap.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Bitmap;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./WebHistoryItem.def.hpp"
 
 namespace android::webkit
 {
-	class WebHistoryItem : public JObject
+	// Fields
+	
+	// Constructors
+	inline WebHistoryItem::WebHistoryItem()
+		: JObject(
+			"android.webkit.WebHistoryItem",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::graphics::Bitmap WebHistoryItem::getFavicon() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WebHistoryItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WebHistoryItem(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		WebHistoryItem();
-		
-		// Methods
-		android::graphics::Bitmap getFavicon() const;
-		JString getOriginalUrl() const;
-		JString getTitle() const;
-		JString getUrl() const;
-	};
+		return callObjectMethod(
+			"getFavicon",
+			"()Landroid/graphics/Bitmap;"
+		);
+	}
+	inline JString WebHistoryItem::getOriginalUrl() const
+	{
+		return callObjectMethod(
+			"getOriginalUrl",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WebHistoryItem::getTitle() const
+	{
+		return callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString WebHistoryItem::getUrl() const
+	{
+		return callObjectMethod(
+			"getUrl",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
 

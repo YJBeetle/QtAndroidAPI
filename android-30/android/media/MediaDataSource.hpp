@@ -1,26 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
+#include "../../JByteArray.hpp"
+#include "./MediaDataSource.def.hpp"
 
 namespace android::media
 {
-	class MediaDataSource : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaDataSource::MediaDataSource()
+		: JObject(
+			"android.media.MediaDataSource",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jlong MediaDataSource::getSize() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDataSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDataSource(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaDataSource();
-		
-		// Methods
-		jlong getSize() const;
-		jint readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3) const;
-	};
+		return callMethod<jlong>(
+			"getSize",
+			"()J"
+		);
+	}
+	inline jint MediaDataSource::readAt(jlong arg0, JByteArray arg1, jint arg2, jint arg3) const
+	{
+		return callMethod<jint>(
+			"readAt",
+			"(J[BII)I",
+			arg0,
+			arg1.object<jbyteArray>(),
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

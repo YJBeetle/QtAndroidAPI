@@ -1,34 +1,70 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_ProviderStatus.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_ProviderStatus : public JObject
+	// Fields
+	inline JString ContactsContract_ProviderStatus::CONTENT_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString DATABASE_CREATION_TIMESTAMP();
-		static JString STATUS();
-		static jint STATUS_BUSY();
-		static jint STATUS_EMPTY();
-		static jint STATUS_NORMAL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_ProviderStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_ProviderStatus(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$ProviderStatus",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_ProviderStatus::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$ProviderStatus",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString ContactsContract_ProviderStatus::DATABASE_CREATION_TIMESTAMP()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$ProviderStatus",
+			"DATABASE_CREATION_TIMESTAMP",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_ProviderStatus::STATUS()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$ProviderStatus",
+			"STATUS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_ProviderStatus::STATUS_BUSY()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$ProviderStatus",
+			"STATUS_BUSY"
+		);
+	}
+	inline jint ContactsContract_ProviderStatus::STATUS_EMPTY()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$ProviderStatus",
+			"STATUS_EMPTY"
+		);
+	}
+	inline jint ContactsContract_ProviderStatus::STATUS_NORMAL()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$ProviderStatus",
+			"STATUS_NORMAL"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

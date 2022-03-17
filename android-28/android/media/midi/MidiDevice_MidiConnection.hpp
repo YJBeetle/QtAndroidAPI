@@ -1,31 +1,24 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MidiDevice.def.hpp"
+#include "./MidiInputPort.def.hpp"
+#include "./MidiDevice_MidiConnection.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiDevice;
-}
-namespace android::media::midi
-{
-	class MidiInputPort;
-}
-
-namespace android::media::midi
-{
-	class MidiDevice_MidiConnection : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MidiDevice_MidiConnection::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiDevice_MidiConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDevice_MidiConnection(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
 

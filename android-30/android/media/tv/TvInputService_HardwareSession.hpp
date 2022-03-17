@@ -1,36 +1,55 @@
 #pragma once
 
-#include "./TvInputService_Session.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class Surface;
-}
-class JString;
+#include "../../content/Context.def.hpp"
+#include "../../view/Surface.def.hpp"
+#include "../../../JString.hpp"
+#include "./TvInputService_HardwareSession.def.hpp"
 
 namespace android::media::tv
 {
-	class TvInputService_HardwareSession : public android::media::tv::TvInputService_Session
+	// Fields
+	
+	// Constructors
+	inline TvInputService_HardwareSession::TvInputService_HardwareSession(android::content::Context arg0)
+		: android::media::tv::TvInputService_Session(
+			"android.media.tv.TvInputService$HardwareSession",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JString TvInputService_HardwareSession::getHardwareInputId() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvInputService_HardwareSession(const char *className, const char *sig, Ts...agv) : android::media::tv::TvInputService_Session(className, sig, std::forward<Ts>(agv)...) {}
-		TvInputService_HardwareSession(QAndroidJniObject obj) : android::media::tv::TvInputService_Session(obj) {}
-		
-		// Constructors
-		TvInputService_HardwareSession(android::content::Context arg0);
-		
-		// Methods
-		JString getHardwareInputId() const;
-		void onHardwareVideoAvailable() const;
-		void onHardwareVideoUnavailable(jint arg0) const;
-		jboolean onSetSurface(android::view::Surface arg0) const;
-	};
+		return callObjectMethod(
+			"getHardwareInputId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void TvInputService_HardwareSession::onHardwareVideoAvailable() const
+	{
+		callMethod<void>(
+			"onHardwareVideoAvailable",
+			"()V"
+		);
+	}
+	inline void TvInputService_HardwareSession::onHardwareVideoUnavailable(jint arg0) const
+	{
+		callMethod<void>(
+			"onHardwareVideoUnavailable",
+			"(I)V",
+			arg0
+		);
+	}
+	inline jboolean TvInputService_HardwareSession::onSetSurface(android::view::Surface arg0) const
+	{
+		return callMethod<jboolean>(
+			"onSetSurface",
+			"(Landroid/view/Surface;)Z",
+			arg0.object()
+		);
+	}
 } // namespace android::media::tv
+
+// Base class headers
+#include "./TvInputService_Session.hpp"
 

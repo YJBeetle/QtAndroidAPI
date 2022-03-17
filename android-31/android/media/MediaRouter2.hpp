@@ -1,65 +1,136 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::media
-{
-	class MediaRoute2Info;
-}
-namespace android::media
-{
-	class MediaRouter2_ControllerCallback;
-}
-namespace android::media
-{
-	class MediaRouter2_RouteCallback;
-}
-namespace android::media
-{
-	class MediaRouter2_RoutingController;
-}
-namespace android::media
-{
-	class MediaRouter2_TransferCallback;
-}
-namespace android::media
-{
-	class RouteDiscoveryPreference;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "./MediaRoute2Info.def.hpp"
+#include "./MediaRouter2_ControllerCallback.def.hpp"
+#include "./MediaRouter2_RouteCallback.def.hpp"
+#include "./MediaRouter2_RoutingController.def.hpp"
+#include "./MediaRouter2_TransferCallback.def.hpp"
+#include "./RouteDiscoveryPreference.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaRouter2.def.hpp"
 
 namespace android::media
 {
-	class MediaRouter2 : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::MediaRouter2 MediaRouter2::getInstance(android::content::Context arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::media::MediaRouter2 getInstance(android::content::Context arg0);
-		android::media::MediaRouter2_RoutingController getController(JString arg0) const;
-		JObject getControllers() const;
-		JObject getRoutes() const;
-		android::media::MediaRouter2_RoutingController getSystemController() const;
-		void registerControllerCallback(JObject arg0, android::media::MediaRouter2_ControllerCallback arg1) const;
-		void registerRouteCallback(JObject arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2) const;
-		void registerTransferCallback(JObject arg0, android::media::MediaRouter2_TransferCallback arg1) const;
-		void setOnGetControllerHintsListener(JObject arg0) const;
-		void stop() const;
-		void transferTo(android::media::MediaRoute2Info arg0) const;
-		void unregisterControllerCallback(android::media::MediaRouter2_ControllerCallback arg0) const;
-		void unregisterRouteCallback(android::media::MediaRouter2_RouteCallback arg0) const;
-		void unregisterTransferCallback(android::media::MediaRouter2_TransferCallback arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.media.MediaRouter2",
+			"getInstance",
+			"(Landroid/content/Context;)Landroid/media/MediaRouter2;",
+			arg0.object()
+		);
+	}
+	inline android::media::MediaRouter2_RoutingController MediaRouter2::getController(JString arg0) const
+	{
+		return callObjectMethod(
+			"getController",
+			"(Ljava/lang/String;)Landroid/media/MediaRouter2$RoutingController;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject MediaRouter2::getControllers() const
+	{
+		return callObjectMethod(
+			"getControllers",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject MediaRouter2::getRoutes() const
+	{
+		return callObjectMethod(
+			"getRoutes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::media::MediaRouter2_RoutingController MediaRouter2::getSystemController() const
+	{
+		return callObjectMethod(
+			"getSystemController",
+			"()Landroid/media/MediaRouter2$RoutingController;"
+		);
+	}
+	inline void MediaRouter2::registerControllerCallback(JObject arg0, android::media::MediaRouter2_ControllerCallback arg1) const
+	{
+		callMethod<void>(
+			"registerControllerCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaRouter2$ControllerCallback;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter2::registerRouteCallback(JObject arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2) const
+	{
+		callMethod<void>(
+			"registerRouteCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaRouter2$RouteCallback;Landroid/media/RouteDiscoveryPreference;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void MediaRouter2::registerTransferCallback(JObject arg0, android::media::MediaRouter2_TransferCallback arg1) const
+	{
+		callMethod<void>(
+			"registerTransferCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaRouter2$TransferCallback;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter2::setOnGetControllerHintsListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setOnGetControllerHintsListener",
+			"(Landroid/media/MediaRouter2$OnGetControllerHintsListener;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2::stop() const
+	{
+		callMethod<void>(
+			"stop",
+			"()V"
+		);
+	}
+	inline void MediaRouter2::transferTo(android::media::MediaRoute2Info arg0) const
+	{
+		callMethod<void>(
+			"transferTo",
+			"(Landroid/media/MediaRoute2Info;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2::unregisterControllerCallback(android::media::MediaRouter2_ControllerCallback arg0) const
+	{
+		callMethod<void>(
+			"unregisterControllerCallback",
+			"(Landroid/media/MediaRouter2$ControllerCallback;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2::unregisterRouteCallback(android::media::MediaRouter2_RouteCallback arg0) const
+	{
+		callMethod<void>(
+			"unregisterRouteCallback",
+			"(Landroid/media/MediaRouter2$RouteCallback;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2::unregisterTransferCallback(android::media::MediaRouter2_TransferCallback arg0) const
+	{
+		callMethod<void>(
+			"unregisterTransferCallback",
+			"(Landroid/media/MediaRouter2$TransferCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

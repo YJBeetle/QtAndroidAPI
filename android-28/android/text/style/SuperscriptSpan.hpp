@@ -1,37 +1,69 @@
 #pragma once
 
-#include "./MetricAffectingSpan.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::text
-{
-	class TextPaint;
-}
+#include "../../os/Parcel.def.hpp"
+#include "../TextPaint.def.hpp"
+#include "./SuperscriptSpan.def.hpp"
 
 namespace android::text::style
 {
-	class SuperscriptSpan : public android::text::style::MetricAffectingSpan
+	// Fields
+	
+	// Constructors
+	inline SuperscriptSpan::SuperscriptSpan()
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.SuperscriptSpan",
+			"()V"
+		) {}
+	inline SuperscriptSpan::SuperscriptSpan(android::os::Parcel arg0)
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.SuperscriptSpan",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint SuperscriptSpan::describeContents() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SuperscriptSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		SuperscriptSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
-		
-		// Constructors
-		SuperscriptSpan();
-		SuperscriptSpan(android::os::Parcel arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jint getSpanTypeId() const;
-		void updateDrawState(android::text::TextPaint arg0) const;
-		void updateMeasureState(android::text::TextPaint arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint SuperscriptSpan::getSpanTypeId() const
+	{
+		return callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
+	inline void SuperscriptSpan::updateDrawState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
+	inline void SuperscriptSpan::updateMeasureState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
+	inline void SuperscriptSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
+#include "./MetricAffectingSpan.hpp"
 

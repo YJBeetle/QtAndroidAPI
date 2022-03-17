@@ -1,59 +1,173 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Gesture.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "../../JString.hpp"
+#include "../../java/util/ArrayList.def.hpp"
+#include "./GestureStore.def.hpp"
 
 namespace android::gesture
 {
-	class Gesture;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-class JString;
-namespace java::util
-{
-	class ArrayList;
-}
-
-namespace android::gesture
-{
-	class GestureStore : public JObject
+	// Fields
+	inline jint GestureStore::ORIENTATION_INVARIANT()
 	{
-	public:
-		// Fields
-		static jint ORIENTATION_INVARIANT();
-		static jint ORIENTATION_SENSITIVE();
-		static jint SEQUENCE_INVARIANT();
-		static jint SEQUENCE_SENSITIVE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GestureStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GestureStore(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GestureStore();
-		
-		// Methods
-		void addGesture(JString arg0, android::gesture::Gesture arg1) const;
-		JObject getGestureEntries() const;
-		java::util::ArrayList getGestures(JString arg0) const;
-		jint getOrientationStyle() const;
-		jint getSequenceType() const;
-		jboolean hasChanged() const;
-		void load(java::io::InputStream arg0) const;
-		void load(java::io::InputStream arg0, jboolean arg1) const;
-		java::util::ArrayList recognize(android::gesture::Gesture arg0) const;
-		void removeEntry(JString arg0) const;
-		void removeGesture(JString arg0, android::gesture::Gesture arg1) const;
-		void save(java::io::OutputStream arg0) const;
-		void save(java::io::OutputStream arg0, jboolean arg1) const;
-		void setOrientationStyle(jint arg0) const;
-		void setSequenceType(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.gesture.GestureStore",
+			"ORIENTATION_INVARIANT"
+		);
+	}
+	inline jint GestureStore::ORIENTATION_SENSITIVE()
+	{
+		return getStaticField<jint>(
+			"android.gesture.GestureStore",
+			"ORIENTATION_SENSITIVE"
+		);
+	}
+	inline jint GestureStore::SEQUENCE_INVARIANT()
+	{
+		return getStaticField<jint>(
+			"android.gesture.GestureStore",
+			"SEQUENCE_INVARIANT"
+		);
+	}
+	inline jint GestureStore::SEQUENCE_SENSITIVE()
+	{
+		return getStaticField<jint>(
+			"android.gesture.GestureStore",
+			"SEQUENCE_SENSITIVE"
+		);
+	}
+	
+	// Constructors
+	inline GestureStore::GestureStore()
+		: JObject(
+			"android.gesture.GestureStore",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void GestureStore::addGesture(JString arg0, android::gesture::Gesture arg1) const
+	{
+		callMethod<void>(
+			"addGesture",
+			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JObject GestureStore::getGestureEntries() const
+	{
+		return callObjectMethod(
+			"getGestureEntries",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline java::util::ArrayList GestureStore::getGestures(JString arg0) const
+	{
+		return callObjectMethod(
+			"getGestures",
+			"(Ljava/lang/String;)Ljava/util/ArrayList;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint GestureStore::getOrientationStyle() const
+	{
+		return callMethod<jint>(
+			"getOrientationStyle",
+			"()I"
+		);
+	}
+	inline jint GestureStore::getSequenceType() const
+	{
+		return callMethod<jint>(
+			"getSequenceType",
+			"()I"
+		);
+	}
+	inline jboolean GestureStore::hasChanged() const
+	{
+		return callMethod<jboolean>(
+			"hasChanged",
+			"()Z"
+		);
+	}
+	inline void GestureStore::load(java::io::InputStream arg0) const
+	{
+		callMethod<void>(
+			"load",
+			"(Ljava/io/InputStream;)V",
+			arg0.object()
+		);
+	}
+	inline void GestureStore::load(java::io::InputStream arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"load",
+			"(Ljava/io/InputStream;Z)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline java::util::ArrayList GestureStore::recognize(android::gesture::Gesture arg0) const
+	{
+		return callObjectMethod(
+			"recognize",
+			"(Landroid/gesture/Gesture;)Ljava/util/ArrayList;",
+			arg0.object()
+		);
+	}
+	inline void GestureStore::removeEntry(JString arg0) const
+	{
+		callMethod<void>(
+			"removeEntry",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void GestureStore::removeGesture(JString arg0, android::gesture::Gesture arg1) const
+	{
+		callMethod<void>(
+			"removeGesture",
+			"(Ljava/lang/String;Landroid/gesture/Gesture;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void GestureStore::save(java::io::OutputStream arg0) const
+	{
+		callMethod<void>(
+			"save",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		);
+	}
+	inline void GestureStore::save(java::io::OutputStream arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"save",
+			"(Ljava/io/OutputStream;Z)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void GestureStore::setOrientationStyle(jint arg0) const
+	{
+		callMethod<void>(
+			"setOrientationStyle",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void GestureStore::setSequenceType(jint arg0) const
+	{
+		callMethod<void>(
+			"setSequenceType",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::gesture
+
+// Base class headers
 

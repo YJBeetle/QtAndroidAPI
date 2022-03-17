@@ -1,30 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
+#include "../../JByteArray.hpp"
+#include "./MediaDrm_KeyStatus.def.hpp"
 
 namespace android::media
 {
-	class MediaDrm_KeyStatus : public JObject
+	// Fields
+	inline jint MediaDrm_KeyStatus::STATUS_EXPIRED()
 	{
-	public:
-		// Fields
-		static jint STATUS_EXPIRED();
-		static jint STATUS_INTERNAL_ERROR();
-		static jint STATUS_OUTPUT_NOT_ALLOWED();
-		static jint STATUS_PENDING();
-		static jint STATUS_USABLE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_KeyStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_KeyStatus(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JByteArray getKeyId() const;
-		jint getStatusCode() const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaDrm$KeyStatus",
+			"STATUS_EXPIRED"
+		);
+	}
+	inline jint MediaDrm_KeyStatus::STATUS_INTERNAL_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaDrm$KeyStatus",
+			"STATUS_INTERNAL_ERROR"
+		);
+	}
+	inline jint MediaDrm_KeyStatus::STATUS_OUTPUT_NOT_ALLOWED()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaDrm$KeyStatus",
+			"STATUS_OUTPUT_NOT_ALLOWED"
+		);
+	}
+	inline jint MediaDrm_KeyStatus::STATUS_PENDING()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaDrm$KeyStatus",
+			"STATUS_PENDING"
+		);
+	}
+	inline jint MediaDrm_KeyStatus::STATUS_USABLE()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaDrm$KeyStatus",
+			"STATUS_USABLE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray MediaDrm_KeyStatus::getKeyId() const
+	{
+		return callObjectMethod(
+			"getKeyId",
+			"()[B"
+		);
+	}
+	inline jint MediaDrm_KeyStatus::getStatusCode() const
+	{
+		return callMethod<jint>(
+			"getStatusCode",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

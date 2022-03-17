@@ -1,30 +1,40 @@
 #pragma once
 
-#include "../util/EventListenerProxy.hpp"
+#include "./PropertyChangeEvent.def.hpp"
+#include "../../JString.hpp"
+#include "./PropertyChangeListenerProxy.def.hpp"
 
 namespace java::beans
 {
-	class PropertyChangeEvent;
-}
-class JString;
-
-namespace java::beans
-{
-	class PropertyChangeListenerProxy : public java::util::EventListenerProxy
+	// Fields
+	
+	// Constructors
+	inline PropertyChangeListenerProxy::PropertyChangeListenerProxy(JString arg0, JObject arg1)
+		: java::util::EventListenerProxy(
+			"java.beans.PropertyChangeListenerProxy",
+			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JString PropertyChangeListenerProxy::getPropertyName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PropertyChangeListenerProxy(const char *className, const char *sig, Ts...agv) : java::util::EventListenerProxy(className, sig, std::forward<Ts>(agv)...) {}
-		PropertyChangeListenerProxy(QAndroidJniObject obj) : java::util::EventListenerProxy(obj) {}
-		
-		// Constructors
-		PropertyChangeListenerProxy(JString arg0, JObject arg1);
-		
-		// Methods
-		JString getPropertyName() const;
-		void propertyChange(java::beans::PropertyChangeEvent arg0) const;
-	};
+		return callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PropertyChangeListenerProxy::propertyChange(java::beans::PropertyChangeEvent arg0) const
+	{
+		callMethod<void>(
+			"propertyChange",
+			"(Ljava/beans/PropertyChangeEvent;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::beans
+
+// Base class headers
+#include "../util/EventListenerProxy.hpp"
 

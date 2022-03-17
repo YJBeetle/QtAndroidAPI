@@ -1,30 +1,61 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./MediaSessionManager_RemoteUserInfo.def.hpp"
 
 namespace android::media::session
 {
-	class MediaSessionManager_RemoteUserInfo : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaSessionManager_RemoteUserInfo::MediaSessionManager_RemoteUserInfo(JString arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.media.session.MediaSessionManager$RemoteUserInfo",
+			"(Ljava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline jboolean MediaSessionManager_RemoteUserInfo::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaSessionManager_RemoteUserInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSessionManager_RemoteUserInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaSessionManager_RemoteUserInfo(JString arg0, jint arg1, jint arg2);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getPackageName() const;
-		jint getPid() const;
-		jint getUid() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString MediaSessionManager_RemoteUserInfo::getPackageName() const
+	{
+		return callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint MediaSessionManager_RemoteUserInfo::getPid() const
+	{
+		return callMethod<jint>(
+			"getPid",
+			"()I"
+		);
+	}
+	inline jint MediaSessionManager_RemoteUserInfo::getUid() const
+	{
+		return callMethod<jint>(
+			"getUid",
+			"()I"
+		);
+	}
+	inline jint MediaSessionManager_RemoteUserInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::media::session
+
+// Base class headers
 

@@ -1,38 +1,105 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./Contacts_GroupMembership.def.hpp"
 
 namespace android::provider
 {
-	class Contacts_GroupMembership : public JObject
+	// Fields
+	inline JString Contacts_GroupMembership::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString DEFAULT_SORT_ORDER();
-		static JString GROUP_ID();
-		static JString GROUP_SYNC_ACCOUNT();
-		static JString GROUP_SYNC_ACCOUNT_TYPE();
-		static JString GROUP_SYNC_ID();
-		static JString PERSON_ID();
-		static android::net::Uri RAW_CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Contacts_GroupMembership(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Contacts_GroupMembership(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::CONTENT_ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Contacts_GroupMembership::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString Contacts_GroupMembership::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::GROUP_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"GROUP_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::GROUP_SYNC_ACCOUNT()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"GROUP_SYNC_ACCOUNT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::GROUP_SYNC_ACCOUNT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"GROUP_SYNC_ACCOUNT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::GROUP_SYNC_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"GROUP_SYNC_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Contacts_GroupMembership::PERSON_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"PERSON_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri Contacts_GroupMembership::RAW_CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.Contacts$GroupMembership",
+			"RAW_CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

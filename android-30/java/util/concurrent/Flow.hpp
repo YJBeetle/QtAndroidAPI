@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Flow.def.hpp"
 
 namespace java::util::concurrent
 {
-	class Flow : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint Flow::defaultBufferSize()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Flow(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Flow(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jint defaultBufferSize();
-	};
+		return callStaticMethod<jint>(
+			"java.util.concurrent.Flow",
+			"defaultBufferSize",
+			"()I"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
 

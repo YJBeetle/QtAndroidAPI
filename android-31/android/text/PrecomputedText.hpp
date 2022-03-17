@@ -1,53 +1,175 @@
 #pragma once
 
+#include "../../JObjectArray.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "./PrecomputedText_Params.def.hpp"
+#include "../../JString.hpp"
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
-
-class JObjectArray;
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::text
-{
-	class PrecomputedText_Params;
-}
-class JString;
-class JClass;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./PrecomputedText.def.hpp"
 
 namespace android::text
 {
-	class PrecomputedText : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::text::PrecomputedText PrecomputedText::create(JString arg0, android::text::PrecomputedText_Params arg1)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrecomputedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrecomputedText(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::text::PrecomputedText create(JString arg0, android::text::PrecomputedText_Params arg1);
-		jchar charAt(jint arg0) const;
-		void getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const;
-		jint getParagraphCount() const;
-		jint getParagraphEnd(jint arg0) const;
-		jint getParagraphStart(jint arg0) const;
-		android::text::PrecomputedText_Params getParams() const;
-		jint getSpanEnd(JObject arg0) const;
-		jint getSpanFlags(JObject arg0) const;
-		jint getSpanStart(JObject arg0) const;
-		JObjectArray getSpans(jint arg0, jint arg1, JClass arg2) const;
-		jfloat getWidth(jint arg0, jint arg1) const;
-		jint length() const;
-		jint nextSpanTransition(jint arg0, jint arg1, JClass arg2) const;
-		void removeSpan(JObject arg0) const;
-		void setSpan(JObject arg0, jint arg1, jint arg2, jint arg3) const;
-		JString subSequence(jint arg0, jint arg1) const;
-		JString toString() const;
-	};
+		return callStaticObjectMethod(
+			"android.text.PrecomputedText",
+			"create",
+			"(Ljava/lang/CharSequence;Landroid/text/PrecomputedText$Params;)Landroid/text/PrecomputedText;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jchar PrecomputedText::charAt(jint arg0) const
+	{
+		return callMethod<jchar>(
+			"charAt",
+			"(I)C",
+			arg0
+		);
+	}
+	inline void PrecomputedText::getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const
+	{
+		callMethod<void>(
+			"getBounds",
+			"(IILandroid/graphics/Rect;)V",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline jint PrecomputedText::getParagraphCount() const
+	{
+		return callMethod<jint>(
+			"getParagraphCount",
+			"()I"
+		);
+	}
+	inline jint PrecomputedText::getParagraphEnd(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getParagraphEnd",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jint PrecomputedText::getParagraphStart(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getParagraphStart",
+			"(I)I",
+			arg0
+		);
+	}
+	inline android::text::PrecomputedText_Params PrecomputedText::getParams() const
+	{
+		return callObjectMethod(
+			"getParams",
+			"()Landroid/text/PrecomputedText$Params;"
+		);
+	}
+	inline jint PrecomputedText::getSpanEnd(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"getSpanEnd",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PrecomputedText::getSpanFlags(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"getSpanFlags",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PrecomputedText::getSpanStart(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"getSpanStart",
+			"(Ljava/lang/Object;)I",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObjectArray PrecomputedText::getSpans(jint arg0, jint arg1, JClass arg2) const
+	{
+		return callObjectMethod(
+			"getSpans",
+			"(IILjava/lang/Class;)[Ljava/lang/Object;",
+			arg0,
+			arg1,
+			arg2.object<jclass>()
+		);
+	}
+	inline jfloat PrecomputedText::getWidth(jint arg0, jint arg1) const
+	{
+		return callMethod<jfloat>(
+			"getWidth",
+			"(II)F",
+			arg0,
+			arg1
+		);
+	}
+	inline jint PrecomputedText::length() const
+	{
+		return callMethod<jint>(
+			"length",
+			"()I"
+		);
+	}
+	inline jint PrecomputedText::nextSpanTransition(jint arg0, jint arg1, JClass arg2) const
+	{
+		return callMethod<jint>(
+			"nextSpanTransition",
+			"(IILjava/lang/Class;)I",
+			arg0,
+			arg1,
+			arg2.object<jclass>()
+		);
+	}
+	inline void PrecomputedText::removeSpan(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeSpan",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void PrecomputedText::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"setSpan",
+			"(Ljava/lang/Object;III)V",
+			arg0.object<jobject>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JString PrecomputedText::subSequence(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"subSequence",
+			"(II)Ljava/lang/CharSequence;",
+			arg0,
+			arg1
+		);
+	}
+	inline JString PrecomputedText::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::text
+
+// Base class headers
 

@@ -1,28 +1,63 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./FrameStats.def.hpp"
 
 namespace android::view
 {
-	class FrameStats : public JObject
+	// Fields
+	inline jlong FrameStats::UNDEFINED_TIME_NANO()
 	{
-	public:
-		// Fields
-		static jlong UNDEFINED_TIME_NANO();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FrameStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FrameStats(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FrameStats();
-		
-		// Methods
-		jlong getEndTimeNano() const;
-		jint getFrameCount() const;
-		jlong getFramePresentedTimeNano(jint arg0) const;
-		jlong getRefreshPeriodNano() const;
-		jlong getStartTimeNano() const;
-	};
+		return getStaticField<jlong>(
+			"android.view.FrameStats",
+			"UNDEFINED_TIME_NANO"
+		);
+	}
+	
+	// Constructors
+	inline FrameStats::FrameStats()
+		: JObject(
+			"android.view.FrameStats",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jlong FrameStats::getEndTimeNano() const
+	{
+		return callMethod<jlong>(
+			"getEndTimeNano",
+			"()J"
+		);
+	}
+	inline jint FrameStats::getFrameCount() const
+	{
+		return callMethod<jint>(
+			"getFrameCount",
+			"()I"
+		);
+	}
+	inline jlong FrameStats::getFramePresentedTimeNano(jint arg0) const
+	{
+		return callMethod<jlong>(
+			"getFramePresentedTimeNano",
+			"(I)J",
+			arg0
+		);
+	}
+	inline jlong FrameStats::getRefreshPeriodNano() const
+	{
+		return callMethod<jlong>(
+			"getRefreshPeriodNano",
+			"()J"
+		);
+	}
+	inline jlong FrameStats::getStartTimeNano() const
+	{
+		return callMethod<jlong>(
+			"getStartTimeNano",
+			"()J"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

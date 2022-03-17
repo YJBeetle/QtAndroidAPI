@@ -1,30 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JArray;
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "./DESKeySpec.def.hpp"
 
 namespace javax::crypto::spec
 {
-	class DESKeySpec : public JObject
+	// Fields
+	inline jint DESKeySpec::DES_KEY_LEN()
 	{
-	public:
-		// Fields
-		static jint DES_KEY_LEN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DESKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DESKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DESKeySpec(JByteArray arg0);
-		DESKeySpec(JByteArray arg0, jint arg1);
-		
-		// Methods
-		static jboolean isParityAdjusted(JByteArray arg0, jint arg1);
-		static jboolean isWeak(JByteArray arg0, jint arg1);
-		JByteArray getKey() const;
-	};
+		return getStaticField<jint>(
+			"javax.crypto.spec.DESKeySpec",
+			"DES_KEY_LEN"
+		);
+	}
+	
+	// Constructors
+	inline DESKeySpec::DESKeySpec(JByteArray arg0)
+		: JObject(
+			"javax.crypto.spec.DESKeySpec",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	inline DESKeySpec::DESKeySpec(JByteArray arg0, jint arg1)
+		: JObject(
+			"javax.crypto.spec.DESKeySpec",
+			"([BI)V",
+			arg0.object<jbyteArray>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean DESKeySpec::isParityAdjusted(JByteArray arg0, jint arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"javax.crypto.spec.DESKeySpec",
+			"isParityAdjusted",
+			"([BI)Z",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline jboolean DESKeySpec::isWeak(JByteArray arg0, jint arg1)
+	{
+		return callStaticMethod<jboolean>(
+			"javax.crypto.spec.DESKeySpec",
+			"isWeak",
+			"([BI)Z",
+			arg0.object<jbyteArray>(),
+			arg1
+		);
+	}
+	inline JByteArray DESKeySpec::getKey() const
+	{
+		return callObjectMethod(
+			"getKey",
+			"()[B"
+		);
+	}
 } // namespace javax::crypto::spec
+
+// Base class headers
 

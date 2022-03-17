@@ -1,33 +1,38 @@
 #pragma once
 
-#include "../view/ViewGroup_LayoutParams.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class ViewGroup_LayoutParams;
-}
+#include "../content/Context.def.hpp"
+#include "../view/ViewGroup_LayoutParams.def.hpp"
+#include "./Gallery_LayoutParams.def.hpp"
 
 namespace android::widget
 {
-	class Gallery_LayoutParams : public android::view::ViewGroup_LayoutParams
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Gallery_LayoutParams(const char *className, const char *sig, Ts...agv) : android::view::ViewGroup_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
-		Gallery_LayoutParams(QAndroidJniObject obj) : android::view::ViewGroup_LayoutParams(obj) {}
-		
-		// Constructors
-		Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
-		Gallery_LayoutParams(android::content::Context arg0, JObject arg1);
-		Gallery_LayoutParams(jint arg0, jint arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Gallery_LayoutParams::Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0)
+		: android::view::ViewGroup_LayoutParams(
+			"android.widget.Gallery$LayoutParams",
+			"(Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.object()
+		) {}
+	inline Gallery_LayoutParams::Gallery_LayoutParams(android::content::Context arg0, JObject arg1)
+		: android::view::ViewGroup_LayoutParams(
+			"android.widget.Gallery$LayoutParams",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline Gallery_LayoutParams::Gallery_LayoutParams(jint arg0, jint arg1)
+		: android::view::ViewGroup_LayoutParams(
+			"android.widget.Gallery$LayoutParams",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
+#include "../view/ViewGroup_LayoutParams.hpp"
 

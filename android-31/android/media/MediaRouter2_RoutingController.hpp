@@ -1,49 +1,120 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRoute2Info.def.hpp"
+#include "./MediaRouter2.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaRouter2_RoutingController.def.hpp"
 
 namespace android::media
 {
-	class MediaRoute2Info;
-}
-namespace android::media
-{
-	class MediaRouter2;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-
-namespace android::media
-{
-	class MediaRouter2_RoutingController : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MediaRouter2_RoutingController::deselectRoute(android::media::MediaRoute2Info arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter2_RoutingController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2_RoutingController(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void deselectRoute(android::media::MediaRoute2Info arg0) const;
-		android::os::Bundle getControlHints() const;
-		JObject getDeselectableRoutes() const;
-		JString getId() const;
-		JObject getSelectableRoutes() const;
-		JObject getSelectedRoutes() const;
-		jint getVolume() const;
-		jint getVolumeHandling() const;
-		jint getVolumeMax() const;
-		jboolean isReleased() const;
-		void release() const;
-		void selectRoute(android::media::MediaRoute2Info arg0) const;
-		void setVolume(jint arg0) const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"deselectRoute",
+			"(Landroid/media/MediaRoute2Info;)V",
+			arg0.object()
+		);
+	}
+	inline android::os::Bundle MediaRouter2_RoutingController::getControlHints() const
+	{
+		return callObjectMethod(
+			"getControlHints",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JObject MediaRouter2_RoutingController::getDeselectableRoutes() const
+	{
+		return callObjectMethod(
+			"getDeselectableRoutes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString MediaRouter2_RoutingController::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject MediaRouter2_RoutingController::getSelectableRoutes() const
+	{
+		return callObjectMethod(
+			"getSelectableRoutes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject MediaRouter2_RoutingController::getSelectedRoutes() const
+	{
+		return callObjectMethod(
+			"getSelectedRoutes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint MediaRouter2_RoutingController::getVolume() const
+	{
+		return callMethod<jint>(
+			"getVolume",
+			"()I"
+		);
+	}
+	inline jint MediaRouter2_RoutingController::getVolumeHandling() const
+	{
+		return callMethod<jint>(
+			"getVolumeHandling",
+			"()I"
+		);
+	}
+	inline jint MediaRouter2_RoutingController::getVolumeMax() const
+	{
+		return callMethod<jint>(
+			"getVolumeMax",
+			"()I"
+		);
+	}
+	inline jboolean MediaRouter2_RoutingController::isReleased() const
+	{
+		return callMethod<jboolean>(
+			"isReleased",
+			"()Z"
+		);
+	}
+	inline void MediaRouter2_RoutingController::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline void MediaRouter2_RoutingController::selectRoute(android::media::MediaRoute2Info arg0) const
+	{
+		callMethod<void>(
+			"selectRoute",
+			"(Landroid/media/MediaRoute2Info;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2_RoutingController::setVolume(jint arg0) const
+	{
+		callMethod<void>(
+			"setVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JString MediaRouter2_RoutingController::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

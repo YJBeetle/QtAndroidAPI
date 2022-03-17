@@ -1,22 +1,24 @@
 #pragma once
 
-#include "./TextClassifierEvent.hpp"
+#include "./TextClassifierEvent_TextLinkifyEvent.def.hpp"
 
 namespace android::view::textclassifier
 {
-	class TextClassifierEvent_TextLinkifyEvent : public android::view::textclassifier::TextClassifierEvent
+	// Fields
+	inline JObject TextClassifierEvent_TextLinkifyEvent::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextClassifierEvent_TextLinkifyEvent(const char *className, const char *sig, Ts...agv) : android::view::textclassifier::TextClassifierEvent(className, sig, std::forward<Ts>(agv)...) {}
-		TextClassifierEvent_TextLinkifyEvent(QAndroidJniObject obj) : android::view::textclassifier::TextClassifierEvent(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.view.textclassifier.TextClassifierEvent$TextLinkifyEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::view::textclassifier
+
+// Base class headers
+#include "./TextClassifierEvent.hpp"
 

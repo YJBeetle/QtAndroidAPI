@@ -1,39 +1,68 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::app
-{
-	class RemoteInput;
-}
-class JString;
+#include "../../JArray.hpp"
+#include "./PendingIntent.def.hpp"
+#include "./RemoteInput.def.hpp"
+#include "../../JString.hpp"
+#include "./Notification_CarExtender_UnreadConversation.def.hpp"
 
 namespace android::app
 {
-	class Notification_CarExtender_UnreadConversation : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jlong Notification_CarExtender_UnreadConversation::getLatestTimestamp() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_CarExtender_UnreadConversation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_CarExtender_UnreadConversation(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jlong getLatestTimestamp() const;
-		JArray getMessages() const;
-		JString getParticipant() const;
-		JArray getParticipants() const;
-		android::app::PendingIntent getReadPendingIntent() const;
-		android::app::RemoteInput getRemoteInput() const;
-		android::app::PendingIntent getReplyPendingIntent() const;
-	};
+		return callMethod<jlong>(
+			"getLatestTimestamp",
+			"()J"
+		);
+	}
+	inline JArray Notification_CarExtender_UnreadConversation::getMessages() const
+	{
+		return callObjectMethod(
+			"getMessages",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JString Notification_CarExtender_UnreadConversation::getParticipant() const
+	{
+		return callObjectMethod(
+			"getParticipant",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JArray Notification_CarExtender_UnreadConversation::getParticipants() const
+	{
+		return callObjectMethod(
+			"getParticipants",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReadPendingIntent() const
+	{
+		return callObjectMethod(
+			"getReadPendingIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	inline android::app::RemoteInput Notification_CarExtender_UnreadConversation::getRemoteInput() const
+	{
+		return callObjectMethod(
+			"getRemoteInput",
+			"()Landroid/app/RemoteInput;"
+		);
+	}
+	inline android::app::PendingIntent Notification_CarExtender_UnreadConversation::getReplyPendingIntent() const
+	{
+		return callObjectMethod(
+			"getReplyPendingIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

@@ -1,62 +1,155 @@
 #pragma once
 
+#include "../../content/Context.def.hpp"
+#include "../../content/Intent.def.hpp"
+#include "../Parcel.def.hpp"
+#include "../../../java/io/File.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace java::io
-{
-	class File;
-}
-class JObject;
-class JString;
-namespace java::util
-{
-	class UUID;
-}
+#include "../../../JString.hpp"
+#include "../../../java/util/UUID.def.hpp"
+#include "./StorageVolume.def.hpp"
 
 namespace android::os::storage
 {
-	class StorageVolume : public JObject
+	// Fields
+	inline JObject StorageVolume::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static JString EXTRA_STORAGE_VOLUME();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StorageVolume(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StorageVolume(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::content::Intent createAccessIntent(JString arg0) const;
-		android::content::Intent createOpenDocumentTreeIntent() const;
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		JString getDescription(android::content::Context arg0) const;
-		java::io::File getDirectory() const;
-		JString getMediaStoreVolumeName() const;
-		JString getState() const;
-		java::util::UUID getStorageUuid() const;
-		JString getUuid() const;
-		jint hashCode() const;
-		jboolean isEmulated() const;
-		jboolean isPrimary() const;
-		jboolean isRemovable() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.os.storage.StorageVolume",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline JString StorageVolume::EXTRA_STORAGE_VOLUME()
+	{
+		return getStaticObjectField(
+			"android.os.storage.StorageVolume",
+			"EXTRA_STORAGE_VOLUME",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::content::Intent StorageVolume::createAccessIntent(JString arg0) const
+	{
+		return callObjectMethod(
+			"createAccessIntent",
+			"(Ljava/lang/String;)Landroid/content/Intent;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::content::Intent StorageVolume::createOpenDocumentTreeIntent() const
+	{
+		return callObjectMethod(
+			"createOpenDocumentTreeIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	inline jint StorageVolume::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean StorageVolume::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString StorageVolume::getDescription(android::content::Context arg0) const
+	{
+		return callObjectMethod(
+			"getDescription",
+			"(Landroid/content/Context;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline java::io::File StorageVolume::getDirectory() const
+	{
+		return callObjectMethod(
+			"getDirectory",
+			"()Ljava/io/File;"
+		);
+	}
+	inline JString StorageVolume::getMediaStoreVolumeName() const
+	{
+		return callObjectMethod(
+			"getMediaStoreVolumeName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString StorageVolume::getState() const
+	{
+		return callObjectMethod(
+			"getState",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::util::UUID StorageVolume::getStorageUuid() const
+	{
+		return callObjectMethod(
+			"getStorageUuid",
+			"()Ljava/util/UUID;"
+		);
+	}
+	inline JString StorageVolume::getUuid() const
+	{
+		return callObjectMethod(
+			"getUuid",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint StorageVolume::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean StorageVolume::isEmulated() const
+	{
+		return callMethod<jboolean>(
+			"isEmulated",
+			"()Z"
+		);
+	}
+	inline jboolean StorageVolume::isPrimary() const
+	{
+		return callMethod<jboolean>(
+			"isPrimary",
+			"()Z"
+		);
+	}
+	inline jboolean StorageVolume::isRemovable() const
+	{
+		return callMethod<jboolean>(
+			"isRemovable",
+			"()Z"
+		);
+	}
+	inline JString StorageVolume::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void StorageVolume::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::os::storage
+
+// Base class headers
 

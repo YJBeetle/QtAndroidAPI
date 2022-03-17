@@ -1,36 +1,42 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JString;
-namespace java::security
-{
-	class ProtectionDomain;
-}
-namespace javax::security::auth
-{
-	class Subject;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/security/ProtectionDomain.def.hpp"
+#include "./Subject.def.hpp"
+#include "./SubjectDomainCombiner.def.hpp"
 
 namespace javax::security::auth
 {
-	class SubjectDomainCombiner : public JObject
+	// Fields
+	
+	// Constructors
+	inline SubjectDomainCombiner::SubjectDomainCombiner(javax::security::auth::Subject arg0)
+		: JObject(
+			"javax.security.auth.SubjectDomainCombiner",
+			"(Ljavax/security/auth/Subject;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline JArray SubjectDomainCombiner::combine(JArray arg0, JArray arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubjectDomainCombiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubjectDomainCombiner(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SubjectDomainCombiner(javax::security::auth::Subject arg0);
-		
-		// Methods
-		JArray combine(JArray arg0, JArray arg1) const;
-		javax::security::auth::Subject getSubject() const;
-	};
+		return callObjectMethod(
+			"combine",
+			"([Ljava/security/ProtectionDomain;[Ljava/security/ProtectionDomain;)[Ljava/security/ProtectionDomain;",
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
+		);
+	}
+	inline javax::security::auth::Subject SubjectDomainCombiner::getSubject() const
+	{
+		return callObjectMethod(
+			"getSubject",
+			"()Ljavax/security/auth/Subject;"
+		);
+	}
 } // namespace javax::security::auth
+
+// Base class headers
 

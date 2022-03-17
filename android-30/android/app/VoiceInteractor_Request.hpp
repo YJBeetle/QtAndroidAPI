@@ -1,39 +1,75 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Activity.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./VoiceInteractor_Request.def.hpp"
 
 namespace android::app
 {
-	class Activity;
-}
-namespace android::content
-{
-	class Context;
-}
-class JString;
-
-namespace android::app
-{
-	class VoiceInteractor_Request : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void VoiceInteractor_Request::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_Request(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		android::app::Activity getActivity() const;
-		android::content::Context getContext() const;
-		JString getName() const;
-		void onAttached(android::app::Activity arg0) const;
-		void onCancel() const;
-		void onDetached() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline android::app::Activity VoiceInteractor_Request::getActivity() const
+	{
+		return callObjectMethod(
+			"getActivity",
+			"()Landroid/app/Activity;"
+		);
+	}
+	inline android::content::Context VoiceInteractor_Request::getContext() const
+	{
+		return callObjectMethod(
+			"getContext",
+			"()Landroid/content/Context;"
+		);
+	}
+	inline JString VoiceInteractor_Request::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void VoiceInteractor_Request::onAttached(android::app::Activity arg0) const
+	{
+		callMethod<void>(
+			"onAttached",
+			"(Landroid/app/Activity;)V",
+			arg0.object()
+		);
+	}
+	inline void VoiceInteractor_Request::onCancel() const
+	{
+		callMethod<void>(
+			"onCancel",
+			"()V"
+		);
+	}
+	inline void VoiceInteractor_Request::onDetached() const
+	{
+		callMethod<void>(
+			"onDetached",
+			"()V"
+		);
+	}
+	inline JString VoiceInteractor_Request::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

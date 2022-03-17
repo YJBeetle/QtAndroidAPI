@@ -1,26 +1,35 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./UnicodeSet_EntryRange.def.hpp"
 
 namespace android::icu::text
 {
-	class UnicodeSet_EntryRange : public JObject
+	// Fields
+	inline jint UnicodeSet_EntryRange::codepoint()
 	{
-	public:
-		// Fields
-		jint codepoint();
-		jint codepointEnd();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnicodeSet_EntryRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSet_EntryRange(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jint>(
+			"codepoint"
+		);
+	}
+	inline jint UnicodeSet_EntryRange::codepointEnd()
+	{
+		return getField<jint>(
+			"codepointEnd"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString UnicodeSet_EntryRange::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

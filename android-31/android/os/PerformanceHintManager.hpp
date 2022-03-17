@@ -1,29 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-namespace android::os
-{
-	class PerformanceHintManager_Session;
-}
+#include "../../JIntArray.hpp"
+#include "./PerformanceHintManager_Session.def.hpp"
+#include "./PerformanceHintManager.def.hpp"
 
 namespace android::os
 {
-	class PerformanceHintManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::PerformanceHintManager_Session PerformanceHintManager::createHintSession(JIntArray arg0, jlong arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PerformanceHintManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PerformanceHintManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::os::PerformanceHintManager_Session createHintSession(JIntArray arg0, jlong arg1) const;
-		jlong getPreferredUpdateRateNanos() const;
-	};
+		return callObjectMethod(
+			"createHintSession",
+			"([IJ)Landroid/os/PerformanceHintManager$Session;",
+			arg0.object<jintArray>(),
+			arg1
+		);
+	}
+	inline jlong PerformanceHintManager::getPreferredUpdateRateNanos() const
+	{
+		return callMethod<jlong>(
+			"getPreferredUpdateRateNanos",
+			"()J"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

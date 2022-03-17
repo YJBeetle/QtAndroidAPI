@@ -1,27 +1,57 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ProcessHealthStats.def.hpp"
 
 namespace android::os::health
 {
-	class ProcessHealthStats : public JObject
+	// Fields
+	inline jint ProcessHealthStats::MEASUREMENT_ANR_COUNT()
 	{
-	public:
-		// Fields
-		static jint MEASUREMENT_ANR_COUNT();
-		static jint MEASUREMENT_CRASHES_COUNT();
-		static jint MEASUREMENT_FOREGROUND_MS();
-		static jint MEASUREMENT_STARTS_COUNT();
-		static jint MEASUREMENT_SYSTEM_TIME_MS();
-		static jint MEASUREMENT_USER_TIME_MS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProcessHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ProcessHealthStats(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.os.health.ProcessHealthStats",
+			"MEASUREMENT_ANR_COUNT"
+		);
+	}
+	inline jint ProcessHealthStats::MEASUREMENT_CRASHES_COUNT()
+	{
+		return getStaticField<jint>(
+			"android.os.health.ProcessHealthStats",
+			"MEASUREMENT_CRASHES_COUNT"
+		);
+	}
+	inline jint ProcessHealthStats::MEASUREMENT_FOREGROUND_MS()
+	{
+		return getStaticField<jint>(
+			"android.os.health.ProcessHealthStats",
+			"MEASUREMENT_FOREGROUND_MS"
+		);
+	}
+	inline jint ProcessHealthStats::MEASUREMENT_STARTS_COUNT()
+	{
+		return getStaticField<jint>(
+			"android.os.health.ProcessHealthStats",
+			"MEASUREMENT_STARTS_COUNT"
+		);
+	}
+	inline jint ProcessHealthStats::MEASUREMENT_SYSTEM_TIME_MS()
+	{
+		return getStaticField<jint>(
+			"android.os.health.ProcessHealthStats",
+			"MEASUREMENT_SYSTEM_TIME_MS"
+		);
+	}
+	inline jint ProcessHealthStats::MEASUREMENT_USER_TIME_MS()
+	{
+		return getStaticField<jint>(
+			"android.os.health.ProcessHealthStats",
+			"MEASUREMENT_USER_TIME_MS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::os::health
+
+// Base class headers
 

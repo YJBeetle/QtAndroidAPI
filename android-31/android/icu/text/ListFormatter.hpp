@@ -1,38 +1,69 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JObjectArray;
-namespace android::icu::util
-{
-	class ULocale;
-}
-class JString;
-namespace java::util
-{
-	class Locale;
-}
+#include "../../../JObjectArray.hpp"
+#include "../util/ULocale.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./ListFormatter.def.hpp"
 
 namespace android::icu::text
 {
-	class ListFormatter : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::ListFormatter ListFormatter::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ListFormatter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ListFormatter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::ListFormatter getInstance();
-		static android::icu::text::ListFormatter getInstance(android::icu::util::ULocale arg0);
-		static android::icu::text::ListFormatter getInstance(java::util::Locale arg0);
-		JString format(JObjectArray arg0) const;
-		JString format(JObject arg0) const;
-		JString getPatternForNumItems(jint arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.icu.text.ListFormatter",
+			"getInstance",
+			"()Landroid/icu/text/ListFormatter;"
+		);
+	}
+	inline android::icu::text::ListFormatter ListFormatter::getInstance(android::icu::util::ULocale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.ListFormatter",
+			"getInstance",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/text/ListFormatter;",
+			arg0.object()
+		);
+	}
+	inline android::icu::text::ListFormatter ListFormatter::getInstance(java::util::Locale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.ListFormatter",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/icu/text/ListFormatter;",
+			arg0.object()
+		);
+	}
+	inline JString ListFormatter::format(JObjectArray arg0) const
+	{
+		return callObjectMethod(
+			"format",
+			"([Ljava/lang/Object;)Ljava/lang/String;",
+			arg0.object<jobjectArray>()
+		);
+	}
+	inline JString ListFormatter::format(JObject arg0) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/util/Collection;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString ListFormatter::getPatternForNumItems(jint arg0) const
+	{
+		return callObjectMethod(
+			"getPatternForNumItems",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

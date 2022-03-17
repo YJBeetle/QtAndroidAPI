@@ -1,30 +1,42 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssMeasurementRequest.def.hpp"
+#include "./GnssMeasurementRequest_Builder.def.hpp"
 
 namespace android::location
 {
-	class GnssMeasurementRequest;
-}
-
-namespace android::location
-{
-	class GnssMeasurementRequest_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder()
+		: JObject(
+			"android.location.GnssMeasurementRequest$Builder",
+			"()V"
+		) {}
+	inline GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder(android::location::GnssMeasurementRequest arg0)
+		: JObject(
+			"android.location.GnssMeasurementRequest$Builder",
+			"(Landroid/location/GnssMeasurementRequest;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::location::GnssMeasurementRequest GnssMeasurementRequest_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssMeasurementRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssMeasurementRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GnssMeasurementRequest_Builder();
-		GnssMeasurementRequest_Builder(android::location::GnssMeasurementRequest arg0);
-		
-		// Methods
-		android::location::GnssMeasurementRequest build() const;
-		android::location::GnssMeasurementRequest_Builder setFullTracking(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/location/GnssMeasurementRequest;"
+		);
+	}
+	inline android::location::GnssMeasurementRequest_Builder GnssMeasurementRequest_Builder::setFullTracking(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setFullTracking",
+			"(Z)Landroid/location/GnssMeasurementRequest$Builder;",
+			arg0
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

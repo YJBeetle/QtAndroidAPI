@@ -1,32 +1,49 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
-class JThrowable;
+#include "../lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./WriteAbortedException.def.hpp"
 
 namespace java::io
 {
-	class WriteAbortedException : public java::io::ObjectStreamException
+	// Fields
+	inline java::lang::Exception WriteAbortedException::detail()
 	{
-	public:
-		// Fields
-		java::lang::Exception detail();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WriteAbortedException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		WriteAbortedException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-		
-		// Constructors
-		WriteAbortedException(JString arg0, java::lang::Exception arg1);
-		
-		// Methods
-		JThrowable getCause() const;
-		JString getMessage() const;
-	};
+		return getObjectField(
+			"detail",
+			"Ljava/lang/Exception;"
+		);
+	}
+	
+	// Constructors
+	inline WriteAbortedException::WriteAbortedException(JString arg0, java::lang::Exception arg1)
+		: java::io::ObjectStreamException(
+			"java.io.WriteAbortedException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			arg0.object<jstring>(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JThrowable WriteAbortedException::getCause() const
+	{
+		return callObjectMethod(
+			"getCause",
+			"()Ljava/lang/Throwable;"
+		);
+	}
+	inline JString WriteAbortedException::getMessage() const
+	{
+		return callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

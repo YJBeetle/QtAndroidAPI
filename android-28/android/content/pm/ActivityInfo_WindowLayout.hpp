@@ -1,29 +1,69 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./ActivityInfo_WindowLayout.def.hpp"
 
 namespace android::content::pm
 {
-	class ActivityInfo_WindowLayout : public JObject
+	// Fields
+	inline jint ActivityInfo_WindowLayout::gravity()
 	{
-	public:
-		// Fields
-		jint gravity();
-		jint height();
-		jfloat heightFraction();
-		jint minHeight();
-		jint minWidth();
-		jint width();
-		jfloat widthFraction();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityInfo_WindowLayout(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityInfo_WindowLayout(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6);
-		
-		// Methods
-	};
+		return getField<jint>(
+			"gravity"
+		);
+	}
+	inline jint ActivityInfo_WindowLayout::height()
+	{
+		return getField<jint>(
+			"height"
+		);
+	}
+	inline jfloat ActivityInfo_WindowLayout::heightFraction()
+	{
+		return getField<jfloat>(
+			"heightFraction"
+		);
+	}
+	inline jint ActivityInfo_WindowLayout::minHeight()
+	{
+		return getField<jint>(
+			"minHeight"
+		);
+	}
+	inline jint ActivityInfo_WindowLayout::minWidth()
+	{
+		return getField<jint>(
+			"minWidth"
+		);
+	}
+	inline jint ActivityInfo_WindowLayout::width()
+	{
+		return getField<jint>(
+			"width"
+		);
+	}
+	inline jfloat ActivityInfo_WindowLayout::widthFraction()
+	{
+		return getField<jfloat>(
+			"widthFraction"
+		);
+	}
+	
+	// Constructors
+	inline ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6)
+		: JObject(
+			"android.content.pm.ActivityInfo$WindowLayout",
+			"(IFIFIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		) {}
+	
+	// Methods
 } // namespace android::content::pm
+
+// Base class headers
 

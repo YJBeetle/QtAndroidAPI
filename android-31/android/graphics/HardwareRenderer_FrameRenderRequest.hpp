@@ -1,30 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./HardwareRenderer.def.hpp"
+#include "./HardwareRenderer_FrameRenderRequest.def.hpp"
 
 namespace android::graphics
 {
-	class HardwareRenderer;
-}
-
-namespace android::graphics
-{
-	class HardwareRenderer_FrameRenderRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(JObject arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HardwareRenderer_FrameRenderRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		HardwareRenderer_FrameRenderRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::HardwareRenderer_FrameRenderRequest setFrameCommitCallback(JObject arg0, JObject arg1) const;
-		android::graphics::HardwareRenderer_FrameRenderRequest setVsyncTime(jlong arg0) const;
-		android::graphics::HardwareRenderer_FrameRenderRequest setWaitForPresent(jboolean arg0) const;
-		jint syncAndDraw() const;
-	};
+		return callObjectMethod(
+			"setFrameCommitCallback",
+			"(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setVsyncTime(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setVsyncTime",
+			"(J)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
+			arg0
+		);
+	}
+	inline android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setWaitForPresent(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setWaitForPresent",
+			"(Z)Landroid/graphics/HardwareRenderer$FrameRenderRequest;",
+			arg0
+		);
+	}
+	inline jint HardwareRenderer_FrameRenderRequest::syncAndDraw() const
+	{
+		return callMethod<jint>(
+			"syncAndDraw",
+			"()I"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

@@ -1,25 +1,41 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./KeyguardManager_KeyguardDismissCallback.def.hpp"
 
 namespace android::app
 {
-	class KeyguardManager_KeyguardDismissCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyguardManager_KeyguardDismissCallback::KeyguardManager_KeyguardDismissCallback()
+		: JObject(
+			"android.app.KeyguardManager$KeyguardDismissCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void KeyguardManager_KeyguardDismissCallback::onDismissCancelled() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyguardManager_KeyguardDismissCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyguardManager_KeyguardDismissCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyguardManager_KeyguardDismissCallback();
-		
-		// Methods
-		void onDismissCancelled() const;
-		void onDismissError() const;
-		void onDismissSucceeded() const;
-	};
+		callMethod<void>(
+			"onDismissCancelled",
+			"()V"
+		);
+	}
+	inline void KeyguardManager_KeyguardDismissCallback::onDismissError() const
+	{
+		callMethod<void>(
+			"onDismissError",
+			"()V"
+		);
+	}
+	inline void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded() const
+	{
+		callMethod<void>(
+			"onDismissSucceeded",
+			"()V"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

@@ -1,48 +1,108 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
+#include "./PrintAttributes.def.hpp"
+#include "./PrintAttributes_Margins.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::print
-{
-	class PrintAttributes;
-}
-namespace android::print
-{
-	class PrintAttributes_Margins;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./PrinterCapabilitiesInfo.def.hpp"
 
 namespace android::print
 {
-	class PrinterCapabilitiesInfo : public JObject
+	// Fields
+	inline JObject PrinterCapabilitiesInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrinterCapabilitiesInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PrinterCapabilitiesInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getColorModes() const;
-		android::print::PrintAttributes getDefaults() const;
-		jint getDuplexModes() const;
-		JObject getMediaSizes() const;
-		android::print::PrintAttributes_Margins getMinMargins() const;
-		JObject getResolutions() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.print.PrinterCapabilitiesInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PrinterCapabilitiesInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PrinterCapabilitiesInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint PrinterCapabilitiesInfo::getColorModes() const
+	{
+		return callMethod<jint>(
+			"getColorModes",
+			"()I"
+		);
+	}
+	inline android::print::PrintAttributes PrinterCapabilitiesInfo::getDefaults() const
+	{
+		return callObjectMethod(
+			"getDefaults",
+			"()Landroid/print/PrintAttributes;"
+		);
+	}
+	inline jint PrinterCapabilitiesInfo::getDuplexModes() const
+	{
+		return callMethod<jint>(
+			"getDuplexModes",
+			"()I"
+		);
+	}
+	inline JObject PrinterCapabilitiesInfo::getMediaSizes() const
+	{
+		return callObjectMethod(
+			"getMediaSizes",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::print::PrintAttributes_Margins PrinterCapabilitiesInfo::getMinMargins() const
+	{
+		return callObjectMethod(
+			"getMinMargins",
+			"()Landroid/print/PrintAttributes$Margins;"
+		);
+	}
+	inline JObject PrinterCapabilitiesInfo::getResolutions() const
+	{
+		return callObjectMethod(
+			"getResolutions",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint PrinterCapabilitiesInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString PrinterCapabilitiesInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PrinterCapabilitiesInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::print
+
+// Base class headers
 

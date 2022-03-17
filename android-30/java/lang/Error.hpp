@@ -1,28 +1,41 @@
 #pragma once
 
+#include "../../JString.hpp"
 #include "../../JThrowable.hpp"
-
-class JString;
-class JThrowable;
+#include "./Error.def.hpp"
 
 namespace java::lang
 {
-	class Error : public JThrowable
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Error(const char *className, const char *sig, Ts...agv) : JThrowable(className, sig, std::forward<Ts>(agv)...) {}
-		Error(QAndroidJniObject obj) : JThrowable(obj) {}
-		
-		// Constructors
-		Error();
-		Error(JString arg0);
-		Error(JThrowable arg0);
-		Error(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline Error::Error()
+		: JThrowable(
+			"java.lang.Error",
+			"()V"
+		) {}
+	inline Error::Error(JString arg0)
+		: JThrowable(
+			"java.lang.Error",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline Error::Error(JThrowable arg0)
+		: JThrowable(
+			"java.lang.Error",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline Error::Error(JString arg0, JThrowable arg1)
+		: JThrowable(
+			"java.lang.Error",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
 

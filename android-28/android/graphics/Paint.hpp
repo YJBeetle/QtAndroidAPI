@@ -1,203 +1,950 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JCharArray;
-class JFloatArray;
-namespace android::graphics
-{
-	class ColorFilter;
-}
-namespace android::graphics
-{
-	class MaskFilter;
-}
-namespace android::graphics
-{
-	class Paint_Align;
-}
-namespace android::graphics
-{
-	class Paint_Cap;
-}
-namespace android::graphics
-{
-	class Paint_FontMetrics;
-}
-namespace android::graphics
-{
-	class Paint_FontMetricsInt;
-}
-namespace android::graphics
-{
-	class Paint_Join;
-}
-namespace android::graphics
-{
-	class Paint_Style;
-}
-namespace android::graphics
-{
-	class Path;
-}
-namespace android::graphics
-{
-	class PathEffect;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::graphics
-{
-	class Shader;
-}
-namespace android::graphics
-{
-	class Typeface;
-}
-namespace android::graphics
-{
-	class Xfermode;
-}
-namespace android::os
-{
-	class LocaleList;
-}
-class JString;
-class JString;
-namespace java::util
-{
-	class Locale;
-}
+#include "../../JCharArray.hpp"
+#include "../../JFloatArray.hpp"
+#include "./ColorFilter.def.hpp"
+#include "./MaskFilter.def.hpp"
+#include "./Paint_Align.def.hpp"
+#include "./Paint_Cap.def.hpp"
+#include "./Paint_FontMetrics.def.hpp"
+#include "./Paint_FontMetricsInt.def.hpp"
+#include "./Paint_Join.def.hpp"
+#include "./Paint_Style.def.hpp"
+#include "./Path.def.hpp"
+#include "./PathEffect.def.hpp"
+#include "./Rect.def.hpp"
+#include "./Shader.def.hpp"
+#include "./Typeface.def.hpp"
+#include "./Xfermode.def.hpp"
+#include "../os/LocaleList.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "../../java/util/Locale.def.hpp"
+#include "./Paint.def.hpp"
 
 namespace android::graphics
 {
-	class Paint : public JObject
+	// Fields
+	inline jint Paint::ANTI_ALIAS_FLAG()
 	{
-	public:
-		// Fields
-		static jint ANTI_ALIAS_FLAG();
-		static jint DEV_KERN_TEXT_FLAG();
-		static jint DITHER_FLAG();
-		static jint EMBEDDED_BITMAP_TEXT_FLAG();
-		static jint FAKE_BOLD_TEXT_FLAG();
-		static jint FILTER_BITMAP_FLAG();
-		static jint HINTING_OFF();
-		static jint HINTING_ON();
-		static jint LINEAR_TEXT_FLAG();
-		static jint STRIKE_THRU_TEXT_FLAG();
-		static jint SUBPIXEL_TEXT_FLAG();
-		static jint UNDERLINE_TEXT_FLAG();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Paint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Paint(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Paint();
-		Paint(android::graphics::Paint &arg0);
-		Paint(jint arg0);
-		
-		// Methods
-		jfloat ascent() const;
-		jint breakText(JString arg0, jboolean arg1, jfloat arg2, JFloatArray arg3) const;
-		jint breakText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, JFloatArray arg4) const;
-		jint breakText(JString arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, JFloatArray arg5) const;
-		void clearShadowLayer() const;
-		jfloat descent() const;
-		jboolean equalsForTextMeasurement(android::graphics::Paint arg0) const;
-		jint getAlpha() const;
-		jint getColor() const;
-		android::graphics::ColorFilter getColorFilter() const;
-		jboolean getFillPath(android::graphics::Path arg0, android::graphics::Path arg1) const;
-		jint getFlags() const;
-		JString getFontFeatureSettings() const;
-		android::graphics::Paint_FontMetrics getFontMetrics() const;
-		jfloat getFontMetrics(android::graphics::Paint_FontMetrics arg0) const;
-		android::graphics::Paint_FontMetricsInt getFontMetricsInt() const;
-		jint getFontMetricsInt(android::graphics::Paint_FontMetricsInt arg0) const;
-		jfloat getFontSpacing() const;
-		JString getFontVariationSettings() const;
-		jint getHinting() const;
-		jfloat getLetterSpacing() const;
-		android::graphics::MaskFilter getMaskFilter() const;
-		jint getOffsetForAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6) const;
-		jint getOffsetForAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6) const;
-		android::graphics::PathEffect getPathEffect() const;
-		jfloat getRunAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6) const;
-		jfloat getRunAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6) const;
-		android::graphics::Shader getShader() const;
-		android::graphics::Paint_Cap getStrokeCap() const;
-		android::graphics::Paint_Join getStrokeJoin() const;
-		jfloat getStrokeMiter() const;
-		jfloat getStrokeWidth() const;
-		android::graphics::Paint_Style getStyle() const;
-		android::graphics::Paint_Align getTextAlign() const;
-		void getTextBounds(JCharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3) const;
-		void getTextBounds(JString arg0, jint arg1, jint arg2, android::graphics::Rect arg3) const;
-		java::util::Locale getTextLocale() const;
-		android::os::LocaleList getTextLocales() const;
-		void getTextPath(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5) const;
-		void getTextPath(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5) const;
-		jfloat getTextScaleX() const;
-		jfloat getTextSize() const;
-		jfloat getTextSkewX() const;
-		jint getTextWidths(JString arg0, JFloatArray arg1) const;
-		jint getTextWidths(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3) const;
-		jint getTextWidths(JString arg0, jint arg1, jint arg2, JFloatArray arg3) const;
-		android::graphics::Typeface getTypeface() const;
-		android::graphics::Xfermode getXfermode() const;
-		jboolean hasGlyph(JString arg0) const;
-		jboolean isAntiAlias() const;
-		jboolean isDither() const;
-		jboolean isElegantTextHeight() const;
-		jboolean isFakeBoldText() const;
-		jboolean isFilterBitmap() const;
-		jboolean isLinearText() const;
-		jboolean isStrikeThruText() const;
-		jboolean isSubpixelText() const;
-		jboolean isUnderlineText() const;
-		jfloat measureText(JString arg0) const;
-		jfloat measureText(JCharArray arg0, jint arg1, jint arg2) const;
-		jfloat measureText(JString arg0, jint arg1, jint arg2) const;
-		void reset() const;
-		void set(android::graphics::Paint arg0) const;
-		void setARGB(jint arg0, jint arg1, jint arg2, jint arg3) const;
-		void setAlpha(jint arg0) const;
-		void setAntiAlias(jboolean arg0) const;
-		void setColor(jint arg0) const;
-		android::graphics::ColorFilter setColorFilter(android::graphics::ColorFilter arg0) const;
-		void setDither(jboolean arg0) const;
-		void setElegantTextHeight(jboolean arg0) const;
-		void setFakeBoldText(jboolean arg0) const;
-		void setFilterBitmap(jboolean arg0) const;
-		void setFlags(jint arg0) const;
-		void setFontFeatureSettings(JString arg0) const;
-		jboolean setFontVariationSettings(JString arg0) const;
-		void setHinting(jint arg0) const;
-		void setLetterSpacing(jfloat arg0) const;
-		void setLinearText(jboolean arg0) const;
-		android::graphics::MaskFilter setMaskFilter(android::graphics::MaskFilter arg0) const;
-		android::graphics::PathEffect setPathEffect(android::graphics::PathEffect arg0) const;
-		android::graphics::Shader setShader(android::graphics::Shader arg0) const;
-		void setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3) const;
-		void setStrikeThruText(jboolean arg0) const;
-		void setStrokeCap(android::graphics::Paint_Cap arg0) const;
-		void setStrokeJoin(android::graphics::Paint_Join arg0) const;
-		void setStrokeMiter(jfloat arg0) const;
-		void setStrokeWidth(jfloat arg0) const;
-		void setStyle(android::graphics::Paint_Style arg0) const;
-		void setSubpixelText(jboolean arg0) const;
-		void setTextAlign(android::graphics::Paint_Align arg0) const;
-		void setTextLocale(java::util::Locale arg0) const;
-		void setTextLocales(android::os::LocaleList arg0) const;
-		void setTextScaleX(jfloat arg0) const;
-		void setTextSize(jfloat arg0) const;
-		void setTextSkewX(jfloat arg0) const;
-		android::graphics::Typeface setTypeface(android::graphics::Typeface arg0) const;
-		void setUnderlineText(jboolean arg0) const;
-		android::graphics::Xfermode setXfermode(android::graphics::Xfermode arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"ANTI_ALIAS_FLAG"
+		);
+	}
+	inline jint Paint::DEV_KERN_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"DEV_KERN_TEXT_FLAG"
+		);
+	}
+	inline jint Paint::DITHER_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"DITHER_FLAG"
+		);
+	}
+	inline jint Paint::EMBEDDED_BITMAP_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"EMBEDDED_BITMAP_TEXT_FLAG"
+		);
+	}
+	inline jint Paint::FAKE_BOLD_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"FAKE_BOLD_TEXT_FLAG"
+		);
+	}
+	inline jint Paint::FILTER_BITMAP_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"FILTER_BITMAP_FLAG"
+		);
+	}
+	inline jint Paint::HINTING_OFF()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"HINTING_OFF"
+		);
+	}
+	inline jint Paint::HINTING_ON()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"HINTING_ON"
+		);
+	}
+	inline jint Paint::LINEAR_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"LINEAR_TEXT_FLAG"
+		);
+	}
+	inline jint Paint::STRIKE_THRU_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"STRIKE_THRU_TEXT_FLAG"
+		);
+	}
+	inline jint Paint::SUBPIXEL_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"SUBPIXEL_TEXT_FLAG"
+		);
+	}
+	inline jint Paint::UNDERLINE_TEXT_FLAG()
+	{
+		return getStaticField<jint>(
+			"android.graphics.Paint",
+			"UNDERLINE_TEXT_FLAG"
+		);
+	}
+	
+	// Constructors
+	inline Paint::Paint()
+		: JObject(
+			"android.graphics.Paint",
+			"()V"
+		) {}
+	inline Paint::Paint(android::graphics::Paint &arg0)
+		: JObject(
+			"android.graphics.Paint",
+			"(Landroid/graphics/Paint;)V",
+			arg0.object()
+		) {}
+	inline Paint::Paint(jint arg0)
+		: JObject(
+			"android.graphics.Paint",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jfloat Paint::ascent() const
+	{
+		return callMethod<jfloat>(
+			"ascent",
+			"()F"
+		);
+	}
+	inline jint Paint::breakText(JString arg0, jboolean arg1, jfloat arg2, JFloatArray arg3) const
+	{
+		return callMethod<jint>(
+			"breakText",
+			"(Ljava/lang/String;ZF[F)I",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3.object<jfloatArray>()
+		);
+	}
+	inline jint Paint::breakText(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, JFloatArray arg4) const
+	{
+		return callMethod<jint>(
+			"breakText",
+			"([CIIF[F)I",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jfloatArray>()
+		);
+	}
+	inline jint Paint::breakText(JString arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, JFloatArray arg5) const
+	{
+		return callMethod<jint>(
+			"breakText",
+			"(Ljava/lang/CharSequence;IIZF[F)I",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.object<jfloatArray>()
+		);
+	}
+	inline void Paint::clearShadowLayer() const
+	{
+		callMethod<void>(
+			"clearShadowLayer",
+			"()V"
+		);
+	}
+	inline jfloat Paint::descent() const
+	{
+		return callMethod<jfloat>(
+			"descent",
+			"()F"
+		);
+	}
+	inline jboolean Paint::equalsForTextMeasurement(android::graphics::Paint arg0) const
+	{
+		return callMethod<jboolean>(
+			"equalsForTextMeasurement",
+			"(Landroid/graphics/Paint;)Z",
+			arg0.object()
+		);
+	}
+	inline jint Paint::getAlpha() const
+	{
+		return callMethod<jint>(
+			"getAlpha",
+			"()I"
+		);
+	}
+	inline jint Paint::getColor() const
+	{
+		return callMethod<jint>(
+			"getColor",
+			"()I"
+		);
+	}
+	inline android::graphics::ColorFilter Paint::getColorFilter() const
+	{
+		return callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;"
+		);
+	}
+	inline jboolean Paint::getFillPath(android::graphics::Path arg0, android::graphics::Path arg1) const
+	{
+		return callMethod<jboolean>(
+			"getFillPath",
+			"(Landroid/graphics/Path;Landroid/graphics/Path;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jint Paint::getFlags() const
+	{
+		return callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
+	inline JString Paint::getFontFeatureSettings() const
+	{
+		return callObjectMethod(
+			"getFontFeatureSettings",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::graphics::Paint_FontMetrics Paint::getFontMetrics() const
+	{
+		return callObjectMethod(
+			"getFontMetrics",
+			"()Landroid/graphics/Paint$FontMetrics;"
+		);
+	}
+	inline jfloat Paint::getFontMetrics(android::graphics::Paint_FontMetrics arg0) const
+	{
+		return callMethod<jfloat>(
+			"getFontMetrics",
+			"(Landroid/graphics/Paint$FontMetrics;)F",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Paint_FontMetricsInt Paint::getFontMetricsInt() const
+	{
+		return callObjectMethod(
+			"getFontMetricsInt",
+			"()Landroid/graphics/Paint$FontMetricsInt;"
+		);
+	}
+	inline jint Paint::getFontMetricsInt(android::graphics::Paint_FontMetricsInt arg0) const
+	{
+		return callMethod<jint>(
+			"getFontMetricsInt",
+			"(Landroid/graphics/Paint$FontMetricsInt;)I",
+			arg0.object()
+		);
+	}
+	inline jfloat Paint::getFontSpacing() const
+	{
+		return callMethod<jfloat>(
+			"getFontSpacing",
+			"()F"
+		);
+	}
+	inline JString Paint::getFontVariationSettings() const
+	{
+		return callObjectMethod(
+			"getFontVariationSettings",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint Paint::getHinting() const
+	{
+		return callMethod<jint>(
+			"getHinting",
+			"()I"
+		);
+	}
+	inline jfloat Paint::getLetterSpacing() const
+	{
+		return callMethod<jfloat>(
+			"getLetterSpacing",
+			"()F"
+		);
+	}
+	inline android::graphics::MaskFilter Paint::getMaskFilter() const
+	{
+		return callObjectMethod(
+			"getMaskFilter",
+			"()Landroid/graphics/MaskFilter;"
+		);
+	}
+	inline jint Paint::getOffsetForAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6) const
+	{
+		return callMethod<jint>(
+			"getOffsetForAdvance",
+			"([CIIIIZF)I",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	inline jint Paint::getOffsetForAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6) const
+	{
+		return callMethod<jint>(
+			"getOffsetForAdvance",
+			"(Ljava/lang/CharSequence;IIIIZF)I",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	inline android::graphics::PathEffect Paint::getPathEffect() const
+	{
+		return callObjectMethod(
+			"getPathEffect",
+			"()Landroid/graphics/PathEffect;"
+		);
+	}
+	inline jfloat Paint::getRunAdvance(JCharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6) const
+	{
+		return callMethod<jfloat>(
+			"getRunAdvance",
+			"([CIIIIZI)F",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	inline jfloat Paint::getRunAdvance(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6) const
+	{
+		return callMethod<jfloat>(
+			"getRunAdvance",
+			"(Ljava/lang/CharSequence;IIIIZI)F",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	inline android::graphics::Shader Paint::getShader() const
+	{
+		return callObjectMethod(
+			"getShader",
+			"()Landroid/graphics/Shader;"
+		);
+	}
+	inline android::graphics::Paint_Cap Paint::getStrokeCap() const
+	{
+		return callObjectMethod(
+			"getStrokeCap",
+			"()Landroid/graphics/Paint$Cap;"
+		);
+	}
+	inline android::graphics::Paint_Join Paint::getStrokeJoin() const
+	{
+		return callObjectMethod(
+			"getStrokeJoin",
+			"()Landroid/graphics/Paint$Join;"
+		);
+	}
+	inline jfloat Paint::getStrokeMiter() const
+	{
+		return callMethod<jfloat>(
+			"getStrokeMiter",
+			"()F"
+		);
+	}
+	inline jfloat Paint::getStrokeWidth() const
+	{
+		return callMethod<jfloat>(
+			"getStrokeWidth",
+			"()F"
+		);
+	}
+	inline android::graphics::Paint_Style Paint::getStyle() const
+	{
+		return callObjectMethod(
+			"getStyle",
+			"()Landroid/graphics/Paint$Style;"
+		);
+	}
+	inline android::graphics::Paint_Align Paint::getTextAlign() const
+	{
+		return callObjectMethod(
+			"getTextAlign",
+			"()Landroid/graphics/Paint$Align;"
+		);
+	}
+	inline void Paint::getTextBounds(JCharArray arg0, jint arg1, jint arg2, android::graphics::Rect arg3) const
+	{
+		callMethod<void>(
+			"getTextBounds",
+			"([CIILandroid/graphics/Rect;)V",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
+	inline void Paint::getTextBounds(JString arg0, jint arg1, jint arg2, android::graphics::Rect arg3) const
+	{
+		callMethod<void>(
+			"getTextBounds",
+			"(Ljava/lang/String;IILandroid/graphics/Rect;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
+	inline java::util::Locale Paint::getTextLocale() const
+	{
+		return callObjectMethod(
+			"getTextLocale",
+			"()Ljava/util/Locale;"
+		);
+	}
+	inline android::os::LocaleList Paint::getTextLocales() const
+	{
+		return callObjectMethod(
+			"getTextLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	inline void Paint::getTextPath(JCharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5) const
+	{
+		callMethod<void>(
+			"getTextPath",
+			"([CIIFFLandroid/graphics/Path;)V",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.object()
+		);
+	}
+	inline void Paint::getTextPath(JString arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, android::graphics::Path arg5) const
+	{
+		callMethod<void>(
+			"getTextPath",
+			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.object()
+		);
+	}
+	inline jfloat Paint::getTextScaleX() const
+	{
+		return callMethod<jfloat>(
+			"getTextScaleX",
+			"()F"
+		);
+	}
+	inline jfloat Paint::getTextSize() const
+	{
+		return callMethod<jfloat>(
+			"getTextSize",
+			"()F"
+		);
+	}
+	inline jfloat Paint::getTextSkewX() const
+	{
+		return callMethod<jfloat>(
+			"getTextSkewX",
+			"()F"
+		);
+	}
+	inline jint Paint::getTextWidths(JString arg0, JFloatArray arg1) const
+	{
+		return callMethod<jint>(
+			"getTextWidths",
+			"(Ljava/lang/String;[F)I",
+			arg0.object<jstring>(),
+			arg1.object<jfloatArray>()
+		);
+	}
+	inline jint Paint::getTextWidths(JCharArray arg0, jint arg1, jint arg2, JFloatArray arg3) const
+	{
+		return callMethod<jint>(
+			"getTextWidths",
+			"([CII[F)I",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2,
+			arg3.object<jfloatArray>()
+		);
+	}
+	inline jint Paint::getTextWidths(JString arg0, jint arg1, jint arg2, JFloatArray arg3) const
+	{
+		return callMethod<jint>(
+			"getTextWidths",
+			"(Ljava/lang/CharSequence;II[F)I",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3.object<jfloatArray>()
+		);
+	}
+	inline android::graphics::Typeface Paint::getTypeface() const
+	{
+		return callObjectMethod(
+			"getTypeface",
+			"()Landroid/graphics/Typeface;"
+		);
+	}
+	inline android::graphics::Xfermode Paint::getXfermode() const
+	{
+		return callObjectMethod(
+			"getXfermode",
+			"()Landroid/graphics/Xfermode;"
+		);
+	}
+	inline jboolean Paint::hasGlyph(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"hasGlyph",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean Paint::isAntiAlias() const
+	{
+		return callMethod<jboolean>(
+			"isAntiAlias",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isDither() const
+	{
+		return callMethod<jboolean>(
+			"isDither",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isElegantTextHeight() const
+	{
+		return callMethod<jboolean>(
+			"isElegantTextHeight",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isFakeBoldText() const
+	{
+		return callMethod<jboolean>(
+			"isFakeBoldText",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isFilterBitmap() const
+	{
+		return callMethod<jboolean>(
+			"isFilterBitmap",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isLinearText() const
+	{
+		return callMethod<jboolean>(
+			"isLinearText",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isStrikeThruText() const
+	{
+		return callMethod<jboolean>(
+			"isStrikeThruText",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isSubpixelText() const
+	{
+		return callMethod<jboolean>(
+			"isSubpixelText",
+			"()Z"
+		);
+	}
+	inline jboolean Paint::isUnderlineText() const
+	{
+		return callMethod<jboolean>(
+			"isUnderlineText",
+			"()Z"
+		);
+	}
+	inline jfloat Paint::measureText(JString arg0) const
+	{
+		return callMethod<jfloat>(
+			"measureText",
+			"(Ljava/lang/String;)F",
+			arg0.object<jstring>()
+		);
+	}
+	inline jfloat Paint::measureText(JCharArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jfloat>(
+			"measureText",
+			"([CII)F",
+			arg0.object<jcharArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jfloat Paint::measureText(JString arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jfloat>(
+			"measureText",
+			"(Ljava/lang/CharSequence;II)F",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void Paint::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline void Paint::set(android::graphics::Paint arg0) const
+	{
+		callMethod<void>(
+			"set",
+			"(Landroid/graphics/Paint;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setARGB(jint arg0, jint arg1, jint arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"setARGB",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void Paint::setAlpha(jint arg0) const
+	{
+		callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Paint::setAntiAlias(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAntiAlias",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setColor(jint arg0) const
+	{
+		callMethod<void>(
+			"setColor",
+			"(I)V",
+			arg0
+		);
+	}
+	inline android::graphics::ColorFilter Paint::setColorFilter(android::graphics::ColorFilter arg0) const
+	{
+		return callObjectMethod(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;",
+			arg0.object()
+		);
+	}
+	inline void Paint::setDither(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDither",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setElegantTextHeight(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setElegantTextHeight",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setFakeBoldText(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setFakeBoldText",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setFilterBitmap(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setFilterBitmap",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setFlags(jint arg0) const
+	{
+		callMethod<void>(
+			"setFlags",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Paint::setFontFeatureSettings(JString arg0) const
+	{
+		callMethod<void>(
+			"setFontFeatureSettings",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline jboolean Paint::setFontVariationSettings(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"setFontVariationSettings",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline void Paint::setHinting(jint arg0) const
+	{
+		callMethod<void>(
+			"setHinting",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void Paint::setLetterSpacing(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setLetterSpacing",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void Paint::setLinearText(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setLinearText",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline android::graphics::MaskFilter Paint::setMaskFilter(android::graphics::MaskFilter arg0) const
+	{
+		return callObjectMethod(
+			"setMaskFilter",
+			"(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::PathEffect Paint::setPathEffect(android::graphics::PathEffect arg0) const
+	{
+		return callObjectMethod(
+			"setPathEffect",
+			"(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Shader Paint::setShader(android::graphics::Shader arg0) const
+	{
+		return callObjectMethod(
+			"setShader",
+			"(Landroid/graphics/Shader;)Landroid/graphics/Shader;",
+			arg0.object()
+		);
+	}
+	inline void Paint::setShadowLayer(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"setShadowLayer",
+			"(FFFI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void Paint::setStrikeThruText(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setStrikeThruText",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setStrokeCap(android::graphics::Paint_Cap arg0) const
+	{
+		callMethod<void>(
+			"setStrokeCap",
+			"(Landroid/graphics/Paint$Cap;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setStrokeJoin(android::graphics::Paint_Join arg0) const
+	{
+		callMethod<void>(
+			"setStrokeJoin",
+			"(Landroid/graphics/Paint$Join;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setStrokeMiter(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setStrokeMiter",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void Paint::setStrokeWidth(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setStrokeWidth",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void Paint::setStyle(android::graphics::Paint_Style arg0) const
+	{
+		callMethod<void>(
+			"setStyle",
+			"(Landroid/graphics/Paint$Style;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setSubpixelText(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setSubpixelText",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void Paint::setTextAlign(android::graphics::Paint_Align arg0) const
+	{
+		callMethod<void>(
+			"setTextAlign",
+			"(Landroid/graphics/Paint$Align;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setTextLocale(java::util::Locale arg0) const
+	{
+		callMethod<void>(
+			"setTextLocale",
+			"(Ljava/util/Locale;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setTextLocales(android::os::LocaleList arg0) const
+	{
+		callMethod<void>(
+			"setTextLocales",
+			"(Landroid/os/LocaleList;)V",
+			arg0.object()
+		);
+	}
+	inline void Paint::setTextScaleX(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setTextScaleX",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void Paint::setTextSize(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setTextSize",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void Paint::setTextSkewX(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setTextSkewX",
+			"(F)V",
+			arg0
+		);
+	}
+	inline android::graphics::Typeface Paint::setTypeface(android::graphics::Typeface arg0) const
+	{
+		return callObjectMethod(
+			"setTypeface",
+			"(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;",
+			arg0.object()
+		);
+	}
+	inline void Paint::setUnderlineText(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setUnderlineText",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline android::graphics::Xfermode Paint::setXfermode(android::graphics::Xfermode arg0) const
+	{
+		return callObjectMethod(
+			"setXfermode",
+			"(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

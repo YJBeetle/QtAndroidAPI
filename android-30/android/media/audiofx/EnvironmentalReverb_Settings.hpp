@@ -1,36 +1,94 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./EnvironmentalReverb_Settings.def.hpp"
 
 namespace android::media::audiofx
 {
-	class EnvironmentalReverb_Settings : public JObject
+	// Fields
+	inline jshort EnvironmentalReverb_Settings::decayHFRatio()
 	{
-	public:
-		// Fields
-		jshort decayHFRatio();
-		jint decayTime();
-		jshort density();
-		jshort diffusion();
-		jint reflectionsDelay();
-		jshort reflectionsLevel();
-		jint reverbDelay();
-		jshort reverbLevel();
-		jshort roomHFLevel();
-		jshort roomLevel();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EnvironmentalReverb_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EnvironmentalReverb_Settings(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EnvironmentalReverb_Settings();
-		EnvironmentalReverb_Settings(JString arg0);
-		
-		// Methods
-		JString toString() const;
-	};
+		return getField<jshort>(
+			"decayHFRatio"
+		);
+	}
+	inline jint EnvironmentalReverb_Settings::decayTime()
+	{
+		return getField<jint>(
+			"decayTime"
+		);
+	}
+	inline jshort EnvironmentalReverb_Settings::density()
+	{
+		return getField<jshort>(
+			"density"
+		);
+	}
+	inline jshort EnvironmentalReverb_Settings::diffusion()
+	{
+		return getField<jshort>(
+			"diffusion"
+		);
+	}
+	inline jint EnvironmentalReverb_Settings::reflectionsDelay()
+	{
+		return getField<jint>(
+			"reflectionsDelay"
+		);
+	}
+	inline jshort EnvironmentalReverb_Settings::reflectionsLevel()
+	{
+		return getField<jshort>(
+			"reflectionsLevel"
+		);
+	}
+	inline jint EnvironmentalReverb_Settings::reverbDelay()
+	{
+		return getField<jint>(
+			"reverbDelay"
+		);
+	}
+	inline jshort EnvironmentalReverb_Settings::reverbLevel()
+	{
+		return getField<jshort>(
+			"reverbLevel"
+		);
+	}
+	inline jshort EnvironmentalReverb_Settings::roomHFLevel()
+	{
+		return getField<jshort>(
+			"roomHFLevel"
+		);
+	}
+	inline jshort EnvironmentalReverb_Settings::roomLevel()
+	{
+		return getField<jshort>(
+			"roomLevel"
+		);
+	}
+	
+	// Constructors
+	inline EnvironmentalReverb_Settings::EnvironmentalReverb_Settings()
+		: JObject(
+			"android.media.audiofx.EnvironmentalReverb$Settings",
+			"()V"
+		) {}
+	inline EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(JString arg0)
+		: JObject(
+			"android.media.audiofx.EnvironmentalReverb$Settings",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString EnvironmentalReverb_Settings::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
 

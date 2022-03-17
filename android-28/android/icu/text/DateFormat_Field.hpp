@@ -1,52 +1,243 @@
 #pragma once
 
-#include "../../../java/text/Format_Field.hpp"
-
-class JObject;
-class JString;
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./DateFormat_Field.def.hpp"
 
 namespace android::icu::text
 {
-	class DateFormat_Field : public java::text::Format_Field
+	// Fields
+	inline android::icu::text::DateFormat_Field DateFormat_Field::AM_PM()
 	{
-	public:
-		// Fields
-		static android::icu::text::DateFormat_Field AM_PM();
-		static android::icu::text::DateFormat_Field AM_PM_MIDNIGHT_NOON();
-		static android::icu::text::DateFormat_Field DAY_OF_MONTH();
-		static android::icu::text::DateFormat_Field DAY_OF_WEEK();
-		static android::icu::text::DateFormat_Field DAY_OF_WEEK_IN_MONTH();
-		static android::icu::text::DateFormat_Field DAY_OF_YEAR();
-		static android::icu::text::DateFormat_Field DOW_LOCAL();
-		static android::icu::text::DateFormat_Field ERA();
-		static android::icu::text::DateFormat_Field EXTENDED_YEAR();
-		static android::icu::text::DateFormat_Field FLEXIBLE_DAY_PERIOD();
-		static android::icu::text::DateFormat_Field HOUR0();
-		static android::icu::text::DateFormat_Field HOUR1();
-		static android::icu::text::DateFormat_Field HOUR_OF_DAY0();
-		static android::icu::text::DateFormat_Field HOUR_OF_DAY1();
-		static android::icu::text::DateFormat_Field JULIAN_DAY();
-		static android::icu::text::DateFormat_Field MILLISECOND();
-		static android::icu::text::DateFormat_Field MILLISECONDS_IN_DAY();
-		static android::icu::text::DateFormat_Field MINUTE();
-		static android::icu::text::DateFormat_Field MONTH();
-		static android::icu::text::DateFormat_Field QUARTER();
-		static android::icu::text::DateFormat_Field SECOND();
-		static android::icu::text::DateFormat_Field TIME_ZONE();
-		static android::icu::text::DateFormat_Field WEEK_OF_MONTH();
-		static android::icu::text::DateFormat_Field WEEK_OF_YEAR();
-		static android::icu::text::DateFormat_Field YEAR();
-		static android::icu::text::DateFormat_Field YEAR_WOY();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DateFormat_Field(const char *className, const char *sig, Ts...agv) : java::text::Format_Field(className, sig, std::forward<Ts>(agv)...) {}
-		DateFormat_Field(QAndroidJniObject obj) : java::text::Format_Field(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::DateFormat_Field ofCalendarField(jint arg0);
-		jint getCalendarField() const;
-	};
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"AM_PM",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::AM_PM_MIDNIGHT_NOON()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"AM_PM_MIDNIGHT_NOON",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_MONTH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"DAY_OF_MONTH",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"DAY_OF_WEEK",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_WEEK_IN_MONTH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"DAY_OF_WEEK_IN_MONTH",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::DAY_OF_YEAR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"DAY_OF_YEAR",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::DOW_LOCAL()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"DOW_LOCAL",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::ERA()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"ERA",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::EXTENDED_YEAR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"EXTENDED_YEAR",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::FLEXIBLE_DAY_PERIOD()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"FLEXIBLE_DAY_PERIOD",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::HOUR0()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"HOUR0",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::HOUR1()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"HOUR1",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY0()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"HOUR_OF_DAY0",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::HOUR_OF_DAY1()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"HOUR_OF_DAY1",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::JULIAN_DAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"JULIAN_DAY",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::MILLISECOND()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"MILLISECOND",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::MILLISECONDS_IN_DAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"MILLISECONDS_IN_DAY",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::MINUTE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"MINUTE",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::MONTH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"MONTH",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::QUARTER()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"QUARTER",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::SECOND()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"SECOND",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::TIME_ZONE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"TIME_ZONE",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::WEEK_OF_MONTH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"WEEK_OF_MONTH",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::WEEK_OF_YEAR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"WEEK_OF_YEAR",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::YEAR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"YEAR",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	inline android::icu::text::DateFormat_Field DateFormat_Field::YEAR_WOY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateFormat$Field",
+			"YEAR_WOY",
+			"Landroid/icu/text/DateFormat$Field;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::DateFormat_Field DateFormat_Field::ofCalendarField(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.DateFormat$Field",
+			"ofCalendarField",
+			"(I)Landroid/icu/text/DateFormat$Field;",
+			arg0
+		);
+	}
+	inline jint DateFormat_Field::getCalendarField() const
+	{
+		return callMethod<jint>(
+			"getCalendarField",
+			"()I"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/AttributedCharacterIterator_Attribute.hpp"
+#include "../../../java/text/Format_Field.hpp"
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JClass;
+#include "../../../JClass.hpp"
+#include "./StaticInspectionCompanionProvider.def.hpp"
 
 namespace android::view::inspector
 {
-	class StaticInspectionCompanionProvider : public JObject
+	// Fields
+	
+	// Constructors
+	inline StaticInspectionCompanionProvider::StaticInspectionCompanionProvider()
+		: JObject(
+			"android.view.inspector.StaticInspectionCompanionProvider",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject StaticInspectionCompanionProvider::provide(JClass arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StaticInspectionCompanionProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StaticInspectionCompanionProvider(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		StaticInspectionCompanionProvider();
-		
-		// Methods
-		JObject provide(JClass arg0) const;
-	};
+		return callObjectMethod(
+			"provide",
+			"(Ljava/lang/Class;)Landroid/view/inspector/InspectionCompanion;",
+			arg0.object<jclass>()
+		);
+	}
 } // namespace android::view::inspector
+
+// Base class headers
 

@@ -1,42 +1,108 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
-namespace java::util::regex
-{
-	class Matcher;
-}
-namespace java::util::regex
-{
-	class Pattern;
-}
+#include "../../JString.hpp"
+#include "../../java/util/regex/Matcher.def.hpp"
+#include "../../java/util/regex/Pattern.def.hpp"
+#include "./Patterns.def.hpp"
 
 namespace android::util
 {
-	class Patterns : public JObject
+	// Fields
+	inline java::util::regex::Pattern Patterns::DOMAIN_NAME()
 	{
-	public:
-		// Fields
-		static java::util::regex::Pattern DOMAIN_NAME();
-		static java::util::regex::Pattern EMAIL_ADDRESS();
-		static JString GOOD_IRI_CHAR();
-		static java::util::regex::Pattern IP_ADDRESS();
-		static java::util::regex::Pattern PHONE();
-		static java::util::regex::Pattern TOP_LEVEL_DOMAIN();
-		static JString TOP_LEVEL_DOMAIN_STR();
-		static JString TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL();
-		static java::util::regex::Pattern WEB_URL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Patterns(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Patterns(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JString concatGroups(java::util::regex::Matcher arg0);
-		static JString digitsAndPlusOnly(java::util::regex::Matcher arg0);
-	};
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"DOMAIN_NAME",
+			"Ljava/util/regex/Pattern;"
+		);
+	}
+	inline java::util::regex::Pattern Patterns::EMAIL_ADDRESS()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"EMAIL_ADDRESS",
+			"Ljava/util/regex/Pattern;"
+		);
+	}
+	inline JString Patterns::GOOD_IRI_CHAR()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"GOOD_IRI_CHAR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline java::util::regex::Pattern Patterns::IP_ADDRESS()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"IP_ADDRESS",
+			"Ljava/util/regex/Pattern;"
+		);
+	}
+	inline java::util::regex::Pattern Patterns::PHONE()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"PHONE",
+			"Ljava/util/regex/Pattern;"
+		);
+	}
+	inline java::util::regex::Pattern Patterns::TOP_LEVEL_DOMAIN()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"TOP_LEVEL_DOMAIN",
+			"Ljava/util/regex/Pattern;"
+		);
+	}
+	inline JString Patterns::TOP_LEVEL_DOMAIN_STR()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"TOP_LEVEL_DOMAIN_STR",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Patterns::TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"TOP_LEVEL_DOMAIN_STR_FOR_WEB_URL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline java::util::regex::Pattern Patterns::WEB_URL()
+	{
+		return getStaticObjectField(
+			"android.util.Patterns",
+			"WEB_URL",
+			"Ljava/util/regex/Pattern;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString Patterns::concatGroups(java::util::regex::Matcher arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.Patterns",
+			"concatGroups",
+			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString Patterns::digitsAndPlusOnly(java::util::regex::Matcher arg0)
+	{
+		return callStaticObjectMethod(
+			"android.util.Patterns",
+			"digitsAndPlusOnly",
+			"(Ljava/util/regex/Matcher;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

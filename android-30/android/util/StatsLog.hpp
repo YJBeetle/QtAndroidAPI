@@ -1,28 +1,57 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JLongArray;
-class JString;
+#include "../../JLongArray.hpp"
+#include "../../JString.hpp"
+#include "./StatsLog.def.hpp"
 
 namespace android::util
 {
-	class StatsLog : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean StatsLog::logBinaryPushStateChanged(JString arg0, jlong arg1, jint arg2, jint arg3, JLongArray arg4)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StatsLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatsLog(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jboolean logBinaryPushStateChanged(JString arg0, jlong arg1, jint arg2, jint arg3, JLongArray arg4);
-		static jboolean logEvent(jint arg0);
-		static jboolean logStart(jint arg0);
-		static jboolean logStop(jint arg0);
-	};
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logBinaryPushStateChanged",
+			"(Ljava/lang/String;JII[J)Z",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.object<jlongArray>()
+		);
+	}
+	inline jboolean StatsLog::logEvent(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logEvent",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean StatsLog::logStart(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logStart",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean StatsLog::logStop(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logStop",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

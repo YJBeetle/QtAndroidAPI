@@ -1,51 +1,123 @@
 #pragma once
 
-#include "./Certificate.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class InputStream;
-}
-class JObject;
-class JString;
-namespace java::math
-{
-	class BigInteger;
-}
-namespace java::util
-{
-	class Date;
-}
+#include "../../../JByteArray.hpp"
+#include "../../../java/io/InputStream.def.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/math/BigInteger.def.hpp"
+#include "../../../java/util/Date.def.hpp"
+#include "./X509Certificate.def.hpp"
 
 namespace javax::security::cert
 {
-	class X509Certificate : public javax::security::cert::Certificate
+	// Fields
+	
+	// Constructors
+	inline X509Certificate::X509Certificate()
+		: javax::security::cert::Certificate(
+			"javax.security.cert.X509Certificate",
+			"()V"
+		) {}
+	
+	// Methods
+	inline javax::security::cert::X509Certificate X509Certificate::getInstance(JByteArray arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit X509Certificate(const char *className, const char *sig, Ts...agv) : javax::security::cert::Certificate(className, sig, std::forward<Ts>(agv)...) {}
-		X509Certificate(QAndroidJniObject obj) : javax::security::cert::Certificate(obj) {}
-		
-		// Constructors
-		X509Certificate();
-		
-		// Methods
-		static javax::security::cert::X509Certificate getInstance(JByteArray arg0);
-		static javax::security::cert::X509Certificate getInstance(java::io::InputStream arg0);
-		void checkValidity() const;
-		void checkValidity(java::util::Date arg0) const;
-		JObject getIssuerDN() const;
-		java::util::Date getNotAfter() const;
-		java::util::Date getNotBefore() const;
-		java::math::BigInteger getSerialNumber() const;
-		JString getSigAlgName() const;
-		JString getSigAlgOID() const;
-		JByteArray getSigAlgParams() const;
-		JObject getSubjectDN() const;
-		jint getVersion() const;
-	};
+		return callStaticObjectMethod(
+			"javax.security.cert.X509Certificate",
+			"getInstance",
+			"([B)Ljavax/security/cert/X509Certificate;",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline javax::security::cert::X509Certificate X509Certificate::getInstance(java::io::InputStream arg0)
+	{
+		return callStaticObjectMethod(
+			"javax.security.cert.X509Certificate",
+			"getInstance",
+			"(Ljava/io/InputStream;)Ljavax/security/cert/X509Certificate;",
+			arg0.object()
+		);
+	}
+	inline void X509Certificate::checkValidity() const
+	{
+		callMethod<void>(
+			"checkValidity",
+			"()V"
+		);
+	}
+	inline void X509Certificate::checkValidity(java::util::Date arg0) const
+	{
+		callMethod<void>(
+			"checkValidity",
+			"(Ljava/util/Date;)V",
+			arg0.object()
+		);
+	}
+	inline JObject X509Certificate::getIssuerDN() const
+	{
+		return callObjectMethod(
+			"getIssuerDN",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline java::util::Date X509Certificate::getNotAfter() const
+	{
+		return callObjectMethod(
+			"getNotAfter",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline java::util::Date X509Certificate::getNotBefore() const
+	{
+		return callObjectMethod(
+			"getNotBefore",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline java::math::BigInteger X509Certificate::getSerialNumber() const
+	{
+		return callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline JString X509Certificate::getSigAlgName() const
+	{
+		return callObjectMethod(
+			"getSigAlgName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString X509Certificate::getSigAlgOID() const
+	{
+		return callObjectMethod(
+			"getSigAlgOID",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JByteArray X509Certificate::getSigAlgParams() const
+	{
+		return callObjectMethod(
+			"getSigAlgParams",
+			"()[B"
+		);
+	}
+	inline JObject X509Certificate::getSubjectDN() const
+	{
+		return callObjectMethod(
+			"getSubjectDN",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline jint X509Certificate::getVersion() const
+	{
+		return callMethod<jint>(
+			"getVersion",
+			"()I"
+		);
+	}
 } // namespace javax::security::cert
+
+// Base class headers
+#include "./Certificate.hpp"
 

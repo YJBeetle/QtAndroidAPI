@@ -1,25 +1,31 @@
 #pragma once
 
-#include "./SQLiteException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SQLiteDoneException.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteDoneException : public android::database::sqlite::SQLiteException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SQLiteDoneException(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteDoneException(QAndroidJniObject obj) : android::database::sqlite::SQLiteException(obj) {}
-		
-		// Constructors
-		SQLiteDoneException();
-		SQLiteDoneException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLiteDoneException::SQLiteDoneException()
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteDoneException",
+			"()V"
+		) {}
+	inline SQLiteDoneException::SQLiteDoneException(JString arg0)
+		: android::database::sqlite::SQLiteException(
+			"android.database.sqlite.SQLiteDoneException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::database::sqlite
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
+#include "../SQLException.hpp"
+#include "./SQLiteException.hpp"
 

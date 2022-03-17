@@ -1,26 +1,37 @@
 #pragma once
 
-#include "./ControlAction.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./CommandAction.def.hpp"
 
 namespace android::service::controls::actions
 {
-	class CommandAction : public android::service::controls::actions::ControlAction
+	// Fields
+	
+	// Constructors
+	inline CommandAction::CommandAction(JString arg0)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.CommandAction",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline CommandAction::CommandAction(JString arg0, JString arg1)
+		: android::service::controls::actions::ControlAction(
+			"android.service.controls.actions.CommandAction",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint CommandAction::getActionType() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CommandAction(const char *className, const char *sig, Ts...agv) : android::service::controls::actions::ControlAction(className, sig, std::forward<Ts>(agv)...) {}
-		CommandAction(QAndroidJniObject obj) : android::service::controls::actions::ControlAction(obj) {}
-		
-		// Constructors
-		CommandAction(JString arg0);
-		CommandAction(JString arg0, JString arg1);
-		
-		// Methods
-		jint getActionType() const;
-	};
+		return callMethod<jint>(
+			"getActionType",
+			"()I"
+		);
+	}
 } // namespace android::service::controls::actions
+
+// Base class headers
+#include "./ControlAction.hpp"
 

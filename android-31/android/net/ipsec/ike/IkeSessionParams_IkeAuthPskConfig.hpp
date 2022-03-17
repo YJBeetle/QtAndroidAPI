@@ -1,27 +1,40 @@
 #pragma once
 
-#include "./IkeSessionParams_IkeAuthConfig.hpp"
-
-class JByteArray;
-class JObject;
+#include "../../../../JByteArray.hpp"
+#include "../../../../JObject.hpp"
+#include "./IkeSessionParams_IkeAuthPskConfig.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionParams_IkeAuthPskConfig : public android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean IkeSessionParams_IkeAuthPskConfig::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeSessionParams_IkeAuthPskConfig(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionParams_IkeAuthPskConfig(QAndroidJniObject obj) : android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JByteArray getPsk() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JByteArray IkeSessionParams_IkeAuthPskConfig::getPsk() const
+	{
+		return callObjectMethod(
+			"getPsk",
+			"()[B"
+		);
+	}
+	inline jint IkeSessionParams_IkeAuthPskConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./IkeSessionParams_IkeAuthConfig.hpp"
 

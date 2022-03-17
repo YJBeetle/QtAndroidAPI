@@ -1,41 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LocalizedNumberFormatter.def.hpp"
+#include "./UnlocalizedNumberFormatter.def.hpp"
+#include "../util/ULocale.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./NumberFormatter.def.hpp"
 
 namespace android::icu::number
 {
-	class LocalizedNumberFormatter;
-}
-namespace android::icu::number
-{
-	class UnlocalizedNumberFormatter;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::number
-{
-	class NumberFormatter : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::UnlocalizedNumberFormatter NumberFormatter::with()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NumberFormatter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NumberFormatter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::UnlocalizedNumberFormatter with();
-		static android::icu::number::LocalizedNumberFormatter withLocale(android::icu::util::ULocale arg0);
-		static android::icu::number::LocalizedNumberFormatter withLocale(java::util::Locale arg0);
-	};
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter",
+			"with",
+			"()Landroid/icu/number/UnlocalizedNumberFormatter;"
+		);
+	}
+	inline android::icu::number::LocalizedNumberFormatter NumberFormatter::withLocale(android::icu::util::ULocale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter",
+			"withLocale",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/number/LocalizedNumberFormatter;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::LocalizedNumberFormatter NumberFormatter::withLocale(java::util::Locale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberFormatter",
+			"withLocale",
+			"(Ljava/util/Locale;)Landroid/icu/number/LocalizedNumberFormatter;",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
 

@@ -1,36 +1,88 @@
 #pragma once
 
-#include "../../os/ParcelFileDescriptor_AutoCloseInputStream.hpp"
-
-class JByteArray;
-namespace android::content::res
-{
-	class AssetFileDescriptor;
-}
+#include "../../../JByteArray.hpp"
+#include "./AssetFileDescriptor.def.hpp"
+#include "./AssetFileDescriptor_AutoCloseInputStream.def.hpp"
 
 namespace android::content::res
 {
-	class AssetFileDescriptor_AutoCloseInputStream : public android::os::ParcelFileDescriptor_AutoCloseInputStream
+	// Fields
+	
+	// Constructors
+	inline AssetFileDescriptor_AutoCloseInputStream::AssetFileDescriptor_AutoCloseInputStream(android::content::res::AssetFileDescriptor arg0)
+		: android::os::ParcelFileDescriptor_AutoCloseInputStream(
+			"android.content.res.AssetFileDescriptor$AutoCloseInputStream",
+			"(Landroid/content/res/AssetFileDescriptor;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint AssetFileDescriptor_AutoCloseInputStream::available() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AssetFileDescriptor_AutoCloseInputStream(const char *className, const char *sig, Ts...agv) : android::os::ParcelFileDescriptor_AutoCloseInputStream(className, sig, std::forward<Ts>(agv)...) {}
-		AssetFileDescriptor_AutoCloseInputStream(QAndroidJniObject obj) : android::os::ParcelFileDescriptor_AutoCloseInputStream(obj) {}
-		
-		// Constructors
-		AssetFileDescriptor_AutoCloseInputStream(android::content::res::AssetFileDescriptor arg0);
-		
-		// Methods
-		jint available() const;
-		void mark(jint arg0) const;
-		jboolean markSupported() const;
-		jint read() const;
-		jint read(JByteArray arg0) const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-		void reset() const;
-		jlong skip(jlong arg0) const;
-	};
+		return callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	inline void AssetFileDescriptor_AutoCloseInputStream::mark(jint arg0) const
+	{
+		callMethod<void>(
+			"mark",
+			"(I)V",
+			arg0
+		);
+	}
+	inline jboolean AssetFileDescriptor_AutoCloseInputStream::markSupported() const
+	{
+		return callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
+	inline jint AssetFileDescriptor_AutoCloseInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([B)I",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline jint AssetFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void AssetFileDescriptor_AutoCloseInputStream::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline jlong AssetFileDescriptor_AutoCloseInputStream::skip(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
+		);
+	}
 } // namespace android::content::res
+
+// Base class headers
+#include "../../../java/io/InputStream.hpp"
+#include "../../../java/io/FileInputStream.hpp"
+#include "../../os/ParcelFileDescriptor_AutoCloseInputStream.hpp"
 

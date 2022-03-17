@@ -1,33 +1,74 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::time
-{
-	class Clock;
-}
+#include "../../java/time/Clock.def.hpp"
+#include "./SystemClock.def.hpp"
 
 namespace android::os
 {
-	class SystemClock : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::time::Clock SystemClock::currentGnssTimeClock()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SystemClock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SystemClock(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::time::Clock currentGnssTimeClock();
-		static jlong currentThreadTimeMillis();
-		static jlong elapsedRealtime();
-		static jlong elapsedRealtimeNanos();
-		static jboolean setCurrentTimeMillis(jlong arg0);
-		static void sleep(jlong arg0);
-		static jlong uptimeMillis();
-	};
+		return callStaticObjectMethod(
+			"android.os.SystemClock",
+			"currentGnssTimeClock",
+			"()Ljava/time/Clock;"
+		);
+	}
+	inline jlong SystemClock::currentThreadTimeMillis()
+	{
+		return callStaticMethod<jlong>(
+			"android.os.SystemClock",
+			"currentThreadTimeMillis",
+			"()J"
+		);
+	}
+	inline jlong SystemClock::elapsedRealtime()
+	{
+		return callStaticMethod<jlong>(
+			"android.os.SystemClock",
+			"elapsedRealtime",
+			"()J"
+		);
+	}
+	inline jlong SystemClock::elapsedRealtimeNanos()
+	{
+		return callStaticMethod<jlong>(
+			"android.os.SystemClock",
+			"elapsedRealtimeNanos",
+			"()J"
+		);
+	}
+	inline jboolean SystemClock::setCurrentTimeMillis(jlong arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.os.SystemClock",
+			"setCurrentTimeMillis",
+			"(J)Z",
+			arg0
+		);
+	}
+	inline void SystemClock::sleep(jlong arg0)
+	{
+		callStaticMethod<void>(
+			"android.os.SystemClock",
+			"sleep",
+			"(J)V",
+			arg0
+		);
+	}
+	inline jlong SystemClock::uptimeMillis()
+	{
+		return callStaticMethod<jlong>(
+			"android.os.SystemClock",
+			"uptimeMillis",
+			"()J"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JLongArray;
+#include "../../JLongArray.hpp"
+#include "./DownloadManager_Query.def.hpp"
 
 namespace android::app
 {
-	class DownloadManager_Query : public JObject
+	// Fields
+	
+	// Constructors
+	inline DownloadManager_Query::DownloadManager_Query()
+		: JObject(
+			"android.app.DownloadManager$Query",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::DownloadManager_Query DownloadManager_Query::setFilterById(JLongArray arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DownloadManager_Query(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadManager_Query(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DownloadManager_Query();
-		
-		// Methods
-		android::app::DownloadManager_Query setFilterById(JLongArray arg0) const;
-		android::app::DownloadManager_Query setFilterByStatus(jint arg0) const;
-	};
+		return callObjectMethod(
+			"setFilterById",
+			"([J)Landroid/app/DownloadManager$Query;",
+			arg0.object<jlongArray>()
+		);
+	}
+	inline android::app::DownloadManager_Query DownloadManager_Query::setFilterByStatus(jint arg0) const
+	{
+		return callObjectMethod(
+			"setFilterByStatus",
+			"(I)Landroid/app/DownloadManager$Query;",
+			arg0
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

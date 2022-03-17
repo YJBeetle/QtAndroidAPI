@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Sensor.def.hpp"
+#include "./SensorManager_DynamicSensorCallback.def.hpp"
 
 namespace android::hardware
 {
-	class Sensor;
-}
-
-namespace android::hardware
-{
-	class SensorManager_DynamicSensorCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline SensorManager_DynamicSensorCallback::SensorManager_DynamicSensorCallback()
+		: JObject(
+			"android.hardware.SensorManager$DynamicSensorCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void SensorManager_DynamicSensorCallback::onDynamicSensorConnected(android::hardware::Sensor arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SensorManager_DynamicSensorCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SensorManager_DynamicSensorCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SensorManager_DynamicSensorCallback();
-		
-		// Methods
-		void onDynamicSensorConnected(android::hardware::Sensor arg0) const;
-		void onDynamicSensorDisconnected(android::hardware::Sensor arg0) const;
-	};
+		callMethod<void>(
+			"onDynamicSensorConnected",
+			"(Landroid/hardware/Sensor;)V",
+			arg0.object()
+		);
+	}
+	inline void SensorManager_DynamicSensorCallback::onDynamicSensorDisconnected(android::hardware::Sensor arg0) const
+	{
+		callMethod<void>(
+			"onDynamicSensorDisconnected",
+			"(Landroid/hardware/Sensor;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::hardware
+
+// Base class headers
 

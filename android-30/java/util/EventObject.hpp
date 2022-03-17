@@ -1,27 +1,37 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./EventObject.def.hpp"
 
 namespace java::util
 {
-	class EventObject : public JObject
+	// Fields
+	
+	// Constructors
+	inline EventObject::EventObject(JObject arg0)
+		: JObject(
+			"java.util.EventObject",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	
+	// Methods
+	inline JObject EventObject::getSource() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EventObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventObject(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		EventObject(JObject arg0);
-		
-		// Methods
-		JObject getSource() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getSource",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString EventObject::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

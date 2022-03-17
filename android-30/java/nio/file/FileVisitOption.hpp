@@ -1,27 +1,43 @@
 #pragma once
 
-#include "../../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./FileVisitOption.def.hpp"
 
 namespace java::nio::file
 {
-	class FileVisitOption : public java::lang::Enum
+	// Fields
+	inline java::nio::file::FileVisitOption FileVisitOption::FOLLOW_LINKS()
 	{
-	public:
-		// Fields
-		static java::nio::file::FileVisitOption FOLLOW_LINKS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileVisitOption(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		FileVisitOption(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::file::FileVisitOption valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.nio.file.FileVisitOption",
+			"FOLLOW_LINKS",
+			"Ljava/nio/file/FileVisitOption;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::file::FileVisitOption FileVisitOption::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.FileVisitOption",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/nio/file/FileVisitOption;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray FileVisitOption::values()
+	{
+		return callStaticObjectMethod(
+			"java.nio.file.FileVisitOption",
+			"values",
+			"()[Ljava/nio/file/FileVisitOption;"
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Enum.hpp"
 

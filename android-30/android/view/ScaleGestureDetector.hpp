@@ -1,53 +1,155 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::os
-{
-	class Handler;
-}
-namespace android::view
-{
-	class MotionEvent;
-}
+#include "../content/Context.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "./MotionEvent.def.hpp"
+#include "./ScaleGestureDetector.def.hpp"
 
 namespace android::view
 {
-	class ScaleGestureDetector : public JObject
+	// Fields
+	
+	// Constructors
+	inline ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, JObject arg1)
+		: JObject(
+			"android.view.ScaleGestureDetector",
+			"(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2)
+		: JObject(
+			"android.view.ScaleGestureDetector",
+			"(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline jfloat ScaleGestureDetector::getCurrentSpan() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScaleGestureDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScaleGestureDetector(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ScaleGestureDetector(android::content::Context arg0, JObject arg1);
-		ScaleGestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2);
-		
-		// Methods
-		jfloat getCurrentSpan() const;
-		jfloat getCurrentSpanX() const;
-		jfloat getCurrentSpanY() const;
-		jlong getEventTime() const;
-		jfloat getFocusX() const;
-		jfloat getFocusY() const;
-		jfloat getPreviousSpan() const;
-		jfloat getPreviousSpanX() const;
-		jfloat getPreviousSpanY() const;
-		jfloat getScaleFactor() const;
-		jlong getTimeDelta() const;
-		jboolean isInProgress() const;
-		jboolean isQuickScaleEnabled() const;
-		jboolean isStylusScaleEnabled() const;
-		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
-		void setQuickScaleEnabled(jboolean arg0) const;
-		void setStylusScaleEnabled(jboolean arg0) const;
-	};
+		return callMethod<jfloat>(
+			"getCurrentSpan",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getCurrentSpanX() const
+	{
+		return callMethod<jfloat>(
+			"getCurrentSpanX",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getCurrentSpanY() const
+	{
+		return callMethod<jfloat>(
+			"getCurrentSpanY",
+			"()F"
+		);
+	}
+	inline jlong ScaleGestureDetector::getEventTime() const
+	{
+		return callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getFocusX() const
+	{
+		return callMethod<jfloat>(
+			"getFocusX",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getFocusY() const
+	{
+		return callMethod<jfloat>(
+			"getFocusY",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getPreviousSpan() const
+	{
+		return callMethod<jfloat>(
+			"getPreviousSpan",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getPreviousSpanX() const
+	{
+		return callMethod<jfloat>(
+			"getPreviousSpanX",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getPreviousSpanY() const
+	{
+		return callMethod<jfloat>(
+			"getPreviousSpanY",
+			"()F"
+		);
+	}
+	inline jfloat ScaleGestureDetector::getScaleFactor() const
+	{
+		return callMethod<jfloat>(
+			"getScaleFactor",
+			"()F"
+		);
+	}
+	inline jlong ScaleGestureDetector::getTimeDelta() const
+	{
+		return callMethod<jlong>(
+			"getTimeDelta",
+			"()J"
+		);
+	}
+	inline jboolean ScaleGestureDetector::isInProgress() const
+	{
+		return callMethod<jboolean>(
+			"isInProgress",
+			"()Z"
+		);
+	}
+	inline jboolean ScaleGestureDetector::isQuickScaleEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isQuickScaleEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean ScaleGestureDetector::isStylusScaleEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isStylusScaleEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean ScaleGestureDetector::onTouchEvent(android::view::MotionEvent arg0) const
+	{
+		return callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.object()
+		);
+	}
+	inline void ScaleGestureDetector::setQuickScaleEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setQuickScaleEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ScaleGestureDetector::setStylusScaleEnabled(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setStylusScaleEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

@@ -1,37 +1,59 @@
 #pragma once
 
-#include "./VoiceInteractionSession_Request.hpp"
-
-class JArray;
-namespace android::app
-{
-	class VoiceInteractor_Prompt;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "../../app/VoiceInteractor_Prompt.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../../JString.hpp"
+#include "./VoiceInteractionSession_PickOptionRequest.def.hpp"
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_PickOptionRequest : public android::service::voice::VoiceInteractionSession_Request
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JArray VoiceInteractionSession_PickOptionRequest::getOptions() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_PickOptionRequest(const char *className, const char *sig, Ts...agv) : android::service::voice::VoiceInteractionSession_Request(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractionSession_PickOptionRequest(QAndroidJniObject obj) : android::service::voice::VoiceInteractionSession_Request(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JArray getOptions() const;
-		JString getPrompt() const;
-		android::app::VoiceInteractor_Prompt getVoicePrompt() const;
-		void sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1) const;
-		void sendPickOptionResult(JArray arg0, android::os::Bundle arg1) const;
-	};
+		return callObjectMethod(
+			"getOptions",
+			"()[Landroid/app/VoiceInteractor$PickOptionRequest$Option;"
+		);
+	}
+	inline JString VoiceInteractionSession_PickOptionRequest::getPrompt() const
+	{
+		return callObjectMethod(
+			"getPrompt",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline android::app::VoiceInteractor_Prompt VoiceInteractionSession_PickOptionRequest::getVoicePrompt() const
+	{
+		return callObjectMethod(
+			"getVoicePrompt",
+			"()Landroid/app/VoiceInteractor$Prompt;"
+		);
+	}
+	inline void VoiceInteractionSession_PickOptionRequest::sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1) const
+	{
+		callMethod<void>(
+			"sendIntermediatePickOptionResult",
+			"([Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V",
+			arg0.object<jarray>(),
+			arg1.object()
+		);
+	}
+	inline void VoiceInteractionSession_PickOptionRequest::sendPickOptionResult(JArray arg0, android::os::Bundle arg1) const
+	{
+		callMethod<void>(
+			"sendPickOptionResult",
+			"([Landroid/app/VoiceInteractor$PickOptionRequest$Option;Landroid/os/Bundle;)V",
+			arg0.object<jarray>(),
+			arg1.object()
+		);
+	}
 } // namespace android::service::voice
+
+// Base class headers
+#include "./VoiceInteractionSession_Request.hpp"
 

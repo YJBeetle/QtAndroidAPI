@@ -1,37 +1,88 @@
 #pragma once
 
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
+#include "../../../io/ObjectInputStream.def.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
+#include "./DoubleAdder.def.hpp"
 
 namespace java::util::concurrent::atomic
 {
-	class DoubleAdder : public JObject
+	// Fields
+	
+	// Constructors
+	inline DoubleAdder::DoubleAdder()
+		: JObject(
+			"java.util.concurrent.atomic.DoubleAdder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DoubleAdder::add(jdouble arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DoubleAdder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DoubleAdder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DoubleAdder();
-		
-		// Methods
-		void add(jdouble arg0) const;
-		jdouble doubleValue() const;
-		jfloat floatValue() const;
-		jint intValue() const;
-		jlong longValue() const;
-		void reset() const;
-		jdouble sum() const;
-		jdouble sumThenReset() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"add",
+			"(D)V",
+			arg0
+		);
+	}
+	inline jdouble DoubleAdder::doubleValue() const
+	{
+		return callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	inline jfloat DoubleAdder::floatValue() const
+	{
+		return callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
+	inline jint DoubleAdder::intValue() const
+	{
+		return callMethod<jint>(
+			"intValue",
+			"()I"
+		);
+	}
+	inline jlong DoubleAdder::longValue() const
+	{
+		return callMethod<jlong>(
+			"longValue",
+			"()J"
+		);
+	}
+	inline void DoubleAdder::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline jdouble DoubleAdder::sum() const
+	{
+		return callMethod<jdouble>(
+			"sum",
+			"()D"
+		);
+	}
+	inline jdouble DoubleAdder::sumThenReset() const
+	{
+		return callMethod<jdouble>(
+			"sumThenReset",
+			"()D"
+		);
+	}
+	inline JString DoubleAdder::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::concurrent::atomic
+
+// Base class headers
+#include "../../../lang/Number.hpp"
 

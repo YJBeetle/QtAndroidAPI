@@ -1,33 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaStore_Audio_Genres_Members.def.hpp"
 
 namespace android::provider
 {
-	class MediaStore_Audio_Genres_Members : public JObject
+	// Fields
+	inline JString MediaStore_Audio_Genres_Members::AUDIO_ID()
 	{
-	public:
-		// Fields
-		static JString AUDIO_ID();
-		static JString CONTENT_DIRECTORY();
-		static JString DEFAULT_SORT_ORDER();
-		static JString GENRE_ID();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaStore_Audio_Genres_Members(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaStore_Audio_Genres_Members(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaStore_Audio_Genres_Members();
-		
-		// Methods
-		static android::net::Uri getContentUri(JString arg0, jlong arg1);
-	};
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Genres$Members",
+			"AUDIO_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Audio_Genres_Members::CONTENT_DIRECTORY()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Genres$Members",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Audio_Genres_Members::DEFAULT_SORT_ORDER()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Genres$Members",
+			"DEFAULT_SORT_ORDER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString MediaStore_Audio_Genres_Members::GENRE_ID()
+	{
+		return getStaticObjectField(
+			"android.provider.MediaStore$Audio$Genres$Members",
+			"GENRE_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline MediaStore_Audio_Genres_Members::MediaStore_Audio_Genres_Members()
+		: JObject(
+			"android.provider.MediaStore$Audio$Genres$Members",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::net::Uri MediaStore_Audio_Genres_Members::getContentUri(JString arg0, jlong arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Genres$Members",
+			"getContentUri",
+			"(Ljava/lang/String;J)Landroid/net/Uri;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

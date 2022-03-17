@@ -1,36 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::accounts
-{
-	class Account;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../accounts/Account.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./SyncInfo.def.hpp"
 
 namespace android::content
 {
-	class SyncInfo : public JObject
+	// Fields
+	inline android::accounts::Account SyncInfo::account()
 	{
-	public:
-		// Fields
-		android::accounts::Account account();
-		JString authority();
-		jlong startTime();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SyncInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SyncInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getObjectField(
+			"account",
+			"Landroid/accounts/Account;"
+		);
+	}
+	inline JString SyncInfo::authority()
+	{
+		return getObjectField(
+			"authority",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jlong SyncInfo::startTime()
+	{
+		return getField<jlong>(
+			"startTime"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SyncInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void SyncInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

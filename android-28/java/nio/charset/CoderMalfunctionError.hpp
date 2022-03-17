@@ -1,27 +1,23 @@
 #pragma once
 
-#include "../../lang/Error.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
+#include "../../lang/Exception.def.hpp"
+#include "./CoderMalfunctionError.def.hpp"
 
 namespace java::nio::charset
 {
-	class CoderMalfunctionError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CoderMalfunctionError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		CoderMalfunctionError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-		
-		// Constructors
-		CoderMalfunctionError(java::lang::Exception arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CoderMalfunctionError::CoderMalfunctionError(java::lang::Exception arg0)
+		: java::lang::Error(
+			"java.nio.charset.CoderMalfunctionError",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
 } // namespace java::nio::charset
+
+// Base class headers
+#include "../../lang/Error.hpp"
 

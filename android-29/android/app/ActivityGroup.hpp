@@ -1,38 +1,47 @@
 #pragma once
 
-#include "./Activity.hpp"
+#include "./Activity.def.hpp"
+#include "./LocalActivityManager.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./ActivityGroup.def.hpp"
 
 namespace android::app
 {
-	class Activity;
-}
-namespace android::app
-{
-	class LocalActivityManager;
-}
-namespace android::os
-{
-	class Bundle;
-}
-
-namespace android::app
-{
-	class ActivityGroup : public android::app::Activity
+	// Fields
+	
+	// Constructors
+	inline ActivityGroup::ActivityGroup()
+		: android::app::Activity(
+			"android.app.ActivityGroup",
+			"()V"
+		) {}
+	inline ActivityGroup::ActivityGroup(jboolean arg0)
+		: android::app::Activity(
+			"android.app.ActivityGroup",
+			"(Z)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline android::app::Activity ActivityGroup::getCurrentActivity() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityGroup(const char *className, const char *sig, Ts...agv) : android::app::Activity(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityGroup(QAndroidJniObject obj) : android::app::Activity(obj) {}
-		
-		// Constructors
-		ActivityGroup();
-		ActivityGroup(jboolean arg0);
-		
-		// Methods
-		android::app::Activity getCurrentActivity() const;
-		android::app::LocalActivityManager getLocalActivityManager() const;
-	};
+		return callObjectMethod(
+			"getCurrentActivity",
+			"()Landroid/app/Activity;"
+		);
+	}
+	inline android::app::LocalActivityManager ActivityGroup::getLocalActivityManager() const
+	{
+		return callObjectMethod(
+			"getLocalActivityManager",
+			"()Landroid/app/LocalActivityManager;"
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "../content/Context.hpp"
+#include "../content/ContextWrapper.hpp"
+#include "../view/ContextThemeWrapper.hpp"
+#include "./Activity.hpp"
 

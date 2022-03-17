@@ -1,31 +1,75 @@
 #pragma once
 
-#include "../lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./RowIdLifetime.def.hpp"
 
 namespace java::sql
 {
-	class RowIdLifetime : public java::lang::Enum
+	// Fields
+	inline java::sql::RowIdLifetime RowIdLifetime::ROWID_UNSUPPORTED()
 	{
-	public:
-		// Fields
-		static java::sql::RowIdLifetime ROWID_UNSUPPORTED();
-		static java::sql::RowIdLifetime ROWID_VALID_FOREVER();
-		static java::sql::RowIdLifetime ROWID_VALID_OTHER();
-		static java::sql::RowIdLifetime ROWID_VALID_SESSION();
-		static java::sql::RowIdLifetime ROWID_VALID_TRANSACTION();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RowIdLifetime(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RowIdLifetime(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::sql::RowIdLifetime valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"java.sql.RowIdLifetime",
+			"ROWID_UNSUPPORTED",
+			"Ljava/sql/RowIdLifetime;"
+		);
+	}
+	inline java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_FOREVER()
+	{
+		return getStaticObjectField(
+			"java.sql.RowIdLifetime",
+			"ROWID_VALID_FOREVER",
+			"Ljava/sql/RowIdLifetime;"
+		);
+	}
+	inline java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_OTHER()
+	{
+		return getStaticObjectField(
+			"java.sql.RowIdLifetime",
+			"ROWID_VALID_OTHER",
+			"Ljava/sql/RowIdLifetime;"
+		);
+	}
+	inline java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_SESSION()
+	{
+		return getStaticObjectField(
+			"java.sql.RowIdLifetime",
+			"ROWID_VALID_SESSION",
+			"Ljava/sql/RowIdLifetime;"
+		);
+	}
+	inline java::sql::RowIdLifetime RowIdLifetime::ROWID_VALID_TRANSACTION()
+	{
+		return getStaticObjectField(
+			"java.sql.RowIdLifetime",
+			"ROWID_VALID_TRANSACTION",
+			"Ljava/sql/RowIdLifetime;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::sql::RowIdLifetime RowIdLifetime::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.sql.RowIdLifetime",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/sql/RowIdLifetime;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray RowIdLifetime::values()
+	{
+		return callStaticObjectMethod(
+			"java.sql.RowIdLifetime",
+			"values",
+			"()[Ljava/sql/RowIdLifetime;"
+		);
+	}
 } // namespace java::sql
+
+// Base class headers
+#include "../lang/Enum.hpp"
 

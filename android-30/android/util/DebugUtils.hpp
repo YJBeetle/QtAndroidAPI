@@ -1,24 +1,25 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./DebugUtils.def.hpp"
 
 namespace android::util
 {
-	class DebugUtils : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean DebugUtils::isObjectSelected(JObject arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DebugUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DebugUtils(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isObjectSelected(JObject arg0);
-	};
+		return callStaticMethod<jboolean>(
+			"android.util.DebugUtils",
+			"isObjectSelected",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

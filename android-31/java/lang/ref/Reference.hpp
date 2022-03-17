@@ -1,33 +1,62 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
+#include "./ReferenceQueue.def.hpp"
+#include "./Reference.def.hpp"
 
 namespace java::lang::ref
 {
-	class Reference : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Reference::reachabilityFence(JObject arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Reference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Reference(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static void reachabilityFence(JObject arg0);
-		void clear() const;
-		jboolean enqueue() const;
-		JObject get() const;
-		jboolean isEnqueued() const;
-		jboolean refersTo(JObject arg0) const;
-	};
+		callStaticMethod<void>(
+			"java.lang.ref.Reference",
+			"reachabilityFence",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void Reference::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline jboolean Reference::enqueue() const
+	{
+		return callMethod<jboolean>(
+			"enqueue",
+			"()Z"
+		);
+	}
+	inline JObject Reference::get() const
+	{
+		return callObjectMethod(
+			"get",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jboolean Reference::isEnqueued() const
+	{
+		return callMethod<jboolean>(
+			"isEnqueued",
+			"()Z"
+		);
+	}
+	inline jboolean Reference::refersTo(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"refersTo",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace java::lang::ref
+
+// Base class headers
 

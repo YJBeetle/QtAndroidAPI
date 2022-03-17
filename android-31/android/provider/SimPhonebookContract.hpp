@@ -1,29 +1,33 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./SimPhonebookContract.def.hpp"
 
 namespace android::provider
 {
-	class SimPhonebookContract : public JObject
+	// Fields
+	inline JString SimPhonebookContract::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static android::net::Uri AUTHORITY_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SimPhonebookContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SimPhonebookContract(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri SimPhonebookContract::AUTHORITY_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.SimPhonebookContract",
+			"AUTHORITY_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

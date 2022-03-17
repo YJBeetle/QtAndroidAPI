@@ -1,27 +1,37 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Annotation.def.hpp"
 
 namespace java::text
 {
-	class Annotation : public JObject
+	// Fields
+	
+	// Constructors
+	inline Annotation::Annotation(JObject arg0)
+		: JObject(
+			"java.text.Annotation",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	
+	// Methods
+	inline JObject Annotation::getValue() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Annotation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Annotation(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Annotation(JObject arg0);
-		
-		// Methods
-		JObject getValue() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getValue",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString Annotation::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::text
+
+// Base class headers
 

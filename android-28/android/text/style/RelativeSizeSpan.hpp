@@ -1,38 +1,77 @@
 #pragma once
 
-#include "./MetricAffectingSpan.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::text
-{
-	class TextPaint;
-}
+#include "../../os/Parcel.def.hpp"
+#include "../TextPaint.def.hpp"
+#include "./RelativeSizeSpan.def.hpp"
 
 namespace android::text::style
 {
-	class RelativeSizeSpan : public android::text::style::MetricAffectingSpan
+	// Fields
+	
+	// Constructors
+	inline RelativeSizeSpan::RelativeSizeSpan(android::os::Parcel arg0)
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.RelativeSizeSpan",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		) {}
+	inline RelativeSizeSpan::RelativeSizeSpan(jfloat arg0)
+		: android::text::style::MetricAffectingSpan(
+			"android.text.style.RelativeSizeSpan",
+			"(F)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jint RelativeSizeSpan::describeContents() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RelativeSizeSpan(const char *className, const char *sig, Ts...agv) : android::text::style::MetricAffectingSpan(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeSizeSpan(QAndroidJniObject obj) : android::text::style::MetricAffectingSpan(obj) {}
-		
-		// Constructors
-		RelativeSizeSpan(android::os::Parcel arg0);
-		RelativeSizeSpan(jfloat arg0);
-		
-		// Methods
-		jint describeContents() const;
-		jfloat getSizeChange() const;
-		jint getSpanTypeId() const;
-		void updateDrawState(android::text::TextPaint arg0) const;
-		void updateMeasureState(android::text::TextPaint arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jfloat RelativeSizeSpan::getSizeChange() const
+	{
+		return callMethod<jfloat>(
+			"getSizeChange",
+			"()F"
+		);
+	}
+	inline jint RelativeSizeSpan::getSpanTypeId() const
+	{
+		return callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
+	inline void RelativeSizeSpan::updateDrawState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
+	inline void RelativeSizeSpan::updateMeasureState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
+	inline void RelativeSizeSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
+#include "./MetricAffectingSpan.hpp"
 

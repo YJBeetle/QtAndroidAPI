@@ -1,38 +1,75 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class NetworkInterface;
-}
+#include "../../net/InetAddress.def.hpp"
+#include "../../net/NetworkInterface.def.hpp"
+#include "./MembershipKey.def.hpp"
 
 namespace java::nio::channels
 {
-	class MembershipKey : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::channels::MembershipKey MembershipKey::block(java::net::InetAddress arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MembershipKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MembershipKey(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::nio::channels::MembershipKey block(java::net::InetAddress arg0) const;
-		JObject channel() const;
-		void drop() const;
-		java::net::InetAddress group() const;
-		jboolean isValid() const;
-		java::net::NetworkInterface networkInterface() const;
-		java::net::InetAddress sourceAddress() const;
-		java::nio::channels::MembershipKey unblock(java::net::InetAddress arg0) const;
-	};
+		return callObjectMethod(
+			"block",
+			"(Ljava/net/InetAddress;)Ljava/nio/channels/MembershipKey;",
+			arg0.object()
+		);
+	}
+	inline JObject MembershipKey::channel() const
+	{
+		return callObjectMethod(
+			"channel",
+			"()Ljava/nio/channels/MulticastChannel;"
+		);
+	}
+	inline void MembershipKey::drop() const
+	{
+		callMethod<void>(
+			"drop",
+			"()V"
+		);
+	}
+	inline java::net::InetAddress MembershipKey::group() const
+	{
+		return callObjectMethod(
+			"group",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline jboolean MembershipKey::isValid() const
+	{
+		return callMethod<jboolean>(
+			"isValid",
+			"()Z"
+		);
+	}
+	inline java::net::NetworkInterface MembershipKey::networkInterface() const
+	{
+		return callObjectMethod(
+			"networkInterface",
+			"()Ljava/net/NetworkInterface;"
+		);
+	}
+	inline java::net::InetAddress MembershipKey::sourceAddress() const
+	{
+		return callObjectMethod(
+			"sourceAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline java::nio::channels::MembershipKey MembershipKey::unblock(java::net::InetAddress arg0) const
+	{
+		return callObjectMethod(
+			"unblock",
+			"(Ljava/net/InetAddress;)Ljava/nio/channels/MembershipKey;",
+			arg0.object()
+		);
+	}
 } // namespace java::nio::channels
+
+// Base class headers
 

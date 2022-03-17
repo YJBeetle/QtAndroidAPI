@@ -1,28 +1,48 @@
 #pragma once
 
+#include "../../JFloatArray.hpp"
 #include "../../JObject.hpp"
-
-class JFloatArray;
-class JObject;
+#include "./FloatArrayEvaluator.def.hpp"
 
 namespace android::animation
 {
-	class FloatArrayEvaluator : public JObject
+	// Fields
+	
+	// Constructors
+	inline FloatArrayEvaluator::FloatArrayEvaluator()
+		: JObject(
+			"android.animation.FloatArrayEvaluator",
+			"()V"
+		) {}
+	inline FloatArrayEvaluator::FloatArrayEvaluator(JFloatArray arg0)
+		: JObject(
+			"android.animation.FloatArrayEvaluator",
+			"([F)V",
+			arg0.object<jfloatArray>()
+		) {}
+	
+	// Methods
+	inline JFloatArray FloatArrayEvaluator::evaluate(jfloat arg0, JFloatArray arg1, JFloatArray arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FloatArrayEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FloatArrayEvaluator(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FloatArrayEvaluator();
-		FloatArrayEvaluator(JFloatArray arg0);
-		
-		// Methods
-		JFloatArray evaluate(jfloat arg0, JFloatArray arg1, JFloatArray arg2) const;
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
-	};
+		return callObjectMethod(
+			"evaluate",
+			"(F[F[F)[F",
+			arg0,
+			arg1.object<jfloatArray>(),
+			arg2.object<jfloatArray>()
+		);
+	}
+	inline JObject FloatArrayEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"evaluate",
+			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
+		);
+	}
 } // namespace android::animation
+
+// Base class headers
 

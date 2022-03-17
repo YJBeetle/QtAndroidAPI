@@ -1,27 +1,36 @@
 #pragma once
 
-#include "./Error.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./LinkageError.def.hpp"
 
 namespace java::lang
 {
-	class LinkageError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LinkageError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		LinkageError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-		
-		// Constructors
-		LinkageError();
-		LinkageError(JString arg0);
-		LinkageError(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline LinkageError::LinkageError()
+		: java::lang::Error(
+			"java.lang.LinkageError",
+			"()V"
+		) {}
+	inline LinkageError::LinkageError(JString arg0)
+		: java::lang::Error(
+			"java.lang.LinkageError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline LinkageError::LinkageError(JString arg0, JThrowable arg1)
+		: java::lang::Error(
+			"java.lang.LinkageError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/security/GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalBlockSizeException.def.hpp"
 
 namespace javax::crypto
 {
-	class IllegalBlockSizeException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IllegalBlockSizeException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalBlockSizeException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		IllegalBlockSizeException();
-		IllegalBlockSizeException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IllegalBlockSizeException::IllegalBlockSizeException()
+		: java::security::GeneralSecurityException(
+			"javax.crypto.IllegalBlockSizeException",
+			"()V"
+		) {}
+	inline IllegalBlockSizeException::IllegalBlockSizeException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"javax.crypto.IllegalBlockSizeException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
 

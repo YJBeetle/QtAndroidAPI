@@ -1,36 +1,63 @@
 #pragma once
 
-#include "./PreferenceGroup.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::preference
-{
-	class Preference;
-}
+#include "../content/Context.def.hpp"
+#include "./Preference.def.hpp"
+#include "./PreferenceCategory.def.hpp"
 
 namespace android::preference
 {
-	class PreferenceCategory : public android::preference::PreferenceGroup
+	// Fields
+	
+	// Constructors
+	inline PreferenceCategory::PreferenceCategory(android::content::Context arg0)
+		: android::preference::PreferenceGroup(
+			"android.preference.PreferenceCategory",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline PreferenceCategory::PreferenceCategory(android::content::Context arg0, JObject arg1)
+		: android::preference::PreferenceGroup(
+			"android.preference.PreferenceCategory",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline PreferenceCategory::PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2)
+		: android::preference::PreferenceGroup(
+			"android.preference.PreferenceCategory",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		) {}
+	inline PreferenceCategory::PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: android::preference::PreferenceGroup(
+			"android.preference.PreferenceCategory",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline jboolean PreferenceCategory::isEnabled() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PreferenceCategory(const char *className, const char *sig, Ts...agv) : android::preference::PreferenceGroup(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceCategory(QAndroidJniObject obj) : android::preference::PreferenceGroup(obj) {}
-		
-		// Constructors
-		PreferenceCategory(android::content::Context arg0);
-		PreferenceCategory(android::content::Context arg0, JObject arg1);
-		PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2);
-		PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
-		
-		// Methods
-		jboolean isEnabled() const;
-		jboolean shouldDisableDependents() const;
-	};
+		return callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	inline jboolean PreferenceCategory::shouldDisableDependents() const
+	{
+		return callMethod<jboolean>(
+			"shouldDisableDependents",
+			"()Z"
+		);
+	}
 } // namespace android::preference
+
+// Base class headers
+#include "./Preference.hpp"
+#include "./PreferenceGroup.hpp"
 

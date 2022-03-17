@@ -1,36 +1,85 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./KeyboardShortcutInfo.def.hpp"
 
 namespace android::view
 {
-	class KeyboardShortcutInfo : public JObject
+	// Fields
+	inline JObject KeyboardShortcutInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyboardShortcutInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyboardShortcutInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyboardShortcutInfo(JString arg0, jchar arg1, jint arg2);
-		KeyboardShortcutInfo(JString arg0, jint arg1, jint arg2);
-		
-		// Methods
-		jint describeContents() const;
-		jchar getBaseCharacter() const;
-		jint getKeycode() const;
-		JString getLabel() const;
-		jint getModifiers() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.KeyboardShortcutInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline KeyboardShortcutInfo::KeyboardShortcutInfo(JString arg0, jchar arg1, jint arg2)
+		: JObject(
+			"android.view.KeyboardShortcutInfo",
+			"(Ljava/lang/CharSequence;CI)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		) {}
+	inline KeyboardShortcutInfo::KeyboardShortcutInfo(JString arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.view.KeyboardShortcutInfo",
+			"(Ljava/lang/CharSequence;II)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline jint KeyboardShortcutInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jchar KeyboardShortcutInfo::getBaseCharacter() const
+	{
+		return callMethod<jchar>(
+			"getBaseCharacter",
+			"()C"
+		);
+	}
+	inline jint KeyboardShortcutInfo::getKeycode() const
+	{
+		return callMethod<jint>(
+			"getKeycode",
+			"()I"
+		);
+	}
+	inline JString KeyboardShortcutInfo::getLabel() const
+	{
+		return callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jint KeyboardShortcutInfo::getModifiers() const
+	{
+		return callMethod<jint>(
+			"getModifiers",
+			"()I"
+		);
+	}
+	inline void KeyboardShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

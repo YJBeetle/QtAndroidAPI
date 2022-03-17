@@ -1,32 +1,31 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Validator.def.hpp"
+#include "./ValidatorHandler.def.hpp"
+#include "./Schema.def.hpp"
 
 namespace javax::xml::validation
 {
-	class Validator;
-}
-namespace javax::xml::validation
-{
-	class ValidatorHandler;
-}
-
-namespace javax::xml::validation
-{
-	class Schema : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline javax::xml::validation::Validator Schema::newValidator() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Schema(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Schema(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		javax::xml::validation::Validator newValidator() const;
-		javax::xml::validation::ValidatorHandler newValidatorHandler() const;
-	};
+		return callObjectMethod(
+			"newValidator",
+			"()Ljavax/xml/validation/Validator;"
+		);
+	}
+	inline javax::xml::validation::ValidatorHandler Schema::newValidatorHandler() const
+	{
+		return callObjectMethod(
+			"newValidatorHandler",
+			"()Ljavax/xml/validation/ValidatorHandler;"
+		);
+	}
 } // namespace javax::xml::validation
+
+// Base class headers
 

@@ -1,27 +1,55 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaCodec_BufferInfo.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec_BufferInfo : public JObject
+	// Fields
+	inline jint MediaCodec_BufferInfo::flags()
 	{
-	public:
-		// Fields
-		jint flags();
-		jint offset();
-		jlong presentationTimeUs();
-		jint size();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodec_BufferInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_BufferInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaCodec_BufferInfo();
-		
-		// Methods
-		void set(jint arg0, jint arg1, jlong arg2, jint arg3) const;
-	};
+		return getField<jint>(
+			"flags"
+		);
+	}
+	inline jint MediaCodec_BufferInfo::offset()
+	{
+		return getField<jint>(
+			"offset"
+		);
+	}
+	inline jlong MediaCodec_BufferInfo::presentationTimeUs()
+	{
+		return getField<jlong>(
+			"presentationTimeUs"
+		);
+	}
+	inline jint MediaCodec_BufferInfo::size()
+	{
+		return getField<jint>(
+			"size"
+		);
+	}
+	
+	// Constructors
+	inline MediaCodec_BufferInfo::MediaCodec_BufferInfo()
+		: JObject(
+			"android.media.MediaCodec$BufferInfo",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaCodec_BufferInfo::set(jint arg0, jint arg1, jlong arg2, jint arg3) const
+	{
+		callMethod<void>(
+			"set",
+			"(IIJI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

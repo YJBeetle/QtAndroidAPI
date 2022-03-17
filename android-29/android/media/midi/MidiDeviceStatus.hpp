@@ -1,38 +1,72 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MidiDeviceInfo.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./MidiDeviceStatus.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiDeviceInfo;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-
-namespace android::media::midi
-{
-	class MidiDeviceStatus : public JObject
+	// Fields
+	inline JObject MidiDeviceStatus::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiDeviceStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MidiDeviceStatus(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::media::midi::MidiDeviceInfo getDeviceInfo() const;
-		jint getOutputPortOpenCount(jint arg0) const;
-		jboolean isInputPortOpen(jint arg0) const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.media.midi.MidiDeviceStatus",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint MidiDeviceStatus::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::media::midi::MidiDeviceInfo MidiDeviceStatus::getDeviceInfo() const
+	{
+		return callObjectMethod(
+			"getDeviceInfo",
+			"()Landroid/media/midi/MidiDeviceInfo;"
+		);
+	}
+	inline jint MidiDeviceStatus::getOutputPortOpenCount(jint arg0) const
+	{
+		return callMethod<jint>(
+			"getOutputPortOpenCount",
+			"(I)I",
+			arg0
+		);
+	}
+	inline jboolean MidiDeviceStatus::isInputPortOpen(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isInputPortOpen",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline JString MidiDeviceStatus::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void MidiDeviceStatus::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
 

@@ -1,46 +1,34 @@
 #pragma once
 
+#include "../io/FileDescriptor.def.hpp"
+#include "../io/InputStream.def.hpp"
+#include "../io/OutputStream.def.hpp"
 #include "../../JObject.hpp"
-
-namespace java::io
-{
-	class FileDescriptor;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-class JObject;
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class SocketAddress;
-}
+#include "../../JString.hpp"
+#include "./InetAddress.def.hpp"
+#include "./SocketAddress.def.hpp"
+#include "./SocketImpl.def.hpp"
 
 namespace java::net
 {
-	class SocketImpl : public JObject
+	// Fields
+	
+	// Constructors
+	inline SocketImpl::SocketImpl()
+		: JObject(
+			"java.net.SocketImpl",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString SocketImpl::toString() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SocketImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SocketImpl(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SocketImpl();
-		
-		// Methods
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

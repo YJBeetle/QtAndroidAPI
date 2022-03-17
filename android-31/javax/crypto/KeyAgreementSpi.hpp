@@ -1,29 +1,23 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
-namespace java::security
-{
-	class SecureRandom;
-}
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "../../java/security/SecureRandom.def.hpp"
+#include "./KeyAgreementSpi.def.hpp"
 
 namespace javax::crypto
 {
-	class KeyAgreementSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyAgreementSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyAgreementSpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyAgreementSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline KeyAgreementSpi::KeyAgreementSpi()
+		: JObject(
+			"javax.crypto.KeyAgreementSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
 

@@ -1,32 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRecorder.def.hpp"
+#include "./MediaRecorder_VideoEncoder.def.hpp"
 
 namespace android::media
 {
-	class MediaRecorder;
-}
-
-namespace android::media
-{
-	class MediaRecorder_VideoEncoder : public JObject
+	// Fields
+	inline jint MediaRecorder_VideoEncoder::DEFAULT()
 	{
-	public:
-		// Fields
-		static jint DEFAULT();
-		static jint H263();
-		static jint H264();
-		static jint HEVC();
-		static jint MPEG_4_SP();
-		static jint VP8();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRecorder_VideoEncoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRecorder_VideoEncoder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$VideoEncoder",
+			"DEFAULT"
+		);
+	}
+	inline jint MediaRecorder_VideoEncoder::H263()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$VideoEncoder",
+			"H263"
+		);
+	}
+	inline jint MediaRecorder_VideoEncoder::H264()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$VideoEncoder",
+			"H264"
+		);
+	}
+	inline jint MediaRecorder_VideoEncoder::HEVC()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$VideoEncoder",
+			"HEVC"
+		);
+	}
+	inline jint MediaRecorder_VideoEncoder::MPEG_4_SP()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$VideoEncoder",
+			"MPEG_4_SP"
+		);
+	}
+	inline jint MediaRecorder_VideoEncoder::VP8()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaRecorder$VideoEncoder",
+			"VP8"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

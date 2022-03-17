@@ -1,24 +1,23 @@
 #pragma once
 
-#include "../../java/lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaDrmException.def.hpp"
 
 namespace android::media
 {
-	class MediaDrmException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrmException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrmException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		MediaDrmException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline MediaDrmException::MediaDrmException(JString arg0)
+		: java::lang::Exception(
+			"android.media.MediaDrmException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
 

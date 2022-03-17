@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../io/IOException.hpp"
+#include "./ClosedChannelException.def.hpp"
 
 namespace java::nio::channels
 {
-	class ClosedChannelException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClosedChannelException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		ClosedChannelException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		ClosedChannelException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ClosedChannelException::ClosedChannelException()
+		: java::io::IOException(
+			"java.nio.channels.ClosedChannelException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::channels
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 

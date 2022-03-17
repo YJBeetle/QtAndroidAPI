@@ -1,29 +1,32 @@
 #pragma once
 
+#include "./MediaBrowserService.def.hpp"
 #include "../../../JObject.hpp"
+#include "./MediaBrowserService_Result.def.hpp"
 
 namespace android::service::media
 {
-	class MediaBrowserService;
-}
-class JObject;
-
-namespace android::service::media
-{
-	class MediaBrowserService_Result : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MediaBrowserService_Result::detach() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaBrowserService_Result(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaBrowserService_Result(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void detach() const;
-		void sendResult(JObject arg0) const;
-	};
+		callMethod<void>(
+			"detach",
+			"()V"
+		);
+	}
+	inline void MediaBrowserService_Result::sendResult(JObject arg0) const
+	{
+		callMethod<void>(
+			"sendResult",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace android::service::media
+
+// Base class headers
 

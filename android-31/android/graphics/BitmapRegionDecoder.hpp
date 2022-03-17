@@ -1,61 +1,140 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::graphics
-{
-	class BitmapFactory_Options;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::os
-{
-	class ParcelFileDescriptor;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-namespace java::io
-{
-	class InputStream;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "./Bitmap.def.hpp"
+#include "./BitmapFactory_Options.def.hpp"
+#include "./Rect.def.hpp"
+#include "../os/ParcelFileDescriptor.def.hpp"
+#include "../../java/io/FileDescriptor.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../JString.hpp"
+#include "./BitmapRegionDecoder.def.hpp"
 
 namespace android::graphics
 {
-	class BitmapRegionDecoder : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(android::os::ParcelFileDescriptor arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BitmapRegionDecoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BitmapRegionDecoder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::BitmapRegionDecoder newInstance(android::os::ParcelFileDescriptor arg0);
-		static android::graphics::BitmapRegionDecoder newInstance(java::io::InputStream arg0);
-		static android::graphics::BitmapRegionDecoder newInstance(JString arg0);
-		static android::graphics::BitmapRegionDecoder newInstance(java::io::FileDescriptor arg0, jboolean arg1);
-		static android::graphics::BitmapRegionDecoder newInstance(java::io::InputStream arg0, jboolean arg1);
-		static android::graphics::BitmapRegionDecoder newInstance(JString arg0, jboolean arg1);
-		static android::graphics::BitmapRegionDecoder newInstance(JByteArray arg0, jint arg1, jint arg2);
-		static android::graphics::BitmapRegionDecoder newInstance(JByteArray arg0, jint arg1, jint arg2, jboolean arg3);
-		android::graphics::Bitmap decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1) const;
-		jint getHeight() const;
-		jint getWidth() const;
-		jboolean isRecycled() const;
-		void recycle() const;
-	};
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"(Landroid/os/ParcelFileDescriptor;)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::InputStream arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"(Ljava/io/InputStream;)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"(Ljava/lang/String;)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::FileDescriptor arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"(Ljava/io/FileDescriptor;Z)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(java::io::InputStream arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"(Ljava/io/InputStream;Z)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JString arg0, jboolean arg1)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"(Ljava/lang/String;Z)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JByteArray arg0, jint arg1, jint arg2)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"([BII)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline android::graphics::BitmapRegionDecoder BitmapRegionDecoder::newInstance(JByteArray arg0, jint arg1, jint arg2, jboolean arg3)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.BitmapRegionDecoder",
+			"newInstance",
+			"([BIIZ)Landroid/graphics/BitmapRegionDecoder;",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline android::graphics::Bitmap BitmapRegionDecoder::decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1) const
+	{
+		return callObjectMethod(
+			"decodeRegion",
+			"(Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jint BitmapRegionDecoder::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint BitmapRegionDecoder::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline jboolean BitmapRegionDecoder::isRecycled() const
+	{
+		return callMethod<jboolean>(
+			"isRecycled",
+			"()Z"
+		);
+	}
+	inline void BitmapRegionDecoder::recycle() const
+	{
+		callMethod<void>(
+			"recycle",
+			"()V"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./SystemFonts.def.hpp"
 
 namespace android::graphics::fonts
 {
-	class SystemFonts : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject SystemFonts::getAvailableFonts()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SystemFonts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SystemFonts(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject getAvailableFonts();
-	};
+		return callStaticObjectMethod(
+			"android.graphics.fonts.SystemFonts",
+			"getAvailableFonts",
+			"()Ljava/util/Set;"
+		);
+	}
 } // namespace android::graphics::fonts
+
+// Base class headers
 

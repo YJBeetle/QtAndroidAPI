@@ -1,32 +1,52 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./DownloadableSubscription.def.hpp"
+#include "../../../JString.hpp"
+#include "./DownloadableSubscription_Builder.def.hpp"
 
 namespace android::telephony::euicc
 {
-	class DownloadableSubscription;
-}
-class JString;
-
-namespace android::telephony::euicc
-{
-	class DownloadableSubscription_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline DownloadableSubscription_Builder::DownloadableSubscription_Builder(android::telephony::euicc::DownloadableSubscription arg0)
+		: JObject(
+			"android.telephony.euicc.DownloadableSubscription$Builder",
+			"(Landroid/telephony/euicc/DownloadableSubscription;)V",
+			arg0.object()
+		) {}
+	inline DownloadableSubscription_Builder::DownloadableSubscription_Builder(JString arg0)
+		: JObject(
+			"android.telephony.euicc.DownloadableSubscription$Builder",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline android::telephony::euicc::DownloadableSubscription DownloadableSubscription_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DownloadableSubscription_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadableSubscription_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DownloadableSubscription_Builder(android::telephony::euicc::DownloadableSubscription arg0);
-		DownloadableSubscription_Builder(JString arg0);
-		
-		// Methods
-		android::telephony::euicc::DownloadableSubscription build() const;
-		android::telephony::euicc::DownloadableSubscription_Builder setConfirmationCode(JString arg0) const;
-		android::telephony::euicc::DownloadableSubscription_Builder setEncodedActivationCode(JString arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/telephony/euicc/DownloadableSubscription;"
+		);
+	}
+	inline android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setConfirmationCode(JString arg0) const
+	{
+		return callObjectMethod(
+			"setConfirmationCode",
+			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::telephony::euicc::DownloadableSubscription_Builder DownloadableSubscription_Builder::setEncodedActivationCode(JString arg0) const
+	{
+		return callObjectMethod(
+			"setEncodedActivationCode",
+			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription$Builder;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::telephony::euicc
+
+// Base class headers
 

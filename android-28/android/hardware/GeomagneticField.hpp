@@ -1,29 +1,73 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GeomagneticField.def.hpp"
 
 namespace android::hardware
 {
-	class GeomagneticField : public JObject
+	// Fields
+	
+	// Constructors
+	inline GeomagneticField::GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3)
+		: JObject(
+			"android.hardware.GeomagneticField",
+			"(FFFJ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline jfloat GeomagneticField::getDeclination() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GeomagneticField(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GeomagneticField(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3);
-		
-		// Methods
-		jfloat getDeclination() const;
-		jfloat getFieldStrength() const;
-		jfloat getHorizontalStrength() const;
-		jfloat getInclination() const;
-		jfloat getX() const;
-		jfloat getY() const;
-		jfloat getZ() const;
-	};
+		return callMethod<jfloat>(
+			"getDeclination",
+			"()F"
+		);
+	}
+	inline jfloat GeomagneticField::getFieldStrength() const
+	{
+		return callMethod<jfloat>(
+			"getFieldStrength",
+			"()F"
+		);
+	}
+	inline jfloat GeomagneticField::getHorizontalStrength() const
+	{
+		return callMethod<jfloat>(
+			"getHorizontalStrength",
+			"()F"
+		);
+	}
+	inline jfloat GeomagneticField::getInclination() const
+	{
+		return callMethod<jfloat>(
+			"getInclination",
+			"()F"
+		);
+	}
+	inline jfloat GeomagneticField::getX() const
+	{
+		return callMethod<jfloat>(
+			"getX",
+			"()F"
+		);
+	}
+	inline jfloat GeomagneticField::getY() const
+	{
+		return callMethod<jfloat>(
+			"getY",
+			"()F"
+		);
+	}
+	inline jfloat GeomagneticField::getZ() const
+	{
+		return callMethod<jfloat>(
+			"getZ",
+			"()F"
+		);
+	}
 } // namespace android::hardware
+
+// Base class headers
 

@@ -1,30 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::view
-{
-	class View;
-}
+#include "../view/View.def.hpp"
+#include "./AdapterView_AdapterContextMenuInfo.def.hpp"
 
 namespace android::widget
 {
-	class AdapterView_AdapterContextMenuInfo : public JObject
+	// Fields
+	inline jlong AdapterView_AdapterContextMenuInfo::id()
 	{
-	public:
-		// Fields
-		jlong id();
-		jint position();
-		android::view::View targetView();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AdapterView_AdapterContextMenuInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AdapterView_AdapterContextMenuInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2);
-		
-		// Methods
-	};
+		return getField<jlong>(
+			"id"
+		);
+	}
+	inline jint AdapterView_AdapterContextMenuInfo::position()
+	{
+		return getField<jint>(
+			"position"
+		);
+	}
+	inline android::view::View AdapterView_AdapterContextMenuInfo::targetView()
+	{
+		return getObjectField(
+			"targetView",
+			"Landroid/view/View;"
+		);
+	}
+	
+	// Constructors
+	inline AdapterView_AdapterContextMenuInfo::AdapterView_AdapterContextMenuInfo(android::view::View arg0, jint arg1, jlong arg2)
+		: JObject(
+			"android.widget.AdapterView$AdapterContextMenuInfo",
+			"(Landroid/view/View;IJ)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
 } // namespace android::widget
+
+// Base class headers
 

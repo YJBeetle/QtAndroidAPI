@@ -1,34 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRoute2Info.def.hpp"
+#include "./MediaRouter2_RoutingController.def.hpp"
+#include "./MediaRouter2_TransferCallback.def.hpp"
 
 namespace android::media
 {
-	class MediaRoute2Info;
-}
-namespace android::media
-{
-	class MediaRouter2_RoutingController;
-}
-
-namespace android::media
-{
-	class MediaRouter2_TransferCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaRouter2_TransferCallback::MediaRouter2_TransferCallback()
+		: JObject(
+			"android.media.MediaRouter2$TransferCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaRouter2_TransferCallback::onStop(android::media::MediaRouter2_RoutingController arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter2_TransferCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter2_TransferCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaRouter2_TransferCallback();
-		
-		// Methods
-		void onStop(android::media::MediaRouter2_RoutingController arg0) const;
-		void onTransfer(android::media::MediaRouter2_RoutingController arg0, android::media::MediaRouter2_RoutingController arg1) const;
-		void onTransferFailure(android::media::MediaRoute2Info arg0) const;
-	};
+		callMethod<void>(
+			"onStop",
+			"(Landroid/media/MediaRouter2$RoutingController;)V",
+			arg0.object()
+		);
+	}
+	inline void MediaRouter2_TransferCallback::onTransfer(android::media::MediaRouter2_RoutingController arg0, android::media::MediaRouter2_RoutingController arg1) const
+	{
+		callMethod<void>(
+			"onTransfer",
+			"(Landroid/media/MediaRouter2$RoutingController;Landroid/media/MediaRouter2$RoutingController;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void MediaRouter2_TransferCallback::onTransferFailure(android::media::MediaRoute2Info arg0) const
+	{
+		callMethod<void>(
+			"onTransferFailure",
+			"(Landroid/media/MediaRoute2Info;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

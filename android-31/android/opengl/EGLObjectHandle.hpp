@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./EGLObjectHandle.def.hpp"
 
 namespace android::opengl
 {
-	class EGLObjectHandle : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jint EGLObjectHandle::getHandle() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EGLObjectHandle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EGLObjectHandle(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getHandle() const;
-		jlong getNativeHandle() const;
-		jint hashCode() const;
-	};
+		return callMethod<jint>(
+			"getHandle",
+			"()I"
+		);
+	}
+	inline jlong EGLObjectHandle::getNativeHandle() const
+	{
+		return callMethod<jlong>(
+			"getNativeHandle",
+			"()J"
+		);
+	}
+	inline jint EGLObjectHandle::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::opengl
+
+// Base class headers
 

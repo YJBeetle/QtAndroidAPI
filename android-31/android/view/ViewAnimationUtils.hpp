@@ -1,31 +1,30 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::animation
-{
-	class Animator;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../animation/Animator.def.hpp"
+#include "./View.def.hpp"
+#include "./ViewAnimationUtils.def.hpp"
 
 namespace android::view
 {
-	class ViewAnimationUtils : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::animation::Animator ViewAnimationUtils::createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewAnimationUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewAnimationUtils(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::animation::Animator createCircularReveal(android::view::View arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4);
-	};
+		return callStaticObjectMethod(
+			"android.view.ViewAnimationUtils",
+			"createCircularReveal",
+			"(Landroid/view/View;IIFF)Landroid/animation/Animator;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

@@ -1,33 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JArray;
-namespace android::util
-{
-	class Range;
-}
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../util/Range.def.hpp"
+#include "./MediaCodecInfo_AudioCapabilities.def.hpp"
 
 namespace android::media
 {
-	class MediaCodecInfo_AudioCapabilities : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::util::Range MediaCodecInfo_AudioCapabilities::getBitrateRange() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_AudioCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_AudioCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::util::Range getBitrateRange() const;
-		jint getMaxInputChannelCount() const;
-		JArray getSupportedSampleRateRanges() const;
-		JIntArray getSupportedSampleRates() const;
-		jboolean isSampleRateSupported(jint arg0) const;
-	};
+		return callObjectMethod(
+			"getBitrateRange",
+			"()Landroid/util/Range;"
+		);
+	}
+	inline jint MediaCodecInfo_AudioCapabilities::getMaxInputChannelCount() const
+	{
+		return callMethod<jint>(
+			"getMaxInputChannelCount",
+			"()I"
+		);
+	}
+	inline JArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges() const
+	{
+		return callObjectMethod(
+			"getSupportedSampleRateRanges",
+			"()[Landroid/util/Range;"
+		);
+	}
+	inline JIntArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRates() const
+	{
+		return callObjectMethod(
+			"getSupportedSampleRates",
+			"()[I"
+		);
+	}
+	inline jboolean MediaCodecInfo_AudioCapabilities::isSampleRateSupported(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isSampleRateSupported",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

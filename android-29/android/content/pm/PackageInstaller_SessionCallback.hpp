@@ -1,27 +1,63 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PackageInstaller_SessionCallback.def.hpp"
 
 namespace android::content::pm
 {
-	class PackageInstaller_SessionCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline PackageInstaller_SessionCallback::PackageInstaller_SessionCallback()
+		: JObject(
+			"android.content.pm.PackageInstaller$SessionCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void PackageInstaller_SessionCallback::onActiveChanged(jint arg0, jboolean arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageInstaller_SessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PackageInstaller_SessionCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PackageInstaller_SessionCallback();
-		
-		// Methods
-		void onActiveChanged(jint arg0, jboolean arg1) const;
-		void onBadgingChanged(jint arg0) const;
-		void onCreated(jint arg0) const;
-		void onFinished(jint arg0, jboolean arg1) const;
-		void onProgressChanged(jint arg0, jfloat arg1) const;
-	};
+		callMethod<void>(
+			"onActiveChanged",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void PackageInstaller_SessionCallback::onBadgingChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onBadgingChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionCallback::onCreated(jint arg0) const
+	{
+		callMethod<void>(
+			"onCreated",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1) const
+	{
+		callMethod<void>(
+			"onFinished",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void PackageInstaller_SessionCallback::onProgressChanged(jint arg0, jfloat arg1) const
+	{
+		callMethod<void>(
+			"onProgressChanged",
+			"(IF)V",
+			arg0,
+			arg1
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

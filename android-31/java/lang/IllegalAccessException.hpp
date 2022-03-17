@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./ReflectiveOperationException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IllegalAccessException.def.hpp"
 
 namespace java::lang
 {
-	class IllegalAccessException : public java::lang::ReflectiveOperationException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IllegalAccessException(const char *className, const char *sig, Ts...agv) : java::lang::ReflectiveOperationException(className, sig, std::forward<Ts>(agv)...) {}
-		IllegalAccessException(QAndroidJniObject obj) : java::lang::ReflectiveOperationException(obj) {}
-		
-		// Constructors
-		IllegalAccessException();
-		IllegalAccessException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IllegalAccessException::IllegalAccessException()
+		: java::lang::ReflectiveOperationException(
+			"java.lang.IllegalAccessException",
+			"()V"
+		) {}
+	inline IllegalAccessException::IllegalAccessException(JString arg0)
+		: java::lang::ReflectiveOperationException(
+			"java.lang.IllegalAccessException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./ReflectiveOperationException.hpp"
 

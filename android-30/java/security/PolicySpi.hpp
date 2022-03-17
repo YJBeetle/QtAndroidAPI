@@ -1,39 +1,24 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./CodeSource.def.hpp"
+#include "./Permission.def.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "./ProtectionDomain.def.hpp"
+#include "./PolicySpi.def.hpp"
 
 namespace java::security
 {
-	class CodeSource;
-}
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
-
-namespace java::security
-{
-	class PolicySpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PolicySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PolicySpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PolicySpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PolicySpi::PolicySpi()
+		: JObject(
+			"java.security.PolicySpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
 

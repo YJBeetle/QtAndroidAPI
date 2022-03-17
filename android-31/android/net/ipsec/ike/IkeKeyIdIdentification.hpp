@@ -1,28 +1,46 @@
 #pragma once
 
-#include "./IkeIdentification.hpp"
-
-class JByteArray;
-class JObject;
+#include "../../../../JByteArray.hpp"
+#include "../../../../JObject.hpp"
+#include "./IkeKeyIdIdentification.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeKeyIdIdentification : public android::net::ipsec::ike::IkeIdentification
+	// Fields
+	inline JByteArray IkeKeyIdIdentification::keyId()
 	{
-	public:
-		// Fields
-		JByteArray keyId();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeKeyIdIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeKeyIdIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
-		
-		// Constructors
-		IkeKeyIdIdentification(JByteArray arg0);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return getObjectField(
+			"keyId",
+			"[B"
+		);
+	}
+	
+	// Constructors
+	inline IkeKeyIdIdentification::IkeKeyIdIdentification(JByteArray arg0)
+		: android::net::ipsec::ike::IkeIdentification(
+			"android.net.ipsec.ike.IkeKeyIdIdentification",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline jboolean IkeKeyIdIdentification::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint IkeKeyIdIdentification::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./IkeIdentification.hpp"
 

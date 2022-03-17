@@ -1,43 +1,97 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Scene.def.hpp"
+#include "./Transition.def.hpp"
+#include "../view/ViewGroup.def.hpp"
+#include "./TransitionManager.def.hpp"
 
 namespace android::transition
 {
-	class Scene;
-}
-namespace android::transition
-{
-	class Transition;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
-
-namespace android::transition
-{
-	class TransitionManager : public JObject
+	// Fields
+	
+	// Constructors
+	inline TransitionManager::TransitionManager()
+		: JObject(
+			"android.transition.TransitionManager",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TransitionManager::beginDelayedTransition(android::view::ViewGroup arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TransitionManager();
-		
-		// Methods
-		static void beginDelayedTransition(android::view::ViewGroup arg0);
-		static void beginDelayedTransition(android::view::ViewGroup arg0, android::transition::Transition arg1);
-		static void endTransitions(android::view::ViewGroup arg0);
-		static void go(android::transition::Scene arg0);
-		static void go(android::transition::Scene arg0, android::transition::Transition arg1);
-		void setTransition(android::transition::Scene arg0, android::transition::Transition arg1) const;
-		void setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2) const;
-		void transitionTo(android::transition::Scene arg0) const;
-	};
+		callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"beginDelayedTransition",
+			"(Landroid/view/ViewGroup;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionManager::beginDelayedTransition(android::view::ViewGroup arg0, android::transition::Transition arg1)
+	{
+		callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"beginDelayedTransition",
+			"(Landroid/view/ViewGroup;Landroid/transition/Transition;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void TransitionManager::endTransitions(android::view::ViewGroup arg0)
+	{
+		callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"endTransitions",
+			"(Landroid/view/ViewGroup;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionManager::go(android::transition::Scene arg0)
+	{
+		callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"go",
+			"(Landroid/transition/Scene;)V",
+			arg0.object()
+		);
+	}
+	inline void TransitionManager::go(android::transition::Scene arg0, android::transition::Transition arg1)
+	{
+		callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"go",
+			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Transition arg1) const
+	{
+		callMethod<void>(
+			"setTransition",
+			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void TransitionManager::setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2) const
+	{
+		callMethod<void>(
+			"setTransition",
+			"(Landroid/transition/Scene;Landroid/transition/Scene;Landroid/transition/Transition;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void TransitionManager::transitionTo(android::transition::Scene arg0) const
+	{
+		callMethod<void>(
+			"transitionTo",
+			"(Landroid/transition/Scene;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
 

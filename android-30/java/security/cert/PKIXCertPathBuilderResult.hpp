@@ -1,34 +1,42 @@
 #pragma once
 
-#include "./PKIXCertPathValidatorResult.hpp"
-
-class JString;
-namespace java::security::cert
-{
-	class CertPath;
-}
-namespace java::security::cert
-{
-	class TrustAnchor;
-}
+#include "../../../JString.hpp"
+#include "./CertPath.def.hpp"
+#include "./TrustAnchor.def.hpp"
+#include "./PKIXCertPathBuilderResult.def.hpp"
 
 namespace java::security::cert
 {
-	class PKIXCertPathBuilderResult : public java::security::cert::PKIXCertPathValidatorResult
+	// Fields
+	
+	// Constructors
+	inline PKIXCertPathBuilderResult::PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, JObject arg2, JObject arg3)
+		: java::security::cert::PKIXCertPathValidatorResult(
+			"java.security.cert.PKIXCertPathBuilderResult",
+			"(Ljava/security/cert/CertPath;Ljava/security/cert/TrustAnchor;Ljava/security/cert/PolicyNode;Ljava/security/PublicKey;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline java::security::cert::CertPath PKIXCertPathBuilderResult::getCertPath() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PKIXCertPathBuilderResult(const char *className, const char *sig, Ts...agv) : java::security::cert::PKIXCertPathValidatorResult(className, sig, std::forward<Ts>(agv)...) {}
-		PKIXCertPathBuilderResult(QAndroidJniObject obj) : java::security::cert::PKIXCertPathValidatorResult(obj) {}
-		
-		// Constructors
-		PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, JObject arg2, JObject arg3);
-		
-		// Methods
-		java::security::cert::CertPath getCertPath() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getCertPath",
+			"()Ljava/security/cert/CertPath;"
+		);
+	}
+	inline JString PKIXCertPathBuilderResult::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
+#include "./PKIXCertPathValidatorResult.hpp"
 

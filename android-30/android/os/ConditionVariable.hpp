@@ -1,27 +1,55 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ConditionVariable.def.hpp"
 
 namespace android::os
 {
-	class ConditionVariable : public JObject
+	// Fields
+	
+	// Constructors
+	inline ConditionVariable::ConditionVariable()
+		: JObject(
+			"android.os.ConditionVariable",
+			"()V"
+		) {}
+	inline ConditionVariable::ConditionVariable(jboolean arg0)
+		: JObject(
+			"android.os.ConditionVariable",
+			"(Z)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jboolean ConditionVariable::block(jlong arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConditionVariable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConditionVariable(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ConditionVariable();
-		ConditionVariable(jboolean arg0);
-		
-		// Methods
-		jboolean block(jlong arg0) const;
-		void block() const;
-		void close() const;
-		void open() const;
-	};
+		return callMethod<jboolean>(
+			"block",
+			"(J)Z",
+			arg0
+		);
+	}
+	inline void ConditionVariable::block() const
+	{
+		callMethod<void>(
+			"block",
+			"()V"
+		);
+	}
+	inline void ConditionVariable::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void ConditionVariable::open() const
+	{
+		callMethod<void>(
+			"open",
+			"()V"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

@@ -1,35 +1,105 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ContactsContract_CommonDataKinds_Website.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_CommonDataKinds_Website : public JObject
+	// Fields
+	inline JString ContactsContract_CommonDataKinds_Website::CONTENT_ITEM_TYPE()
 	{
-	public:
-		// Fields
-		static JString CONTENT_ITEM_TYPE();
-		static JString EXTRA_ADDRESS_BOOK_INDEX();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_COUNTS();
-		static JString EXTRA_ADDRESS_BOOK_INDEX_TITLES();
-		static jint TYPE_BLOG();
-		static jint TYPE_FTP();
-		static jint TYPE_HOME();
-		static jint TYPE_HOMEPAGE();
-		static jint TYPE_OTHER();
-		static jint TYPE_PROFILE();
-		static jint TYPE_WORK();
-		static JString URL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_CommonDataKinds_Website(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_CommonDataKinds_Website(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"EXTRA_ADDRESS_BOOK_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX_COUNTS()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"EXTRA_ADDRESS_BOOK_INDEX_COUNTS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Website::EXTRA_ADDRESS_BOOK_INDEX_TITLES()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"EXTRA_ADDRESS_BOOK_INDEX_TITLES",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_BLOG()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_BLOG"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_FTP()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_FTP"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_HOME()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_HOME"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_HOMEPAGE()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_HOMEPAGE"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_OTHER()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_OTHER"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_PROFILE()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_PROFILE"
+		);
+	}
+	inline jint ContactsContract_CommonDataKinds_Website::TYPE_WORK()
+	{
+		return getStaticField<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"TYPE_WORK"
+		);
+	}
+	inline JString ContactsContract_CommonDataKinds_Website::URL()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$CommonDataKinds$Website",
+			"URL",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

@@ -1,28 +1,43 @@
 #pragma once
 
-#include "../../lang/RuntimeException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./RejectedExecutionException.def.hpp"
 
 namespace java::util::concurrent
 {
-	class RejectedExecutionException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RejectedExecutionException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		RejectedExecutionException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		RejectedExecutionException();
-		RejectedExecutionException(JString arg0);
-		RejectedExecutionException(JThrowable arg0);
-		RejectedExecutionException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline RejectedExecutionException::RejectedExecutionException()
+		: java::lang::RuntimeException(
+			"java.util.concurrent.RejectedExecutionException",
+			"()V"
+		) {}
+	inline RejectedExecutionException::RejectedExecutionException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.util.concurrent.RejectedExecutionException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline RejectedExecutionException::RejectedExecutionException(JThrowable arg0)
+		: java::lang::RuntimeException(
+			"java.util.concurrent.RejectedExecutionException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline RejectedExecutionException::RejectedExecutionException(JString arg0, JThrowable arg1)
+		: java::lang::RuntimeException(
+			"java.util.concurrent.RejectedExecutionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
 

@@ -1,43 +1,92 @@
 #pragma once
 
-#include "./Notification_Style.hpp"
+#include "./PendingIntent.def.hpp"
+#include "./Person.def.hpp"
+#include "../graphics/drawable/Icon.def.hpp"
+#include "../../JString.hpp"
+#include "./Notification_CallStyle.def.hpp"
 
 namespace android::app
 {
-	class PendingIntent;
-}
-namespace android::app
-{
-	class Person;
-}
-namespace android::graphics::drawable
-{
-	class Icon;
-}
-class JString;
-
-namespace android::app
-{
-	class Notification_CallStyle : public android::app::Notification_Style
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::app::Notification_CallStyle Notification_CallStyle::forIncomingCall(android::app::Person arg0, android::app::PendingIntent arg1, android::app::PendingIntent arg2)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_CallStyle(const char *className, const char *sig, Ts...agv) : android::app::Notification_Style(className, sig, std::forward<Ts>(agv)...) {}
-		Notification_CallStyle(QAndroidJniObject obj) : android::app::Notification_Style(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::app::Notification_CallStyle forIncomingCall(android::app::Person arg0, android::app::PendingIntent arg1, android::app::PendingIntent arg2);
-		static android::app::Notification_CallStyle forOngoingCall(android::app::Person arg0, android::app::PendingIntent arg1);
-		static android::app::Notification_CallStyle forScreeningCall(android::app::Person arg0, android::app::PendingIntent arg1, android::app::PendingIntent arg2);
-		android::app::Notification_CallStyle setAnswerButtonColorHint(jint arg0) const;
-		android::app::Notification_CallStyle setDeclineButtonColorHint(jint arg0) const;
-		android::app::Notification_CallStyle setIsVideo(jboolean arg0) const;
-		android::app::Notification_CallStyle setVerificationIcon(android::graphics::drawable::Icon arg0) const;
-		android::app::Notification_CallStyle setVerificationText(JString arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.app.Notification$CallStyle",
+			"forIncomingCall",
+			"(Landroid/app/Person;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)Landroid/app/Notification$CallStyle;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::forOngoingCall(android::app::Person arg0, android::app::PendingIntent arg1)
+	{
+		return callStaticObjectMethod(
+			"android.app.Notification$CallStyle",
+			"forOngoingCall",
+			"(Landroid/app/Person;Landroid/app/PendingIntent;)Landroid/app/Notification$CallStyle;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::forScreeningCall(android::app::Person arg0, android::app::PendingIntent arg1, android::app::PendingIntent arg2)
+	{
+		return callStaticObjectMethod(
+			"android.app.Notification$CallStyle",
+			"forScreeningCall",
+			"(Landroid/app/Person;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)Landroid/app/Notification$CallStyle;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::setAnswerButtonColorHint(jint arg0) const
+	{
+		return callObjectMethod(
+			"setAnswerButtonColorHint",
+			"(I)Landroid/app/Notification$CallStyle;",
+			arg0
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::setDeclineButtonColorHint(jint arg0) const
+	{
+		return callObjectMethod(
+			"setDeclineButtonColorHint",
+			"(I)Landroid/app/Notification$CallStyle;",
+			arg0
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::setIsVideo(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setIsVideo",
+			"(Z)Landroid/app/Notification$CallStyle;",
+			arg0
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::setVerificationIcon(android::graphics::drawable::Icon arg0) const
+	{
+		return callObjectMethod(
+			"setVerificationIcon",
+			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$CallStyle;",
+			arg0.object()
+		);
+	}
+	inline android::app::Notification_CallStyle Notification_CallStyle::setVerificationText(JString arg0) const
+	{
+		return callObjectMethod(
+			"setVerificationText",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$CallStyle;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
+#include "./Notification_Style.hpp"
 

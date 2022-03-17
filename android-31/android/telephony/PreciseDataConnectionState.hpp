@@ -1,49 +1,115 @@
 #pragma once
 
+#include "../net/LinkProperties.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "./data/ApnSetting.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::net
-{
-	class LinkProperties;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::telephony::data
-{
-	class ApnSetting;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./PreciseDataConnectionState.def.hpp"
 
 namespace android::telephony
 {
-	class PreciseDataConnectionState : public JObject
+	// Fields
+	inline JObject PreciseDataConnectionState::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PreciseDataConnectionState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PreciseDataConnectionState(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::telephony::data::ApnSetting getApnSetting() const;
-		jint getId() const;
-		jint getLastCauseCode() const;
-		android::net::LinkProperties getLinkProperties() const;
-		jint getNetworkType() const;
-		jint getState() const;
-		jint getTransportType() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.PreciseDataConnectionState",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PreciseDataConnectionState::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean PreciseDataConnectionState::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::telephony::data::ApnSetting PreciseDataConnectionState::getApnSetting() const
+	{
+		return callObjectMethod(
+			"getApnSetting",
+			"()Landroid/telephony/data/ApnSetting;"
+		);
+	}
+	inline jint PreciseDataConnectionState::getId() const
+	{
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	inline jint PreciseDataConnectionState::getLastCauseCode() const
+	{
+		return callMethod<jint>(
+			"getLastCauseCode",
+			"()I"
+		);
+	}
+	inline android::net::LinkProperties PreciseDataConnectionState::getLinkProperties() const
+	{
+		return callObjectMethod(
+			"getLinkProperties",
+			"()Landroid/net/LinkProperties;"
+		);
+	}
+	inline jint PreciseDataConnectionState::getNetworkType() const
+	{
+		return callMethod<jint>(
+			"getNetworkType",
+			"()I"
+		);
+	}
+	inline jint PreciseDataConnectionState::getState() const
+	{
+		return callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	inline jint PreciseDataConnectionState::getTransportType() const
+	{
+		return callMethod<jint>(
+			"getTransportType",
+			"()I"
+		);
+	}
+	inline jint PreciseDataConnectionState::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString PreciseDataConnectionState::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PreciseDataConnectionState::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

@@ -1,29 +1,32 @@
 #pragma once
 
-#include "../util/AndroidRuntimeException.hpp"
-
-namespace java::lang
-{
-	class Exception;
-}
-class JString;
+#include "../../java/lang/Exception.def.hpp"
+#include "../../JString.hpp"
+#include "./BadParcelableException.def.hpp"
 
 namespace android::os
 {
-	class BadParcelableException : public android::util::AndroidRuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BadParcelableException(const char *className, const char *sig, Ts...agv) : android::util::AndroidRuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		BadParcelableException(QAndroidJniObject obj) : android::util::AndroidRuntimeException(obj) {}
-		
-		// Constructors
-		BadParcelableException(java::lang::Exception arg0);
-		BadParcelableException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline BadParcelableException::BadParcelableException(java::lang::Exception arg0)
+		: android::util::AndroidRuntimeException(
+			"android.os.BadParcelableException",
+			"(Ljava/lang/Exception;)V",
+			arg0.object()
+		) {}
+	inline BadParcelableException::BadParcelableException(JString arg0)
+		: android::util::AndroidRuntimeException(
+			"android.os.BadParcelableException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
+#include "../util/AndroidRuntimeException.hpp"
 

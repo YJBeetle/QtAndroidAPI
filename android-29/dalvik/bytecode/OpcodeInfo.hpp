@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./OpcodeInfo.def.hpp"
 
 namespace dalvik::bytecode
 {
-	class OpcodeInfo : public JObject
+	// Fields
+	inline jint OpcodeInfo::MAXIMUM_PACKED_VALUE()
 	{
-	public:
-		// Fields
-		static jint MAXIMUM_PACKED_VALUE();
-		static jint MAXIMUM_VALUE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OpcodeInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OpcodeInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"dalvik.bytecode.OpcodeInfo",
+			"MAXIMUM_PACKED_VALUE"
+		);
+	}
+	inline jint OpcodeInfo::MAXIMUM_VALUE()
+	{
+		return getStaticField<jint>(
+			"dalvik.bytecode.OpcodeInfo",
+			"MAXIMUM_VALUE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace dalvik::bytecode
+
+// Base class headers
 

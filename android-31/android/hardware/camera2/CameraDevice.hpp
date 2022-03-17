@@ -1,75 +1,216 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./CameraCaptureSession_StateCallback.def.hpp"
+#include "./CaptureRequest_Builder.def.hpp"
+#include "./TotalCaptureResult.def.hpp"
+#include "./params/ExtensionSessionConfiguration.def.hpp"
+#include "./params/InputConfiguration.def.hpp"
+#include "./params/SessionConfiguration.def.hpp"
+#include "../../os/Handler.def.hpp"
+#include "../../../JString.hpp"
+#include "./CameraDevice.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraCaptureSession_StateCallback;
-}
-namespace android::hardware::camera2
-{
-	class CaptureRequest_Builder;
-}
-namespace android::hardware::camera2
-{
-	class TotalCaptureResult;
-}
-namespace android::hardware::camera2::params
-{
-	class ExtensionSessionConfiguration;
-}
-namespace android::hardware::camera2::params
-{
-	class InputConfiguration;
-}
-namespace android::hardware::camera2::params
-{
-	class SessionConfiguration;
-}
-namespace android::os
-{
-	class Handler;
-}
-class JString;
-
-namespace android::hardware::camera2
-{
-	class CameraDevice : public JObject
+	// Fields
+	inline jint CameraDevice::AUDIO_RESTRICTION_NONE()
 	{
-	public:
-		// Fields
-		static jint AUDIO_RESTRICTION_NONE();
-		static jint AUDIO_RESTRICTION_VIBRATION();
-		static jint AUDIO_RESTRICTION_VIBRATION_SOUND();
-		static jint TEMPLATE_MANUAL();
-		static jint TEMPLATE_PREVIEW();
-		static jint TEMPLATE_RECORD();
-		static jint TEMPLATE_STILL_CAPTURE();
-		static jint TEMPLATE_VIDEO_SNAPSHOT();
-		static jint TEMPLATE_ZERO_SHUTTER_LAG();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraDevice(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		android::hardware::camera2::CaptureRequest_Builder createCaptureRequest(jint arg0) const;
-		android::hardware::camera2::CaptureRequest_Builder createCaptureRequest(jint arg0, JObject arg1) const;
-		void createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0) const;
-		void createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const;
-		void createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const;
-		void createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const;
-		void createExtensionSession(android::hardware::camera2::params::ExtensionSessionConfiguration arg0) const;
-		android::hardware::camera2::CaptureRequest_Builder createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0) const;
-		void createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const;
-		void createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const;
-		jint getCameraAudioRestriction() const;
-		JString getId() const;
-		jboolean isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0) const;
-		void setCameraAudioRestriction(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"AUDIO_RESTRICTION_NONE"
+		);
+	}
+	inline jint CameraDevice::AUDIO_RESTRICTION_VIBRATION()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"AUDIO_RESTRICTION_VIBRATION"
+		);
+	}
+	inline jint CameraDevice::AUDIO_RESTRICTION_VIBRATION_SOUND()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"AUDIO_RESTRICTION_VIBRATION_SOUND"
+		);
+	}
+	inline jint CameraDevice::TEMPLATE_MANUAL()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"TEMPLATE_MANUAL"
+		);
+	}
+	inline jint CameraDevice::TEMPLATE_PREVIEW()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"TEMPLATE_PREVIEW"
+		);
+	}
+	inline jint CameraDevice::TEMPLATE_RECORD()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"TEMPLATE_RECORD"
+		);
+	}
+	inline jint CameraDevice::TEMPLATE_STILL_CAPTURE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"TEMPLATE_STILL_CAPTURE"
+		);
+	}
+	inline jint CameraDevice::TEMPLATE_VIDEO_SNAPSHOT()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"TEMPLATE_VIDEO_SNAPSHOT"
+		);
+	}
+	inline jint CameraDevice::TEMPLATE_ZERO_SHUTTER_LAG()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraDevice",
+			"TEMPLATE_ZERO_SHUTTER_LAG"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void CameraDevice::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0) const
+	{
+		return callObjectMethod(
+			"createCaptureRequest",
+			"(I)Landroid/hardware/camera2/CaptureRequest$Builder;",
+			arg0
+		);
+	}
+	inline android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"createCaptureRequest",
+			"(ILjava/util/Set;)Landroid/hardware/camera2/CaptureRequest$Builder;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void CameraDevice::createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0) const
+	{
+		callMethod<void>(
+			"createCaptureSession",
+			"(Landroid/hardware/camera2/params/SessionConfiguration;)V",
+			arg0.object()
+		);
+	}
+	inline void CameraDevice::createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const
+	{
+		callMethod<void>(
+			"createCaptureSession",
+			"(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void CameraDevice::createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const
+	{
+		callMethod<void>(
+			"createCaptureSessionByOutputConfigurations",
+			"(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void CameraDevice::createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const
+	{
+		callMethod<void>(
+			"createConstrainedHighSpeedCaptureSession",
+			"(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline void CameraDevice::createExtensionSession(android::hardware::camera2::params::ExtensionSessionConfiguration arg0) const
+	{
+		callMethod<void>(
+			"createExtensionSession",
+			"(Landroid/hardware/camera2/params/ExtensionSessionConfiguration;)V",
+			arg0.object()
+		);
+	}
+	inline android::hardware::camera2::CaptureRequest_Builder CameraDevice::createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0) const
+	{
+		return callObjectMethod(
+			"createReprocessCaptureRequest",
+			"(Landroid/hardware/camera2/TotalCaptureResult;)Landroid/hardware/camera2/CaptureRequest$Builder;",
+			arg0.object()
+		);
+	}
+	inline void CameraDevice::createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const
+	{
+		callMethod<void>(
+			"createReprocessableCaptureSession",
+			"(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline void CameraDevice::createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const
+	{
+		callMethod<void>(
+			"createReprocessableCaptureSessionByConfigurations",
+			"(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline jint CameraDevice::getCameraAudioRestriction() const
+	{
+		return callMethod<jint>(
+			"getCameraAudioRestriction",
+			"()I"
+		);
+	}
+	inline JString CameraDevice::getId() const
+	{
+		return callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean CameraDevice::isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0) const
+	{
+		return callMethod<jboolean>(
+			"isSessionConfigurationSupported",
+			"(Landroid/hardware/camera2/params/SessionConfiguration;)Z",
+			arg0.object()
+		);
+	}
+	inline void CameraDevice::setCameraAudioRestriction(jint arg0) const
+	{
+		callMethod<void>(
+			"setCameraAudioRestriction",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

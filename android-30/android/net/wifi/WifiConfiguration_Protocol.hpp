@@ -1,29 +1,54 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./WifiConfiguration_Protocol.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiConfiguration_Protocol : public JObject
+	// Fields
+	inline jint WifiConfiguration_Protocol::RSN()
 	{
-	public:
-		// Fields
-		static jint RSN();
-		static jint WAPI();
-		static jint WPA();
-		static JArray strings();
-		static JString varName();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration_Protocol(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiConfiguration_Protocol(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$Protocol",
+			"RSN"
+		);
+	}
+	inline jint WifiConfiguration_Protocol::WAPI()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$Protocol",
+			"WAPI"
+		);
+	}
+	inline jint WifiConfiguration_Protocol::WPA()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiConfiguration$Protocol",
+			"WPA"
+		);
+	}
+	inline JArray WifiConfiguration_Protocol::strings()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$Protocol",
+			"strings",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JString WifiConfiguration_Protocol::varName()
+	{
+		return getStaticObjectField(
+			"android.net.wifi.WifiConfiguration$Protocol",
+			"varName",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::wifi
+
+// Base class headers
 

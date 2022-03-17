@@ -1,41 +1,63 @@
 #pragma once
 
-#include "./CallSite.hpp"
-
-class JArray;
-namespace java::lang::invoke
-{
-	class MethodHandle;
-}
-namespace java::lang::invoke
-{
-	class MethodType;
-}
-namespace java::util::concurrent::atomic
-{
-	class AtomicInteger;
-}
+#include "../../../JArray.hpp"
+#include "./MethodHandle.def.hpp"
+#include "./MethodType.def.hpp"
+#include "../../util/concurrent/atomic/AtomicInteger.def.hpp"
+#include "./MutableCallSite.def.hpp"
 
 namespace java::lang::invoke
 {
-	class MutableCallSite : public java::lang::invoke::CallSite
+	// Fields
+	
+	// Constructors
+	inline MutableCallSite::MutableCallSite(java::lang::invoke::MethodHandle arg0)
+		: java::lang::invoke::CallSite(
+			"java.lang.invoke.MutableCallSite",
+			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.object()
+		) {}
+	inline MutableCallSite::MutableCallSite(java::lang::invoke::MethodType arg0)
+		: java::lang::invoke::CallSite(
+			"java.lang.invoke.MutableCallSite",
+			"(Ljava/lang/invoke/MethodType;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void MutableCallSite::syncAll(JArray arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MutableCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
-		MutableCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
-		
-		// Constructors
-		MutableCallSite(java::lang::invoke::MethodHandle arg0);
-		MutableCallSite(java::lang::invoke::MethodType arg0);
-		
-		// Methods
-		static void syncAll(JArray arg0);
-		java::lang::invoke::MethodHandle dynamicInvoker() const;
-		java::lang::invoke::MethodHandle getTarget() const;
-		void setTarget(java::lang::invoke::MethodHandle arg0) const;
-	};
+		callStaticMethod<void>(
+			"java.lang.invoke.MutableCallSite",
+			"syncAll",
+			"([Ljava/lang/invoke/MutableCallSite;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline java::lang::invoke::MethodHandle MutableCallSite::dynamicInvoker() const
+	{
+		return callObjectMethod(
+			"dynamicInvoker",
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
+	}
+	inline java::lang::invoke::MethodHandle MutableCallSite::getTarget() const
+	{
+		return callObjectMethod(
+			"getTarget",
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
+	}
+	inline void MutableCallSite::setTarget(java::lang::invoke::MethodHandle arg0) const
+	{
+		callMethod<void>(
+			"setTarget",
+			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::lang::invoke
+
+// Base class headers
+#include "./CallSite.hpp"
 

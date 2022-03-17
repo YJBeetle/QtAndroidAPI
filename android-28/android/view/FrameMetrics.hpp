@@ -1,35 +1,113 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./FrameMetrics.def.hpp"
 
 namespace android::view
 {
-	class FrameMetrics : public JObject
+	// Fields
+	inline jint FrameMetrics::ANIMATION_DURATION()
 	{
-	public:
-		// Fields
-		static jint ANIMATION_DURATION();
-		static jint COMMAND_ISSUE_DURATION();
-		static jint DRAW_DURATION();
-		static jint FIRST_DRAW_FRAME();
-		static jint INPUT_HANDLING_DURATION();
-		static jint INTENDED_VSYNC_TIMESTAMP();
-		static jint LAYOUT_MEASURE_DURATION();
-		static jint SWAP_BUFFERS_DURATION();
-		static jint SYNC_DURATION();
-		static jint TOTAL_DURATION();
-		static jint UNKNOWN_DELAY_DURATION();
-		static jint VSYNC_TIMESTAMP();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FrameMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FrameMetrics(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FrameMetrics(android::view::FrameMetrics &arg0);
-		
-		// Methods
-		jlong getMetric(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"ANIMATION_DURATION"
+		);
+	}
+	inline jint FrameMetrics::COMMAND_ISSUE_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"COMMAND_ISSUE_DURATION"
+		);
+	}
+	inline jint FrameMetrics::DRAW_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"DRAW_DURATION"
+		);
+	}
+	inline jint FrameMetrics::FIRST_DRAW_FRAME()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"FIRST_DRAW_FRAME"
+		);
+	}
+	inline jint FrameMetrics::INPUT_HANDLING_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"INPUT_HANDLING_DURATION"
+		);
+	}
+	inline jint FrameMetrics::INTENDED_VSYNC_TIMESTAMP()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"INTENDED_VSYNC_TIMESTAMP"
+		);
+	}
+	inline jint FrameMetrics::LAYOUT_MEASURE_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"LAYOUT_MEASURE_DURATION"
+		);
+	}
+	inline jint FrameMetrics::SWAP_BUFFERS_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"SWAP_BUFFERS_DURATION"
+		);
+	}
+	inline jint FrameMetrics::SYNC_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"SYNC_DURATION"
+		);
+	}
+	inline jint FrameMetrics::TOTAL_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"TOTAL_DURATION"
+		);
+	}
+	inline jint FrameMetrics::UNKNOWN_DELAY_DURATION()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"UNKNOWN_DELAY_DURATION"
+		);
+	}
+	inline jint FrameMetrics::VSYNC_TIMESTAMP()
+	{
+		return getStaticField<jint>(
+			"android.view.FrameMetrics",
+			"VSYNC_TIMESTAMP"
+		);
+	}
+	
+	// Constructors
+	inline FrameMetrics::FrameMetrics(android::view::FrameMetrics &arg0)
+		: JObject(
+			"android.view.FrameMetrics",
+			"(Landroid/view/FrameMetrics;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jlong FrameMetrics::getMetric(jint arg0) const
+	{
+		return callMethod<jlong>(
+			"getMetric",
+			"(I)J",
+			arg0
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

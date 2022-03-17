@@ -1,23 +1,27 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SubscriptionManager_OnSubscriptionsChangedListener.def.hpp"
 
 namespace android::telephony
 {
-	class SubscriptionManager_OnSubscriptionsChangedListener : public JObject
+	// Fields
+	
+	// Constructors
+	inline SubscriptionManager_OnSubscriptionsChangedListener::SubscriptionManager_OnSubscriptionsChangedListener()
+		: JObject(
+			"android.telephony.SubscriptionManager$OnSubscriptionsChangedListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void SubscriptionManager_OnSubscriptionsChangedListener::onSubscriptionsChanged() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubscriptionManager_OnSubscriptionsChangedListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubscriptionManager_OnSubscriptionsChangedListener(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SubscriptionManager_OnSubscriptionsChangedListener();
-		
-		// Methods
-		void onSubscriptionsChanged() const;
-	};
+		callMethod<void>(
+			"onSubscriptionsChanged",
+			"()V"
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

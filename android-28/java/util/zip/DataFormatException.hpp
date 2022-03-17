@@ -1,25 +1,28 @@
 #pragma once
 
-#include "../../lang/Exception.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DataFormatException.def.hpp"
 
 namespace java::util::zip
 {
-	class DataFormatException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DataFormatException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		DataFormatException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		DataFormatException();
-		DataFormatException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DataFormatException::DataFormatException()
+		: java::lang::Exception(
+			"java.util.zip.DataFormatException",
+			"()V"
+		) {}
+	inline DataFormatException::DataFormatException(JString arg0)
+		: java::lang::Exception(
+			"java.util.zip.DataFormatException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../lang/Exception.hpp"
 

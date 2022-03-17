@@ -1,31 +1,85 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./WifiEnterpriseConfig_Eap.def.hpp"
 
 namespace android::net::wifi
 {
-	class WifiEnterpriseConfig_Eap : public JObject
+	// Fields
+	inline jint WifiEnterpriseConfig_Eap::AKA()
 	{
-	public:
-		// Fields
-		static jint AKA();
-		static jint AKA_PRIME();
-		static jint NONE();
-		static jint PEAP();
-		static jint PWD();
-		static jint SIM();
-		static jint TLS();
-		static jint TTLS();
-		static jint UNAUTH_TLS();
-		static jint WAPI_CERT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiEnterpriseConfig_Eap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		WifiEnterpriseConfig_Eap(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"AKA"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::AKA_PRIME()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"AKA_PRIME"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::NONE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"NONE"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::PEAP()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"PEAP"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::PWD()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"PWD"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::SIM()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"SIM"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::TLS()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"TLS"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::TTLS()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"TTLS"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::UNAUTH_TLS()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"UNAUTH_TLS"
+		);
+	}
+	inline jint WifiEnterpriseConfig_Eap::WAPI_CERT()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.WifiEnterpriseConfig$Eap",
+			"WAPI_CERT"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::net::wifi
+
+// Base class headers
 

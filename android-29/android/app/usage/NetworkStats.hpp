@@ -1,29 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./NetworkStats_Bucket.def.hpp"
+#include "./NetworkStats.def.hpp"
 
 namespace android::app::usage
 {
-	class NetworkStats_Bucket;
-}
-
-namespace android::app::usage
-{
-	class NetworkStats : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void NetworkStats::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NetworkStats(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jboolean getNextBucket(android::app::usage::NetworkStats_Bucket arg0) const;
-		jboolean hasNextBucket() const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jboolean NetworkStats::getNextBucket(android::app::usage::NetworkStats_Bucket arg0) const
+	{
+		return callMethod<jboolean>(
+			"getNextBucket",
+			"(Landroid/app/usage/NetworkStats$Bucket;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean NetworkStats::hasNextBucket() const
+	{
+		return callMethod<jboolean>(
+			"hasNextBucket",
+			"()Z"
+		);
+	}
 } // namespace android::app::usage
+
+// Base class headers
 

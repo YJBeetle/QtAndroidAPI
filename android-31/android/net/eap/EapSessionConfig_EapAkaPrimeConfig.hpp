@@ -1,28 +1,48 @@
 #pragma once
 
-#include "./EapSessionConfig_EapAkaConfig.hpp"
-
-class JObject;
-class JString;
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "./EapSessionConfig_EapAkaPrimeConfig.def.hpp"
 
 namespace android::net::eap
 {
-	class EapSessionConfig_EapAkaPrimeConfig : public android::net::eap::EapSessionConfig_EapAkaConfig
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean EapSessionConfig_EapAkaPrimeConfig::allowsMismatchedNetworkNames() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_EapAkaPrimeConfig(const char *className, const char *sig, Ts...agv) : android::net::eap::EapSessionConfig_EapAkaConfig(className, sig, std::forward<Ts>(agv)...) {}
-		EapSessionConfig_EapAkaPrimeConfig(QAndroidJniObject obj) : android::net::eap::EapSessionConfig_EapAkaConfig(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean allowsMismatchedNetworkNames() const;
-		jboolean equals(JObject arg0) const;
-		JString getNetworkName() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"allowsMismatchedNetworkNames",
+			"()Z"
+		);
+	}
+	inline jboolean EapSessionConfig_EapAkaPrimeConfig::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString EapSessionConfig_EapAkaPrimeConfig::getNetworkName() const
+	{
+		return callObjectMethod(
+			"getNetworkName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint EapSessionConfig_EapAkaPrimeConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::eap
+
+// Base class headers
+#include "./EapSessionConfig_EapMethodConfig.hpp"
+#include "./EapSessionConfig_EapAkaConfig.hpp"
 

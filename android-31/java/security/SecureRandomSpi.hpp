@@ -1,26 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "./SecureRandomSpi.def.hpp"
 
 namespace java::security
 {
-	class SecureRandomSpi : public JObject
+	// Fields
+	
+	// Constructors
+	inline SecureRandomSpi::SecureRandomSpi()
+		: JObject(
+			"java.security.SecureRandomSpi",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString SecureRandomSpi::toString() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecureRandomSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SecureRandomSpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SecureRandomSpi();
-		
-		// Methods
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

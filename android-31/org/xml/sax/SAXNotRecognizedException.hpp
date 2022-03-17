@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./SAXException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SAXNotRecognizedException.def.hpp"
 
 namespace org::xml::sax
 {
-	class SAXNotRecognizedException : public org::xml::sax::SAXException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SAXNotRecognizedException(const char *className, const char *sig, Ts...agv) : org::xml::sax::SAXException(className, sig, std::forward<Ts>(agv)...) {}
-		SAXNotRecognizedException(QAndroidJniObject obj) : org::xml::sax::SAXException(obj) {}
-		
-		// Constructors
-		SAXNotRecognizedException();
-		SAXNotRecognizedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SAXNotRecognizedException::SAXNotRecognizedException()
+		: org::xml::sax::SAXException(
+			"org.xml.sax.SAXNotRecognizedException",
+			"()V"
+		) {}
+	inline SAXNotRecognizedException::SAXNotRecognizedException(JString arg0)
+		: org::xml::sax::SAXException(
+			"org.xml.sax.SAXNotRecognizedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace org::xml::sax
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "./SAXException.hpp"
 

@@ -1,40 +1,67 @@
 #pragma once
 
-#include "../zip/ZipEntry.hpp"
-
-class JArray;
-class JArray;
-class JString;
-namespace java::util::jar
-{
-	class Attributes;
-}
-namespace java::util::zip
-{
-	class ZipEntry;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./Attributes.def.hpp"
+#include "../zip/ZipEntry.def.hpp"
+#include "./JarEntry.def.hpp"
 
 namespace java::util::jar
 {
-	class JarEntry : public java::util::zip::ZipEntry
+	// Fields
+	
+	// Constructors
+	inline JarEntry::JarEntry(JString arg0)
+		: java::util::zip::ZipEntry(
+			"java.util.jar.JarEntry",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline JarEntry::JarEntry(java::util::jar::JarEntry &arg0)
+		: java::util::zip::ZipEntry(
+			"java.util.jar.JarEntry",
+			"(Ljava/util/jar/JarEntry;)V",
+			arg0.object()
+		) {}
+	inline JarEntry::JarEntry(java::util::zip::ZipEntry arg0)
+		: java::util::zip::ZipEntry(
+			"java.util.jar.JarEntry",
+			"(Ljava/util/zip/ZipEntry;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline java::util::jar::Attributes JarEntry::getAttributes() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JarEntry(const char *className, const char *sig, Ts...agv) : java::util::zip::ZipEntry(className, sig, std::forward<Ts>(agv)...) {}
-		JarEntry(QAndroidJniObject obj) : java::util::zip::ZipEntry(obj) {}
-		
-		// Constructors
-		JarEntry(JString arg0);
-		JarEntry(java::util::jar::JarEntry &arg0);
-		JarEntry(java::util::zip::ZipEntry arg0);
-		
-		// Methods
-		java::util::jar::Attributes getAttributes() const;
-		JArray getCertificates() const;
-		JArray getCodeSigners() const;
-		JString getRealName() const;
-	};
+		return callObjectMethod(
+			"getAttributes",
+			"()Ljava/util/jar/Attributes;"
+		);
+	}
+	inline JArray JarEntry::getCertificates() const
+	{
+		return callObjectMethod(
+			"getCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		);
+	}
+	inline JArray JarEntry::getCodeSigners() const
+	{
+		return callObjectMethod(
+			"getCodeSigners",
+			"()[Ljava/security/CodeSigner;"
+		);
+	}
+	inline JString JarEntry::getRealName() const
+	{
+		return callObjectMethod(
+			"getRealName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::jar
+
+// Base class headers
+#include "../zip/ZipEntry.hpp"
 

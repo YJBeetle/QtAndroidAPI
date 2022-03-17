@@ -1,39 +1,57 @@
 #pragma once
 
-#include "../widget/FrameLayout.hpp"
-
-namespace android::view
-{
-	class View;
-}
-namespace java::time
-{
-	class Duration;
-}
-namespace java::time
-{
-	class Instant;
-}
+#include "../view/View.def.hpp"
+#include "../../java/time/Duration.def.hpp"
+#include "../../java/time/Instant.def.hpp"
+#include "./SplashScreenView.def.hpp"
 
 namespace android::window
 {
-	class SplashScreenView : public android::widget::FrameLayout
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::time::Duration SplashScreenView::getIconAnimationDuration() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SplashScreenView(const char *className, const char *sig, Ts...agv) : android::widget::FrameLayout(className, sig, std::forward<Ts>(agv)...) {}
-		SplashScreenView(QAndroidJniObject obj) : android::widget::FrameLayout(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::time::Duration getIconAnimationDuration() const;
-		java::time::Instant getIconAnimationStart() const;
-		android::view::View getIconView() const;
-		void remove() const;
-		void setAlpha(jfloat arg0) const;
-	};
+		return callObjectMethod(
+			"getIconAnimationDuration",
+			"()Ljava/time/Duration;"
+		);
+	}
+	inline java::time::Instant SplashScreenView::getIconAnimationStart() const
+	{
+		return callObjectMethod(
+			"getIconAnimationStart",
+			"()Ljava/time/Instant;"
+		);
+	}
+	inline android::view::View SplashScreenView::getIconView() const
+	{
+		return callObjectMethod(
+			"getIconView",
+			"()Landroid/view/View;"
+		);
+	}
+	inline void SplashScreenView::remove() const
+	{
+		callMethod<void>(
+			"remove",
+			"()V"
+		);
+	}
+	inline void SplashScreenView::setAlpha(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
+		);
+	}
 } // namespace android::window
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "../widget/FrameLayout.hpp"
 

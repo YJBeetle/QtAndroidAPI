@@ -1,24 +1,18 @@
 #pragma once
 
-#include "./Violation.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./LeakedClosableViolation.def.hpp"
 
 namespace android::os::strictmode
 {
-	class LeakedClosableViolation : public android::os::strictmode::Violation
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LeakedClosableViolation(const char *className, const char *sig, Ts...agv) : android::os::strictmode::Violation(className, sig, std::forward<Ts>(agv)...) {}
-		LeakedClosableViolation(QAndroidJniObject obj) : android::os::strictmode::Violation(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::os::strictmode
+
+// Base class headers
+#include "./Violation.hpp"
 

@@ -1,27 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./OrientedBoundingBox.def.hpp"
 
 namespace android::gesture
 {
-	class OrientedBoundingBox : public JObject
+	// Fields
+	inline jfloat OrientedBoundingBox::centerX()
 	{
-	public:
-		// Fields
-		jfloat centerX();
-		jfloat centerY();
-		jfloat height();
-		jfloat orientation();
-		jfloat squareness();
-		jfloat width();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OrientedBoundingBox(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		OrientedBoundingBox(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getField<jfloat>(
+			"centerX"
+		);
+	}
+	inline jfloat OrientedBoundingBox::centerY()
+	{
+		return getField<jfloat>(
+			"centerY"
+		);
+	}
+	inline jfloat OrientedBoundingBox::height()
+	{
+		return getField<jfloat>(
+			"height"
+		);
+	}
+	inline jfloat OrientedBoundingBox::orientation()
+	{
+		return getField<jfloat>(
+			"orientation"
+		);
+	}
+	inline jfloat OrientedBoundingBox::squareness()
+	{
+		return getField<jfloat>(
+			"squareness"
+		);
+	}
+	inline jfloat OrientedBoundingBox::width()
+	{
+		return getField<jfloat>(
+			"width"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::gesture
+
+// Base class headers
 

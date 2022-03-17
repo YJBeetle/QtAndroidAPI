@@ -1,39 +1,124 @@
 #pragma once
 
+#include "../../JObjectArray.hpp"
 #include "../../JObject.hpp"
-
-class JObjectArray;
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./AbstractCollection.def.hpp"
 
 namespace java::util
 {
-	class AbstractCollection : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean AbstractCollection::add(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractCollection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractCollection(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean add(JObject arg0) const;
-		jboolean addAll(JObject arg0) const;
-		void clear() const;
-		jboolean contains(JObject arg0) const;
-		jboolean containsAll(JObject arg0) const;
-		jboolean isEmpty() const;
-		JObject iterator() const;
-		jboolean remove(JObject arg0) const;
-		jboolean removeAll(JObject arg0) const;
-		jboolean retainAll(JObject arg0) const;
-		jint size() const;
-		JObjectArray toArray() const;
-		JObjectArray toArray(JObjectArray arg0) const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"add",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AbstractCollection::addAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"addAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline void AbstractCollection::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline jboolean AbstractCollection::contains(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"contains",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AbstractCollection::containsAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"containsAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean AbstractCollection::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline JObject AbstractCollection::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline jboolean AbstractCollection::remove(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean AbstractCollection::removeAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jboolean AbstractCollection::retainAll(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.object()
+		);
+	}
+	inline jint AbstractCollection::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	inline JObjectArray AbstractCollection::toArray() const
+	{
+		return callObjectMethod(
+			"toArray",
+			"()[Ljava/lang/Object;"
+		);
+	}
+	inline JObjectArray AbstractCollection::toArray(JObjectArray arg0) const
+	{
+		return callObjectMethod(
+			"toArray",
+			"([Ljava/lang/Object;)[Ljava/lang/Object;",
+			arg0.object<jobjectArray>()
+		);
+	}
+	inline JString AbstractCollection::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

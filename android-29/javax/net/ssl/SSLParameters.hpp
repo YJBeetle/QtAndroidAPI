@@ -1,51 +1,215 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./SSLParameters.def.hpp"
 
 namespace javax::net::ssl
 {
-	class SSLParameters : public JObject
+	// Fields
+	
+	// Constructors
+	inline SSLParameters::SSLParameters()
+		: JObject(
+			"javax.net.ssl.SSLParameters",
+			"()V"
+		) {}
+	inline SSLParameters::SSLParameters(JArray arg0)
+		: JObject(
+			"javax.net.ssl.SSLParameters",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		) {}
+	inline SSLParameters::SSLParameters(JArray arg0, JArray arg1)
+		: JObject(
+			"javax.net.ssl.SSLParameters",
+			"([Ljava/lang/String;[Ljava/lang/String;)V",
+			arg0.object<jarray>(),
+			arg1.object<jarray>()
+		) {}
+	
+	// Methods
+	inline JObject SSLParameters::getAlgorithmConstraints() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLParameters(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SSLParameters();
-		SSLParameters(JArray arg0);
-		SSLParameters(JArray arg0, JArray arg1);
-		
-		// Methods
-		JObject getAlgorithmConstraints() const;
-		JArray getApplicationProtocols() const;
-		JArray getCipherSuites() const;
-		jboolean getEnableRetransmissions() const;
-		JString getEndpointIdentificationAlgorithm() const;
-		jint getMaximumPacketSize() const;
-		jboolean getNeedClientAuth() const;
-		JArray getProtocols() const;
-		JObject getSNIMatchers() const;
-		JObject getServerNames() const;
-		jboolean getUseCipherSuitesOrder() const;
-		jboolean getWantClientAuth() const;
-		void setAlgorithmConstraints(JObject arg0) const;
-		void setApplicationProtocols(JArray arg0) const;
-		void setCipherSuites(JArray arg0) const;
-		void setEnableRetransmissions(jboolean arg0) const;
-		void setEndpointIdentificationAlgorithm(JString arg0) const;
-		void setMaximumPacketSize(jint arg0) const;
-		void setNeedClientAuth(jboolean arg0) const;
-		void setProtocols(JArray arg0) const;
-		void setSNIMatchers(JObject arg0) const;
-		void setServerNames(JObject arg0) const;
-		void setUseCipherSuitesOrder(jboolean arg0) const;
-		void setWantClientAuth(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"getAlgorithmConstraints",
+			"()Ljava/security/AlgorithmConstraints;"
+		);
+	}
+	inline JArray SSLParameters::getApplicationProtocols() const
+	{
+		return callObjectMethod(
+			"getApplicationProtocols",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray SSLParameters::getCipherSuites() const
+	{
+		return callObjectMethod(
+			"getCipherSuites",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jboolean SSLParameters::getEnableRetransmissions() const
+	{
+		return callMethod<jboolean>(
+			"getEnableRetransmissions",
+			"()Z"
+		);
+	}
+	inline JString SSLParameters::getEndpointIdentificationAlgorithm() const
+	{
+		return callObjectMethod(
+			"getEndpointIdentificationAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint SSLParameters::getMaximumPacketSize() const
+	{
+		return callMethod<jint>(
+			"getMaximumPacketSize",
+			"()I"
+		);
+	}
+	inline jboolean SSLParameters::getNeedClientAuth() const
+	{
+		return callMethod<jboolean>(
+			"getNeedClientAuth",
+			"()Z"
+		);
+	}
+	inline JArray SSLParameters::getProtocols() const
+	{
+		return callObjectMethod(
+			"getProtocols",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JObject SSLParameters::getSNIMatchers() const
+	{
+		return callObjectMethod(
+			"getSNIMatchers",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JObject SSLParameters::getServerNames() const
+	{
+		return callObjectMethod(
+			"getServerNames",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jboolean SSLParameters::getUseCipherSuitesOrder() const
+	{
+		return callMethod<jboolean>(
+			"getUseCipherSuitesOrder",
+			"()Z"
+		);
+	}
+	inline jboolean SSLParameters::getWantClientAuth() const
+	{
+		return callMethod<jboolean>(
+			"getWantClientAuth",
+			"()Z"
+		);
+	}
+	inline void SSLParameters::setAlgorithmConstraints(JObject arg0) const
+	{
+		callMethod<void>(
+			"setAlgorithmConstraints",
+			"(Ljava/security/AlgorithmConstraints;)V",
+			arg0.object()
+		);
+	}
+	inline void SSLParameters::setApplicationProtocols(JArray arg0) const
+	{
+		callMethod<void>(
+			"setApplicationProtocols",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void SSLParameters::setCipherSuites(JArray arg0) const
+	{
+		callMethod<void>(
+			"setCipherSuites",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void SSLParameters::setEnableRetransmissions(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setEnableRetransmissions",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SSLParameters::setEndpointIdentificationAlgorithm(JString arg0) const
+	{
+		callMethod<void>(
+			"setEndpointIdentificationAlgorithm",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void SSLParameters::setMaximumPacketSize(jint arg0) const
+	{
+		callMethod<void>(
+			"setMaximumPacketSize",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SSLParameters::setNeedClientAuth(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setNeedClientAuth",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SSLParameters::setProtocols(JArray arg0) const
+	{
+		callMethod<void>(
+			"setProtocols",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
+	inline void SSLParameters::setSNIMatchers(JObject arg0) const
+	{
+		callMethod<void>(
+			"setSNIMatchers",
+			"(Ljava/util/Collection;)V",
+			arg0.object()
+		);
+	}
+	inline void SSLParameters::setServerNames(JObject arg0) const
+	{
+		callMethod<void>(
+			"setServerNames",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
+	inline void SSLParameters::setUseCipherSuitesOrder(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setUseCipherSuitesOrder",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void SSLParameters::setWantClientAuth(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setWantClientAuth",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

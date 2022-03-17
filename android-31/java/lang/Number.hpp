@@ -1,28 +1,62 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Number.def.hpp"
 
 namespace java::lang
 {
-	class Number : public JObject
+	// Fields
+	
+	// Constructors
+	inline Number::Number()
+		: JObject(
+			"java.lang.Number",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jbyte Number::byteValue() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Number(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Number(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Number();
-		
-		// Methods
-		jbyte byteValue() const;
-		jdouble doubleValue() const;
-		jfloat floatValue() const;
-		jint intValue() const;
-		jlong longValue() const;
-		jshort shortValue() const;
-	};
+		return callMethod<jbyte>(
+			"byteValue",
+			"()B"
+		);
+	}
+	inline jdouble Number::doubleValue() const
+	{
+		return callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	inline jfloat Number::floatValue() const
+	{
+		return callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
+	inline jint Number::intValue() const
+	{
+		return callMethod<jint>(
+			"intValue",
+			"()I"
+		);
+	}
+	inline jlong Number::longValue() const
+	{
+		return callMethod<jlong>(
+			"longValue",
+			"()J"
+		);
+	}
+	inline jshort Number::shortValue() const
+	{
+		return callMethod<jshort>(
+			"shortValue",
+			"()S"
+		);
+	}
 } // namespace java::lang
+
+// Base class headers
 

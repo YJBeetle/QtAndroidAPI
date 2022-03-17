@@ -1,32 +1,84 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MailTo.def.hpp"
 
 namespace android::net
 {
-	class MailTo : public JObject
+	// Fields
+	inline JString MailTo::MAILTO_SCHEME()
 	{
-	public:
-		// Fields
-		static JString MAILTO_SCHEME();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MailTo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MailTo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jboolean isMailTo(JString arg0);
-		static android::net::MailTo parse(JString arg0);
-		JString getBody() const;
-		JString getCc() const;
-		JObject getHeaders() const;
-		JString getSubject() const;
-		JString getTo() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.net.MailTo",
+			"MAILTO_SCHEME",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MailTo::isMailTo(JString arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.net.MailTo",
+			"isMailTo",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::net::MailTo MailTo::parse(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.net.MailTo",
+			"parse",
+			"(Ljava/lang/String;)Landroid/net/MailTo;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString MailTo::getBody() const
+	{
+		return callObjectMethod(
+			"getBody",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MailTo::getCc() const
+	{
+		return callObjectMethod(
+			"getCc",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject MailTo::getHeaders() const
+	{
+		return callObjectMethod(
+			"getHeaders",
+			"()Ljava/util/Map;"
+		);
+	}
+	inline JString MailTo::getSubject() const
+	{
+		return callObjectMethod(
+			"getSubject",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MailTo::getTo() const
+	{
+		return callObjectMethod(
+			"getTo",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString MailTo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

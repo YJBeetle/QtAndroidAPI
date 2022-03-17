@@ -1,34 +1,107 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SocketKeepalive.def.hpp"
 
 namespace android::net
 {
-	class SocketKeepalive : public JObject
+	// Fields
+	inline jint SocketKeepalive::ERROR_HARDWARE_ERROR()
 	{
-	public:
-		// Fields
-		static jint ERROR_HARDWARE_ERROR();
-		static jint ERROR_INSUFFICIENT_RESOURCES();
-		static jint ERROR_INVALID_INTERVAL();
-		static jint ERROR_INVALID_IP_ADDRESS();
-		static jint ERROR_INVALID_LENGTH();
-		static jint ERROR_INVALID_NETWORK();
-		static jint ERROR_INVALID_PORT();
-		static jint ERROR_INVALID_SOCKET();
-		static jint ERROR_SOCKET_NOT_IDLE();
-		static jint ERROR_UNSUPPORTED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SocketKeepalive(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SocketKeepalive(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void start(jint arg0) const;
-		void stop() const;
-	};
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_HARDWARE_ERROR"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INSUFFICIENT_RESOURCES()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INSUFFICIENT_RESOURCES"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INVALID_INTERVAL()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INVALID_INTERVAL"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INVALID_IP_ADDRESS()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INVALID_IP_ADDRESS"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INVALID_LENGTH()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INVALID_LENGTH"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INVALID_NETWORK()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INVALID_NETWORK"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INVALID_PORT()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INVALID_PORT"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_INVALID_SOCKET()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_INVALID_SOCKET"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_SOCKET_NOT_IDLE()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_SOCKET_NOT_IDLE"
+		);
+	}
+	inline jint SocketKeepalive::ERROR_UNSUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.net.SocketKeepalive",
+			"ERROR_UNSUPPORTED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void SocketKeepalive::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void SocketKeepalive::start(jint arg0) const
+	{
+		callMethod<void>(
+			"start",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void SocketKeepalive::stop() const
+	{
+		callMethod<void>(
+			"stop",
+			"()V"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

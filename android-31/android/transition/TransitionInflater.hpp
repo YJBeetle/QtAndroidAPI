@@ -1,41 +1,45 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::transition
-{
-	class Transition;
-}
-namespace android::transition
-{
-	class TransitionManager;
-}
-namespace android::view
-{
-	class ViewGroup;
-}
+#include "../content/Context.def.hpp"
+#include "./Transition.def.hpp"
+#include "./TransitionManager.def.hpp"
+#include "../view/ViewGroup.def.hpp"
+#include "./TransitionInflater.def.hpp"
 
 namespace android::transition
 {
-	class TransitionInflater : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::transition::TransitionInflater TransitionInflater::from(android::content::Context arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionInflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TransitionInflater(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::transition::TransitionInflater from(android::content::Context arg0);
-		android::transition::Transition inflateTransition(jint arg0) const;
-		android::transition::TransitionManager inflateTransitionManager(jint arg0, android::view::ViewGroup arg1) const;
-	};
+		return callStaticObjectMethod(
+			"android.transition.TransitionInflater",
+			"from",
+			"(Landroid/content/Context;)Landroid/transition/TransitionInflater;",
+			arg0.object()
+		);
+	}
+	inline android::transition::Transition TransitionInflater::inflateTransition(jint arg0) const
+	{
+		return callObjectMethod(
+			"inflateTransition",
+			"(I)Landroid/transition/Transition;",
+			arg0
+		);
+	}
+	inline android::transition::TransitionManager TransitionInflater::inflateTransitionManager(jint arg0, android::view::ViewGroup arg1) const
+	{
+		return callObjectMethod(
+			"inflateTransitionManager",
+			"(ILandroid/view/ViewGroup;)Landroid/transition/TransitionManager;",
+			arg0,
+			arg1.object()
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
 

@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./EventLogTags_Description.def.hpp"
 
 namespace android::util
 {
-	class EventLogTags_Description : public JObject
+	// Fields
+	inline JString EventLogTags_Description::mName()
 	{
-	public:
-		// Fields
-		JString mName();
-		jint mTag();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EventLogTags_Description(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		EventLogTags_Description(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getObjectField(
+			"mName",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint EventLogTags_Description::mTag()
+	{
+		return getField<jint>(
+			"mTag"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::util
+
+// Base class headers
 

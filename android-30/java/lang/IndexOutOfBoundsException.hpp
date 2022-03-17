@@ -1,27 +1,41 @@
 #pragma once
 
-#include "./RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./IndexOutOfBoundsException.def.hpp"
 
 namespace java::lang
 {
-	class IndexOutOfBoundsException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IndexOutOfBoundsException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		IndexOutOfBoundsException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		IndexOutOfBoundsException();
-		IndexOutOfBoundsException(jint arg0);
-		IndexOutOfBoundsException(JString arg0);
-		IndexOutOfBoundsException(jlong arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline IndexOutOfBoundsException::IndexOutOfBoundsException()
+		: java::lang::RuntimeException(
+			"java.lang.IndexOutOfBoundsException",
+			"()V"
+		) {}
+	inline IndexOutOfBoundsException::IndexOutOfBoundsException(jint arg0)
+		: java::lang::RuntimeException(
+			"java.lang.IndexOutOfBoundsException",
+			"(I)V",
+			arg0
+		) {}
+	inline IndexOutOfBoundsException::IndexOutOfBoundsException(JString arg0)
+		: java::lang::RuntimeException(
+			"java.lang.IndexOutOfBoundsException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline IndexOutOfBoundsException::IndexOutOfBoundsException(jlong arg0)
+		: java::lang::RuntimeException(
+			"java.lang.IndexOutOfBoundsException",
+			"(J)V",
+			arg0
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
 

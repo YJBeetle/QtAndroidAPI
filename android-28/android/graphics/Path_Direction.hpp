@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Path_Direction.def.hpp"
 
 namespace android::graphics
 {
-	class Path_Direction : public java::lang::Enum
+	// Fields
+	inline android::graphics::Path_Direction Path_Direction::CCW()
 	{
-	public:
-		// Fields
-		static android::graphics::Path_Direction CCW();
-		static android::graphics::Path_Direction CW();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Path_Direction(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Path_Direction(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Path_Direction valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Path$Direction",
+			"CCW",
+			"Landroid/graphics/Path$Direction;"
+		);
+	}
+	inline android::graphics::Path_Direction Path_Direction::CW()
+	{
+		return getStaticObjectField(
+			"android.graphics.Path$Direction",
+			"CW",
+			"Landroid/graphics/Path$Direction;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Path_Direction Path_Direction::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Path$Direction",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Path$Direction;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Path_Direction::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Path$Direction",
+			"values",
+			"()[Landroid/graphics/Path$Direction;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

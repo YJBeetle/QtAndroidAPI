@@ -1,47 +1,63 @@
 #pragma once
 
-#include "./PreferenceGroup.hpp"
-
-namespace android::app
-{
-	class Dialog;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
-namespace android::widget
-{
-	class AdapterView;
-}
-namespace android::widget
-{
-	class ListView;
-}
+#include "../app/Dialog.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../view/View.def.hpp"
+#include "../widget/AdapterView.def.hpp"
+#include "../widget/ListView.def.hpp"
+#include "./PreferenceScreen.def.hpp"
 
 namespace android::preference
 {
-	class PreferenceScreen : public android::preference::PreferenceGroup
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void PreferenceScreen::bind(android::widget::ListView arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PreferenceScreen(const char *className, const char *sig, Ts...agv) : android::preference::PreferenceGroup(className, sig, std::forward<Ts>(agv)...) {}
-		PreferenceScreen(QAndroidJniObject obj) : android::preference::PreferenceGroup(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void bind(android::widget::ListView arg0) const;
-		android::app::Dialog getDialog() const;
-		JObject getRootAdapter() const;
-		void onDismiss(JObject arg0) const;
-		void onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const;
-	};
+		callMethod<void>(
+			"bind",
+			"(Landroid/widget/ListView;)V",
+			arg0.object()
+		);
+	}
+	inline android::app::Dialog PreferenceScreen::getDialog() const
+	{
+		return callObjectMethod(
+			"getDialog",
+			"()Landroid/app/Dialog;"
+		);
+	}
+	inline JObject PreferenceScreen::getRootAdapter() const
+	{
+		return callObjectMethod(
+			"getRootAdapter",
+			"()Landroid/widget/ListAdapter;"
+		);
+	}
+	inline void PreferenceScreen::onDismiss(JObject arg0) const
+	{
+		callMethod<void>(
+			"onDismiss",
+			"(Landroid/content/DialogInterface;)V",
+			arg0.object()
+		);
+	}
+	inline void PreferenceScreen::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const
+	{
+		callMethod<void>(
+			"onItemClick",
+			"(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::preference
+
+// Base class headers
+#include "./Preference.hpp"
+#include "./PreferenceGroup.hpp"
 

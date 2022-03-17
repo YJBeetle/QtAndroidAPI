@@ -1,42 +1,150 @@
 #pragma once
 
-#include "../../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./DOMException.def.hpp"
 
 namespace org::w3c::dom
 {
-	class DOMException : public java::lang::RuntimeException
+	// Fields
+	inline jshort DOMException::DOMSTRING_SIZE_ERR()
 	{
-	public:
-		// Fields
-		static jshort DOMSTRING_SIZE_ERR();
-		static jshort HIERARCHY_REQUEST_ERR();
-		static jshort INDEX_SIZE_ERR();
-		static jshort INUSE_ATTRIBUTE_ERR();
-		static jshort INVALID_ACCESS_ERR();
-		static jshort INVALID_CHARACTER_ERR();
-		static jshort INVALID_MODIFICATION_ERR();
-		static jshort INVALID_STATE_ERR();
-		static jshort NAMESPACE_ERR();
-		static jshort NOT_FOUND_ERR();
-		static jshort NOT_SUPPORTED_ERR();
-		static jshort NO_DATA_ALLOWED_ERR();
-		static jshort NO_MODIFICATION_ALLOWED_ERR();
-		static jshort SYNTAX_ERR();
-		static jshort TYPE_MISMATCH_ERR();
-		static jshort VALIDATION_ERR();
-		static jshort WRONG_DOCUMENT_ERR();
-		jshort code();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DOMException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		DOMException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		DOMException(jshort arg0, JString arg1);
-		
-		// Methods
-	};
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"DOMSTRING_SIZE_ERR"
+		);
+	}
+	inline jshort DOMException::HIERARCHY_REQUEST_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"HIERARCHY_REQUEST_ERR"
+		);
+	}
+	inline jshort DOMException::INDEX_SIZE_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INDEX_SIZE_ERR"
+		);
+	}
+	inline jshort DOMException::INUSE_ATTRIBUTE_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INUSE_ATTRIBUTE_ERR"
+		);
+	}
+	inline jshort DOMException::INVALID_ACCESS_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INVALID_ACCESS_ERR"
+		);
+	}
+	inline jshort DOMException::INVALID_CHARACTER_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INVALID_CHARACTER_ERR"
+		);
+	}
+	inline jshort DOMException::INVALID_MODIFICATION_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INVALID_MODIFICATION_ERR"
+		);
+	}
+	inline jshort DOMException::INVALID_STATE_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INVALID_STATE_ERR"
+		);
+	}
+	inline jshort DOMException::NAMESPACE_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"NAMESPACE_ERR"
+		);
+	}
+	inline jshort DOMException::NOT_FOUND_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"NOT_FOUND_ERR"
+		);
+	}
+	inline jshort DOMException::NOT_SUPPORTED_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"NOT_SUPPORTED_ERR"
+		);
+	}
+	inline jshort DOMException::NO_DATA_ALLOWED_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"NO_DATA_ALLOWED_ERR"
+		);
+	}
+	inline jshort DOMException::NO_MODIFICATION_ALLOWED_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"NO_MODIFICATION_ALLOWED_ERR"
+		);
+	}
+	inline jshort DOMException::SYNTAX_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"SYNTAX_ERR"
+		);
+	}
+	inline jshort DOMException::TYPE_MISMATCH_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"TYPE_MISMATCH_ERR"
+		);
+	}
+	inline jshort DOMException::VALIDATION_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"VALIDATION_ERR"
+		);
+	}
+	inline jshort DOMException::WRONG_DOCUMENT_ERR()
+	{
+		return getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"WRONG_DOCUMENT_ERR"
+		);
+	}
+	inline jshort DOMException::code()
+	{
+		return getField<jshort>(
+			"code"
+		);
+	}
+	
+	// Constructors
+	inline DOMException::DOMException(jshort arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"org.w3c.dom.DOMException",
+			"(SLjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace org::w3c::dom
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../../java/lang/RuntimeException.hpp"
 

@@ -1,35 +1,54 @@
 #pragma once
 
+#include "../../io/IOException.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace java::io
-{
-	class IOException;
-}
-class JObject;
-namespace java::nio::file
-{
-	class FileVisitResult;
-}
+#include "./FileVisitResult.def.hpp"
+#include "./SimpleFileVisitor.def.hpp"
 
 namespace java::nio::file
 {
-	class SimpleFileVisitor : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::file::FileVisitResult SimpleFileVisitor::postVisitDirectory(JObject arg0, java::io::IOException arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SimpleFileVisitor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleFileVisitor(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::nio::file::FileVisitResult postVisitDirectory(JObject arg0, java::io::IOException arg1) const;
-		java::nio::file::FileVisitResult preVisitDirectory(JObject arg0, JObject arg1) const;
-		java::nio::file::FileVisitResult visitFile(JObject arg0, JObject arg1) const;
-		java::nio::file::FileVisitResult visitFileFailed(JObject arg0, java::io::IOException arg1) const;
-	};
+		return callObjectMethod(
+			"postVisitDirectory",
+			"(Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline java::nio::file::FileVisitResult SimpleFileVisitor::preVisitDirectory(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"preVisitDirectory",
+			"(Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline java::nio::file::FileVisitResult SimpleFileVisitor::visitFile(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"visitFile",
+			"(Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
+	inline java::nio::file::FileVisitResult SimpleFileVisitor::visitFileFailed(JObject arg0, java::io::IOException arg1) const
+	{
+		return callObjectMethod(
+			"visitFileFailed",
+			"(Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;",
+			arg0.object<jobject>(),
+			arg1.object()
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
 

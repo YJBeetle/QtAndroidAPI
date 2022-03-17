@@ -1,25 +1,35 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JIntArray;
+#include "../../../JIntArray.hpp"
+#include "./UnicodeFilter.def.hpp"
 
 namespace android::icu::text
 {
-	class UnicodeFilter : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean UnicodeFilter::contains(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnicodeFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeFilter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean contains(jint arg0) const;
-		jint matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3) const;
-	};
+		return callMethod<jboolean>(
+			"contains",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jint UnicodeFilter::matches(JObject arg0, JIntArray arg1, jint arg2, jboolean arg3) const
+	{
+		return callMethod<jint>(
+			"matches",
+			"(Landroid/icu/text/Replaceable;[IIZ)I",
+			arg0.object(),
+			arg1.object<jintArray>(),
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

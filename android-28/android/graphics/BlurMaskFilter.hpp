@@ -1,27 +1,24 @@
 #pragma once
 
-#include "./MaskFilter.hpp"
+#include "./BlurMaskFilter_Blur.def.hpp"
+#include "./BlurMaskFilter.def.hpp"
 
 namespace android::graphics
 {
-	class BlurMaskFilter_Blur;
-}
-
-namespace android::graphics
-{
-	class BlurMaskFilter : public android::graphics::MaskFilter
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BlurMaskFilter(const char *className, const char *sig, Ts...agv) : android::graphics::MaskFilter(className, sig, std::forward<Ts>(agv)...) {}
-		BlurMaskFilter(QAndroidJniObject obj) : android::graphics::MaskFilter(obj) {}
-		
-		// Constructors
-		BlurMaskFilter(jfloat arg0, android::graphics::BlurMaskFilter_Blur arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline BlurMaskFilter::BlurMaskFilter(jfloat arg0, android::graphics::BlurMaskFilter_Blur arg1)
+		: android::graphics::MaskFilter(
+			"android.graphics.BlurMaskFilter",
+			"(FLandroid/graphics/BlurMaskFilter$Blur;)V",
+			arg0,
+			arg1.object()
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./MaskFilter.hpp"
 

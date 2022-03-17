@@ -1,28 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MbmsErrors_GeneralErrors.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_GeneralErrors : public JObject
+	// Fields
+	inline jint MbmsErrors_GeneralErrors::ERROR_CARRIER_CHANGE_NOT_ALLOWED()
 	{
-	public:
-		// Fields
-		static jint ERROR_CARRIER_CHANGE_NOT_ALLOWED();
-		static jint ERROR_IN_E911();
-		static jint ERROR_MIDDLEWARE_NOT_YET_READY();
-		static jint ERROR_MIDDLEWARE_TEMPORARILY_UNAVAILABLE();
-		static jint ERROR_NOT_CONNECTED_TO_HOME_CARRIER_LTE();
-		static jint ERROR_OUT_OF_MEMORY();
-		static jint ERROR_UNABLE_TO_READ_SIM();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_GeneralErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_GeneralErrors(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_CARRIER_CHANGE_NOT_ALLOWED"
+		);
+	}
+	inline jint MbmsErrors_GeneralErrors::ERROR_IN_E911()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_IN_E911"
+		);
+	}
+	inline jint MbmsErrors_GeneralErrors::ERROR_MIDDLEWARE_NOT_YET_READY()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_MIDDLEWARE_NOT_YET_READY"
+		);
+	}
+	inline jint MbmsErrors_GeneralErrors::ERROR_MIDDLEWARE_TEMPORARILY_UNAVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_MIDDLEWARE_TEMPORARILY_UNAVAILABLE"
+		);
+	}
+	inline jint MbmsErrors_GeneralErrors::ERROR_NOT_CONNECTED_TO_HOME_CARRIER_LTE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_NOT_CONNECTED_TO_HOME_CARRIER_LTE"
+		);
+	}
+	inline jint MbmsErrors_GeneralErrors::ERROR_OUT_OF_MEMORY()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_OUT_OF_MEMORY"
+		);
+	}
+	inline jint MbmsErrors_GeneralErrors::ERROR_UNABLE_TO_READ_SIM()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GeneralErrors",
+			"ERROR_UNABLE_TO_READ_SIM"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony::mbms
+
+// Base class headers
 

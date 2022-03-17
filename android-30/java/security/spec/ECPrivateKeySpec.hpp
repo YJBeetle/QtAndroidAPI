@@ -1,33 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::math
-{
-	class BigInteger;
-}
-namespace java::security::spec
-{
-	class ECParameterSpec;
-}
+#include "../../math/BigInteger.def.hpp"
+#include "./ECParameterSpec.def.hpp"
+#include "./ECPrivateKeySpec.def.hpp"
 
 namespace java::security::spec
 {
-	class ECPrivateKeySpec : public JObject
+	// Fields
+	
+	// Constructors
+	inline ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1)
+		: JObject(
+			"java.security.spec.ECPrivateKeySpec",
+			"(Ljava/math/BigInteger;Ljava/security/spec/ECParameterSpec;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline java::security::spec::ECParameterSpec ECPrivateKeySpec::getParams() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ECPrivateKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ECPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1);
-		
-		// Methods
-		java::security::spec::ECParameterSpec getParams() const;
-		java::math::BigInteger getS() const;
-	};
+		return callObjectMethod(
+			"getParams",
+			"()Ljava/security/spec/ECParameterSpec;"
+		);
+	}
+	inline java::math::BigInteger ECPrivateKeySpec::getS() const
+	{
+		return callObjectMethod(
+			"getS",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./TextKeyListener_Capitalize.def.hpp"
 
 namespace android::text::method
 {
-	class TextKeyListener_Capitalize : public java::lang::Enum
+	// Fields
+	inline android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::CHARACTERS()
 	{
-	public:
-		// Fields
-		static android::text::method::TextKeyListener_Capitalize CHARACTERS();
-		static android::text::method::TextKeyListener_Capitalize NONE();
-		static android::text::method::TextKeyListener_Capitalize SENTENCES();
-		static android::text::method::TextKeyListener_Capitalize WORDS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextKeyListener_Capitalize(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TextKeyListener_Capitalize(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::text::method::TextKeyListener_Capitalize valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.text.method.TextKeyListener$Capitalize",
+			"CHARACTERS",
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
+	}
+	inline android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::NONE()
+	{
+		return getStaticObjectField(
+			"android.text.method.TextKeyListener$Capitalize",
+			"NONE",
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
+	}
+	inline android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::SENTENCES()
+	{
+		return getStaticObjectField(
+			"android.text.method.TextKeyListener$Capitalize",
+			"SENTENCES",
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
+	}
+	inline android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::WORDS()
+	{
+		return getStaticObjectField(
+			"android.text.method.TextKeyListener$Capitalize",
+			"WORDS",
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::text::method::TextKeyListener_Capitalize TextKeyListener_Capitalize::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.text.method.TextKeyListener$Capitalize",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/text/method/TextKeyListener$Capitalize;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TextKeyListener_Capitalize::values()
+	{
+		return callStaticObjectMethod(
+			"android.text.method.TextKeyListener$Capitalize",
+			"values",
+			"()[Landroid/text/method/TextKeyListener$Capitalize;"
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

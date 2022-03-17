@@ -1,34 +1,46 @@
 #pragma once
 
-#include "./Animation.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view::animation
-{
-	class Transformation;
-}
+#include "../../content/Context.def.hpp"
+#include "./Transformation.def.hpp"
+#include "./AlphaAnimation.def.hpp"
 
 namespace android::view::animation
 {
-	class AlphaAnimation : public android::view::animation::Animation
+	// Fields
+	
+	// Constructors
+	inline AlphaAnimation::AlphaAnimation(android::content::Context arg0, JObject arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.AlphaAnimation",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	inline AlphaAnimation::AlphaAnimation(jfloat arg0, jfloat arg1)
+		: android::view::animation::Animation(
+			"android.view.animation.AlphaAnimation",
+			"(FF)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean AlphaAnimation::willChangeBounds() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlphaAnimation(const char *className, const char *sig, Ts...agv) : android::view::animation::Animation(className, sig, std::forward<Ts>(agv)...) {}
-		AlphaAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
-		
-		// Constructors
-		AlphaAnimation(android::content::Context arg0, JObject arg1);
-		AlphaAnimation(jfloat arg0, jfloat arg1);
-		
-		// Methods
-		jboolean willChangeBounds() const;
-		jboolean willChangeTransformationMatrix() const;
-	};
+		return callMethod<jboolean>(
+			"willChangeBounds",
+			"()Z"
+		);
+	}
+	inline jboolean AlphaAnimation::willChangeTransformationMatrix() const
+	{
+		return callMethod<jboolean>(
+			"willChangeTransformationMatrix",
+			"()Z"
+		);
+	}
 } // namespace android::view::animation
+
+// Base class headers
+#include "./Animation.hpp"
 

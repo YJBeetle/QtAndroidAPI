@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../lang/Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ParseException.def.hpp"
 
 namespace java::text
 {
-	class ParseException : public java::lang::Exception
+	// Fields
+	
+	// Constructors
+	inline ParseException::ParseException(JString arg0, jint arg1)
+		: java::lang::Exception(
+			"java.text.ParseException",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jint ParseException::getErrorOffset() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ParseException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		ParseException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		ParseException(JString arg0, jint arg1);
-		
-		// Methods
-		jint getErrorOffset() const;
-	};
+		return callMethod<jint>(
+			"getErrorOffset",
+			"()I"
+		);
+	}
 } // namespace java::text
+
+// Base class headers
+#include "../lang/Exception.hpp"
 

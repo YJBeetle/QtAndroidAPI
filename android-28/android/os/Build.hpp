@@ -1,51 +1,229 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Build.def.hpp"
 
 namespace android::os
 {
-	class Build : public JObject
+	// Fields
+	inline JString Build::BOARD()
 	{
-	public:
-		// Fields
-		static JString BOARD();
-		static JString BOOTLOADER();
-		static JString BRAND();
-		static JString CPU_ABI();
-		static JString CPU_ABI2();
-		static JString DEVICE();
-		static JString DISPLAY();
-		static JString FINGERPRINT();
-		static JString HARDWARE();
-		static JString HOST();
-		static JString ID();
-		static JString MANUFACTURER();
-		static JString MODEL();
-		static JString PRODUCT();
-		static JString RADIO();
-		static JString SERIAL();
-		static JArray SUPPORTED_32_BIT_ABIS();
-		static JArray SUPPORTED_64_BIT_ABIS();
-		static JArray SUPPORTED_ABIS();
-		static JString TAGS();
-		static jlong TIME();
-		static JString TYPE();
-		static JString UNKNOWN();
-		static JString USER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Build(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Build(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Build();
-		
-		// Methods
-		static JString getRadioVersion();
-		static JString getSerial();
-	};
+		return getStaticObjectField(
+			"android.os.Build",
+			"BOARD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::BOOTLOADER()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"BOOTLOADER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::BRAND()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"BRAND",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::CPU_ABI()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"CPU_ABI",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::CPU_ABI2()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"CPU_ABI2",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::DEVICE()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"DEVICE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::DISPLAY()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"DISPLAY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::FINGERPRINT()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"FINGERPRINT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::HARDWARE()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"HARDWARE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::HOST()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"HOST",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::ID()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::MANUFACTURER()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"MANUFACTURER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::MODEL()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"MODEL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::PRODUCT()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"PRODUCT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::RADIO()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"RADIO",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::SERIAL()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"SERIAL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JArray Build::SUPPORTED_32_BIT_ABIS()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"SUPPORTED_32_BIT_ABIS",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JArray Build::SUPPORTED_64_BIT_ABIS()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"SUPPORTED_64_BIT_ABIS",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JArray Build::SUPPORTED_ABIS()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"SUPPORTED_ABIS",
+			"[Ljava/lang/String;"
+		);
+	}
+	inline JString Build::TAGS()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"TAGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jlong Build::TIME()
+	{
+		return getStaticField<jlong>(
+			"android.os.Build",
+			"TIME"
+		);
+	}
+	inline JString Build::TYPE()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::UNKNOWN()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"UNKNOWN",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString Build::USER()
+	{
+		return getStaticObjectField(
+			"android.os.Build",
+			"USER",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline Build::Build()
+		: JObject(
+			"android.os.Build",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString Build::getRadioVersion()
+	{
+		return callStaticObjectMethod(
+			"android.os.Build",
+			"getRadioVersion",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Build::getSerial()
+	{
+		return callStaticObjectMethod(
+			"android.os.Build",
+			"getSerial",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

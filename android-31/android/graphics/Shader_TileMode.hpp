@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Shader_TileMode.def.hpp"
 
 namespace android::graphics
 {
-	class Shader_TileMode : public java::lang::Enum
+	// Fields
+	inline android::graphics::Shader_TileMode Shader_TileMode::CLAMP()
 	{
-	public:
-		// Fields
-		static android::graphics::Shader_TileMode CLAMP();
-		static android::graphics::Shader_TileMode DECAL();
-		static android::graphics::Shader_TileMode MIRROR();
-		static android::graphics::Shader_TileMode REPEAT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Shader_TileMode(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Shader_TileMode(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Shader_TileMode valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Shader$TileMode",
+			"CLAMP",
+			"Landroid/graphics/Shader$TileMode;"
+		);
+	}
+	inline android::graphics::Shader_TileMode Shader_TileMode::DECAL()
+	{
+		return getStaticObjectField(
+			"android.graphics.Shader$TileMode",
+			"DECAL",
+			"Landroid/graphics/Shader$TileMode;"
+		);
+	}
+	inline android::graphics::Shader_TileMode Shader_TileMode::MIRROR()
+	{
+		return getStaticObjectField(
+			"android.graphics.Shader$TileMode",
+			"MIRROR",
+			"Landroid/graphics/Shader$TileMode;"
+		);
+	}
+	inline android::graphics::Shader_TileMode Shader_TileMode::REPEAT()
+	{
+		return getStaticObjectField(
+			"android.graphics.Shader$TileMode",
+			"REPEAT",
+			"Landroid/graphics/Shader$TileMode;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Shader_TileMode Shader_TileMode::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Shader$TileMode",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Shader_TileMode::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Shader$TileMode",
+			"values",
+			"()[Landroid/graphics/Shader$TileMode;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

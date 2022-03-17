@@ -1,101 +1,314 @@
 #pragma once
 
-#include "./UFormat.hpp"
+#include "./TimeZoneFormat_GMTOffsetPatternType.def.hpp"
+#include "./TimeZoneFormat_Style.def.hpp"
+#include "./TimeZoneNames.def.hpp"
+#include "../util/Output.def.hpp"
+#include "../util/TimeZone.def.hpp"
+#include "../util/ULocale.def.hpp"
+#include "../../../JObject.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/lang/StringBuffer.def.hpp"
+#include "../../../java/text/FieldPosition.def.hpp"
+#include "../../../java/text/ParsePosition.def.hpp"
+#include "../../../java/util/EnumSet.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./TimeZoneFormat.def.hpp"
 
 namespace android::icu::text
 {
-	class TimeZoneFormat_GMTOffsetPatternType;
-}
-namespace android::icu::text
-{
-	class TimeZoneFormat_Style;
-}
-namespace android::icu::text
-{
-	class TimeZoneNames;
-}
-namespace android::icu::util
-{
-	class Output;
-}
-namespace android::icu::util
-{
-	class TimeZone;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuffer;
-}
-namespace java::text
-{
-	class FieldPosition;
-}
-namespace java::text
-{
-	class ParsePosition;
-}
-namespace java::util
-{
-	class EnumSet;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::text
-{
-	class TimeZoneFormat : public android::icu::text::UFormat
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::getInstance(android::icu::util::ULocale arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZoneFormat(const char *className, const char *sig, Ts...agv) : android::icu::text::UFormat(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZoneFormat(QAndroidJniObject obj) : android::icu::text::UFormat(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::TimeZoneFormat getInstance(android::icu::util::ULocale arg0);
-		static android::icu::text::TimeZoneFormat getInstance(java::util::Locale arg0);
-		android::icu::text::TimeZoneFormat cloneAsThawed() const;
-		JString format(android::icu::text::TimeZoneFormat_Style arg0, android::icu::util::TimeZone arg1, jlong arg2) const;
-		JString format(android::icu::text::TimeZoneFormat_Style arg0, android::icu::util::TimeZone arg1, jlong arg2, android::icu::util::Output arg3) const;
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
-		JString formatOffsetISO8601Basic(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3) const;
-		JString formatOffsetISO8601Extended(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3) const;
-		JString formatOffsetLocalizedGMT(jint arg0) const;
-		JString formatOffsetShortLocalizedGMT(jint arg0) const;
-		JObject formatToCharacterIterator(JObject arg0) const;
-		android::icu::text::TimeZoneFormat freeze() const;
-		java::util::EnumSet getDefaultParseOptions() const;
-		JString getGMTOffsetDigits() const;
-		JString getGMTOffsetPattern(android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0) const;
-		JString getGMTPattern() const;
-		JString getGMTZeroFormat() const;
-		android::icu::text::TimeZoneNames getTimeZoneNames() const;
-		jboolean isFrozen() const;
-		android::icu::util::TimeZone parse(JString arg0) const;
-		android::icu::util::TimeZone parse(JString arg0, java::text::ParsePosition arg1) const;
-		android::icu::util::TimeZone parse(android::icu::text::TimeZoneFormat_Style arg0, JString arg1, java::text::ParsePosition arg2, android::icu::util::Output arg3) const;
-		android::icu::util::TimeZone parse(android::icu::text::TimeZoneFormat_Style arg0, JString arg1, java::text::ParsePosition arg2, java::util::EnumSet arg3, android::icu::util::Output arg4) const;
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
-		jint parseOffsetISO8601(JString arg0, java::text::ParsePosition arg1) const;
-		jint parseOffsetLocalizedGMT(JString arg0, java::text::ParsePosition arg1) const;
-		jint parseOffsetShortLocalizedGMT(JString arg0, java::text::ParsePosition arg1) const;
-		android::icu::text::TimeZoneFormat setDefaultParseOptions(java::util::EnumSet arg0) const;
-		android::icu::text::TimeZoneFormat setGMTOffsetDigits(JString arg0) const;
-		android::icu::text::TimeZoneFormat setGMTOffsetPattern(android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, JString arg1) const;
-		android::icu::text::TimeZoneFormat setGMTPattern(JString arg0) const;
-		android::icu::text::TimeZoneFormat setGMTZeroFormat(JString arg0) const;
-		android::icu::text::TimeZoneFormat setTimeZoneNames(android::icu::text::TimeZoneNames arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat",
+			"getInstance",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::getInstance(java::util::Locale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::cloneAsThawed() const
+	{
+		return callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/TimeZoneFormat;"
+		);
+	}
+	inline JString TimeZoneFormat::format(android::icu::text::TimeZoneFormat_Style arg0, android::icu::util::TimeZone arg1, jlong arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Landroid/icu/util/TimeZone;J)Ljava/lang/String;",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
+	inline JString TimeZoneFormat::format(android::icu::text::TimeZoneFormat_Style arg0, android::icu::util::TimeZone arg1, jlong arg2, android::icu::util::Output arg3) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Landroid/icu/util/TimeZone;JLandroid/icu/util/Output;)Ljava/lang/String;",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
+	inline java::lang::StringBuffer TimeZoneFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;",
+			arg0.object<jobject>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline JString TimeZoneFormat::formatOffsetISO8601Basic(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3) const
+	{
+		return callObjectMethod(
+			"formatOffsetISO8601Basic",
+			"(IZZZ)Ljava/lang/String;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JString TimeZoneFormat::formatOffsetISO8601Extended(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3) const
+	{
+		return callObjectMethod(
+			"formatOffsetISO8601Extended",
+			"(IZZZ)Ljava/lang/String;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline JString TimeZoneFormat::formatOffsetLocalizedGMT(jint arg0) const
+	{
+		return callObjectMethod(
+			"formatOffsetLocalizedGMT",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline JString TimeZoneFormat::formatOffsetShortLocalizedGMT(jint arg0) const
+	{
+		return callObjectMethod(
+			"formatOffsetShortLocalizedGMT",
+			"(I)Ljava/lang/String;",
+			arg0
+		);
+	}
+	inline JObject TimeZoneFormat::formatToCharacterIterator(JObject arg0) const
+	{
+		return callObjectMethod(
+			"formatToCharacterIterator",
+			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::freeze() const
+	{
+		return callObjectMethod(
+			"freeze",
+			"()Landroid/icu/text/TimeZoneFormat;"
+		);
+	}
+	inline java::util::EnumSet TimeZoneFormat::getDefaultParseOptions() const
+	{
+		return callObjectMethod(
+			"getDefaultParseOptions",
+			"()Ljava/util/EnumSet;"
+		);
+	}
+	inline JString TimeZoneFormat::getGMTOffsetDigits() const
+	{
+		return callObjectMethod(
+			"getGMTOffsetDigits",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString TimeZoneFormat::getGMTOffsetPattern(android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0) const
+	{
+		return callObjectMethod(
+			"getGMTOffsetPattern",
+			"(Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString TimeZoneFormat::getGMTPattern() const
+	{
+		return callObjectMethod(
+			"getGMTPattern",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString TimeZoneFormat::getGMTZeroFormat() const
+	{
+		return callObjectMethod(
+			"getGMTZeroFormat",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::icu::text::TimeZoneNames TimeZoneFormat::getTimeZoneNames() const
+	{
+		return callObjectMethod(
+			"getTimeZoneNames",
+			"()Landroid/icu/text/TimeZoneNames;"
+		);
+	}
+	inline jboolean TimeZoneFormat::isFrozen() const
+	{
+		return callMethod<jboolean>(
+			"isFrozen",
+			"()Z"
+		);
+	}
+	inline android::icu::util::TimeZone TimeZoneFormat::parse(JString arg0) const
+	{
+		return callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::icu::util::TimeZone TimeZoneFormat::parse(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Landroid/icu/util/TimeZone;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline android::icu::util::TimeZone TimeZoneFormat::parse(android::icu::text::TimeZoneFormat_Style arg0, JString arg1, java::text::ParsePosition arg2, android::icu::util::Output arg3) const
+	{
+		return callObjectMethod(
+			"parse",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/util/Output;)Landroid/icu/util/TimeZone;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3.object()
+		);
+	}
+	inline android::icu::util::TimeZone TimeZoneFormat::parse(android::icu::text::TimeZoneFormat_Style arg0, JString arg1, java::text::ParsePosition arg2, java::util::EnumSet arg3, android::icu::util::Output arg4) const
+	{
+		return callObjectMethod(
+			"parse",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Ljava/lang/String;Ljava/text/ParsePosition;Ljava/util/EnumSet;Landroid/icu/util/Output;)Landroid/icu/util/TimeZone;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline JObject TimeZoneFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jint TimeZoneFormat::parseOffsetISO8601(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callMethod<jint>(
+			"parseOffsetISO8601",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jint TimeZoneFormat::parseOffsetLocalizedGMT(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callMethod<jint>(
+			"parseOffsetLocalizedGMT",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline jint TimeZoneFormat::parseOffsetShortLocalizedGMT(JString arg0, java::text::ParsePosition arg1) const
+	{
+		return callMethod<jint>(
+			"parseOffsetShortLocalizedGMT",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::setDefaultParseOptions(java::util::EnumSet arg0) const
+	{
+		return callObjectMethod(
+			"setDefaultParseOptions",
+			"(Ljava/util/EnumSet;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTOffsetDigits(JString arg0) const
+	{
+		return callObjectMethod(
+			"setGMTOffsetDigits",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTOffsetPattern(android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"setGMTOffsetPattern",
+			"(Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTPattern(JString arg0) const
+	{
+		return callObjectMethod(
+			"setGMTPattern",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::setGMTZeroFormat(JString arg0) const
+	{
+		return callObjectMethod(
+			"setGMTZeroFormat",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::icu::text::TimeZoneFormat TimeZoneFormat::setTimeZoneNames(android::icu::text::TimeZoneNames arg0) const
+	{
+		return callObjectMethod(
+			"setTimeZoneNames",
+			"(Landroid/icu/text/TimeZoneNames;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/text/Format.hpp"
+#include "./UFormat.hpp"
 

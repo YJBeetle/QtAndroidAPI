@@ -1,34 +1,70 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./SurfaceControl.def.hpp"
+#include "../../JString.hpp"
+#include "./SurfaceControl_Builder.def.hpp"
 
 namespace android::view
 {
-	class SurfaceControl;
-}
-class JString;
-
-namespace android::view
-{
-	class SurfaceControl_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline SurfaceControl_Builder::SurfaceControl_Builder()
+		: JObject(
+			"android.view.SurfaceControl$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::view::SurfaceControl SurfaceControl_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SurfaceControl_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SurfaceControl_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SurfaceControl_Builder();
-		
-		// Methods
-		android::view::SurfaceControl build() const;
-		android::view::SurfaceControl_Builder setBufferSize(jint arg0, jint arg1) const;
-		android::view::SurfaceControl_Builder setFormat(jint arg0) const;
-		android::view::SurfaceControl_Builder setName(JString arg0) const;
-		android::view::SurfaceControl_Builder setOpaque(jboolean arg0) const;
-		android::view::SurfaceControl_Builder setParent(android::view::SurfaceControl arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/SurfaceControl;"
+		);
+	}
+	inline android::view::SurfaceControl_Builder SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setBufferSize",
+			"(II)Landroid/view/SurfaceControl$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::view::SurfaceControl_Builder SurfaceControl_Builder::setFormat(jint arg0) const
+	{
+		return callObjectMethod(
+			"setFormat",
+			"(I)Landroid/view/SurfaceControl$Builder;",
+			arg0
+		);
+	}
+	inline android::view::SurfaceControl_Builder SurfaceControl_Builder::setName(JString arg0) const
+	{
+		return callObjectMethod(
+			"setName",
+			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::view::SurfaceControl_Builder SurfaceControl_Builder::setOpaque(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setOpaque",
+			"(Z)Landroid/view/SurfaceControl$Builder;",
+			arg0
+		);
+	}
+	inline android::view::SurfaceControl_Builder SurfaceControl_Builder::setParent(android::view::SurfaceControl arg0) const
+	{
+		return callObjectMethod(
+			"setParent",
+			"(Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Builder;",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

@@ -1,57 +1,76 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Activity.def.hpp"
+#include "./Application.def.hpp"
+#include "./Service.def.hpp"
+#include "../content/BroadcastReceiver.def.hpp"
+#include "../content/ContentProvider.def.hpp"
+#include "../content/Intent.def.hpp"
+#include "../../java/lang/ClassLoader.def.hpp"
+#include "../../JString.hpp"
+#include "./AppComponentFactory.def.hpp"
 
 namespace android::app
 {
-	class Activity;
-}
-namespace android::app
-{
-	class Application;
-}
-namespace android::app
-{
-	class Service;
-}
-namespace android::content
-{
-	class BroadcastReceiver;
-}
-namespace android::content
-{
-	class ContentProvider;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace java::lang
-{
-	class ClassLoader;
-}
-class JString;
-
-namespace android::app
-{
-	class AppComponentFactory : public JObject
+	// Fields
+	
+	// Constructors
+	inline AppComponentFactory::AppComponentFactory()
+		: JObject(
+			"android.app.AppComponentFactory",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::app::Activity AppComponentFactory::instantiateActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppComponentFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AppComponentFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AppComponentFactory();
-		
-		// Methods
-		android::app::Activity instantiateActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const;
-		android::app::Application instantiateApplication(java::lang::ClassLoader arg0, JString arg1) const;
-		android::content::ContentProvider instantiateProvider(java::lang::ClassLoader arg0, JString arg1) const;
-		android::content::BroadcastReceiver instantiateReceiver(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const;
-		android::app::Service instantiateService(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const;
-	};
+		return callObjectMethod(
+			"instantiateActivity",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::Application AppComponentFactory::instantiateApplication(java::lang::ClassLoader arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"instantiateApplication",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::content::ContentProvider AppComponentFactory::instantiateProvider(java::lang::ClassLoader arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"instantiateProvider",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline android::content::BroadcastReceiver AppComponentFactory::instantiateReceiver(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
+	{
+		return callObjectMethod(
+			"instantiateReceiver",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
+	inline android::app::Service AppComponentFactory::instantiateService(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const
+	{
+		return callObjectMethod(
+			"instantiateService",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

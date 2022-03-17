@@ -1,29 +1,52 @@
 #pragma once
 
-#include "../DateTimeException.hpp"
-
-class JString;
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./DateTimeParseException.def.hpp"
 
 namespace java::time::format
 {
-	class DateTimeParseException : public java::time::DateTimeException
+	// Fields
+	
+	// Constructors
+	inline DateTimeParseException::DateTimeParseException(JString arg0, JString arg1, jint arg2)
+		: java::time::DateTimeException(
+			"java.time.format.DateTimeParseException",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	inline DateTimeParseException::DateTimeParseException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
+		: java::time::DateTimeException(
+			"java.time.format.DateTimeParseException",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;ILjava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline jint DateTimeParseException::getErrorIndex() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DateTimeParseException(const char *className, const char *sig, Ts...agv) : java::time::DateTimeException(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimeParseException(QAndroidJniObject obj) : java::time::DateTimeException(obj) {}
-		
-		// Constructors
-		DateTimeParseException(JString arg0, JString arg1, jint arg2);
-		DateTimeParseException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
-		
-		// Methods
-		jint getErrorIndex() const;
-		JString getParsedString() const;
-	};
+		return callMethod<jint>(
+			"getErrorIndex",
+			"()I"
+		);
+	}
+	inline JString DateTimeParseException::getParsedString() const
+	{
+		return callObjectMethod(
+			"getParsedString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::time::format
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../lang/RuntimeException.hpp"
+#include "../DateTimeException.hpp"
 

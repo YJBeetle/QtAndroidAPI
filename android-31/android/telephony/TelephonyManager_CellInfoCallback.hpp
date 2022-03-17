@@ -1,28 +1,52 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JThrowable;
+#include "../../JThrowable.hpp"
+#include "./TelephonyManager_CellInfoCallback.def.hpp"
 
 namespace android::telephony
 {
-	class TelephonyManager_CellInfoCallback : public JObject
+	// Fields
+	inline jint TelephonyManager_CellInfoCallback::ERROR_MODEM_ERROR()
 	{
-	public:
-		// Fields
-		static jint ERROR_MODEM_ERROR();
-		static jint ERROR_TIMEOUT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TelephonyManager_CellInfoCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TelephonyManager_CellInfoCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TelephonyManager_CellInfoCallback();
-		
-		// Methods
-		void onCellInfo(JObject arg0) const;
-		void onError(jint arg0, JThrowable arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CellInfoCallback",
+			"ERROR_MODEM_ERROR"
+		);
+	}
+	inline jint TelephonyManager_CellInfoCallback::ERROR_TIMEOUT()
+	{
+		return getStaticField<jint>(
+			"android.telephony.TelephonyManager$CellInfoCallback",
+			"ERROR_TIMEOUT"
+		);
+	}
+	
+	// Constructors
+	inline TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback()
+		: JObject(
+			"android.telephony.TelephonyManager$CellInfoCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void TelephonyManager_CellInfoCallback::onCellInfo(JObject arg0) const
+	{
+		callMethod<void>(
+			"onCellInfo",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
+	inline void TelephonyManager_CellInfoCallback::onError(jint arg0, JThrowable arg1) const
+	{
+		callMethod<void>(
+			"onError",
+			"(ILjava/lang/Throwable;)V",
+			arg0,
+			arg1.object<jthrowable>()
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

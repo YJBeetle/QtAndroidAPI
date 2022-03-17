@@ -1,49 +1,69 @@
 #pragma once
 
-#include "../security/Permission.hpp"
-
-class JByteArray;
-class JIntArray;
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-class JObject;
-class JString;
-namespace java::security
-{
-	class Permission;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
+#include "../../JByteArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
+#include "../io/ObjectOutputStream.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../security/Permission.def.hpp"
+#include "../security/PermissionCollection.def.hpp"
+#include "./SocketPermission.def.hpp"
 
 namespace java::net
 {
-	class SocketPermission : public java::security::Permission
+	// Fields
+	
+	// Constructors
+	inline SocketPermission::SocketPermission(JString arg0, JString arg1)
+		: java::security::Permission(
+			"java.net.SocketPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jboolean SocketPermission::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SocketPermission(const char *className, const char *sig, Ts...agv) : java::security::Permission(className, sig, std::forward<Ts>(agv)...) {}
-		SocketPermission(QAndroidJniObject obj) : java::security::Permission(obj) {}
-		
-		// Constructors
-		SocketPermission(JString arg0, JString arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JString getActions() const;
-		jint hashCode() const;
-		jboolean implies(java::security::Permission arg0) const;
-		java::security::PermissionCollection newPermissionCollection() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JString SocketPermission::getActions() const
+	{
+		return callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint SocketPermission::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline jboolean SocketPermission::implies(java::security::Permission arg0) const
+	{
+		return callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/Permission;)Z",
+			arg0.object()
+		);
+	}
+	inline java::security::PermissionCollection SocketPermission::newPermissionCollection() const
+	{
+		return callObjectMethod(
+			"newPermissionCollection",
+			"()Ljava/security/PermissionCollection;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "../security/Permission.hpp"
 

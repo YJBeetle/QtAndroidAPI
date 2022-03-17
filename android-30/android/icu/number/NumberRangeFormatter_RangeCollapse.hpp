@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./NumberRangeFormatter_RangeCollapse.def.hpp"
 
 namespace android::icu::number
 {
-	class NumberRangeFormatter_RangeCollapse : public java::lang::Enum
+	// Fields
+	inline android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::ALL()
 	{
-	public:
-		// Fields
-		static android::icu::number::NumberRangeFormatter_RangeCollapse ALL();
-		static android::icu::number::NumberRangeFormatter_RangeCollapse AUTO();
-		static android::icu::number::NumberRangeFormatter_RangeCollapse NONE();
-		static android::icu::number::NumberRangeFormatter_RangeCollapse UNIT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NumberRangeFormatter_RangeCollapse(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter_RangeCollapse(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::NumberRangeFormatter_RangeCollapse valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeCollapse",
+			"ALL",
+			"Landroid/icu/number/NumberRangeFormatter$RangeCollapse;"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::AUTO()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeCollapse",
+			"AUTO",
+			"Landroid/icu/number/NumberRangeFormatter$RangeCollapse;"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::NONE()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeCollapse",
+			"NONE",
+			"Landroid/icu/number/NumberRangeFormatter$RangeCollapse;"
+		);
+	}
+	inline android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::UNIT()
+	{
+		return getStaticObjectField(
+			"android.icu.number.NumberRangeFormatter$RangeCollapse",
+			"UNIT",
+			"Landroid/icu/number/NumberRangeFormatter$RangeCollapse;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::NumberRangeFormatter_RangeCollapse NumberRangeFormatter_RangeCollapse::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter$RangeCollapse",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/number/NumberRangeFormatter$RangeCollapse;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray NumberRangeFormatter_RangeCollapse::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter$RangeCollapse",
+			"values",
+			"()[Landroid/icu/number/NumberRangeFormatter$RangeCollapse;"
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

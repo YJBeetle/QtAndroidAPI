@@ -1,25 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Byte2.def.hpp"
 
 namespace android::renderscript
 {
-	class Byte2 : public JObject
+	// Fields
+	inline jbyte Byte2::x()
 	{
-	public:
-		// Fields
-		jbyte x();
-		jbyte y();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Byte2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Byte2(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Byte2();
-		Byte2(jbyte arg0, jbyte arg1);
-		
-		// Methods
-	};
+		return getField<jbyte>(
+			"x"
+		);
+	}
+	inline jbyte Byte2::y()
+	{
+		return getField<jbyte>(
+			"y"
+		);
+	}
+	
+	// Constructors
+	inline Byte2::Byte2()
+		: JObject(
+			"android.renderscript.Byte2",
+			"()V"
+		) {}
+	inline Byte2::Byte2(jbyte arg0, jbyte arg1)
+		: JObject(
+			"android.renderscript.Byte2",
+			"(BB)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

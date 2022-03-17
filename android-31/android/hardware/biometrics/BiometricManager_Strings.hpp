@@ -1,26 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./BiometricManager_Strings.def.hpp"
 
 namespace android::hardware::biometrics
 {
-	class BiometricManager_Strings : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString BiometricManager_Strings::getButtonLabel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BiometricManager_Strings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricManager_Strings(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getButtonLabel() const;
-		JString getPromptMessage() const;
-		JString getSettingName() const;
-	};
+		return callObjectMethod(
+			"getButtonLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString BiometricManager_Strings::getPromptMessage() const
+	{
+		return callObjectMethod(
+			"getPromptMessage",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString BiometricManager_Strings::getSettingName() const
+	{
+		return callObjectMethod(
+			"getSettingName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
 } // namespace android::hardware::biometrics
+
+// Base class headers
 

@@ -1,31 +1,43 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JFloatArray;
-namespace android::hardware
-{
-	class Sensor;
-}
+#include "../../JFloatArray.hpp"
+#include "./Sensor.def.hpp"
+#include "./SensorEvent.def.hpp"
 
 namespace android::hardware
 {
-	class SensorEvent : public JObject
+	// Fields
+	inline jint SensorEvent::accuracy()
 	{
-	public:
-		// Fields
-		jint accuracy();
-		android::hardware::Sensor sensor();
-		jlong timestamp();
-		JFloatArray values();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SensorEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SensorEvent(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getField<jint>(
+			"accuracy"
+		);
+	}
+	inline android::hardware::Sensor SensorEvent::sensor()
+	{
+		return getObjectField(
+			"sensor",
+			"Landroid/hardware/Sensor;"
+		);
+	}
+	inline jlong SensorEvent::timestamp()
+	{
+		return getField<jlong>(
+			"timestamp"
+		);
+	}
+	inline JFloatArray SensorEvent::values()
+	{
+		return getObjectField(
+			"values",
+			"[F"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::hardware
+
+// Base class headers
 

@@ -1,32 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace java::io
-{
-	class File;
-}
+#include "../content/Context.def.hpp"
+#include "../../java/io/File.def.hpp"
+#include "./SSLSessionCache.def.hpp"
 
 namespace android::net
 {
-	class SSLSessionCache : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLSessionCache(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSessionCache(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SSLSessionCache(android::content::Context arg0);
-		SSLSessionCache(java::io::File arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SSLSessionCache::SSLSessionCache(android::content::Context arg0)
+		: JObject(
+			"android.net.SSLSessionCache",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline SSLSessionCache::SSLSessionCache(java::io::File arg0)
+		: JObject(
+			"android.net.SSLSessionCache",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
 } // namespace android::net
+
+// Base class headers
 

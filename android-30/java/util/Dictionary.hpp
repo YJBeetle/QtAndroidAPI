@@ -1,31 +1,74 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./Dictionary.def.hpp"
 
 namespace java::util
 {
-	class Dictionary : public JObject
+	// Fields
+	
+	// Constructors
+	inline Dictionary::Dictionary()
+		: JObject(
+			"java.util.Dictionary",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject Dictionary::elements() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Dictionary(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Dictionary(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Dictionary();
-		
-		// Methods
-		JObject elements() const;
-		JObject get(JObject arg0) const;
-		jboolean isEmpty() const;
-		JObject keys() const;
-		JObject put(JObject arg0, JObject arg1) const;
-		JObject remove(JObject arg0) const;
-		jint size() const;
-	};
+		return callObjectMethod(
+			"elements",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline JObject Dictionary::get(JObject arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean Dictionary::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline JObject Dictionary::keys() const
+	{
+		return callObjectMethod(
+			"keys",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	inline JObject Dictionary::put(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"put",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JObject Dictionary::remove(JObject arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint Dictionary::size() const
+	{
+		return callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

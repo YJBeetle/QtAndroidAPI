@@ -1,29 +1,37 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::util
-{
-	class Size;
-}
+#include "../../util/Size.def.hpp"
+#include "./AccessibilityNodeInfo_ExtraRenderingInfo.def.hpp"
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeInfo_ExtraRenderingInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::util::Size AccessibilityNodeInfo_ExtraRenderingInfo::getLayoutSize() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeInfo_ExtraRenderingInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_ExtraRenderingInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::util::Size getLayoutSize() const;
-		jfloat getTextSizeInPx() const;
-		jint getTextSizeUnit() const;
-	};
+		return callObjectMethod(
+			"getLayoutSize",
+			"()Landroid/util/Size;"
+		);
+	}
+	inline jfloat AccessibilityNodeInfo_ExtraRenderingInfo::getTextSizeInPx() const
+	{
+		return callMethod<jfloat>(
+			"getTextSizeInPx",
+			"()F"
+		);
+	}
+	inline jint AccessibilityNodeInfo_ExtraRenderingInfo::getTextSizeUnit() const
+	{
+		return callMethod<jint>(
+			"getTextSizeUnit",
+			"()I"
+		);
+	}
 } // namespace android::view::accessibility
+
+// Base class headers
 

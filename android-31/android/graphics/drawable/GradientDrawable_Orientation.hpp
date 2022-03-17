@@ -1,34 +1,99 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./GradientDrawable_Orientation.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class GradientDrawable_Orientation : public java::lang::Enum
+	// Fields
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::BL_TR()
 	{
-	public:
-		// Fields
-		static android::graphics::drawable::GradientDrawable_Orientation BL_TR();
-		static android::graphics::drawable::GradientDrawable_Orientation BOTTOM_TOP();
-		static android::graphics::drawable::GradientDrawable_Orientation BR_TL();
-		static android::graphics::drawable::GradientDrawable_Orientation LEFT_RIGHT();
-		static android::graphics::drawable::GradientDrawable_Orientation RIGHT_LEFT();
-		static android::graphics::drawable::GradientDrawable_Orientation TL_BR();
-		static android::graphics::drawable::GradientDrawable_Orientation TOP_BOTTOM();
-		static android::graphics::drawable::GradientDrawable_Orientation TR_BL();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GradientDrawable_Orientation(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		GradientDrawable_Orientation(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::drawable::GradientDrawable_Orientation valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"BL_TR",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::BOTTOM_TOP()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"BOTTOM_TOP",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::BR_TL()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"BR_TL",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::LEFT_RIGHT()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"LEFT_RIGHT",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::RIGHT_LEFT()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"RIGHT_LEFT",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::TL_BR()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"TL_BR",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::TOP_BOTTOM()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"TOP_BOTTOM",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::TR_BL()
+	{
+		return getStaticObjectField(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"TR_BL",
+			"Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::drawable::GradientDrawable_Orientation GradientDrawable_Orientation::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/drawable/GradientDrawable$Orientation;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray GradientDrawable_Orientation::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.drawable.GradientDrawable$Orientation",
+			"values",
+			"()[Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

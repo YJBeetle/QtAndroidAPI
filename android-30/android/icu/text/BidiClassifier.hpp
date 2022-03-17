@@ -1,27 +1,45 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
+#include "./BidiClassifier.def.hpp"
 
 namespace android::icu::text
 {
-	class BidiClassifier : public JObject
+	// Fields
+	
+	// Constructors
+	inline BidiClassifier::BidiClassifier(JObject arg0)
+		: JObject(
+			"android.icu.text.BidiClassifier",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		) {}
+	
+	// Methods
+	inline jint BidiClassifier::classify(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BidiClassifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BidiClassifier(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		BidiClassifier(JObject arg0);
-		
-		// Methods
-		jint classify(jint arg0) const;
-		JObject getContext() const;
-		void setContext(JObject arg0) const;
-	};
+		return callMethod<jint>(
+			"classify",
+			"(I)I",
+			arg0
+		);
+	}
+	inline JObject BidiClassifier::getContext() const
+	{
+		return callObjectMethod(
+			"getContext",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline void BidiClassifier::setContext(JObject arg0) const
+	{
+		callMethod<void>(
+			"setContext",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

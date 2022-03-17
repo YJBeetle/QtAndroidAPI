@@ -1,41 +1,155 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./RelativeDateTimeFormatter_RelativeDateTimeUnit.def.hpp"
 
 namespace android::icu::text
 {
-	class RelativeDateTimeFormatter_RelativeDateTimeUnit : public java::lang::Enum
+	// Fields
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::DAY()
 	{
-	public:
-		// Fields
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit DAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit FRIDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit HOUR();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit MINUTE();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit MONDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit MONTH();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit QUARTER();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit SATURDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit SECOND();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit SUNDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit THURSDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit TUESDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit WEDNESDAY();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit WEEK();
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit YEAR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RelativeDateTimeFormatter_RelativeDateTimeUnit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		RelativeDateTimeFormatter_RelativeDateTimeUnit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"DAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::FRIDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"FRIDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::HOUR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"HOUR",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::MINUTE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"MINUTE",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::MONDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"MONDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::MONTH()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"MONTH",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::QUARTER()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"QUARTER",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::SATURDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"SATURDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::SECOND()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"SECOND",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::SUNDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"SUNDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::THURSDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"THURSDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::TUESDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"TUESDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::WEDNESDAY()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"WEDNESDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::WEEK()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"WEEK",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::YEAR()
+	{
+		return getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"YEAR",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit RelativeDateTimeFormatter_RelativeDateTimeUnit::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray RelativeDateTimeFormatter_RelativeDateTimeUnit::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"values",
+			"()[Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

@@ -1,42 +1,85 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
-namespace java::lang
-{
-	class Thread;
-}
-class JThrowable;
-namespace java::util::concurrent
-{
-	class TimeUnit;
-}
+#include "../../../JString.hpp"
+#include "../../lang/Thread.def.hpp"
+#include "../../../JThrowable.hpp"
+#include "./TimeUnit.def.hpp"
+#include "./FutureTask.def.hpp"
 
 namespace java::util::concurrent
 {
-	class FutureTask : public JObject
+	// Fields
+	
+	// Constructors
+	inline FutureTask::FutureTask(JObject arg0)
+		: JObject(
+			"java.util.concurrent.FutureTask",
+			"(Ljava/util/concurrent/Callable;)V",
+			arg0.object()
+		) {}
+	inline FutureTask::FutureTask(JObject arg0, JObject arg1)
+		: JObject(
+			"java.util.concurrent.FutureTask",
+			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
+			arg0.object(),
+			arg1.object<jobject>()
+		) {}
+	
+	// Methods
+	inline jboolean FutureTask::cancel(jboolean arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FutureTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FutureTask(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FutureTask(JObject arg0);
-		FutureTask(JObject arg0, JObject arg1);
-		
-		// Methods
-		jboolean cancel(jboolean arg0) const;
-		JObject get() const;
-		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
-		jboolean isCancelled() const;
-		jboolean isDone() const;
-		void run() const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"cancel",
+			"(Z)Z",
+			arg0
+		);
+	}
+	inline JObject FutureTask::get() const
+	{
+		return callObjectMethod(
+			"get",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject FutureTask::get(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callObjectMethod(
+			"get",
+			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline jboolean FutureTask::isCancelled() const
+	{
+		return callMethod<jboolean>(
+			"isCancelled",
+			"()Z"
+		);
+	}
+	inline jboolean FutureTask::isDone() const
+	{
+		return callMethod<jboolean>(
+			"isDone",
+			"()Z"
+		);
+	}
+	inline void FutureTask::run() const
+	{
+		callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
+	inline JString FutureTask::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
 

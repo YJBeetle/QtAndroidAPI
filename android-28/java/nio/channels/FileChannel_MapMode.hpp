@@ -1,27 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./FileChannel_MapMode.def.hpp"
 
 namespace java::nio::channels
 {
-	class FileChannel_MapMode : public JObject
+	// Fields
+	inline java::nio::channels::FileChannel_MapMode FileChannel_MapMode::PRIVATE()
 	{
-	public:
-		// Fields
-		static java::nio::channels::FileChannel_MapMode PRIVATE();
-		static java::nio::channels::FileChannel_MapMode READ_ONLY();
-		static java::nio::channels::FileChannel_MapMode READ_WRITE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileChannel_MapMode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileChannel_MapMode(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"java.nio.channels.FileChannel$MapMode",
+			"PRIVATE",
+			"Ljava/nio/channels/FileChannel$MapMode;"
+		);
+	}
+	inline java::nio::channels::FileChannel_MapMode FileChannel_MapMode::READ_ONLY()
+	{
+		return getStaticObjectField(
+			"java.nio.channels.FileChannel$MapMode",
+			"READ_ONLY",
+			"Ljava/nio/channels/FileChannel$MapMode;"
+		);
+	}
+	inline java::nio::channels::FileChannel_MapMode FileChannel_MapMode::READ_WRITE()
+	{
+		return getStaticObjectField(
+			"java.nio.channels.FileChannel$MapMode",
+			"READ_WRITE",
+			"Ljava/nio/channels/FileChannel$MapMode;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JString FileChannel_MapMode::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::channels
+
+// Base class headers
 

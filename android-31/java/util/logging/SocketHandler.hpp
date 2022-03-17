@@ -1,35 +1,47 @@
 #pragma once
 
-#include "./StreamHandler.hpp"
-
-class JString;
-namespace java::net
-{
-	class Socket;
-}
-namespace java::util::logging
-{
-	class LogRecord;
-}
+#include "../../../JString.hpp"
+#include "../../net/Socket.def.hpp"
+#include "./LogRecord.def.hpp"
+#include "./SocketHandler.def.hpp"
 
 namespace java::util::logging
 {
-	class SocketHandler : public java::util::logging::StreamHandler
+	// Fields
+	
+	// Constructors
+	inline SocketHandler::SocketHandler()
+		: java::util::logging::StreamHandler(
+			"java.util.logging.SocketHandler",
+			"()V"
+		) {}
+	inline SocketHandler::SocketHandler(JString arg0, jint arg1)
+		: java::util::logging::StreamHandler(
+			"java.util.logging.SocketHandler",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void SocketHandler::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SocketHandler(const char *className, const char *sig, Ts...agv) : java::util::logging::StreamHandler(className, sig, std::forward<Ts>(agv)...) {}
-		SocketHandler(QAndroidJniObject obj) : java::util::logging::StreamHandler(obj) {}
-		
-		// Constructors
-		SocketHandler();
-		SocketHandler(JString arg0, jint arg1);
-		
-		// Methods
-		void close() const;
-		void publish(java::util::logging::LogRecord arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void SocketHandler::publish(java::util::logging::LogRecord arg0) const
+	{
+		callMethod<void>(
+			"publish",
+			"(Ljava/util/logging/LogRecord;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::util::logging
+
+// Base class headers
+#include "./Handler.hpp"
+#include "./StreamHandler.hpp"
 

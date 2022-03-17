@@ -1,29 +1,38 @@
 #pragma once
 
-#include "./ContentObserver.hpp"
+#include "./AbstractCursor.def.hpp"
+#include "./AbstractCursor_SelfContentObserver.def.hpp"
 
 namespace android::database
 {
-	class AbstractCursor;
-}
-
-namespace android::database
-{
-	class AbstractCursor_SelfContentObserver : public android::database::ContentObserver
+	// Fields
+	
+	// Constructors
+	inline AbstractCursor_SelfContentObserver::AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0)
+		: android::database::ContentObserver(
+			"android.database.AbstractCursor$SelfContentObserver",
+			"(Landroid/database/AbstractCursor;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractCursor_SelfContentObserver(const char *className, const char *sig, Ts...agv) : android::database::ContentObserver(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractCursor_SelfContentObserver(QAndroidJniObject obj) : android::database::ContentObserver(obj) {}
-		
-		// Constructors
-		AbstractCursor_SelfContentObserver(android::database::AbstractCursor arg0);
-		
-		// Methods
-		jboolean deliverSelfNotifications() const;
-		void onChange(jboolean arg0) const;
-	};
+		return callMethod<jboolean>(
+			"deliverSelfNotifications",
+			"()Z"
+		);
+	}
+	inline void AbstractCursor_SelfContentObserver::onChange(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onChange",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::database
+
+// Base class headers
+#include "./ContentObserver.hpp"
 

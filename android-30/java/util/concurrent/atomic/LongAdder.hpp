@@ -1,39 +1,102 @@
 #pragma once
 
-
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
+#include "../../../io/ObjectInputStream.def.hpp"
+#include "../../../../JObject.hpp"
+#include "../../../../JString.hpp"
+#include "./LongAdder.def.hpp"
 
 namespace java::util::concurrent::atomic
 {
-	class LongAdder : public JObject
+	// Fields
+	
+	// Constructors
+	inline LongAdder::LongAdder()
+		: JObject(
+			"java.util.concurrent.atomic.LongAdder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void LongAdder::add(jlong arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LongAdder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LongAdder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		LongAdder();
-		
-		// Methods
-		void add(jlong arg0) const;
-		void decrement() const;
-		jdouble doubleValue() const;
-		jfloat floatValue() const;
-		void increment() const;
-		jint intValue() const;
-		jlong longValue() const;
-		void reset() const;
-		jlong sum() const;
-		jlong sumThenReset() const;
-		JString toString() const;
-	};
+		callMethod<void>(
+			"add",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void LongAdder::decrement() const
+	{
+		callMethod<void>(
+			"decrement",
+			"()V"
+		);
+	}
+	inline jdouble LongAdder::doubleValue() const
+	{
+		return callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	inline jfloat LongAdder::floatValue() const
+	{
+		return callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
+	inline void LongAdder::increment() const
+	{
+		callMethod<void>(
+			"increment",
+			"()V"
+		);
+	}
+	inline jint LongAdder::intValue() const
+	{
+		return callMethod<jint>(
+			"intValue",
+			"()I"
+		);
+	}
+	inline jlong LongAdder::longValue() const
+	{
+		return callMethod<jlong>(
+			"longValue",
+			"()J"
+		);
+	}
+	inline void LongAdder::reset() const
+	{
+		callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	inline jlong LongAdder::sum() const
+	{
+		return callMethod<jlong>(
+			"sum",
+			"()J"
+		);
+	}
+	inline jlong LongAdder::sumThenReset() const
+	{
+		return callMethod<jlong>(
+			"sumThenReset",
+			"()J"
+		);
+	}
+	inline JString LongAdder::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util::concurrent::atomic
+
+// Base class headers
+#include "../../../lang/Number.hpp"
 

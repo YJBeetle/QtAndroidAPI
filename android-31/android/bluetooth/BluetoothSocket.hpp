@@ -1,46 +1,102 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./BluetoothDevice.def.hpp"
+#include "../../java/io/InputStream.def.hpp"
+#include "../../java/io/OutputStream.def.hpp"
+#include "./BluetoothSocket.def.hpp"
 
 namespace android::bluetooth
 {
-	class BluetoothDevice;
-}
-namespace java::io
-{
-	class InputStream;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-
-namespace android::bluetooth
-{
-	class BluetoothSocket : public JObject
+	// Fields
+	inline jint BluetoothSocket::TYPE_L2CAP()
 	{
-	public:
-		// Fields
-		static jint TYPE_L2CAP();
-		static jint TYPE_RFCOMM();
-		static jint TYPE_SCO();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BluetoothSocket(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		void connect() const;
-		jint getConnectionType() const;
-		java::io::InputStream getInputStream() const;
-		jint getMaxReceivePacketSize() const;
-		jint getMaxTransmitPacketSize() const;
-		java::io::OutputStream getOutputStream() const;
-		android::bluetooth::BluetoothDevice getRemoteDevice() const;
-		jboolean isConnected() const;
-	};
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothSocket",
+			"TYPE_L2CAP"
+		);
+	}
+	inline jint BluetoothSocket::TYPE_RFCOMM()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothSocket",
+			"TYPE_RFCOMM"
+		);
+	}
+	inline jint BluetoothSocket::TYPE_SCO()
+	{
+		return getStaticField<jint>(
+			"android.bluetooth.BluetoothSocket",
+			"TYPE_SCO"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline void BluetoothSocket::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void BluetoothSocket::connect() const
+	{
+		callMethod<void>(
+			"connect",
+			"()V"
+		);
+	}
+	inline jint BluetoothSocket::getConnectionType() const
+	{
+		return callMethod<jint>(
+			"getConnectionType",
+			"()I"
+		);
+	}
+	inline java::io::InputStream BluetoothSocket::getInputStream() const
+	{
+		return callObjectMethod(
+			"getInputStream",
+			"()Ljava/io/InputStream;"
+		);
+	}
+	inline jint BluetoothSocket::getMaxReceivePacketSize() const
+	{
+		return callMethod<jint>(
+			"getMaxReceivePacketSize",
+			"()I"
+		);
+	}
+	inline jint BluetoothSocket::getMaxTransmitPacketSize() const
+	{
+		return callMethod<jint>(
+			"getMaxTransmitPacketSize",
+			"()I"
+		);
+	}
+	inline java::io::OutputStream BluetoothSocket::getOutputStream() const
+	{
+		return callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
+	}
+	inline android::bluetooth::BluetoothDevice BluetoothSocket::getRemoteDevice() const
+	{
+		return callObjectMethod(
+			"getRemoteDevice",
+			"()Landroid/bluetooth/BluetoothDevice;"
+		);
+	}
+	inline jboolean BluetoothSocket::isConnected() const
+	{
+		return callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
 } // namespace android::bluetooth
+
+// Base class headers
 

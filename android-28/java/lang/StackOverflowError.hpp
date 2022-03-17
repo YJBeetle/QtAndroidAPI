@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./VirtualMachineError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./StackOverflowError.def.hpp"
 
 namespace java::lang
 {
-	class StackOverflowError : public java::lang::VirtualMachineError
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StackOverflowError(const char *className, const char *sig, Ts...agv) : java::lang::VirtualMachineError(className, sig, std::forward<Ts>(agv)...) {}
-		StackOverflowError(QAndroidJniObject obj) : java::lang::VirtualMachineError(obj) {}
-		
-		// Constructors
-		StackOverflowError();
-		StackOverflowError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline StackOverflowError::StackOverflowError()
+		: java::lang::VirtualMachineError(
+			"java.lang.StackOverflowError",
+			"()V"
+		) {}
+	inline StackOverflowError::StackOverflowError(JString arg0)
+		: java::lang::VirtualMachineError(
+			"java.lang.StackOverflowError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./VirtualMachineError.hpp"
 

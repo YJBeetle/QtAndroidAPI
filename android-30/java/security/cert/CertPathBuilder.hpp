@@ -1,39 +1,84 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-namespace java::security
-{
-	class Provider;
-}
-namespace java::security::cert
-{
-	class CertPathBuilderSpi;
-}
+#include "../../../JString.hpp"
+#include "../Provider.def.hpp"
+#include "./CertPathBuilderSpi.def.hpp"
+#include "./CertPathBuilder.def.hpp"
 
 namespace java::security::cert
 {
-	class CertPathBuilder : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString CertPathBuilder::getDefaultType()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CertPathBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CertPathBuilder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JString getDefaultType();
-		static java::security::cert::CertPathBuilder getInstance(JString arg0);
-		static java::security::cert::CertPathBuilder getInstance(JString arg0, JString arg1);
-		static java::security::cert::CertPathBuilder getInstance(JString arg0, java::security::Provider arg1);
-		JObject build(JObject arg0) const;
-		JString getAlgorithm() const;
-		java::security::Provider getProvider() const;
-		JObject getRevocationChecker() const;
-	};
+		return callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getDefaultType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::security::cert::CertPathBuilder CertPathBuilder::getInstance(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::security::cert::CertPathBuilder CertPathBuilder::getInstance(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline java::security::cert::CertPathBuilder CertPathBuilder::getInstance(JString arg0, java::security::Provider arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathBuilder;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JObject CertPathBuilder::build(JObject arg0) const
+	{
+		return callObjectMethod(
+			"build",
+			"(Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathBuilderResult;",
+			arg0.object()
+		);
+	}
+	inline JString CertPathBuilder::getAlgorithm() const
+	{
+		return callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::security::Provider CertPathBuilder::getProvider() const
+	{
+		return callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	inline JObject CertPathBuilder::getRevocationChecker() const
+	{
+		return callObjectMethod(
+			"getRevocationChecker",
+			"()Ljava/security/cert/CertPathChecker;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

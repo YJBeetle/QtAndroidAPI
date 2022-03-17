@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaCommunicationManager.def.hpp"
 
 namespace android::media
 {
-	class MediaCommunicationManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject MediaCommunicationManager::getSession2Tokens() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCommunicationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCommunicationManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getSession2Tokens() const;
-		jint getVersion() const;
-	};
+		return callObjectMethod(
+			"getSession2Tokens",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jint MediaCommunicationManager::getVersion() const
+	{
+		return callMethod<jint>(
+			"getVersion",
+			"()I"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

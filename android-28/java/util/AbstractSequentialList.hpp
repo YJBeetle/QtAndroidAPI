@@ -1,30 +1,76 @@
 #pragma once
 
-#include "./AbstractList.hpp"
-
-class JObject;
+#include "../../JObject.hpp"
+#include "./AbstractSequentialList.def.hpp"
 
 namespace java::util
 {
-	class AbstractSequentialList : public java::util::AbstractList
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void AbstractSequentialList::add(jint arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AbstractSequentialList(const char *className, const char *sig, Ts...agv) : java::util::AbstractList(className, sig, std::forward<Ts>(agv)...) {}
-		AbstractSequentialList(QAndroidJniObject obj) : java::util::AbstractList(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void add(jint arg0, JObject arg1) const;
-		jboolean addAll(jint arg0, JObject arg1) const;
-		JObject get(jint arg0) const;
-		JObject iterator() const;
-		JObject listIterator(jint arg0) const;
-		JObject remove(jint arg0) const;
-		JObject set(jint arg0, JObject arg1) const;
-	};
+		callMethod<void>(
+			"add",
+			"(ILjava/lang/Object;)V",
+			arg0,
+			arg1.object<jobject>()
+		);
+	}
+	inline jboolean AbstractSequentialList::addAll(jint arg0, JObject arg1) const
+	{
+		return callMethod<jboolean>(
+			"addAll",
+			"(ILjava/util/Collection;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline JObject AbstractSequentialList::get(jint arg0) const
+	{
+		return callObjectMethod(
+			"get",
+			"(I)Ljava/lang/Object;",
+			arg0
+		);
+	}
+	inline JObject AbstractSequentialList::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	inline JObject AbstractSequentialList::listIterator(jint arg0) const
+	{
+		return callObjectMethod(
+			"listIterator",
+			"(I)Ljava/util/ListIterator;",
+			arg0
+		);
+	}
+	inline JObject AbstractSequentialList::remove(jint arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(I)Ljava/lang/Object;",
+			arg0
+		);
+	}
+	inline JObject AbstractSequentialList::set(jint arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"set",
+			"(ILjava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1.object<jobject>()
+		);
+	}
 } // namespace java::util
+
+// Base class headers
+#include "./AbstractCollection.hpp"
+#include "./AbstractList.hpp"
 

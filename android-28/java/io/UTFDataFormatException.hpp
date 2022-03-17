@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./IOException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./UTFDataFormatException.def.hpp"
 
 namespace java::io
 {
-	class UTFDataFormatException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UTFDataFormatException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		UTFDataFormatException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		UTFDataFormatException();
-		UTFDataFormatException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline UTFDataFormatException::UTFDataFormatException()
+		: java::io::IOException(
+			"java.io.UTFDataFormatException",
+			"()V"
+		) {}
+	inline UTFDataFormatException::UTFDataFormatException(JString arg0)
+		: java::io::IOException(
+			"java.io.UTFDataFormatException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
 

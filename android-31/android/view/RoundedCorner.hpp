@@ -1,46 +1,123 @@
 #pragma once
 
+#include "../graphics/Point.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Point;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./RoundedCorner.def.hpp"
 
 namespace android::view
 {
-	class RoundedCorner : public JObject
+	// Fields
+	inline JObject RoundedCorner::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint POSITION_BOTTOM_LEFT();
-		static jint POSITION_BOTTOM_RIGHT();
-		static jint POSITION_TOP_LEFT();
-		static jint POSITION_TOP_RIGHT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RoundedCorner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RoundedCorner(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		RoundedCorner(jint arg0, jint arg1, jint arg2, jint arg3);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		android::graphics::Point getCenter() const;
-		jint getPosition() const;
-		jint getRadius() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.RoundedCorner",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint RoundedCorner::POSITION_BOTTOM_LEFT()
+	{
+		return getStaticField<jint>(
+			"android.view.RoundedCorner",
+			"POSITION_BOTTOM_LEFT"
+		);
+	}
+	inline jint RoundedCorner::POSITION_BOTTOM_RIGHT()
+	{
+		return getStaticField<jint>(
+			"android.view.RoundedCorner",
+			"POSITION_BOTTOM_RIGHT"
+		);
+	}
+	inline jint RoundedCorner::POSITION_TOP_LEFT()
+	{
+		return getStaticField<jint>(
+			"android.view.RoundedCorner",
+			"POSITION_TOP_LEFT"
+		);
+	}
+	inline jint RoundedCorner::POSITION_TOP_RIGHT()
+	{
+		return getStaticField<jint>(
+			"android.view.RoundedCorner",
+			"POSITION_TOP_RIGHT"
+		);
+	}
+	
+	// Constructors
+	inline RoundedCorner::RoundedCorner(jint arg0, jint arg1, jint arg2, jint arg3)
+		: JObject(
+			"android.view.RoundedCorner",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+	inline jint RoundedCorner::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean RoundedCorner::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline android::graphics::Point RoundedCorner::getCenter() const
+	{
+		return callObjectMethod(
+			"getCenter",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	inline jint RoundedCorner::getPosition() const
+	{
+		return callMethod<jint>(
+			"getPosition",
+			"()I"
+		);
+	}
+	inline jint RoundedCorner::getRadius() const
+	{
+		return callMethod<jint>(
+			"getRadius",
+			"()I"
+		);
+	}
+	inline jint RoundedCorner::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString RoundedCorner::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void RoundedCorner::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

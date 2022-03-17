@@ -1,46 +1,74 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class LocusId;
-}
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view::contentcapture
-{
-	class ContentCaptureContext_Builder;
-}
-class JString;
+#include "../../content/LocusId.def.hpp"
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./ContentCaptureContext_Builder.def.hpp"
+#include "../../../JString.hpp"
+#include "./ContentCaptureContext.def.hpp"
 
 namespace android::view::contentcapture
 {
-	class ContentCaptureContext : public JObject
+	// Fields
+	inline JObject ContentCaptureContext::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentCaptureContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentCaptureContext(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::view::contentcapture::ContentCaptureContext forLocusId(JString arg0);
-		jint describeContents() const;
-		android::os::Bundle getExtras() const;
-		android::content::LocusId getLocusId() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.contentcapture.ContentCaptureContext",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::contentcapture::ContentCaptureContext ContentCaptureContext::forLocusId(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.view.contentcapture.ContentCaptureContext",
+			"forLocusId",
+			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint ContentCaptureContext::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::Bundle ContentCaptureContext::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline android::content::LocusId ContentCaptureContext::getLocusId() const
+	{
+		return callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
+	inline JString ContentCaptureContext::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ContentCaptureContext::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::contentcapture
+
+// Base class headers
 

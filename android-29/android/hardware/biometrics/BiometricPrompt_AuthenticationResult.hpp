@@ -1,27 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./BiometricPrompt_CryptoObject.def.hpp"
+#include "./BiometricPrompt_AuthenticationResult.def.hpp"
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt_CryptoObject;
-}
-
-namespace android::hardware::biometrics
-{
-	class BiometricPrompt_AuthenticationResult : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::hardware::biometrics::BiometricPrompt_CryptoObject BiometricPrompt_AuthenticationResult::getCryptoObject() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt_AuthenticationResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		BiometricPrompt_AuthenticationResult(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::hardware::biometrics::BiometricPrompt_CryptoObject getCryptoObject() const;
-	};
+		return callObjectMethod(
+			"getCryptoObject",
+			"()Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;"
+		);
+	}
 } // namespace android::hardware::biometrics
+
+// Base class headers
 

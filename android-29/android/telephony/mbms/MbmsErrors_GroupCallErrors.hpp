@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./MbmsErrors_GroupCallErrors.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_GroupCallErrors : public JObject
+	// Fields
+	inline jint MbmsErrors_GroupCallErrors::ERROR_DUPLICATE_START_GROUP_CALL()
 	{
-	public:
-		// Fields
-		static jint ERROR_DUPLICATE_START_GROUP_CALL();
-		static jint ERROR_UNABLE_TO_START_SERVICE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_GroupCallErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MbmsErrors_GroupCallErrors(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GroupCallErrors",
+			"ERROR_DUPLICATE_START_GROUP_CALL"
+		);
+	}
+	inline jint MbmsErrors_GroupCallErrors::ERROR_UNABLE_TO_START_SERVICE()
+	{
+		return getStaticField<jint>(
+			"android.telephony.mbms.MbmsErrors$GroupCallErrors",
+			"ERROR_UNABLE_TO_START_SERVICE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony::mbms
+
+// Base class headers
 

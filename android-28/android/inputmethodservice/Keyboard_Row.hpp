@@ -1,38 +1,67 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content::res
-{
-	class Resources;
-}
-namespace android::inputmethodservice
-{
-	class Keyboard;
-}
+#include "../content/res/Resources.def.hpp"
+#include "./Keyboard.def.hpp"
+#include "./Keyboard_Row.def.hpp"
 
 namespace android::inputmethodservice
 {
-	class Keyboard_Row : public JObject
+	// Fields
+	inline jint Keyboard_Row::defaultHeight()
 	{
-	public:
-		// Fields
-		jint defaultHeight();
-		jint defaultHorizontalGap();
-		jint defaultWidth();
-		jint mode();
-		jint rowEdgeFlags();
-		jint verticalGap();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Keyboard_Row(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Keyboard_Row(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Keyboard_Row(android::inputmethodservice::Keyboard arg0);
-		Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, JObject arg2);
-		
-		// Methods
-	};
+		return getField<jint>(
+			"defaultHeight"
+		);
+	}
+	inline jint Keyboard_Row::defaultHorizontalGap()
+	{
+		return getField<jint>(
+			"defaultHorizontalGap"
+		);
+	}
+	inline jint Keyboard_Row::defaultWidth()
+	{
+		return getField<jint>(
+			"defaultWidth"
+		);
+	}
+	inline jint Keyboard_Row::mode()
+	{
+		return getField<jint>(
+			"mode"
+		);
+	}
+	inline jint Keyboard_Row::rowEdgeFlags()
+	{
+		return getField<jint>(
+			"rowEdgeFlags"
+		);
+	}
+	inline jint Keyboard_Row::verticalGap()
+	{
+		return getField<jint>(
+			"verticalGap"
+		);
+	}
+	
+	// Constructors
+	inline Keyboard_Row::Keyboard_Row(android::inputmethodservice::Keyboard arg0)
+		: JObject(
+			"android.inputmethodservice.Keyboard$Row",
+			"(Landroid/inputmethodservice/Keyboard;)V",
+			arg0.object()
+		) {}
+	inline Keyboard_Row::Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, JObject arg2)
+		: JObject(
+			"android.inputmethodservice.Keyboard$Row",
+			"(Landroid/content/res/Resources;Landroid/inputmethodservice/Keyboard;Landroid/content/res/XmlResourceParser;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
 } // namespace android::inputmethodservice
+
+// Base class headers
 

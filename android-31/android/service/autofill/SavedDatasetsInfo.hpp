@@ -1,32 +1,76 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./SavedDatasetsInfo.def.hpp"
 
 namespace android::service::autofill
 {
-	class SavedDatasetsInfo : public JObject
+	// Fields
+	inline JString SavedDatasetsInfo::TYPE_OTHER()
 	{
-	public:
-		// Fields
-		static JString TYPE_OTHER();
-		static JString TYPE_PASSWORDS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SavedDatasetsInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SavedDatasetsInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SavedDatasetsInfo(JString arg0, jint arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getCount() const;
-		JString getType() const;
-		jint hashCode() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"android.service.autofill.SavedDatasetsInfo",
+			"TYPE_OTHER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SavedDatasetsInfo::TYPE_PASSWORDS()
+	{
+		return getStaticObjectField(
+			"android.service.autofill.SavedDatasetsInfo",
+			"TYPE_PASSWORDS",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline SavedDatasetsInfo::SavedDatasetsInfo(JString arg0, jint arg1)
+		: JObject(
+			"android.service.autofill.SavedDatasetsInfo",
+			"(Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean SavedDatasetsInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint SavedDatasetsInfo::getCount() const
+	{
+		return callMethod<jint>(
+			"getCount",
+			"()I"
+		);
+	}
+	inline JString SavedDatasetsInfo::getType() const
+	{
+		return callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint SavedDatasetsInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString SavedDatasetsInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

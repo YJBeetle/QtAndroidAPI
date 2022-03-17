@@ -1,40 +1,89 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../content/Context.def.hpp"
+#include "./View.def.hpp"
+#include "./ActionProvider.def.hpp"
 
 namespace android::view
 {
-	class ActionProvider : public JObject
+	// Fields
+	
+	// Constructors
+	inline ActionProvider::ActionProvider(android::content::Context arg0)
+		: JObject(
+			"android.view.ActionProvider",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean ActionProvider::hasSubMenu() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActionProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActionProvider(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ActionProvider(android::content::Context arg0);
-		
-		// Methods
-		jboolean hasSubMenu() const;
-		jboolean isVisible() const;
-		android::view::View onCreateActionView() const;
-		android::view::View onCreateActionView(JObject arg0) const;
-		jboolean onPerformDefaultAction() const;
-		void onPrepareSubMenu(JObject arg0) const;
-		jboolean overridesItemVisibility() const;
-		void refreshVisibility() const;
-		void setVisibilityListener(JObject arg0) const;
-	};
+		return callMethod<jboolean>(
+			"hasSubMenu",
+			"()Z"
+		);
+	}
+	inline jboolean ActionProvider::isVisible() const
+	{
+		return callMethod<jboolean>(
+			"isVisible",
+			"()Z"
+		);
+	}
+	inline android::view::View ActionProvider::onCreateActionView() const
+	{
+		return callObjectMethod(
+			"onCreateActionView",
+			"()Landroid/view/View;"
+		);
+	}
+	inline android::view::View ActionProvider::onCreateActionView(JObject arg0) const
+	{
+		return callObjectMethod(
+			"onCreateActionView",
+			"(Landroid/view/MenuItem;)Landroid/view/View;",
+			arg0.object()
+		);
+	}
+	inline jboolean ActionProvider::onPerformDefaultAction() const
+	{
+		return callMethod<jboolean>(
+			"onPerformDefaultAction",
+			"()Z"
+		);
+	}
+	inline void ActionProvider::onPrepareSubMenu(JObject arg0) const
+	{
+		callMethod<void>(
+			"onPrepareSubMenu",
+			"(Landroid/view/SubMenu;)V",
+			arg0.object()
+		);
+	}
+	inline jboolean ActionProvider::overridesItemVisibility() const
+	{
+		return callMethod<jboolean>(
+			"overridesItemVisibility",
+			"()Z"
+		);
+	}
+	inline void ActionProvider::refreshVisibility() const
+	{
+		callMethod<void>(
+			"refreshVisibility",
+			"()V"
+		);
+	}
+	inline void ActionProvider::setVisibilityListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"setVisibilityListener",
+			"(Landroid/view/ActionProvider$VisibilityListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

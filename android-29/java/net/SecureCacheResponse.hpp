@@ -1,34 +1,65 @@
 #pragma once
 
-#include "./CacheResponse.hpp"
-
-class JString;
-namespace java::util
-{
-	class Optional;
-}
+#include "../../JString.hpp"
+#include "../util/Optional.def.hpp"
+#include "./SecureCacheResponse.def.hpp"
 
 namespace java::net
 {
-	class SecureCacheResponse : public java::net::CacheResponse
+	// Fields
+	
+	// Constructors
+	inline SecureCacheResponse::SecureCacheResponse()
+		: java::net::CacheResponse(
+			"java.net.SecureCacheResponse",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString SecureCacheResponse::getCipherSuite() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecureCacheResponse(const char *className, const char *sig, Ts...agv) : java::net::CacheResponse(className, sig, std::forward<Ts>(agv)...) {}
-		SecureCacheResponse(QAndroidJniObject obj) : java::net::CacheResponse(obj) {}
-		
-		// Constructors
-		SecureCacheResponse();
-		
-		// Methods
-		JString getCipherSuite() const;
-		JObject getLocalCertificateChain() const;
-		JObject getLocalPrincipal() const;
-		JObject getPeerPrincipal() const;
-		java::util::Optional getSSLSession() const;
-		JObject getServerCertificateChain() const;
-	};
+		return callObjectMethod(
+			"getCipherSuite",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject SecureCacheResponse::getLocalCertificateChain() const
+	{
+		return callObjectMethod(
+			"getLocalCertificateChain",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject SecureCacheResponse::getLocalPrincipal() const
+	{
+		return callObjectMethod(
+			"getLocalPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline JObject SecureCacheResponse::getPeerPrincipal() const
+	{
+		return callObjectMethod(
+			"getPeerPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	inline java::util::Optional SecureCacheResponse::getSSLSession() const
+	{
+		return callObjectMethod(
+			"getSSLSession",
+			"()Ljava/util/Optional;"
+		);
+	}
+	inline JObject SecureCacheResponse::getServerCertificateChain() const
+	{
+		return callObjectMethod(
+			"getServerCertificateChain",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
+#include "./CacheResponse.hpp"
 

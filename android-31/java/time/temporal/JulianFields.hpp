@@ -1,24 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./JulianFields.def.hpp"
 
 namespace java::time::temporal
 {
-	class JulianFields : public JObject
+	// Fields
+	inline JObject JulianFields::JULIAN_DAY()
 	{
-	public:
-		// Fields
-		static JObject JULIAN_DAY();
-		static JObject MODIFIED_JULIAN_DAY();
-		static JObject RATA_DIE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JulianFields(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		JulianFields(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"java.time.temporal.JulianFields",
+			"JULIAN_DAY",
+			"Ljava/time/temporal/TemporalField;"
+		);
+	}
+	inline JObject JulianFields::MODIFIED_JULIAN_DAY()
+	{
+		return getStaticObjectField(
+			"java.time.temporal.JulianFields",
+			"MODIFIED_JULIAN_DAY",
+			"Ljava/time/temporal/TemporalField;"
+		);
+	}
+	inline JObject JulianFields::RATA_DIE()
+	{
+		return getStaticObjectField(
+			"java.time.temporal.JulianFields",
+			"RATA_DIE",
+			"Ljava/time/temporal/TemporalField;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::time::temporal
+
+// Base class headers
 

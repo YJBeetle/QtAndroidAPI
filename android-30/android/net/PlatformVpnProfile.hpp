@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./PlatformVpnProfile.def.hpp"
 
 namespace android::net
 {
-	class PlatformVpnProfile : public JObject
+	// Fields
+	inline jint PlatformVpnProfile::TYPE_IKEV2_IPSEC_PSK()
 	{
-	public:
-		// Fields
-		static jint TYPE_IKEV2_IPSEC_PSK();
-		static jint TYPE_IKEV2_IPSEC_RSA();
-		static jint TYPE_IKEV2_IPSEC_USER_PASS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlatformVpnProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlatformVpnProfile(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getType() const;
-		JString getTypeString() const;
-	};
+		return getStaticField<jint>(
+			"android.net.PlatformVpnProfile",
+			"TYPE_IKEV2_IPSEC_PSK"
+		);
+	}
+	inline jint PlatformVpnProfile::TYPE_IKEV2_IPSEC_RSA()
+	{
+		return getStaticField<jint>(
+			"android.net.PlatformVpnProfile",
+			"TYPE_IKEV2_IPSEC_RSA"
+		);
+	}
+	inline jint PlatformVpnProfile::TYPE_IKEV2_IPSEC_USER_PASS()
+	{
+		return getStaticField<jint>(
+			"android.net.PlatformVpnProfile",
+			"TYPE_IKEV2_IPSEC_USER_PASS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PlatformVpnProfile::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline JString PlatformVpnProfile::getTypeString() const
+	{
+		return callObjectMethod(
+			"getTypeString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

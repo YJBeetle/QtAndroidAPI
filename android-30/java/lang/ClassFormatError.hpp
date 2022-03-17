@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./LinkageError.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ClassFormatError.def.hpp"
 
 namespace java::lang
 {
-	class ClassFormatError : public java::lang::LinkageError
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClassFormatError(const char *className, const char *sig, Ts...agv) : java::lang::LinkageError(className, sig, std::forward<Ts>(agv)...) {}
-		ClassFormatError(QAndroidJniObject obj) : java::lang::LinkageError(obj) {}
-		
-		// Constructors
-		ClassFormatError();
-		ClassFormatError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ClassFormatError::ClassFormatError()
+		: java::lang::LinkageError(
+			"java.lang.ClassFormatError",
+			"()V"
+		) {}
+	inline ClassFormatError::ClassFormatError(JString arg0)
+		: java::lang::LinkageError(
+			"java.lang.ClassFormatError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
 

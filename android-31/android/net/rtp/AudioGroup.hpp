@@ -1,38 +1,93 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::content
-{
-	class Context;
-}
+#include "../../../JArray.hpp"
+#include "../../content/Context.def.hpp"
+#include "./AudioGroup.def.hpp"
 
 namespace android::net::rtp
 {
-	class AudioGroup : public JObject
+	// Fields
+	inline jint AudioGroup::MODE_ECHO_SUPPRESSION()
 	{
-	public:
-		// Fields
-		static jint MODE_ECHO_SUPPRESSION();
-		static jint MODE_MUTED();
-		static jint MODE_NORMAL();
-		static jint MODE_ON_HOLD();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioGroup(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AudioGroup();
-		AudioGroup(android::content::Context arg0);
-		
-		// Methods
-		void clear() const;
-		jint getMode() const;
-		JArray getStreams() const;
-		void sendDtmf(jint arg0) const;
-		void setMode(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.net.rtp.AudioGroup",
+			"MODE_ECHO_SUPPRESSION"
+		);
+	}
+	inline jint AudioGroup::MODE_MUTED()
+	{
+		return getStaticField<jint>(
+			"android.net.rtp.AudioGroup",
+			"MODE_MUTED"
+		);
+	}
+	inline jint AudioGroup::MODE_NORMAL()
+	{
+		return getStaticField<jint>(
+			"android.net.rtp.AudioGroup",
+			"MODE_NORMAL"
+		);
+	}
+	inline jint AudioGroup::MODE_ON_HOLD()
+	{
+		return getStaticField<jint>(
+			"android.net.rtp.AudioGroup",
+			"MODE_ON_HOLD"
+		);
+	}
+	
+	// Constructors
+	inline AudioGroup::AudioGroup()
+		: JObject(
+			"android.net.rtp.AudioGroup",
+			"()V"
+		) {}
+	inline AudioGroup::AudioGroup(android::content::Context arg0)
+		: JObject(
+			"android.net.rtp.AudioGroup",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline void AudioGroup::clear() const
+	{
+		callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	inline jint AudioGroup::getMode() const
+	{
+		return callMethod<jint>(
+			"getMode",
+			"()I"
+		);
+	}
+	inline JArray AudioGroup::getStreams() const
+	{
+		return callObjectMethod(
+			"getStreams",
+			"()[Landroid/net/rtp/AudioStream;"
+		);
+	}
+	inline void AudioGroup::sendDtmf(jint arg0) const
+	{
+		callMethod<void>(
+			"sendDtmf",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void AudioGroup::setMode(jint arg0) const
+	{
+		callMethod<void>(
+			"setMode",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::net::rtp
+
+// Base class headers
 

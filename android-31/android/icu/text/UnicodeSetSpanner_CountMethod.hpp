@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./UnicodeSetSpanner_CountMethod.def.hpp"
 
 namespace android::icu::text
 {
-	class UnicodeSetSpanner_CountMethod : public java::lang::Enum
+	// Fields
+	inline android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::MIN_ELEMENTS()
 	{
-	public:
-		// Fields
-		static android::icu::text::UnicodeSetSpanner_CountMethod MIN_ELEMENTS();
-		static android::icu::text::UnicodeSetSpanner_CountMethod WHOLE_SPAN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnicodeSetSpanner_CountMethod(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		UnicodeSetSpanner_CountMethod(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::UnicodeSetSpanner_CountMethod valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.UnicodeSetSpanner$CountMethod",
+			"MIN_ELEMENTS",
+			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
+		);
+	}
+	inline android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::WHOLE_SPAN()
+	{
+		return getStaticObjectField(
+			"android.icu.text.UnicodeSetSpanner$CountMethod",
+			"WHOLE_SPAN",
+			"Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::UnicodeSetSpanner_CountMethod UnicodeSetSpanner_CountMethod::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.UnicodeSetSpanner$CountMethod",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$CountMethod;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray UnicodeSetSpanner_CountMethod::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.UnicodeSetSpanner$CountMethod",
+			"values",
+			"()[Landroid/icu/text/UnicodeSetSpanner$CountMethod;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

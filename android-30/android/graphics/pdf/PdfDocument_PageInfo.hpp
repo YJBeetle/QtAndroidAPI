@@ -1,30 +1,44 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Rect;
-}
+#include "../Rect.def.hpp"
+#include "./PdfDocument_PageInfo.def.hpp"
 
 namespace android::graphics::pdf
 {
-	class PdfDocument_PageInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Rect PdfDocument_PageInfo::getContentRect() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PdfDocument_PageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PdfDocument_PageInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::Rect getContentRect() const;
-		jint getPageHeight() const;
-		jint getPageNumber() const;
-		jint getPageWidth() const;
-	};
+		return callObjectMethod(
+			"getContentRect",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	inline jint PdfDocument_PageInfo::getPageHeight() const
+	{
+		return callMethod<jint>(
+			"getPageHeight",
+			"()I"
+		);
+	}
+	inline jint PdfDocument_PageInfo::getPageNumber() const
+	{
+		return callMethod<jint>(
+			"getPageNumber",
+			"()I"
+		);
+	}
+	inline jint PdfDocument_PageInfo::getPageWidth() const
+	{
+		return callMethod<jint>(
+			"getPageWidth",
+			"()I"
+		);
+	}
 } // namespace android::graphics::pdf
+
+// Base class headers
 

@@ -1,36 +1,62 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./SaveRequest.def.hpp"
 
 namespace android::service::autofill
 {
-	class SaveRequest : public JObject
+	// Fields
+	inline JObject SaveRequest::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SaveRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SaveRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		android::os::Bundle getClientState() const;
-		JObject getDatasetIds() const;
-		JObject getFillContexts() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.autofill.SaveRequest",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SaveRequest::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::Bundle SaveRequest::getClientState() const
+	{
+		return callObjectMethod(
+			"getClientState",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline JObject SaveRequest::getDatasetIds() const
+	{
+		return callObjectMethod(
+			"getDatasetIds",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject SaveRequest::getFillContexts() const
+	{
+		return callObjectMethod(
+			"getFillContexts",
+			"()Ljava/util/List;"
+		);
+	}
+	inline void SaveRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

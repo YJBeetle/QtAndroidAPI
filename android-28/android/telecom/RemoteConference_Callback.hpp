@@ -1,48 +1,105 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::telecom
-{
-	class DisconnectCause;
-}
-namespace android::telecom
-{
-	class RemoteConference;
-}
-namespace android::telecom
-{
-	class RemoteConnection;
-}
+#include "../os/Bundle.def.hpp"
+#include "./DisconnectCause.def.hpp"
+#include "./RemoteConference.def.hpp"
+#include "./RemoteConnection.def.hpp"
+#include "./RemoteConference_Callback.def.hpp"
 
 namespace android::telecom
 {
-	class RemoteConference_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline RemoteConference_Callback::RemoteConference_Callback()
+		: JObject(
+			"android.telecom.RemoteConference$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void RemoteConference_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, JObject arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RemoteConference_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RemoteConference_Callback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		RemoteConference_Callback();
-		
-		// Methods
-		void onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, JObject arg1) const;
-		void onConnectionAdded(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1) const;
-		void onConnectionCapabilitiesChanged(android::telecom::RemoteConference arg0, jint arg1) const;
-		void onConnectionPropertiesChanged(android::telecom::RemoteConference arg0, jint arg1) const;
-		void onConnectionRemoved(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1) const;
-		void onDestroyed(android::telecom::RemoteConference arg0) const;
-		void onDisconnected(android::telecom::RemoteConference arg0, android::telecom::DisconnectCause arg1) const;
-		void onExtrasChanged(android::telecom::RemoteConference arg0, android::os::Bundle arg1) const;
-		void onStateChanged(android::telecom::RemoteConference arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"onConferenceableConnectionsChanged",
+			"(Landroid/telecom/RemoteConference;Ljava/util/List;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RemoteConference_Callback::onConnectionAdded(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1) const
+	{
+		callMethod<void>(
+			"onConnectionAdded",
+			"(Landroid/telecom/RemoteConference;Landroid/telecom/RemoteConnection;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RemoteConference_Callback::onConnectionCapabilitiesChanged(android::telecom::RemoteConference arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onConnectionCapabilitiesChanged",
+			"(Landroid/telecom/RemoteConference;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void RemoteConference_Callback::onConnectionPropertiesChanged(android::telecom::RemoteConference arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onConnectionPropertiesChanged",
+			"(Landroid/telecom/RemoteConference;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void RemoteConference_Callback::onConnectionRemoved(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1) const
+	{
+		callMethod<void>(
+			"onConnectionRemoved",
+			"(Landroid/telecom/RemoteConference;Landroid/telecom/RemoteConnection;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RemoteConference_Callback::onDestroyed(android::telecom::RemoteConference arg0) const
+	{
+		callMethod<void>(
+			"onDestroyed",
+			"(Landroid/telecom/RemoteConference;)V",
+			arg0.object()
+		);
+	}
+	inline void RemoteConference_Callback::onDisconnected(android::telecom::RemoteConference arg0, android::telecom::DisconnectCause arg1) const
+	{
+		callMethod<void>(
+			"onDisconnected",
+			"(Landroid/telecom/RemoteConference;Landroid/telecom/DisconnectCause;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RemoteConference_Callback::onExtrasChanged(android::telecom::RemoteConference arg0, android::os::Bundle arg1) const
+	{
+		callMethod<void>(
+			"onExtrasChanged",
+			"(Landroid/telecom/RemoteConference;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void RemoteConference_Callback::onStateChanged(android::telecom::RemoteConference arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"onStateChanged",
+			"(Landroid/telecom/RemoteConference;II)V",
+			arg0.object(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

@@ -1,47 +1,109 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JIntArray;
-namespace android::security::identity
-{
-	class ResultData;
-}
-namespace java::security
-{
-	class KeyPair;
-}
-namespace java::security::cert
-{
-	class X509Certificate;
-}
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "./ResultData.def.hpp"
+#include "../../../java/security/KeyPair.def.hpp"
+#include "../../../java/security/cert/X509Certificate.def.hpp"
+#include "./IdentityCredential.def.hpp"
 
 namespace android::security::identity
 {
-	class IdentityCredential : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::security::KeyPair IdentityCredential::createEphemeralKeyPair() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IdentityCredential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredential(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		java::security::KeyPair createEphemeralKeyPair() const;
-		JByteArray decryptMessageFromReader(JByteArray arg0) const;
-		JByteArray encryptMessageToReader(JByteArray arg0) const;
-		JObject getAuthKeysNeedingCertification() const;
-		JIntArray getAuthenticationDataUsageCount() const;
-		JObject getCredentialKeyCertificateChain() const;
-		android::security::identity::ResultData getEntries(JByteArray arg0, JObject arg1, JByteArray arg2, JByteArray arg3) const;
-		void setAllowUsingExhaustedKeys(jboolean arg0) const;
-		void setAvailableAuthenticationKeys(jint arg0, jint arg1) const;
-		void setReaderEphemeralPublicKey(JObject arg0) const;
-		void storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, JByteArray arg1) const;
-	};
+		return callObjectMethod(
+			"createEphemeralKeyPair",
+			"()Ljava/security/KeyPair;"
+		);
+	}
+	inline JByteArray IdentityCredential::decryptMessageFromReader(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"decryptMessageFromReader",
+			"([B)[B",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline JByteArray IdentityCredential::encryptMessageToReader(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"encryptMessageToReader",
+			"([B)[B",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline JObject IdentityCredential::getAuthKeysNeedingCertification() const
+	{
+		return callObjectMethod(
+			"getAuthKeysNeedingCertification",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline JIntArray IdentityCredential::getAuthenticationDataUsageCount() const
+	{
+		return callObjectMethod(
+			"getAuthenticationDataUsageCount",
+			"()[I"
+		);
+	}
+	inline JObject IdentityCredential::getCredentialKeyCertificateChain() const
+	{
+		return callObjectMethod(
+			"getCredentialKeyCertificateChain",
+			"()Ljava/util/Collection;"
+		);
+	}
+	inline android::security::identity::ResultData IdentityCredential::getEntries(JByteArray arg0, JObject arg1, JByteArray arg2, JByteArray arg3) const
+	{
+		return callObjectMethod(
+			"getEntries",
+			"([BLjava/util/Map;[B[B)Landroid/security/identity/ResultData;",
+			arg0.object<jbyteArray>(),
+			arg1.object(),
+			arg2.object<jbyteArray>(),
+			arg3.object<jbyteArray>()
+		);
+	}
+	inline void IdentityCredential::setAllowUsingExhaustedKeys(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAllowUsingExhaustedKeys",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void IdentityCredential::setAvailableAuthenticationKeys(jint arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"setAvailableAuthenticationKeys",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void IdentityCredential::setReaderEphemeralPublicKey(JObject arg0) const
+	{
+		callMethod<void>(
+			"setReaderEphemeralPublicKey",
+			"(Ljava/security/PublicKey;)V",
+			arg0.object()
+		);
+	}
+	inline void IdentityCredential::storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, JByteArray arg1) const
+	{
+		callMethod<void>(
+			"storeStaticAuthenticationData",
+			"(Ljava/security/cert/X509Certificate;[B)V",
+			arg0.object(),
+			arg1.object<jbyteArray>()
+		);
+	}
 } // namespace android::security::identity
+
+// Base class headers
 

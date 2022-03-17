@@ -1,55 +1,95 @@
 #pragma once
 
+#include "../../JCharArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "./PrintWriter.def.hpp"
+#include "./Reader.def.hpp"
+#include "./Writer.def.hpp"
 #include "../../JObject.hpp"
-
-class JCharArray;
-class JObjectArray;
-namespace java::io
-{
-	class PrintWriter;
-}
-namespace java::io
-{
-	class Reader;
-}
-namespace java::io
-{
-	class Writer;
-}
-class JObject;
-class JString;
-namespace java::nio::charset
-{
-	class Charset;
-}
-namespace java::util
-{
-	class Formatter;
-}
+#include "../../JString.hpp"
+#include "../nio/charset/Charset.def.hpp"
+#include "../util/Formatter.def.hpp"
+#include "./Console.def.hpp"
 
 namespace java::io
 {
-	class Console : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void Console::flush() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Console(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Console(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void flush() const;
-		java::io::Console format(JString arg0, JObjectArray arg1) const;
-		java::io::Console printf(JString arg0, JObjectArray arg1) const;
-		JString readLine() const;
-		JString readLine(JString arg0, JObjectArray arg1) const;
-		JCharArray readPassword() const;
-		JCharArray readPassword(JString arg0, JObjectArray arg1) const;
-		java::io::Reader reader() const;
-		java::io::PrintWriter writer() const;
-	};
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline java::io::Console Console::format(JString arg0, JObjectArray arg1) const
+	{
+		return callObjectMethod(
+			"format",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
+	}
+	inline java::io::Console Console::printf(JString arg0, JObjectArray arg1) const
+	{
+		return callObjectMethod(
+			"printf",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
+	}
+	inline JString Console::readLine() const
+	{
+		return callObjectMethod(
+			"readLine",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString Console::readLine(JString arg0, JObjectArray arg1) const
+	{
+		return callObjectMethod(
+			"readLine",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
+	}
+	inline JCharArray Console::readPassword() const
+	{
+		return callObjectMethod(
+			"readPassword",
+			"()[C"
+		);
+	}
+	inline JCharArray Console::readPassword(JString arg0, JObjectArray arg1) const
+	{
+		return callObjectMethod(
+			"readPassword",
+			"(Ljava/lang/String;[Ljava/lang/Object;)[C",
+			arg0.object<jstring>(),
+			arg1.object<jobjectArray>()
+		);
+	}
+	inline java::io::Reader Console::reader() const
+	{
+		return callObjectMethod(
+			"reader",
+			"()Ljava/io/Reader;"
+		);
+	}
+	inline java::io::PrintWriter Console::writer() const
+	{
+		return callObjectMethod(
+			"writer",
+			"()Ljava/io/PrintWriter;"
+		);
+	}
 } // namespace java::io
+
+// Base class headers
 

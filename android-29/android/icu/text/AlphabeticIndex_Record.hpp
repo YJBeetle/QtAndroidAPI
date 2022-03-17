@@ -1,28 +1,39 @@
 #pragma once
 
+#include "../../../JString.hpp"
 #include "../../../JObject.hpp"
-
-class JString;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./AlphabeticIndex_Record.def.hpp"
 
 namespace android::icu::text
 {
-	class AlphabeticIndex_Record : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject AlphabeticIndex_Record::getData() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlphabeticIndex_Record(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_Record(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getData() const;
-		JString getName() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getData",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JString AlphabeticIndex_Record::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString AlphabeticIndex_Record::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

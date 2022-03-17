@@ -1,34 +1,75 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssStatus.def.hpp"
+#include "./GpsStatus.def.hpp"
 
 namespace android::location
 {
-	class GnssStatus;
-}
-
-namespace android::location
-{
-	class GpsStatus : public JObject
+	// Fields
+	inline jint GpsStatus::GPS_EVENT_FIRST_FIX()
 	{
-	public:
-		// Fields
-		static jint GPS_EVENT_FIRST_FIX();
-		static jint GPS_EVENT_SATELLITE_STATUS();
-		static jint GPS_EVENT_STARTED();
-		static jint GPS_EVENT_STOPPED();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GpsStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GpsStatus(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::location::GpsStatus create(android::location::GnssStatus arg0, jint arg1);
-		jint getMaxSatellites() const;
-		JObject getSatellites() const;
-		jint getTimeToFirstFix() const;
-	};
+		return getStaticField<jint>(
+			"android.location.GpsStatus",
+			"GPS_EVENT_FIRST_FIX"
+		);
+	}
+	inline jint GpsStatus::GPS_EVENT_SATELLITE_STATUS()
+	{
+		return getStaticField<jint>(
+			"android.location.GpsStatus",
+			"GPS_EVENT_SATELLITE_STATUS"
+		);
+	}
+	inline jint GpsStatus::GPS_EVENT_STARTED()
+	{
+		return getStaticField<jint>(
+			"android.location.GpsStatus",
+			"GPS_EVENT_STARTED"
+		);
+	}
+	inline jint GpsStatus::GPS_EVENT_STOPPED()
+	{
+		return getStaticField<jint>(
+			"android.location.GpsStatus",
+			"GPS_EVENT_STOPPED"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::location::GpsStatus GpsStatus::create(android::location::GnssStatus arg0, jint arg1)
+	{
+		return callStaticObjectMethod(
+			"android.location.GpsStatus",
+			"create",
+			"(Landroid/location/GnssStatus;I)Landroid/location/GpsStatus;",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline jint GpsStatus::getMaxSatellites() const
+	{
+		return callMethod<jint>(
+			"getMaxSatellites",
+			"()I"
+		);
+	}
+	inline JObject GpsStatus::getSatellites() const
+	{
+		return callObjectMethod(
+			"getSatellites",
+			"()Ljava/lang/Iterable;"
+		);
+	}
+	inline jint GpsStatus::getTimeToFirstFix() const
+	{
+		return callMethod<jint>(
+			"getTimeToFirstFix",
+			"()I"
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

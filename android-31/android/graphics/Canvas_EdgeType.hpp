@@ -1,28 +1,51 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Canvas_EdgeType.def.hpp"
 
 namespace android::graphics
 {
-	class Canvas_EdgeType : public java::lang::Enum
+	// Fields
+	inline android::graphics::Canvas_EdgeType Canvas_EdgeType::AA()
 	{
-	public:
-		// Fields
-		static android::graphics::Canvas_EdgeType AA();
-		static android::graphics::Canvas_EdgeType BW();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Canvas_EdgeType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Canvas_EdgeType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Canvas_EdgeType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Canvas$EdgeType",
+			"AA",
+			"Landroid/graphics/Canvas$EdgeType;"
+		);
+	}
+	inline android::graphics::Canvas_EdgeType Canvas_EdgeType::BW()
+	{
+		return getStaticObjectField(
+			"android.graphics.Canvas$EdgeType",
+			"BW",
+			"Landroid/graphics/Canvas$EdgeType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Canvas_EdgeType Canvas_EdgeType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Canvas$EdgeType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Canvas$EdgeType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Canvas_EdgeType::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Canvas$EdgeType",
+			"values",
+			"()[Landroid/graphics/Canvas$EdgeType;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

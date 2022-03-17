@@ -1,31 +1,25 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmInitData_SchemeInitData.def.hpp"
+#include "../../java/util/UUID.def.hpp"
+#include "./DrmInitData.def.hpp"
 
 namespace android::media
 {
-	class DrmInitData_SchemeInitData;
-}
-namespace java::util
-{
-	class UUID;
-}
-
-namespace android::media
-{
-	class DrmInitData : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::DrmInitData_SchemeInitData DrmInitData::get(java::util::UUID arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmInitData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmInitData(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::media::DrmInitData_SchemeInitData get(java::util::UUID arg0) const;
-	};
+		return callObjectMethod(
+			"get",
+			"(Ljava/util/UUID;)Landroid/media/DrmInitData$SchemeInitData;",
+			arg0.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

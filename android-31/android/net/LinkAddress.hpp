@@ -1,42 +1,93 @@
 #pragma once
 
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
+#include "../../JString.hpp"
+#include "../../java/net/InetAddress.def.hpp"
+#include "./LinkAddress.def.hpp"
 
 namespace android::net
 {
-	class LinkAddress : public JObject
+	// Fields
+	inline JObject LinkAddress::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LinkAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LinkAddress(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		java::net::InetAddress getAddress() const;
-		jint getFlags() const;
-		jint getPrefixLength() const;
-		jint getScope() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.LinkAddress",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint LinkAddress::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean LinkAddress::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::net::InetAddress LinkAddress::getAddress() const
+	{
+		return callObjectMethod(
+			"getAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	inline jint LinkAddress::getFlags() const
+	{
+		return callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
+	inline jint LinkAddress::getPrefixLength() const
+	{
+		return callMethod<jint>(
+			"getPrefixLength",
+			"()I"
+		);
+	}
+	inline jint LinkAddress::getScope() const
+	{
+		return callMethod<jint>(
+			"getScope",
+			"()I"
+		);
+	}
+	inline jint LinkAddress::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString LinkAddress::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void LinkAddress::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net
+
+// Base class headers
 

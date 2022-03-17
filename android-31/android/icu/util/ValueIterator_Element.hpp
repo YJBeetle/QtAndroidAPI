@@ -1,26 +1,34 @@
 #pragma once
 
 #include "../../../JObject.hpp"
-
-class JObject;
+#include "./ValueIterator_Element.def.hpp"
 
 namespace android::icu::util
 {
-	class ValueIterator_Element : public JObject
+	// Fields
+	inline jint ValueIterator_Element::integer()
 	{
-	public:
-		// Fields
-		jint integer();
-		JObject value();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ValueIterator_Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ValueIterator_Element(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ValueIterator_Element();
-		
-		// Methods
-	};
+		return getField<jint>(
+			"integer"
+		);
+	}
+	inline JObject ValueIterator_Element::value()
+	{
+		return getObjectField(
+			"value",
+			"Ljava/lang/Object;"
+		);
+	}
+	
+	// Constructors
+	inline ValueIterator_Element::ValueIterator_Element()
+		: JObject(
+			"android.icu.util.ValueIterator$Element",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::icu::util
+
+// Base class headers
 

@@ -1,35 +1,66 @@
 #pragma once
 
-#include "./MetaKeyKeyListener.hpp"
-
-namespace android::view
-{
-	class KeyEvent;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../../view/KeyEvent.def.hpp"
+#include "../../view/View.def.hpp"
+#include "./BaseKeyListener.def.hpp"
 
 namespace android::text::method
 {
-	class BaseKeyListener : public android::text::method::MetaKeyKeyListener
+	// Fields
+	
+	// Constructors
+	inline BaseKeyListener::BaseKeyListener()
+		: android::text::method::MetaKeyKeyListener(
+			"android.text.method.BaseKeyListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline jboolean BaseKeyListener::backspace(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BaseKeyListener(const char *className, const char *sig, Ts...agv) : android::text::method::MetaKeyKeyListener(className, sig, std::forward<Ts>(agv)...) {}
-		BaseKeyListener(QAndroidJniObject obj) : android::text::method::MetaKeyKeyListener(obj) {}
-		
-		// Constructors
-		BaseKeyListener();
-		
-		// Methods
-		jboolean backspace(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
-		jboolean forwardDelete(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
-		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const;
-	};
+		return callMethod<jboolean>(
+			"backspace",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
+	inline jboolean BaseKeyListener::forwardDelete(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
+	{
+		return callMethod<jboolean>(
+			"forwardDelete",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
+	inline jboolean BaseKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
+	{
+		return callMethod<jboolean>(
+			"onKeyDown",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2,
+			arg3.object()
+		);
+	}
+	inline jboolean BaseKeyListener::onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2) const
+	{
+		return callMethod<jboolean>(
+			"onKeyOther",
+			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::text::method
+
+// Base class headers
+#include "./MetaKeyKeyListener.hpp"
 

@@ -1,29 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
+#include "../../JArray.hpp"
+#include "./FontsContract_FontFamilyResult.def.hpp"
 
 namespace android::provider
 {
-	class FontsContract_FontFamilyResult : public JObject
+	// Fields
+	inline jint FontsContract_FontFamilyResult::STATUS_OK()
 	{
-	public:
-		// Fields
-		static jint STATUS_OK();
-		static jint STATUS_REJECTED();
-		static jint STATUS_UNEXPECTED_DATA_PROVIDED();
-		static jint STATUS_WRONG_CERTIFICATES();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FontsContract_FontFamilyResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontsContract_FontFamilyResult(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JArray getFonts() const;
-		jint getStatusCode() const;
-	};
+		return getStaticField<jint>(
+			"android.provider.FontsContract$FontFamilyResult",
+			"STATUS_OK"
+		);
+	}
+	inline jint FontsContract_FontFamilyResult::STATUS_REJECTED()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$FontFamilyResult",
+			"STATUS_REJECTED"
+		);
+	}
+	inline jint FontsContract_FontFamilyResult::STATUS_UNEXPECTED_DATA_PROVIDED()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$FontFamilyResult",
+			"STATUS_UNEXPECTED_DATA_PROVIDED"
+		);
+	}
+	inline jint FontsContract_FontFamilyResult::STATUS_WRONG_CERTIFICATES()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$FontFamilyResult",
+			"STATUS_WRONG_CERTIFICATES"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JArray FontsContract_FontFamilyResult::getFonts() const
+	{
+		return callObjectMethod(
+			"getFonts",
+			"()[Landroid/provider/FontsContract$FontInfo;"
+		);
+	}
+	inline jint FontsContract_FontFamilyResult::getStatusCode() const
+	{
+		return callMethod<jint>(
+			"getStatusCode",
+			"()I"
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

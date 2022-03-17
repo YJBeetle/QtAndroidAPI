@@ -1,37 +1,63 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::app::assist
-{
-	class AssistStructure;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../app/assist/AssistStructure.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./FillContext.def.hpp"
 
 namespace android::service::autofill
 {
-	class FillContext : public JObject
+	// Fields
+	inline JObject FillContext::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FillContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FillContext(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getRequestId() const;
-		android::app::assist::AssistStructure getStructure() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.autofill.FillContext",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint FillContext::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint FillContext::getRequestId() const
+	{
+		return callMethod<jint>(
+			"getRequestId",
+			"()I"
+		);
+	}
+	inline android::app::assist::AssistStructure FillContext::getStructure() const
+	{
+		return callObjectMethod(
+			"getStructure",
+			"()Landroid/app/assist/AssistStructure;"
+		);
+	}
+	inline JString FillContext::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void FillContext::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::autofill
+
+// Base class headers
 

@@ -1,22 +1,20 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ColorFilter.def.hpp"
 
 namespace android::graphics
 {
-	class ColorFilter : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ColorFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ColorFilter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ColorFilter();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ColorFilter::ColorFilter()
+		: JObject(
+			"android.graphics.ColorFilter",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
 

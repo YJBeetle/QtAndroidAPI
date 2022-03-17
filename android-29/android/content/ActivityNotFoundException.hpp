@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ActivityNotFoundException.def.hpp"
 
 namespace android::content
 {
-	class ActivityNotFoundException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityNotFoundException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityNotFoundException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		ActivityNotFoundException();
-		ActivityNotFoundException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ActivityNotFoundException::ActivityNotFoundException()
+		: java::lang::RuntimeException(
+			"android.content.ActivityNotFoundException",
+			"()V"
+		) {}
+	inline ActivityNotFoundException::ActivityNotFoundException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.content.ActivityNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::content
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

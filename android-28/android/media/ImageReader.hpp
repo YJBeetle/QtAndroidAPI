@@ -1,45 +1,102 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Image.def.hpp"
+#include "../os/Handler.def.hpp"
+#include "../view/Surface.def.hpp"
+#include "./ImageReader.def.hpp"
 
 namespace android::media
 {
-	class Image;
-}
-namespace android::os
-{
-	class Handler;
-}
-namespace android::view
-{
-	class Surface;
-}
-
-namespace android::media
-{
-	class ImageReader : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::ImageReader ImageReader::newInstance(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ImageReader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ImageReader(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::media::ImageReader newInstance(jint arg0, jint arg1, jint arg2, jint arg3);
-		android::media::Image acquireLatestImage() const;
-		android::media::Image acquireNextImage() const;
-		void close() const;
-		void discardFreeBuffers() const;
-		jint getHeight() const;
-		jint getImageFormat() const;
-		jint getMaxImages() const;
-		android::view::Surface getSurface() const;
-		jint getWidth() const;
-		void setOnImageAvailableListener(JObject arg0, android::os::Handler arg1) const;
-	};
+		return callStaticObjectMethod(
+			"android.media.ImageReader",
+			"newInstance",
+			"(IIII)Landroid/media/ImageReader;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline android::media::Image ImageReader::acquireLatestImage() const
+	{
+		return callObjectMethod(
+			"acquireLatestImage",
+			"()Landroid/media/Image;"
+		);
+	}
+	inline android::media::Image ImageReader::acquireNextImage() const
+	{
+		return callObjectMethod(
+			"acquireNextImage",
+			"()Landroid/media/Image;"
+		);
+	}
+	inline void ImageReader::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void ImageReader::discardFreeBuffers() const
+	{
+		callMethod<void>(
+			"discardFreeBuffers",
+			"()V"
+		);
+	}
+	inline jint ImageReader::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint ImageReader::getImageFormat() const
+	{
+		return callMethod<jint>(
+			"getImageFormat",
+			"()I"
+		);
+	}
+	inline jint ImageReader::getMaxImages() const
+	{
+		return callMethod<jint>(
+			"getMaxImages",
+			"()I"
+		);
+	}
+	inline android::view::Surface ImageReader::getSurface() const
+	{
+		return callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
+	inline jint ImageReader::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline void ImageReader::setOnImageAvailableListener(JObject arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"setOnImageAvailableListener",
+			"(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

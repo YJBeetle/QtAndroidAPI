@@ -1,32 +1,76 @@
 #pragma once
 
-#include "./SQLNonTransientException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./SQLSyntaxErrorException.def.hpp"
 
 namespace java::sql
 {
-	class SQLSyntaxErrorException : public java::sql::SQLNonTransientException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SQLSyntaxErrorException(const char *className, const char *sig, Ts...agv) : java::sql::SQLNonTransientException(className, sig, std::forward<Ts>(agv)...) {}
-		SQLSyntaxErrorException(QAndroidJniObject obj) : java::sql::SQLNonTransientException(obj) {}
-		
-		// Constructors
-		SQLSyntaxErrorException();
-		SQLSyntaxErrorException(JString arg0);
-		SQLSyntaxErrorException(JThrowable arg0);
-		SQLSyntaxErrorException(JString arg0, JString arg1);
-		SQLSyntaxErrorException(JString arg0, JThrowable arg1);
-		SQLSyntaxErrorException(JString arg0, JString arg1, jint arg2);
-		SQLSyntaxErrorException(JString arg0, JString arg1, JThrowable arg2);
-		SQLSyntaxErrorException(JString arg0, JString arg1, jint arg2, JThrowable arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException()
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"()V"
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JString arg0)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JThrowable arg0)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JString arg0, JString arg1)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JString arg0, JThrowable arg1)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JString arg0, JString arg1, jint arg2)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JString arg0, JString arg1, JThrowable arg2)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
+		) {}
+	inline SQLSyntaxErrorException::SQLSyntaxErrorException(JString arg0, JString arg1, jint arg2, JThrowable arg3)
+		: java::sql::SQLNonTransientException(
+			"java.sql.SQLSyntaxErrorException",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::sql
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./SQLException.hpp"
+#include "./SQLNonTransientException.hpp"
 

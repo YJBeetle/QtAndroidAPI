@@ -1,32 +1,61 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
+#include "../os/Parcel.def.hpp"
+#include "./VideoProfile_CameraCapabilities.def.hpp"
 
 namespace android::telecom
 {
-	class VideoProfile_CameraCapabilities : public JObject
+	// Fields
+	inline JObject VideoProfile_CameraCapabilities::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VideoProfile_CameraCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VideoProfile_CameraCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		VideoProfile_CameraCapabilities(jint arg0, jint arg1);
-		
-		// Methods
-		jint describeContents() const;
-		jint getHeight() const;
-		jint getWidth() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telecom.VideoProfile$CameraCapabilities",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline VideoProfile_CameraCapabilities::VideoProfile_CameraCapabilities(jint arg0, jint arg1)
+		: JObject(
+			"android.telecom.VideoProfile$CameraCapabilities",
+			"(II)V",
+			arg0,
+			arg1
+		) {}
+	
+	// Methods
+	inline jint VideoProfile_CameraCapabilities::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint VideoProfile_CameraCapabilities::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline jint VideoProfile_CameraCapabilities::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline void VideoProfile_CameraCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telecom
+
+// Base class headers
 

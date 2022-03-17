@@ -1,27 +1,53 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Byte4.def.hpp"
 
 namespace android::renderscript
 {
-	class Byte4 : public JObject
+	// Fields
+	inline jbyte Byte4::w()
 	{
-	public:
-		// Fields
-		jbyte w();
-		jbyte x();
-		jbyte y();
-		jbyte z();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Byte4(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Byte4(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Byte4();
-		Byte4(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);
-		
-		// Methods
-	};
+		return getField<jbyte>(
+			"w"
+		);
+	}
+	inline jbyte Byte4::x()
+	{
+		return getField<jbyte>(
+			"x"
+		);
+	}
+	inline jbyte Byte4::y()
+	{
+		return getField<jbyte>(
+			"y"
+		);
+	}
+	inline jbyte Byte4::z()
+	{
+		return getField<jbyte>(
+			"z"
+		);
+	}
+	
+	// Constructors
+	inline Byte4::Byte4()
+		: JObject(
+			"android.renderscript.Byte4",
+			"()V"
+		) {}
+	inline Byte4::Byte4(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3)
+		: JObject(
+			"android.renderscript.Byte4",
+			"(BBBB)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
 } // namespace android::renderscript
+
+// Base class headers
 

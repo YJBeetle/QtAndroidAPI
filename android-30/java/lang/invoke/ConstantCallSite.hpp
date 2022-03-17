@@ -1,34 +1,46 @@
 #pragma once
 
-#include "./CallSite.hpp"
+#include "./MethodHandle.def.hpp"
+#include "./MethodType.def.hpp"
+#include "./ConstantCallSite.def.hpp"
 
 namespace java::lang::invoke
 {
-	class MethodHandle;
-}
-namespace java::lang::invoke
-{
-	class MethodType;
-}
-
-namespace java::lang::invoke
-{
-	class ConstantCallSite : public java::lang::invoke::CallSite
+	// Fields
+	
+	// Constructors
+	inline ConstantCallSite::ConstantCallSite(java::lang::invoke::MethodHandle arg0)
+		: java::lang::invoke::CallSite(
+			"java.lang.invoke.ConstantCallSite",
+			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline java::lang::invoke::MethodHandle ConstantCallSite::dynamicInvoker() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConstantCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
-		ConstantCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
-		
-		// Constructors
-		ConstantCallSite(java::lang::invoke::MethodHandle arg0);
-		
-		// Methods
-		java::lang::invoke::MethodHandle dynamicInvoker() const;
-		java::lang::invoke::MethodHandle getTarget() const;
-		void setTarget(java::lang::invoke::MethodHandle arg0) const;
-	};
+		return callObjectMethod(
+			"dynamicInvoker",
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
+	}
+	inline java::lang::invoke::MethodHandle ConstantCallSite::getTarget() const
+	{
+		return callObjectMethod(
+			"getTarget",
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
+	}
+	inline void ConstantCallSite::setTarget(java::lang::invoke::MethodHandle arg0) const
+	{
+		callMethod<void>(
+			"setTarget",
+			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::lang::invoke
+
+// Base class headers
+#include "./CallSite.hpp"
 

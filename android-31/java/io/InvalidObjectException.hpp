@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./ObjectStreamException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InvalidObjectException.def.hpp"
 
 namespace java::io
 {
-	class InvalidObjectException : public java::io::ObjectStreamException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InvalidObjectException(const char *className, const char *sig, Ts...agv) : java::io::ObjectStreamException(className, sig, std::forward<Ts>(agv)...) {}
-		InvalidObjectException(QAndroidJniObject obj) : java::io::ObjectStreamException(obj) {}
-		
-		// Constructors
-		InvalidObjectException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InvalidObjectException::InvalidObjectException(JString arg0)
+		: java::io::ObjectStreamException(
+			"java.io.InvalidObjectException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::io
+
+// Base class headers
+#include "../lang/Exception.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 

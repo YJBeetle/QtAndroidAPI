@@ -1,30 +1,43 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Reference.def.hpp"
+#include "./ReferenceQueue.def.hpp"
 
 namespace java::lang::ref
 {
-	class Reference;
-}
-
-namespace java::lang::ref
-{
-	class ReferenceQueue : public JObject
+	// Fields
+	
+	// Constructors
+	inline ReferenceQueue::ReferenceQueue()
+		: JObject(
+			"java.lang.ref.ReferenceQueue",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::lang::ref::Reference ReferenceQueue::poll() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ReferenceQueue(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ReferenceQueue(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ReferenceQueue();
-		
-		// Methods
-		java::lang::ref::Reference poll() const;
-		java::lang::ref::Reference remove() const;
-		java::lang::ref::Reference remove(jlong arg0) const;
-	};
+		return callObjectMethod(
+			"poll",
+			"()Ljava/lang/ref/Reference;"
+		);
+	}
+	inline java::lang::ref::Reference ReferenceQueue::remove() const
+	{
+		return callObjectMethod(
+			"remove",
+			"()Ljava/lang/ref/Reference;"
+		);
+	}
+	inline java::lang::ref::Reference ReferenceQueue::remove(jlong arg0) const
+	{
+		return callObjectMethod(
+			"remove",
+			"(J)Ljava/lang/ref/Reference;",
+			arg0
+		);
+	}
 } // namespace java::lang::ref
+
+// Base class headers
 

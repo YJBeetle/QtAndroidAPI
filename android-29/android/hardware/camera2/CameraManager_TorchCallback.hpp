@@ -1,26 +1,38 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./CameraManager_TorchCallback.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraManager_TorchCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline CameraManager_TorchCallback::CameraManager_TorchCallback()
+		: JObject(
+			"android.hardware.camera2.CameraManager$TorchCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void CameraManager_TorchCallback::onTorchModeChanged(JString arg0, jboolean arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraManager_TorchCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CameraManager_TorchCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CameraManager_TorchCallback();
-		
-		// Methods
-		void onTorchModeChanged(JString arg0, jboolean arg1) const;
-		void onTorchModeUnavailable(JString arg0) const;
-	};
+		callMethod<void>(
+			"onTorchModeChanged",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void CameraManager_TorchCallback::onTorchModeUnavailable(JString arg0) const
+	{
+		callMethod<void>(
+			"onTorchModeUnavailable",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

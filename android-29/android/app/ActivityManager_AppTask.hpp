@@ -1,43 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./ActivityManager_RecentTaskInfo.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/Intent.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "./ActivityManager_AppTask.def.hpp"
 
 namespace android::app
 {
-	class ActivityManager_RecentTaskInfo;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class Bundle;
-}
-
-namespace android::app
-{
-	class ActivityManager_AppTask : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void ActivityManager_AppTask::finishAndRemoveTask() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityManager_AppTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ActivityManager_AppTask(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void finishAndRemoveTask() const;
-		android::app::ActivityManager_RecentTaskInfo getTaskInfo() const;
-		void moveToFront() const;
-		void setExcludeFromRecents(jboolean arg0) const;
-		void startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2) const;
-	};
+		callMethod<void>(
+			"finishAndRemoveTask",
+			"()V"
+		);
+	}
+	inline android::app::ActivityManager_RecentTaskInfo ActivityManager_AppTask::getTaskInfo() const
+	{
+		return callObjectMethod(
+			"getTaskInfo",
+			"()Landroid/app/ActivityManager$RecentTaskInfo;"
+		);
+	}
+	inline void ActivityManager_AppTask::moveToFront() const
+	{
+		callMethod<void>(
+			"moveToFront",
+			"()V"
+		);
+	}
+	inline void ActivityManager_AppTask::setExcludeFromRecents(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setExcludeFromRecents",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ActivityManager_AppTask::startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2) const
+	{
+		callMethod<void>(
+			"startActivity",
+			"(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

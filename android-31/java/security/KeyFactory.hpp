@@ -1,42 +1,96 @@
 #pragma once
 
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
-namespace java::security
-{
-	class KeyFactorySpi;
-}
-namespace java::security
-{
-	class Provider;
-}
+#include "../../JString.hpp"
+#include "./KeyFactorySpi.def.hpp"
+#include "./Provider.def.hpp"
+#include "./KeyFactory.def.hpp"
 
 namespace java::security
 {
-	class KeyFactory : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::security::KeyFactory KeyFactory::getInstance(JString arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::security::KeyFactory getInstance(JString arg0);
-		static java::security::KeyFactory getInstance(JString arg0, JString arg1);
-		static java::security::KeyFactory getInstance(JString arg0, java::security::Provider arg1);
-		JObject generatePrivate(JObject arg0) const;
-		JObject generatePublic(JObject arg0) const;
-		JString getAlgorithm() const;
-		JObject getKeySpec(JObject arg0, JClass arg1) const;
-		java::security::Provider getProvider() const;
-		JObject translateKey(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"java.security.KeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/security/KeyFactory;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::security::KeyFactory KeyFactory::getInstance(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.KeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/KeyFactory;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline java::security::KeyFactory KeyFactory::getInstance(JString arg0, java::security::Provider arg1)
+	{
+		return callStaticObjectMethod(
+			"java.security.KeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/KeyFactory;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline JObject KeyFactory::generatePrivate(JObject arg0) const
+	{
+		return callObjectMethod(
+			"generatePrivate",
+			"(Ljava/security/spec/KeySpec;)Ljava/security/PrivateKey;",
+			arg0.object()
+		);
+	}
+	inline JObject KeyFactory::generatePublic(JObject arg0) const
+	{
+		return callObjectMethod(
+			"generatePublic",
+			"(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;",
+			arg0.object()
+		);
+	}
+	inline JString KeyFactory::getAlgorithm() const
+	{
+		return callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject KeyFactory::getKeySpec(JObject arg0, JClass arg1) const
+	{
+		return callObjectMethod(
+			"getKeySpec",
+			"(Ljava/security/Key;Ljava/lang/Class;)Ljava/security/spec/KeySpec;",
+			arg0.object(),
+			arg1.object<jclass>()
+		);
+	}
+	inline java::security::Provider KeyFactory::getProvider() const
+	{
+		return callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	inline JObject KeyFactory::translateKey(JObject arg0) const
+	{
+		return callObjectMethod(
+			"translateKey",
+			"(Ljava/security/Key;)Ljava/security/Key;",
+			arg0.object()
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

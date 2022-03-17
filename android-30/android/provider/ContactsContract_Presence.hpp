@@ -1,22 +1,21 @@
 #pragma once
 
-#include "./ContactsContract_StatusUpdates.hpp"
+#include "./ContactsContract_Presence.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_Presence : public android::provider::ContactsContract_StatusUpdates
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Presence(const char *className, const char *sig, Ts...agv) : android::provider::ContactsContract_StatusUpdates(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_Presence(QAndroidJniObject obj) : android::provider::ContactsContract_StatusUpdates(obj) {}
-		
-		// Constructors
-		ContactsContract_Presence();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ContactsContract_Presence::ContactsContract_Presence()
+		: android::provider::ContactsContract_StatusUpdates(
+			"android.provider.ContactsContract$Presence",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
+#include "./ContactsContract_StatusUpdates.hpp"
 

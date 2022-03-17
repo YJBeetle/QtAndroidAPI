@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PidHealthStats.def.hpp"
 
 namespace android::os::health
 {
-	class PidHealthStats : public JObject
+	// Fields
+	inline jint PidHealthStats::MEASUREMENT_WAKE_NESTING_COUNT()
 	{
-	public:
-		// Fields
-		static jint MEASUREMENT_WAKE_NESTING_COUNT();
-		static jint MEASUREMENT_WAKE_START_MS();
-		static jint MEASUREMENT_WAKE_SUM_MS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PidHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PidHealthStats(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.os.health.PidHealthStats",
+			"MEASUREMENT_WAKE_NESTING_COUNT"
+		);
+	}
+	inline jint PidHealthStats::MEASUREMENT_WAKE_START_MS()
+	{
+		return getStaticField<jint>(
+			"android.os.health.PidHealthStats",
+			"MEASUREMENT_WAKE_START_MS"
+		);
+	}
+	inline jint PidHealthStats::MEASUREMENT_WAKE_SUM_MS()
+	{
+		return getStaticField<jint>(
+			"android.os.health.PidHealthStats",
+			"MEASUREMENT_WAKE_SUM_MS"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::os::health
+
+// Base class headers
 

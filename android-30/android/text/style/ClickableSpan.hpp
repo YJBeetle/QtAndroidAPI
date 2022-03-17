@@ -1,33 +1,39 @@
 #pragma once
 
-#include "./CharacterStyle.hpp"
-
-namespace android::text
-{
-	class TextPaint;
-}
-namespace android::view
-{
-	class View;
-}
+#include "../TextPaint.def.hpp"
+#include "../../view/View.def.hpp"
+#include "./ClickableSpan.def.hpp"
 
 namespace android::text::style
 {
-	class ClickableSpan : public android::text::style::CharacterStyle
+	// Fields
+	
+	// Constructors
+	inline ClickableSpan::ClickableSpan()
+		: android::text::style::CharacterStyle(
+			"android.text.style.ClickableSpan",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void ClickableSpan::onClick(android::view::View arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClickableSpan(const char *className, const char *sig, Ts...agv) : android::text::style::CharacterStyle(className, sig, std::forward<Ts>(agv)...) {}
-		ClickableSpan(QAndroidJniObject obj) : android::text::style::CharacterStyle(obj) {}
-		
-		// Constructors
-		ClickableSpan();
-		
-		// Methods
-		void onClick(android::view::View arg0) const;
-		void updateDrawState(android::text::TextPaint arg0) const;
-	};
+		callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.object()
+		);
+	}
+	inline void ClickableSpan::updateDrawState(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::text::style
+
+// Base class headers
+#include "./CharacterStyle.hpp"
 

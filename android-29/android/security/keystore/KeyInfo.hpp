@@ -1,47 +1,151 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JString;
-namespace java::util
-{
-	class Date;
-}
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../java/util/Date.def.hpp"
+#include "./KeyInfo.def.hpp"
 
 namespace android::security::keystore
 {
-	class KeyInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JArray KeyInfo::getBlockModes() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JArray getBlockModes() const;
-		JArray getDigests() const;
-		JArray getEncryptionPaddings() const;
-		jint getKeySize() const;
-		java::util::Date getKeyValidityForConsumptionEnd() const;
-		java::util::Date getKeyValidityForOriginationEnd() const;
-		java::util::Date getKeyValidityStart() const;
-		JString getKeystoreAlias() const;
-		jint getOrigin() const;
-		jint getPurposes() const;
-		JArray getSignaturePaddings() const;
-		jint getUserAuthenticationValidityDurationSeconds() const;
-		jboolean isInsideSecureHardware() const;
-		jboolean isInvalidatedByBiometricEnrollment() const;
-		jboolean isTrustedUserPresenceRequired() const;
-		jboolean isUserAuthenticationRequired() const;
-		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware() const;
-		jboolean isUserAuthenticationValidWhileOnBody() const;
-		jboolean isUserConfirmationRequired() const;
-	};
+		return callObjectMethod(
+			"getBlockModes",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray KeyInfo::getDigests() const
+	{
+		return callObjectMethod(
+			"getDigests",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline JArray KeyInfo::getEncryptionPaddings() const
+	{
+		return callObjectMethod(
+			"getEncryptionPaddings",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jint KeyInfo::getKeySize() const
+	{
+		return callMethod<jint>(
+			"getKeySize",
+			"()I"
+		);
+	}
+	inline java::util::Date KeyInfo::getKeyValidityForConsumptionEnd() const
+	{
+		return callObjectMethod(
+			"getKeyValidityForConsumptionEnd",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline java::util::Date KeyInfo::getKeyValidityForOriginationEnd() const
+	{
+		return callObjectMethod(
+			"getKeyValidityForOriginationEnd",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline java::util::Date KeyInfo::getKeyValidityStart() const
+	{
+		return callObjectMethod(
+			"getKeyValidityStart",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline JString KeyInfo::getKeystoreAlias() const
+	{
+		return callObjectMethod(
+			"getKeystoreAlias",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint KeyInfo::getOrigin() const
+	{
+		return callMethod<jint>(
+			"getOrigin",
+			"()I"
+		);
+	}
+	inline jint KeyInfo::getPurposes() const
+	{
+		return callMethod<jint>(
+			"getPurposes",
+			"()I"
+		);
+	}
+	inline JArray KeyInfo::getSignaturePaddings() const
+	{
+		return callObjectMethod(
+			"getSignaturePaddings",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jint KeyInfo::getUserAuthenticationValidityDurationSeconds() const
+	{
+		return callMethod<jint>(
+			"getUserAuthenticationValidityDurationSeconds",
+			"()I"
+		);
+	}
+	inline jboolean KeyInfo::isInsideSecureHardware() const
+	{
+		return callMethod<jboolean>(
+			"isInsideSecureHardware",
+			"()Z"
+		);
+	}
+	inline jboolean KeyInfo::isInvalidatedByBiometricEnrollment() const
+	{
+		return callMethod<jboolean>(
+			"isInvalidatedByBiometricEnrollment",
+			"()Z"
+		);
+	}
+	inline jboolean KeyInfo::isTrustedUserPresenceRequired() const
+	{
+		return callMethod<jboolean>(
+			"isTrustedUserPresenceRequired",
+			"()Z"
+		);
+	}
+	inline jboolean KeyInfo::isUserAuthenticationRequired() const
+	{
+		return callMethod<jboolean>(
+			"isUserAuthenticationRequired",
+			"()Z"
+		);
+	}
+	inline jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware() const
+	{
+		return callMethod<jboolean>(
+			"isUserAuthenticationRequirementEnforcedBySecureHardware",
+			"()Z"
+		);
+	}
+	inline jboolean KeyInfo::isUserAuthenticationValidWhileOnBody() const
+	{
+		return callMethod<jboolean>(
+			"isUserAuthenticationValidWhileOnBody",
+			"()Z"
+		);
+	}
+	inline jboolean KeyInfo::isUserConfirmationRequired() const
+	{
+		return callMethod<jboolean>(
+			"isUserConfirmationRequired",
+			"()Z"
+		);
+	}
 } // namespace android::security::keystore
+
+// Base class headers
 

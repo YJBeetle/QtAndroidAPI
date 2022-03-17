@@ -1,32 +1,46 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-namespace android::telephony::data
-{
-	class TrafficDescriptor;
-}
-class JString;
+#include "../../../JByteArray.hpp"
+#include "./TrafficDescriptor.def.hpp"
+#include "../../../JString.hpp"
+#include "./TrafficDescriptor_Builder.def.hpp"
 
 namespace android::telephony::data
 {
-	class TrafficDescriptor_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline TrafficDescriptor_Builder::TrafficDescriptor_Builder()
+		: JObject(
+			"android.telephony.data.TrafficDescriptor$Builder",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::telephony::data::TrafficDescriptor TrafficDescriptor_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TrafficDescriptor_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TrafficDescriptor_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		TrafficDescriptor_Builder();
-		
-		// Methods
-		android::telephony::data::TrafficDescriptor build() const;
-		android::telephony::data::TrafficDescriptor_Builder setDataNetworkName(JString arg0) const;
-		android::telephony::data::TrafficDescriptor_Builder setOsAppId(JByteArray arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/telephony/data/TrafficDescriptor;"
+		);
+	}
+	inline android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setDataNetworkName(JString arg0) const
+	{
+		return callObjectMethod(
+			"setDataNetworkName",
+			"(Ljava/lang/String;)Landroid/telephony/data/TrafficDescriptor$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setOsAppId(JByteArray arg0) const
+	{
+		return callObjectMethod(
+			"setOsAppId",
+			"([B)Landroid/telephony/data/TrafficDescriptor$Builder;",
+			arg0.object<jbyteArray>()
+		);
+	}
 } // namespace android::telephony::data
+
+// Base class headers
 

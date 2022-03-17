@@ -1,29 +1,31 @@
 #pragma once
 
-#include "./Formatter.hpp"
-
-class JString;
-namespace java::util::logging
-{
-	class LogRecord;
-}
+#include "../../../JString.hpp"
+#include "./LogRecord.def.hpp"
+#include "./SimpleFormatter.def.hpp"
 
 namespace java::util::logging
 {
-	class SimpleFormatter : public java::util::logging::Formatter
+	// Fields
+	
+	// Constructors
+	inline SimpleFormatter::SimpleFormatter()
+		: java::util::logging::Formatter(
+			"java.util.logging.SimpleFormatter",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString SimpleFormatter::format(java::util::logging::LogRecord arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SimpleFormatter(const char *className, const char *sig, Ts...agv) : java::util::logging::Formatter(className, sig, std::forward<Ts>(agv)...) {}
-		SimpleFormatter(QAndroidJniObject obj) : java::util::logging::Formatter(obj) {}
-		
-		// Constructors
-		SimpleFormatter();
-		
-		// Methods
-		JString format(java::util::logging::LogRecord arg0) const;
-	};
+		return callObjectMethod(
+			"format",
+			"(Ljava/util/logging/LogRecord;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
 } // namespace java::util::logging
+
+// Base class headers
+#include "./Formatter.hpp"
 

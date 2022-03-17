@@ -1,27 +1,40 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JIntArray;
-class JArray;
+#include "../../JIntArray.hpp"
+#include "../../JArray.hpp"
+#include "./ConsumerIrManager.def.hpp"
 
 namespace android::hardware
 {
-	class ConsumerIrManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JArray ConsumerIrManager::getCarrierFrequencies() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConsumerIrManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ConsumerIrManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JArray getCarrierFrequencies() const;
-		jboolean hasIrEmitter() const;
-		void transmit(jint arg0, JIntArray arg1) const;
-	};
+		return callObjectMethod(
+			"getCarrierFrequencies",
+			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
+		);
+	}
+	inline jboolean ConsumerIrManager::hasIrEmitter() const
+	{
+		return callMethod<jboolean>(
+			"hasIrEmitter",
+			"()Z"
+		);
+	}
+	inline void ConsumerIrManager::transmit(jint arg0, JIntArray arg1) const
+	{
+		callMethod<void>(
+			"transmit",
+			"(I[I)V",
+			arg0,
+			arg1.object<jintArray>()
+		);
+	}
 } // namespace android::hardware
+
+// Base class headers
 

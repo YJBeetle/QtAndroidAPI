@@ -1,36 +1,82 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./VisualVoicemailSmsFilterSettings.def.hpp"
 
 namespace android::telephony
 {
-	class VisualVoicemailSmsFilterSettings : public JObject
+	// Fields
+	inline JObject VisualVoicemailSmsFilterSettings::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint DESTINATION_PORT_ANY();
-		static jint DESTINATION_PORT_DATA_SMS();
-		JString clientPrefix();
-		jint destinationPort();
-		JObject originatingNumbers();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VisualVoicemailSmsFilterSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VisualVoicemailSmsFilterSettings(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.VisualVoicemailSmsFilterSettings",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint VisualVoicemailSmsFilterSettings::DESTINATION_PORT_ANY()
+	{
+		return getStaticField<jint>(
+			"android.telephony.VisualVoicemailSmsFilterSettings",
+			"DESTINATION_PORT_ANY"
+		);
+	}
+	inline jint VisualVoicemailSmsFilterSettings::DESTINATION_PORT_DATA_SMS()
+	{
+		return getStaticField<jint>(
+			"android.telephony.VisualVoicemailSmsFilterSettings",
+			"DESTINATION_PORT_DATA_SMS"
+		);
+	}
+	inline JString VisualVoicemailSmsFilterSettings::clientPrefix()
+	{
+		return getObjectField(
+			"clientPrefix",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint VisualVoicemailSmsFilterSettings::destinationPort()
+	{
+		return getField<jint>(
+			"destinationPort"
+		);
+	}
+	inline JObject VisualVoicemailSmsFilterSettings::originatingNumbers()
+	{
+		return getObjectField(
+			"originatingNumbers",
+			"Ljava/util/List;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint VisualVoicemailSmsFilterSettings::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString VisualVoicemailSmsFilterSettings::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void VisualVoicemailSmsFilterSettings::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony
+
+// Base class headers
 

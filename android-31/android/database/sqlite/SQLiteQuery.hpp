@@ -1,24 +1,25 @@
 #pragma once
 
-#include "./SQLiteProgram.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./SQLiteQuery.def.hpp"
 
 namespace android::database::sqlite
 {
-	class SQLiteQuery : public android::database::sqlite::SQLiteProgram
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString SQLiteQuery::toString() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SQLiteQuery(const char *className, const char *sig, Ts...agv) : android::database::sqlite::SQLiteProgram(className, sig, std::forward<Ts>(agv)...) {}
-		SQLiteQuery(QAndroidJniObject obj) : android::database::sqlite::SQLiteProgram(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::database::sqlite
+
+// Base class headers
+#include "./SQLiteClosable.hpp"
+#include "./SQLiteProgram.hpp"
 

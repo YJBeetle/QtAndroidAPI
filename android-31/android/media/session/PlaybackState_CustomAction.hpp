@@ -1,40 +1,78 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
-class JString;
+#include "../../os/Bundle.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./PlaybackState_CustomAction.def.hpp"
 
 namespace android::media::session
 {
-	class PlaybackState_CustomAction : public JObject
+	// Fields
+	inline JObject PlaybackState_CustomAction::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlaybackState_CustomAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PlaybackState_CustomAction(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString getAction() const;
-		android::os::Bundle getExtras() const;
-		jint getIcon() const;
-		JString getName() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.media.session.PlaybackState$CustomAction",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint PlaybackState_CustomAction::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString PlaybackState_CustomAction::getAction() const
+	{
+		return callObjectMethod(
+			"getAction",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::os::Bundle PlaybackState_CustomAction::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jint PlaybackState_CustomAction::getIcon() const
+	{
+		return callMethod<jint>(
+			"getIcon",
+			"()I"
+		);
+	}
+	inline JString PlaybackState_CustomAction::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString PlaybackState_CustomAction::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void PlaybackState_CustomAction::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::media::session
+
+// Base class headers
 

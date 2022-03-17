@@ -1,31 +1,49 @@
 #pragma once
 
-#include "./FrameStats.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./WindowAnimationFrameStats.def.hpp"
 
 namespace android::view
 {
-	class WindowAnimationFrameStats : public android::view::FrameStats
+	// Fields
+	inline JObject WindowAnimationFrameStats::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WindowAnimationFrameStats(const char *className, const char *sig, Ts...agv) : android::view::FrameStats(className, sig, std::forward<Ts>(agv)...) {}
-		WindowAnimationFrameStats(QAndroidJniObject obj) : android::view::FrameStats(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.WindowAnimationFrameStats",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint WindowAnimationFrameStats::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString WindowAnimationFrameStats::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void WindowAnimationFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
+#include "./FrameStats.hpp"
 

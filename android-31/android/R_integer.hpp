@@ -1,26 +1,48 @@
 #pragma once
 
-#include "../JObject.hpp"
+#include "./R_integer.def.hpp"
 
 namespace android
 {
-	class R_integer : public JObject
+	// Fields
+	inline jint R_integer::config_longAnimTime()
 	{
-	public:
-		// Fields
-		static jint config_longAnimTime();
-		static jint config_mediumAnimTime();
-		static jint config_shortAnimTime();
-		static jint status_bar_notification_info_maxnum();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R_integer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		R_integer(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		R_integer();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.R$integer",
+			"config_longAnimTime"
+		);
+	}
+	inline jint R_integer::config_mediumAnimTime()
+	{
+		return getStaticField<jint>(
+			"android.R$integer",
+			"config_mediumAnimTime"
+		);
+	}
+	inline jint R_integer::config_shortAnimTime()
+	{
+		return getStaticField<jint>(
+			"android.R$integer",
+			"config_shortAnimTime"
+		);
+	}
+	inline jint R_integer::status_bar_notification_info_maxnum()
+	{
+		return getStaticField<jint>(
+			"android.R$integer",
+			"status_bar_notification_info_maxnum"
+		);
+	}
+	
+	// Constructors
+	inline R_integer::R_integer()
+		: JObject(
+			"android.R$integer",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android
+
+// Base class headers
 

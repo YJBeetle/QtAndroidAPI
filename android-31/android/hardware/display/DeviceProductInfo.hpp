@@ -1,46 +1,151 @@
 #pragma once
 
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./DeviceProductInfo.def.hpp"
 
 namespace android::hardware::display
 {
-	class DeviceProductInfo : public JObject
+	// Fields
+	inline jint DeviceProductInfo::CONNECTION_TO_SINK_BUILT_IN()
 	{
-	public:
-		// Fields
-		static jint CONNECTION_TO_SINK_BUILT_IN();
-		static jint CONNECTION_TO_SINK_DIRECT();
-		static jint CONNECTION_TO_SINK_TRANSITIVE();
-		static jint CONNECTION_TO_SINK_UNKNOWN();
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DeviceProductInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DeviceProductInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getConnectionToSinkType() const;
-		jint getManufactureWeek() const;
-		jint getManufactureYear() const;
-		JString getManufacturerPnpId() const;
-		jint getModelYear() const;
-		JString getName() const;
-		JString getProductId() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.display.DeviceProductInfo",
+			"CONNECTION_TO_SINK_BUILT_IN"
+		);
+	}
+	inline jint DeviceProductInfo::CONNECTION_TO_SINK_DIRECT()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DeviceProductInfo",
+			"CONNECTION_TO_SINK_DIRECT"
+		);
+	}
+	inline jint DeviceProductInfo::CONNECTION_TO_SINK_TRANSITIVE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DeviceProductInfo",
+			"CONNECTION_TO_SINK_TRANSITIVE"
+		);
+	}
+	inline jint DeviceProductInfo::CONNECTION_TO_SINK_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DeviceProductInfo",
+			"CONNECTION_TO_SINK_UNKNOWN"
+		);
+	}
+	inline JObject DeviceProductInfo::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.hardware.display.DeviceProductInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline DeviceProductInfo::DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4)
+		: JObject(
+			"android.hardware.display.DeviceProductInfo",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>(),
+			arg3,
+			arg4
+		) {}
+	
+	// Methods
+	inline jint DeviceProductInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean DeviceProductInfo::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint DeviceProductInfo::getConnectionToSinkType() const
+	{
+		return callMethod<jint>(
+			"getConnectionToSinkType",
+			"()I"
+		);
+	}
+	inline jint DeviceProductInfo::getManufactureWeek() const
+	{
+		return callMethod<jint>(
+			"getManufactureWeek",
+			"()I"
+		);
+	}
+	inline jint DeviceProductInfo::getManufactureYear() const
+	{
+		return callMethod<jint>(
+			"getManufactureYear",
+			"()I"
+		);
+	}
+	inline JString DeviceProductInfo::getManufacturerPnpId() const
+	{
+		return callObjectMethod(
+			"getManufacturerPnpId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint DeviceProductInfo::getModelYear() const
+	{
+		return callMethod<jint>(
+			"getModelYear",
+			"()I"
+		);
+	}
+	inline JString DeviceProductInfo::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DeviceProductInfo::getProductId() const
+	{
+		return callObjectMethod(
+			"getProductId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jint DeviceProductInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString DeviceProductInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void DeviceProductInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::hardware::display
+
+// Base class headers
 

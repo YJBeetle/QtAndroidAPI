@@ -1,29 +1,39 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaRouter_RouteInfo.def.hpp"
+#include "./MediaRouter_VolumeCallback.def.hpp"
 
 namespace android::media
 {
-	class MediaRouter_RouteInfo;
-}
-
-namespace android::media
-{
-	class MediaRouter_VolumeCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline MediaRouter_VolumeCallback::MediaRouter_VolumeCallback()
+		: JObject(
+			"android.media.MediaRouter$VolumeCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void MediaRouter_VolumeCallback::onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter_VolumeCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaRouter_VolumeCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MediaRouter_VolumeCallback();
-		
-		// Methods
-		void onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const;
-		void onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const;
-	};
+		callMethod<void>(
+			"onVolumeSetRequest",
+			"(Landroid/media/MediaRouter$RouteInfo;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void MediaRouter_VolumeCallback::onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"onVolumeUpdateRequest",
+			"(Landroid/media/MediaRouter$RouteInfo;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

@@ -1,50 +1,79 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::accounts
-{
-	class Account;
-}
-namespace android::content
-{
-	class ContentProviderClient;
-}
-namespace android::content
-{
-	class ContentProviderOperation;
-}
-namespace android::net
-{
-	class Uri;
-}
-namespace android::util
-{
-	class Pair;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "../accounts/Account.def.hpp"
+#include "../content/ContentProviderClient.def.hpp"
+#include "../content/ContentProviderOperation.def.hpp"
+#include "../net/Uri.def.hpp"
+#include "../util/Pair.def.hpp"
+#include "../../JString.hpp"
+#include "./ContactsContract_SyncState.def.hpp"
 
 namespace android::provider
 {
-	class ContactsContract_SyncState : public JObject
+	// Fields
+	inline JString ContactsContract_SyncState::CONTENT_DIRECTORY()
 	{
-	public:
-		// Fields
-		static JString CONTENT_DIRECTORY();
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_SyncState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContactsContract_SyncState(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JByteArray get(android::content::ContentProviderClient arg0, android::accounts::Account arg1);
-		static android::util::Pair getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1);
-		static android::content::ContentProviderOperation newSetOperation(android::accounts::Account arg0, JByteArray arg1);
-		static void set(android::content::ContentProviderClient arg0, android::accounts::Account arg1, JByteArray arg2);
-	};
+		return getStaticObjectField(
+			"android.provider.ContactsContract$SyncState",
+			"CONTENT_DIRECTORY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri ContactsContract_SyncState::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.ContactsContract$SyncState",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray ContactsContract_SyncState::get(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.ContactsContract$SyncState",
+			"get",
+			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)[B",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::util::Pair ContactsContract_SyncState::getWithUri(android::content::ContentProviderClient arg0, android::accounts::Account arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.ContactsContract$SyncState",
+			"getWithUri",
+			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline android::content::ContentProviderOperation ContactsContract_SyncState::newSetOperation(android::accounts::Account arg0, JByteArray arg1)
+	{
+		return callStaticObjectMethod(
+			"android.provider.ContactsContract$SyncState",
+			"newSetOperation",
+			"(Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
+			arg0.object(),
+			arg1.object<jbyteArray>()
+		);
+	}
+	inline void ContactsContract_SyncState::set(android::content::ContentProviderClient arg0, android::accounts::Account arg1, JByteArray arg2)
+	{
+		callStaticMethod<void>(
+			"android.provider.ContactsContract$SyncState",
+			"set",
+			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;[B)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jbyteArray>()
+		);
+	}
 } // namespace android::provider
+
+// Base class headers
 

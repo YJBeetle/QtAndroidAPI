@@ -1,27 +1,49 @@
 #pragma once
 
-#include "./MidiReceiver.hpp"
-
-class JByteArray;
+#include "../../../JByteArray.hpp"
+#include "./MidiInputPort.def.hpp"
 
 namespace android::media::midi
 {
-	class MidiInputPort : public android::media::midi::MidiReceiver
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void MidiInputPort::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiInputPort(const char *className, const char *sig, Ts...agv) : android::media::midi::MidiReceiver(className, sig, std::forward<Ts>(agv)...) {}
-		MidiInputPort(QAndroidJniObject obj) : android::media::midi::MidiReceiver(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		jint getPortNumber() const;
-		void onFlush() const;
-		void onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline jint MidiInputPort::getPortNumber() const
+	{
+		return callMethod<jint>(
+			"getPortNumber",
+			"()I"
+		);
+	}
+	inline void MidiInputPort::onFlush() const
+	{
+		callMethod<void>(
+			"onFlush",
+			"()V"
+		);
+	}
+	inline void MidiInputPort::onSend(JByteArray arg0, jint arg1, jint arg2, jlong arg3) const
+	{
+		callMethod<void>(
+			"onSend",
+			"([BIIJ)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 } // namespace android::media::midi
+
+// Base class headers
+#include "./MidiReceiver.hpp"
 

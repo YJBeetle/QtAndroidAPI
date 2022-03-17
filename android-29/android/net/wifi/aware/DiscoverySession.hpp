@@ -1,40 +1,54 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JByteArray;
-namespace android::net
-{
-	class NetworkSpecifier;
-}
-namespace android::net::wifi::aware
-{
-	class PeerHandle;
-}
-namespace android::net::wifi::aware
-{
-	class WifiAwareManager;
-}
-class JString;
+#include "../../../../JByteArray.hpp"
+#include "../../NetworkSpecifier.def.hpp"
+#include "./PeerHandle.def.hpp"
+#include "./WifiAwareManager.def.hpp"
+#include "../../../../JString.hpp"
+#include "./DiscoverySession.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class DiscoverySession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void DiscoverySession::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DiscoverySession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DiscoverySession(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void close() const;
-		android::net::NetworkSpecifier createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0) const;
-		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1) const;
-		void sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0) const
+	{
+		return callObjectMethod(
+			"createNetworkSpecifierOpen",
+			"(Landroid/net/wifi/aware/PeerHandle;)Landroid/net/NetworkSpecifier;",
+			arg0.object()
+		);
+	}
+	inline android::net::NetworkSpecifier DiscoverySession::createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"createNetworkSpecifierPassphrase",
+			"(Landroid/net/wifi/aware/PeerHandle;Ljava/lang/String;)Landroid/net/NetworkSpecifier;",
+			arg0.object(),
+			arg1.object<jstring>()
+		);
+	}
+	inline void DiscoverySession::sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2) const
+	{
+		callMethod<void>(
+			"sendMessage",
+			"(Landroid/net/wifi/aware/PeerHandle;I[B)V",
+			arg0.object(),
+			arg1,
+			arg2.object<jbyteArray>()
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 

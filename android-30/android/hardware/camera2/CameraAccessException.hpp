@@ -1,34 +1,89 @@
 #pragma once
 
-#include "../../util/AndroidException.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./CameraAccessException.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class CameraAccessException : public android::util::AndroidException
+	// Fields
+	inline jint CameraAccessException::CAMERA_DISABLED()
 	{
-	public:
-		// Fields
-		static jint CAMERA_DISABLED();
-		static jint CAMERA_DISCONNECTED();
-		static jint CAMERA_ERROR();
-		static jint CAMERA_IN_USE();
-		static jint MAX_CAMERAS_IN_USE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraAccessException(const char *className, const char *sig, Ts...agv) : android::util::AndroidException(className, sig, std::forward<Ts>(agv)...) {}
-		CameraAccessException(QAndroidJniObject obj) : android::util::AndroidException(obj) {}
-		
-		// Constructors
-		CameraAccessException(jint arg0);
-		CameraAccessException(jint arg0, JString arg1);
-		CameraAccessException(jint arg0, JThrowable arg1);
-		CameraAccessException(jint arg0, JString arg1, JThrowable arg2);
-		
-		// Methods
-		jint getReason() const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraAccessException",
+			"CAMERA_DISABLED"
+		);
+	}
+	inline jint CameraAccessException::CAMERA_DISCONNECTED()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraAccessException",
+			"CAMERA_DISCONNECTED"
+		);
+	}
+	inline jint CameraAccessException::CAMERA_ERROR()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraAccessException",
+			"CAMERA_ERROR"
+		);
+	}
+	inline jint CameraAccessException::CAMERA_IN_USE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraAccessException",
+			"CAMERA_IN_USE"
+		);
+	}
+	inline jint CameraAccessException::MAX_CAMERAS_IN_USE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.CameraAccessException",
+			"MAX_CAMERAS_IN_USE"
+		);
+	}
+	
+	// Constructors
+	inline CameraAccessException::CameraAccessException(jint arg0)
+		: android::util::AndroidException(
+			"android.hardware.camera2.CameraAccessException",
+			"(I)V",
+			arg0
+		) {}
+	inline CameraAccessException::CameraAccessException(jint arg0, JString arg1)
+		: android::util::AndroidException(
+			"android.hardware.camera2.CameraAccessException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	inline CameraAccessException::CameraAccessException(jint arg0, JThrowable arg1)
+		: android::util::AndroidException(
+			"android.hardware.camera2.CameraAccessException",
+			"(ILjava/lang/Throwable;)V",
+			arg0,
+			arg1.object<jthrowable>()
+		) {}
+	inline CameraAccessException::CameraAccessException(jint arg0, JString arg1, JThrowable arg2)
+		: android::util::AndroidException(
+			"android.hardware.camera2.CameraAccessException",
+			"(ILjava/lang/String;Ljava/lang/Throwable;)V",
+			arg0,
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
+		) {}
+	
+	// Methods
+	inline jint CameraAccessException::getReason() const
+	{
+		return callMethod<jint>(
+			"getReason",
+			"()I"
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
+#include "../../util/AndroidException.hpp"
 

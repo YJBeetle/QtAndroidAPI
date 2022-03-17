@@ -1,42 +1,85 @@
 #pragma once
 
+#include "../../../JString.hpp"
 #include "../../../JObject.hpp"
-
-class JString;
-class JObject;
-class JString;
-namespace java::util
-{
-	class Date;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../../JString.hpp"
+#include "../../../java/util/Date.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./ServiceInfo.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class ServiceInfo : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean ServiceInfo::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		JObject getLocales() const;
-		JString getNameForLocale(java::util::Locale arg0) const;
-		JObject getNamedContentLocales() const;
-		JString getServiceClassName() const;
-		JString getServiceId() const;
-		java::util::Date getSessionEndTime() const;
-		java::util::Date getSessionStartTime() const;
-		jint hashCode() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject ServiceInfo::getLocales() const
+	{
+		return callObjectMethod(
+			"getLocales",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JString ServiceInfo::getNameForLocale(java::util::Locale arg0) const
+	{
+		return callObjectMethod(
+			"getNameForLocale",
+			"(Ljava/util/Locale;)Ljava/lang/CharSequence;",
+			arg0.object()
+		);
+	}
+	inline JObject ServiceInfo::getNamedContentLocales() const
+	{
+		return callObjectMethod(
+			"getNamedContentLocales",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline JString ServiceInfo::getServiceClassName() const
+	{
+		return callObjectMethod(
+			"getServiceClassName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString ServiceInfo::getServiceId() const
+	{
+		return callObjectMethod(
+			"getServiceId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline java::util::Date ServiceInfo::getSessionEndTime() const
+	{
+		return callObjectMethod(
+			"getSessionEndTime",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline java::util::Date ServiceInfo::getSessionStartTime() const
+	{
+		return callObjectMethod(
+			"getSessionStartTime",
+			"()Ljava/util/Date;"
+		);
+	}
+	inline jint ServiceInfo::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
 

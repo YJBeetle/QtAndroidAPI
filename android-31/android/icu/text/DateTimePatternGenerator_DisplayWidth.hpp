@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./DateTimePatternGenerator_DisplayWidth.def.hpp"
 
 namespace android::icu::text
 {
-	class DateTimePatternGenerator_DisplayWidth : public java::lang::Enum
+	// Fields
+	inline android::icu::text::DateTimePatternGenerator_DisplayWidth DateTimePatternGenerator_DisplayWidth::ABBREVIATED()
 	{
-	public:
-		// Fields
-		static android::icu::text::DateTimePatternGenerator_DisplayWidth ABBREVIATED();
-		static android::icu::text::DateTimePatternGenerator_DisplayWidth NARROW();
-		static android::icu::text::DateTimePatternGenerator_DisplayWidth WIDE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DateTimePatternGenerator_DisplayWidth(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		DateTimePatternGenerator_DisplayWidth(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::text::DateTimePatternGenerator_DisplayWidth valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
+			"ABBREVIATED",
+			"Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;"
+		);
+	}
+	inline android::icu::text::DateTimePatternGenerator_DisplayWidth DateTimePatternGenerator_DisplayWidth::NARROW()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
+			"NARROW",
+			"Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;"
+		);
+	}
+	inline android::icu::text::DateTimePatternGenerator_DisplayWidth DateTimePatternGenerator_DisplayWidth::WIDE()
+	{
+		return getStaticObjectField(
+			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
+			"WIDE",
+			"Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::DateTimePatternGenerator_DisplayWidth DateTimePatternGenerator_DisplayWidth::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray DateTimePatternGenerator_DisplayWidth::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.text.DateTimePatternGenerator$DisplayWidth",
+			"values",
+			"()[Landroid/icu/text/DateTimePatternGenerator$DisplayWidth;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

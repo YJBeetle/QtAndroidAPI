@@ -1,29 +1,51 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
+#include "./PolicyQualifierInfo.def.hpp"
 
 namespace java::security::cert
 {
-	class PolicyQualifierInfo : public JObject
+	// Fields
+	
+	// Constructors
+	inline PolicyQualifierInfo::PolicyQualifierInfo(JByteArray arg0)
+		: JObject(
+			"java.security.cert.PolicyQualifierInfo",
+			"([B)V",
+			arg0.object<jbyteArray>()
+		) {}
+	
+	// Methods
+	inline JByteArray PolicyQualifierInfo::getEncoded() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PolicyQualifierInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PolicyQualifierInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PolicyQualifierInfo(JByteArray arg0);
-		
-		// Methods
-		JByteArray getEncoded() const;
-		JByteArray getPolicyQualifier() const;
-		JString getPolicyQualifierId() const;
-		JString toString() const;
-	};
+		return callObjectMethod(
+			"getEncoded",
+			"()[B"
+		);
+	}
+	inline JByteArray PolicyQualifierInfo::getPolicyQualifier() const
+	{
+		return callObjectMethod(
+			"getPolicyQualifier",
+			"()[B"
+		);
+	}
+	inline JString PolicyQualifierInfo::getPolicyQualifierId() const
+	{
+		return callObjectMethod(
+			"getPolicyQualifierId",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString PolicyQualifierInfo::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::security::cert
+
+// Base class headers
 

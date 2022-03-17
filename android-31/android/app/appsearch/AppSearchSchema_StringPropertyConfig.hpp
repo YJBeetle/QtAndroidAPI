@@ -1,28 +1,65 @@
 #pragma once
 
-#include "./AppSearchSchema_PropertyConfig.hpp"
+#include "./AppSearchSchema_StringPropertyConfig.def.hpp"
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_StringPropertyConfig : public android::app::appsearch::AppSearchSchema_PropertyConfig
+	// Fields
+	inline jint AppSearchSchema_StringPropertyConfig::INDEXING_TYPE_EXACT_TERMS()
 	{
-	public:
-		// Fields
-		static jint INDEXING_TYPE_EXACT_TERMS();
-		static jint INDEXING_TYPE_NONE();
-		static jint INDEXING_TYPE_PREFIXES();
-		static jint TOKENIZER_TYPE_NONE();
-		static jint TOKENIZER_TYPE_PLAIN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_StringPropertyConfig(const char *className, const char *sig, Ts...agv) : android::app::appsearch::AppSearchSchema_PropertyConfig(className, sig, std::forward<Ts>(agv)...) {}
-		AppSearchSchema_StringPropertyConfig(QAndroidJniObject obj) : android::app::appsearch::AppSearchSchema_PropertyConfig(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint getIndexingType() const;
-		jint getTokenizerType() const;
-	};
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$StringPropertyConfig",
+			"INDEXING_TYPE_EXACT_TERMS"
+		);
+	}
+	inline jint AppSearchSchema_StringPropertyConfig::INDEXING_TYPE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$StringPropertyConfig",
+			"INDEXING_TYPE_NONE"
+		);
+	}
+	inline jint AppSearchSchema_StringPropertyConfig::INDEXING_TYPE_PREFIXES()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$StringPropertyConfig",
+			"INDEXING_TYPE_PREFIXES"
+		);
+	}
+	inline jint AppSearchSchema_StringPropertyConfig::TOKENIZER_TYPE_NONE()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$StringPropertyConfig",
+			"TOKENIZER_TYPE_NONE"
+		);
+	}
+	inline jint AppSearchSchema_StringPropertyConfig::TOKENIZER_TYPE_PLAIN()
+	{
+		return getStaticField<jint>(
+			"android.app.appsearch.AppSearchSchema$StringPropertyConfig",
+			"TOKENIZER_TYPE_PLAIN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint AppSearchSchema_StringPropertyConfig::getIndexingType() const
+	{
+		return callMethod<jint>(
+			"getIndexingType",
+			"()I"
+		);
+	}
+	inline jint AppSearchSchema_StringPropertyConfig::getTokenizerType() const
+	{
+		return callMethod<jint>(
+			"getTokenizerType",
+			"()I"
+		);
+	}
 } // namespace android::app::appsearch
+
+// Base class headers
+#include "./AppSearchSchema_PropertyConfig.hpp"
 

@@ -1,31 +1,46 @@
 #pragma once
 
-#include "./IkeIdentification.hpp"
-
-class JObject;
-namespace java::net
-{
-	class Inet6Address;
-}
+#include "../../../../JObject.hpp"
+#include "../../../../java/net/Inet6Address.def.hpp"
+#include "./IkeIpv6AddrIdentification.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeIpv6AddrIdentification : public android::net::ipsec::ike::IkeIdentification
+	// Fields
+	inline java::net::Inet6Address IkeIpv6AddrIdentification::ipv6Address()
 	{
-	public:
-		// Fields
-		java::net::Inet6Address ipv6Address();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeIpv6AddrIdentification(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::IkeIdentification(className, sig, std::forward<Ts>(agv)...) {}
-		IkeIpv6AddrIdentification(QAndroidJniObject obj) : android::net::ipsec::ike::IkeIdentification(obj) {}
-		
-		// Constructors
-		IkeIpv6AddrIdentification(java::net::Inet6Address arg0);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-	};
+		return getObjectField(
+			"ipv6Address",
+			"Ljava/net/Inet6Address;"
+		);
+	}
+	
+	// Constructors
+	inline IkeIpv6AddrIdentification::IkeIpv6AddrIdentification(java::net::Inet6Address arg0)
+		: android::net::ipsec::ike::IkeIdentification(
+			"android.net.ipsec.ike.IkeIpv6AddrIdentification",
+			"(Ljava/net/Inet6Address;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jboolean IkeIpv6AddrIdentification::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint IkeIpv6AddrIdentification::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
+#include "./IkeIdentification.hpp"
 

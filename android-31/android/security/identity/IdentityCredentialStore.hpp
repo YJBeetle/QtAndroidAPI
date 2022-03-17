@@ -1,44 +1,79 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JArray;
-namespace android::content
-{
-	class Context;
-}
-namespace android::security::identity
-{
-	class IdentityCredential;
-}
-namespace android::security::identity
-{
-	class WritableIdentityCredential;
-}
-class JString;
+#include "../../../JByteArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../content/Context.def.hpp"
+#include "./IdentityCredential.def.hpp"
+#include "./WritableIdentityCredential.def.hpp"
+#include "../../../JString.hpp"
+#include "./IdentityCredentialStore.def.hpp"
 
 namespace android::security::identity
 {
-	class IdentityCredentialStore : public JObject
+	// Fields
+	inline jint IdentityCredentialStore::CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256()
 	{
-	public:
-		// Fields
-		static jint CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IdentityCredentialStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IdentityCredentialStore(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::security::identity::IdentityCredentialStore getDirectAccessInstance(android::content::Context arg0);
-		static android::security::identity::IdentityCredentialStore getInstance(android::content::Context arg0);
-		android::security::identity::WritableIdentityCredential createCredential(JString arg0, JString arg1) const;
-		JByteArray deleteCredentialByName(JString arg0) const;
-		android::security::identity::IdentityCredential getCredentialByName(JString arg0, jint arg1) const;
-		JArray getSupportedDocTypes() const;
-	};
+		return getStaticField<jint>(
+			"android.security.identity.IdentityCredentialStore",
+			"CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::security::identity::IdentityCredentialStore IdentityCredentialStore::getDirectAccessInstance(android::content::Context arg0)
+	{
+		return callStaticObjectMethod(
+			"android.security.identity.IdentityCredentialStore",
+			"getDirectAccessInstance",
+			"(Landroid/content/Context;)Landroid/security/identity/IdentityCredentialStore;",
+			arg0.object()
+		);
+	}
+	inline android::security::identity::IdentityCredentialStore IdentityCredentialStore::getInstance(android::content::Context arg0)
+	{
+		return callStaticObjectMethod(
+			"android.security.identity.IdentityCredentialStore",
+			"getInstance",
+			"(Landroid/content/Context;)Landroid/security/identity/IdentityCredentialStore;",
+			arg0.object()
+		);
+	}
+	inline android::security::identity::WritableIdentityCredential IdentityCredentialStore::createCredential(JString arg0, JString arg1) const
+	{
+		return callObjectMethod(
+			"createCredential",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/security/identity/WritableIdentityCredential;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline JByteArray IdentityCredentialStore::deleteCredentialByName(JString arg0) const
+	{
+		return callObjectMethod(
+			"deleteCredentialByName",
+			"(Ljava/lang/String;)[B",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::security::identity::IdentityCredential IdentityCredentialStore::getCredentialByName(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getCredentialByName",
+			"(Ljava/lang/String;I)Landroid/security/identity/IdentityCredential;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline JArray IdentityCredentialStore::getSupportedDocTypes() const
+	{
+		return callObjectMethod(
+			"getSupportedDocTypes",
+			"()[Ljava/lang/String;"
+		);
+	}
 } // namespace android::security::identity
+
+// Base class headers
 

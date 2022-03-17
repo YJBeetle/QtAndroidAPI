@@ -1,31 +1,39 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-class JArray;
-class JString;
-namespace javax::net::ssl
-{
-	class SSLEngine;
-}
+#include "../../../JArray.hpp"
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./SSLEngine.def.hpp"
+#include "./X509ExtendedKeyManager.def.hpp"
 
 namespace javax::net::ssl
 {
-	class X509ExtendedKeyManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString X509ExtendedKeyManager::chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit X509ExtendedKeyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		X509ExtendedKeyManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const;
-		JString chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const;
-	};
+		return callObjectMethod(
+			"chooseEngineClientAlias",
+			"([Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;",
+			arg0.object<jarray>(),
+			arg1.object<jarray>(),
+			arg2.object()
+		);
+	}
+	inline JString X509ExtendedKeyManager::chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const
+	{
+		return callObjectMethod(
+			"chooseEngineServerAlias",
+			"(Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object<jarray>(),
+			arg2.object()
+		);
+	}
 } // namespace javax::net::ssl
+
+// Base class headers
 

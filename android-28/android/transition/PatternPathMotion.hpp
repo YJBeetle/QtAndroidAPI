@@ -1,36 +1,62 @@
 #pragma once
 
-#include "./PathMotion.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::graphics
-{
-	class Path;
-}
+#include "../content/Context.def.hpp"
+#include "../graphics/Path.def.hpp"
+#include "./PatternPathMotion.def.hpp"
 
 namespace android::transition
 {
-	class PatternPathMotion : public android::transition::PathMotion
+	// Fields
+	
+	// Constructors
+	inline PatternPathMotion::PatternPathMotion()
+		: android::transition::PathMotion(
+			"android.transition.PatternPathMotion",
+			"()V"
+		) {}
+	inline PatternPathMotion::PatternPathMotion(android::graphics::Path arg0)
+		: android::transition::PathMotion(
+			"android.transition.PatternPathMotion",
+			"(Landroid/graphics/Path;)V",
+			arg0.object()
+		) {}
+	inline PatternPathMotion::PatternPathMotion(android::content::Context arg0, JObject arg1)
+		: android::transition::PathMotion(
+			"android.transition.PatternPathMotion",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline android::graphics::Path PatternPathMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PatternPathMotion(const char *className, const char *sig, Ts...agv) : android::transition::PathMotion(className, sig, std::forward<Ts>(agv)...) {}
-		PatternPathMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
-		
-		// Constructors
-		PatternPathMotion();
-		PatternPathMotion(android::graphics::Path arg0);
-		PatternPathMotion(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
-		android::graphics::Path getPatternPath() const;
-		void setPatternPath(android::graphics::Path arg0) const;
-	};
+		return callObjectMethod(
+			"getPath",
+			"(FFFF)Landroid/graphics/Path;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline android::graphics::Path PatternPathMotion::getPatternPath() const
+	{
+		return callObjectMethod(
+			"getPatternPath",
+			"()Landroid/graphics/Path;"
+		);
+	}
+	inline void PatternPathMotion::setPatternPath(android::graphics::Path arg0) const
+	{
+		callMethod<void>(
+			"setPatternPath",
+			"(Landroid/graphics/Path;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
+#include "./PathMotion.hpp"
 

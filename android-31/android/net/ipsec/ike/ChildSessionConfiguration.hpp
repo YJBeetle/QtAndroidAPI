@@ -1,23 +1,29 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./ChildSessionConfiguration.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class ChildSessionConfiguration : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject ChildSessionConfiguration::getInboundTrafficSelectors() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ChildSessionConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ChildSessionConfiguration(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getInboundTrafficSelectors() const;
-		JObject getOutboundTrafficSelectors() const;
-	};
+		return callObjectMethod(
+			"getInboundTrafficSelectors",
+			"()Ljava/util/List;"
+		);
+	}
+	inline JObject ChildSessionConfiguration::getOutboundTrafficSelectors() const
+	{
+		return callObjectMethod(
+			"getOutboundTrafficSelectors",
+			"()Ljava/util/List;"
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
 

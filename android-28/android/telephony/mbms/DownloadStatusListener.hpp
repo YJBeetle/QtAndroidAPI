@@ -1,32 +1,32 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./DownloadRequest.def.hpp"
+#include "./FileInfo.def.hpp"
+#include "./DownloadStatusListener.def.hpp"
 
 namespace android::telephony::mbms
 {
-	class DownloadRequest;
-}
-namespace android::telephony::mbms
-{
-	class FileInfo;
-}
-
-namespace android::telephony::mbms
-{
-	class DownloadStatusListener : public JObject
+	// Fields
+	
+	// Constructors
+	inline DownloadStatusListener::DownloadStatusListener()
+		: JObject(
+			"android.telephony.mbms.DownloadStatusListener",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void DownloadStatusListener::onStatusUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DownloadStatusListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadStatusListener(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DownloadStatusListener();
-		
-		// Methods
-		void onStatusUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"onStatusUpdated",
+			"(Landroid/telephony/mbms/DownloadRequest;Landroid/telephony/mbms/FileInfo;I)V",
+			arg0.object(),
+			arg1.object(),
+			arg2
+		);
+	}
 } // namespace android::telephony::mbms
+
+// Base class headers
 

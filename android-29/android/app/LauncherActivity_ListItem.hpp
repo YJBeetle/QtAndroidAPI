@@ -1,43 +1,67 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content::pm
-{
-	class ResolveInfo;
-}
-namespace android::graphics::drawable
-{
-	class Drawable;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JString;
-class JString;
+#include "../content/pm/ResolveInfo.def.hpp"
+#include "../graphics/drawable/Drawable.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../../JString.hpp"
+#include "../../JString.hpp"
+#include "./LauncherActivity_ListItem.def.hpp"
 
 namespace android::app
 {
-	class LauncherActivity_ListItem : public JObject
+	// Fields
+	inline JString LauncherActivity_ListItem::className()
 	{
-	public:
-		// Fields
-		JString className();
-		android::os::Bundle extras();
-		android::graphics::drawable::Drawable icon();
-		JString label();
-		JString packageName();
-		android::content::pm::ResolveInfo resolveInfo();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LauncherActivity_ListItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherActivity_ListItem(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		LauncherActivity_ListItem();
-		
-		// Methods
-	};
+		return getObjectField(
+			"className",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::os::Bundle LauncherActivity_ListItem::extras()
+	{
+		return getObjectField(
+			"extras",
+			"Landroid/os/Bundle;"
+		);
+	}
+	inline android::graphics::drawable::Drawable LauncherActivity_ListItem::icon()
+	{
+		return getObjectField(
+			"icon",
+			"Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	inline JString LauncherActivity_ListItem::label()
+	{
+		return getObjectField(
+			"label",
+			"Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString LauncherActivity_ListItem::packageName()
+	{
+		return getObjectField(
+			"packageName",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::content::pm::ResolveInfo LauncherActivity_ListItem::resolveInfo()
+	{
+		return getObjectField(
+			"resolveInfo",
+			"Landroid/content/pm/ResolveInfo;"
+		);
+	}
+	
+	// Constructors
+	inline LauncherActivity_ListItem::LauncherActivity_ListItem()
+		: JObject(
+			"android.app.LauncherActivity$ListItem",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::app
+
+// Base class headers
 

@@ -1,62 +1,168 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::hardware::display
-{
-	class VirtualDisplay;
-}
-namespace android::hardware::display
-{
-	class VirtualDisplay_Callback;
-}
-namespace android::os
-{
-	class Handler;
-}
-namespace android::view
-{
-	class Display;
-}
-namespace android::view
-{
-	class Surface;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "./VirtualDisplay.def.hpp"
+#include "./VirtualDisplay_Callback.def.hpp"
+#include "../../os/Handler.def.hpp"
+#include "../../view/Display.def.hpp"
+#include "../../view/Surface.def.hpp"
+#include "../../../JString.hpp"
+#include "./DisplayManager.def.hpp"
 
 namespace android::hardware::display
 {
-	class DisplayManager : public JObject
+	// Fields
+	inline JString DisplayManager::DISPLAY_CATEGORY_PRESENTATION()
 	{
-	public:
-		// Fields
-		static JString DISPLAY_CATEGORY_PRESENTATION();
-		static jint MATCH_CONTENT_FRAMERATE_ALWAYS();
-		static jint MATCH_CONTENT_FRAMERATE_NEVER();
-		static jint MATCH_CONTENT_FRAMERATE_SEAMLESSS_ONLY();
-		static jint MATCH_CONTENT_FRAMERATE_UNKNOWN();
-		static jint VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR();
-		static jint VIRTUAL_DISPLAY_FLAG_OWN_CONTENT_ONLY();
-		static jint VIRTUAL_DISPLAY_FLAG_PRESENTATION();
-		static jint VIRTUAL_DISPLAY_FLAG_PUBLIC();
-		static jint VIRTUAL_DISPLAY_FLAG_SECURE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DisplayManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DisplayManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5) const;
-		android::hardware::display::VirtualDisplay createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7) const;
-		android::view::Display getDisplay(jint arg0) const;
-		JArray getDisplays() const;
-		JArray getDisplays(JString arg0) const;
-		jint getMatchContentFrameRateUserPreference() const;
-		void registerDisplayListener(JObject arg0, android::os::Handler arg1) const;
-		void unregisterDisplayListener(JObject arg0) const;
-	};
+		return getStaticObjectField(
+			"android.hardware.display.DisplayManager",
+			"DISPLAY_CATEGORY_PRESENTATION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint DisplayManager::MATCH_CONTENT_FRAMERATE_ALWAYS()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"MATCH_CONTENT_FRAMERATE_ALWAYS"
+		);
+	}
+	inline jint DisplayManager::MATCH_CONTENT_FRAMERATE_NEVER()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"MATCH_CONTENT_FRAMERATE_NEVER"
+		);
+	}
+	inline jint DisplayManager::MATCH_CONTENT_FRAMERATE_SEAMLESSS_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"MATCH_CONTENT_FRAMERATE_SEAMLESSS_ONLY"
+		);
+	}
+	inline jint DisplayManager::MATCH_CONTENT_FRAMERATE_UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"MATCH_CONTENT_FRAMERATE_UNKNOWN"
+		);
+	}
+	inline jint DisplayManager::VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR"
+		);
+	}
+	inline jint DisplayManager::VIRTUAL_DISPLAY_FLAG_OWN_CONTENT_ONLY()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"VIRTUAL_DISPLAY_FLAG_OWN_CONTENT_ONLY"
+		);
+	}
+	inline jint DisplayManager::VIRTUAL_DISPLAY_FLAG_PRESENTATION()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"VIRTUAL_DISPLAY_FLAG_PRESENTATION"
+		);
+	}
+	inline jint DisplayManager::VIRTUAL_DISPLAY_FLAG_PUBLIC()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"VIRTUAL_DISPLAY_FLAG_PUBLIC"
+		);
+	}
+	inline jint DisplayManager::VIRTUAL_DISPLAY_FLAG_SECURE()
+	{
+		return getStaticField<jint>(
+			"android.hardware.display.DisplayManager",
+			"VIRTUAL_DISPLAY_FLAG_SECURE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5) const
+	{
+		return callObjectMethod(
+			"createVirtualDisplay",
+			"(Ljava/lang/String;IIILandroid/view/Surface;I)Landroid/hardware/display/VirtualDisplay;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.object(),
+			arg5
+		);
+	}
+	inline android::hardware::display::VirtualDisplay DisplayManager::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, android::view::Surface arg4, jint arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7) const
+	{
+		return callObjectMethod(
+			"createVirtualDisplay",
+			"(Ljava/lang/String;IIILandroid/view/Surface;ILandroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.object(),
+			arg5,
+			arg6.object(),
+			arg7.object()
+		);
+	}
+	inline android::view::Display DisplayManager::getDisplay(jint arg0) const
+	{
+		return callObjectMethod(
+			"getDisplay",
+			"(I)Landroid/view/Display;",
+			arg0
+		);
+	}
+	inline JArray DisplayManager::getDisplays() const
+	{
+		return callObjectMethod(
+			"getDisplays",
+			"()[Landroid/view/Display;"
+		);
+	}
+	inline JArray DisplayManager::getDisplays(JString arg0) const
+	{
+		return callObjectMethod(
+			"getDisplays",
+			"(Ljava/lang/String;)[Landroid/view/Display;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint DisplayManager::getMatchContentFrameRateUserPreference() const
+	{
+		return callMethod<jint>(
+			"getMatchContentFrameRateUserPreference",
+			"()I"
+		);
+	}
+	inline void DisplayManager::registerDisplayListener(JObject arg0, android::os::Handler arg1) const
+	{
+		callMethod<void>(
+			"registerDisplayListener",
+			"(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void DisplayManager::unregisterDisplayListener(JObject arg0) const
+	{
+		callMethod<void>(
+			"unregisterDisplayListener",
+			"(Landroid/hardware/display/DisplayManager$DisplayListener;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::hardware::display
+
+// Base class headers
 

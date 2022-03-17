@@ -1,25 +1,33 @@
 #pragma once
 
-#include "./FileSystemException.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./AccessDeniedException.def.hpp"
 
 namespace java::nio::file
 {
-	class AccessDeniedException : public java::nio::file::FileSystemException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessDeniedException(const char *className, const char *sig, Ts...agv) : java::nio::file::FileSystemException(className, sig, std::forward<Ts>(agv)...) {}
-		AccessDeniedException(QAndroidJniObject obj) : java::nio::file::FileSystemException(obj) {}
-		
-		// Constructors
-		AccessDeniedException(JString arg0);
-		AccessDeniedException(JString arg0, JString arg1, JString arg2);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline AccessDeniedException::AccessDeniedException(JString arg0)
+		: java::nio::file::FileSystemException(
+			"java.nio.file.AccessDeniedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline AccessDeniedException::AccessDeniedException(JString arg0, JString arg1, JString arg2)
+		: java::nio::file::FileSystemException(
+			"java.nio.file.AccessDeniedException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::nio::file
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
+#include "./FileSystemException.hpp"
 

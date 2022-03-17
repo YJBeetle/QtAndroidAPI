@@ -1,33 +1,65 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./CallLog_Locations.def.hpp"
 
 namespace android::provider
 {
-	class CallLog_Locations : public JObject
+	// Fields
+	inline JString CallLog_Locations::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static JString CONTENT_ITEM_TYPE();
-		static JString CONTENT_TYPE();
-		static android::net::Uri CONTENT_URI();
-		static JString LATITUDE();
-		static JString LONGITUDE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CallLog_Locations(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CallLog_Locations(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.CallLog$Locations",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CallLog_Locations::CONTENT_ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.CallLog$Locations",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CallLog_Locations::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.provider.CallLog$Locations",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri CallLog_Locations::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.CallLog$Locations",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline JString CallLog_Locations::LATITUDE()
+	{
+		return getStaticObjectField(
+			"android.provider.CallLog$Locations",
+			"LATITUDE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CallLog_Locations::LONGITUDE()
+	{
+		return getStaticObjectField(
+			"android.provider.CallLog$Locations",
+			"LONGITUDE",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

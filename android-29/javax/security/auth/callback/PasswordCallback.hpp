@@ -1,30 +1,60 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-class JCharArray;
-class JString;
+#include "../../../../JCharArray.hpp"
+#include "../../../../JString.hpp"
+#include "./PasswordCallback.def.hpp"
 
 namespace javax::security::auth::callback
 {
-	class PasswordCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline PasswordCallback::PasswordCallback(JString arg0, jboolean arg1)
+		: JObject(
+			"javax.security.auth.callback.PasswordCallback",
+			"(Ljava/lang/String;Z)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline void PasswordCallback::clearPassword() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PasswordCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PasswordCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PasswordCallback(JString arg0, jboolean arg1);
-		
-		// Methods
-		void clearPassword() const;
-		JCharArray getPassword() const;
-		JString getPrompt() const;
-		jboolean isEchoOn() const;
-		void setPassword(JCharArray arg0) const;
-	};
+		callMethod<void>(
+			"clearPassword",
+			"()V"
+		);
+	}
+	inline JCharArray PasswordCallback::getPassword() const
+	{
+		return callObjectMethod(
+			"getPassword",
+			"()[C"
+		);
+	}
+	inline JString PasswordCallback::getPrompt() const
+	{
+		return callObjectMethod(
+			"getPrompt",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean PasswordCallback::isEchoOn() const
+	{
+		return callMethod<jboolean>(
+			"isEchoOn",
+			"()Z"
+		);
+	}
+	inline void PasswordCallback::setPassword(JCharArray arg0) const
+	{
+		callMethod<void>(
+			"setPassword",
+			"([C)V",
+			arg0.object<jcharArray>()
+		);
+	}
 } // namespace javax::security::auth::callback
+
+// Base class headers
 

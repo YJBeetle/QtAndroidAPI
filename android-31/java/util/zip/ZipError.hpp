@@ -1,24 +1,25 @@
 #pragma once
 
-#include "../../lang/InternalError.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./ZipError.def.hpp"
 
 namespace java::util::zip
 {
-	class ZipError : public java::lang::InternalError
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ZipError(const char *className, const char *sig, Ts...agv) : java::lang::InternalError(className, sig, std::forward<Ts>(agv)...) {}
-		ZipError(QAndroidJniObject obj) : java::lang::InternalError(obj) {}
-		
-		// Constructors
-		ZipError(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ZipError::ZipError(JString arg0)
+		: java::lang::InternalError(
+			"java.util.zip.ZipError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../lang/Error.hpp"
+#include "../../lang/VirtualMachineError.hpp"
+#include "../../lang/InternalError.hpp"
 

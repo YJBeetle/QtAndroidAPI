@@ -1,41 +1,88 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Point;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-class JString;
+#include "../../../graphics/Point.def.hpp"
+#include "../../../graphics/Rect.def.hpp"
+#include "../../../../JString.hpp"
+#include "./Face.def.hpp"
 
 namespace android::hardware::camera2::params
 {
-	class Face : public JObject
+	// Fields
+	inline jint Face::ID_UNSUPPORTED()
 	{
-	public:
-		// Fields
-		static jint ID_UNSUPPORTED();
-		static jint SCORE_MAX();
-		static jint SCORE_MIN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Face(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Face(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::graphics::Rect getBounds() const;
-		jint getId() const;
-		android::graphics::Point getLeftEyePosition() const;
-		android::graphics::Point getMouthPosition() const;
-		android::graphics::Point getRightEyePosition() const;
-		jint getScore() const;
-		JString toString() const;
-	};
+		return getStaticField<jint>(
+			"android.hardware.camera2.params.Face",
+			"ID_UNSUPPORTED"
+		);
+	}
+	inline jint Face::SCORE_MAX()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.params.Face",
+			"SCORE_MAX"
+		);
+	}
+	inline jint Face::SCORE_MIN()
+	{
+		return getStaticField<jint>(
+			"android.hardware.camera2.params.Face",
+			"SCORE_MIN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Rect Face::getBounds() const
+	{
+		return callObjectMethod(
+			"getBounds",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	inline jint Face::getId() const
+	{
+		return callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	inline android::graphics::Point Face::getLeftEyePosition() const
+	{
+		return callObjectMethod(
+			"getLeftEyePosition",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	inline android::graphics::Point Face::getMouthPosition() const
+	{
+		return callObjectMethod(
+			"getMouthPosition",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	inline android::graphics::Point Face::getRightEyePosition() const
+	{
+		return callObjectMethod(
+			"getRightEyePosition",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	inline jint Face::getScore() const
+	{
+		return callMethod<jint>(
+			"getScore",
+			"()I"
+		);
+	}
+	inline JString Face::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::hardware::camera2::params
+
+// Base class headers
 

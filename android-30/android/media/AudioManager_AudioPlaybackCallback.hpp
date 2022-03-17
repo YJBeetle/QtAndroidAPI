@@ -1,23 +1,28 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AudioManager_AudioPlaybackCallback.def.hpp"
 
 namespace android::media
 {
-	class AudioManager_AudioPlaybackCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback()
+		: JObject(
+			"android.media.AudioManager$AudioPlaybackCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void AudioManager_AudioPlaybackCallback::onPlaybackConfigChanged(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioManager_AudioPlaybackCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioManager_AudioPlaybackCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AudioManager_AudioPlaybackCallback();
-		
-		// Methods
-		void onPlaybackConfigChanged(JObject arg0) const;
-	};
+		callMethod<void>(
+			"onPlaybackConfigChanged",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

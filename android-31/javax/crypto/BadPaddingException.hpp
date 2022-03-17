@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/security/GeneralSecurityException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./BadPaddingException.def.hpp"
 
 namespace javax::crypto
 {
-	class BadPaddingException : public java::security::GeneralSecurityException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BadPaddingException(const char *className, const char *sig, Ts...agv) : java::security::GeneralSecurityException(className, sig, std::forward<Ts>(agv)...) {}
-		BadPaddingException(QAndroidJniObject obj) : java::security::GeneralSecurityException(obj) {}
-		
-		// Constructors
-		BadPaddingException();
-		BadPaddingException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline BadPaddingException::BadPaddingException()
+		: java::security::GeneralSecurityException(
+			"javax.crypto.BadPaddingException",
+			"()V"
+		) {}
+	inline BadPaddingException::BadPaddingException(JString arg0)
+		: java::security::GeneralSecurityException(
+			"javax.crypto.BadPaddingException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/security/GeneralSecurityException.hpp"
 

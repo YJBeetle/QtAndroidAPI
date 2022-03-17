@@ -1,25 +1,28 @@
 #pragma once
 
-#include "./Exception.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./InterruptedException.def.hpp"
 
 namespace java::lang
 {
-	class InterruptedException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InterruptedException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		InterruptedException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		InterruptedException();
-		InterruptedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline InterruptedException::InterruptedException()
+		: java::lang::Exception(
+			"java.lang.InterruptedException",
+			"()V"
+		) {}
+	inline InterruptedException::InterruptedException(JString arg0)
+		: java::lang::Exception(
+			"java.lang.InterruptedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace java::lang
+
+// Base class headers
+#include "./Exception.hpp"
 

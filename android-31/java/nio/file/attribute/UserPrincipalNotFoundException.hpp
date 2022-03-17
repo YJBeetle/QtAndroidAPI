@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../../io/IOException.hpp"
-
-class JString;
+#include "../../../../JString.hpp"
+#include "./UserPrincipalNotFoundException.def.hpp"
 
 namespace java::nio::file::attribute
 {
-	class UserPrincipalNotFoundException : public java::io::IOException
+	// Fields
+	
+	// Constructors
+	inline UserPrincipalNotFoundException::UserPrincipalNotFoundException(JString arg0)
+		: java::io::IOException(
+			"java.nio.file.attribute.UserPrincipalNotFoundException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline JString UserPrincipalNotFoundException::getName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UserPrincipalNotFoundException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		UserPrincipalNotFoundException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		UserPrincipalNotFoundException(JString arg0);
-		
-		// Methods
-		JString getName() const;
-	};
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::file::attribute
+
+// Base class headers
+#include "../../../lang/Exception.hpp"
+#include "../../../io/IOException.hpp"
 

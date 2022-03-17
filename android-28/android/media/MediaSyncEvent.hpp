@@ -1,27 +1,60 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./MediaSyncEvent.def.hpp"
 
 namespace android::media
 {
-	class MediaSyncEvent : public JObject
+	// Fields
+	inline jint MediaSyncEvent::SYNC_EVENT_NONE()
 	{
-	public:
-		// Fields
-		static jint SYNC_EVENT_NONE();
-		static jint SYNC_EVENT_PRESENTATION_COMPLETE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaSyncEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaSyncEvent(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::media::MediaSyncEvent createEvent(jint arg0);
-		jint getAudioSessionId() const;
-		jint getType() const;
-		android::media::MediaSyncEvent setAudioSessionId(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaSyncEvent",
+			"SYNC_EVENT_NONE"
+		);
+	}
+	inline jint MediaSyncEvent::SYNC_EVENT_PRESENTATION_COMPLETE()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaSyncEvent",
+			"SYNC_EVENT_PRESENTATION_COMPLETE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::MediaSyncEvent MediaSyncEvent::createEvent(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"android.media.MediaSyncEvent",
+			"createEvent",
+			"(I)Landroid/media/MediaSyncEvent;",
+			arg0
+		);
+	}
+	inline jint MediaSyncEvent::getAudioSessionId() const
+	{
+		return callMethod<jint>(
+			"getAudioSessionId",
+			"()I"
+		);
+	}
+	inline jint MediaSyncEvent::getType() const
+	{
+		return callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	inline android::media::MediaSyncEvent MediaSyncEvent::setAudioSessionId(jint arg0) const
+	{
+		return callObjectMethod(
+			"setAudioSessionId",
+			"(I)Landroid/media/MediaSyncEvent;",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

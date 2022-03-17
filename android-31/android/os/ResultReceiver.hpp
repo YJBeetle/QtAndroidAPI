@@ -1,39 +1,57 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Bundle.def.hpp"
+#include "./Handler.def.hpp"
+#include "./Parcel.def.hpp"
+#include "./ResultReceiver.def.hpp"
 
 namespace android::os
 {
-	class Bundle;
-}
-namespace android::os
-{
-	class Handler;
-}
-namespace android::os
-{
-	class Parcel;
-}
-
-namespace android::os
-{
-	class ResultReceiver : public JObject
+	// Fields
+	inline JObject ResultReceiver::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ResultReceiver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ResultReceiver(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ResultReceiver(android::os::Handler arg0);
-		
-		// Methods
-		jint describeContents() const;
-		void send(jint arg0, android::os::Bundle arg1) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.os.ResultReceiver",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline ResultReceiver::ResultReceiver(android::os::Handler arg0)
+		: JObject(
+			"android.os.ResultReceiver",
+			"(Landroid/os/Handler;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint ResultReceiver::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void ResultReceiver::send(jint arg0, android::os::Bundle arg1) const
+	{
+		callMethod<void>(
+			"send",
+			"(ILandroid/os/Bundle;)V",
+			arg0,
+			arg1.object()
+		);
+	}
+	inline void ResultReceiver::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::os
+
+// Base class headers
 

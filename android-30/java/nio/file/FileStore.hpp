@@ -1,36 +1,99 @@
 #pragma once
 
+#include "../../../JClass.hpp"
 #include "../../../JObject.hpp"
-
-class JClass;
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./FileStore.def.hpp"
 
 namespace java::nio::file
 {
-	class FileStore : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject FileStore::getAttribute(JString arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FileStore(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getAttribute(JString arg0) const;
-		jlong getBlockSize() const;
-		JObject getFileStoreAttributeView(JClass arg0) const;
-		jlong getTotalSpace() const;
-		jlong getUnallocatedSpace() const;
-		jlong getUsableSpace() const;
-		jboolean isReadOnly() const;
-		JString name() const;
-		jboolean supportsFileAttributeView(JClass arg0) const;
-		jboolean supportsFileAttributeView(JString arg0) const;
-		JString type() const;
-	};
+		return callObjectMethod(
+			"getAttribute",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jlong FileStore::getBlockSize() const
+	{
+		return callMethod<jlong>(
+			"getBlockSize",
+			"()J"
+		);
+	}
+	inline JObject FileStore::getFileStoreAttributeView(JClass arg0) const
+	{
+		return callObjectMethod(
+			"getFileStoreAttributeView",
+			"(Ljava/lang/Class;)Ljava/nio/file/attribute/FileStoreAttributeView;",
+			arg0.object<jclass>()
+		);
+	}
+	inline jlong FileStore::getTotalSpace() const
+	{
+		return callMethod<jlong>(
+			"getTotalSpace",
+			"()J"
+		);
+	}
+	inline jlong FileStore::getUnallocatedSpace() const
+	{
+		return callMethod<jlong>(
+			"getUnallocatedSpace",
+			"()J"
+		);
+	}
+	inline jlong FileStore::getUsableSpace() const
+	{
+		return callMethod<jlong>(
+			"getUsableSpace",
+			"()J"
+		);
+	}
+	inline jboolean FileStore::isReadOnly() const
+	{
+		return callMethod<jboolean>(
+			"isReadOnly",
+			"()Z"
+		);
+	}
+	inline JString FileStore::name() const
+	{
+		return callObjectMethod(
+			"name",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean FileStore::supportsFileAttributeView(JClass arg0) const
+	{
+		return callMethod<jboolean>(
+			"supportsFileAttributeView",
+			"(Ljava/lang/Class;)Z",
+			arg0.object<jclass>()
+		);
+	}
+	inline jboolean FileStore::supportsFileAttributeView(JString arg0) const
+	{
+		return callMethod<jboolean>(
+			"supportsFileAttributeView",
+			"(Ljava/lang/String;)Z",
+			arg0.object<jstring>()
+		);
+	}
+	inline JString FileStore::type() const
+	{
+		return callObjectMethod(
+			"type",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio::file
+
+// Base class headers
 

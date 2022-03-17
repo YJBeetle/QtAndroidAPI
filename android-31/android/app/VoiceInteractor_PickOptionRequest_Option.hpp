@@ -1,42 +1,101 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Bundle.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./VoiceInteractor_PickOptionRequest_Option.def.hpp"
 
 namespace android::app
 {
-	class VoiceInteractor_PickOptionRequest_Option : public JObject
+	// Fields
+	inline JObject VoiceInteractor_PickOptionRequest_Option::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractor_PickOptionRequest_Option(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		VoiceInteractor_PickOptionRequest_Option(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		VoiceInteractor_PickOptionRequest_Option(JString arg0, jint arg1);
-		
-		// Methods
-		android::app::VoiceInteractor_PickOptionRequest_Option addSynonym(JString arg0) const;
-		jint countSynonyms() const;
-		jint describeContents() const;
-		android::os::Bundle getExtras() const;
-		jint getIndex() const;
-		JString getLabel() const;
-		JString getSynonymAt(jint arg0) const;
-		void setExtras(android::os::Bundle arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.app.VoiceInteractor$PickOptionRequest$Option",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(JString arg0, jint arg1)
+		: JObject(
+			"android.app.VoiceInteractor$PickOptionRequest$Option",
+			"(Ljava/lang/CharSequence;I)V",
+			arg0.object<jstring>(),
+			arg1
+		) {}
+	
+	// Methods
+	inline android::app::VoiceInteractor_PickOptionRequest_Option VoiceInteractor_PickOptionRequest_Option::addSynonym(JString arg0) const
+	{
+		return callObjectMethod(
+			"addSynonym",
+			"(Ljava/lang/CharSequence;)Landroid/app/VoiceInteractor$PickOptionRequest$Option;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint VoiceInteractor_PickOptionRequest_Option::countSynonyms() const
+	{
+		return callMethod<jint>(
+			"countSynonyms",
+			"()I"
+		);
+	}
+	inline jint VoiceInteractor_PickOptionRequest_Option::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::os::Bundle VoiceInteractor_PickOptionRequest_Option::getExtras() const
+	{
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline jint VoiceInteractor_PickOptionRequest_Option::getIndex() const
+	{
+		return callMethod<jint>(
+			"getIndex",
+			"()I"
+		);
+	}
+	inline JString VoiceInteractor_PickOptionRequest_Option::getLabel() const
+	{
+		return callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline JString VoiceInteractor_PickOptionRequest_Option::getSynonymAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"getSynonymAt",
+			"(I)Ljava/lang/CharSequence;",
+			arg0
+		);
+	}
+	inline void VoiceInteractor_PickOptionRequest_Option::setExtras(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
+	inline void VoiceInteractor_PickOptionRequest_Option::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

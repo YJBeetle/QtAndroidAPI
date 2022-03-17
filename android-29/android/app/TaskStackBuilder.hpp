@@ -1,61 +1,128 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JArray;
-namespace android::app
-{
-	class Activity;
-}
-namespace android::app
-{
-	class PendingIntent;
-}
-namespace android::content
-{
-	class ComponentName;
-}
-namespace android::content
-{
-	class Context;
-}
-namespace android::content
-{
-	class Intent;
-}
-namespace android::os
-{
-	class Bundle;
-}
-class JClass;
+#include "../../JArray.hpp"
+#include "./Activity.def.hpp"
+#include "./PendingIntent.def.hpp"
+#include "../content/ComponentName.def.hpp"
+#include "../content/Context.def.hpp"
+#include "../content/Intent.def.hpp"
+#include "../os/Bundle.def.hpp"
+#include "../../JClass.hpp"
+#include "./TaskStackBuilder.def.hpp"
 
 namespace android::app
 {
-	class TaskStackBuilder : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::app::TaskStackBuilder TaskStackBuilder::create(android::content::Context arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TaskStackBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TaskStackBuilder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::app::TaskStackBuilder create(android::content::Context arg0);
-		android::app::TaskStackBuilder addNextIntent(android::content::Intent arg0) const;
-		android::app::TaskStackBuilder addNextIntentWithParentStack(android::content::Intent arg0) const;
-		android::app::TaskStackBuilder addParentStack(android::app::Activity arg0) const;
-		android::app::TaskStackBuilder addParentStack(android::content::ComponentName arg0) const;
-		android::app::TaskStackBuilder addParentStack(JClass arg0) const;
-		android::content::Intent editIntentAt(jint arg0) const;
-		jint getIntentCount() const;
-		JArray getIntents() const;
-		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1) const;
-		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2) const;
-		void startActivities() const;
-		void startActivities(android::os::Bundle arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.app.TaskStackBuilder",
+			"create",
+			"(Landroid/content/Context;)Landroid/app/TaskStackBuilder;",
+			arg0.object()
+		);
+	}
+	inline android::app::TaskStackBuilder TaskStackBuilder::addNextIntent(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"addNextIntent",
+			"(Landroid/content/Intent;)Landroid/app/TaskStackBuilder;",
+			arg0.object()
+		);
+	}
+	inline android::app::TaskStackBuilder TaskStackBuilder::addNextIntentWithParentStack(android::content::Intent arg0) const
+	{
+		return callObjectMethod(
+			"addNextIntentWithParentStack",
+			"(Landroid/content/Intent;)Landroid/app/TaskStackBuilder;",
+			arg0.object()
+		);
+	}
+	inline android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::app::Activity arg0) const
+	{
+		return callObjectMethod(
+			"addParentStack",
+			"(Landroid/app/Activity;)Landroid/app/TaskStackBuilder;",
+			arg0.object()
+		);
+	}
+	inline android::app::TaskStackBuilder TaskStackBuilder::addParentStack(android::content::ComponentName arg0) const
+	{
+		return callObjectMethod(
+			"addParentStack",
+			"(Landroid/content/ComponentName;)Landroid/app/TaskStackBuilder;",
+			arg0.object()
+		);
+	}
+	inline android::app::TaskStackBuilder TaskStackBuilder::addParentStack(JClass arg0) const
+	{
+		return callObjectMethod(
+			"addParentStack",
+			"(Ljava/lang/Class;)Landroid/app/TaskStackBuilder;",
+			arg0.object<jclass>()
+		);
+	}
+	inline android::content::Intent TaskStackBuilder::editIntentAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"editIntentAt",
+			"(I)Landroid/content/Intent;",
+			arg0
+		);
+	}
+	inline jint TaskStackBuilder::getIntentCount() const
+	{
+		return callMethod<jint>(
+			"getIntentCount",
+			"()I"
+		);
+	}
+	inline JArray TaskStackBuilder::getIntents() const
+	{
+		return callObjectMethod(
+			"getIntents",
+			"()[Landroid/content/Intent;"
+		);
+	}
+	inline android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"getPendingIntent",
+			"(II)Landroid/app/PendingIntent;",
+			arg0,
+			arg1
+		);
+	}
+	inline android::app::PendingIntent TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2) const
+	{
+		return callObjectMethod(
+			"getPendingIntent",
+			"(IILandroid/os/Bundle;)Landroid/app/PendingIntent;",
+			arg0,
+			arg1,
+			arg2.object()
+		);
+	}
+	inline void TaskStackBuilder::startActivities() const
+	{
+		callMethod<void>(
+			"startActivities",
+			"()V"
+		);
+	}
+	inline void TaskStackBuilder::startActivities(android::os::Bundle arg0) const
+	{
+		callMethod<void>(
+			"startActivities",
+			"(Landroid/os/Bundle;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::app
+
+// Base class headers
 

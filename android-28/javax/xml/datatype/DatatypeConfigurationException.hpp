@@ -1,28 +1,42 @@
 #pragma once
 
-#include "../../../java/lang/Exception.hpp"
-
-class JString;
-class JThrowable;
+#include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
+#include "./DatatypeConfigurationException.def.hpp"
 
 namespace javax::xml::datatype
 {
-	class DatatypeConfigurationException : public java::lang::Exception
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DatatypeConfigurationException(const char *className, const char *sig, Ts...agv) : java::lang::Exception(className, sig, std::forward<Ts>(agv)...) {}
-		DatatypeConfigurationException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
-		
-		// Constructors
-		DatatypeConfigurationException();
-		DatatypeConfigurationException(JString arg0);
-		DatatypeConfigurationException(JThrowable arg0);
-		DatatypeConfigurationException(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline DatatypeConfigurationException::DatatypeConfigurationException()
+		: java::lang::Exception(
+			"javax.xml.datatype.DatatypeConfigurationException",
+			"()V"
+		) {}
+	inline DatatypeConfigurationException::DatatypeConfigurationException(JString arg0)
+		: java::lang::Exception(
+			"javax.xml.datatype.DatatypeConfigurationException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline DatatypeConfigurationException::DatatypeConfigurationException(JThrowable arg0)
+		: java::lang::Exception(
+			"javax.xml.datatype.DatatypeConfigurationException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline DatatypeConfigurationException::DatatypeConfigurationException(JString arg0, JThrowable arg1)
+		: java::lang::Exception(
+			"javax.xml.datatype.DatatypeConfigurationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace javax::xml::datatype
+
+// Base class headers
+#include "../../../java/lang/Exception.hpp"
 

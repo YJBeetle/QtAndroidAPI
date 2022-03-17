@@ -1,43 +1,50 @@
 #pragma once
 
-#include "./Formatter.hpp"
-
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
-namespace java::util::logging
-{
-	class Handler;
-}
-namespace java::util::logging
-{
-	class LogManager;
-}
-namespace java::util::logging
-{
-	class LogRecord;
-}
+#include "../../../JString.hpp"
+#include "../../lang/StringBuilder.def.hpp"
+#include "./Handler.def.hpp"
+#include "./LogManager.def.hpp"
+#include "./LogRecord.def.hpp"
+#include "./XMLFormatter.def.hpp"
 
 namespace java::util::logging
 {
-	class XMLFormatter : public java::util::logging::Formatter
+	// Fields
+	
+	// Constructors
+	inline XMLFormatter::XMLFormatter()
+		: java::util::logging::Formatter(
+			"java.util.logging.XMLFormatter",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JString XMLFormatter::format(java::util::logging::LogRecord arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit XMLFormatter(const char *className, const char *sig, Ts...agv) : java::util::logging::Formatter(className, sig, std::forward<Ts>(agv)...) {}
-		XMLFormatter(QAndroidJniObject obj) : java::util::logging::Formatter(obj) {}
-		
-		// Constructors
-		XMLFormatter();
-		
-		// Methods
-		JString format(java::util::logging::LogRecord arg0) const;
-		JString getHead(java::util::logging::Handler arg0) const;
-		JString getTail(java::util::logging::Handler arg0) const;
-	};
+		return callObjectMethod(
+			"format",
+			"(Ljava/util/logging/LogRecord;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString XMLFormatter::getHead(java::util::logging::Handler arg0) const
+	{
+		return callObjectMethod(
+			"getHead",
+			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
+	inline JString XMLFormatter::getTail(java::util::logging::Handler arg0) const
+	{
+		return callObjectMethod(
+			"getTail",
+			"(Ljava/util/logging/Handler;)Ljava/lang/String;",
+			arg0.object()
+		);
+	}
 } // namespace java::util::logging
+
+// Base class headers
+#include "./Formatter.hpp"
 

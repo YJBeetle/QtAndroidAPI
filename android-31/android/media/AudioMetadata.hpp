@@ -1,22 +1,23 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AudioMetadata.def.hpp"
 
 namespace android::media
 {
-	class AudioMetadata : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject AudioMetadata::createMap()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioMetadata(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AudioMetadata(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JObject createMap();
-	};
+		return callStaticObjectMethod(
+			"android.media.AudioMetadata",
+			"createMap",
+			"()Landroid/media/AudioMetadataMap;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

@@ -1,25 +1,32 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./CarrierConfigManager_Gps.def.hpp"
 
 namespace android::telephony
 {
-	class CarrierConfigManager_Gps : public JObject
+	// Fields
+	inline JString CarrierConfigManager_Gps::KEY_PERSIST_LPP_MODE_BOOL()
 	{
-	public:
-		// Fields
-		static JString KEY_PERSIST_LPP_MODE_BOOL();
-		static JString KEY_PREFIX();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_Gps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CarrierConfigManager_Gps(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$Gps",
+			"KEY_PERSIST_LPP_MODE_BOOL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString CarrierConfigManager_Gps::KEY_PREFIX()
+	{
+		return getStaticObjectField(
+			"android.telephony.CarrierConfigManager$Gps",
+			"KEY_PREFIX",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::telephony
+
+// Base class headers
 

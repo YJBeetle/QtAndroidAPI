@@ -1,33 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "./DownloadableSubscription.def.hpp"
 
 namespace android::telephony::euicc
 {
-	class DownloadableSubscription : public JObject
+	// Fields
+	inline JObject DownloadableSubscription::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DownloadableSubscription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DownloadableSubscription(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::telephony::euicc::DownloadableSubscription forActivationCode(JString arg0);
-		jint describeContents() const;
-		JString getConfirmationCode() const;
-		JString getEncodedActivationCode() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.telephony.euicc.DownloadableSubscription",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::telephony::euicc::DownloadableSubscription DownloadableSubscription::forActivationCode(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.telephony.euicc.DownloadableSubscription",
+			"forActivationCode",
+			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",
+			arg0.object<jstring>()
+		);
+	}
+	inline jint DownloadableSubscription::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JString DownloadableSubscription::getConfirmationCode() const
+	{
+		return callObjectMethod(
+			"getConfirmationCode",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JString DownloadableSubscription::getEncodedActivationCode() const
+	{
+		return callObjectMethod(
+			"getEncodedActivationCode",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void DownloadableSubscription::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::telephony::euicc
+
+// Base class headers
 

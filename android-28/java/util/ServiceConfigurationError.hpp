@@ -1,26 +1,31 @@
 #pragma once
 
-#include "../lang/Error.hpp"
-
-class JString;
-class JThrowable;
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "./ServiceConfigurationError.def.hpp"
 
 namespace java::util
 {
-	class ServiceConfigurationError : public java::lang::Error
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ServiceConfigurationError(const char *className, const char *sig, Ts...agv) : java::lang::Error(className, sig, std::forward<Ts>(agv)...) {}
-		ServiceConfigurationError(QAndroidJniObject obj) : java::lang::Error(obj) {}
-		
-		// Constructors
-		ServiceConfigurationError(JString arg0);
-		ServiceConfigurationError(JString arg0, JThrowable arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline ServiceConfigurationError::ServiceConfigurationError(JString arg0)
+		: java::lang::Error(
+			"java.util.ServiceConfigurationError",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	inline ServiceConfigurationError::ServiceConfigurationError(JString arg0, JThrowable arg1)
+		: java::lang::Error(
+			"java.util.ServiceConfigurationError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	
+	// Methods
 } // namespace java::util
+
+// Base class headers
+#include "../lang/Error.hpp"
 

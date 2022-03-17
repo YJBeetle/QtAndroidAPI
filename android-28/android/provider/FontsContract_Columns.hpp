@@ -1,33 +1,92 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./FontsContract_Columns.def.hpp"
 
 namespace android::provider
 {
-	class FontsContract_Columns : public JObject
+	// Fields
+	inline JString FontsContract_Columns::FILE_ID()
 	{
-	public:
-		// Fields
-		static JString FILE_ID();
-		static JString ITALIC();
-		static JString RESULT_CODE();
-		static jint RESULT_CODE_FONT_NOT_FOUND();
-		static jint RESULT_CODE_FONT_UNAVAILABLE();
-		static jint RESULT_CODE_MALFORMED_QUERY();
-		static jint RESULT_CODE_OK();
-		static JString TTC_INDEX();
-		static JString VARIATION_SETTINGS();
-		static JString WEIGHT();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FontsContract_Columns(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FontsContract_Columns(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.FontsContract$Columns",
+			"FILE_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString FontsContract_Columns::ITALIC()
+	{
+		return getStaticObjectField(
+			"android.provider.FontsContract$Columns",
+			"ITALIC",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString FontsContract_Columns::RESULT_CODE()
+	{
+		return getStaticObjectField(
+			"android.provider.FontsContract$Columns",
+			"RESULT_CODE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline jint FontsContract_Columns::RESULT_CODE_FONT_NOT_FOUND()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$Columns",
+			"RESULT_CODE_FONT_NOT_FOUND"
+		);
+	}
+	inline jint FontsContract_Columns::RESULT_CODE_FONT_UNAVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$Columns",
+			"RESULT_CODE_FONT_UNAVAILABLE"
+		);
+	}
+	inline jint FontsContract_Columns::RESULT_CODE_MALFORMED_QUERY()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$Columns",
+			"RESULT_CODE_MALFORMED_QUERY"
+		);
+	}
+	inline jint FontsContract_Columns::RESULT_CODE_OK()
+	{
+		return getStaticField<jint>(
+			"android.provider.FontsContract$Columns",
+			"RESULT_CODE_OK"
+		);
+	}
+	inline JString FontsContract_Columns::TTC_INDEX()
+	{
+		return getStaticObjectField(
+			"android.provider.FontsContract$Columns",
+			"TTC_INDEX",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString FontsContract_Columns::VARIATION_SETTINGS()
+	{
+		return getStaticObjectField(
+			"android.provider.FontsContract$Columns",
+			"VARIATION_SETTINGS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString FontsContract_Columns::WEIGHT()
+	{
+		return getStaticObjectField(
+			"android.provider.FontsContract$Columns",
+			"WEIGHT",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

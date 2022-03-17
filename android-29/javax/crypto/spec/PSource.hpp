@@ -1,24 +1,23 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
+#include "../../../JString.hpp"
+#include "./PSource.def.hpp"
 
 namespace javax::crypto::spec
 {
-	class PSource : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JString PSource::getAlgorithm() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PSource(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JString getAlgorithm() const;
-	};
+		return callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace javax::crypto::spec
+
+// Base class headers
 

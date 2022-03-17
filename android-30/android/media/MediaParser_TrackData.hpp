@@ -1,32 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmInitData.def.hpp"
+#include "./MediaFormat.def.hpp"
+#include "./MediaParser_TrackData.def.hpp"
 
 namespace android::media
 {
-	class DrmInitData;
-}
-namespace android::media
-{
-	class MediaFormat;
-}
-
-namespace android::media
-{
-	class MediaParser_TrackData : public JObject
+	// Fields
+	inline android::media::DrmInitData MediaParser_TrackData::drmInitData()
 	{
-	public:
-		// Fields
-		android::media::DrmInitData drmInitData();
-		android::media::MediaFormat mediaFormat();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaParser_TrackData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaParser_TrackData(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getObjectField(
+			"drmInitData",
+			"Landroid/media/DrmInitData;"
+		);
+	}
+	inline android::media::MediaFormat MediaParser_TrackData::mediaFormat()
+	{
+		return getObjectField(
+			"mediaFormat",
+			"Landroid/media/MediaFormat;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
 

@@ -1,32 +1,59 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::util
-{
-	class Range;
-}
+#include "../util/Range.def.hpp"
+#include "./MediaCodecInfo_EncoderCapabilities.def.hpp"
 
 namespace android::media
 {
-	class MediaCodecInfo_EncoderCapabilities : public JObject
+	// Fields
+	inline jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_CBR()
 	{
-	public:
-		// Fields
-		static jint BITRATE_MODE_CBR();
-		static jint BITRATE_MODE_CQ();
-		static jint BITRATE_MODE_VBR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_EncoderCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodecInfo_EncoderCapabilities(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::util::Range getComplexityRange() const;
-		android::util::Range getQualityRange() const;
-		jboolean isBitrateModeSupported(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$EncoderCapabilities",
+			"BITRATE_MODE_CBR"
+		);
+	}
+	inline jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_CQ()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$EncoderCapabilities",
+			"BITRATE_MODE_CQ"
+		);
+	}
+	inline jint MediaCodecInfo_EncoderCapabilities::BITRATE_MODE_VBR()
+	{
+		return getStaticField<jint>(
+			"android.media.MediaCodecInfo$EncoderCapabilities",
+			"BITRATE_MODE_VBR"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::util::Range MediaCodecInfo_EncoderCapabilities::getComplexityRange() const
+	{
+		return callObjectMethod(
+			"getComplexityRange",
+			"()Landroid/util/Range;"
+		);
+	}
+	inline android::util::Range MediaCodecInfo_EncoderCapabilities::getQualityRange() const
+	{
+		return callObjectMethod(
+			"getQualityRange",
+			"()Landroid/util/Range;"
+		);
+	}
+	inline jboolean MediaCodecInfo_EncoderCapabilities::isBitrateModeSupported(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isBitrateModeSupported",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

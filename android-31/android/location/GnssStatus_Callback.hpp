@@ -1,31 +1,51 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssStatus.def.hpp"
+#include "./GnssStatus_Callback.def.hpp"
 
 namespace android::location
 {
-	class GnssStatus;
-}
-
-namespace android::location
-{
-	class GnssStatus_Callback : public JObject
+	// Fields
+	
+	// Constructors
+	inline GnssStatus_Callback::GnssStatus_Callback()
+		: JObject(
+			"android.location.GnssStatus$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void GnssStatus_Callback::onFirstFix(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssStatus_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssStatus_Callback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GnssStatus_Callback();
-		
-		// Methods
-		void onFirstFix(jint arg0) const;
-		void onSatelliteStatusChanged(android::location::GnssStatus arg0) const;
-		void onStarted() const;
-		void onStopped() const;
-	};
+		callMethod<void>(
+			"onFirstFix",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void GnssStatus_Callback::onSatelliteStatusChanged(android::location::GnssStatus arg0) const
+	{
+		callMethod<void>(
+			"onSatelliteStatusChanged",
+			"(Landroid/location/GnssStatus;)V",
+			arg0.object()
+		);
+	}
+	inline void GnssStatus_Callback::onStarted() const
+	{
+		callMethod<void>(
+			"onStarted",
+			"()V"
+		);
+	}
+	inline void GnssStatus_Callback::onStopped() const
+	{
+		callMethod<void>(
+			"onStopped",
+			"()V"
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

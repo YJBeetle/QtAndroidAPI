@@ -1,25 +1,31 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./GLException.def.hpp"
 
 namespace android::opengl
 {
-	class GLException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GLException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		GLException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		GLException(jint arg0);
-		GLException(jint arg0, JString arg1);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline GLException::GLException(jint arg0)
+		: java::lang::RuntimeException(
+			"android.opengl.GLException",
+			"(I)V",
+			arg0
+		) {}
+	inline GLException::GLException(jint arg0, JString arg1)
+		: java::lang::RuntimeException(
+			"android.opengl.GLException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::opengl
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

@@ -1,37 +1,66 @@
 #pragma once
 
-#include "./DeflaterOutputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class OutputStream;
-}
-namespace java::util::zip
-{
-	class CRC32;
-}
+#include "../../../JByteArray.hpp"
+#include "../../io/OutputStream.def.hpp"
+#include "./CRC32.def.hpp"
+#include "./GZIPOutputStream.def.hpp"
 
 namespace java::util::zip
 {
-	class GZIPOutputStream : public java::util::zip::DeflaterOutputStream
+	// Fields
+	
+	// Constructors
+	inline GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0)
+		: java::util::zip::DeflaterOutputStream(
+			"java.util.zip.GZIPOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		) {}
+	inline GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0, jboolean arg1)
+		: java::util::zip::DeflaterOutputStream(
+			"java.util.zip.GZIPOutputStream",
+			"(Ljava/io/OutputStream;Z)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0, jint arg1)
+		: java::util::zip::DeflaterOutputStream(
+			"java.util.zip.GZIPOutputStream",
+			"(Ljava/io/OutputStream;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	inline GZIPOutputStream::GZIPOutputStream(java::io::OutputStream arg0, jint arg1, jboolean arg2)
+		: java::util::zip::DeflaterOutputStream(
+			"java.util.zip.GZIPOutputStream",
+			"(Ljava/io/OutputStream;IZ)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline void GZIPOutputStream::finish() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GZIPOutputStream(const char *className, const char *sig, Ts...agv) : java::util::zip::DeflaterOutputStream(className, sig, std::forward<Ts>(agv)...) {}
-		GZIPOutputStream(QAndroidJniObject obj) : java::util::zip::DeflaterOutputStream(obj) {}
-		
-		// Constructors
-		GZIPOutputStream(java::io::OutputStream arg0);
-		GZIPOutputStream(java::io::OutputStream arg0, jboolean arg1);
-		GZIPOutputStream(java::io::OutputStream arg0, jint arg1);
-		GZIPOutputStream(java::io::OutputStream arg0, jint arg1, jboolean arg2);
-		
-		// Methods
-		void finish() const;
-		void write(JByteArray arg0, jint arg1, jint arg2) const;
-	};
+		callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
+	inline void GZIPOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
 } // namespace java::util::zip
+
+// Base class headers
+#include "../../io/OutputStream.hpp"
+#include "../../io/FilterOutputStream.hpp"
+#include "./DeflaterOutputStream.hpp"
 

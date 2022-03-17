@@ -1,25 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Choreographer.def.hpp"
 
 namespace android::view
 {
-	class Choreographer : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::Choreographer Choreographer::getInstance()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Choreographer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Choreographer(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::view::Choreographer getInstance();
-		void postFrameCallback(JObject arg0) const;
-		void postFrameCallbackDelayed(JObject arg0, jlong arg1) const;
-		void removeFrameCallback(JObject arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.view.Choreographer",
+			"getInstance",
+			"()Landroid/view/Choreographer;"
+		);
+	}
+	inline void Choreographer::postFrameCallback(JObject arg0) const
+	{
+		callMethod<void>(
+			"postFrameCallback",
+			"(Landroid/view/Choreographer$FrameCallback;)V",
+			arg0.object()
+		);
+	}
+	inline void Choreographer::postFrameCallbackDelayed(JObject arg0, jlong arg1) const
+	{
+		callMethod<void>(
+			"postFrameCallbackDelayed",
+			"(Landroid/view/Choreographer$FrameCallback;J)V",
+			arg0.object(),
+			arg1
+		);
+	}
+	inline void Choreographer::removeFrameCallback(JObject arg0) const
+	{
+		callMethod<void>(
+			"removeFrameCallback",
+			"(Landroid/view/Choreographer$FrameCallback;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

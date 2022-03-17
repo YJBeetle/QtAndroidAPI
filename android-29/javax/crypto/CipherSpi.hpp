@@ -1,37 +1,25 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
-namespace java::security
-{
-	class AlgorithmParameters;
-}
-namespace java::security
-{
-	class SecureRandom;
-}
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "../../java/nio/ByteBuffer.def.hpp"
+#include "../../java/security/AlgorithmParameters.def.hpp"
+#include "../../java/security/SecureRandom.def.hpp"
+#include "./CipherSpi.def.hpp"
 
 namespace javax::crypto
 {
-	class CipherSpi : public JObject
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CipherSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CipherSpi(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CipherSpi();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CipherSpi::CipherSpi()
+		: JObject(
+			"javax.crypto.CipherSpi",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace javax::crypto
+
+// Base class headers
 

@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./TextUtils_TruncateAt.def.hpp"
 
 namespace android::text
 {
-	class TextUtils_TruncateAt : public java::lang::Enum
+	// Fields
+	inline android::text::TextUtils_TruncateAt TextUtils_TruncateAt::END()
 	{
-	public:
-		// Fields
-		static android::text::TextUtils_TruncateAt END();
-		static android::text::TextUtils_TruncateAt MARQUEE();
-		static android::text::TextUtils_TruncateAt MIDDLE();
-		static android::text::TextUtils_TruncateAt START();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextUtils_TruncateAt(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TextUtils_TruncateAt(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::text::TextUtils_TruncateAt valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.text.TextUtils$TruncateAt",
+			"END",
+			"Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
+	inline android::text::TextUtils_TruncateAt TextUtils_TruncateAt::MARQUEE()
+	{
+		return getStaticObjectField(
+			"android.text.TextUtils$TruncateAt",
+			"MARQUEE",
+			"Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
+	inline android::text::TextUtils_TruncateAt TextUtils_TruncateAt::MIDDLE()
+	{
+		return getStaticObjectField(
+			"android.text.TextUtils$TruncateAt",
+			"MIDDLE",
+			"Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
+	inline android::text::TextUtils_TruncateAt TextUtils_TruncateAt::START()
+	{
+		return getStaticObjectField(
+			"android.text.TextUtils$TruncateAt",
+			"START",
+			"Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::text::TextUtils_TruncateAt TextUtils_TruncateAt::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.text.TextUtils$TruncateAt",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/text/TextUtils$TruncateAt;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TextUtils_TruncateAt::values()
+	{
+		return callStaticObjectMethod(
+			"android.text.TextUtils$TruncateAt",
+			"values",
+			"()[Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
 } // namespace android::text
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

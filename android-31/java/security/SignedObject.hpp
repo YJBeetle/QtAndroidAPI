@@ -1,38 +1,58 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
+#include "../io/ObjectInputStream.def.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-class JObject;
-class JString;
-namespace java::security
-{
-	class Signature;
-}
+#include "../../JString.hpp"
+#include "./Signature.def.hpp"
+#include "./SignedObject.def.hpp"
 
 namespace java::security
 {
-	class SignedObject : public JObject
+	// Fields
+	
+	// Constructors
+	inline SignedObject::SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2)
+		: JObject(
+			"java.security.SignedObject",
+			"(Ljava/io/Serializable;Ljava/security/PrivateKey;Ljava/security/Signature;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline JString SignedObject::getAlgorithm() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SignedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SignedObject(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2);
-		
-		// Methods
-		JString getAlgorithm() const;
-		JObject getObject() const;
-		JByteArray getSignature() const;
-		jboolean verify(JObject arg0, java::security::Signature arg1) const;
-	};
+		return callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject SignedObject::getObject() const
+	{
+		return callObjectMethod(
+			"getObject",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JByteArray SignedObject::getSignature() const
+	{
+		return callObjectMethod(
+			"getSignature",
+			"()[B"
+		);
+	}
+	inline jboolean SignedObject::verify(JObject arg0, java::security::Signature arg1) const
+	{
+		return callMethod<jboolean>(
+			"verify",
+			"(Ljava/security/PublicKey;Ljava/security/Signature;)Z",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace java::security
+
+// Base class headers
 

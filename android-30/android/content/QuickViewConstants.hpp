@@ -1,29 +1,64 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./QuickViewConstants.def.hpp"
 
 namespace android::content
 {
-	class QuickViewConstants : public JObject
+	// Fields
+	inline JString QuickViewConstants::FEATURE_DELETE()
 	{
-	public:
-		// Fields
-		static JString FEATURE_DELETE();
-		static JString FEATURE_DOWNLOAD();
-		static JString FEATURE_EDIT();
-		static JString FEATURE_PRINT();
-		static JString FEATURE_SEND();
-		static JString FEATURE_VIEW();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit QuickViewConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		QuickViewConstants(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.content.QuickViewConstants",
+			"FEATURE_DELETE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString QuickViewConstants::FEATURE_DOWNLOAD()
+	{
+		return getStaticObjectField(
+			"android.content.QuickViewConstants",
+			"FEATURE_DOWNLOAD",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString QuickViewConstants::FEATURE_EDIT()
+	{
+		return getStaticObjectField(
+			"android.content.QuickViewConstants",
+			"FEATURE_EDIT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString QuickViewConstants::FEATURE_PRINT()
+	{
+		return getStaticObjectField(
+			"android.content.QuickViewConstants",
+			"FEATURE_PRINT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString QuickViewConstants::FEATURE_SEND()
+	{
+		return getStaticObjectField(
+			"android.content.QuickViewConstants",
+			"FEATURE_SEND",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString QuickViewConstants::FEATURE_VIEW()
+	{
+		return getStaticObjectField(
+			"android.content.QuickViewConstants",
+			"FEATURE_VIEW",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::content
+
+// Base class headers
 

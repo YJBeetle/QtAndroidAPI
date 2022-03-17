@@ -1,32 +1,47 @@
 #pragma once
 
-#include "./ShapeDrawable.hpp"
-
-class JFloatArray;
-namespace android::content::res
-{
-	class Resources;
-}
-class JString;
+#include "../../../JFloatArray.hpp"
+#include "../../content/res/Resources.def.hpp"
+#include "../../../JString.hpp"
+#include "./PaintDrawable.def.hpp"
 
 namespace android::graphics::drawable
 {
-	class PaintDrawable : public android::graphics::drawable::ShapeDrawable
+	// Fields
+	
+	// Constructors
+	inline PaintDrawable::PaintDrawable()
+		: android::graphics::drawable::ShapeDrawable(
+			"android.graphics.drawable.PaintDrawable",
+			"()V"
+		) {}
+	inline PaintDrawable::PaintDrawable(jint arg0)
+		: android::graphics::drawable::ShapeDrawable(
+			"android.graphics.drawable.PaintDrawable",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline void PaintDrawable::setCornerRadii(JFloatArray arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PaintDrawable(const char *className, const char *sig, Ts...agv) : android::graphics::drawable::ShapeDrawable(className, sig, std::forward<Ts>(agv)...) {}
-		PaintDrawable(QAndroidJniObject obj) : android::graphics::drawable::ShapeDrawable(obj) {}
-		
-		// Constructors
-		PaintDrawable();
-		PaintDrawable(jint arg0);
-		
-		// Methods
-		void setCornerRadii(JFloatArray arg0) const;
-		void setCornerRadius(jfloat arg0) const;
-	};
+		callMethod<void>(
+			"setCornerRadii",
+			"([F)V",
+			arg0.object<jfloatArray>()
+		);
+	}
+	inline void PaintDrawable::setCornerRadius(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setCornerRadius",
+			"(F)V",
+			arg0
+		);
+	}
 } // namespace android::graphics::drawable
+
+// Base class headers
+#include "./Drawable.hpp"
+#include "./ShapeDrawable.hpp"
 

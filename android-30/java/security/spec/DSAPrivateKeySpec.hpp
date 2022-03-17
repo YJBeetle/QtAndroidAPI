@@ -1,31 +1,53 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::math
-{
-	class BigInteger;
-}
+#include "../../math/BigInteger.def.hpp"
+#include "./DSAPrivateKeySpec.def.hpp"
 
 namespace java::security::spec
 {
-	class DSAPrivateKeySpec : public JObject
+	// Fields
+	
+	// Constructors
+	inline DSAPrivateKeySpec::DSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3)
+		: JObject(
+			"java.security.spec.DSAPrivateKeySpec",
+			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline java::math::BigInteger DSAPrivateKeySpec::getG() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DSAPrivateKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DSAPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3);
-		
-		// Methods
-		java::math::BigInteger getG() const;
-		java::math::BigInteger getP() const;
-		java::math::BigInteger getQ() const;
-		java::math::BigInteger getX() const;
-	};
+		return callObjectMethod(
+			"getG",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger DSAPrivateKeySpec::getP() const
+	{
+		return callObjectMethod(
+			"getP",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger DSAPrivateKeySpec::getQ() const
+	{
+		return callObjectMethod(
+			"getQ",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger DSAPrivateKeySpec::getX() const
+	{
+		return callObjectMethod(
+			"getX",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

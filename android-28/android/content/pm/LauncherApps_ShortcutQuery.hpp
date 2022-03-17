@@ -1,38 +1,97 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class ComponentName;
-}
-class JString;
+#include "../ComponentName.def.hpp"
+#include "../../../JString.hpp"
+#include "./LauncherApps_ShortcutQuery.def.hpp"
 
 namespace android::content::pm
 {
-	class LauncherApps_ShortcutQuery : public JObject
+	// Fields
+	inline jint LauncherApps_ShortcutQuery::FLAG_GET_KEY_FIELDS_ONLY()
 	{
-	public:
-		// Fields
-		static jint FLAG_GET_KEY_FIELDS_ONLY();
-		static jint FLAG_MATCH_DYNAMIC();
-		static jint FLAG_MATCH_MANIFEST();
-		static jint FLAG_MATCH_PINNED();
-		static jint FLAG_MATCH_PINNED_BY_ANY_LAUNCHER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LauncherApps_ShortcutQuery(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LauncherApps_ShortcutQuery(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		LauncherApps_ShortcutQuery();
-		
-		// Methods
-		android::content::pm::LauncherApps_ShortcutQuery setActivity(android::content::ComponentName arg0) const;
-		android::content::pm::LauncherApps_ShortcutQuery setChangedSince(jlong arg0) const;
-		android::content::pm::LauncherApps_ShortcutQuery setPackage(JString arg0) const;
-		android::content::pm::LauncherApps_ShortcutQuery setQueryFlags(jint arg0) const;
-		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(JObject arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.content.pm.LauncherApps$ShortcutQuery",
+			"FLAG_GET_KEY_FIELDS_ONLY"
+		);
+	}
+	inline jint LauncherApps_ShortcutQuery::FLAG_MATCH_DYNAMIC()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.LauncherApps$ShortcutQuery",
+			"FLAG_MATCH_DYNAMIC"
+		);
+	}
+	inline jint LauncherApps_ShortcutQuery::FLAG_MATCH_MANIFEST()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.LauncherApps$ShortcutQuery",
+			"FLAG_MATCH_MANIFEST"
+		);
+	}
+	inline jint LauncherApps_ShortcutQuery::FLAG_MATCH_PINNED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.LauncherApps$ShortcutQuery",
+			"FLAG_MATCH_PINNED"
+		);
+	}
+	inline jint LauncherApps_ShortcutQuery::FLAG_MATCH_PINNED_BY_ANY_LAUNCHER()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.LauncherApps$ShortcutQuery",
+			"FLAG_MATCH_PINNED_BY_ANY_LAUNCHER"
+		);
+	}
+	
+	// Constructors
+	inline LauncherApps_ShortcutQuery::LauncherApps_ShortcutQuery()
+		: JObject(
+			"android.content.pm.LauncherApps$ShortcutQuery",
+			"()V"
+		) {}
+	
+	// Methods
+	inline android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setActivity(android::content::ComponentName arg0) const
+	{
+		return callObjectMethod(
+			"setActivity",
+			"(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0.object()
+		);
+	}
+	inline android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setChangedSince(jlong arg0) const
+	{
+		return callObjectMethod(
+			"setChangedSince",
+			"(J)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0
+		);
+	}
+	inline android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setPackage(JString arg0) const
+	{
+		return callObjectMethod(
+			"setPackage",
+			"(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setQueryFlags(jint arg0) const
+	{
+		return callObjectMethod(
+			"setQueryFlags",
+			"(I)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0
+		);
+	}
+	inline android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setShortcutIds(JObject arg0) const
+	{
+		return callObjectMethod(
+			"setShortcutIds",
+			"(Ljava/util/List;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0.object()
+		);
+	}
 } // namespace android::content::pm
+
+// Base class headers
 

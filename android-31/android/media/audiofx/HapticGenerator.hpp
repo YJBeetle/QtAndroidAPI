@@ -1,26 +1,55 @@
 #pragma once
 
-#include "./AudioEffect.hpp"
+#include "./HapticGenerator.def.hpp"
 
 namespace android::media::audiofx
 {
-	class HapticGenerator : public android::media::audiofx::AudioEffect
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::media::audiofx::HapticGenerator HapticGenerator::create(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HapticGenerator(const char *className, const char *sig, Ts...agv) : android::media::audiofx::AudioEffect(className, sig, std::forward<Ts>(agv)...) {}
-		HapticGenerator(QAndroidJniObject obj) : android::media::audiofx::AudioEffect(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::media::audiofx::HapticGenerator create(jint arg0);
-		static jboolean isAvailable();
-		void close() const;
-		void release() const;
-		jint setEnabled(jboolean arg0) const;
-	};
+		return callStaticObjectMethod(
+			"android.media.audiofx.HapticGenerator",
+			"create",
+			"(I)Landroid/media/audiofx/HapticGenerator;",
+			arg0
+		);
+	}
+	inline jboolean HapticGenerator::isAvailable()
+	{
+		return callStaticMethod<jboolean>(
+			"android.media.audiofx.HapticGenerator",
+			"isAvailable",
+			"()Z"
+		);
+	}
+	inline void HapticGenerator::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void HapticGenerator::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline jint HapticGenerator::setEnabled(jboolean arg0) const
+	{
+		return callMethod<jint>(
+			"setEnabled",
+			"(Z)I",
+			arg0
+		);
+	}
 } // namespace android::media::audiofx
+
+// Base class headers
+#include "./AudioEffect.hpp"
 

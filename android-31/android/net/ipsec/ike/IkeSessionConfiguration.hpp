@@ -1,33 +1,60 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./IkeSessionConnectionInfo.def.hpp"
+#include "../../../../JString.hpp"
+#include "./IkeSessionConfiguration.def.hpp"
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionConnectionInfo;
-}
-class JString;
-
-namespace android::net::ipsec::ike
-{
-	class IkeSessionConfiguration : public JObject
+	// Fields
+	inline jint IkeSessionConfiguration::EXTENSION_TYPE_FRAGMENTATION()
 	{
-	public:
-		// Fields
-		static jint EXTENSION_TYPE_FRAGMENTATION();
-		static jint EXTENSION_TYPE_MOBIKE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeSessionConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IkeSessionConfiguration(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::net::ipsec::ike::IkeSessionConnectionInfo getIkeSessionConnectionInfo() const;
-		JString getRemoteApplicationVersion() const;
-		JObject getRemoteVendorIds() const;
-		jboolean isIkeExtensionEnabled(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.net.ipsec.ike.IkeSessionConfiguration",
+			"EXTENSION_TYPE_FRAGMENTATION"
+		);
+	}
+	inline jint IkeSessionConfiguration::EXTENSION_TYPE_MOBIKE()
+	{
+		return getStaticField<jint>(
+			"android.net.ipsec.ike.IkeSessionConfiguration",
+			"EXTENSION_TYPE_MOBIKE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::net::ipsec::ike::IkeSessionConnectionInfo IkeSessionConfiguration::getIkeSessionConnectionInfo() const
+	{
+		return callObjectMethod(
+			"getIkeSessionConnectionInfo",
+			"()Landroid/net/ipsec/ike/IkeSessionConnectionInfo;"
+		);
+	}
+	inline JString IkeSessionConfiguration::getRemoteApplicationVersion() const
+	{
+		return callObjectMethod(
+			"getRemoteApplicationVersion",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline JObject IkeSessionConfiguration::getRemoteVendorIds() const
+	{
+		return callObjectMethod(
+			"getRemoteVendorIds",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jboolean IkeSessionConfiguration::isIkeExtensionEnabled(jint arg0) const
+	{
+		return callMethod<jboolean>(
+			"isIkeExtensionEnabled",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::net::ipsec::ike
+
+// Base class headers
 

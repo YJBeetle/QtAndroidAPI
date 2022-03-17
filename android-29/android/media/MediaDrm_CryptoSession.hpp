@@ -1,32 +1,57 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::media
-{
-	class MediaDrm;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "./MediaDrm.def.hpp"
+#include "../../JString.hpp"
+#include "./MediaDrm_CryptoSession.def.hpp"
 
 namespace android::media
 {
-	class MediaDrm_CryptoSession : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray MediaDrm_CryptoSession::decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_CryptoSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_CryptoSession(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JByteArray decrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const;
-		JByteArray encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const;
-		JByteArray sign(JByteArray arg0, JByteArray arg1) const;
-		jboolean verify(JByteArray arg0, JByteArray arg1, JByteArray arg2) const;
-	};
+		return callObjectMethod(
+			"decrypt",
+			"([B[B[B)[B",
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline JByteArray MediaDrm_CryptoSession::encrypt(JByteArray arg0, JByteArray arg1, JByteArray arg2) const
+	{
+		return callObjectMethod(
+			"encrypt",
+			"([B[B[B)[B",
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline JByteArray MediaDrm_CryptoSession::sign(JByteArray arg0, JByteArray arg1) const
+	{
+		return callObjectMethod(
+			"sign",
+			"([B[B)[B",
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>()
+		);
+	}
+	inline jboolean MediaDrm_CryptoSession::verify(JByteArray arg0, JByteArray arg1, JByteArray arg2) const
+	{
+		return callMethod<jboolean>(
+			"verify",
+			"([B[B[B)Z",
+			arg0.object<jbyteArray>(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jbyteArray>()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

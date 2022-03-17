@@ -1,23 +1,18 @@
 #pragma once
 
-#include "./MediaCasException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./MediaCasException_ResourceBusyException.def.hpp"
 
 namespace android::media
 {
-	class MediaCasException_ResourceBusyException : public android::media::MediaCasException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCasException_ResourceBusyException(const char *className, const char *sig, Ts...agv) : android::media::MediaCasException(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCasException_ResourceBusyException(QAndroidJniObject obj) : android::media::MediaCasException(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "./MediaCasException.hpp"
 

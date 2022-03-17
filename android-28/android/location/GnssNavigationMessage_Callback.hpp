@@ -1,32 +1,58 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./GnssNavigationMessage.def.hpp"
+#include "./GnssNavigationMessage_Callback.def.hpp"
 
 namespace android::location
 {
-	class GnssNavigationMessage;
-}
-
-namespace android::location
-{
-	class GnssNavigationMessage_Callback : public JObject
+	// Fields
+	inline jint GnssNavigationMessage_Callback::STATUS_LOCATION_DISABLED()
 	{
-	public:
-		// Fields
-		static jint STATUS_LOCATION_DISABLED();
-		static jint STATUS_NOT_SUPPORTED();
-		static jint STATUS_READY();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssNavigationMessage_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssNavigationMessage_Callback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GnssNavigationMessage_Callback();
-		
-		// Methods
-		void onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0) const;
-		void onStatusChanged(jint arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.location.GnssNavigationMessage$Callback",
+			"STATUS_LOCATION_DISABLED"
+		);
+	}
+	inline jint GnssNavigationMessage_Callback::STATUS_NOT_SUPPORTED()
+	{
+		return getStaticField<jint>(
+			"android.location.GnssNavigationMessage$Callback",
+			"STATUS_NOT_SUPPORTED"
+		);
+	}
+	inline jint GnssNavigationMessage_Callback::STATUS_READY()
+	{
+		return getStaticField<jint>(
+			"android.location.GnssNavigationMessage$Callback",
+			"STATUS_READY"
+		);
+	}
+	
+	// Constructors
+	inline GnssNavigationMessage_Callback::GnssNavigationMessage_Callback()
+		: JObject(
+			"android.location.GnssNavigationMessage$Callback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void GnssNavigationMessage_Callback::onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0) const
+	{
+		callMethod<void>(
+			"onGnssNavigationMessageReceived",
+			"(Landroid/location/GnssNavigationMessage;)V",
+			arg0.object()
+		);
+	}
+	inline void GnssNavigationMessage_Callback::onStatusChanged(jint arg0) const
+	{
+		callMethod<void>(
+			"onStatusChanged",
+			"(I)V",
+			arg0
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

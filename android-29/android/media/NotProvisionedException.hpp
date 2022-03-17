@@ -1,24 +1,24 @@
 #pragma once
 
-#include "./MediaDrmException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./NotProvisionedException.def.hpp"
 
 namespace android::media
 {
-	class NotProvisionedException : public android::media::MediaDrmException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotProvisionedException(const char *className, const char *sig, Ts...agv) : android::media::MediaDrmException(className, sig, std::forward<Ts>(agv)...) {}
-		NotProvisionedException(QAndroidJniObject obj) : android::media::MediaDrmException(obj) {}
-		
-		// Constructors
-		NotProvisionedException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline NotProvisionedException::NotProvisionedException(JString arg0)
+		: android::media::MediaDrmException(
+			"android.media.NotProvisionedException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::media
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "./MediaDrmException.hpp"
 

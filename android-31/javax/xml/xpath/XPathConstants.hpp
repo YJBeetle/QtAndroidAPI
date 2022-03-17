@@ -1,33 +1,65 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JString;
-namespace javax::xml::namespace_
-{
-	class QName;
-}
+#include "../../../JString.hpp"
+#include "../namespace/QName.def.hpp"
+#include "./XPathConstants.def.hpp"
 
 namespace javax::xml::xpath
 {
-	class XPathConstants : public JObject
+	// Fields
+	inline javax::xml::namespace_::QName XPathConstants::BOOLEAN()
 	{
-	public:
-		// Fields
-		static javax::xml::namespace_::QName BOOLEAN();
-		static JString DOM_OBJECT_MODEL();
-		static javax::xml::namespace_::QName NODE();
-		static javax::xml::namespace_::QName NODESET();
-		static javax::xml::namespace_::QName NUMBER();
-		static javax::xml::namespace_::QName STRING();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		XPathConstants(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"BOOLEAN",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline JString XPathConstants::DOM_OBJECT_MODEL()
+	{
+		return getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"DOM_OBJECT_MODEL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline javax::xml::namespace_::QName XPathConstants::NODE()
+	{
+		return getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"NODE",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName XPathConstants::NODESET()
+	{
+		return getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"NODESET",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName XPathConstants::NUMBER()
+	{
+		return getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"NUMBER",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	inline javax::xml::namespace_::QName XPathConstants::STRING()
+	{
+		return getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"STRING",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
 } // namespace javax::xml::xpath
+
+// Base class headers
 

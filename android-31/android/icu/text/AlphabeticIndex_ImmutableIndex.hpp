@@ -1,31 +1,47 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./AlphabeticIndex_Bucket.def.hpp"
+#include "../../../JString.hpp"
+#include "./AlphabeticIndex_ImmutableIndex.def.hpp"
 
 namespace android::icu::text
 {
-	class AlphabeticIndex_Bucket;
-}
-class JString;
-
-namespace android::icu::text
-{
-	class AlphabeticIndex_ImmutableIndex : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::text::AlphabeticIndex_Bucket AlphabeticIndex_ImmutableIndex::getBucket(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlphabeticIndex_ImmutableIndex(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AlphabeticIndex_ImmutableIndex(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::icu::text::AlphabeticIndex_Bucket getBucket(jint arg0) const;
-		jint getBucketCount() const;
-		jint getBucketIndex(JString arg0) const;
-		JObject iterator() const;
-	};
+		return callObjectMethod(
+			"getBucket",
+			"(I)Landroid/icu/text/AlphabeticIndex$Bucket;",
+			arg0
+		);
+	}
+	inline jint AlphabeticIndex_ImmutableIndex::getBucketCount() const
+	{
+		return callMethod<jint>(
+			"getBucketCount",
+			"()I"
+		);
+	}
+	inline jint AlphabeticIndex_ImmutableIndex::getBucketIndex(JString arg0) const
+	{
+		return callMethod<jint>(
+			"getBucketIndex",
+			"(Ljava/lang/CharSequence;)I",
+			arg0.object<jstring>()
+		);
+	}
+	inline JObject AlphabeticIndex_ImmutableIndex::iterator() const
+	{
+		return callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

@@ -1,40 +1,60 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::hardware
-{
-	class HardwareBuffer;
-}
-namespace android::media
-{
-	class MediaCodec_LinearBlock;
-}
-namespace android::media
-{
-	class MediaFormat;
-}
+#include "../hardware/HardwareBuffer.def.hpp"
+#include "./MediaCodec_LinearBlock.def.hpp"
+#include "./MediaFormat.def.hpp"
+#include "./MediaCodec_OutputFrame.def.hpp"
 
 namespace android::media
 {
-	class MediaCodec_OutputFrame : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JObject MediaCodec_OutputFrame::getChangedKeys() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodec_OutputFrame(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaCodec_OutputFrame(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JObject getChangedKeys() const;
-		jint getFlags() const;
-		android::media::MediaFormat getFormat() const;
-		android::hardware::HardwareBuffer getHardwareBuffer() const;
-		android::media::MediaCodec_LinearBlock getLinearBlock() const;
-		jlong getPresentationTimeUs() const;
-	};
+		return callObjectMethod(
+			"getChangedKeys",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jint MediaCodec_OutputFrame::getFlags() const
+	{
+		return callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
+	inline android::media::MediaFormat MediaCodec_OutputFrame::getFormat() const
+	{
+		return callObjectMethod(
+			"getFormat",
+			"()Landroid/media/MediaFormat;"
+		);
+	}
+	inline android::hardware::HardwareBuffer MediaCodec_OutputFrame::getHardwareBuffer() const
+	{
+		return callObjectMethod(
+			"getHardwareBuffer",
+			"()Landroid/hardware/HardwareBuffer;"
+		);
+	}
+	inline android::media::MediaCodec_LinearBlock MediaCodec_OutputFrame::getLinearBlock() const
+	{
+		return callObjectMethod(
+			"getLinearBlock",
+			"()Landroid/media/MediaCodec$LinearBlock;"
+		);
+	}
+	inline jlong MediaCodec_OutputFrame::getPresentationTimeUs() const
+	{
+		return callMethod<jlong>(
+			"getPresentationTimeUs",
+			"()J"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

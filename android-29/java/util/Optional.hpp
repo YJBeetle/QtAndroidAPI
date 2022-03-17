@@ -1,44 +1,173 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./Optional.def.hpp"
 
 namespace java::util
 {
-	class Optional : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline java::util::Optional Optional::empty()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Optional(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Optional(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::util::Optional empty();
-		static java::util::Optional of(JObject arg0);
-		static java::util::Optional ofNullable(JObject arg0);
-		jboolean equals(JObject arg0) const;
-		java::util::Optional filter(JObject arg0) const;
-		java::util::Optional flatMap(JObject arg0) const;
-		JObject get() const;
-		jint hashCode() const;
-		void ifPresent(JObject arg0) const;
-		void ifPresentOrElse(JObject arg0, JObject arg1) const;
-		jboolean isEmpty() const;
-		jboolean isPresent() const;
-		java::util::Optional map(JObject arg0) const;
-		java::util::Optional or_(JObject arg0) const;
-		JObject orElse(JObject arg0) const;
-		JObject orElseGet(JObject arg0) const;
-		JObject orElseThrow() const;
-		JObject orElseThrow(JObject arg0) const;
-		JObject stream() const;
-		JString toString() const;
-	};
+		return callStaticObjectMethod(
+			"java.util.Optional",
+			"empty",
+			"()Ljava/util/Optional;"
+		);
+	}
+	inline java::util::Optional Optional::of(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Optional",
+			"of",
+			"(Ljava/lang/Object;)Ljava/util/Optional;",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::util::Optional Optional::ofNullable(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Optional",
+			"ofNullable",
+			"(Ljava/lang/Object;)Ljava/util/Optional;",
+			arg0.object<jobject>()
+		);
+	}
+	inline jboolean Optional::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline java::util::Optional Optional::filter(JObject arg0) const
+	{
+		return callObjectMethod(
+			"filter",
+			"(Ljava/util/function/Predicate;)Ljava/util/Optional;",
+			arg0.object()
+		);
+	}
+	inline java::util::Optional Optional::flatMap(JObject arg0) const
+	{
+		return callObjectMethod(
+			"flatMap",
+			"(Ljava/util/function/Function;)Ljava/util/Optional;",
+			arg0.object()
+		);
+	}
+	inline JObject Optional::get() const
+	{
+		return callObjectMethod(
+			"get",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jint Optional::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void Optional::ifPresent(JObject arg0) const
+	{
+		callMethod<void>(
+			"ifPresent",
+			"(Ljava/util/function/Consumer;)V",
+			arg0.object()
+		);
+	}
+	inline void Optional::ifPresentOrElse(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"ifPresentOrElse",
+			"(Ljava/util/function/Consumer;Ljava/lang/Runnable;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jboolean Optional::isEmpty() const
+	{
+		return callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	inline jboolean Optional::isPresent() const
+	{
+		return callMethod<jboolean>(
+			"isPresent",
+			"()Z"
+		);
+	}
+	inline java::util::Optional Optional::map(JObject arg0) const
+	{
+		return callObjectMethod(
+			"map",
+			"(Ljava/util/function/Function;)Ljava/util/Optional;",
+			arg0.object()
+		);
+	}
+	inline java::util::Optional Optional::or_(JObject arg0) const
+	{
+		return callObjectMethod(
+			"or",
+			"(Ljava/util/function/Supplier;)Ljava/util/Optional;",
+			arg0.object()
+		);
+	}
+	inline JObject Optional::orElse(JObject arg0) const
+	{
+		return callObjectMethod(
+			"orElse",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject Optional::orElseGet(JObject arg0) const
+	{
+		return callObjectMethod(
+			"orElseGet",
+			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject Optional::orElseThrow() const
+	{
+		return callObjectMethod(
+			"orElseThrow",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject Optional::orElseThrow(JObject arg0) const
+	{
+		return callObjectMethod(
+			"orElseThrow",
+			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject Optional::stream() const
+	{
+		return callObjectMethod(
+			"stream",
+			"()Ljava/util/stream/Stream;"
+		);
+	}
+	inline JString Optional::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::util
+
+// Base class headers
 

@@ -1,28 +1,32 @@
 #pragma once
 
-#include "./IkeNonProtocolException.hpp"
-
-namespace android::net
-{
-	class Network;
-}
+#include "../../../Network.def.hpp"
+#include "./IkeNetworkLostException.def.hpp"
 
 namespace android::net::ipsec::ike::exceptions
 {
-	class IkeNetworkLostException : public android::net::ipsec::ike::exceptions::IkeNonProtocolException
+	// Fields
+	
+	// Constructors
+	inline IkeNetworkLostException::IkeNetworkLostException(android::net::Network arg0)
+		: android::net::ipsec::ike::exceptions::IkeNonProtocolException(
+			"android.net.ipsec.ike.exceptions.IkeNetworkLostException",
+			"(Landroid/net/Network;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::net::Network IkeNetworkLostException::getNetwork() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeNetworkLostException(const char *className, const char *sig, Ts...agv) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(className, sig, std::forward<Ts>(agv)...) {}
-		IkeNetworkLostException(QAndroidJniObject obj) : android::net::ipsec::ike::exceptions::IkeNonProtocolException(obj) {}
-		
-		// Constructors
-		IkeNetworkLostException(android::net::Network arg0);
-		
-		// Methods
-		android::net::Network getNetwork() const;
-	};
+		return callObjectMethod(
+			"getNetwork",
+			"()Landroid/net/Network;"
+		);
+	}
 } // namespace android::net::ipsec::ike::exceptions
+
+// Base class headers
+#include "../../../../../java/lang/Exception.hpp"
+#include "./IkeException.hpp"
+#include "./IkeNonProtocolException.hpp"
 

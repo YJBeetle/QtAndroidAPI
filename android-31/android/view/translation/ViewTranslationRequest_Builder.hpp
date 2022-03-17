@@ -1,39 +1,48 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::view::autofill
-{
-	class AutofillId;
-}
-namespace android::view::translation
-{
-	class TranslationRequestValue;
-}
-namespace android::view::translation
-{
-	class ViewTranslationRequest;
-}
-class JString;
+#include "../autofill/AutofillId.def.hpp"
+#include "./TranslationRequestValue.def.hpp"
+#include "./ViewTranslationRequest.def.hpp"
+#include "../../../JString.hpp"
+#include "./ViewTranslationRequest_Builder.def.hpp"
 
 namespace android::view::translation
 {
-	class ViewTranslationRequest_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline ViewTranslationRequest_Builder::ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0)
+		: JObject(
+			"android.view.translation.ViewTranslationRequest$Builder",
+			"(Landroid/view/autofill/AutofillId;)V",
+			arg0.object()
+		) {}
+	inline ViewTranslationRequest_Builder::ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0, jlong arg1)
+		: JObject(
+			"android.view.translation.ViewTranslationRequest$Builder",
+			"(Landroid/view/autofill/AutofillId;J)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline android::view::translation::ViewTranslationRequest ViewTranslationRequest_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewTranslationRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ViewTranslationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0);
-		ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0, jlong arg1);
-		
-		// Methods
-		android::view::translation::ViewTranslationRequest build() const;
-		android::view::translation::ViewTranslationRequest_Builder setValue(JString arg0, android::view::translation::TranslationRequestValue arg1) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/view/translation/ViewTranslationRequest;"
+		);
+	}
+	inline android::view::translation::ViewTranslationRequest_Builder ViewTranslationRequest_Builder::setValue(JString arg0, android::view::translation::TranslationRequestValue arg1) const
+	{
+		return callObjectMethod(
+			"setValue",
+			"(Ljava/lang/String;Landroid/view/translation/TranslationRequestValue;)Landroid/view/translation/ViewTranslationRequest$Builder;",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
 } // namespace android::view::translation
+
+// Base class headers
 

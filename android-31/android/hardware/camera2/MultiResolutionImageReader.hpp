@@ -1,40 +1,64 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::hardware::camera2::params
-{
-	class MultiResolutionStreamInfo;
-}
-namespace android::media
-{
-	class ImageReader;
-}
-namespace android::view
-{
-	class Surface;
-}
+#include "./params/MultiResolutionStreamInfo.def.hpp"
+#include "../../media/ImageReader.def.hpp"
+#include "../../view/Surface.def.hpp"
+#include "./MultiResolutionImageReader.def.hpp"
 
 namespace android::hardware::camera2
 {
-	class MultiResolutionImageReader : public JObject
+	// Fields
+	
+	// Constructors
+	inline MultiResolutionImageReader::MultiResolutionImageReader(JObject arg0, jint arg1, jint arg2)
+		: JObject(
+			"android.hardware.camera2.MultiResolutionImageReader",
+			"(Ljava/util/Collection;II)V",
+			arg0.object(),
+			arg1,
+			arg2
+		) {}
+	
+	// Methods
+	inline void MultiResolutionImageReader::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MultiResolutionImageReader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MultiResolutionImageReader(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		MultiResolutionImageReader(JObject arg0, jint arg1, jint arg2);
-		
-		// Methods
-		void close() const;
-		void flush() const;
-		android::hardware::camera2::params::MultiResolutionStreamInfo getStreamInfoForImageReader(android::media::ImageReader arg0) const;
-		android::view::Surface getSurface() const;
-		void setOnImageAvailableListener(JObject arg0, JObject arg1) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void MultiResolutionImageReader::flush() const
+	{
+		callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	inline android::hardware::camera2::params::MultiResolutionStreamInfo MultiResolutionImageReader::getStreamInfoForImageReader(android::media::ImageReader arg0) const
+	{
+		return callObjectMethod(
+			"getStreamInfoForImageReader",
+			"(Landroid/media/ImageReader;)Landroid/hardware/camera2/params/MultiResolutionStreamInfo;",
+			arg0.object()
+		);
+	}
+	inline android::view::Surface MultiResolutionImageReader::getSurface() const
+	{
+		return callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
+	inline void MultiResolutionImageReader::setOnImageAvailableListener(JObject arg0, JObject arg1) const
+	{
+		callMethod<void>(
+			"setOnImageAvailableListener",
+			"(Landroid/media/ImageReader$OnImageAvailableListener;Ljava/util/concurrent/Executor;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 } // namespace android::hardware::camera2
+
+// Base class headers
 

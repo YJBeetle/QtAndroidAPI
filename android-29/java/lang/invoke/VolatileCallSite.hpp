@@ -1,35 +1,52 @@
 #pragma once
 
-#include "./CallSite.hpp"
+#include "./MethodHandle.def.hpp"
+#include "./MethodType.def.hpp"
+#include "./VolatileCallSite.def.hpp"
 
 namespace java::lang::invoke
 {
-	class MethodHandle;
-}
-namespace java::lang::invoke
-{
-	class MethodType;
-}
-
-namespace java::lang::invoke
-{
-	class VolatileCallSite : public java::lang::invoke::CallSite
+	// Fields
+	
+	// Constructors
+	inline VolatileCallSite::VolatileCallSite(java::lang::invoke::MethodHandle arg0)
+		: java::lang::invoke::CallSite(
+			"java.lang.invoke.VolatileCallSite",
+			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.object()
+		) {}
+	inline VolatileCallSite::VolatileCallSite(java::lang::invoke::MethodType arg0)
+		: java::lang::invoke::CallSite(
+			"java.lang.invoke.VolatileCallSite",
+			"(Ljava/lang/invoke/MethodType;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline java::lang::invoke::MethodHandle VolatileCallSite::dynamicInvoker() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VolatileCallSite(const char *className, const char *sig, Ts...agv) : java::lang::invoke::CallSite(className, sig, std::forward<Ts>(agv)...) {}
-		VolatileCallSite(QAndroidJniObject obj) : java::lang::invoke::CallSite(obj) {}
-		
-		// Constructors
-		VolatileCallSite(java::lang::invoke::MethodHandle arg0);
-		VolatileCallSite(java::lang::invoke::MethodType arg0);
-		
-		// Methods
-		java::lang::invoke::MethodHandle dynamicInvoker() const;
-		java::lang::invoke::MethodHandle getTarget() const;
-		void setTarget(java::lang::invoke::MethodHandle arg0) const;
-	};
+		return callObjectMethod(
+			"dynamicInvoker",
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
+	}
+	inline java::lang::invoke::MethodHandle VolatileCallSite::getTarget() const
+	{
+		return callObjectMethod(
+			"getTarget",
+			"()Ljava/lang/invoke/MethodHandle;"
+		);
+	}
+	inline void VolatileCallSite::setTarget(java::lang::invoke::MethodHandle arg0) const
+	{
+		callMethod<void>(
+			"setTarget",
+			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.object()
+		);
+	}
 } // namespace java::lang::invoke
+
+// Base class headers
+#include "./CallSite.hpp"
 

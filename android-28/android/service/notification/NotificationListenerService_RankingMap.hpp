@@ -1,37 +1,59 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JArray;
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::service::notification
-{
-	class NotificationListenerService_Ranking;
-}
-class JString;
+#include "../../../JArray.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./NotificationListenerService_Ranking.def.hpp"
+#include "../../../JString.hpp"
+#include "./NotificationListenerService_RankingMap.def.hpp"
 
 namespace android::service::notification
 {
-	class NotificationListenerService_RankingMap : public JObject
+	// Fields
+	inline JObject NotificationListenerService_RankingMap::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationListenerService_RankingMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NotificationListenerService_RankingMap(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		JArray getOrderedKeys() const;
-		jboolean getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.service.notification.NotificationListenerService$RankingMap",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint NotificationListenerService_RankingMap::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline JArray NotificationListenerService_RankingMap::getOrderedKeys() const
+	{
+		return callObjectMethod(
+			"getOrderedKeys",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jboolean NotificationListenerService_RankingMap::getRanking(JString arg0, android::service::notification::NotificationListenerService_Ranking arg1) const
+	{
+		return callMethod<jboolean>(
+			"getRanking",
+			"(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z",
+			arg0.object<jstring>(),
+			arg1.object()
+		);
+	}
+	inline void NotificationListenerService_RankingMap::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::service::notification
+
+// Base class headers
 

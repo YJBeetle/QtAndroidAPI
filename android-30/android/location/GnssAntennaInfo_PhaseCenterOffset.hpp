@@ -1,38 +1,101 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JString;
+#include "../os/Parcel.def.hpp"
+#include "../../JString.hpp"
+#include "./GnssAntennaInfo_PhaseCenterOffset.def.hpp"
 
 namespace android::location
 {
-	class GnssAntennaInfo_PhaseCenterOffset : public JObject
+	// Fields
+	inline JObject GnssAntennaInfo_PhaseCenterOffset::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssAntennaInfo_PhaseCenterOffset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		GnssAntennaInfo_PhaseCenterOffset(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		GnssAntennaInfo_PhaseCenterOffset(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
-		
-		// Methods
-		jint describeContents() const;
-		jdouble getXOffsetMm() const;
-		jdouble getXOffsetUncertaintyMm() const;
-		jdouble getYOffsetMm() const;
-		jdouble getYOffsetUncertaintyMm() const;
-		jdouble getZOffsetMm() const;
-		jdouble getZOffsetUncertaintyMm() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.location.GnssAntennaInfo$PhaseCenterOffset",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline GnssAntennaInfo_PhaseCenterOffset::GnssAntennaInfo_PhaseCenterOffset(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
+		: JObject(
+			"android.location.GnssAntennaInfo$PhaseCenterOffset",
+			"(DDDDDD)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		) {}
+	
+	// Methods
+	inline jint GnssAntennaInfo_PhaseCenterOffset::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetMm() const
+	{
+		return callMethod<jdouble>(
+			"getXOffsetMm",
+			"()D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_PhaseCenterOffset::getXOffsetUncertaintyMm() const
+	{
+		return callMethod<jdouble>(
+			"getXOffsetUncertaintyMm",
+			"()D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_PhaseCenterOffset::getYOffsetMm() const
+	{
+		return callMethod<jdouble>(
+			"getYOffsetMm",
+			"()D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_PhaseCenterOffset::getYOffsetUncertaintyMm() const
+	{
+		return callMethod<jdouble>(
+			"getYOffsetUncertaintyMm",
+			"()D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_PhaseCenterOffset::getZOffsetMm() const
+	{
+		return callMethod<jdouble>(
+			"getZOffsetMm",
+			"()D"
+		);
+	}
+	inline jdouble GnssAntennaInfo_PhaseCenterOffset::getZOffsetUncertaintyMm() const
+	{
+		return callMethod<jdouble>(
+			"getZOffsetUncertaintyMm",
+			"()D"
+		);
+	}
+	inline JString GnssAntennaInfo_PhaseCenterOffset::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void GnssAntennaInfo_PhaseCenterOffset::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::location
+
+// Base class headers
 

@@ -1,45 +1,24 @@
 #pragma once
 
-#include "../lang/ClassLoader.hpp"
-
-class JByteArray;
-class JClass;
-namespace java::lang
-{
-	class ClassLoader;
-}
-class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
-namespace java::security
-{
-	class CodeSource;
-}
-namespace java::security
-{
-	class PermissionCollection;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
+#include "../../JByteArray.hpp"
+#include "../../JClass.hpp"
+#include "../lang/ClassLoader.def.hpp"
+#include "../../JString.hpp"
+#include "../nio/ByteBuffer.def.hpp"
+#include "./CodeSource.def.hpp"
+#include "./PermissionCollection.def.hpp"
+#include "./ProtectionDomain.def.hpp"
+#include "./SecureClassLoader.def.hpp"
 
 namespace java::security
 {
-	class SecureClassLoader : public java::lang::ClassLoader
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecureClassLoader(const char *className, const char *sig, Ts...agv) : java::lang::ClassLoader(className, sig, std::forward<Ts>(agv)...) {}
-		SecureClassLoader(QAndroidJniObject obj) : java::lang::ClassLoader(obj) {}
-		
-		// Constructors
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	
+	// Methods
 } // namespace java::security
+
+// Base class headers
+#include "../lang/ClassLoader.hpp"
 

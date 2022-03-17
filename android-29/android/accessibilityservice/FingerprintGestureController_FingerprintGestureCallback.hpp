@@ -1,24 +1,36 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./FingerprintGestureController_FingerprintGestureCallback.def.hpp"
 
 namespace android::accessibilityservice
 {
-	class FingerprintGestureController_FingerprintGestureCallback : public JObject
+	// Fields
+	
+	// Constructors
+	inline FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback()
+		: JObject(
+			"android.accessibilityservice.FingerprintGestureController$FingerprintGestureCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void FingerprintGestureController_FingerprintGestureCallback::onGestureDetected(jint arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FingerprintGestureController_FingerprintGestureCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FingerprintGestureController_FingerprintGestureCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FingerprintGestureController_FingerprintGestureCallback();
-		
-		// Methods
-		void onGestureDetected(jint arg0) const;
-		void onGestureDetectionAvailabilityChanged(jboolean arg0) const;
-	};
+		callMethod<void>(
+			"onGestureDetected",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void FingerprintGestureController_FingerprintGestureCallback::onGestureDetectionAvailabilityChanged(jboolean arg0) const
+	{
+		callMethod<void>(
+			"onGestureDetectionAvailabilityChanged",
+			"(Z)V",
+			arg0
+		);
+	}
 } // namespace android::accessibilityservice
+
+// Base class headers
 

@@ -1,81 +1,104 @@
 #pragma once
 
+#include "../../JByteArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JArray.hpp"
+#include "../../JObjectArray.hpp"
+#include "../../JArray.hpp"
+#include "./ObjectInputStream.def.hpp"
+#include "./ObjectOutputStream.def.hpp"
+#include "./ObjectStreamField.def.hpp"
+#include "../../JClass.hpp"
+#include "../lang/ClassNotFoundException.def.hpp"
+#include "../lang/Long.def.hpp"
 #include "../../JObject.hpp"
-
-class JByteArray;
-class JArray;
-class JArray;
-class JArray;
-class JObjectArray;
-class JArray;
-namespace java::io
-{
-	class ObjectInputStream;
-}
-namespace java::io
-{
-	class ObjectOutputStream;
-}
-namespace java::io
-{
-	class ObjectStreamField;
-}
-class JClass;
-namespace java::lang
-{
-	class ClassNotFoundException;
-}
-namespace java::lang
-{
-	class Long;
-}
-class JObject;
-class JString;
-class JThrowable;
-namespace java::lang::invoke
-{
-	class MethodHandle;
-}
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
-namespace java::lang::reflect
-{
-	class Constructor;
-}
-namespace java::lang::reflect
-{
-	class Method;
-}
-namespace java::security
-{
-	class ProtectionDomain;
-}
+#include "../../JString.hpp"
+#include "../../JThrowable.hpp"
+#include "../lang/invoke/MethodHandle.def.hpp"
+#include "../lang/ref/ReferenceQueue.def.hpp"
+#include "../lang/reflect/Constructor.def.hpp"
+#include "../lang/reflect/Method.def.hpp"
+#include "../security/ProtectionDomain.def.hpp"
+#include "./ObjectStreamClass.def.hpp"
 
 namespace java::io
 {
-	class ObjectStreamClass : public JObject
+	// Fields
+	inline JArray ObjectStreamClass::NO_FIELDS()
 	{
-	public:
-		// Fields
-		static JArray NO_FIELDS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ObjectStreamClass(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ObjectStreamClass(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::io::ObjectStreamClass lookup(JClass arg0);
-		static java::io::ObjectStreamClass lookupAny(JClass arg0);
-		JClass forClass() const;
-		java::io::ObjectStreamField getField(JString arg0) const;
-		JArray getFields() const;
-		JString getName() const;
-		jlong getSerialVersionUID() const;
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"java.io.ObjectStreamClass",
+			"NO_FIELDS",
+			"[Ljava/io/ObjectStreamField;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::io::ObjectStreamClass ObjectStreamClass::lookup(JClass arg0)
+	{
+		return callStaticObjectMethod(
+			"java.io.ObjectStreamClass",
+			"lookup",
+			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
+			arg0.object<jclass>()
+		);
+	}
+	inline java::io::ObjectStreamClass ObjectStreamClass::lookupAny(JClass arg0)
+	{
+		return callStaticObjectMethod(
+			"java.io.ObjectStreamClass",
+			"lookupAny",
+			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
+			arg0.object<jclass>()
+		);
+	}
+	inline JClass ObjectStreamClass::forClass() const
+	{
+		return callObjectMethod(
+			"forClass",
+			"()Ljava/lang/Class;"
+		);
+	}
+	inline java::io::ObjectStreamField ObjectStreamClass::getField(JString arg0) const
+	{
+		return callObjectMethod(
+			"getField",
+			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray ObjectStreamClass::getFields() const
+	{
+		return callObjectMethod(
+			"getFields",
+			"()[Ljava/io/ObjectStreamField;"
+		);
+	}
+	inline JString ObjectStreamClass::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline jlong ObjectStreamClass::getSerialVersionUID() const
+	{
+		return callMethod<jlong>(
+			"getSerialVersionUID",
+			"()J"
+		);
+	}
+	inline JString ObjectStreamClass::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::io
+
+// Base class headers
 

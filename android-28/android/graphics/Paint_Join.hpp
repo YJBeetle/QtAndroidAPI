@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Paint_Join.def.hpp"
 
 namespace android::graphics
 {
-	class Paint_Join : public java::lang::Enum
+	// Fields
+	inline android::graphics::Paint_Join Paint_Join::BEVEL()
 	{
-	public:
-		// Fields
-		static android::graphics::Paint_Join BEVEL();
-		static android::graphics::Paint_Join MITER();
-		static android::graphics::Paint_Join ROUND();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Paint_Join(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_Join(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Paint_Join valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Paint$Join",
+			"BEVEL",
+			"Landroid/graphics/Paint$Join;"
+		);
+	}
+	inline android::graphics::Paint_Join Paint_Join::MITER()
+	{
+		return getStaticObjectField(
+			"android.graphics.Paint$Join",
+			"MITER",
+			"Landroid/graphics/Paint$Join;"
+		);
+	}
+	inline android::graphics::Paint_Join Paint_Join::ROUND()
+	{
+		return getStaticObjectField(
+			"android.graphics.Paint$Join",
+			"ROUND",
+			"Landroid/graphics/Paint$Join;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Paint_Join Paint_Join::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Paint$Join",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Paint$Join;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Paint_Join::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Paint$Join",
+			"values",
+			"()[Landroid/graphics/Paint$Join;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

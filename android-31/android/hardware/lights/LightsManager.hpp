@@ -1,37 +1,40 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./Light.def.hpp"
+#include "./LightState.def.hpp"
+#include "./LightsManager_LightsSession.def.hpp"
+#include "./LightsManager.def.hpp"
 
 namespace android::hardware::lights
 {
-	class Light;
-}
-namespace android::hardware::lights
-{
-	class LightState;
-}
-namespace android::hardware::lights
-{
-	class LightsManager_LightsSession;
-}
-
-namespace android::hardware::lights
-{
-	class LightsManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::hardware::lights::LightState LightsManager::getLightState(android::hardware::lights::Light arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LightsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		LightsManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::hardware::lights::LightState getLightState(android::hardware::lights::Light arg0) const;
-		JObject getLights() const;
-		android::hardware::lights::LightsManager_LightsSession openSession() const;
-	};
+		return callObjectMethod(
+			"getLightState",
+			"(Landroid/hardware/lights/Light;)Landroid/hardware/lights/LightState;",
+			arg0.object()
+		);
+	}
+	inline JObject LightsManager::getLights() const
+	{
+		return callObjectMethod(
+			"getLights",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::hardware::lights::LightsManager_LightsSession LightsManager::openSession() const
+	{
+		return callObjectMethod(
+			"openSession",
+			"()Landroid/hardware/lights/LightsManager$LightsSession;"
+		);
+	}
 } // namespace android::hardware::lights
+
+// Base class headers
 

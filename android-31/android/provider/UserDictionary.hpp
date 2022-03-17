@@ -1,30 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::net
-{
-	class Uri;
-}
-class JString;
+#include "../net/Uri.def.hpp"
+#include "../../JString.hpp"
+#include "./UserDictionary.def.hpp"
 
 namespace android::provider
 {
-	class UserDictionary : public JObject
+	// Fields
+	inline JString UserDictionary::AUTHORITY()
 	{
-	public:
-		// Fields
-		static JString AUTHORITY();
-		static android::net::Uri CONTENT_URI();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UserDictionary(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		UserDictionary(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		UserDictionary();
-		
-		// Methods
-	};
+		return getStaticObjectField(
+			"android.provider.UserDictionary",
+			"AUTHORITY",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri UserDictionary::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.provider.UserDictionary",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	
+	// Constructors
+	inline UserDictionary::UserDictionary()
+		: JObject(
+			"android.provider.UserDictionary",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::provider
+
+// Base class headers
 

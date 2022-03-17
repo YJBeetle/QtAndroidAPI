@@ -1,33 +1,38 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::security
-{
-	class KeyStoreParameter;
-}
+#include "../content/Context.def.hpp"
+#include "./KeyStoreParameter.def.hpp"
+#include "./KeyStoreParameter_Builder.def.hpp"
 
 namespace android::security
 {
-	class KeyStoreParameter_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline KeyStoreParameter_Builder::KeyStoreParameter_Builder(android::content::Context arg0)
+		: JObject(
+			"android.security.KeyStoreParameter$Builder",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline android::security::KeyStoreParameter KeyStoreParameter_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyStoreParameter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		KeyStoreParameter_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		KeyStoreParameter_Builder(android::content::Context arg0);
-		
-		// Methods
-		android::security::KeyStoreParameter build() const;
-		android::security::KeyStoreParameter_Builder setEncryptionRequired(jboolean arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/security/KeyStoreParameter;"
+		);
+	}
+	inline android::security::KeyStoreParameter_Builder KeyStoreParameter_Builder::setEncryptionRequired(jboolean arg0) const
+	{
+		return callObjectMethod(
+			"setEncryptionRequired",
+			"(Z)Landroid/security/KeyStoreParameter$Builder;",
+			arg0
+		);
+	}
 } // namespace android::security
+
+// Base class headers
 

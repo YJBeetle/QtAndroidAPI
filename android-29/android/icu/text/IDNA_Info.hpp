@@ -1,25 +1,41 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./IDNA_Info.def.hpp"
 
 namespace android::icu::text
 {
-	class IDNA_Info : public JObject
+	// Fields
+	
+	// Constructors
+	inline IDNA_Info::IDNA_Info()
+		: JObject(
+			"android.icu.text.IDNA$Info",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject IDNA_Info::getErrors() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IDNA_Info(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		IDNA_Info(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		IDNA_Info();
-		
-		// Methods
-		JObject getErrors() const;
-		jboolean hasErrors() const;
-		jboolean isTransitionalDifferent() const;
-	};
+		return callObjectMethod(
+			"getErrors",
+			"()Ljava/util/Set;"
+		);
+	}
+	inline jboolean IDNA_Info::hasErrors() const
+	{
+		return callMethod<jboolean>(
+			"hasErrors",
+			"()Z"
+		);
+	}
+	inline jboolean IDNA_Info::isTransitionalDifferent() const
+	{
+		return callMethod<jboolean>(
+			"isTransitionalDifferent",
+			"()Z"
+		);
+	}
 } // namespace android::icu::text
+
+// Base class headers
 

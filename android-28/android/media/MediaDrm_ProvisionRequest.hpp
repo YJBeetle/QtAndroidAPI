@@ -1,26 +1,31 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-class JString;
+#include "../../JByteArray.hpp"
+#include "../../JString.hpp"
+#include "./MediaDrm_ProvisionRequest.def.hpp"
 
 namespace android::media
 {
-	class MediaDrm_ProvisionRequest : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray MediaDrm_ProvisionRequest::getData() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_ProvisionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MediaDrm_ProvisionRequest(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		JByteArray getData() const;
-		JString getDefaultUrl() const;
-	};
+		return callObjectMethod(
+			"getData",
+			"()[B"
+		);
+	}
+	inline JString MediaDrm_ProvisionRequest::getDefaultUrl() const
+	{
+		return callObjectMethod(
+			"getDefaultUrl",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

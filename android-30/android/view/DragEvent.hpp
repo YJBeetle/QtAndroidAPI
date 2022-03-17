@@ -1,53 +1,142 @@
 #pragma once
 
+#include "../content/ClipData.def.hpp"
+#include "../content/ClipDescription.def.hpp"
+#include "../os/Parcel.def.hpp"
 #include "../../JObject.hpp"
-
-namespace android::content
-{
-	class ClipData;
-}
-namespace android::content
-{
-	class ClipDescription;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../JString.hpp"
+#include "./DragEvent.def.hpp"
 
 namespace android::view
 {
-	class DragEvent : public JObject
+	// Fields
+	inline jint DragEvent::ACTION_DRAG_ENDED()
 	{
-	public:
-		// Fields
-		static jint ACTION_DRAG_ENDED();
-		static jint ACTION_DRAG_ENTERED();
-		static jint ACTION_DRAG_EXITED();
-		static jint ACTION_DRAG_LOCATION();
-		static jint ACTION_DRAG_STARTED();
-		static jint ACTION_DROP();
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DragEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DragEvent(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jint getAction() const;
-		android::content::ClipData getClipData() const;
-		android::content::ClipDescription getClipDescription() const;
-		JObject getLocalState() const;
-		jboolean getResult() const;
-		jfloat getX() const;
-		jfloat getY() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticField<jint>(
+			"android.view.DragEvent",
+			"ACTION_DRAG_ENDED"
+		);
+	}
+	inline jint DragEvent::ACTION_DRAG_ENTERED()
+	{
+		return getStaticField<jint>(
+			"android.view.DragEvent",
+			"ACTION_DRAG_ENTERED"
+		);
+	}
+	inline jint DragEvent::ACTION_DRAG_EXITED()
+	{
+		return getStaticField<jint>(
+			"android.view.DragEvent",
+			"ACTION_DRAG_EXITED"
+		);
+	}
+	inline jint DragEvent::ACTION_DRAG_LOCATION()
+	{
+		return getStaticField<jint>(
+			"android.view.DragEvent",
+			"ACTION_DRAG_LOCATION"
+		);
+	}
+	inline jint DragEvent::ACTION_DRAG_STARTED()
+	{
+		return getStaticField<jint>(
+			"android.view.DragEvent",
+			"ACTION_DRAG_STARTED"
+		);
+	}
+	inline jint DragEvent::ACTION_DROP()
+	{
+		return getStaticField<jint>(
+			"android.view.DragEvent",
+			"ACTION_DROP"
+		);
+	}
+	inline JObject DragEvent::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.view.DragEvent",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint DragEvent::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jint DragEvent::getAction() const
+	{
+		return callMethod<jint>(
+			"getAction",
+			"()I"
+		);
+	}
+	inline android::content::ClipData DragEvent::getClipData() const
+	{
+		return callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	inline android::content::ClipDescription DragEvent::getClipDescription() const
+	{
+		return callObjectMethod(
+			"getClipDescription",
+			"()Landroid/content/ClipDescription;"
+		);
+	}
+	inline JObject DragEvent::getLocalState() const
+	{
+		return callObjectMethod(
+			"getLocalState",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline jboolean DragEvent::getResult() const
+	{
+		return callMethod<jboolean>(
+			"getResult",
+			"()Z"
+		);
+	}
+	inline jfloat DragEvent::getX() const
+	{
+		return callMethod<jfloat>(
+			"getX",
+			"()F"
+		);
+	}
+	inline jfloat DragEvent::getY() const
+	{
+		return callMethod<jfloat>(
+			"getY",
+			"()F"
+		);
+	}
+	inline JString DragEvent::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void DragEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

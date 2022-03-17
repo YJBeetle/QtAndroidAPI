@@ -1,27 +1,50 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./Paint_FontMetrics.def.hpp"
 
 namespace android::graphics
 {
-	class Paint_FontMetrics : public JObject
+	// Fields
+	inline jfloat Paint_FontMetrics::ascent()
 	{
-	public:
-		// Fields
-		jfloat ascent();
-		jfloat bottom();
-		jfloat descent();
-		jfloat leading();
-		jfloat top();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Paint_FontMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		Paint_FontMetrics(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		Paint_FontMetrics();
-		
-		// Methods
-	};
+		return getField<jfloat>(
+			"ascent"
+		);
+	}
+	inline jfloat Paint_FontMetrics::bottom()
+	{
+		return getField<jfloat>(
+			"bottom"
+		);
+	}
+	inline jfloat Paint_FontMetrics::descent()
+	{
+		return getField<jfloat>(
+			"descent"
+		);
+	}
+	inline jfloat Paint_FontMetrics::leading()
+	{
+		return getField<jfloat>(
+			"leading"
+		);
+	}
+	inline jfloat Paint_FontMetrics::top()
+	{
+		return getField<jfloat>(
+			"top"
+		);
+	}
+	
+	// Constructors
+	inline Paint_FontMetrics::Paint_FontMetrics()
+		: JObject(
+			"android.graphics.Paint$FontMetrics",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
 

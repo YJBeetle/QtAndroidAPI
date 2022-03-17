@@ -1,41 +1,71 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Region;
-}
-namespace android::os
-{
-	class Parcel;
-}
-namespace android::view::accessibility
-{
-	class AccessibilityNodeInfo;
-}
+#include "../../graphics/Region.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "./AccessibilityNodeInfo.def.hpp"
+#include "./AccessibilityNodeInfo_TouchDelegateInfo.def.hpp"
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeInfo_TouchDelegateInfo : public JObject
+	// Fields
+	inline JObject AccessibilityNodeInfo_TouchDelegateInfo::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeInfo_TouchDelegateInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AccessibilityNodeInfo_TouchDelegateInfo(JObject arg0);
-		
-		// Methods
-		jint describeContents() const;
-		android::graphics::Region getRegionAt(jint arg0) const;
-		jint getRegionCount() const;
-		android::view::accessibility::AccessibilityNodeInfo getTargetForRegion(android::graphics::Region arg0) const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	
+	// Constructors
+	inline AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(JObject arg0)
+		: JObject(
+			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
+			"(Ljava/util/Map;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint AccessibilityNodeInfo_TouchDelegateInfo::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline android::graphics::Region AccessibilityNodeInfo_TouchDelegateInfo::getRegionAt(jint arg0) const
+	{
+		return callObjectMethod(
+			"getRegionAt",
+			"(I)Landroid/graphics/Region;",
+			arg0
+		);
+	}
+	inline jint AccessibilityNodeInfo_TouchDelegateInfo::getRegionCount() const
+	{
+		return callMethod<jint>(
+			"getRegionCount",
+			"()I"
+		);
+	}
+	inline android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(android::graphics::Region arg0) const
+	{
+		return callObjectMethod(
+			"getTargetForRegion",
+			"(Landroid/graphics/Region;)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0.object()
+		);
+	}
+	inline void AccessibilityNodeInfo_TouchDelegateInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::accessibility
+
+// Base class headers
 

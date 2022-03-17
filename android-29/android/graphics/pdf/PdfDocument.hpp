@@ -1,40 +1,61 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./PdfDocument_Page.def.hpp"
+#include "./PdfDocument_PageInfo.def.hpp"
+#include "../../../java/io/OutputStream.def.hpp"
+#include "./PdfDocument.def.hpp"
 
 namespace android::graphics::pdf
 {
-	class PdfDocument_Page;
-}
-namespace android::graphics::pdf
-{
-	class PdfDocument_PageInfo;
-}
-namespace java::io
-{
-	class OutputStream;
-}
-
-namespace android::graphics::pdf
-{
-	class PdfDocument : public JObject
+	// Fields
+	
+	// Constructors
+	inline PdfDocument::PdfDocument()
+		: JObject(
+			"android.graphics.pdf.PdfDocument",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void PdfDocument::close() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PdfDocument(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		PdfDocument(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		PdfDocument();
-		
-		// Methods
-		void close() const;
-		void finishPage(android::graphics::pdf::PdfDocument_Page arg0) const;
-		JObject getPages() const;
-		android::graphics::pdf::PdfDocument_Page startPage(android::graphics::pdf::PdfDocument_PageInfo arg0) const;
-		void writeTo(java::io::OutputStream arg0) const;
-	};
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void PdfDocument::finishPage(android::graphics::pdf::PdfDocument_Page arg0) const
+	{
+		callMethod<void>(
+			"finishPage",
+			"(Landroid/graphics/pdf/PdfDocument$Page;)V",
+			arg0.object()
+		);
+	}
+	inline JObject PdfDocument::getPages() const
+	{
+		return callObjectMethod(
+			"getPages",
+			"()Ljava/util/List;"
+		);
+	}
+	inline android::graphics::pdf::PdfDocument_Page PdfDocument::startPage(android::graphics::pdf::PdfDocument_PageInfo arg0) const
+	{
+		return callObjectMethod(
+			"startPage",
+			"(Landroid/graphics/pdf/PdfDocument$PageInfo;)Landroid/graphics/pdf/PdfDocument$Page;",
+			arg0.object()
+		);
+	}
+	inline void PdfDocument::writeTo(java::io::OutputStream arg0) const
+	{
+		callMethod<void>(
+			"writeTo",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics::pdf
+
+// Base class headers
 

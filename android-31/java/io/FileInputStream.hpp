@@ -1,48 +1,101 @@
 #pragma once
 
-#include "./InputStream.hpp"
-
-class JByteArray;
-namespace java::io
-{
-	class File;
-}
-namespace java::io
-{
-	class FileDescriptor;
-}
-class JObject;
-class JString;
-namespace java::nio::channels
-{
-	class FileChannel;
-}
+#include "../../JByteArray.hpp"
+#include "./File.def.hpp"
+#include "./FileDescriptor.def.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../nio/channels/FileChannel.def.hpp"
+#include "./FileInputStream.def.hpp"
 
 namespace java::io
 {
-	class FileInputStream : public java::io::InputStream
+	// Fields
+	
+	// Constructors
+	inline FileInputStream::FileInputStream(java::io::File arg0)
+		: java::io::InputStream(
+			"java.io.FileInputStream",
+			"(Ljava/io/File;)V",
+			arg0.object()
+		) {}
+	inline FileInputStream::FileInputStream(java::io::FileDescriptor arg0)
+		: java::io::InputStream(
+			"java.io.FileInputStream",
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.object()
+		) {}
+	inline FileInputStream::FileInputStream(JString arg0)
+		: java::io::InputStream(
+			"java.io.FileInputStream",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jint FileInputStream::available() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileInputStream(const char *className, const char *sig, Ts...agv) : java::io::InputStream(className, sig, std::forward<Ts>(agv)...) {}
-		FileInputStream(QAndroidJniObject obj) : java::io::InputStream(obj) {}
-		
-		// Constructors
-		FileInputStream(java::io::File arg0);
-		FileInputStream(java::io::FileDescriptor arg0);
-		FileInputStream(JString arg0);
-		
-		// Methods
-		jint available() const;
-		void close() const;
-		java::nio::channels::FileChannel getChannel() const;
-		java::io::FileDescriptor getFD() const;
-		jint read() const;
-		jint read(JByteArray arg0) const;
-		jint read(JByteArray arg0, jint arg1, jint arg2) const;
-		jlong skip(jlong arg0) const;
-	};
+		return callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	inline void FileInputStream::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline java::nio::channels::FileChannel FileInputStream::getChannel() const
+	{
+		return callObjectMethod(
+			"getChannel",
+			"()Ljava/nio/channels/FileChannel;"
+		);
+	}
+	inline java::io::FileDescriptor FileInputStream::getFD() const
+	{
+		return callObjectMethod(
+			"getFD",
+			"()Ljava/io/FileDescriptor;"
+		);
+	}
+	inline jint FileInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	inline jint FileInputStream::read(JByteArray arg0) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([B)I",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline jint FileInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline jlong FileInputStream::skip(jlong arg0) const
+	{
+		return callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
+		);
+	}
 } // namespace java::io
+
+// Base class headers
+#include "./InputStream.hpp"
 

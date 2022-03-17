@@ -1,56 +1,162 @@
 #pragma once
 
-#include "../../../../../JObject.hpp"
-
-class JString;
-namespace java::net
-{
-	class InetAddress;
-}
-namespace java::net
-{
-	class Socket;
-}
-namespace java::security
-{
-	class KeyStore;
-}
-namespace java::security
-{
-	class SecureRandom;
-}
+#include "../../../../../JString.hpp"
+#include "../../../../../java/net/InetAddress.def.hpp"
+#include "../../../../../java/net/Socket.def.hpp"
+#include "../../../../../java/security/KeyStore.def.hpp"
+#include "../../../../../java/security/SecureRandom.def.hpp"
+#include "./SSLSocketFactory.def.hpp"
 
 namespace org::apache::http::conn::ssl
 {
-	class SSLSocketFactory : public JObject
+	// Fields
+	inline JObject SSLSocketFactory::ALLOW_ALL_HOSTNAME_VERIFIER()
 	{
-	public:
-		// Fields
-		static JObject ALLOW_ALL_HOSTNAME_VERIFIER();
-		static JObject BROWSER_COMPATIBLE_HOSTNAME_VERIFIER();
-		static JString SSL();
-		static JString SSLV2();
-		static JObject STRICT_HOSTNAME_VERIFIER();
-		static JString TLS();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLSocketFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLSocketFactory(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		SSLSocketFactory(java::security::KeyStore arg0);
-		SSLSocketFactory(java::security::KeyStore arg0, JString arg1);
-		SSLSocketFactory(java::security::KeyStore arg0, JString arg1, java::security::KeyStore arg2);
-		SSLSocketFactory(JString arg0, java::security::KeyStore arg1, JString arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, JObject arg5);
-		
-		// Methods
-		static org::apache::http::conn::ssl::SSLSocketFactory getSocketFactory();
-		java::net::Socket connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5) const;
-		java::net::Socket createSocket() const;
-		java::net::Socket createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const;
-		JObject getHostnameVerifier() const;
-		jboolean isSecure(java::net::Socket arg0) const;
-		void setHostnameVerifier(JObject arg0) const;
-	};
+		return getStaticObjectField(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"ALLOW_ALL_HOSTNAME_VERIFIER",
+			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
+		);
+	}
+	inline JObject SSLSocketFactory::BROWSER_COMPATIBLE_HOSTNAME_VERIFIER()
+	{
+		return getStaticObjectField(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"BROWSER_COMPATIBLE_HOSTNAME_VERIFIER",
+			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
+		);
+	}
+	inline JString SSLSocketFactory::SSL()
+	{
+		return getStaticObjectField(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"SSL",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString SSLSocketFactory::SSLV2()
+	{
+		return getStaticObjectField(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"SSLV2",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JObject SSLSocketFactory::STRICT_HOSTNAME_VERIFIER()
+	{
+		return getStaticObjectField(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"STRICT_HOSTNAME_VERIFIER",
+			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
+		);
+	}
+	inline JString SSLSocketFactory::TLS()
+	{
+		return getStaticObjectField(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"TLS",
+			"Ljava/lang/String;"
+		);
+	}
+	
+	// Constructors
+	inline SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0)
+		: JObject(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"(Ljava/security/KeyStore;)V",
+			arg0.object()
+		) {}
+	inline SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, JString arg1)
+		: JObject(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"(Ljava/security/KeyStore;Ljava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jstring>()
+		) {}
+	inline SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, JString arg1, java::security::KeyStore arg2)
+		: JObject(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"(Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;)V",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object()
+		) {}
+	inline SSLSocketFactory::SSLSocketFactory(JString arg0, java::security::KeyStore arg1, JString arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, JObject arg5)
+		: JObject(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"(Ljava/lang/String;Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;Ljava/security/SecureRandom;Lorg/apache/http/conn/scheme/HostNameResolver;)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object<jstring>(),
+			arg3.object(),
+			arg4.object(),
+			arg5.object()
+		) {}
+	
+	// Methods
+	inline org::apache::http::conn::ssl::SSLSocketFactory SSLSocketFactory::getSocketFactory()
+	{
+		return callStaticObjectMethod(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"getSocketFactory",
+			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"
+		);
+	}
+	inline java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, JString arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5) const
+	{
+		return callObjectMethod(
+			"connectSocket",
+			"(Ljava/net/Socket;Ljava/lang/String;ILjava/net/InetAddress;ILorg/apache/http/params/HttpParams;)Ljava/net/Socket;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3.object(),
+			arg4,
+			arg5.object()
+		);
+	}
+	inline java::net::Socket SSLSocketFactory::createSocket() const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"()Ljava/net/Socket;"
+		);
+	}
+	inline java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const
+	{
+		return callObjectMethod(
+			"createSocket",
+			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2,
+			arg3
+		);
+	}
+	inline JObject SSLSocketFactory::getHostnameVerifier() const
+	{
+		return callObjectMethod(
+			"getHostnameVerifier",
+			"()Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
+		);
+	}
+	inline jboolean SSLSocketFactory::isSecure(java::net::Socket arg0) const
+	{
+		return callMethod<jboolean>(
+			"isSecure",
+			"(Ljava/net/Socket;)Z",
+			arg0.object()
+		);
+	}
+	inline void SSLSocketFactory::setHostnameVerifier(JObject arg0) const
+	{
+		callMethod<void>(
+			"setHostnameVerifier",
+			"(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V",
+			arg0.object()
+		);
+	}
 } // namespace org::apache::http::conn::ssl
+
+// Base class headers
 

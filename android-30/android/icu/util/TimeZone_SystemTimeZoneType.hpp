@@ -1,29 +1,59 @@
 #pragma once
 
-#include "../../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../../JArray.hpp"
+#include "../../../JString.hpp"
+#include "./TimeZone_SystemTimeZoneType.def.hpp"
 
 namespace android::icu::util
 {
-	class TimeZone_SystemTimeZoneType : public java::lang::Enum
+	// Fields
+	inline android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::ANY()
 	{
-	public:
-		// Fields
-		static android::icu::util::TimeZone_SystemTimeZoneType ANY();
-		static android::icu::util::TimeZone_SystemTimeZoneType CANONICAL();
-		static android::icu::util::TimeZone_SystemTimeZoneType CANONICAL_LOCATION();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZone_SystemTimeZoneType(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		TimeZone_SystemTimeZoneType(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::util::TimeZone_SystemTimeZoneType valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.icu.util.TimeZone$SystemTimeZoneType",
+			"ANY",
+			"Landroid/icu/util/TimeZone$SystemTimeZoneType;"
+		);
+	}
+	inline android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::CANONICAL()
+	{
+		return getStaticObjectField(
+			"android.icu.util.TimeZone$SystemTimeZoneType",
+			"CANONICAL",
+			"Landroid/icu/util/TimeZone$SystemTimeZoneType;"
+		);
+	}
+	inline android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::CANONICAL_LOCATION()
+	{
+		return getStaticObjectField(
+			"android.icu.util.TimeZone$SystemTimeZoneType",
+			"CANONICAL_LOCATION",
+			"Landroid/icu/util/TimeZone$SystemTimeZoneType;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::util::TimeZone_SystemTimeZoneType TimeZone_SystemTimeZoneType::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.TimeZone$SystemTimeZoneType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/util/TimeZone$SystemTimeZoneType;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray TimeZone_SystemTimeZoneType::values()
+	{
+		return callStaticObjectMethod(
+			"android.icu.util.TimeZone$SystemTimeZoneType",
+			"values",
+			"()[Landroid/icu/util/TimeZone$SystemTimeZoneType;"
+		);
+	}
 } // namespace android::icu::util
+
+// Base class headers
+#include "../../../java/lang/Enum.hpp"
 

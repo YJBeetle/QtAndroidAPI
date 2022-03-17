@@ -1,45 +1,92 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace android::graphics
-{
-	class Point;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::view
-{
-	class View;
-}
-class JString;
+#include "../graphics/Point.def.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "./View.def.hpp"
+#include "../../JString.hpp"
+#include "./ScrollCaptureTarget.def.hpp"
 
 namespace android::view
 {
-	class ScrollCaptureTarget : public JObject
+	// Fields
+	
+	// Constructors
+	inline ScrollCaptureTarget::ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, JObject arg3)
+		: JObject(
+			"android.view.ScrollCaptureTarget",
+			"(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;Landroid/view/ScrollCaptureCallback;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3.object()
+		) {}
+	
+	// Methods
+	inline JObject ScrollCaptureTarget::getCallback() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScrollCaptureTarget(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ScrollCaptureTarget(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, JObject arg3);
-		
-		// Methods
-		JObject getCallback() const;
-		android::view::View getContainingView() const;
-		jint getHint() const;
-		android::graphics::Rect getLocalVisibleRect() const;
-		android::graphics::Point getPositionInWindow() const;
-		android::graphics::Rect getScrollBounds() const;
-		void setScrollBounds(android::graphics::Rect arg0) const;
-		JString toString() const;
-		void updatePositionInWindow() const;
-	};
+		return callObjectMethod(
+			"getCallback",
+			"()Landroid/view/ScrollCaptureCallback;"
+		);
+	}
+	inline android::view::View ScrollCaptureTarget::getContainingView() const
+	{
+		return callObjectMethod(
+			"getContainingView",
+			"()Landroid/view/View;"
+		);
+	}
+	inline jint ScrollCaptureTarget::getHint() const
+	{
+		return callMethod<jint>(
+			"getHint",
+			"()I"
+		);
+	}
+	inline android::graphics::Rect ScrollCaptureTarget::getLocalVisibleRect() const
+	{
+		return callObjectMethod(
+			"getLocalVisibleRect",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	inline android::graphics::Point ScrollCaptureTarget::getPositionInWindow() const
+	{
+		return callObjectMethod(
+			"getPositionInWindow",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	inline android::graphics::Rect ScrollCaptureTarget::getScrollBounds() const
+	{
+		return callObjectMethod(
+			"getScrollBounds",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	inline void ScrollCaptureTarget::setScrollBounds(android::graphics::Rect arg0) const
+	{
+		callMethod<void>(
+			"setScrollBounds",
+			"(Landroid/graphics/Rect;)V",
+			arg0.object()
+		);
+	}
+	inline JString ScrollCaptureTarget::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ScrollCaptureTarget::updatePositionInWindow() const
+	{
+		callMethod<void>(
+			"updatePositionInWindow",
+			"()V"
+		);
+	}
 } // namespace android::view
+
+// Base class headers
 

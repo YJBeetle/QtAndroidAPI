@@ -1,25 +1,29 @@
 #pragma once
 
-#include "../../java/lang/RuntimeException.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./OperationCanceledException.def.hpp"
 
 namespace android::os
 {
-	class OperationCanceledException : public java::lang::RuntimeException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OperationCanceledException(const char *className, const char *sig, Ts...agv) : java::lang::RuntimeException(className, sig, std::forward<Ts>(agv)...) {}
-		OperationCanceledException(QAndroidJniObject obj) : java::lang::RuntimeException(obj) {}
-		
-		// Constructors
-		OperationCanceledException();
-		OperationCanceledException(JString arg0);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline OperationCanceledException::OperationCanceledException()
+		: java::lang::RuntimeException(
+			"android.os.OperationCanceledException",
+			"()V"
+		) {}
+	inline OperationCanceledException::OperationCanceledException(JString arg0)
+		: java::lang::RuntimeException(
+			"android.os.OperationCanceledException",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
 } // namespace android::os
+
+// Base class headers
+#include "../../java/lang/Exception.hpp"
+#include "../../java/lang/RuntimeException.hpp"
 

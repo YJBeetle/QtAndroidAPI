@@ -1,33 +1,68 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace java::math
-{
-	class BigInteger;
-}
+#include "../../math/BigInteger.def.hpp"
+#include "./RSAKeyGenParameterSpec.def.hpp"
 
 namespace java::security::spec
 {
-	class RSAKeyGenParameterSpec : public JObject
+	// Fields
+	inline java::math::BigInteger RSAKeyGenParameterSpec::F0()
 	{
-	public:
-		// Fields
-		static java::math::BigInteger F0();
-		static java::math::BigInteger F4();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RSAKeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RSAKeyGenParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1);
-		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, JObject arg2);
-		
-		// Methods
-		JObject getKeyParams() const;
-		jint getKeysize() const;
-		java::math::BigInteger getPublicExponent() const;
-	};
+		return getStaticObjectField(
+			"java.security.spec.RSAKeyGenParameterSpec",
+			"F0",
+			"Ljava/math/BigInteger;"
+		);
+	}
+	inline java::math::BigInteger RSAKeyGenParameterSpec::F4()
+	{
+		return getStaticObjectField(
+			"java.security.spec.RSAKeyGenParameterSpec",
+			"F4",
+			"Ljava/math/BigInteger;"
+		);
+	}
+	
+	// Constructors
+	inline RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1)
+		: JObject(
+			"java.security.spec.RSAKeyGenParameterSpec",
+			"(ILjava/math/BigInteger;)V",
+			arg0,
+			arg1.object()
+		) {}
+	inline RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, JObject arg2)
+		: JObject(
+			"java.security.spec.RSAKeyGenParameterSpec",
+			"(ILjava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
+			arg0,
+			arg1.object(),
+			arg2.object()
+		) {}
+	
+	// Methods
+	inline JObject RSAKeyGenParameterSpec::getKeyParams() const
+	{
+		return callObjectMethod(
+			"getKeyParams",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
+	}
+	inline jint RSAKeyGenParameterSpec::getKeysize() const
+	{
+		return callMethod<jint>(
+			"getKeysize",
+			"()I"
+		);
+	}
+	inline java::math::BigInteger RSAKeyGenParameterSpec::getPublicExponent() const
+	{
+		return callObjectMethod(
+			"getPublicExponent",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 } // namespace java::security::spec
+
+// Base class headers
 

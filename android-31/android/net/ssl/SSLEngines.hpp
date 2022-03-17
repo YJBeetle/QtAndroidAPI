@@ -1,31 +1,49 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JByteArray;
-class JString;
-namespace javax::net::ssl
-{
-	class SSLEngine;
-}
+#include "../../../JByteArray.hpp"
+#include "../../../JString.hpp"
+#include "../../../javax/net/ssl/SSLEngine.def.hpp"
+#include "./SSLEngines.def.hpp"
 
 namespace android::net::ssl
 {
-	class SSLEngines : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline JByteArray SSLEngines::exportKeyingMaterial(javax::net::ssl::SSLEngine arg0, JString arg1, JByteArray arg2, jint arg3)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLEngines(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SSLEngines(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static JByteArray exportKeyingMaterial(javax::net::ssl::SSLEngine arg0, JString arg1, JByteArray arg2, jint arg3);
-		static jboolean isSupportedEngine(javax::net::ssl::SSLEngine arg0);
-		static void setUseSessionTickets(javax::net::ssl::SSLEngine arg0, jboolean arg1);
-	};
+		return callStaticObjectMethod(
+			"android.net.ssl.SSLEngines",
+			"exportKeyingMaterial",
+			"(Ljavax/net/ssl/SSLEngine;Ljava/lang/String;[BI)[B",
+			arg0.object(),
+			arg1.object<jstring>(),
+			arg2.object<jbyteArray>(),
+			arg3
+		);
+	}
+	inline jboolean SSLEngines::isSupportedEngine(javax::net::ssl::SSLEngine arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.net.ssl.SSLEngines",
+			"isSupportedEngine",
+			"(Ljavax/net/ssl/SSLEngine;)Z",
+			arg0.object()
+		);
+	}
+	inline void SSLEngines::setUseSessionTickets(javax::net::ssl::SSLEngine arg0, jboolean arg1)
+	{
+		callStaticMethod<void>(
+			"android.net.ssl.SSLEngines",
+			"setUseSessionTickets",
+			"(Ljavax/net/ssl/SSLEngine;Z)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::ssl
+
+// Base class headers
 

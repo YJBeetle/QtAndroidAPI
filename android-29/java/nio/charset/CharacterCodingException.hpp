@@ -1,22 +1,22 @@
 #pragma once
 
-#include "../../io/IOException.hpp"
+#include "./CharacterCodingException.def.hpp"
 
 namespace java::nio::charset
 {
-	class CharacterCodingException : public java::io::IOException
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CharacterCodingException(const char *className, const char *sig, Ts...agv) : java::io::IOException(className, sig, std::forward<Ts>(agv)...) {}
-		CharacterCodingException(QAndroidJniObject obj) : java::io::IOException(obj) {}
-		
-		// Constructors
-		CharacterCodingException();
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline CharacterCodingException::CharacterCodingException()
+		: java::io::IOException(
+			"java.nio.charset.CharacterCodingException",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace java::nio::charset
+
+// Base class headers
+#include "../../lang/Exception.hpp"
+#include "../../io/IOException.hpp"
 

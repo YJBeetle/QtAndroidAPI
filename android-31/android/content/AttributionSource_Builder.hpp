@@ -1,32 +1,54 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./AttributionSource.def.hpp"
+#include "../../JString.hpp"
+#include "./AttributionSource_Builder.def.hpp"
 
 namespace android::content
 {
-	class AttributionSource;
-}
-class JString;
-
-namespace android::content
-{
-	class AttributionSource_Builder : public JObject
+	// Fields
+	
+	// Constructors
+	inline AttributionSource_Builder::AttributionSource_Builder(jint arg0)
+		: JObject(
+			"android.content.AttributionSource$Builder",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline android::content::AttributionSource AttributionSource_Builder::build() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AttributionSource_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		AttributionSource_Builder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		AttributionSource_Builder(jint arg0);
-		
-		// Methods
-		android::content::AttributionSource build() const;
-		android::content::AttributionSource_Builder setAttributionTag(JString arg0) const;
-		android::content::AttributionSource_Builder setNext(android::content::AttributionSource arg0) const;
-		android::content::AttributionSource_Builder setPackageName(JString arg0) const;
-	};
+		return callObjectMethod(
+			"build",
+			"()Landroid/content/AttributionSource;"
+		);
+	}
+	inline android::content::AttributionSource_Builder AttributionSource_Builder::setAttributionTag(JString arg0) const
+	{
+		return callObjectMethod(
+			"setAttributionTag",
+			"(Ljava/lang/String;)Landroid/content/AttributionSource$Builder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline android::content::AttributionSource_Builder AttributionSource_Builder::setNext(android::content::AttributionSource arg0) const
+	{
+		return callObjectMethod(
+			"setNext",
+			"(Landroid/content/AttributionSource;)Landroid/content/AttributionSource$Builder;",
+			arg0.object()
+		);
+	}
+	inline android::content::AttributionSource_Builder AttributionSource_Builder::setPackageName(JString arg0) const
+	{
+		return callObjectMethod(
+			"setPackageName",
+			"(Ljava/lang/String;)Landroid/content/AttributionSource$Builder;",
+			arg0.object<jstring>()
+		);
+	}
 } // namespace android::content
+
+// Base class headers
 

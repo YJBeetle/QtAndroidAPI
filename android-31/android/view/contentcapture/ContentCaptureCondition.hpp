@@ -1,42 +1,93 @@
 #pragma once
 
+#include "../../content/LocusId.def.hpp"
+#include "../../os/Parcel.def.hpp"
 #include "../../../JObject.hpp"
-
-namespace android::content
-{
-	class LocusId;
-}
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../JString.hpp"
+#include "./ContentCaptureCondition.def.hpp"
 
 namespace android::view::contentcapture
 {
-	class ContentCaptureCondition : public JObject
+	// Fields
+	inline JObject ContentCaptureCondition::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint FLAG_IS_REGEX();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentCaptureCondition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ContentCaptureCondition(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		ContentCaptureCondition(android::content::LocusId arg0, jint arg1);
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint getFlags() const;
-		android::content::LocusId getLocusId() const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.view.contentcapture.ContentCaptureCondition",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint ContentCaptureCondition::FLAG_IS_REGEX()
+	{
+		return getStaticField<jint>(
+			"android.view.contentcapture.ContentCaptureCondition",
+			"FLAG_IS_REGEX"
+		);
+	}
+	
+	// Constructors
+	inline ContentCaptureCondition::ContentCaptureCondition(android::content::LocusId arg0, jint arg1)
+		: JObject(
+			"android.view.contentcapture.ContentCaptureCondition",
+			"(Landroid/content/LocusId;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jint ContentCaptureCondition::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean ContentCaptureCondition::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint ContentCaptureCondition::getFlags() const
+	{
+		return callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
+	inline android::content::LocusId ContentCaptureCondition::getLocusId() const
+	{
+		return callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
+	inline jint ContentCaptureCondition::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString ContentCaptureCondition::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void ContentCaptureCondition::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::view::contentcapture
+
+// Base class headers
 

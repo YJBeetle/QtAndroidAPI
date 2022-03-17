@@ -1,63 +1,140 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JByteArray;
-namespace android::graphics
-{
-	class Bitmap;
-}
-namespace android::graphics
-{
-	class Canvas;
-}
-namespace android::graphics
-{
-	class Paint;
-}
-namespace android::graphics
-{
-	class Rect;
-}
-namespace android::graphics
-{
-	class RectF;
-}
-namespace android::graphics
-{
-	class Region;
-}
-class JString;
+#include "../../JByteArray.hpp"
+#include "./Bitmap.def.hpp"
+#include "./Canvas.def.hpp"
+#include "./Paint.def.hpp"
+#include "./Rect.def.hpp"
+#include "./RectF.def.hpp"
+#include "./Region.def.hpp"
+#include "../../JString.hpp"
+#include "./NinePatch.def.hpp"
 
 namespace android::graphics
 {
-	class NinePatch : public JObject
+	// Fields
+	
+	// Constructors
+	inline NinePatch::NinePatch(android::graphics::Bitmap arg0, JByteArray arg1)
+		: JObject(
+			"android.graphics.NinePatch",
+			"(Landroid/graphics/Bitmap;[B)V",
+			arg0.object(),
+			arg1.object<jbyteArray>()
+		) {}
+	inline NinePatch::NinePatch(android::graphics::Bitmap arg0, JByteArray arg1, JString arg2)
+		: JObject(
+			"android.graphics.NinePatch",
+			"(Landroid/graphics/Bitmap;[BLjava/lang/String;)V",
+			arg0.object(),
+			arg1.object<jbyteArray>(),
+			arg2.object<jstring>()
+		) {}
+	
+	// Methods
+	inline jboolean NinePatch::isNinePatchChunk(JByteArray arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NinePatch(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NinePatch(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		NinePatch(android::graphics::Bitmap arg0, JByteArray arg1);
-		NinePatch(android::graphics::Bitmap arg0, JByteArray arg1, JString arg2);
-		
-		// Methods
-		static jboolean isNinePatchChunk(JByteArray arg0);
-		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1) const;
-		void draw(android::graphics::Canvas arg0, android::graphics::RectF arg1) const;
-		void draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2) const;
-		android::graphics::Bitmap getBitmap() const;
-		jint getDensity() const;
-		jint getHeight() const;
-		JString getName() const;
-		android::graphics::Paint getPaint() const;
-		android::graphics::Region getTransparentRegion(android::graphics::Rect arg0) const;
-		jint getWidth() const;
-		jboolean hasAlpha() const;
-		void setPaint(android::graphics::Paint arg0) const;
-	};
+		return callStaticMethod<jboolean>(
+			"android.graphics.NinePatch",
+			"isNinePatchChunk",
+			"([B)Z",
+			arg0.object<jbyteArray>()
+		);
+	}
+	inline void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Rect;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::RectF arg1) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2) const
+	{
+		callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::graphics::Bitmap NinePatch::getBitmap() const
+	{
+		return callObjectMethod(
+			"getBitmap",
+			"()Landroid/graphics/Bitmap;"
+		);
+	}
+	inline jint NinePatch::getDensity() const
+	{
+		return callMethod<jint>(
+			"getDensity",
+			"()I"
+		);
+	}
+	inline jint NinePatch::getHeight() const
+	{
+		return callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	inline JString NinePatch::getName() const
+	{
+		return callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline android::graphics::Paint NinePatch::getPaint() const
+	{
+		return callObjectMethod(
+			"getPaint",
+			"()Landroid/graphics/Paint;"
+		);
+	}
+	inline android::graphics::Region NinePatch::getTransparentRegion(android::graphics::Rect arg0) const
+	{
+		return callObjectMethod(
+			"getTransparentRegion",
+			"(Landroid/graphics/Rect;)Landroid/graphics/Region;",
+			arg0.object()
+		);
+	}
+	inline jint NinePatch::getWidth() const
+	{
+		return callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	inline jboolean NinePatch::hasAlpha() const
+	{
+		return callMethod<jboolean>(
+			"hasAlpha",
+			"()Z"
+		);
+	}
+	inline void NinePatch::setPaint(android::graphics::Paint arg0) const
+	{
+		callMethod<void>(
+			"setPaint",
+			"(Landroid/graphics/Paint;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
 

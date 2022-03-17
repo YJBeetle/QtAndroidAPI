@@ -1,27 +1,42 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
+#include "./MicrophoneInfo_Coordinate3F.def.hpp"
 
 namespace android::media
 {
-	class MicrophoneInfo_Coordinate3F : public JObject
+	// Fields
+	inline jfloat MicrophoneInfo_Coordinate3F::x()
 	{
-	public:
-		// Fields
-		jfloat x();
-		jfloat y();
-		jfloat z();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MicrophoneInfo_Coordinate3F(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		MicrophoneInfo_Coordinate3F(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-	};
+		return getField<jfloat>(
+			"x"
+		);
+	}
+	inline jfloat MicrophoneInfo_Coordinate3F::y()
+	{
+		return getField<jfloat>(
+			"y"
+		);
+	}
+	inline jfloat MicrophoneInfo_Coordinate3F::z()
+	{
+		return getField<jfloat>(
+			"z"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean MicrophoneInfo_Coordinate3F::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
 } // namespace android::media
+
+// Base class headers
 

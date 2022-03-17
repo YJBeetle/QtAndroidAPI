@@ -1,26 +1,50 @@
 #pragma once
 
-#include "../../../../JObject.hpp"
+#include "./RangingResultCallback.def.hpp"
 
 namespace android::net::wifi::rtt
 {
-	class RangingResultCallback : public JObject
+	// Fields
+	inline jint RangingResultCallback::STATUS_CODE_FAIL()
 	{
-	public:
-		// Fields
-		static jint STATUS_CODE_FAIL();
-		static jint STATUS_CODE_FAIL_RTT_NOT_AVAILABLE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RangingResultCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		RangingResultCallback(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		RangingResultCallback();
-		
-		// Methods
-		void onRangingFailure(jint arg0) const;
-		void onRangingResults(JObject arg0) const;
-	};
+		return getStaticField<jint>(
+			"android.net.wifi.rtt.RangingResultCallback",
+			"STATUS_CODE_FAIL"
+		);
+	}
+	inline jint RangingResultCallback::STATUS_CODE_FAIL_RTT_NOT_AVAILABLE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.rtt.RangingResultCallback",
+			"STATUS_CODE_FAIL_RTT_NOT_AVAILABLE"
+		);
+	}
+	
+	// Constructors
+	inline RangingResultCallback::RangingResultCallback()
+		: JObject(
+			"android.net.wifi.rtt.RangingResultCallback",
+			"()V"
+		) {}
+	
+	// Methods
+	inline void RangingResultCallback::onRangingFailure(jint arg0) const
+	{
+		callMethod<void>(
+			"onRangingFailure",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void RangingResultCallback::onRangingResults(JObject arg0) const
+	{
+		callMethod<void>(
+			"onRangingResults",
+			"(Ljava/util/List;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::net::wifi::rtt
+
+// Base class headers
 

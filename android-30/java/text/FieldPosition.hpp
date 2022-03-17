@@ -1,40 +1,103 @@
 #pragma once
 
 #include "../../JObject.hpp"
-
-class JObject;
-class JString;
-namespace java::text
-{
-	class Format_Field;
-}
+#include "../../JString.hpp"
+#include "./Format_Field.def.hpp"
+#include "./FieldPosition.def.hpp"
 
 namespace java::text
 {
-	class FieldPosition : public JObject
+	// Fields
+	
+	// Constructors
+	inline FieldPosition::FieldPosition(jint arg0)
+		: JObject(
+			"java.text.FieldPosition",
+			"(I)V",
+			arg0
+		) {}
+	inline FieldPosition::FieldPosition(java::text::Format_Field arg0)
+		: JObject(
+			"java.text.FieldPosition",
+			"(Ljava/text/Format$Field;)V",
+			arg0.object()
+		) {}
+	inline FieldPosition::FieldPosition(java::text::Format_Field arg0, jint arg1)
+		: JObject(
+			"java.text.FieldPosition",
+			"(Ljava/text/Format$Field;I)V",
+			arg0.object(),
+			arg1
+		) {}
+	
+	// Methods
+	inline jboolean FieldPosition::equals(JObject arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FieldPosition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		FieldPosition(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		FieldPosition(jint arg0);
-		FieldPosition(java::text::Format_Field arg0);
-		FieldPosition(java::text::Format_Field arg0, jint arg1);
-		
-		// Methods
-		jboolean equals(JObject arg0) const;
-		jint getBeginIndex() const;
-		jint getEndIndex() const;
-		jint getField() const;
-		java::text::Format_Field getFieldAttribute() const;
-		jint hashCode() const;
-		void setBeginIndex(jint arg0) const;
-		void setEndIndex(jint arg0) const;
-		JString toString() const;
-	};
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint FieldPosition::getBeginIndex() const
+	{
+		return callMethod<jint>(
+			"getBeginIndex",
+			"()I"
+		);
+	}
+	inline jint FieldPosition::getEndIndex() const
+	{
+		return callMethod<jint>(
+			"getEndIndex",
+			"()I"
+		);
+	}
+	inline jint FieldPosition::getField() const
+	{
+		return callMethod<jint>(
+			"getField",
+			"()I"
+		);
+	}
+	inline java::text::Format_Field FieldPosition::getFieldAttribute() const
+	{
+		return callObjectMethod(
+			"getFieldAttribute",
+			"()Ljava/text/Format$Field;"
+		);
+	}
+	inline jint FieldPosition::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline void FieldPosition::setBeginIndex(jint arg0) const
+	{
+		callMethod<void>(
+			"setBeginIndex",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void FieldPosition::setEndIndex(jint arg0) const
+	{
+		callMethod<void>(
+			"setEndIndex",
+			"(I)V",
+			arg0
+		);
+	}
+	inline JString FieldPosition::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::text
+
+// Base class headers
 

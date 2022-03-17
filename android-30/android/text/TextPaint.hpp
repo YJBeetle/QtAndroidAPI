@@ -1,39 +1,93 @@
 #pragma once
 
-#include "../graphics/Paint.hpp"
-
-class JIntArray;
-namespace android::graphics
-{
-	class Paint;
-}
+#include "../../JIntArray.hpp"
+#include "../graphics/Paint.def.hpp"
+#include "./TextPaint.def.hpp"
 
 namespace android::text
 {
-	class TextPaint : public android::graphics::Paint
+	// Fields
+	inline jint TextPaint::baselineShift()
 	{
-	public:
-		// Fields
-		jint baselineShift();
-		jint bgColor();
-		jfloat density();
-		JIntArray drawableState();
-		jint linkColor();
-		jint underlineColor();
-		jfloat underlineThickness();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextPaint(const char *className, const char *sig, Ts...agv) : android::graphics::Paint(className, sig, std::forward<Ts>(agv)...) {}
-		TextPaint(QAndroidJniObject obj) : android::graphics::Paint(obj) {}
-		
-		// Constructors
-		TextPaint();
-		TextPaint(android::graphics::Paint arg0);
-		TextPaint(jint arg0);
-		
-		// Methods
-		jfloat getUnderlineThickness() const;
-		void set(android::text::TextPaint arg0) const;
-	};
+		return getField<jint>(
+			"baselineShift"
+		);
+	}
+	inline jint TextPaint::bgColor()
+	{
+		return getField<jint>(
+			"bgColor"
+		);
+	}
+	inline jfloat TextPaint::density()
+	{
+		return getField<jfloat>(
+			"density"
+		);
+	}
+	inline JIntArray TextPaint::drawableState()
+	{
+		return getObjectField(
+			"drawableState",
+			"[I"
+		);
+	}
+	inline jint TextPaint::linkColor()
+	{
+		return getField<jint>(
+			"linkColor"
+		);
+	}
+	inline jint TextPaint::underlineColor()
+	{
+		return getField<jint>(
+			"underlineColor"
+		);
+	}
+	inline jfloat TextPaint::underlineThickness()
+	{
+		return getField<jfloat>(
+			"underlineThickness"
+		);
+	}
+	
+	// Constructors
+	inline TextPaint::TextPaint()
+		: android::graphics::Paint(
+			"android.text.TextPaint",
+			"()V"
+		) {}
+	inline TextPaint::TextPaint(android::graphics::Paint arg0)
+		: android::graphics::Paint(
+			"android.text.TextPaint",
+			"(Landroid/graphics/Paint;)V",
+			arg0.object()
+		) {}
+	inline TextPaint::TextPaint(jint arg0)
+		: android::graphics::Paint(
+			"android.text.TextPaint",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jfloat TextPaint::getUnderlineThickness() const
+	{
+		return callMethod<jfloat>(
+			"getUnderlineThickness",
+			"()F"
+		);
+	}
+	inline void TextPaint::set(android::text::TextPaint arg0) const
+	{
+		callMethod<void>(
+			"set",
+			"(Landroid/text/TextPaint;)V",
+			arg0.object()
+		);
+	}
 } // namespace android::text
+
+// Base class headers
+#include "../graphics/Paint.hpp"
 

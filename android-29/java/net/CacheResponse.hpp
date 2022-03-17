@@ -1,29 +1,35 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-namespace java::io
-{
-	class InputStream;
-}
+#include "../io/InputStream.def.hpp"
+#include "./CacheResponse.def.hpp"
 
 namespace java::net
 {
-	class CacheResponse : public JObject
+	// Fields
+	
+	// Constructors
+	inline CacheResponse::CacheResponse()
+		: JObject(
+			"java.net.CacheResponse",
+			"()V"
+		) {}
+	
+	// Methods
+	inline java::io::InputStream CacheResponse::getBody() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CacheResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		CacheResponse(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		CacheResponse();
-		
-		// Methods
-		java::io::InputStream getBody() const;
-		JObject getHeaders() const;
-	};
+		return callObjectMethod(
+			"getBody",
+			"()Ljava/io/InputStream;"
+		);
+	}
+	inline JObject CacheResponse::getHeaders() const
+	{
+		return callObjectMethod(
+			"getHeaders",
+			"()Ljava/util/Map;"
+		);
+	}
 } // namespace java::net
+
+// Base class headers
 

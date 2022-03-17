@@ -1,47 +1,62 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace android::view::textservice
-{
-	class SpellCheckerInfo;
-}
-namespace android::view::textservice
-{
-	class SpellCheckerSession;
-}
-namespace android::view::textservice
-{
-	class SpellCheckerSession_SpellCheckerSessionParams;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../os/Bundle.def.hpp"
+#include "./SpellCheckerInfo.def.hpp"
+#include "./SpellCheckerSession.def.hpp"
+#include "./SpellCheckerSession_SpellCheckerSessionParams.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./TextServicesManager.def.hpp"
 
 namespace android::view::textservice
 {
-	class TextServicesManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::view::textservice::SpellCheckerInfo TextServicesManager::getCurrentSpellCheckerInfo() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextServicesManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		TextServicesManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::view::textservice::SpellCheckerInfo getCurrentSpellCheckerInfo() const;
-		JObject getEnabledSpellCheckerInfos() const;
-		jboolean isSpellCheckerEnabled() const;
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2) const;
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const;
-	};
+		return callObjectMethod(
+			"getCurrentSpellCheckerInfo",
+			"()Landroid/view/textservice/SpellCheckerInfo;"
+		);
+	}
+	inline JObject TextServicesManager::getEnabledSpellCheckerInfos() const
+	{
+		return callObjectMethod(
+			"getEnabledSpellCheckerInfos",
+			"()Ljava/util/List;"
+		);
+	}
+	inline jboolean TextServicesManager::isSpellCheckerEnabled() const
+	{
+		return callMethod<jboolean>(
+			"isSpellCheckerEnabled",
+			"()Z"
+		);
+	}
+	inline android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2) const
+	{
+		return callObjectMethod(
+			"newSpellCheckerSession",
+			"(Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionParams;Ljava/util/concurrent/Executor;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;)Landroid/view/textservice/SpellCheckerSession;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
+	inline android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const
+	{
+		return callObjectMethod(
+			"newSpellCheckerSession",
+			"(Landroid/os/Bundle;Ljava/util/Locale;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;Z)Landroid/view/textservice/SpellCheckerSession;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object(),
+			arg3
+		);
+	}
 } // namespace android::view::textservice
+
+// Base class headers
 

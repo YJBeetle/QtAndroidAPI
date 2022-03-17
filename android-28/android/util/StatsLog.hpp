@@ -1,24 +1,42 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./StatsLog.def.hpp"
 
 namespace android::util
 {
-	class StatsLog : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline jboolean StatsLog::logEvent(jint arg0)
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StatsLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		StatsLog(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static jboolean logEvent(jint arg0);
-		static jboolean logStart(jint arg0);
-		static jboolean logStop(jint arg0);
-	};
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logEvent",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean StatsLog::logStart(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logStart",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean StatsLog::logStop(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logStop",
+			"(I)Z",
+			arg0
+		);
+	}
 } // namespace android::util
+
+// Base class headers
 

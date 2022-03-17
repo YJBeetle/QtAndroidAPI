@@ -1,30 +1,76 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmStore_Action.def.hpp"
 
 namespace android::drm
 {
-	class DrmStore_Action : public JObject
+	// Fields
+	inline jint DrmStore_Action::DEFAULT()
 	{
-	public:
-		// Fields
-		static jint DEFAULT();
-		static jint DISPLAY();
-		static jint EXECUTE();
-		static jint OUTPUT();
-		static jint PLAY();
-		static jint PREVIEW();
-		static jint RINGTONE();
-		static jint TRANSFER();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmStore_Action(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore_Action(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DrmStore_Action();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"DEFAULT"
+		);
+	}
+	inline jint DrmStore_Action::DISPLAY()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"DISPLAY"
+		);
+	}
+	inline jint DrmStore_Action::EXECUTE()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"EXECUTE"
+		);
+	}
+	inline jint DrmStore_Action::OUTPUT()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"OUTPUT"
+		);
+	}
+	inline jint DrmStore_Action::PLAY()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"PLAY"
+		);
+	}
+	inline jint DrmStore_Action::PREVIEW()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"PREVIEW"
+		);
+	}
+	inline jint DrmStore_Action::RINGTONE()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"RINGTONE"
+		);
+	}
+	inline jint DrmStore_Action::TRANSFER()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$Action",
+			"TRANSFER"
+		);
+	}
+	
+	// Constructors
+	inline DrmStore_Action::DrmStore_Action()
+		: JObject(
+			"android.drm.DrmStore$Action",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::drm
+
+// Base class headers
 

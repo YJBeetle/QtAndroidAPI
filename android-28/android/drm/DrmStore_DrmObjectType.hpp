@@ -1,26 +1,48 @@
 #pragma once
 
-#include "../../JObject.hpp"
+#include "./DrmStore_DrmObjectType.def.hpp"
 
 namespace android::drm
 {
-	class DrmStore_DrmObjectType : public JObject
+	// Fields
+	inline jint DrmStore_DrmObjectType::CONTENT()
 	{
-	public:
-		// Fields
-		static jint CONTENT();
-		static jint RIGHTS_OBJECT();
-		static jint TRIGGER_OBJECT();
-		static jint UNKNOWN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmStore_DrmObjectType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		DrmStore_DrmObjectType(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		DrmStore_DrmObjectType();
-		
-		// Methods
-	};
+		return getStaticField<jint>(
+			"android.drm.DrmStore$DrmObjectType",
+			"CONTENT"
+		);
+	}
+	inline jint DrmStore_DrmObjectType::RIGHTS_OBJECT()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$DrmObjectType",
+			"RIGHTS_OBJECT"
+		);
+	}
+	inline jint DrmStore_DrmObjectType::TRIGGER_OBJECT()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$DrmObjectType",
+			"TRIGGER_OBJECT"
+		);
+	}
+	inline jint DrmStore_DrmObjectType::UNKNOWN()
+	{
+		return getStaticField<jint>(
+			"android.drm.DrmStore$DrmObjectType",
+			"UNKNOWN"
+		);
+	}
+	
+	// Constructors
+	inline DrmStore_DrmObjectType::DrmStore_DrmObjectType()
+		: JObject(
+			"android.drm.DrmStore$DrmObjectType",
+			"()V"
+		) {}
+	
+	// Methods
 } // namespace android::drm
+
+// Base class headers
 

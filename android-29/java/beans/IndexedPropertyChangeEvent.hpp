@@ -1,30 +1,37 @@
 #pragma once
 
-#include "./PropertyChangeEvent.hpp"
-
-class JObject;
-class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "../lang/StringBuilder.def.hpp"
+#include "./IndexedPropertyChangeEvent.def.hpp"
 
 namespace java::beans
 {
-	class IndexedPropertyChangeEvent : public java::beans::PropertyChangeEvent
+	// Fields
+	
+	// Constructors
+	inline IndexedPropertyChangeEvent::IndexedPropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3, jint arg4)
+		: java::beans::PropertyChangeEvent(
+			"java.beans.IndexedPropertyChangeEvent",
+			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;I)V",
+			arg0.object<jobject>(),
+			arg1.object<jstring>(),
+			arg2.object<jobject>(),
+			arg3.object<jobject>(),
+			arg4
+		) {}
+	
+	// Methods
+	inline jint IndexedPropertyChangeEvent::getIndex() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IndexedPropertyChangeEvent(const char *className, const char *sig, Ts...agv) : java::beans::PropertyChangeEvent(className, sig, std::forward<Ts>(agv)...) {}
-		IndexedPropertyChangeEvent(QAndroidJniObject obj) : java::beans::PropertyChangeEvent(obj) {}
-		
-		// Constructors
-		IndexedPropertyChangeEvent(JObject arg0, JString arg1, JObject arg2, JObject arg3, jint arg4);
-		
-		// Methods
-		jint getIndex() const;
-	};
+		return callMethod<jint>(
+			"getIndex",
+			"()I"
+		);
+	}
 } // namespace java::beans
+
+// Base class headers
+#include "../util/EventObject.hpp"
+#include "./PropertyChangeEvent.hpp"
 

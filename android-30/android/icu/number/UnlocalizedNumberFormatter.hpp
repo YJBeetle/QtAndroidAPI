@@ -1,36 +1,35 @@
 #pragma once
 
-#include "./NumberFormatterSettings.hpp"
+#include "./LocalizedNumberFormatter.def.hpp"
+#include "../util/ULocale.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./UnlocalizedNumberFormatter.def.hpp"
 
 namespace android::icu::number
 {
-	class LocalizedNumberFormatter;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::number
-{
-	class UnlocalizedNumberFormatter : public android::icu::number::NumberFormatterSettings
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::LocalizedNumberFormatter UnlocalizedNumberFormatter::locale(android::icu::util::ULocale arg0) const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnlocalizedNumberFormatter(const char *className, const char *sig, Ts...agv) : android::icu::number::NumberFormatterSettings(className, sig, std::forward<Ts>(agv)...) {}
-		UnlocalizedNumberFormatter(QAndroidJniObject obj) : android::icu::number::NumberFormatterSettings(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::icu::number::LocalizedNumberFormatter locale(android::icu::util::ULocale arg0) const;
-		android::icu::number::LocalizedNumberFormatter locale(java::util::Locale arg0) const;
-	};
+		return callObjectMethod(
+			"locale",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/number/LocalizedNumberFormatter;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::LocalizedNumberFormatter UnlocalizedNumberFormatter::locale(java::util::Locale arg0) const
+	{
+		return callObjectMethod(
+			"locale",
+			"(Ljava/util/Locale;)Landroid/icu/number/LocalizedNumberFormatter;",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
+#include "./NumberFormatterSettings.hpp"
 

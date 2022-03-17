@@ -1,27 +1,47 @@
 #pragma once
 
-#include "../../JObject.hpp"
-
-class JString;
+#include "../../JString.hpp"
+#include "./ByteOrder.def.hpp"
 
 namespace java::nio
 {
-	class ByteOrder : public JObject
+	// Fields
+	inline java::nio::ByteOrder ByteOrder::BIG_ENDIAN()
 	{
-	public:
-		// Fields
-		static java::nio::ByteOrder BIG_ENDIAN();
-		static java::nio::ByteOrder LITTLE_ENDIAN();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ByteOrder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		ByteOrder(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static java::nio::ByteOrder nativeOrder();
-		JString toString() const;
-	};
+		return getStaticObjectField(
+			"java.nio.ByteOrder",
+			"BIG_ENDIAN",
+			"Ljava/nio/ByteOrder;"
+		);
+	}
+	inline java::nio::ByteOrder ByteOrder::LITTLE_ENDIAN()
+	{
+		return getStaticObjectField(
+			"java.nio.ByteOrder",
+			"LITTLE_ENDIAN",
+			"Ljava/nio/ByteOrder;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::nio::ByteOrder ByteOrder::nativeOrder()
+	{
+		return callStaticObjectMethod(
+			"java.nio.ByteOrder",
+			"nativeOrder",
+			"()Ljava/nio/ByteOrder;"
+		);
+	}
+	inline JString ByteOrder::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
 } // namespace java::nio
+
+// Base class headers
 

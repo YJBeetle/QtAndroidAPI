@@ -1,31 +1,41 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-class JIntArray;
-class JArray;
-namespace android::os::health
-{
-	class HealthStats;
-}
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "./HealthStats.def.hpp"
+#include "./SystemHealthManager.def.hpp"
 
 namespace android::os::health
 {
-	class SystemHealthManager : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::health::HealthStats SystemHealthManager::takeMyUidSnapshot() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SystemHealthManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SystemHealthManager(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::os::health::HealthStats takeMyUidSnapshot() const;
-		android::os::health::HealthStats takeUidSnapshot(jint arg0) const;
-		JArray takeUidSnapshots(JIntArray arg0) const;
-	};
+		return callObjectMethod(
+			"takeMyUidSnapshot",
+			"()Landroid/os/health/HealthStats;"
+		);
+	}
+	inline android::os::health::HealthStats SystemHealthManager::takeUidSnapshot(jint arg0) const
+	{
+		return callObjectMethod(
+			"takeUidSnapshot",
+			"(I)Landroid/os/health/HealthStats;",
+			arg0
+		);
+	}
+	inline JArray SystemHealthManager::takeUidSnapshots(JIntArray arg0) const
+	{
+		return callObjectMethod(
+			"takeUidSnapshots",
+			"([I)[Landroid/os/health/HealthStats;",
+			arg0.object<jintArray>()
+		);
+	}
 } // namespace android::os::health
+
+// Base class headers
 

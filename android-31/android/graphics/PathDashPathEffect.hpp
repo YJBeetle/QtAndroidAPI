@@ -1,31 +1,27 @@
 #pragma once
 
-#include "./PathEffect.hpp"
+#include "./Path.def.hpp"
+#include "./PathDashPathEffect_Style.def.hpp"
+#include "./PathDashPathEffect.def.hpp"
 
 namespace android::graphics
 {
-	class Path;
-}
-namespace android::graphics
-{
-	class PathDashPathEffect_Style;
-}
-
-namespace android::graphics
-{
-	class PathDashPathEffect : public android::graphics::PathEffect
-	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PathDashPathEffect(const char *className, const char *sig, Ts...agv) : android::graphics::PathEffect(className, sig, std::forward<Ts>(agv)...) {}
-		PathDashPathEffect(QAndroidJniObject obj) : android::graphics::PathEffect(obj) {}
-		
-		// Constructors
-		PathDashPathEffect(android::graphics::Path arg0, jfloat arg1, jfloat arg2, android::graphics::PathDashPathEffect_Style arg3);
-		
-		// Methods
-	};
+	// Fields
+	
+	// Constructors
+	inline PathDashPathEffect::PathDashPathEffect(android::graphics::Path arg0, jfloat arg1, jfloat arg2, android::graphics::PathDashPathEffect_Style arg3)
+		: android::graphics::PathEffect(
+			"android.graphics.PathDashPathEffect",
+			"(Landroid/graphics/Path;FFLandroid/graphics/PathDashPathEffect$Style;)V",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3.object()
+		) {}
+	
+	// Methods
 } // namespace android::graphics
+
+// Base class headers
+#include "./PathEffect.hpp"
 

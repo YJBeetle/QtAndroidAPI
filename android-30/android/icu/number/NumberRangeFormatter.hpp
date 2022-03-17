@@ -1,41 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
+#include "./LocalizedNumberRangeFormatter.def.hpp"
+#include "./UnlocalizedNumberRangeFormatter.def.hpp"
+#include "../util/ULocale.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./NumberRangeFormatter.def.hpp"
 
 namespace android::icu::number
 {
-	class LocalizedNumberRangeFormatter;
-}
-namespace android::icu::number
-{
-	class UnlocalizedNumberRangeFormatter;
-}
-namespace android::icu::util
-{
-	class ULocale;
-}
-namespace java::util
-{
-	class Locale;
-}
-
-namespace android::icu::number
-{
-	class NumberRangeFormatter : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::icu::number::UnlocalizedNumberRangeFormatter NumberRangeFormatter::with()
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NumberRangeFormatter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		NumberRangeFormatter(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::icu::number::UnlocalizedNumberRangeFormatter with();
-		static android::icu::number::LocalizedNumberRangeFormatter withLocale(android::icu::util::ULocale arg0);
-		static android::icu::number::LocalizedNumberRangeFormatter withLocale(java::util::Locale arg0);
-	};
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter",
+			"with",
+			"()Landroid/icu/number/UnlocalizedNumberRangeFormatter;"
+		);
+	}
+	inline android::icu::number::LocalizedNumberRangeFormatter NumberRangeFormatter::withLocale(android::icu::util::ULocale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter",
+			"withLocale",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/number/LocalizedNumberRangeFormatter;",
+			arg0.object()
+		);
+	}
+	inline android::icu::number::LocalizedNumberRangeFormatter NumberRangeFormatter::withLocale(java::util::Locale arg0)
+	{
+		return callStaticObjectMethod(
+			"android.icu.number.NumberRangeFormatter",
+			"withLocale",
+			"(Ljava/util/Locale;)Landroid/icu/number/LocalizedNumberRangeFormatter;",
+			arg0.object()
+		);
+	}
 } // namespace android::icu::number
+
+// Base class headers
 

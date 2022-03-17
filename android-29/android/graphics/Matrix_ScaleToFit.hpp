@@ -1,30 +1,67 @@
 #pragma once
 
-#include "../../java/lang/Enum.hpp"
-
-class JArray;
-class JString;
+#include "../../JArray.hpp"
+#include "../../JString.hpp"
+#include "./Matrix_ScaleToFit.def.hpp"
 
 namespace android::graphics
 {
-	class Matrix_ScaleToFit : public java::lang::Enum
+	// Fields
+	inline android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::CENTER()
 	{
-	public:
-		// Fields
-		static android::graphics::Matrix_ScaleToFit CENTER();
-		static android::graphics::Matrix_ScaleToFit END();
-		static android::graphics::Matrix_ScaleToFit FILL();
-		static android::graphics::Matrix_ScaleToFit START();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Matrix_ScaleToFit(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
-		Matrix_ScaleToFit(QAndroidJniObject obj) : java::lang::Enum(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		static android::graphics::Matrix_ScaleToFit valueOf(JString arg0);
-		static JArray values();
-	};
+		return getStaticObjectField(
+			"android.graphics.Matrix$ScaleToFit",
+			"CENTER",
+			"Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
+	inline android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::END()
+	{
+		return getStaticObjectField(
+			"android.graphics.Matrix$ScaleToFit",
+			"END",
+			"Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
+	inline android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::FILL()
+	{
+		return getStaticObjectField(
+			"android.graphics.Matrix$ScaleToFit",
+			"FILL",
+			"Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
+	inline android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::START()
+	{
+		return getStaticObjectField(
+			"android.graphics.Matrix$ScaleToFit",
+			"START",
+			"Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline android::graphics::Matrix_ScaleToFit Matrix_ScaleToFit::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Matrix$ScaleToFit",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray Matrix_ScaleToFit::values()
+	{
+		return callStaticObjectMethod(
+			"android.graphics.Matrix$ScaleToFit",
+			"values",
+			"()[Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
 } // namespace android::graphics
+
+// Base class headers
+#include "../../java/lang/Enum.hpp"
 

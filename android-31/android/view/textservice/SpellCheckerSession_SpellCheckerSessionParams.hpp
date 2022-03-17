@@ -1,34 +1,45 @@
 #pragma once
 
-#include "../../../JObject.hpp"
-
-namespace android::os
-{
-	class Bundle;
-}
-namespace java::util
-{
-	class Locale;
-}
+#include "../../os/Bundle.def.hpp"
+#include "../../../java/util/Locale.def.hpp"
+#include "./SpellCheckerSession_SpellCheckerSessionParams.def.hpp"
 
 namespace android::view::textservice
 {
-	class SpellCheckerSession_SpellCheckerSessionParams : public JObject
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline android::os::Bundle SpellCheckerSession_SpellCheckerSessionParams::getExtras() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SpellCheckerSession_SpellCheckerSessionParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SpellCheckerSession_SpellCheckerSessionParams(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		android::os::Bundle getExtras() const;
-		java::util::Locale getLocale() const;
-		jint getSupportedAttributes() const;
-		jboolean shouldReferToSpellCheckerLanguageSettings() const;
-	};
+		return callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	inline java::util::Locale SpellCheckerSession_SpellCheckerSessionParams::getLocale() const
+	{
+		return callObjectMethod(
+			"getLocale",
+			"()Ljava/util/Locale;"
+		);
+	}
+	inline jint SpellCheckerSession_SpellCheckerSessionParams::getSupportedAttributes() const
+	{
+		return callMethod<jint>(
+			"getSupportedAttributes",
+			"()I"
+		);
+	}
+	inline jboolean SpellCheckerSession_SpellCheckerSessionParams::shouldReferToSpellCheckerLanguageSettings() const
+	{
+		return callMethod<jboolean>(
+			"shouldReferToSpellCheckerLanguageSettings",
+			"()Z"
+		);
+	}
 } // namespace android::view::textservice
+
+// Base class headers
 

@@ -1,23 +1,30 @@
 #pragma once
 
-#include "../os/Handler.hpp"
+#include "./SslErrorHandler.def.hpp"
 
 namespace android::webkit
 {
-	class SslErrorHandler : public android::os::Handler
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void SslErrorHandler::cancel() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SslErrorHandler(const char *className, const char *sig, Ts...agv) : android::os::Handler(className, sig, std::forward<Ts>(agv)...) {}
-		SslErrorHandler(QAndroidJniObject obj) : android::os::Handler(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		void cancel() const;
-		void proceed() const;
-	};
+		callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	inline void SslErrorHandler::proceed() const
+	{
+		callMethod<void>(
+			"proceed",
+			"()V"
+		);
+	}
 } // namespace android::webkit
+
+// Base class headers
+#include "../os/Handler.hpp"
 

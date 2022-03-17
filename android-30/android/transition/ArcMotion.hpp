@@ -1,39 +1,86 @@
 #pragma once
 
-#include "./PathMotion.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-namespace android::graphics
-{
-	class Path;
-}
+#include "../content/Context.def.hpp"
+#include "../graphics/Path.def.hpp"
+#include "./ArcMotion.def.hpp"
 
 namespace android::transition
 {
-	class ArcMotion : public android::transition::PathMotion
+	// Fields
+	
+	// Constructors
+	inline ArcMotion::ArcMotion()
+		: android::transition::PathMotion(
+			"android.transition.ArcMotion",
+			"()V"
+		) {}
+	inline ArcMotion::ArcMotion(android::content::Context arg0, JObject arg1)
+		: android::transition::PathMotion(
+			"android.transition.ArcMotion",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline jfloat ArcMotion::getMaximumAngle() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ArcMotion(const char *className, const char *sig, Ts...agv) : android::transition::PathMotion(className, sig, std::forward<Ts>(agv)...) {}
-		ArcMotion(QAndroidJniObject obj) : android::transition::PathMotion(obj) {}
-		
-		// Constructors
-		ArcMotion();
-		ArcMotion(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		jfloat getMaximumAngle() const;
-		jfloat getMinimumHorizontalAngle() const;
-		jfloat getMinimumVerticalAngle() const;
-		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
-		void setMaximumAngle(jfloat arg0) const;
-		void setMinimumHorizontalAngle(jfloat arg0) const;
-		void setMinimumVerticalAngle(jfloat arg0) const;
-	};
+		return callMethod<jfloat>(
+			"getMaximumAngle",
+			"()F"
+		);
+	}
+	inline jfloat ArcMotion::getMinimumHorizontalAngle() const
+	{
+		return callMethod<jfloat>(
+			"getMinimumHorizontalAngle",
+			"()F"
+		);
+	}
+	inline jfloat ArcMotion::getMinimumVerticalAngle() const
+	{
+		return callMethod<jfloat>(
+			"getMinimumVerticalAngle",
+			"()F"
+		);
+	}
+	inline android::graphics::Path ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
+	{
+		return callObjectMethod(
+			"getPath",
+			"(FFFF)Landroid/graphics/Path;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	inline void ArcMotion::setMaximumAngle(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setMaximumAngle",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void ArcMotion::setMinimumHorizontalAngle(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setMinimumHorizontalAngle",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void ArcMotion::setMinimumVerticalAngle(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setMinimumVerticalAngle",
+			"(F)V",
+			arg0
+		);
+	}
 } // namespace android::transition
+
+// Base class headers
+#include "./PathMotion.hpp"
 

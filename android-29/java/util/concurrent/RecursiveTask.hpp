@@ -1,25 +1,29 @@
 #pragma once
 
-#include "./ForkJoinTask.hpp"
-
-class JObject;
+#include "../../../JObject.hpp"
+#include "./RecursiveTask.def.hpp"
 
 namespace java::util::concurrent
 {
-	class RecursiveTask : public java::util::concurrent::ForkJoinTask
+	// Fields
+	
+	// Constructors
+	inline RecursiveTask::RecursiveTask()
+		: java::util::concurrent::ForkJoinTask(
+			"java.util.concurrent.RecursiveTask",
+			"()V"
+		) {}
+	
+	// Methods
+	inline JObject RecursiveTask::getRawResult() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RecursiveTask(const char *className, const char *sig, Ts...agv) : java::util::concurrent::ForkJoinTask(className, sig, std::forward<Ts>(agv)...) {}
-		RecursiveTask(QAndroidJniObject obj) : java::util::concurrent::ForkJoinTask(obj) {}
-		
-		// Constructors
-		RecursiveTask();
-		
-		// Methods
-		JObject getRawResult() const;
-	};
+		return callObjectMethod(
+			"getRawResult",
+			"()Ljava/lang/Object;"
+		);
+	}
 } // namespace java::util::concurrent
+
+// Base class headers
+#include "./ForkJoinTask.hpp"
 

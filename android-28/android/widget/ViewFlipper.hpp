@@ -1,36 +1,85 @@
 #pragma once
 
-#include "./ViewAnimator.hpp"
-
-namespace android::content
-{
-	class Context;
-}
-class JString;
+#include "../content/Context.def.hpp"
+#include "../../JString.hpp"
+#include "./ViewFlipper.def.hpp"
 
 namespace android::widget
 {
-	class ViewFlipper : public android::widget::ViewAnimator
+	// Fields
+	
+	// Constructors
+	inline ViewFlipper::ViewFlipper(android::content::Context arg0)
+		: android::widget::ViewAnimator(
+			"android.widget.ViewFlipper",
+			"(Landroid/content/Context;)V",
+			arg0.object()
+		) {}
+	inline ViewFlipper::ViewFlipper(android::content::Context arg0, JObject arg1)
+		: android::widget::ViewAnimator(
+			"android.widget.ViewFlipper",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.object(),
+			arg1.object()
+		) {}
+	
+	// Methods
+	inline JString ViewFlipper::getAccessibilityClassName() const
 	{
-	public:
-		// Fields
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewFlipper(const char *className, const char *sig, Ts...agv) : android::widget::ViewAnimator(className, sig, std::forward<Ts>(agv)...) {}
-		ViewFlipper(QAndroidJniObject obj) : android::widget::ViewAnimator(obj) {}
-		
-		// Constructors
-		ViewFlipper(android::content::Context arg0);
-		ViewFlipper(android::content::Context arg0, JObject arg1);
-		
-		// Methods
-		JString getAccessibilityClassName() const;
-		jboolean isAutoStart() const;
-		jboolean isFlipping() const;
-		void setAutoStart(jboolean arg0) const;
-		void setFlipInterval(jint arg0) const;
-		void startFlipping() const;
-		void stopFlipping() const;
-	};
+		return callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		);
+	}
+	inline jboolean ViewFlipper::isAutoStart() const
+	{
+		return callMethod<jboolean>(
+			"isAutoStart",
+			"()Z"
+		);
+	}
+	inline jboolean ViewFlipper::isFlipping() const
+	{
+		return callMethod<jboolean>(
+			"isFlipping",
+			"()Z"
+		);
+	}
+	inline void ViewFlipper::setAutoStart(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAutoStart",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void ViewFlipper::setFlipInterval(jint arg0) const
+	{
+		callMethod<void>(
+			"setFlipInterval",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void ViewFlipper::startFlipping() const
+	{
+		callMethod<void>(
+			"startFlipping",
+			"()V"
+		);
+	}
+	inline void ViewFlipper::stopFlipping() const
+	{
+		callMethod<void>(
+			"stopFlipping",
+			"()V"
+		);
+	}
 } // namespace android::widget
+
+// Base class headers
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "./FrameLayout.hpp"
+#include "./ViewAnimator.hpp"
 

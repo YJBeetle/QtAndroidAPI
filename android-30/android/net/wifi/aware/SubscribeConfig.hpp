@@ -1,36 +1,78 @@
 #pragma once
 
+#include "../../../os/Parcel.def.hpp"
 #include "../../../../JObject.hpp"
-
-namespace android::os
-{
-	class Parcel;
-}
-class JObject;
-class JString;
+#include "../../../../JString.hpp"
+#include "./SubscribeConfig.def.hpp"
 
 namespace android::net::wifi::aware
 {
-	class SubscribeConfig : public JObject
+	// Fields
+	inline JObject SubscribeConfig::CREATOR()
 	{
-	public:
-		// Fields
-		static JObject CREATOR();
-		static jint SUBSCRIBE_TYPE_ACTIVE();
-		static jint SUBSCRIBE_TYPE_PASSIVE();
-		
-		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubscribeConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
-		SubscribeConfig(QAndroidJniObject obj) : JObject(obj) {}
-		
-		// Constructors
-		
-		// Methods
-		jint describeContents() const;
-		jboolean equals(JObject arg0) const;
-		jint hashCode() const;
-		JString toString() const;
-		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
-	};
+		return getStaticObjectField(
+			"android.net.wifi.aware.SubscribeConfig",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint SubscribeConfig::SUBSCRIBE_TYPE_ACTIVE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.aware.SubscribeConfig",
+			"SUBSCRIBE_TYPE_ACTIVE"
+		);
+	}
+	inline jint SubscribeConfig::SUBSCRIBE_TYPE_PASSIVE()
+	{
+		return getStaticField<jint>(
+			"android.net.wifi.aware.SubscribeConfig",
+			"SUBSCRIBE_TYPE_PASSIVE"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline jint SubscribeConfig::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean SubscribeConfig::equals(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline jint SubscribeConfig::hashCode() const
+	{
+		return callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	inline JString SubscribeConfig::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void SubscribeConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
 } // namespace android::net::wifi::aware
+
+// Base class headers
 
