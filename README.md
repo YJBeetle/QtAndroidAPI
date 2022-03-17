@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt6.yaml/badge.svg?branch=Qt6)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt6.yaml)
 
-## What this project can do
+## What can do
 
 This is a library for easily calling Android methods in Qt.
 
