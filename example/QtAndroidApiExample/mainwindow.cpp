@@ -32,9 +32,7 @@ void MainWindow::on_showToast_clicked()
 {
     auto message = ui->toastText->text();
     QNativeInterface::QAndroidApplication::runOnAndroidMainThread([message] {
-        auto toast = Toast::makeText(CONTEXT,
-                                     message,
-                                     0);
+        auto toast = Toast::makeText(CONTEXT, message, 0);
         toast.show();
     });
 }
