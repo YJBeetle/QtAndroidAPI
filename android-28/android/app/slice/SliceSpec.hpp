@@ -84,3 +84,6 @@ namespace android::app::slice
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app::slice;
+#endif

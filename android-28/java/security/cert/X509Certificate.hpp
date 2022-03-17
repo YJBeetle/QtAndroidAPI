@@ -185,3 +185,6 @@ namespace java::security::cert
 // Base class headers
 #include "./Certificate.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security::cert;
+#endif

@@ -16,3 +16,6 @@ namespace android::renderscript
 #include "./BaseObj.hpp"
 #include "./Script.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::renderscript;
+#endif

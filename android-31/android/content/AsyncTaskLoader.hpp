@@ -74,3 +74,6 @@ namespace android::content
 // Base class headers
 #include "./Loader.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content;
+#endif

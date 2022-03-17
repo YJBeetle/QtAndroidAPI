@@ -27,3 +27,6 @@ namespace dalvik::bytecode
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace dalvik::bytecode;
+#endif

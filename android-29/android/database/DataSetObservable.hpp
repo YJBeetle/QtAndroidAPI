@@ -33,3 +33,6 @@ namespace android::database
 // Base class headers
 #include "./Observable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::database;
+#endif

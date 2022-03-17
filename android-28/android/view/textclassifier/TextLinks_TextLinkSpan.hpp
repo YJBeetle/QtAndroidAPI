@@ -38,3 +38,6 @@ namespace android::view::textclassifier
 #include "../../text/style/CharacterStyle.hpp"
 #include "../../text/style/ClickableSpan.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view::textclassifier;
+#endif

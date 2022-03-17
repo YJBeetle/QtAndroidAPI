@@ -55,3 +55,6 @@ namespace android::os
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/FileInputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::os;
+#endif

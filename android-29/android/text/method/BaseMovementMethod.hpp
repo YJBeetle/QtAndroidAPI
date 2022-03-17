@@ -109,3 +109,6 @@ namespace android::text::method
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::method;
+#endif

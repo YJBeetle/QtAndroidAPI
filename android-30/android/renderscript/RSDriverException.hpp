@@ -23,3 +23,6 @@ namespace android::renderscript
 #include "../../java/lang/RuntimeException.hpp"
 #include "./RSRuntimeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::renderscript;
+#endif

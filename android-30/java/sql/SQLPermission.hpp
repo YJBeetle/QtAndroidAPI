@@ -29,3 +29,6 @@ namespace java::sql
 #include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::sql;
+#endif

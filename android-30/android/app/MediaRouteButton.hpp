@@ -123,3 +123,6 @@ namespace android::app
 // Base class headers
 #include "../view/View.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app;
+#endif

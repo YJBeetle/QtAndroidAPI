@@ -279,3 +279,6 @@ namespace java::security
 #include "../util/Hashtable.hpp"
 #include "../util/Properties.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security;
+#endif

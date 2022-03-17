@@ -21,3 +21,6 @@ namespace java::util
 #include "../lang/RuntimeException.hpp"
 #include "../lang/IllegalStateException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util;
+#endif

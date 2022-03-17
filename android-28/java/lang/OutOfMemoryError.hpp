@@ -27,3 +27,6 @@ namespace java::lang
 #include "./Error.hpp"
 #include "./VirtualMachineError.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang;
+#endif

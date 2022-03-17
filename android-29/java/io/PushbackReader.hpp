@@ -117,3 +117,6 @@ namespace java::io
 #include "./Reader.hpp"
 #include "./FilterReader.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

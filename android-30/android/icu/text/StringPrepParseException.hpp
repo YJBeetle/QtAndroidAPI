@@ -156,3 +156,6 @@ namespace android::icu::text
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/text/ParseException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::icu::text;
+#endif

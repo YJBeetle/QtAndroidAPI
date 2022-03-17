@@ -40,3 +40,6 @@ namespace java::lang::reflect
 #include "../Exception.hpp"
 #include "../RuntimeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang::reflect;
+#endif

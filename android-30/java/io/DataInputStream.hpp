@@ -162,3 +162,6 @@ namespace java::io
 #include "./InputStream.hpp"
 #include "./FilterInputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

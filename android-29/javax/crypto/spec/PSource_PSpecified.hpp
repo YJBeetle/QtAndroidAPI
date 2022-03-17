@@ -36,3 +36,6 @@ namespace javax::crypto::spec
 // Base class headers
 #include "./PSource.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::crypto::spec;
+#endif

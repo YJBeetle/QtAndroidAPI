@@ -236,3 +236,6 @@ namespace android::graphics::drawable
 #include "./Drawable.hpp"
 #include "./LayerDrawable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::drawable;
+#endif

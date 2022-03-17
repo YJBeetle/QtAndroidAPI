@@ -166,3 +166,6 @@ namespace android::view::animation
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view::animation;
+#endif

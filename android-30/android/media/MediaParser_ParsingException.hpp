@@ -15,3 +15,6 @@ namespace android::media
 #include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media;
+#endif

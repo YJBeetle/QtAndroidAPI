@@ -67,3 +67,6 @@ namespace java::net
 // Base class headers
 #include "../security/Permission.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::net;
+#endif

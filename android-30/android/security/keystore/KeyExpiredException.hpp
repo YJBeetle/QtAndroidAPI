@@ -37,3 +37,6 @@ namespace android::security::keystore
 #include "../../../java/security/KeyException.hpp"
 #include "../../../java/security/InvalidKeyException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::security::keystore;
+#endif

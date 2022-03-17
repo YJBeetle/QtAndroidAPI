@@ -43,3 +43,6 @@ namespace java::security
 #include "../util/Properties.hpp"
 #include "./Provider.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security;
+#endif

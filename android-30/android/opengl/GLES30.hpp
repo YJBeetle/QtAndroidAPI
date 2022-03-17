@@ -4116,3 +4116,6 @@ namespace android::opengl
 // Base class headers
 #include "./GLES20.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::opengl;
+#endif

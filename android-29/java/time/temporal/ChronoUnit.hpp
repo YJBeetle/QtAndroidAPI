@@ -223,3 +223,6 @@ namespace java::time::temporal
 // Base class headers
 #include "../../lang/Enum.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::time::temporal;
+#endif

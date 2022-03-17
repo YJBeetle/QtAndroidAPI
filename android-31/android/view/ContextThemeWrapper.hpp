@@ -94,3 +94,6 @@ namespace android::view
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view;
+#endif

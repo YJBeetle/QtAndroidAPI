@@ -225,3 +225,6 @@ namespace android::widget
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

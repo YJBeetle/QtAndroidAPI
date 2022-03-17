@@ -27,3 +27,6 @@ namespace java::nio::file
 #include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::file;
+#endif

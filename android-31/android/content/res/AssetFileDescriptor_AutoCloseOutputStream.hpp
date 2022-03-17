@@ -50,3 +50,6 @@ namespace android::content::res
 #include "../../../java/io/FileOutputStream.hpp"
 #include "../../os/ParcelFileDescriptor_AutoCloseOutputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content::res;
+#endif

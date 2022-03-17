@@ -66,3 +66,6 @@ namespace android::net::wifi
 // Base class headers
 #include "../NetworkSpecifier.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::wifi;
+#endif

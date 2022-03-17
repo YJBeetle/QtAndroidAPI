@@ -1238,3 +1238,6 @@ namespace android::telecom
 // Base class headers
 #include "./Conferenceable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::telecom;
+#endif

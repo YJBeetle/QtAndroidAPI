@@ -46,3 +46,6 @@ namespace android::media::midi
 // Base class headers
 #include "./MidiSender.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::midi;
+#endif

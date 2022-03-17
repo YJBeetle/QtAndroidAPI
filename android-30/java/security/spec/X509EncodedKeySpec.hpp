@@ -43,3 +43,6 @@ namespace java::security::spec
 // Base class headers
 #include "./EncodedKeySpec.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security::spec;
+#endif

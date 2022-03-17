@@ -55,3 +55,6 @@ namespace android::media::tv
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::tv;
+#endif

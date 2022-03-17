@@ -27,3 +27,6 @@ namespace javax::security::auth::login
 #include "../../../../java/lang/Exception.hpp"
 #include "../../../../java/security/GeneralSecurityException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::security::auth::login;
+#endif

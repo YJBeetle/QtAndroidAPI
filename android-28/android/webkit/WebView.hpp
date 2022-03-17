@@ -1214,3 +1214,6 @@ namespace android::webkit
 #include "../view/ViewGroup.hpp"
 #include "../widget/AbsoluteLayout.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::webkit;
+#endif

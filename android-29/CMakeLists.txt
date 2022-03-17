@@ -12,4 +12,4 @@ target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
 option(QT_ANDROID_API_TEST "QtAndroidAPI test." OFF)
 if(QT_ANDROID_API_TEST)
     include("./CmakeTest.inc.txt")
-endif()
+endif(QT_ANDROID_API_TEST)

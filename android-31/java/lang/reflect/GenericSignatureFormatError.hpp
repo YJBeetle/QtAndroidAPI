@@ -28,3 +28,6 @@ namespace java::lang::reflect
 #include "../LinkageError.hpp"
 #include "../ClassFormatError.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang::reflect;
+#endif

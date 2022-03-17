@@ -200,3 +200,6 @@ namespace java::time::chrono
 // Base class headers
 #include "./AbstractChronology.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::time::chrono;
+#endif

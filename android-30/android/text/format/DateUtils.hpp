@@ -528,3 +528,6 @@ namespace android::text::format
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::format;
+#endif

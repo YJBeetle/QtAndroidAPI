@@ -15,3 +15,6 @@ namespace android::net::ipsec::ike::exceptions
 #include "../../../../../java/lang/Exception.hpp"
 #include "./IkeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::ipsec::ike::exceptions;
+#endif

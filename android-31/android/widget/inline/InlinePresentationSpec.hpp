@@ -85,3 +85,6 @@ namespace android::widget::inline_
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget::inline_;
+#endif

@@ -551,3 +551,6 @@ namespace android::graphics::drawable
 // Base class headers
 #include "./Drawable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::drawable;
+#endif

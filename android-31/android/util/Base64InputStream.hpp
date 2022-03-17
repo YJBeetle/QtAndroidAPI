@@ -85,3 +85,6 @@ namespace android::util
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/FilterInputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::util;
+#endif

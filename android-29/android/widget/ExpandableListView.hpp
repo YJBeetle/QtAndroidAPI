@@ -377,3 +377,6 @@ namespace android::widget
 #include "./AbsListView.hpp"
 #include "./ListView.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

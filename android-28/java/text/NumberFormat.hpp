@@ -365,3 +365,6 @@ namespace java::text
 // Base class headers
 #include "./Format.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::text;
+#endif

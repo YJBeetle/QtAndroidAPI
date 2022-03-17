@@ -115,3 +115,6 @@ namespace javax::xml::xpath
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::xml::xpath;
+#endif

@@ -186,3 +186,6 @@ namespace android::app::slice
 // Base class headers
 #include "../../content/ContentProvider.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app::slice;
+#endif

@@ -23,3 +23,6 @@ namespace android::database::sqlite
 #include "./SQLiteClosable.hpp"
 #include "./SQLiteProgram.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::database::sqlite;
+#endif

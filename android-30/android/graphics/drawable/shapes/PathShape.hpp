@@ -58,3 +58,6 @@ namespace android::graphics::drawable::shapes
 // Base class headers
 #include "./Shape.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::drawable::shapes;
+#endif

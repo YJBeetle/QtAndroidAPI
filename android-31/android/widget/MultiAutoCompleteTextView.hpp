@@ -78,3 +78,6 @@ namespace android::widget
 #include "./EditText.hpp"
 #include "./AutoCompleteTextView.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

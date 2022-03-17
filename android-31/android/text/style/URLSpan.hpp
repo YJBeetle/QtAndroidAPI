@@ -68,3 +68,6 @@ namespace android::text::style
 #include "./CharacterStyle.hpp"
 #include "./ClickableSpan.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::style;
+#endif

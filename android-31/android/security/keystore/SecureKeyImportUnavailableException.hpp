@@ -42,3 +42,6 @@ namespace android::security::keystore
 #include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/security/ProviderException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::security::keystore;
+#endif

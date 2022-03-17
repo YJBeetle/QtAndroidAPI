@@ -29,3 +29,6 @@ namespace java::nio::file
 #include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::file;
+#endif

@@ -63,3 +63,6 @@ namespace android::icu::text
 #include "./NumberFormat.hpp"
 #include "./DecimalFormat.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::icu::text;
+#endif

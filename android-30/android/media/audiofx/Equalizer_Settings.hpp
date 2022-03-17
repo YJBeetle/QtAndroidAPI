@@ -52,3 +52,6 @@ namespace android::media::audiofx
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::audiofx;
+#endif

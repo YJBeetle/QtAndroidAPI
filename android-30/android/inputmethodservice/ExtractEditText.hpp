@@ -120,3 +120,6 @@ namespace android::inputmethodservice
 #include "../widget/TextView.hpp"
 #include "../widget/EditText.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::inputmethodservice;
+#endif

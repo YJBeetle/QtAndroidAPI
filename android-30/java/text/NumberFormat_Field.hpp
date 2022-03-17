@@ -121,3 +121,6 @@ namespace java::text
 #include "./AttributedCharacterIterator_Attribute.hpp"
 #include "./Format_Field.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::text;
+#endif

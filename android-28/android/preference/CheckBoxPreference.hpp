@@ -47,3 +47,6 @@ namespace android::preference
 #include "./Preference.hpp"
 #include "./TwoStatePreference.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::preference;
+#endif

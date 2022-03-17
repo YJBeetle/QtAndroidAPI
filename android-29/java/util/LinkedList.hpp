@@ -336,3 +336,6 @@ namespace java::util
 #include "./AbstractList.hpp"
 #include "./AbstractSequentialList.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util;
+#endif

@@ -28,3 +28,6 @@ namespace java::nio::channels::spi
 // Base class headers
 #include "../SelectionKey.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::channels::spi;
+#endif

@@ -27,3 +27,6 @@ namespace android::view
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view;
+#endif

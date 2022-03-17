@@ -38,3 +38,6 @@ namespace android::accounts
 #include "../view/ContextThemeWrapper.hpp"
 #include "../app/Activity.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::accounts;
+#endif

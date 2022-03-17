@@ -89,3 +89,6 @@ namespace android::widget
 #include "./BaseAdapter.hpp"
 #include "./CursorAdapter.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

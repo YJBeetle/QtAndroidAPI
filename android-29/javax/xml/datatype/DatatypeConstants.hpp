@@ -284,3 +284,6 @@ namespace javax::xml::datatype
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::xml::datatype;
+#endif

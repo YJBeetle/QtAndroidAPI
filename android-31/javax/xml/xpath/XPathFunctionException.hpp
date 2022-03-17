@@ -30,3 +30,6 @@ namespace javax::xml::xpath
 #include "./XPathException.hpp"
 #include "./XPathExpressionException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::xml::xpath;
+#endif

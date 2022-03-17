@@ -23,3 +23,6 @@ namespace android::webkit
 // Base class headers
 #include "./JsResult.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::webkit;
+#endif

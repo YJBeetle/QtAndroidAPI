@@ -53,3 +53,6 @@ namespace android::media::tv
 // Base class headers
 #include "./TvInputService_Session.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::tv;
+#endif

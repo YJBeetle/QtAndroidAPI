@@ -497,3 +497,6 @@ namespace android::provider
 // Base class headers
 #include "./Settings_NameValueTable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::provider;
+#endif

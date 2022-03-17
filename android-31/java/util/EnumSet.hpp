@@ -147,3 +147,6 @@ namespace java::util
 #include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util;
+#endif

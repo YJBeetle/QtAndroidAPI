@@ -45,3 +45,6 @@ namespace android::graphics::drawable
 #include "./Drawable.hpp"
 #include "./ShapeDrawable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::drawable;
+#endif

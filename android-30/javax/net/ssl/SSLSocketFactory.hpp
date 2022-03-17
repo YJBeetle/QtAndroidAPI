@@ -67,3 +67,6 @@ namespace javax::net::ssl
 // Base class headers
 #include "../SocketFactory.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::net::ssl;
+#endif

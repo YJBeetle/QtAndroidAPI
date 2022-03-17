@@ -106,3 +106,6 @@ namespace android::inputmethodservice
 // Base class headers
 #include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::inputmethodservice;
+#endif

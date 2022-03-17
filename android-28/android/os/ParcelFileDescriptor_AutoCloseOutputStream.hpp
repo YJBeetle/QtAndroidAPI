@@ -29,3 +29,6 @@ namespace android::os
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FileOutputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::os;
+#endif

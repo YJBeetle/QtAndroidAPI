@@ -94,3 +94,6 @@ namespace android::text::style
 #include "./TtsSpan_Builder.hpp"
 #include "./TtsSpan_SemioticClassBuilder.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::style;
+#endif

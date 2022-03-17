@@ -69,3 +69,6 @@ namespace java::beans
 // Base class headers
 #include "../util/EventObject.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::beans;
+#endif

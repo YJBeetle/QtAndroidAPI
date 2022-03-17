@@ -89,3 +89,6 @@ namespace android::drm
 // Base class headers
 #include "./DrmEvent.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::drm;
+#endif

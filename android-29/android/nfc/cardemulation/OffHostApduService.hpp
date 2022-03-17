@@ -47,3 +47,6 @@ namespace android::nfc::cardemulation
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::nfc::cardemulation;
+#endif

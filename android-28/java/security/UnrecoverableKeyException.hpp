@@ -28,3 +28,6 @@ namespace java::security
 #include "./GeneralSecurityException.hpp"
 #include "./UnrecoverableEntryException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security;
+#endif

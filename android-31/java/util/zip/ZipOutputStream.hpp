@@ -114,3 +114,6 @@ namespace java::util::zip
 #include "../../io/FilterOutputStream.hpp"
 #include "./DeflaterOutputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::zip;
+#endif

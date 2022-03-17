@@ -41,3 +41,6 @@ namespace java::security::spec
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security::spec;
+#endif

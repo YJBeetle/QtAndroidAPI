@@ -39,3 +39,6 @@ namespace java::io
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

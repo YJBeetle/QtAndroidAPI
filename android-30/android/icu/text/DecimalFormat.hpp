@@ -774,3 +774,6 @@ namespace android::icu::text
 #include "./UFormat.hpp"
 #include "./NumberFormat.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::icu::text;
+#endif

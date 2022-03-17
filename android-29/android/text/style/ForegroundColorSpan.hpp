@@ -66,3 +66,6 @@ namespace android::text::style
 // Base class headers
 #include "./CharacterStyle.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::style;
+#endif

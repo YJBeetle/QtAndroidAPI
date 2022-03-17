@@ -34,3 +34,6 @@ namespace java::lang
 #include "./RuntimeException.hpp"
 #include "./IndexOutOfBoundsException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang;
+#endif

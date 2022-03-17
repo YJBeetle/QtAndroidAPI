@@ -44,3 +44,6 @@ namespace android::system
 // Base class headers
 #include "../../java/lang/Exception.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::system;
+#endif

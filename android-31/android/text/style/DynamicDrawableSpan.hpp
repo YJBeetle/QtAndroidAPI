@@ -89,3 +89,6 @@ namespace android::text::style
 #include "./MetricAffectingSpan.hpp"
 #include "./ReplacementSpan.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::style;
+#endif

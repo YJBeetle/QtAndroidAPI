@@ -465,3 +465,6 @@ namespace android::service::voice
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::service::voice;
+#endif

@@ -84,3 +84,6 @@ namespace java::nio::file::attribute
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::file::attribute;
+#endif

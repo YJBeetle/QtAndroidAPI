@@ -85,3 +85,6 @@ namespace android::nfc::cardemulation
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::nfc::cardemulation;
+#endif

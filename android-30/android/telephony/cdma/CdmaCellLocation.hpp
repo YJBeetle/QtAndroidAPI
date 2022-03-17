@@ -131,3 +131,6 @@ namespace android::telephony::cdma
 // Base class headers
 #include "../CellLocation.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::telephony::cdma;
+#endif

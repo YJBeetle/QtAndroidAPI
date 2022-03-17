@@ -232,3 +232,6 @@ namespace java::time::chrono
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::time::chrono;
+#endif

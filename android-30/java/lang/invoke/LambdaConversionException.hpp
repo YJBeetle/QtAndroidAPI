@@ -49,3 +49,6 @@ namespace java::lang::invoke
 // Base class headers
 #include "../Exception.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang::invoke;
+#endif

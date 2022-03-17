@@ -21,3 +21,6 @@ namespace java::nio
 #include "../lang/RuntimeException.hpp"
 #include "../lang/UnsupportedOperationException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio;
+#endif

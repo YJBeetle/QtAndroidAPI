@@ -54,3 +54,6 @@ namespace android::print::pdf
 // Base class headers
 #include "../../graphics/pdf/PdfDocument.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::print::pdf;
+#endif

@@ -162,3 +162,6 @@ namespace java::util::concurrent
 #include "./AbstractExecutorService.hpp"
 #include "./ThreadPoolExecutor.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::concurrent;
+#endif

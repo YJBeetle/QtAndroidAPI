@@ -179,3 +179,6 @@ namespace android::content::pm
 #include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content::pm;
+#endif

@@ -48,3 +48,6 @@ namespace android::text::method
 // Base class headers
 #include "../../app/Dialog.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::method;
+#endif

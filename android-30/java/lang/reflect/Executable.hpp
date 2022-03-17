@@ -174,3 +174,6 @@ namespace java::lang::reflect
 // Base class headers
 #include "./AccessibleObject.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang::reflect;
+#endif

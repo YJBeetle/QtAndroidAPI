@@ -48,3 +48,6 @@ namespace java::util::logging
 // Base class headers
 #include "./Formatter.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::logging;
+#endif

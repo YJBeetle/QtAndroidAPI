@@ -148,3 +148,6 @@ namespace org::w3c::dom
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::w3c::dom;
+#endif

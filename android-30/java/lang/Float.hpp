@@ -372,3 +372,6 @@ namespace java::lang
 // Base class headers
 #include "./Number.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang;
+#endif

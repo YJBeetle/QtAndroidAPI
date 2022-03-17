@@ -28,3 +28,6 @@ namespace org::apache::http::conn
 #include "../../../../java/io/IOException.hpp"
 #include "../../../../java/io/InterruptedIOException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::apache::http::conn;
+#endif

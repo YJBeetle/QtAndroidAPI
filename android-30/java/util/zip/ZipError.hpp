@@ -23,3 +23,6 @@ namespace java::util::zip
 #include "../../lang/VirtualMachineError.hpp"
 #include "../../lang/InternalError.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::zip;
+#endif

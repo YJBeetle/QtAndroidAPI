@@ -72,3 +72,6 @@ namespace android::widget
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "../app/ActionBar_LayoutParams.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

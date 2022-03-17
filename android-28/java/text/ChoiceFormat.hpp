@@ -155,3 +155,6 @@ namespace java::text
 #include "./Format.hpp"
 #include "./NumberFormat.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::text;
+#endif

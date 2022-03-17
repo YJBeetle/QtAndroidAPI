@@ -218,3 +218,6 @@ namespace java::util::concurrent
 #include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::concurrent;
+#endif

@@ -45,3 +45,6 @@ namespace android::net::eap
 // Base class headers
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::eap;
+#endif

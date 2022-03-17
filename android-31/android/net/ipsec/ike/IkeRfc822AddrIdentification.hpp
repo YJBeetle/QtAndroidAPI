@@ -44,3 +44,6 @@ namespace android::net::ipsec::ike
 // Base class headers
 #include "./IkeIdentification.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::ipsec::ike;
+#endif

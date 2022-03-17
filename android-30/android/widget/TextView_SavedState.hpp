@@ -41,3 +41,6 @@ namespace android::widget
 #include "../view/AbsSavedState.hpp"
 #include "../view/View_BaseSavedState.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

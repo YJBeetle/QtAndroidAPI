@@ -55,3 +55,6 @@ namespace android::window
 #include "../view/ViewGroup.hpp"
 #include "../widget/FrameLayout.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::window;
+#endif

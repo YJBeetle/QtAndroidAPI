@@ -31,3 +31,6 @@ namespace java::nio::file
 #include "../../io/IOException.hpp"
 #include "./FileSystemException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::file;
+#endif

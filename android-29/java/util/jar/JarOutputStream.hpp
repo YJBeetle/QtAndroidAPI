@@ -42,3 +42,6 @@ namespace java::util::jar
 #include "../zip/DeflaterOutputStream.hpp"
 #include "../zip/ZipOutputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::jar;
+#endif

@@ -71,3 +71,6 @@ namespace android::app::people
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app::people;
+#endif

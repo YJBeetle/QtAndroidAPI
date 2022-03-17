@@ -72,3 +72,6 @@ namespace org::xml::sax
 // Base class headers
 #include "../../../java/lang/Exception.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::xml::sax;
+#endif

@@ -101,3 +101,6 @@ namespace android::net::rtp
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::rtp;
+#endif

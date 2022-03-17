@@ -31,3 +31,6 @@ namespace android::view
 // Base class headers
 #include "./ViewOverlay.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view;
+#endif

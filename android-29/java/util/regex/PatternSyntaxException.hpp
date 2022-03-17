@@ -53,3 +53,6 @@ namespace java::util::regex
 #include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::regex;
+#endif
