@@ -20,3 +20,6 @@ namespace android::net::wifi::p2p
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::wifi::p2p;
+#endif

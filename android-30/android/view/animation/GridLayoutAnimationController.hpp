@@ -168,3 +168,6 @@ namespace android::view::animation
 // Base class headers
 #include "./LayoutAnimationController.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view::animation;
+#endif

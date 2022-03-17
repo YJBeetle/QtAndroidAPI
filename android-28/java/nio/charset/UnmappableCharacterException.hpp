@@ -37,3 +37,6 @@ namespace java::nio::charset
 #include "../../io/IOException.hpp"
 #include "./CharacterCodingException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::charset;
+#endif

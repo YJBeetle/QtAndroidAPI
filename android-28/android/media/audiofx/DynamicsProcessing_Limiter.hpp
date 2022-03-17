@@ -131,3 +131,6 @@ namespace android::media::audiofx
 // Base class headers
 #include "./DynamicsProcessing_Stage.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::audiofx;
+#endif

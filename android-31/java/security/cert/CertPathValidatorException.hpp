@@ -83,3 +83,6 @@ namespace java::security::cert
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security::cert;
+#endif

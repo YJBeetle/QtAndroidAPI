@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt5.yaml/badge.svg?branch=Qt5)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt5.yaml)
 
-## What this project can do
+## What can do
 
 This is a library for easily calling Android methods in Qt.
 
@@ -18,14 +18,10 @@ To display a Toast in traditional Qt, you need the following code:
 
 When using this library, just:
 
-    #include "JString.hpp"
-    #include <android/content/Context.hpp>
-    #include "android/widget/Toast.hpp"
-    using android::content::Context;
-    using android::widget::Toast;
-    auto toast = Toast::makeText(Context(QtAndroid::androidContext()),
-                                 QStringLiteral("Message"),
-                                 0);
+    #define QT_ANDROID_API_AUTOUSE
+    #include <AndroidContext.hpp>
+    #include <android/widget/Toast.hpp>
+    auto toast = Toast::makeText(CONTEXT, QStringLiteral("Message"), 0);
     toast.show();
 
 ## How to use

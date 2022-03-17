@@ -86,3 +86,6 @@ namespace android::content::res
 #include "../../../java/io/FileInputStream.hpp"
 #include "../../os/ParcelFileDescriptor_AutoCloseInputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content::res;
+#endif

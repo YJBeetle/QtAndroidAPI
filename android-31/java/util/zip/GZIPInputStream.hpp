@@ -56,3 +56,6 @@ namespace java::util::zip
 #include "../../io/FilterInputStream.hpp"
 #include "./InflaterInputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::zip;
+#endif

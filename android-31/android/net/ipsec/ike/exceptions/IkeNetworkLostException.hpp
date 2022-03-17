@@ -30,3 +30,6 @@ namespace android::net::ipsec::ike::exceptions
 #include "./IkeException.hpp"
 #include "./IkeNonProtocolException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::ipsec::ike::exceptions;
+#endif

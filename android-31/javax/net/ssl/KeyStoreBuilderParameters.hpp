@@ -33,3 +33,6 @@ namespace javax::net::ssl
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::net::ssl;
+#endif

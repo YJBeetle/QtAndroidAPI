@@ -123,3 +123,6 @@ namespace org::xml::sax::ext
 // Base class headers
 #include "../helpers/AttributesImpl.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::xml::sax::ext;
+#endif

@@ -122,3 +122,6 @@ namespace java::net
 #include "../lang/ClassLoader.hpp"
 #include "../security/SecureClassLoader.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::net;
+#endif

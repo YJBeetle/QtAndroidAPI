@@ -29,3 +29,6 @@ namespace javax::net::ssl
 #include "../../../java/security/Permission.hpp"
 #include "../../../java/security/BasicPermission.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::net::ssl;
+#endif

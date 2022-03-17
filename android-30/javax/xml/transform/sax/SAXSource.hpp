@@ -102,3 +102,6 @@ namespace javax::xml::transform::sax
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::xml::transform::sax;
+#endif

@@ -385,3 +385,6 @@ namespace android::animation
 // Base class headers
 #include "./Animator.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::animation;
+#endif

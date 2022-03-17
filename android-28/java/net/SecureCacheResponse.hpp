@@ -63,3 +63,6 @@ namespace java::net
 // Base class headers
 #include "./CacheResponse.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::net;
+#endif

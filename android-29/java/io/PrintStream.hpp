@@ -367,3 +367,6 @@ namespace java::io
 #include "./OutputStream.hpp"
 #include "./FilterOutputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

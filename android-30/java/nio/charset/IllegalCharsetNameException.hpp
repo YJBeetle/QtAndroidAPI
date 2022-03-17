@@ -30,3 +30,6 @@ namespace java::nio::charset
 #include "../../lang/RuntimeException.hpp"
 #include "../../lang/IllegalArgumentException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::charset;
+#endif

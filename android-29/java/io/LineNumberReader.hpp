@@ -93,3 +93,6 @@ namespace java::io
 #include "./Reader.hpp"
 #include "./BufferedReader.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

@@ -120,3 +120,6 @@ namespace android::view::textservice
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view::textservice;
+#endif

@@ -89,3 +89,6 @@ namespace android::widget
 #include "./CursorTreeAdapter.hpp"
 #include "./ResourceCursorTreeAdapter.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

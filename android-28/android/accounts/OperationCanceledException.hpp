@@ -41,3 +41,6 @@ namespace android::accounts
 #include "../../java/lang/Exception.hpp"
 #include "./AccountsException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::accounts;
+#endif

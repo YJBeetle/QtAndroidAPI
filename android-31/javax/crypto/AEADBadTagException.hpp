@@ -28,3 +28,6 @@ namespace javax::crypto
 #include "../../java/security/GeneralSecurityException.hpp"
 #include "./BadPaddingException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::crypto;
+#endif

@@ -166,3 +166,6 @@ namespace java::text
 #include "./Format.hpp"
 #include "./DateFormat.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::text;
+#endif

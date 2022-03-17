@@ -64,3 +64,6 @@ namespace android::transition
 // Base class headers
 #include "./Transition.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::transition;
+#endif

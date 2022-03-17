@@ -83,3 +83,6 @@ namespace java::util::logging
 // Base class headers
 #include "./Handler.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::logging;
+#endif

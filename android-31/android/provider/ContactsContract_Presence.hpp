@@ -19,3 +19,6 @@ namespace android::provider
 // Base class headers
 #include "./ContactsContract_StatusUpdates.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::provider;
+#endif

@@ -89,3 +89,6 @@ namespace android::app
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app;
+#endif

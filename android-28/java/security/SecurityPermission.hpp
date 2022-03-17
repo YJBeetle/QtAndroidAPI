@@ -29,3 +29,6 @@ namespace java::security
 #include "./Permission.hpp"
 #include "./BasicPermission.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security;
+#endif

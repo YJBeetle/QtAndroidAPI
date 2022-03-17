@@ -28,3 +28,6 @@ namespace java::net
 #include "../io/IOException.hpp"
 #include "./SocketException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::net;
+#endif

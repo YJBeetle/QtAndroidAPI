@@ -44,3 +44,6 @@ namespace android::service::restrictions
 // Base class headers
 #include "../../content/BroadcastReceiver.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::service::restrictions;
+#endif

@@ -414,3 +414,6 @@ namespace android::widget
 #include "./TextView.hpp"
 #include "./EditText.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

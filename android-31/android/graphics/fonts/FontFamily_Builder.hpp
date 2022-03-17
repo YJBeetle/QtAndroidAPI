@@ -36,3 +36,6 @@ namespace android::graphics::fonts
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::fonts;
+#endif

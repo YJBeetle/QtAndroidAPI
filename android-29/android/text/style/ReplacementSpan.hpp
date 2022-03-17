@@ -69,3 +69,6 @@ namespace android::text::style
 #include "./CharacterStyle.hpp"
 #include "./MetricAffectingSpan.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::style;
+#endif

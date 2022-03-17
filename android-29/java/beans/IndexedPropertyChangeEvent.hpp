@@ -35,3 +35,6 @@ namespace java::beans
 #include "../util/EventObject.hpp"
 #include "./PropertyChangeEvent.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::beans;
+#endif

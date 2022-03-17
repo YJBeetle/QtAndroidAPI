@@ -24,3 +24,6 @@ namespace java::nio::channels
 #include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::channels;
+#endif

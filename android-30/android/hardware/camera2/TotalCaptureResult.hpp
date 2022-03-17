@@ -29,3 +29,6 @@ namespace android::hardware::camera2
 #include "./CameraMetadata.hpp"
 #include "./CaptureResult.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::hardware::camera2;
+#endif

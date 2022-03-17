@@ -35,3 +35,6 @@ namespace android::service::controls::actions
 // Base class headers
 #include "./ControlAction.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::service::controls::actions;
+#endif

@@ -78,3 +78,6 @@ namespace java::net
 // Base class headers
 #include "./URLConnection.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::net;
+#endif

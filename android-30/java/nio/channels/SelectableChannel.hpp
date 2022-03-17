@@ -88,3 +88,6 @@ namespace java::nio::channels
 // Base class headers
 #include "./spi/AbstractInterruptibleChannel.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::channels;
+#endif

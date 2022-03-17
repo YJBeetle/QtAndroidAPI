@@ -318,3 +318,6 @@ namespace java::util::regex
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::regex;
+#endif

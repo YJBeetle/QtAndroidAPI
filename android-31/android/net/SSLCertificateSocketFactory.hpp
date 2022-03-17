@@ -183,3 +183,6 @@ namespace android::net
 #include "../../javax/net/SocketFactory.hpp"
 #include "../../javax/net/ssl/SSLSocketFactory.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net;
+#endif

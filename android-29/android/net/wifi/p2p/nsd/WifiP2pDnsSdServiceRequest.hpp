@@ -42,3 +42,6 @@ namespace android::net::wifi::p2p::nsd
 // Base class headers
 #include "./WifiP2pServiceRequest.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::wifi::p2p::nsd;
+#endif

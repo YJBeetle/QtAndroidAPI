@@ -28,3 +28,6 @@ namespace java::security::cert
 #include "../GeneralSecurityException.hpp"
 #include "./CertificateException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security::cert;
+#endif

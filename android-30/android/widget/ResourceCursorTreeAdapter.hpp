@@ -70,3 +70,6 @@ namespace android::widget
 #include "./BaseExpandableListAdapter.hpp"
 #include "./CursorTreeAdapter.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

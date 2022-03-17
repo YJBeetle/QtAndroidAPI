@@ -138,3 +138,6 @@ namespace android::service::controls::templates
 // Base class headers
 #include "./ControlTemplate.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::service::controls::templates;
+#endif

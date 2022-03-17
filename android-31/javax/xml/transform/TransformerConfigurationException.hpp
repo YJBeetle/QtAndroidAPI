@@ -56,3 +56,6 @@ namespace javax::xml::transform
 #include "../../../java/lang/Exception.hpp"
 #include "./TransformerException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::xml::transform;
+#endif

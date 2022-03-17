@@ -186,3 +186,6 @@ namespace java::util::concurrent::locks
 // Base class headers
 #include "./AbstractOwnableSynchronizer.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::concurrent::locks;
+#endif

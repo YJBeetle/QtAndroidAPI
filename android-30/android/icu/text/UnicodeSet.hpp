@@ -844,3 +844,6 @@ namespace android::icu::text
 // Base class headers
 #include "./UnicodeFilter.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::icu::text;
+#endif

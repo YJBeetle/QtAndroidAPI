@@ -87,3 +87,6 @@ namespace android::hardware::camera2
 #include "../../../java/lang/Exception.hpp"
 #include "../../util/AndroidException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::hardware::camera2;
+#endif

@@ -119,3 +119,6 @@ namespace android::net::wifi::hotspot2::pps
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::wifi::hotspot2::pps;
+#endif

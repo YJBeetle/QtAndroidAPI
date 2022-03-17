@@ -96,3 +96,6 @@ namespace android::nfc::tech
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::nfc::tech;
+#endif

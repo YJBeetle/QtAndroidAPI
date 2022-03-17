@@ -30,3 +30,6 @@ namespace java::lang::ref
 // Base class headers
 #include "./Reference.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang::ref;
+#endif

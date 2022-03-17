@@ -76,3 +76,6 @@ namespace android::app
 #include "../view/ContextThemeWrapper.hpp"
 #include "./Activity.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app;
+#endif

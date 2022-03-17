@@ -15,3 +15,6 @@ namespace android::net
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net;
+#endif

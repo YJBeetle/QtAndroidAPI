@@ -296,3 +296,6 @@ namespace java::util::concurrent::atomic
 // Base class headers
 #include "../../../lang/Number.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::concurrent::atomic;
+#endif

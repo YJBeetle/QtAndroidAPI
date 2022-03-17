@@ -80,3 +80,6 @@ namespace java::io
 // Base class headers
 #include "./Reader.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

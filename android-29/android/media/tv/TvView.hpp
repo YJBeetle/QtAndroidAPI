@@ -276,3 +276,6 @@ namespace android::media::tv
 #include "../../view/View.hpp"
 #include "../../view/ViewGroup.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::tv;
+#endif

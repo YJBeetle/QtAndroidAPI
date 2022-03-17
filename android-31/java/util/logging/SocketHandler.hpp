@@ -45,3 +45,6 @@ namespace java::util::logging
 #include "./Handler.hpp"
 #include "./StreamHandler.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::logging;
+#endif

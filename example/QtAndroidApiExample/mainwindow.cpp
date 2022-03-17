@@ -7,17 +7,13 @@
 
 #include <QAndroidJniEnvironment>
 
-#include <__JniUtils.hpp>
-#include <JString.hpp>
+#define QT_ANDROID_API_AUTOUSE
+#include <AndroidContext.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
 #include <android/app/AlertDialog_Builder.hpp>
 #include <android/content/Intent.hpp>
 #include <android/net/Uri.hpp>
-
-using namespace android::widget;
-using namespace android::app;
-using namespace android::content;
 
 #define PROGRESS_DIALOG_MAX 170001
 
@@ -36,9 +32,7 @@ void MainWindow::on_showToast_clicked()
 {
     auto message = ui->toastText->text();
     QtAndroid::runOnAndroidThreadSync([message] {
-        auto toast = Toast::makeText(CONTEXT,
-                                     message,
-                                     0);
+        auto toast = Toast::makeText(CONTEXT, message, 0);
         toast.show();
     });
 }

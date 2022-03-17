@@ -28,3 +28,6 @@ namespace java::util::jar
 #include "../../io/IOException.hpp"
 #include "../zip/ZipException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::jar;
+#endif

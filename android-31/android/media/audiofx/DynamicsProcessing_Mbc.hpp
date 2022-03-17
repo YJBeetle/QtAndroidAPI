@@ -55,3 +55,6 @@ namespace android::media::audiofx
 #include "./DynamicsProcessing_Stage.hpp"
 #include "./DynamicsProcessing_BandStage.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::audiofx;
+#endif

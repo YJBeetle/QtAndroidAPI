@@ -29,3 +29,6 @@ namespace java::lang
 #include "./RuntimeException.hpp"
 #include "./IllegalArgumentException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang;
+#endif

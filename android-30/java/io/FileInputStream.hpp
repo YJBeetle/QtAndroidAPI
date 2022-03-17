@@ -99,3 +99,6 @@ namespace java::io
 // Base class headers
 #include "./InputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

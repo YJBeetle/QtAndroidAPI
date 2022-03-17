@@ -81,3 +81,6 @@ namespace java::io
 #include "./Writer.hpp"
 #include "./OutputStreamWriter.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::io;
+#endif

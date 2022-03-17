@@ -47,3 +47,6 @@ namespace java::util::prefs
 // Base class headers
 #include "../EventObject.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::prefs;
+#endif

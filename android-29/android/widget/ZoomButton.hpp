@@ -108,3 +108,6 @@ namespace android::widget
 #include "./ImageView.hpp"
 #include "./ImageButton.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

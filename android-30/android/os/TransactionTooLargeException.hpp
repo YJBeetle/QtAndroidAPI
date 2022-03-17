@@ -28,3 +28,6 @@ namespace android::os
 #include "../util/AndroidException.hpp"
 #include "./RemoteException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::os;
+#endif

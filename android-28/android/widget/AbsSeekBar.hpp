@@ -252,3 +252,6 @@ namespace android::widget
 #include "../view/View.hpp"
 #include "./ProgressBar.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

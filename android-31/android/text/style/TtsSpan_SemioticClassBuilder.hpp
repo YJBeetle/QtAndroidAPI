@@ -53,3 +53,6 @@ namespace android::text::style
 // Base class headers
 #include "./TtsSpan_Builder.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::style;
+#endif

@@ -565,3 +565,6 @@ namespace android::view::accessibility
 // Base class headers
 #include "./AccessibilityRecord.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view::accessibility;
+#endif

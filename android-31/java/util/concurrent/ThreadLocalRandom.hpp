@@ -234,3 +234,6 @@ namespace java::util::concurrent
 // Base class headers
 #include "../Random.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::concurrent;
+#endif

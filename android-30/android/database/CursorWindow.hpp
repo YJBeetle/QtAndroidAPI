@@ -304,3 +304,6 @@ namespace android::database
 // Base class headers
 #include "./sqlite/SQLiteClosable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::database;
+#endif

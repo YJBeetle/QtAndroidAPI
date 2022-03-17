@@ -20,3 +20,6 @@ namespace android::app
 #include "./Notification_Style.hpp"
 #include "./Notification_MediaStyle.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app;
+#endif

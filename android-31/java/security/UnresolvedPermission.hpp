@@ -103,3 +103,6 @@ namespace java::security
 // Base class headers
 #include "./Permission.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security;
+#endif

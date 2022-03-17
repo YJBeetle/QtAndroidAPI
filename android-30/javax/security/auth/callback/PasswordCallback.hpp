@@ -58,3 +58,6 @@ namespace javax::security::auth::callback
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::security::auth::callback;
+#endif

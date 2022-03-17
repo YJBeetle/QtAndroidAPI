@@ -104,3 +104,6 @@ namespace org::xmlpull::v1
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::xmlpull::v1;
+#endif

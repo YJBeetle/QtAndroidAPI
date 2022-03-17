@@ -132,3 +132,6 @@ namespace android::hardware::display
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::hardware::display;
+#endif

@@ -38,3 +38,6 @@ namespace android::widget
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

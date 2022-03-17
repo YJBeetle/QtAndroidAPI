@@ -35,3 +35,6 @@ namespace java::lang::annotation
 // Base class headers
 #include "../Error.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::lang::annotation;
+#endif

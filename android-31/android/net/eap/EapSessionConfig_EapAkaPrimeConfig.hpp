@@ -46,3 +46,6 @@ namespace android::net::eap
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 #include "./EapSessionConfig_EapAkaConfig.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::eap;
+#endif

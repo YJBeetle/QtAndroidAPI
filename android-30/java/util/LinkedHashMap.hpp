@@ -119,3 +119,6 @@ namespace java::util
 #include "./AbstractMap.hpp"
 #include "./HashMap.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util;
+#endif

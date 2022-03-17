@@ -254,3 +254,6 @@ namespace android::widget
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

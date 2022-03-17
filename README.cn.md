@@ -18,14 +18,10 @@
 
 而使用本库时只需这么写：
 
-    #include "JString.hpp"
-    #include <android/content/Context.hpp>
-    #include "android/widget/Toast.hpp"
-    using android::content::Context;
-    using android::widget::Toast;
-    auto toast = Toast::makeText(Context(QtAndroid::androidContext()),
-                                 QStringLiteral("Message"),
-                                 0);
+    #define QT_ANDROID_API_AUTOUSE
+    #include <AndroidContext.hpp>
+    #include <android/widget/Toast.hpp>
+    auto toast = Toast::makeText(CONTEXT, QStringLiteral("Message"), 0);
     toast.show();
 
 ## 如何使用

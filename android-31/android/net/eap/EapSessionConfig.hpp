@@ -77,3 +77,6 @@ namespace android::net::eap
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::eap;
+#endif

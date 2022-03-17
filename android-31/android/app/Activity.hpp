@@ -2092,3 +2092,6 @@ namespace android::app
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::app;
+#endif

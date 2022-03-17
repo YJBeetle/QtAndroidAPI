@@ -4722,3 +4722,6 @@ namespace android::icu::lang
 // Base class headers
 #include "../../../java/lang/Character_Subset.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::icu::lang;
+#endif

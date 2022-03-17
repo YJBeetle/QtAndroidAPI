@@ -51,3 +51,6 @@ namespace dalvik::system
 #include "./BaseDexClassLoader.hpp"
 #include "./PathClassLoader.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace dalvik::system;
+#endif

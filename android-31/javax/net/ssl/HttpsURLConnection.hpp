@@ -126,3 +126,6 @@ namespace javax::net::ssl
 #include "../../../java/net/URLConnection.hpp"
 #include "../../../java/net/HttpURLConnection.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::net::ssl;
+#endif

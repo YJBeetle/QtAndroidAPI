@@ -2200,3 +2200,6 @@ namespace android::opengl
 #include "./GLES30.hpp"
 #include "./GLES31.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::opengl;
+#endif

@@ -32,3 +32,6 @@ namespace java::nio::file
 #include "../../lang/RuntimeException.hpp"
 #include "../../util/ConcurrentModificationException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::nio::file;
+#endif

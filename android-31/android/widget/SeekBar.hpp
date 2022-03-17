@@ -63,3 +63,6 @@ namespace android::widget
 #include "./ProgressBar.hpp"
 #include "./AbsSeekBar.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

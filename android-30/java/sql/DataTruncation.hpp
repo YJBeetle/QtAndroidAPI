@@ -73,3 +73,6 @@ namespace java::sql
 #include "./SQLException.hpp"
 #include "./SQLWarning.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::sql;
+#endif

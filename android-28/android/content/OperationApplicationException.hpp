@@ -60,3 +60,6 @@ namespace android::content
 // Base class headers
 #include "../../java/lang/Exception.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content;
+#endif

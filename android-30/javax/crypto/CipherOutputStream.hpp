@@ -65,3 +65,6 @@ namespace javax::crypto
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FilterOutputStream.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::crypto;
+#endif

@@ -120,3 +120,6 @@ namespace android::database::sqlite
 #include "../AbstractCursor.hpp"
 #include "../AbstractWindowedCursor.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::database::sqlite;
+#endif

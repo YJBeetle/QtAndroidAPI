@@ -42,3 +42,6 @@ namespace android::transition
 #include "./TransitionPropagation.hpp"
 #include "./VisibilityPropagation.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::transition;
+#endif

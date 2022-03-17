@@ -67,3 +67,6 @@ namespace android::text::method
 #include "./BaseMovementMethod.hpp"
 #include "./ScrollingMovementMethod.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::text::method;
+#endif

@@ -459,3 +459,6 @@ namespace android::util::proto
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::util::proto;
+#endif

@@ -88,3 +88,6 @@ namespace org::xml::sax
 #include "../../../java/lang/Exception.hpp"
 #include "./SAXException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::xml::sax;
+#endif

@@ -46,3 +46,6 @@ namespace android::net::wifi::aware
 // Base class headers
 #include "./PeerHandle.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::net::wifi::aware;
+#endif

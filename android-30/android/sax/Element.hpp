@@ -95,3 +95,6 @@ namespace android::sax
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::sax;
+#endif

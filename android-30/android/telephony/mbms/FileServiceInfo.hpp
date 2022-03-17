@@ -46,3 +46,6 @@ namespace android::telephony::mbms
 // Base class headers
 #include "./ServiceInfo.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::telephony::mbms;
+#endif

@@ -38,3 +38,6 @@ namespace java::beans
 // Base class headers
 #include "../util/EventListenerProxy.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::beans;
+#endif

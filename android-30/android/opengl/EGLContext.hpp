@@ -23,3 +23,6 @@ namespace android::opengl
 // Base class headers
 #include "./EGLObjectHandle.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::opengl;
+#endif

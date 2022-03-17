@@ -68,3 +68,6 @@ namespace android::widget
 #include "./ViewAnimator.hpp"
 #include "./ViewSwitcher.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

@@ -97,3 +97,6 @@ namespace java::util::stream
 
 // Base class headers
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util::stream;
+#endif

@@ -29,3 +29,6 @@ namespace javax::xml::xpath
 #include "../../../java/lang/Exception.hpp"
 #include "./XPathException.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace javax::xml::xpath;
+#endif

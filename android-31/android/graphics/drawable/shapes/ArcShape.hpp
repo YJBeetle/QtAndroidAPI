@@ -81,3 +81,6 @@ namespace android::graphics::drawable::shapes
 #include "./Shape.hpp"
 #include "./RectShape.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::drawable::shapes;
+#endif

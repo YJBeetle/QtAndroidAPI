@@ -52,3 +52,6 @@ namespace android::icu::util
 // Base class headers
 #include "./Measure.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::icu::util;
+#endif

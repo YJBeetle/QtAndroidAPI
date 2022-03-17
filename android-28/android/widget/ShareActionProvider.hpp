@@ -78,3 +78,6 @@ namespace android::widget
 // Base class headers
 #include "../view/ActionProvider.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::widget;
+#endif

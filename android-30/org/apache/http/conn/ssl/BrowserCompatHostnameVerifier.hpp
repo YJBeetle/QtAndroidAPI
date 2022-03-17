@@ -38,3 +38,6 @@ namespace org::apache::http::conn::ssl
 // Base class headers
 #include "./AbstractVerifier.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace org::apache::http::conn::ssl;
+#endif

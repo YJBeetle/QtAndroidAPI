@@ -424,3 +424,6 @@ namespace java::util
 #include "./Dictionary.hpp"
 #include "./Hashtable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::util;
+#endif

@@ -246,3 +246,6 @@ namespace android::media::metrics
 // Base class headers
 #include "./Event.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::metrics;
+#endif

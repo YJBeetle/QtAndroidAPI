@@ -96,3 +96,6 @@ namespace android::graphics::drawable
 #include "./DrawableContainer.hpp"
 #include "./StateListDrawable.hpp"
 
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics::drawable;
+#endif
