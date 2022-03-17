@@ -7,7 +7,7 @@
 
 #include <QJniEnvironment>
 
-#include <__JniUtils.hpp>
+#include <AndroidContext.hpp>
 #include <JString.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
