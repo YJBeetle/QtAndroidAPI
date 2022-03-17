@@ -7,17 +7,13 @@
 
 #include <QJniEnvironment>
 
+#define QT_ANDROID_API_AUTOUSE
 #include <AndroidContext.hpp>
-#include <JString.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
 #include <android/app/AlertDialog_Builder.hpp>
 #include <android/content/Intent.hpp>
 #include <android/net/Uri.hpp>
-
-using namespace android::widget;
-using namespace android::app;
-using namespace android::content;
 
 #define PROGRESS_DIALOG_MAX 170001
 
