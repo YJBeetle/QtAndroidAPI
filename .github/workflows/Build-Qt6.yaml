@@ -1,7 +1,5 @@
 name: Build
 on:
-  release:
-    types: [created]
   push:
     branches: [ Qt6, Qt6Dev ]
   pull_request:
