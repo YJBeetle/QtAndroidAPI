@@ -20,7 +20,7 @@ When using this library, just:
 
     #define QT_ANDROID_API_AUTOUSE
     #include <AndroidContext.hpp>
-    #include <android/widget/Toast.hpp>
+    #include <android/widget/Toast>
     auto toast = Toast::makeText(CONTEXT, QStringLiteral("Message"), 0);
     toast.show();
 
