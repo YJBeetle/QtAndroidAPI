@@ -12,5 +12,5 @@ target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
 option(QT_ANDROID_API_TEST "QtAndroidAPI test." OFF)
 if(QT_ANDROID_API_TEST)
     add_library(${PROJECT_NAME}_test STATIC "test.cpp")
-    target_link_libraries(${PROJECT_NAME}_test PUBLIC Qt6::Core)
+    target_link_libraries(${PROJECT_NAME}_test PUBLIC Qt5::Core Qt5::AndroidExtras)
 endif(QT_ANDROID_API_TEST)
