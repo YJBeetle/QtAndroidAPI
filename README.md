@@ -19,7 +19,7 @@ To display a Toast in traditional Qt, you need the following code:
 When using this library, just:
 
     #define QT_ANDROID_API_AUTOUSE
-    #include <AndroidContext.hpp>
+    #include <AndroidContext>
     #include <android/widget/Toast>
     auto toast = Toast::makeText(CONTEXT, QStringLiteral("Message"), 0);
     toast.show();

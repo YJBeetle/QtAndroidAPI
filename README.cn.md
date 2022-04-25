@@ -19,7 +19,7 @@
 而使用本库时只需这么写：
 
     #define QT_ANDROID_API_AUTOUSE
-    #include <AndroidContext.hpp>
+    #include <AndroidContext>
     #include <android/widget/Toast.hpp>
     auto toast = Toast::makeText(CONTEXT, QStringLiteral("Message"), 0);
     toast.show();
