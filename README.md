@@ -32,7 +32,7 @@ Add the following to your CMake:
     FetchContent_Declare(androidapi
         GIT_REPOSITORY https://github.com/YJBeetle/QtAndroidAPI.git
         GIT_TAG origin/Qt6
-        SOURCE_SUBDIR android-??
+        SOURCE_SUBDIR android-31
     )
     FetchContent_MakeAvailable(androidapi)
 
