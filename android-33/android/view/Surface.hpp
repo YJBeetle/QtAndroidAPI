@@ -1,0 +1,195 @@
+#pragma once
+
+#include "../graphics/Canvas.def.hpp"
+#include "../graphics/Rect.def.hpp"
+#include "../graphics/SurfaceTexture.def.hpp"
+#include "../os/Parcel.def.hpp"
+#include "./SurfaceControl.def.hpp"
+#include "../../JString.hpp"
+#include "./Surface.def.hpp"
+
+namespace android::view
+{
+	// Fields
+	inline jint Surface::CHANGE_FRAME_RATE_ALWAYS()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"CHANGE_FRAME_RATE_ALWAYS"
+		);
+	}
+	inline jint Surface::CHANGE_FRAME_RATE_ONLY_IF_SEAMLESS()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"CHANGE_FRAME_RATE_ONLY_IF_SEAMLESS"
+		);
+	}
+	inline JObject Surface::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.view.Surface",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint Surface::FRAME_RATE_COMPATIBILITY_DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"FRAME_RATE_COMPATIBILITY_DEFAULT"
+		);
+	}
+	inline jint Surface::FRAME_RATE_COMPATIBILITY_FIXED_SOURCE()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"FRAME_RATE_COMPATIBILITY_FIXED_SOURCE"
+		);
+	}
+	inline jint Surface::ROTATION_0()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"ROTATION_0"
+		);
+	}
+	inline jint Surface::ROTATION_180()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"ROTATION_180"
+		);
+	}
+	inline jint Surface::ROTATION_270()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"ROTATION_270"
+		);
+	}
+	inline jint Surface::ROTATION_90()
+	{
+		return getStaticField<jint>(
+			"android.view.Surface",
+			"ROTATION_90"
+		);
+	}
+	
+	// Constructors
+	inline Surface::Surface(android::graphics::SurfaceTexture arg0)
+		: JObject(
+			"android.view.Surface",
+			"(Landroid/graphics/SurfaceTexture;)V",
+			arg0.object()
+		) {}
+	inline Surface::Surface(android::view::SurfaceControl arg0)
+		: JObject(
+			"android.view.Surface",
+			"(Landroid/view/SurfaceControl;)V",
+			arg0.object()
+		) {}
+	
+	// Methods
+	inline jint Surface::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline jboolean Surface::isValid() const
+	{
+		return callMethod<jboolean>(
+			"isValid",
+			"()Z"
+		);
+	}
+	inline android::graphics::Canvas Surface::lockCanvas(android::graphics::Rect arg0) const
+	{
+		return callObjectMethod(
+			"lockCanvas",
+			"(Landroid/graphics/Rect;)Landroid/graphics/Canvas;",
+			arg0.object()
+		);
+	}
+	inline android::graphics::Canvas Surface::lockHardwareCanvas() const
+	{
+		return callObjectMethod(
+			"lockHardwareCanvas",
+			"()Landroid/graphics/Canvas;"
+		);
+	}
+	inline void Surface::readFromParcel(android::os::Parcel arg0) const
+	{
+		callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.object()
+		);
+	}
+	inline void Surface::release() const
+	{
+		callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	inline void Surface::setFrameRate(jfloat arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"setFrameRate",
+			"(FI)V",
+			arg0,
+			arg1
+		);
+	}
+	inline void Surface::setFrameRate(jfloat arg0, jint arg1, jint arg2) const
+	{
+		callMethod<void>(
+			"setFrameRate",
+			"(FII)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline JString Surface::toString() const
+	{
+		return callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		);
+	}
+	inline void Surface::unlockCanvas(android::graphics::Canvas arg0) const
+	{
+		callMethod<void>(
+			"unlockCanvas",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.object()
+		);
+	}
+	inline void Surface::unlockCanvasAndPost(android::graphics::Canvas arg0) const
+	{
+		callMethod<void>(
+			"unlockCanvasAndPost",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.object()
+		);
+	}
+	inline void Surface::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+} // namespace android::view
+
+// Base class headers
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::view;
+#endif

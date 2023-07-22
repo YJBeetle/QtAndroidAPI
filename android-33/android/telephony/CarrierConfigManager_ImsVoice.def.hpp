@@ -1,0 +1,112 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+class JString;
+
+namespace android::telephony
+{
+	class CarrierConfigManager_ImsVoice : public JObject
+	{
+	public:
+		// Fields
+		static jint ALERTING_SRVCC_SUPPORT();
+		static jint BANDWIDTH_EFFICIENT();
+		static jint BASIC_SRVCC_SUPPORT();
+		static jint CONFERENCE_SUBSCRIBE_TYPE_IN_DIALOG();
+		static jint CONFERENCE_SUBSCRIBE_TYPE_OUT_OF_DIALOG();
+		static jint EVS_ENCODED_BW_TYPE_FB();
+		static jint EVS_ENCODED_BW_TYPE_NB();
+		static jint EVS_ENCODED_BW_TYPE_NB_WB();
+		static jint EVS_ENCODED_BW_TYPE_NB_WB_SWB();
+		static jint EVS_ENCODED_BW_TYPE_NB_WB_SWB_FB();
+		static jint EVS_ENCODED_BW_TYPE_SWB();
+		static jint EVS_ENCODED_BW_TYPE_WB();
+		static jint EVS_ENCODED_BW_TYPE_WB_SWB();
+		static jint EVS_ENCODED_BW_TYPE_WB_SWB_FB();
+		static jint EVS_OPERATIONAL_MODE_AMRWB_IO();
+		static jint EVS_OPERATIONAL_MODE_PRIMARY();
+		static jint EVS_PRIMARY_MODE_BITRATE_128_0_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_13_2_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_16_4_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_24_4_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_32_0_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_48_0_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_5_9_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_64_0_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_7_2_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_8_0_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_96_0_KBPS();
+		static jint EVS_PRIMARY_MODE_BITRATE_9_6_KBPS();
+		static JString KEY_AMRNB_PAYLOAD_DESCRIPTION_BUNDLE();
+		static JString KEY_AMRNB_PAYLOAD_TYPE_INT_ARRAY();
+		static JString KEY_AMRWB_PAYLOAD_DESCRIPTION_BUNDLE();
+		static JString KEY_AMRWB_PAYLOAD_TYPE_INT_ARRAY();
+		static JString KEY_AMR_CODEC_ATTRIBUTE_MODESET_INT_ARRAY();
+		static JString KEY_AMR_CODEC_ATTRIBUTE_PAYLOAD_FORMAT_INT();
+		static JString KEY_AUDIO_AS_BANDWIDTH_KBPS_INT();
+		static JString KEY_AUDIO_CODEC_CAPABILITY_PAYLOAD_TYPES_BUNDLE();
+		static JString KEY_AUDIO_INACTIVITY_CALL_END_REASONS_INT_ARRAY();
+		static JString KEY_AUDIO_RR_BANDWIDTH_BPS_INT();
+		static JString KEY_AUDIO_RS_BANDWIDTH_BPS_INT();
+		static JString KEY_AUDIO_RTCP_INACTIVITY_TIMER_MILLIS_INT();
+		static JString KEY_AUDIO_RTP_INACTIVITY_TIMER_MILLIS_INT();
+		static JString KEY_CARRIER_VOLTE_ROAMING_AVAILABLE_BOOL();
+		static JString KEY_CODEC_ATTRIBUTE_MODE_CHANGE_CAPABILITY_INT();
+		static JString KEY_CODEC_ATTRIBUTE_MODE_CHANGE_NEIGHBOR_INT();
+		static JString KEY_CODEC_ATTRIBUTE_MODE_CHANGE_PERIOD_INT();
+		static JString KEY_CONFERENCE_FACTORY_URI_STRING();
+		static JString KEY_CONFERENCE_SUBSCRIBE_TYPE_INT();
+		static JString KEY_DEDICATED_BEARER_WAIT_TIMER_MILLIS_INT();
+		static JString KEY_DTMFNB_PAYLOAD_TYPE_INT_ARRAY();
+		static JString KEY_DTMFWB_PAYLOAD_TYPE_INT_ARRAY();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_BANDWIDTH_INT();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_BITRATE_INT_ARRAY();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_CHANNELS_INT();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_CH_AW_RECV_INT();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_CMR_INT();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_DTX_BOOL();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_DTX_RECV_BOOL();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_HF_ONLY_INT();
+		static JString KEY_EVS_CODEC_ATTRIBUTE_MODE_SWITCH_INT();
+		static JString KEY_EVS_PAYLOAD_DESCRIPTION_BUNDLE();
+		static JString KEY_EVS_PAYLOAD_TYPE_INT_ARRAY();
+		static JString KEY_INCLUDE_CALLER_ID_SERVICE_CODES_IN_SIP_INVITE_BOOL();
+		static JString KEY_MINIMUM_SESSION_EXPIRES_TIMER_SEC_INT();
+		static JString KEY_MO_CALL_REQUEST_TIMEOUT_MILLIS_INT();
+		static JString KEY_MULTIENDPOINT_SUPPORTED_BOOL();
+		static JString KEY_OIP_SOURCE_FROM_HEADER_BOOL();
+		static JString KEY_PRACK_SUPPORTED_FOR_18X_BOOL();
+		static JString KEY_PREFIX();
+		static JString KEY_RINGBACK_TIMER_MILLIS_INT();
+		static JString KEY_RINGING_TIMER_MILLIS_INT();
+		static JString KEY_SESSION_EXPIRES_TIMER_SEC_INT();
+		static JString KEY_SESSION_PRIVACY_TYPE_INT();
+		static JString KEY_SESSION_REFRESHER_TYPE_INT();
+		static JString KEY_SESSION_REFRESH_METHOD_INT();
+		static JString KEY_SESSION_TIMER_SUPPORTED_BOOL();
+		static JString KEY_SRVCC_TYPE_INT_ARRAY();
+		static JString KEY_VOICE_ON_DEFAULT_BEARER_SUPPORTED_BOOL();
+		static JString KEY_VOICE_QOS_PRECONDITION_SUPPORTED_BOOL();
+		static jint MIDCALL_SRVCC_SUPPORT();
+		static jint OCTET_ALIGNED();
+		static jint PREALERTING_SRVCC_SUPPORT();
+		static jint SESSION_PRIVACY_TYPE_HEADER();
+		static jint SESSION_PRIVACY_TYPE_ID();
+		static jint SESSION_PRIVACY_TYPE_NONE();
+		static jint SESSION_REFRESHER_TYPE_UAC();
+		static jint SESSION_REFRESHER_TYPE_UAS();
+		static jint SESSION_REFRESHER_TYPE_UNKNOWN();
+		static jint SESSION_REFRESH_METHOD_INVITE();
+		static jint SESSION_REFRESH_METHOD_UPDATE_PREFERRED();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit CarrierConfigManager_ImsVoice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		CarrierConfigManager_ImsVoice(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		
+		// Methods
+	};
+} // namespace android::telephony
+
