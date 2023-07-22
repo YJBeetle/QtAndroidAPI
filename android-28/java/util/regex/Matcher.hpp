@@ -134,6 +134,13 @@ namespace java::util::regex
 			"()Z"
 		);
 	}
+	inline jboolean Matcher::hasMatch() const
+	{
+		return callMethod<jboolean>(
+			"hasMatch",
+			"()Z"
+		);
+	}
 	inline jboolean Matcher::hasTransparentBounds() const
 	{
 		return callMethod<jboolean>(
@@ -160,6 +167,13 @@ namespace java::util::regex
 		return callMethod<jboolean>(
 			"matches",
 			"()Z"
+		);
+	}
+	inline JObject Matcher::namedGroups() const
+	{
+		return callObjectMethod(
+			"namedGroups",
+			"()Ljava/util/Map;"
 		);
 	}
 	inline java::util::regex::Pattern Matcher::pattern() const

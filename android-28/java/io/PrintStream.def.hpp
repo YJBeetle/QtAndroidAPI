@@ -64,6 +64,7 @@ namespace java::io
 		java::io::PrintStream append(jchar arg0) const;
 		java::io::PrintStream append(JString arg0) const;
 		java::io::PrintStream append(JString arg0, jint arg1, jint arg2) const;
+		java::nio::charset::Charset charset() const;
 		jboolean checkError() const;
 		void close() const;
 		void flush() const;

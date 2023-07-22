@@ -82,6 +82,9 @@ namespace java::util
 		static JArray getISOLanguages();
 		static java::util::Locale lookup(JObject arg0, JObject arg1);
 		static JString lookupTag(JObject arg0, JObject arg1);
+		static java::util::Locale of(JString arg0);
+		static java::util::Locale of(JString arg0, JString arg1);
+		static java::util::Locale of(JString arg0, JString arg1, JString arg2);
 		static void setDefault(java::util::Locale arg0);
 		static void setDefault(java::util::Locale_Category arg0, java::util::Locale arg1);
 		JObject clone() const;

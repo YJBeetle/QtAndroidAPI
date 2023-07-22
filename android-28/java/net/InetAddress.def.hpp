@@ -14,10 +14,22 @@ namespace java::io
 	class ObjectOutputStream;
 }
 class JObject;
+namespace java::lang
+{
+	class RuntimePermission;
+}
 class JString;
 namespace java::net
 {
 	class NetworkInterface;
+}
+namespace java::net
+{
+	class UnknownHostException;
+}
+namespace java::util::concurrent::locks
+{
+	class ReentrantLock;
 }
 
 namespace java::net

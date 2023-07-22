@@ -3,6 +3,10 @@
 #include "../../../JObject.hpp"
 
 class JObject;
+namespace java::lang
+{
+	class ThreadGroup;
+}
 namespace java::lang::ref
 {
 	class ReferenceQueue;

@@ -6,7 +6,7 @@
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
-#include "../lang/ref/Reference.def.hpp"
+#include "../lang/reflect/Constructor.def.hpp"
 #include "./Provider.def.hpp"
 #include "./Provider_Service.def.hpp"
 

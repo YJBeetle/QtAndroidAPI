@@ -351,6 +351,36 @@ namespace java::util
 			arg1.object()
 		);
 	}
+	inline java::util::Locale Locale::of(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale",
+			"of",
+			"(Ljava/lang/String;)Ljava/util/Locale;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::util::Locale Locale::of(JString arg0, JString arg1)
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale",
+			"of",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Locale;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
+		);
+	}
+	inline java::util::Locale Locale::of(JString arg0, JString arg1, JString arg2)
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale",
+			"of",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Locale;",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jstring>()
+		);
+	}
 	inline void Locale::setDefault(java::util::Locale arg0)
 	{
 		callStaticMethod<void>(

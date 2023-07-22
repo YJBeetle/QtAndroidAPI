@@ -1,6 +1,7 @@
 #pragma once
 
 #include "./Reference.def.hpp"
+#include "../../util/concurrent/locks/ReentrantLock.def.hpp"
 #include "./ReferenceQueue.def.hpp"
 
 namespace java::lang::ref

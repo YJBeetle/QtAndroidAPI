@@ -29,6 +29,7 @@ namespace java::lang
 		static jfloat NEGATIVE_INFINITY();
 		static jfloat NaN();
 		static jfloat POSITIVE_INFINITY();
+		static jint PRECISION();
 		static jint SIZE();
 		static JClass TYPE();
 		
@@ -43,6 +44,8 @@ namespace java::lang
 		
 		// Methods
 		static jint compare(jfloat arg0, jfloat arg1);
+		static jfloat float16ToFloat(jshort arg0);
+		static jshort floatToFloat16(jfloat arg0);
 		static jint floatToIntBits(jfloat arg0);
 		static jint floatToRawIntBits(jfloat arg0);
 		static jint hashCode(jfloat arg0);

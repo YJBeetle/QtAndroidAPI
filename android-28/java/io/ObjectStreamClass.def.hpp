@@ -36,10 +36,6 @@ namespace java::lang::invoke
 {
 	class MethodHandle;
 }
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
 namespace java::lang::reflect
 {
 	class Constructor;

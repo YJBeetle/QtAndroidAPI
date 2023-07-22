@@ -71,6 +71,14 @@ namespace javax::xml::xpath
 			arg0.object<jstring>()
 		);
 	}
+	inline JString XPathFactory::getProperty(JString arg0) const
+	{
+		return callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
 	inline jboolean XPathFactory::isObjectModelSupported(JString arg0) const
 	{
 		return callMethod<jboolean>(
@@ -93,6 +101,15 @@ namespace javax::xml::xpath
 			"(Ljava/lang/String;Z)V",
 			arg0.object<jstring>(),
 			arg1
+		);
+	}
+	inline void XPathFactory::setProperty(JString arg0, JString arg1) const
+	{
+		callMethod<void>(
+			"setProperty",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>()
 		);
 	}
 	inline void XPathFactory::setXPathFunctionResolver(JObject arg0) const

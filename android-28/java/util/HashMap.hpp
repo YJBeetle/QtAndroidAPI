@@ -39,6 +39,15 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline java::util::HashMap HashMap::newHashMap(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.HashMap",
+			"newHashMap",
+			"(I)Ljava/util/HashMap;",
+			arg0
+		);
+	}
 	inline void HashMap::clear() const
 	{
 		callMethod<void>(

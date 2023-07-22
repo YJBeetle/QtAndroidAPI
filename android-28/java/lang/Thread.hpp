@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../JObjectArray.hpp"
 #include "../../JArray.hpp"
 #include "../../JArray.hpp"
 #include "../../JArray.hpp"
@@ -10,8 +11,8 @@
 #include "./Thread_State.def.hpp"
 #include "./ThreadGroup.def.hpp"
 #include "../../JThrowable.hpp"
-#include "./ref/ReferenceQueue.def.hpp"
 #include "../security/AccessControlContext.def.hpp"
+#include "../time/Duration.def.hpp"
 #include "./Thread.def.hpp"
 
 namespace java::lang
@@ -173,6 +174,22 @@ namespace java::lang
 			"()Z"
 		);
 	}
+	inline JObject Thread::ofPlatform()
+	{
+		return callStaticObjectMethod(
+			"java.lang.Thread",
+			"ofPlatform",
+			"()Ljava/lang/Thread$Builder$OfPlatform;"
+		);
+	}
+	inline JObject Thread::ofVirtual()
+	{
+		return callStaticObjectMethod(
+			"java.lang.Thread",
+			"ofVirtual",
+			"()Ljava/lang/Thread$Builder$OfVirtual;"
+		);
+	}
 	inline void Thread::onSpinWait()
 	{
 		callStaticMethod<void>(
@@ -187,6 +204,15 @@ namespace java::lang
 			"java.lang.Thread",
 			"setDefaultUncaughtExceptionHandler",
 			"(Ljava/lang/Thread$UncaughtExceptionHandler;)V",
+			arg0.object()
+		);
+	}
+	inline void Thread::sleep(java::time::Duration arg0)
+	{
+		callStaticMethod<void>(
+			"java.lang.Thread",
+			"sleep",
+			"(Ljava/time/Duration;)V",
 			arg0.object()
 		);
 	}
@@ -207,6 +233,15 @@ namespace java::lang
 			"(JI)V",
 			arg0,
 			arg1
+		);
+	}
+	inline java::lang::Thread Thread::startVirtualThread(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.Thread",
+			"startVirtualThread",
+			"(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+			arg0.object()
 		);
 	}
 	inline void Thread::yield()
@@ -315,6 +350,21 @@ namespace java::lang
 			"()Z"
 		);
 	}
+	inline jboolean Thread::isVirtual() const
+	{
+		return callMethod<jboolean>(
+			"isVirtual",
+			"()Z"
+		);
+	}
+	inline jboolean Thread::join(java::time::Duration arg0) const
+	{
+		return callMethod<jboolean>(
+			"join",
+			"(Ljava/time/Duration;)Z",
+			arg0.object()
+		);
+	}
 	inline void Thread::join() const
 	{
 		callMethod<void>(
@@ -412,6 +462,13 @@ namespace java::lang
 		callMethod<void>(
 			"suspend",
 			"()V"
+		);
+	}
+	inline jlong Thread::threadId() const
+	{
+		return callMethod<jlong>(
+			"threadId",
+			"()J"
 		);
 	}
 	inline JString Thread::toString() const

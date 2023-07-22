@@ -2,9 +2,11 @@
 
 #include "../../../JObjectArray.hpp"
 #include "../../../JClass.hpp"
+#include "../ClassLoader.def.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"
 #include "./MethodType.def.hpp"
+#include "../ref/SoftReference.def.hpp"
 #include "../../util/Optional.def.hpp"
 #include "./MethodHandle.def.hpp"
 

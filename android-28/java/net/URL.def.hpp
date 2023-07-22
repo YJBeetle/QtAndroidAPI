@@ -22,10 +22,6 @@ namespace java::lang
 	class SecurityManager;
 }
 class JString;
-namespace java::lang
-{
-	class ThreadLocal;
-}
 namespace java::net
 {
 	class InetAddress;
@@ -71,6 +67,7 @@ namespace java::net
 		URL(JString arg0, JString arg1, jint arg2, JString arg3, java::net::URLStreamHandler arg4);
 		
 		// Methods
+		static java::net::URL of(java::net::URI arg0, java::net::URLStreamHandler arg1);
 		static void setURLStreamHandlerFactory(JObject arg0);
 		jboolean equals(JObject arg0) const;
 		JString getAuthority() const;

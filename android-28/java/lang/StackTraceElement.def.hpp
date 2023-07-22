@@ -6,7 +6,6 @@ class JArray;
 class JClass;
 class JObject;
 class JString;
-class JThrowable;
 
 namespace java::lang
 {

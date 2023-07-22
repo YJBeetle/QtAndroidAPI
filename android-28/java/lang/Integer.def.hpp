@@ -42,8 +42,10 @@ namespace java::lang
 		static jint bitCount(jint arg0);
 		static jint compare(jint arg0, jint arg1);
 		static jint compareUnsigned(jint arg0, jint arg1);
+		static jint compress(jint arg0, jint arg1);
 		static java::lang::Integer decode(JString arg0);
 		static jint divideUnsigned(jint arg0, jint arg1);
+		static jint expand(jint arg0, jint arg1);
 		static java::lang::Integer getInteger(JString arg0);
 		static java::lang::Integer getInteger(JString arg0, jint arg1);
 		static java::lang::Integer getInteger(JString arg0, java::lang::Integer arg1);

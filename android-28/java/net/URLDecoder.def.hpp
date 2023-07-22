@@ -20,7 +20,6 @@ namespace java::net
 		URLDecoder(QAndroidJniObject obj) : JObject(obj) {}
 		
 		// Constructors
-		URLDecoder();
 		
 		// Methods
 		static JString decode(JString arg0);

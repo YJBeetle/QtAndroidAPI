@@ -8,6 +8,7 @@
 #include "./SignStyle.def.hpp"
 #include "./TextStyle.def.hpp"
 #include "../../util/Locale.def.hpp"
+#include "../../util/regex/Pattern.def.hpp"
 #include "./DateTimeFormatterBuilder.def.hpp"
 
 namespace java::time::format
@@ -22,6 +23,17 @@ namespace java::time::format
 		) {}
 	
 	// Methods
+	inline JString DateTimeFormatterBuilder::getLocalizedDateTimePattern(JString arg0, JObject arg1, java::util::Locale arg2)
+	{
+		return callStaticObjectMethod(
+			"java.time.format.DateTimeFormatterBuilder",
+			"getLocalizedDateTimePattern",
+			"(Ljava/lang/String;Ljava/time/chrono/Chronology;Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object()
+		);
+	}
 	inline JString DateTimeFormatterBuilder::getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3)
 	{
 		return callStaticObjectMethod(
@@ -120,6 +132,14 @@ namespace java::time::format
 	{
 		return callObjectMethod(
 			"appendLiteral",
+			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendLocalized(JString arg0) const
+	{
+		return callObjectMethod(
+			"appendLocalized",
 			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatterBuilder;",
 			arg0.object<jstring>()
 		);

@@ -19,6 +19,10 @@ namespace java::lang
 {
 	class StringBuffer;
 }
+namespace java::lang
+{
+	class StringBuilder;
+}
 namespace java::math
 {
 	class BigDecimal;

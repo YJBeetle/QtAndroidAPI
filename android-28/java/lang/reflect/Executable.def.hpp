@@ -31,6 +31,7 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
+		JObject accessFlags() const;
 		JArray getAnnotatedExceptionTypes() const;
 		JArray getAnnotatedParameterTypes() const;
 		JObject getAnnotatedReceiverType() const;
