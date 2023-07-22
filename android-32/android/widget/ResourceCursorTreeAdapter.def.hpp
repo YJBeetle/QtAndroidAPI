@@ -1,0 +1,39 @@
+#pragma once
+
+#include "./CursorTreeAdapter.def.hpp"
+
+namespace android::content
+{
+	class Context;
+}
+namespace android::view
+{
+	class View;
+}
+namespace android::view
+{
+	class ViewGroup;
+}
+
+namespace android::widget
+{
+	class ResourceCursorTreeAdapter : public android::widget::CursorTreeAdapter
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ResourceCursorTreeAdapter(const char *className, const char *sig, Ts...agv) : android::widget::CursorTreeAdapter(className, sig, std::forward<Ts>(agv)...) {}
+		ResourceCursorTreeAdapter(QAndroidJniObject obj) : android::widget::CursorTreeAdapter(obj) {}
+		
+		// Constructors
+		ResourceCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
+		ResourceCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4);
+		ResourceCursorTreeAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		
+		// Methods
+		android::view::View newChildView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3) const;
+		android::view::View newGroupView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3) const;
+	};
+} // namespace android::widget
+
