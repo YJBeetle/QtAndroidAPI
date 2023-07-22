@@ -2,7 +2,7 @@
 
 #include "../../JIntArray.hpp"
 #include "../../JString.hpp"
-#include "../lang/StringBuffer.def.hpp"
+#include "../lang/StringBuilder.def.hpp"
 #include "./RuleBasedCollator.def.hpp"
 #include "./CollationElementIterator.def.hpp"
 

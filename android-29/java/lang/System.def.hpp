@@ -8,11 +8,11 @@ namespace java::io
 }
 namespace java::io
 {
-	class FileOutputStream;
+	class InputStream;
 }
 namespace java::io
 {
-	class InputStream;
+	class OutputStream;
 }
 namespace java::io
 {
@@ -26,6 +26,10 @@ namespace java::lang
 }
 class JString;
 class JThrowable;
+namespace java::net
+{
+	class URL;
+}
 namespace java::util
 {
 	class Properties;

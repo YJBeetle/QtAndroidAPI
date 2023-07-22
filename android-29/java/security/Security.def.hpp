@@ -4,7 +4,6 @@
 
 class JObjectArray;
 class JArray;
-class JArray;
 namespace java::io
 {
 	class File;
@@ -12,13 +11,13 @@ namespace java::io
 class JClass;
 class JObject;
 class JString;
+namespace java::net
+{
+	class URL;
+}
 namespace java::security
 {
 	class Provider;
-}
-namespace java::util
-{
-	class LinkedHashSet;
 }
 namespace java::util
 {

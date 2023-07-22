@@ -6,10 +6,6 @@ class JObjectArray;
 class JArray;
 class JObject;
 class JString;
-namespace java::lang
-{
-	class ThreadLocal;
-}
 namespace java::nio
 {
 	class ByteBuffer;
@@ -52,6 +48,7 @@ namespace java::nio::charset
 		static JObject availableCharsets();
 		static java::nio::charset::Charset defaultCharset();
 		static java::nio::charset::Charset forName(JString arg0);
+		static java::nio::charset::Charset forName(JString arg0, java::nio::charset::Charset arg1);
 		static jboolean isSupported(JString arg0);
 		JObject aliases() const;
 		jboolean canEncode() const;

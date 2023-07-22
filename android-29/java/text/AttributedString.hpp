@@ -6,7 +6,7 @@
 #include "../../JArray.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
-#include "../lang/StringBuffer.def.hpp"
+#include "../lang/StringBuilder.def.hpp"
 #include "./AttributedCharacterIterator_Attribute.def.hpp"
 #include "./AttributedString.def.hpp"
 

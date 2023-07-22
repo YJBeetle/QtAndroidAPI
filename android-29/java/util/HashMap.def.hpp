@@ -33,6 +33,7 @@ namespace java::util
 		HashMap(jint arg0, jfloat arg1);
 		
 		// Methods
+		static java::util::HashMap newHashMap(jint arg0);
 		void clear() const;
 		JObject clone() const;
 		JObject compute(JObject arg0, JObject arg1) const;

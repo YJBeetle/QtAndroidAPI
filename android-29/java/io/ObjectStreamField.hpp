@@ -3,7 +3,6 @@
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
-#include "../lang/StringBuilder.def.hpp"
 #include "../lang/reflect/Field.def.hpp"
 #include "./ObjectStreamField.def.hpp"
 

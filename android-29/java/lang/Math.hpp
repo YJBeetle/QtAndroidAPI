@@ -19,6 +19,13 @@ namespace java::lang
 			"PI"
 		);
 	}
+	inline jdouble Math::TAU()
+	{
+		return getStaticField<jdouble>(
+			"java.lang.Math",
+			"TAU"
+		);
+	}
 	
 	// Constructors
 	
@@ -162,6 +169,86 @@ namespace java::lang
 			arg0
 		);
 	}
+	inline jint Math::ceilDiv(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"ceilDiv",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Math::ceilDiv(jlong arg0, jint arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"ceilDiv",
+			"(JI)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Math::ceilDiv(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"ceilDiv",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jint Math::ceilDivExact(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"ceilDivExact",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Math::ceilDivExact(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"ceilDivExact",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jint Math::ceilMod(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"ceilMod",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jint Math::ceilMod(jlong arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"ceilMod",
+			"(JI)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Math::ceilMod(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"ceilMod",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
 	inline jdouble Math::copySign(jdouble arg0, jdouble arg1)
 	{
 		return callStaticMethod<jdouble>(
@@ -218,6 +305,26 @@ namespace java::lang
 			arg0
 		);
 	}
+	inline jint Math::divideExact(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"divideExact",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Math::divideExact(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"divideExact",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
 	inline jdouble Math::exp(jdouble arg0)
 	{
 		return callStaticMethod<jdouble>(
@@ -270,6 +377,26 @@ namespace java::lang
 		return callStaticMethod<jlong>(
 			"java.lang.Math",
 			"floorDiv",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jint Math::floorDivExact(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"floorDivExact",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Math::floorDivExact(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"floorDivExact",
 			"(JJ)J",
 			arg0,
 			arg1
@@ -795,6 +922,16 @@ namespace java::lang
 			"ulp",
 			"(F)F",
 			arg0
+		);
+	}
+	inline jlong Math::unsignedMultiplyHigh(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"unsignedMultiplyHigh",
+			"(JJ)J",
+			arg0,
+			arg1
 		);
 	}
 } // namespace java::lang

@@ -65,6 +65,7 @@ namespace java::nio::file::spi
 		void createSymbolicLink(JObject arg0, JObject arg1, JArray arg2) const;
 		void delete_(JObject arg0) const;
 		jboolean deleteIfExists(JObject arg0) const;
+		jboolean exists(JObject arg0, JArray arg1) const;
 		JObject getFileAttributeView(JObject arg0, JClass arg1, JArray arg2) const;
 		java::nio::file::FileStore getFileStore(JObject arg0) const;
 		java::nio::file::FileSystem getFileSystem(java::net::URI arg0) const;
@@ -83,6 +84,7 @@ namespace java::nio::file::spi
 		java::io::OutputStream newOutputStream(JObject arg0, JArray arg1) const;
 		JObject readAttributes(JObject arg0, JClass arg1, JArray arg2) const;
 		JObject readAttributes(JObject arg0, JString arg1, JArray arg2) const;
+		JObject readAttributesIfExists(JObject arg0, JClass arg1, JArray arg2) const;
 		JObject readSymbolicLink(JObject arg0) const;
 		void setAttribute(JObject arg0, JString arg1, JObject arg2, JArray arg3) const;
 	};

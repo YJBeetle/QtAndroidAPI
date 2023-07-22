@@ -44,6 +44,15 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline java::util::LinkedHashMap LinkedHashMap::newLinkedHashMap(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.LinkedHashMap",
+			"newLinkedHashMap",
+			"(I)Ljava/util/LinkedHashMap;",
+			arg0
+		);
+	}
 	inline void LinkedHashMap::clear() const
 	{
 		callMethod<void>(

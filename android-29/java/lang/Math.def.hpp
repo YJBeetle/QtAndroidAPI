@@ -10,6 +10,7 @@ namespace java::lang
 		// Fields
 		static jdouble E();
 		static jdouble PI();
+		static jdouble TAU();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Math(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
@@ -33,18 +34,30 @@ namespace java::lang
 		static jdouble atan2(jdouble arg0, jdouble arg1);
 		static jdouble cbrt(jdouble arg0);
 		static jdouble ceil(jdouble arg0);
+		static jint ceilDiv(jint arg0, jint arg1);
+		static jlong ceilDiv(jlong arg0, jint arg1);
+		static jlong ceilDiv(jlong arg0, jlong arg1);
+		static jint ceilDivExact(jint arg0, jint arg1);
+		static jlong ceilDivExact(jlong arg0, jlong arg1);
+		static jint ceilMod(jint arg0, jint arg1);
+		static jint ceilMod(jlong arg0, jint arg1);
+		static jlong ceilMod(jlong arg0, jlong arg1);
 		static jdouble copySign(jdouble arg0, jdouble arg1);
 		static jfloat copySign(jfloat arg0, jfloat arg1);
 		static jdouble cos(jdouble arg0);
 		static jdouble cosh(jdouble arg0);
 		static jint decrementExact(jint arg0);
 		static jlong decrementExact(jlong arg0);
+		static jint divideExact(jint arg0, jint arg1);
+		static jlong divideExact(jlong arg0, jlong arg1);
 		static jdouble exp(jdouble arg0);
 		static jdouble expm1(jdouble arg0);
 		static jdouble floor(jdouble arg0);
 		static jint floorDiv(jint arg0, jint arg1);
 		static jlong floorDiv(jlong arg0, jint arg1);
 		static jlong floorDiv(jlong arg0, jlong arg1);
+		static jint floorDivExact(jint arg0, jint arg1);
+		static jlong floorDivExact(jlong arg0, jlong arg1);
 		static jint floorMod(jint arg0, jint arg1);
 		static jint floorMod(jlong arg0, jint arg1);
 		static jlong floorMod(jlong arg0, jlong arg1);
@@ -100,6 +113,7 @@ namespace java::lang
 		static jdouble toRadians(jdouble arg0);
 		static jdouble ulp(jdouble arg0);
 		static jfloat ulp(jfloat arg0);
+		static jlong unsignedMultiplyHigh(jlong arg0, jlong arg1);
 	};
 } // namespace java::lang
 

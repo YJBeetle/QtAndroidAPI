@@ -12,7 +12,10 @@ namespace java::io
 {
 	class ObjectOutputStream;
 }
-class JString;
+namespace java::lang
+{
+	class Void;
+}
 namespace java::util::concurrent::atomic
 {
 	class AtomicLong;
@@ -34,6 +37,7 @@ namespace java::util
 		Random(jlong arg0);
 		
 		// Methods
+		static java::util::Random from(JObject arg0);
 		JObject doubles() const;
 		JObject doubles(jlong arg0) const;
 		JObject doubles(jdouble arg0, jdouble arg1) const;

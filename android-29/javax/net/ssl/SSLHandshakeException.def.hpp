@@ -3,6 +3,7 @@
 #include "./SSLException.def.hpp"
 
 class JString;
+class JThrowable;
 
 namespace javax::net::ssl
 {
@@ -17,6 +18,7 @@ namespace javax::net::ssl
 		
 		// Constructors
 		SSLHandshakeException(JString arg0);
+		SSLHandshakeException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

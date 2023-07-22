@@ -129,12 +129,31 @@ namespace java::util
 			arg0.object()
 		);
 	}
+	inline jboolean IdentityHashMap::remove(JObject arg0, JObject arg1) const
+	{
+		return callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
 	inline JObject IdentityHashMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0.object<jobject>()
+		);
+	}
+	inline jboolean IdentityHashMap::replace(JObject arg0, JObject arg1, JObject arg2) const
+	{
+		return callMethod<jboolean>(
+			"replace",
+			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
+			arg0.object<jobject>(),
+			arg1.object<jobject>(),
+			arg2.object<jobject>()
 		);
 	}
 	inline void IdentityHashMap::replaceAll(JObject arg0) const

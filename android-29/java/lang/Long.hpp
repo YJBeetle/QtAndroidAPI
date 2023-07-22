@@ -94,6 +94,16 @@ namespace java::lang
 			arg1
 		);
 	}
+	inline jlong Long::compress(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Long",
+			"compress",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
 	inline java::lang::Long Long::decode(JString arg0)
 	{
 		return callStaticObjectMethod(
@@ -108,6 +118,16 @@ namespace java::lang
 		return callStaticMethod<jlong>(
 			"java.lang.Long",
 			"divideUnsigned",
+			"(JJ)J",
+			arg0,
+			arg1
+		);
+	}
+	inline jlong Long::expand(jlong arg0, jlong arg1)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Long",
+			"expand",
 			"(JJ)J",
 			arg0,
 			arg1

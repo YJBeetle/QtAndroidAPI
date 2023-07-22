@@ -31,6 +31,10 @@ namespace java::util
 {
 	class Locale;
 }
+namespace java::util::regex
+{
+	class Pattern;
+}
 
 namespace java::time::format
 {
@@ -47,6 +51,7 @@ namespace java::time::format
 		DateTimeFormatterBuilder();
 		
 		// Methods
+		static JString getLocalizedDateTimePattern(JString arg0, JObject arg1, java::util::Locale arg2);
 		static JString getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3);
 		java::time::format::DateTimeFormatterBuilder append(java::time::format::DateTimeFormatter arg0) const;
 		java::time::format::DateTimeFormatterBuilder appendChronologyId() const;
@@ -59,6 +64,7 @@ namespace java::time::format
 		java::time::format::DateTimeFormatterBuilder appendInstant(jint arg0) const;
 		java::time::format::DateTimeFormatterBuilder appendLiteral(jchar arg0) const;
 		java::time::format::DateTimeFormatterBuilder appendLiteral(JString arg0) const;
+		java::time::format::DateTimeFormatterBuilder appendLocalized(JString arg0) const;
 		java::time::format::DateTimeFormatterBuilder appendLocalized(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1) const;
 		java::time::format::DateTimeFormatterBuilder appendLocalizedOffset(java::time::format::TextStyle arg0) const;
 		java::time::format::DateTimeFormatterBuilder appendOffset(JString arg0, JString arg1) const;

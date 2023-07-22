@@ -4,6 +4,7 @@
 
 class JArray;
 class JArray;
+class JArray;
 namespace java::io
 {
 	class PrintStream;

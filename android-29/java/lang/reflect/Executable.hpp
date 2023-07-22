@@ -20,6 +20,13 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
+	inline JObject Executable::accessFlags() const
+	{
+		return callObjectMethod(
+			"accessFlags",
+			"()Ljava/util/Set;"
+		);
+	}
 	inline JArray Executable::getAnnotatedExceptionTypes() const
 	{
 		return callObjectMethod(

@@ -91,6 +91,7 @@ namespace java::math
 		java::math::BigInteger nextProbablePrime() const;
 		java::math::BigInteger not_() const;
 		java::math::BigInteger or_(java::math::BigInteger arg0) const;
+		java::math::BigInteger parallelMultiply(java::math::BigInteger arg0) const;
 		java::math::BigInteger pow(jint arg0) const;
 		java::math::BigInteger remainder(java::math::BigInteger arg0) const;
 		java::math::BigInteger setBit(jint arg0) const;

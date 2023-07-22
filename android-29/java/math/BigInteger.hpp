@@ -390,6 +390,14 @@ namespace java::math
 			arg0.object()
 		);
 	}
+	inline java::math::BigInteger BigInteger::parallelMultiply(java::math::BigInteger arg0) const
+	{
+		return callObjectMethod(
+			"parallelMultiply",
+			"(Ljava/math/BigInteger;)Ljava/math/BigInteger;",
+			arg0.object()
+		);
+	}
 	inline java::math::BigInteger BigInteger::pow(jint arg0) const
 	{
 		return callObjectMethod(
