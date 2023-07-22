@@ -1,0 +1,34 @@
+#pragma once
+
+#include "./LinearLayout_LayoutParams.def.hpp"
+
+namespace android::content
+{
+	class Context;
+}
+namespace android::view
+{
+	class ViewGroup_LayoutParams;
+}
+
+namespace android::widget
+{
+	class ActionMenuView_LayoutParams : public android::widget::LinearLayout_LayoutParams
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit ActionMenuView_LayoutParams(const char *className, const char *sig, Ts...agv) : android::widget::LinearLayout_LayoutParams(className, sig, std::forward<Ts>(agv)...) {}
+		ActionMenuView_LayoutParams(QAndroidJniObject obj) : android::widget::LinearLayout_LayoutParams(obj) {}
+		
+		// Constructors
+		ActionMenuView_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
+		ActionMenuView_LayoutParams(android::widget::ActionMenuView_LayoutParams &arg0);
+		ActionMenuView_LayoutParams(android::content::Context arg0, JObject arg1);
+		ActionMenuView_LayoutParams(jint arg0, jint arg1);
+		
+		// Methods
+	};
+} // namespace android::widget
+

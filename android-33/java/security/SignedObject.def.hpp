@@ -1,0 +1,38 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+class JByteArray;
+namespace java::io
+{
+	class ObjectInputStream;
+}
+class JObject;
+class JString;
+namespace java::security
+{
+	class Signature;
+}
+
+namespace java::security
+{
+	class SignedObject : public JObject
+	{
+	public:
+		// Fields
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit SignedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		SignedObject(QAndroidJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2);
+		
+		// Methods
+		JString getAlgorithm() const;
+		JObject getObject() const;
+		JByteArray getSignature() const;
+		jboolean verify(JObject arg0, java::security::Signature arg1) const;
+	};
+} // namespace java::security
+

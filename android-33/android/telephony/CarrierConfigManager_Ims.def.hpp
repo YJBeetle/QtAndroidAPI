@@ -1,0 +1,94 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+class JString;
+
+namespace android::telephony
+{
+	class CarrierConfigManager_Ims : public JObject
+	{
+	public:
+		// Fields
+		static jint E911_RTCP_INACTIVITY_ON_CONNECTED();
+		static jint E911_RTP_INACTIVITY_ON_CONNECTED();
+		static jint GEOLOCATION_PIDF_FOR_EMERGENCY_ON_CELLULAR();
+		static jint GEOLOCATION_PIDF_FOR_EMERGENCY_ON_WIFI();
+		static jint GEOLOCATION_PIDF_FOR_NON_EMERGENCY_ON_CELLULAR();
+		static jint GEOLOCATION_PIDF_FOR_NON_EMERGENCY_ON_WIFI();
+		static jint IPSEC_AUTHENTICATION_ALGORITHM_HMAC_MD5();
+		static jint IPSEC_AUTHENTICATION_ALGORITHM_HMAC_SHA1();
+		static jint IPSEC_ENCRYPTION_ALGORITHM_AES_CBC();
+		static jint IPSEC_ENCRYPTION_ALGORITHM_DES_EDE3_CBC();
+		static jint IPSEC_ENCRYPTION_ALGORITHM_NULL();
+		static JString KEY_CAPABILITY_TYPE_CALL_COMPOSER_INT_ARRAY();
+		static JString KEY_CAPABILITY_TYPE_OPTIONS_UCE_INT_ARRAY();
+		static JString KEY_CAPABILITY_TYPE_PRESENCE_UCE_INT_ARRAY();
+		static JString KEY_CAPABILITY_TYPE_SMS_INT_ARRAY();
+		static JString KEY_CAPABILITY_TYPE_UT_INT_ARRAY();
+		static JString KEY_CAPABILITY_TYPE_VIDEO_INT_ARRAY();
+		static JString KEY_CAPABILITY_TYPE_VOICE_INT_ARRAY();
+		static JString KEY_ENABLE_PRESENCE_CAPABILITY_EXCHANGE_BOOL();
+		static JString KEY_ENABLE_PRESENCE_GROUP_SUBSCRIBE_BOOL();
+		static JString KEY_ENABLE_PRESENCE_PUBLISH_BOOL();
+		static JString KEY_GEOLOCATION_PIDF_IN_SIP_INVITE_SUPPORT_INT_ARRAY();
+		static JString KEY_GEOLOCATION_PIDF_IN_SIP_REGISTER_SUPPORT_INT_ARRAY();
+		static JString KEY_GRUU_ENABLED_BOOL();
+		static JString KEY_IMS_PDN_ENABLED_IN_NO_VOPS_SUPPORT_INT_ARRAY();
+		static JString KEY_IMS_SINGLE_REGISTRATION_REQUIRED_BOOL();
+		static JString KEY_IMS_USER_AGENT_STRING();
+		static JString KEY_IPSEC_AUTHENTICATION_ALGORITHMS_INT_ARRAY();
+		static JString KEY_IPSEC_ENCRYPTION_ALGORITHMS_INT_ARRAY();
+		static JString KEY_IPV4_SIP_MTU_SIZE_CELLULAR_INT();
+		static JString KEY_IPV6_SIP_MTU_SIZE_CELLULAR_INT();
+		static JString KEY_KEEP_PDN_UP_IN_NO_VOPS_BOOL();
+		static JString KEY_MMTEL_REQUIRES_PROVISIONING_BUNDLE();
+		static JString KEY_NON_RCS_CAPABILITIES_CACHE_EXPIRATION_SEC_INT();
+		static JString KEY_PHONE_CONTEXT_DOMAIN_NAME_STRING();
+		static JString KEY_PREFIX();
+		static JString KEY_RCS_BULK_CAPABILITY_EXCHANGE_BOOL();
+		static JString KEY_RCS_FEATURE_TAG_ALLOWED_STRING_ARRAY();
+		static JString KEY_RCS_REQUIRES_PROVISIONING_BUNDLE();
+		static JString KEY_REGISTRATION_EVENT_PACKAGE_SUPPORTED_BOOL();
+		static JString KEY_REGISTRATION_EXPIRY_TIMER_SEC_INT();
+		static JString KEY_REGISTRATION_RETRY_BASE_TIMER_MILLIS_INT();
+		static JString KEY_REGISTRATION_RETRY_MAX_TIMER_MILLIS_INT();
+		static JString KEY_REGISTRATION_SUBSCRIBE_EXPIRY_TIMER_SEC_INT();
+		static JString KEY_REQUEST_URI_TYPE_INT();
+		static JString KEY_SIP_OVER_IPSEC_ENABLED_BOOL();
+		static JString KEY_SIP_PREFERRED_TRANSPORT_INT();
+		static JString KEY_SIP_SERVER_PORT_NUMBER_INT();
+		static JString KEY_SIP_TIMER_B_MILLIS_INT();
+		static JString KEY_SIP_TIMER_C_MILLIS_INT();
+		static JString KEY_SIP_TIMER_D_MILLIS_INT();
+		static JString KEY_SIP_TIMER_F_MILLIS_INT();
+		static JString KEY_SIP_TIMER_H_MILLIS_INT();
+		static JString KEY_SIP_TIMER_J_MILLIS_INT();
+		static JString KEY_SIP_TIMER_T1_MILLIS_INT();
+		static JString KEY_SIP_TIMER_T2_MILLIS_INT();
+		static JString KEY_SIP_TIMER_T4_MILLIS_INT();
+		static JString KEY_SUPPORTED_RATS_INT_ARRAY();
+		static JString KEY_USE_SIP_URI_FOR_PRESENCE_SUBSCRIBE_BOOL();
+		static JString KEY_WIFI_OFF_DEFERRING_TIME_MILLIS_INT();
+		static jint NETWORK_TYPE_HOME();
+		static jint NETWORK_TYPE_ROAMING();
+		static jint PREFERRED_TRANSPORT_DYNAMIC_UDP_TCP();
+		static jint PREFERRED_TRANSPORT_TCP();
+		static jint PREFERRED_TRANSPORT_TLS();
+		static jint PREFERRED_TRANSPORT_UDP();
+		static jint REQUEST_URI_FORMAT_SIP();
+		static jint REQUEST_URI_FORMAT_TEL();
+		static jint RTCP_INACTIVITY_ON_CONNECTED();
+		static jint RTCP_INACTIVITY_ON_HOLD();
+		static jint RTP_INACTIVITY_ON_CONNECTED();
+		
+		// QAndroidJniObject forward
+		template<typename ...Ts> explicit CarrierConfigManager_Ims(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		CarrierConfigManager_Ims(QAndroidJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		
+		// Methods
+	};
+} // namespace android::telephony
+
