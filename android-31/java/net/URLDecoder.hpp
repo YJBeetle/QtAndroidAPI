@@ -9,11 +9,6 @@ namespace java::net
 	// Fields
 	
 	// Constructors
-	inline URLDecoder::URLDecoder()
-		: JObject(
-			"java.net.URLDecoder",
-			"()V"
-		) {}
 	
 	// Methods
 	inline JString URLDecoder::decode(JString arg0)

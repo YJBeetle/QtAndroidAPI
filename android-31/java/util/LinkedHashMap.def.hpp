@@ -28,6 +28,7 @@ namespace java::util
 		LinkedHashMap(jint arg0, jfloat arg1, jboolean arg2);
 		
 		// Methods
+		static java::util::LinkedHashMap newLinkedHashMap(jint arg0);
 		void clear() const;
 		jboolean containsValue(JObject arg0) const;
 		JObject entrySet() const;

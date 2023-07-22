@@ -27,6 +27,7 @@ namespace java::util
 		WeakHashMap(jint arg0, jfloat arg1);
 		
 		// Methods
+		static java::util::WeakHashMap newWeakHashMap(jint arg0);
 		void clear() const;
 		jboolean containsKey(JObject arg0) const;
 		jboolean containsValue(JObject arg0) const;

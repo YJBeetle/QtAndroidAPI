@@ -2,6 +2,7 @@
 
 #include "../../JByteArray.hpp"
 #include "./InputStream.def.hpp"
+#include "./OutputStream.def.hpp"
 #include "./SequenceInputStream.def.hpp"
 
 namespace java::io
@@ -53,6 +54,14 @@ namespace java::io
 			arg0.object<jbyteArray>(),
 			arg1,
 			arg2
+		);
+	}
+	inline jlong SequenceInputStream::transferTo(java::io::OutputStream arg0) const
+	{
+		return callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/OutputStream;)J",
+			arg0.object()
 		);
 	}
 } // namespace java::io

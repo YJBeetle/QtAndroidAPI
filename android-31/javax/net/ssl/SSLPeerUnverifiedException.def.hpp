@@ -3,6 +3,7 @@
 #include "./SSLException.def.hpp"
 
 class JString;
+class JThrowable;
 
 namespace javax::net::ssl
 {
@@ -17,6 +18,7 @@ namespace javax::net::ssl
 		
 		// Constructors
 		SSLPeerUnverifiedException(JString arg0);
+		SSLPeerUnverifiedException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

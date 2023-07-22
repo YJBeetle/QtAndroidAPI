@@ -60,6 +60,7 @@ namespace java::security
 		jboolean containsAlias(JString arg0) const;
 		void deleteEntry(JString arg0) const;
 		jboolean entryInstanceOf(JString arg0, JClass arg1) const;
+		JObject getAttributes(JString arg0) const;
 		java::security::cert::Certificate getCertificate(JString arg0) const;
 		JString getCertificateAlias(java::security::cert::Certificate arg0) const;
 		JArray getCertificateChain(JString arg0) const;

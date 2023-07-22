@@ -43,6 +43,7 @@ namespace java::security
 		jboolean engineContainsAlias(JString arg0) const;
 		void engineDeleteEntry(JString arg0) const;
 		jboolean engineEntryInstanceOf(JString arg0, JClass arg1) const;
+		JObject engineGetAttributes(JString arg0) const;
 		java::security::cert::Certificate engineGetCertificate(JString arg0) const;
 		JString engineGetCertificateAlias(java::security::cert::Certificate arg0) const;
 		JArray engineGetCertificateChain(JString arg0) const;

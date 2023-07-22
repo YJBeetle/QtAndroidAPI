@@ -73,6 +73,13 @@ namespace java::lang
 			"POSITIVE_INFINITY"
 		);
 	}
+	inline jint Double::PRECISION()
+	{
+		return getStaticField<jint>(
+			"java.lang.Double",
+			"PRECISION"
+		);
+	}
 	inline jint Double::SIZE()
 	{
 		return getStaticField<jint>(

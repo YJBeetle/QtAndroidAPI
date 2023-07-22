@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../JCharArray.hpp"
+#include "../nio/CharBuffer.def.hpp"
 #include "./CharArrayReader.def.hpp"
 
 namespace java::io
@@ -51,6 +52,14 @@ namespace java::io
 		return callMethod<jint>(
 			"read",
 			"()I"
+		);
+	}
+	inline jint CharArrayReader::read(java::nio::CharBuffer arg0) const
+	{
+		return callMethod<jint>(
+			"read",
+			"(Ljava/nio/CharBuffer;)I",
+			arg0.object()
 		);
 	}
 	inline jint CharArrayReader::read(JCharArray arg0, jint arg1, jint arg2) const

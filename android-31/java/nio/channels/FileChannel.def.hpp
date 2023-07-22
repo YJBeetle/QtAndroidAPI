@@ -41,6 +41,7 @@ namespace java::nio::channels
 		void force(jboolean arg0) const;
 		java::nio::channels::FileLock lock() const;
 		java::nio::channels::FileLock lock(jlong arg0, jlong arg1, jboolean arg2) const;
+		JObject map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2, JObject arg3) const;
 		java::nio::MappedByteBuffer map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2) const;
 		java::nio::channels::FileChannel position(jlong arg0) const;
 		jlong position() const;

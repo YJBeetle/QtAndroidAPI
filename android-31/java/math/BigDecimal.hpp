@@ -91,6 +91,14 @@ namespace java::math
 			"Ljava/math/BigDecimal;"
 		);
 	}
+	inline java::math::BigDecimal BigDecimal::TWO()
+	{
+		return getStaticObjectField(
+			"java.math.BigDecimal",
+			"TWO",
+			"Ljava/math/BigDecimal;"
+		);
+	}
 	inline java::math::BigDecimal BigDecimal::ZERO()
 	{
 		return getStaticObjectField(

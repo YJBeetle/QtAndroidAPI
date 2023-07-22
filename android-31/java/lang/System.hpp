@@ -1,14 +1,15 @@
 #pragma once
 
 #include "../io/Console.def.hpp"
-#include "../io/FileOutputStream.def.hpp"
 #include "../io/InputStream.def.hpp"
+#include "../io/OutputStream.def.hpp"
 #include "../io/PrintStream.def.hpp"
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"
 #include "./SecurityManager.def.hpp"
 #include "../../JString.hpp"
 #include "../../JThrowable.hpp"
+#include "../net/URL.def.hpp"
 #include "../util/Properties.def.hpp"
 #include "../util/ResourceBundle.def.hpp"
 #include "./System.def.hpp"

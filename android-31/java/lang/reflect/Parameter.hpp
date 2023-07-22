@@ -14,6 +14,13 @@ namespace java::lang::reflect
 	// Constructors
 	
 	// Methods
+	inline JObject Parameter::accessFlags() const
+	{
+		return callObjectMethod(
+			"accessFlags",
+			"()Ljava/util/Set;"
+		);
+	}
 	inline jboolean Parameter::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(

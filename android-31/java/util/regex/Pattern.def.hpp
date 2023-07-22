@@ -55,6 +55,7 @@ namespace java::util::regex
 		JObject asPredicate() const;
 		jint flags() const;
 		java::util::regex::Matcher matcher(JString arg0) const;
+		JObject namedGroups() const;
 		JString pattern() const;
 		JArray split(JString arg0) const;
 		JArray split(JString arg0, jint arg1) const;

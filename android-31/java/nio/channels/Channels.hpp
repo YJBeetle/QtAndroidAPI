@@ -5,7 +5,6 @@
 #include "../../io/Reader.def.hpp"
 #include "../../io/Writer.def.hpp"
 #include "../../../JString.hpp"
-#include "../ByteBuffer.def.hpp"
 #include "../charset/Charset.def.hpp"
 #include "../charset/CharsetDecoder.def.hpp"
 #include "../charset/CharsetEncoder.def.hpp"

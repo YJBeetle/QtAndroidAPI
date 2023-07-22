@@ -3,6 +3,10 @@
 #include "./Reader.def.hpp"
 
 class JCharArray;
+namespace java::nio
+{
+	class CharBuffer;
+}
 
 namespace java::io
 {
@@ -24,6 +28,7 @@ namespace java::io
 		void mark(jint arg0) const;
 		jboolean markSupported() const;
 		jint read() const;
+		jint read(java::nio::CharBuffer arg0) const;
 		jint read(JCharArray arg0, jint arg1, jint arg2) const;
 		jboolean ready() const;
 		void reset() const;

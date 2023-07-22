@@ -2,7 +2,7 @@
 
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
-#include "../lang/StringBuffer.def.hpp"
+#include "../lang/StringBuilder.def.hpp"
 #include "./CollationElementIterator.def.hpp"
 #include "./CollationKey.def.hpp"
 #include "./RuleBasedCollator.def.hpp"

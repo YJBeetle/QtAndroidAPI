@@ -6,6 +6,10 @@ namespace java::lang::ref
 {
 	class Reference;
 }
+namespace java::util::concurrent::locks
+{
+	class ReentrantLock;
+}
 
 namespace java::lang::ref
 {

@@ -4,7 +4,6 @@
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
-#include "../../JThrowable.hpp"
 #include "./StackTraceElement.def.hpp"
 
 namespace java::lang
