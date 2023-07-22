@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./SocketException.def.hpp"
 
 namespace java::net
@@ -18,6 +19,19 @@ namespace java::net
 			"java.net.SocketException",
 			"(Ljava/lang/String;)V",
 			arg0.object<jstring>()
+		) {}
+	inline SocketException::SocketException(JThrowable arg0)
+		: java::io::IOException(
+			"java.net.SocketException",
+			"(Ljava/lang/Throwable;)V",
+			arg0.object<jthrowable>()
+		) {}
+	inline SocketException::SocketException(JString arg0, JThrowable arg1)
+		: java::io::IOException(
+			"java.net.SocketException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

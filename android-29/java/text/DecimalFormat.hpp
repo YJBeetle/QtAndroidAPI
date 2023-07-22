@@ -8,6 +8,7 @@
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
 #include "../lang/StringBuffer.def.hpp"
+#include "../lang/StringBuilder.def.hpp"
 #include "../math/BigDecimal.def.hpp"
 #include "../math/BigInteger.def.hpp"
 #include "../math/RoundingMode.def.hpp"

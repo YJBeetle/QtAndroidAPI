@@ -13,7 +13,6 @@
 #include "./MethodHandles_Lookup.def.hpp"
 #include "./MethodType.def.hpp"
 #include "../../nio/ByteOrder.def.hpp"
-#include "../../security/Permission.def.hpp"
 #include "./MethodHandles.def.hpp"
 
 namespace java::lang::invoke
@@ -133,6 +132,17 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
+	inline JObject MethodHandles::collectCoordinates(JObject arg0, jint arg1, java::lang::invoke::MethodHandle arg2)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"collectCoordinates",
+			"(Ljava/lang/invoke/VarHandle;ILjava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
 	inline java::lang::invoke::MethodHandle MethodHandles::constant(JClass arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
@@ -211,6 +221,17 @@ namespace java::lang::invoke
 			arg3
 		);
 	}
+	inline JObject MethodHandles::dropCoordinates(JObject arg0, jint arg1, JArray arg2)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"dropCoordinates",
+			"(Ljava/lang/invoke/VarHandle;I[Ljava/lang/Class;)Ljava/lang/invoke/VarHandle;",
+			arg0.object(),
+			arg1,
+			arg2.object<jarray>()
+		);
+	}
 	inline java::lang::invoke::MethodHandle MethodHandles::dropReturn(java::lang::invoke::MethodHandle arg0)
 	{
 		return callStaticObjectMethod(
@@ -259,6 +280,17 @@ namespace java::lang::invoke
 			arg2.object<jarray>()
 		);
 	}
+	inline JObject MethodHandles::filterCoordinates(JObject arg0, jint arg1, JArray arg2)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"filterCoordinates",
+			"(Ljava/lang/invoke/VarHandle;I[Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;",
+			arg0.object(),
+			arg1,
+			arg2.object<jarray>()
+		);
+	}
 	inline java::lang::invoke::MethodHandle MethodHandles::filterReturnValue(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodHandle arg1)
 	{
 		return callStaticObjectMethod(
@@ -267,6 +299,17 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
 			arg1.object()
+		);
+	}
+	inline JObject MethodHandles::filterValue(JObject arg0, java::lang::invoke::MethodHandle arg1, java::lang::invoke::MethodHandle arg2)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"filterValue",
+			"(Ljava/lang/invoke/VarHandle;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/VarHandle;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object()
 		);
 	}
 	inline java::lang::invoke::MethodHandle MethodHandles::foldArguments(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodHandle arg1)
@@ -321,6 +364,17 @@ namespace java::lang::invoke
 			arg2.object<jobjectArray>()
 		);
 	}
+	inline JObject MethodHandles::insertCoordinates(JObject arg0, jint arg1, JObjectArray arg2)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"insertCoordinates",
+			"(Ljava/lang/invoke/VarHandle;I[Ljava/lang/Object;)Ljava/lang/invoke/VarHandle;",
+			arg0.object(),
+			arg1,
+			arg2.object<jobjectArray>()
+		);
+	}
 	inline java::lang::invoke::MethodHandle MethodHandles::invoker(java::lang::invoke::MethodType arg0)
 	{
 		return callStaticObjectMethod(
@@ -358,12 +412,32 @@ namespace java::lang::invoke
 			arg0.object<jarray>()
 		);
 	}
+	inline JObject MethodHandles::memorySegmentViewVarHandle(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"memorySegmentViewVarHandle",
+			"(Ljava/lang/foreign/ValueLayout;)Ljava/lang/invoke/VarHandle;",
+			arg0.object()
+		);
+	}
 	inline java::lang::invoke::MethodHandle MethodHandles::permuteArguments(java::lang::invoke::MethodHandle arg0, java::lang::invoke::MethodType arg1, JIntArray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodHandles",
 			"permuteArguments",
 			"(Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;[I)Ljava/lang/invoke/MethodHandle;",
+			arg0.object(),
+			arg1.object(),
+			arg2.object<jintArray>()
+		);
+	}
+	inline JObject MethodHandles::permuteCoordinates(JObject arg0, JObject arg1, JIntArray arg2)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"permuteCoordinates",
+			"(Ljava/lang/invoke/VarHandle;Ljava/util/List;[I)Ljava/lang/invoke/VarHandle;",
 			arg0.object(),
 			arg1.object(),
 			arg2.object<jintArray>()
@@ -405,6 +479,16 @@ namespace java::lang::invoke
 			"(Ljava/lang/invoke/MethodType;I)Ljava/lang/invoke/MethodHandle;",
 			arg0.object(),
 			arg1
+		);
+	}
+	inline java::lang::invoke::MethodHandle MethodHandles::tableSwitch(java::lang::invoke::MethodHandle arg0, JArray arg1)
+	{
+		return callStaticObjectMethod(
+			"java.lang.invoke.MethodHandles",
+			"tableSwitch",
+			"(Ljava/lang/invoke/MethodHandle;[Ljava/lang/invoke/MethodHandle;)Ljava/lang/invoke/MethodHandle;",
+			arg0.object(),
+			arg1.object<jarray>()
 		);
 	}
 	inline java::lang::invoke::MethodHandle MethodHandles::throwException(JClass arg0, JClass arg1)

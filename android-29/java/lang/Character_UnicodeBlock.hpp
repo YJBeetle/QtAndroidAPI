@@ -97,6 +97,22 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::ARABIC_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"ARABIC_EXTENDED_B",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::ARABIC_EXTENDED_C()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"ARABIC_EXTENDED_C",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS()
 	{
 		return getStaticObjectField(
@@ -473,6 +489,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::COMBINING_DIACRITICAL_MARKS()
 	{
 		return getStaticObjectField(
@@ -585,6 +609,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::CYPRO_MINOAN()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"CYPRO_MINOAN",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::CYRILLIC()
 	{
 		return getStaticObjectField(
@@ -617,6 +649,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::CYRILLIC_EXTENDED_D()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"CYRILLIC_EXTENDED_D",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::CYRILLIC_SUPPLEMENTARY()
 	{
 		return getStaticObjectField(
@@ -646,6 +686,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"DEVANAGARI_EXTENDED",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::DEVANAGARI_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"DEVANAGARI_EXTENDED_A",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -790,6 +838,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"ETHIOPIC_EXTENDED_A",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::ETHIOPIC_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"ETHIOPIC_EXTENDED_B",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -1097,11 +1153,27 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::KAKTOVIK_NUMERALS()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"KAKTOVIK_NUMERALS",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::KANA_EXTENDED_A()
 	{
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"KANA_EXTENDED_A",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::KANA_EXTENDED_B()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"KANA_EXTENDED_B",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -1150,6 +1222,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"KATAKANA_PHONETIC_EXTENSIONS",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::KAWI()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"KAWI",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -1270,6 +1350,22 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"LATIN_EXTENDED_E",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::LATIN_EXTENDED_F()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"LATIN_EXTENDED_F",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::LATIN_EXTENDED_G()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"LATIN_EXTENDED_G",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -1641,6 +1737,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::NAG_MUNDARI()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"NAG_MUNDARI",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::NANDINAGARI()
 	{
 		return getStaticObjectField(
@@ -1766,6 +1870,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"OLD_TURKIC",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::OLD_UYGHUR()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"OLD_UYGHUR",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -2281,6 +2393,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::TANGSA()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"TANGSA",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::TANGUT()
 	{
 		return getStaticObjectField(
@@ -2353,6 +2473,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::TOTO()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"TOTO",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
 	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::TRANSPORT_AND_MAP_SYMBOLS()
 	{
 		return getStaticObjectField(
@@ -2382,6 +2510,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -2422,6 +2558,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"VERTICAL_FORMS",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::VITHKUQI()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"VITHKUQI",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}
@@ -2478,6 +2622,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeBlock",
 			"ZANABAZAR_SQUARE",
+			"Ljava/lang/Character$UnicodeBlock;"
+		);
+	}
+	inline java::lang::Character_UnicodeBlock Character_UnicodeBlock::ZNAMENNY_MUSICAL_NOTATION()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeBlock",
+			"ZNAMENNY_MUSICAL_NOTATION",
 			"Ljava/lang/Character$UnicodeBlock;"
 		);
 	}

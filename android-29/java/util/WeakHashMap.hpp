@@ -36,6 +36,15 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline java::util::WeakHashMap WeakHashMap::newWeakHashMap(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.WeakHashMap",
+			"newWeakHashMap",
+			"(I)Ljava/util/WeakHashMap;",
+			arg0
+		);
+	}
 	inline void WeakHashMap::clear() const
 	{
 		callMethod<void>(

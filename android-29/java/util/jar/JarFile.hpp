@@ -1,14 +1,11 @@
 #pragma once
 
 #include "../../../JByteArray.hpp"
-#include "../../../JArray.hpp"
 #include "../../io/File.def.hpp"
 #include "../../io/InputStream.def.hpp"
+#include "../../../JObject.hpp"
 #include "../../../JString.hpp"
-#include "../../lang/ThreadLocal.def.hpp"
 #include "../../lang/ref/SoftReference.def.hpp"
-#include "../../net/URL.def.hpp"
-#include "../../security/CodeSource.def.hpp"
 #include "./JarEntry.def.hpp"
 #include "./Manifest.def.hpp"
 #include "../zip/ZipEntry.def.hpp"

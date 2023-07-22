@@ -3,6 +3,7 @@
 #include "../io/IOException.def.hpp"
 
 class JString;
+class JThrowable;
 
 namespace java::net
 {
@@ -18,6 +19,8 @@ namespace java::net
 		// Constructors
 		SocketException();
 		SocketException(JString arg0);
+		SocketException(JThrowable arg0);
+		SocketException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

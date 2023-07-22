@@ -48,10 +48,12 @@ namespace java::util::regex
 		JString group(JString arg0) const;
 		jint groupCount() const;
 		jboolean hasAnchoringBounds() const;
+		jboolean hasMatch() const;
 		jboolean hasTransparentBounds() const;
 		jboolean hitEnd() const;
 		jboolean lookingAt() const;
 		jboolean matches() const;
+		JObject namedGroups() const;
 		java::util::regex::Pattern pattern() const;
 		java::util::regex::Matcher region(jint arg0, jint arg1) const;
 		jint regionEnd() const;

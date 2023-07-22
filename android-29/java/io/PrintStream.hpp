@@ -117,6 +117,13 @@ namespace java::io
 			arg2
 		);
 	}
+	inline java::nio::charset::Charset PrintStream::charset() const
+	{
+		return callObjectMethod(
+			"charset",
+			"()Ljava/nio/charset/Charset;"
+		);
+	}
 	inline jboolean PrintStream::checkError() const
 	{
 		return callMethod<jboolean>(

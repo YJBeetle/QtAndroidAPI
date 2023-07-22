@@ -3,7 +3,6 @@
 #include "../zip/ZipFile.def.hpp"
 
 class JByteArray;
-class JArray;
 namespace java::io
 {
 	class File;
@@ -12,22 +11,11 @@ namespace java::io
 {
 	class InputStream;
 }
+class JObject;
 class JString;
-namespace java::lang
-{
-	class ThreadLocal;
-}
 namespace java::lang::ref
 {
 	class SoftReference;
-}
-namespace java::net
-{
-	class URL;
-}
-namespace java::security
-{
-	class CodeSource;
 }
 namespace java::util::jar
 {

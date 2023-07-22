@@ -57,6 +57,7 @@ namespace java::time
 		JObject getUnits() const;
 		jint hashCode() const;
 		jboolean isNegative() const;
+		jboolean isPositive() const;
 		jboolean isZero() const;
 		java::time::Duration minus(java::time::Duration arg0) const;
 		java::time::Duration minus(jlong arg0, JObject arg1) const;

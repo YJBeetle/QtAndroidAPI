@@ -122,6 +122,13 @@ namespace java::text
 			"()Ljava/lang/String;"
 		);
 	}
+	inline java::util::Locale DecimalFormatSymbols::getLocale() const
+	{
+		return callObjectMethod(
+			"getLocale",
+			"()Ljava/util/Locale;"
+		);
+	}
 	inline jchar DecimalFormatSymbols::getMinusSign() const
 	{
 		return callMethod<jchar>(

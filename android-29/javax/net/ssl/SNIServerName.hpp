@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../../../JByteArray.hpp"
-#include "../../../JCharArray.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"
 #include "./SNIServerName.def.hpp"

@@ -38,6 +38,7 @@ namespace java::util
 		static JObject requireNonNull(JObject arg0, JObject arg1);
 		static JObject requireNonNullElse(JObject arg0, JObject arg1);
 		static JObject requireNonNullElseGet(JObject arg0, JObject arg1);
+		static JString toIdentityString(JObject arg0);
 		static JString toString(JObject arg0);
 		static JString toString(JObject arg0, JString arg1);
 	};

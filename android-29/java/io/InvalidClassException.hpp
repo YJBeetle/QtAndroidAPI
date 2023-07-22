@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./InvalidClassException.def.hpp"
 
 namespace java::io
@@ -27,6 +28,21 @@ namespace java::io
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object<jstring>(),
 			arg1.object<jstring>()
+		) {}
+	inline InvalidClassException::InvalidClassException(JString arg0, JThrowable arg1)
+		: java::io::ObjectStreamException(
+			"java.io.InvalidClassException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
+		) {}
+	inline InvalidClassException::InvalidClassException(JString arg0, JString arg1, JThrowable arg2)
+		: java::io::ObjectStreamException(
+			"java.io.InvalidClassException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jstring>(),
+			arg2.object<jthrowable>()
 		) {}
 	
 	// Methods

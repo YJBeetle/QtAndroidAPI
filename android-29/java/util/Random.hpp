@@ -4,7 +4,7 @@
 #include "../../JArray.hpp"
 #include "../io/ObjectInputStream.def.hpp"
 #include "../io/ObjectOutputStream.def.hpp"
-#include "../../JString.hpp"
+#include "../lang/Void.def.hpp"
 #include "./concurrent/atomic/AtomicLong.def.hpp"
 #include "./Random.def.hpp"
 
@@ -26,6 +26,15 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline java::util::Random Random::from(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Random",
+			"from",
+			"(Ljava/util/random/RandomGenerator;)Ljava/util/Random;",
+			arg0.object()
+		);
+	}
 	inline JObject Random::doubles() const
 	{
 		return callObjectMethod(

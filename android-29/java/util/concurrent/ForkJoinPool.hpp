@@ -1,16 +1,14 @@
 #pragma once
 
 #include "../../../JArray.hpp"
-#include "../../../JArray.hpp"
 #include "../../../JObject.hpp"
 #include "../../lang/RuntimePermission.def.hpp"
 #include "../../../JString.hpp"
 #include "../../../JThrowable.hpp"
-#include "../../security/AccessControlContext.def.hpp"
-#include "./CountedCompleter.def.hpp"
 #include "./ForkJoinTask.def.hpp"
 #include "./ForkJoinWorkerThread.def.hpp"
 #include "./TimeUnit.def.hpp"
+#include "./locks/ReentrantLock.def.hpp"
 #include "./ForkJoinPool.def.hpp"
 
 namespace java::util::concurrent
@@ -106,6 +104,13 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
+	inline void ForkJoinPool::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 	inline void ForkJoinPool::execute(JObject arg0) const
 	{
 		callMethod<void>(
@@ -119,6 +124,14 @@ namespace java::util::concurrent
 		callMethod<void>(
 			"execute",
 			"(Ljava/util/concurrent/ForkJoinTask;)V",
+			arg0.object()
+		);
+	}
+	inline java::util::concurrent::ForkJoinTask ForkJoinPool::externalSubmit(java::util::concurrent::ForkJoinTask arg0) const
+	{
+		return callObjectMethod(
+			"externalSubmit",
+			"(Ljava/util/concurrent/ForkJoinTask;)Ljava/util/concurrent/ForkJoinTask;",
 			arg0.object()
 		);
 	}
@@ -215,6 +228,34 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
+	inline JObject ForkJoinPool::invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
+	{
+		return callObjectMethod(
+			"invokeAll",
+			"(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/util/List;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
+	inline JObject ForkJoinPool::invokeAny(JObject arg0) const
+	{
+		return callObjectMethod(
+			"invokeAny",
+			"(Ljava/util/Collection;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline JObject ForkJoinPool::invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
+	{
+		return callObjectMethod(
+			"invokeAny",
+			"(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1,
+			arg2.object()
+		);
+	}
 	inline jboolean ForkJoinPool::isQuiescent() const
 	{
 		return callMethod<jboolean>(
@@ -241,6 +282,22 @@ namespace java::util::concurrent
 		return callMethod<jboolean>(
 			"isTerminating",
 			"()Z"
+		);
+	}
+	inline java::util::concurrent::ForkJoinTask ForkJoinPool::lazySubmit(java::util::concurrent::ForkJoinTask arg0) const
+	{
+		return callObjectMethod(
+			"lazySubmit",
+			"(Ljava/util/concurrent/ForkJoinTask;)Ljava/util/concurrent/ForkJoinTask;",
+			arg0.object()
+		);
+	}
+	inline jint ForkJoinPool::setParallelism(jint arg0) const
+	{
+		return callMethod<jint>(
+			"setParallelism",
+			"(I)I",
+			arg0
 		);
 	}
 	inline void ForkJoinPool::shutdown() const
