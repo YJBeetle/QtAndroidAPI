@@ -1,0 +1,25 @@
+#pragma once
+
+#include "../../../JString.hpp"
+#include "./ECGenParameterSpec.def.hpp"
+
+namespace java::security::spec
+{
+	// Fields
+	
+	// Constructors
+	inline ECGenParameterSpec::ECGenParameterSpec(JString arg0)
+		: JObject(
+			"java.security.spec.ECGenParameterSpec",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		) {}
+	
+	// Methods
+} // namespace java::security::spec
+
+// Base class headers
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::security::spec;
+#endif
