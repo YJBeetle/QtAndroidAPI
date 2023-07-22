@@ -24,6 +24,10 @@ namespace java::nio::charset
 {
 	class Charset;
 }
+namespace java::text
+{
+	class DecimalFormatSymbols;
+}
 namespace java::util
 {
 	class Locale;

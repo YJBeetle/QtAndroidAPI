@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-class JObject;
 class JString;
 namespace java::util
 {

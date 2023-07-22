@@ -5,10 +5,6 @@
 class JClass;
 class JObject;
 class JString;
-namespace java::lang
-{
-	class StringBuilder;
-}
 namespace java::lang::reflect
 {
 	class Field;

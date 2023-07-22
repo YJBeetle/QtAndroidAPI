@@ -3,7 +3,6 @@
 #include "./AbstractExecutorService.def.hpp"
 
 class JArray;
-class JArray;
 class JObject;
 namespace java::lang
 {
@@ -11,14 +10,6 @@ namespace java::lang
 }
 class JString;
 class JThrowable;
-namespace java::security
-{
-	class AccessControlContext;
-}
-namespace java::util::concurrent
-{
-	class CountedCompleter;
-}
 namespace java::util::concurrent
 {
 	class ForkJoinTask;
@@ -30,6 +21,10 @@ namespace java::util::concurrent
 namespace java::util::concurrent
 {
 	class TimeUnit;
+}
+namespace java::util::concurrent::locks
+{
+	class ReentrantLock;
 }
 
 namespace java::util::concurrent
@@ -56,8 +51,10 @@ namespace java::util::concurrent
 		static void managedBlock(JObject arg0);
 		jboolean awaitQuiescence(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
 		jboolean awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void close() const;
 		void execute(JObject arg0) const;
 		void execute(java::util::concurrent::ForkJoinTask arg0) const;
+		java::util::concurrent::ForkJoinTask externalSubmit(java::util::concurrent::ForkJoinTask arg0) const;
 		jint getActiveThreadCount() const;
 		jboolean getAsyncMode() const;
 		JObject getFactory() const;
@@ -71,10 +68,15 @@ namespace java::util::concurrent
 		jboolean hasQueuedSubmissions() const;
 		JObject invoke(java::util::concurrent::ForkJoinTask arg0) const;
 		JObject invokeAll(JObject arg0) const;
+		JObject invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
+		JObject invokeAny(JObject arg0) const;
+		JObject invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
 		jboolean isQuiescent() const;
 		jboolean isShutdown() const;
 		jboolean isTerminated() const;
 		jboolean isTerminating() const;
+		java::util::concurrent::ForkJoinTask lazySubmit(java::util::concurrent::ForkJoinTask arg0) const;
+		jint setParallelism(jint arg0) const;
 		void shutdown() const;
 		JObject shutdownNow() const;
 		java::util::concurrent::ForkJoinTask submit(JObject arg0) const;

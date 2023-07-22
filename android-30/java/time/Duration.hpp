@@ -223,6 +223,13 @@ namespace java::time
 			"()Z"
 		);
 	}
+	inline jboolean Duration::isPositive() const
+	{
+		return callMethod<jboolean>(
+			"isPositive",
+			"()Z"
+		);
+	}
 	inline jboolean Duration::isZero() const
 	{
 		return callMethod<jboolean>(

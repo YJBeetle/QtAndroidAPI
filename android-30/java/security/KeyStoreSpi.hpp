@@ -55,6 +55,14 @@ namespace java::security
 			arg1.object<jclass>()
 		);
 	}
+	inline JObject KeyStoreSpi::engineGetAttributes(JString arg0) const
+	{
+		return callObjectMethod(
+			"engineGetAttributes",
+			"(Ljava/lang/String;)Ljava/util/Set;",
+			arg0.object<jstring>()
+		);
+	}
 	inline java::security::cert::Certificate KeyStoreSpi::engineGetCertificate(JString arg0) const
 	{
 		return callObjectMethod(

@@ -148,6 +148,13 @@ namespace java::util::regex
 			arg0.object<jstring>()
 		);
 	}
+	inline JObject Pattern::namedGroups() const
+	{
+		return callObjectMethod(
+			"namedGroups",
+			"()Ljava/util/Map;"
+		);
+	}
 	inline JString Pattern::pattern() const
 	{
 		return callObjectMethod(

@@ -16,7 +16,6 @@
 #include "../../JString.hpp"
 #include "../../JThrowable.hpp"
 #include "../lang/invoke/MethodHandle.def.hpp"
-#include "../lang/ref/ReferenceQueue.def.hpp"
 #include "../lang/reflect/Constructor.def.hpp"
 #include "../lang/reflect/Method.def.hpp"
 #include "../security/ProtectionDomain.def.hpp"

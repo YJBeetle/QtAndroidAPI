@@ -19,6 +19,20 @@ namespace java::nio
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::compact() const
+	{
+		return callObjectMethod(
+			"compact",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::duplicate() const
+	{
+		return callObjectMethod(
+			"duplicate",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
 	inline java::nio::MappedByteBuffer MappedByteBuffer::flip() const
 	{
 		return callObjectMethod(
@@ -91,6 +105,22 @@ namespace java::nio
 		return callObjectMethod(
 			"rewind",
 			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::slice() const
+	{
+		return callObjectMethod(
+			"slice",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	inline java::nio::MappedByteBuffer MappedByteBuffer::slice(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"slice",
+			"(II)Ljava/nio/MappedByteBuffer;",
+			arg0,
+			arg1
 		);
 	}
 } // namespace java::nio

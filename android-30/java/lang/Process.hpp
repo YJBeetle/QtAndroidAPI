@@ -1,7 +1,10 @@
 #pragma once
 
+#include "../io/BufferedReader.def.hpp"
+#include "../io/BufferedWriter.def.hpp"
 #include "../io/InputStream.def.hpp"
 #include "../io/OutputStream.def.hpp"
+#include "../nio/charset/Charset.def.hpp"
 #include "../util/concurrent/CompletableFuture.def.hpp"
 #include "../util/concurrent/TimeUnit.def.hpp"
 #include "./Process.def.hpp"
@@ -46,6 +49,21 @@ namespace java::lang
 			"()Ljava/lang/Process;"
 		);
 	}
+	inline java::io::BufferedReader Process::errorReader() const
+	{
+		return callObjectMethod(
+			"errorReader",
+			"()Ljava/io/BufferedReader;"
+		);
+	}
+	inline java::io::BufferedReader Process::errorReader(java::nio::charset::Charset arg0) const
+	{
+		return callObjectMethod(
+			"errorReader",
+			"(Ljava/nio/charset/Charset;)Ljava/io/BufferedReader;",
+			arg0.object()
+		);
+	}
 	inline jint Process::exitValue() const
 	{
 		return callMethod<jint>(
@@ -81,6 +99,21 @@ namespace java::lang
 			"()Ljava/lang/ProcessHandle$Info;"
 		);
 	}
+	inline java::io::BufferedReader Process::inputReader() const
+	{
+		return callObjectMethod(
+			"inputReader",
+			"()Ljava/io/BufferedReader;"
+		);
+	}
+	inline java::io::BufferedReader Process::inputReader(java::nio::charset::Charset arg0) const
+	{
+		return callObjectMethod(
+			"inputReader",
+			"(Ljava/nio/charset/Charset;)Ljava/io/BufferedReader;",
+			arg0.object()
+		);
+	}
 	inline jboolean Process::isAlive() const
 	{
 		return callMethod<jboolean>(
@@ -93,6 +126,21 @@ namespace java::lang
 		return callObjectMethod(
 			"onExit",
 			"()Ljava/util/concurrent/CompletableFuture;"
+		);
+	}
+	inline java::io::BufferedWriter Process::outputWriter() const
+	{
+		return callObjectMethod(
+			"outputWriter",
+			"()Ljava/io/BufferedWriter;"
+		);
+	}
+	inline java::io::BufferedWriter Process::outputWriter(java::nio::charset::Charset arg0) const
+	{
+		return callObjectMethod(
+			"outputWriter",
+			"(Ljava/nio/charset/Charset;)Ljava/io/BufferedWriter;",
+			arg0.object()
 		);
 	}
 	inline jlong Process::pid() const

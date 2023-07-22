@@ -29,6 +29,7 @@ namespace java::lang
 		static jdouble NEGATIVE_INFINITY();
 		static jdouble NaN();
 		static jdouble POSITIVE_INFINITY();
+		static jint PRECISION();
 		static jint SIZE();
 		static JClass TYPE();
 		

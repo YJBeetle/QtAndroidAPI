@@ -2,6 +2,7 @@
 
 #include "../../JByteArray.hpp"
 #include "./InputStream.def.hpp"
+#include "./OutputStream.def.hpp"
 #include "./PushbackInputStream.def.hpp"
 
 namespace java::io
@@ -83,6 +84,14 @@ namespace java::io
 			"skip",
 			"(J)J",
 			arg0
+		);
+	}
+	inline jlong PushbackInputStream::transferTo(java::io::OutputStream arg0) const
+	{
+		return callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/OutputStream;)J",
+			arg0.object()
 		);
 	}
 	inline void PushbackInputStream::unread(JByteArray arg0) const

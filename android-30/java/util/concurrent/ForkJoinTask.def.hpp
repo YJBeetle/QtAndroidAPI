@@ -3,7 +3,6 @@
 #include "../../../JObject.hpp"
 
 class JArray;
-class JArray;
 namespace java::io
 {
 	class ObjectInputStream;
@@ -14,10 +13,6 @@ namespace java::io
 }
 class JObject;
 class JThrowable;
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
 namespace java::util::concurrent
 {
 	class ForkJoinPool;
@@ -25,10 +20,6 @@ namespace java::util::concurrent
 namespace java::util::concurrent
 {
 	class TimeUnit;
-}
-namespace java::util::concurrent::locks
-{
-	class ReentrantLock;
 }
 
 namespace java::util::concurrent
@@ -48,6 +39,7 @@ namespace java::util::concurrent
 		// Methods
 		static java::util::concurrent::ForkJoinTask adapt(JObject arg0);
 		static java::util::concurrent::ForkJoinTask adapt(JObject arg0, JObject arg1);
+		static java::util::concurrent::ForkJoinTask adaptInterruptible(JObject arg0);
 		static java::util::concurrent::ForkJoinPool getPool();
 		static jint getQueuedTaskCount();
 		static jint getSurplusQueuedTaskCount();
@@ -60,6 +52,7 @@ namespace java::util::concurrent
 		jboolean compareAndSetForkJoinTaskTag(jshort arg0, jshort arg1) const;
 		void complete(JObject arg0) const;
 		void completeExceptionally(JThrowable arg0) const;
+		JThrowable exceptionNow() const;
 		java::util::concurrent::ForkJoinTask fork() const;
 		JObject get() const;
 		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
@@ -74,9 +67,13 @@ namespace java::util::concurrent
 		JObject join() const;
 		void quietlyComplete() const;
 		void quietlyInvoke() const;
+		jboolean quietlyJoin(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
 		void quietlyJoin() const;
+		jboolean quietlyJoinUninterruptibly(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
 		void reinitialize() const;
+		JObject resultNow() const;
 		jshort setForkJoinTaskTag(jshort arg0) const;
+		JObject state() const;
 		jboolean tryUnfork() const;
 	};
 } // namespace java::util::concurrent

@@ -12,6 +12,7 @@ namespace java::io
 	class Writer;
 }
 class JString;
+class JObject;
 class JString;
 namespace java::nio::charset
 {

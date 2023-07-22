@@ -110,6 +110,14 @@ namespace java::security
 			arg1.object<jclass>()
 		);
 	}
+	inline JObject KeyStore::getAttributes(JString arg0) const
+	{
+		return callObjectMethod(
+			"getAttributes",
+			"(Ljava/lang/String;)Ljava/util/Set;",
+			arg0.object<jstring>()
+		);
+	}
 	inline java::security::cert::Certificate KeyStore::getCertificate(JString arg0) const
 	{
 		return callObjectMethod(

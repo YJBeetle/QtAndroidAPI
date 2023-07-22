@@ -253,6 +253,13 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/Executor;"
 		);
 	}
+	inline JThrowable CompletableFuture::exceptionNow() const
+	{
+		return callObjectMethod(
+			"exceptionNow",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 	inline java::util::concurrent::CompletableFuture CompletableFuture::exceptionally(JObject arg0) const
 	{
 		return callObjectMethod(
@@ -426,6 +433,13 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
+	inline JObject CompletableFuture::resultNow() const
+	{
+		return callObjectMethod(
+			"resultNow",
+			"()Ljava/lang/Object;"
+		);
+	}
 	inline java::util::concurrent::CompletableFuture CompletableFuture::runAfterBoth(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
@@ -480,6 +494,13 @@ namespace java::util::concurrent
 			arg0.object(),
 			arg1.object(),
 			arg2.object()
+		);
+	}
+	inline JObject CompletableFuture::state() const
+	{
+		return callObjectMethod(
+			"state",
+			"()Ljava/util/concurrent/Future$State;"
 		);
 	}
 	inline java::util::concurrent::CompletableFuture CompletableFuture::thenAccept(JObject arg0) const

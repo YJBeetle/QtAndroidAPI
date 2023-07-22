@@ -3,6 +3,7 @@
 #include "./ObjectStreamException.def.hpp"
 
 class JString;
+class JThrowable;
 
 namespace java::io
 {
@@ -19,6 +20,8 @@ namespace java::io
 		// Constructors
 		InvalidClassException(JString arg0);
 		InvalidClassException(JString arg0, JString arg1);
+		InvalidClassException(JString arg0, JThrowable arg1);
+		InvalidClassException(JString arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
 		JString getMessage() const;
