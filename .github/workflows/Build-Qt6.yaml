@@ -43,7 +43,7 @@ jobs:
           path: ../QtHost
           key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-Cache
       - name: Install host Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           cached: ${{ steps.cache-host-qt.outputs.cache-hit }}
           version: ${{ env.QT_VERSION }}
@@ -60,7 +60,7 @@ jobs:
           path: ../Qt
           key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-${{ matrix.arch.qt }}-Cache
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           cached: ${{ steps.cache-qt.outputs.cache-hit }}
           version: ${{ env.QT_VERSION }}
