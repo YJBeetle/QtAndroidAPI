@@ -19,10 +19,6 @@ namespace java::io
 	class Writer;
 }
 class JString;
-namespace java::nio
-{
-	class ByteBuffer;
-}
 namespace java::nio::charset
 {
 	class Charset;

@@ -20,7 +20,6 @@ namespace java::net
 		URLDecoder(QJniObject obj) : JObject(obj) {}
 		
 		// Constructors
-		URLDecoder();
 		
 		// Methods
 		static JString decode(JString arg0);

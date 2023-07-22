@@ -3,7 +3,6 @@
 #include "../../JObject.hpp"
 
 class JByteArray;
-class JString;
 namespace java::util::concurrent::atomic
 {
 	class AtomicLong;
@@ -37,18 +36,15 @@ namespace java::util
 		JObject longs(jlong arg0) const;
 		JObject longs(jlong arg0, jlong arg1) const;
 		JObject longs(jlong arg0, jlong arg1, jlong arg2) const;
-		jboolean nextBoolean() const;
 		void nextBytes(JByteArray arg0) const;
-		jdouble nextDouble() const;
-		jdouble nextDouble(jdouble arg0) const;
-		jdouble nextDouble(jdouble arg0, jdouble arg1) const;
 		jint nextInt() const;
-		jint nextInt(jint arg0) const;
-		jint nextInt(jint arg0, jint arg1) const;
 		jlong nextLong() const;
-		jlong nextLong(jlong arg0) const;
-		jlong nextLong(jlong arg0, jlong arg1) const;
 		java::util::SplittableRandom split() const;
+		java::util::SplittableRandom split(JObject arg0) const;
+		JObject splits() const;
+		JObject splits(JObject arg0) const;
+		JObject splits(jlong arg0) const;
+		JObject splits(jlong arg0, JObject arg1) const;
 	};
 } // namespace java::util
 

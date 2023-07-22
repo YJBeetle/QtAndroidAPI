@@ -154,6 +154,13 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		);
 	}
+	inline jboolean IsoChronology::isIsoBased() const
+	{
+		return callMethod<jboolean>(
+			"isIsoBased",
+			"()Z"
+		);
+	}
 	inline jboolean IsoChronology::isLeapYear(jlong arg0) const
 	{
 		return callMethod<jboolean>(

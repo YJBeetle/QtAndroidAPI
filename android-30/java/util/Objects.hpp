@@ -192,6 +192,15 @@ namespace java::util
 			arg1.object()
 		);
 	}
+	inline JString Objects::toIdentityString(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Objects",
+			"toIdentityString",
+			"(Ljava/lang/Object;)Ljava/lang/String;",
+			arg0.object<jobject>()
+		);
+	}
 	inline JString Objects::toString(JObject arg0)
 	{
 		return callStaticObjectMethod(

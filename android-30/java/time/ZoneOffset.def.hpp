@@ -7,8 +7,16 @@ namespace java::io
 	class ObjectInputStream;
 }
 class JString;
+namespace java::lang
+{
+	class Integer;
+}
 class JObject;
 class JString;
+namespace java::time
+{
+	class ZoneId;
+}
 namespace java::time::temporal
 {
 	class ValueRange;
@@ -52,6 +60,7 @@ namespace java::time
 		jint getTotalSeconds() const;
 		jint hashCode() const;
 		jboolean isSupported(JObject arg0) const;
+		java::time::ZoneId normalized() const;
 		JObject query(JObject arg0) const;
 		java::time::temporal::ValueRange range(JObject arg0) const;
 		JString toString() const;

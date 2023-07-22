@@ -4,6 +4,7 @@
 #include "./OutputStream.def.hpp"
 #include "./Writer.def.hpp"
 #include "../../JString.hpp"
+#include "../../JObject.hpp"
 #include "../../JString.hpp"
 #include "../nio/charset/Charset.def.hpp"
 #include "../nio/charset/CharsetEncoder.def.hpp"

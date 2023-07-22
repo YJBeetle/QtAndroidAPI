@@ -2,8 +2,10 @@
 
 #include "../io/ObjectInputStream.def.hpp"
 #include "../../JString.hpp"
+#include "../lang/Integer.def.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
+#include "./ZoneId.def.hpp"
 #include "./temporal/ValueRange.def.hpp"
 #include "./zone/ZoneRules.def.hpp"
 #include "./ZoneOffset.def.hpp"
@@ -178,6 +180,13 @@ namespace java::time
 			"isSupported",
 			"(Ljava/time/temporal/TemporalField;)Z",
 			arg0.object()
+		);
+	}
+	inline java::time::ZoneId ZoneOffset::normalized() const
+	{
+		return callObjectMethod(
+			"normalized",
+			"()Ljava/time/ZoneId;"
 		);
 	}
 	inline JObject ZoneOffset::query(JObject arg0) const

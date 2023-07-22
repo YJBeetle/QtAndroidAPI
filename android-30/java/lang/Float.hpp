@@ -73,6 +73,13 @@ namespace java::lang
 			"POSITIVE_INFINITY"
 		);
 	}
+	inline jint Float::PRECISION()
+	{
+		return getStaticField<jint>(
+			"java.lang.Float",
+			"PRECISION"
+		);
+	}
 	inline jint Float::SIZE()
 	{
 		return getStaticField<jint>(
@@ -118,6 +125,24 @@ namespace java::lang
 			"(FF)I",
 			arg0,
 			arg1
+		);
+	}
+	inline jfloat Float::float16ToFloat(jshort arg0)
+	{
+		return callStaticMethod<jfloat>(
+			"java.lang.Float",
+			"float16ToFloat",
+			"(S)F",
+			arg0
+		);
+	}
+	inline jshort Float::floatToFloat16(jfloat arg0)
+	{
+		return callStaticMethod<jshort>(
+			"java.lang.Float",
+			"floatToFloat16",
+			"(F)S",
+			arg0
 		);
 	}
 	inline jint Float::floatToIntBits(jfloat arg0)

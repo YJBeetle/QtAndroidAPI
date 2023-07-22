@@ -1,15 +1,12 @@
 #pragma once
 
 #include "../../../JArray.hpp"
-#include "../../../JArray.hpp"
 #include "../../io/ObjectInputStream.def.hpp"
 #include "../../io/ObjectOutputStream.def.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JThrowable.hpp"
-#include "../../lang/ref/ReferenceQueue.def.hpp"
 #include "./ForkJoinPool.def.hpp"
 #include "./TimeUnit.def.hpp"
-#include "./locks/ReentrantLock.def.hpp"
 #include "./ForkJoinTask.def.hpp"
 
 namespace java::util::concurrent
@@ -41,6 +38,15 @@ namespace java::util::concurrent
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/ForkJoinTask;",
 			arg0.object(),
 			arg1.object<jobject>()
+		);
+	}
+	inline java::util::concurrent::ForkJoinTask ForkJoinTask::adaptInterruptible(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.concurrent.ForkJoinTask",
+			"adaptInterruptible",
+			"(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/ForkJoinTask;",
+			arg0.object()
 		);
 	}
 	inline java::util::concurrent::ForkJoinPool ForkJoinTask::getPool()
@@ -144,6 +150,13 @@ namespace java::util::concurrent
 			arg0.object<jthrowable>()
 		);
 	}
+	inline JThrowable ForkJoinTask::exceptionNow() const
+	{
+		return callObjectMethod(
+			"exceptionNow",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 	inline java::util::concurrent::ForkJoinTask ForkJoinTask::fork() const
 	{
 		return callObjectMethod(
@@ -244,11 +257,29 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
+	inline jboolean ForkJoinTask::quietlyJoin(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callMethod<jboolean>(
+			"quietlyJoin",
+			"(JLjava/util/concurrent/TimeUnit;)Z",
+			arg0,
+			arg1.object()
+		);
+	}
 	inline void ForkJoinTask::quietlyJoin() const
 	{
 		callMethod<void>(
 			"quietlyJoin",
 			"()V"
+		);
+	}
+	inline jboolean ForkJoinTask::quietlyJoinUninterruptibly(jlong arg0, java::util::concurrent::TimeUnit arg1) const
+	{
+		return callMethod<jboolean>(
+			"quietlyJoinUninterruptibly",
+			"(JLjava/util/concurrent/TimeUnit;)Z",
+			arg0,
+			arg1.object()
 		);
 	}
 	inline void ForkJoinTask::reinitialize() const
@@ -258,12 +289,26 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
+	inline JObject ForkJoinTask::resultNow() const
+	{
+		return callObjectMethod(
+			"resultNow",
+			"()Ljava/lang/Object;"
+		);
+	}
 	inline jshort ForkJoinTask::setForkJoinTaskTag(jshort arg0) const
 	{
 		return callMethod<jshort>(
 			"setForkJoinTaskTag",
 			"(S)S",
 			arg0
+		);
+	}
+	inline JObject ForkJoinTask::state() const
+	{
+		return callObjectMethod(
+			"state",
+			"()Ljava/util/concurrent/Future$State;"
 		);
 	}
 	inline jboolean ForkJoinTask::tryUnfork() const

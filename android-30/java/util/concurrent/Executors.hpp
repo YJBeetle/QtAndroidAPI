@@ -126,6 +126,23 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
+	inline JObject Executors::newThreadPerTaskExecutor(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.concurrent.Executors",
+			"newThreadPerTaskExecutor",
+			"(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;",
+			arg0.object()
+		);
+	}
+	inline JObject Executors::newVirtualThreadPerTaskExecutor()
+	{
+		return callStaticObjectMethod(
+			"java.util.concurrent.Executors",
+			"newVirtualThreadPerTaskExecutor",
+			"()Ljava/util/concurrent/ExecutorService;"
+		);
+	}
 	inline JObject Executors::newWorkStealingPool()
 	{
 		return callStaticObjectMethod(

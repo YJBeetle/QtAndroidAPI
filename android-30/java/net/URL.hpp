@@ -8,7 +8,6 @@
 #include "../../JObject.hpp"
 #include "../lang/SecurityManager.def.hpp"
 #include "../../JString.hpp"
-#include "../lang/ThreadLocal.def.hpp"
 #include "./InetAddress.def.hpp"
 #include "./Proxy.def.hpp"
 #include "./URI.def.hpp"
@@ -72,6 +71,16 @@ namespace java::net
 		) {}
 	
 	// Methods
+	inline java::net::URL URL::of(java::net::URI arg0, java::net::URLStreamHandler arg1)
+	{
+		return callStaticObjectMethod(
+			"java.net.URL",
+			"of",
+			"(Ljava/net/URI;Ljava/net/URLStreamHandler;)Ljava/net/URL;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
 	inline void URL::setURLStreamHandlerFactory(JObject arg0)
 	{
 		callStaticMethod<void>(

@@ -7,6 +7,10 @@ namespace java::io
 {
 	class InputStream;
 }
+namespace java::io
+{
+	class OutputStream;
+}
 class JString;
 namespace java::nio::charset
 {
@@ -41,8 +45,14 @@ namespace java::util::zip
 		void close() const;
 		void closeEntry() const;
 		java::util::zip::ZipEntry getNextEntry() const;
+		jint read() const;
 		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		JByteArray readAllBytes() const;
+		JByteArray readNBytes(jint arg0) const;
+		jint readNBytes(JByteArray arg0, jint arg1, jint arg2) const;
 		jlong skip(jlong arg0) const;
+		void skipNBytes(jlong arg0) const;
+		jlong transferTo(java::io::OutputStream arg0) const;
 	};
 } // namespace java::util::zip
 

@@ -48,6 +48,7 @@ namespace java::math
 		static jint ROUND_UNNECESSARY();
 		static jint ROUND_UP();
 		static java::math::BigDecimal TEN();
+		static java::math::BigDecimal TWO();
 		static java::math::BigDecimal ZERO();
 		
 		// QJniObject forward

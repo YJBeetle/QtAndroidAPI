@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JObject.hpp"
 #include "../../JString.hpp"
 #include "./Date.def.hpp"
 #include "./TimerTask.def.hpp"

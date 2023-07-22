@@ -86,6 +86,7 @@ namespace java::time::chrono
 		JObject eras() const;
 		JString getCalendarType() const;
 		JString getId() const;
+		jboolean isIsoBased() const;
 		jboolean isLeapYear(jlong arg0) const;
 		java::time::LocalDateTime localDateTime(JObject arg0) const;
 		java::time::Period period(jint arg0, jint arg1, jint arg2) const;

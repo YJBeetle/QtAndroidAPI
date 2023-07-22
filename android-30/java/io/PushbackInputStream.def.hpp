@@ -7,6 +7,10 @@ namespace java::io
 {
 	class InputStream;
 }
+namespace java::io
+{
+	class OutputStream;
+}
 
 namespace java::io
 {
@@ -32,6 +36,7 @@ namespace java::io
 		jint read(JByteArray arg0, jint arg1, jint arg2) const;
 		void reset() const;
 		jlong skip(jlong arg0) const;
+		jlong transferTo(java::io::OutputStream arg0) const;
 		void unread(JByteArray arg0) const;
 		void unread(jint arg0) const;
 		void unread(JByteArray arg0, jint arg1, jint arg2) const;

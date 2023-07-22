@@ -3,6 +3,7 @@
 #include "./IOException.def.hpp"
 
 class JString;
+class JThrowable;
 
 namespace java::io
 {

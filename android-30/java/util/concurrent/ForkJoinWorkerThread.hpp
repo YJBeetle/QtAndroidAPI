@@ -1,9 +1,7 @@
 #pragma once
 
-#include "../../lang/ClassLoader.def.hpp"
 #include "../../lang/ThreadGroup.def.hpp"
 #include "../../../JThrowable.hpp"
-#include "../../security/AccessControlContext.def.hpp"
 #include "./ForkJoinPool.def.hpp"
 #include "./ForkJoinWorkerThread.def.hpp"
 
@@ -25,6 +23,13 @@ namespace java::util::concurrent
 	{
 		return callMethod<jint>(
 			"getPoolIndex",
+			"()I"
+		);
+	}
+	inline jint ForkJoinWorkerThread::getQueuedTaskCount() const
+	{
+		return callMethod<jint>(
+			"getQueuedTaskCount",
 			"()I"
 		);
 	}

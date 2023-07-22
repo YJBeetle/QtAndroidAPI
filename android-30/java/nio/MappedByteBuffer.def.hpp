@@ -30,6 +30,8 @@ namespace java::nio
 		
 		// Methods
 		java::nio::MappedByteBuffer clear() const;
+		java::nio::MappedByteBuffer compact() const;
+		java::nio::MappedByteBuffer duplicate() const;
 		java::nio::MappedByteBuffer flip() const;
 		java::nio::MappedByteBuffer force() const;
 		java::nio::MappedByteBuffer force(jint arg0, jint arg1) const;
@@ -40,6 +42,8 @@ namespace java::nio
 		java::nio::MappedByteBuffer position(jint arg0) const;
 		java::nio::MappedByteBuffer reset() const;
 		java::nio::MappedByteBuffer rewind() const;
+		java::nio::MappedByteBuffer slice() const;
+		java::nio::MappedByteBuffer slice(jint arg0, jint arg1) const;
 	};
 } // namespace java::nio
 

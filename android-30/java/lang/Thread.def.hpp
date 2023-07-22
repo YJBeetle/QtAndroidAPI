@@ -2,6 +2,7 @@
 
 #include "../../JObject.hpp"
 
+class JObjectArray;
 class JArray;
 class JArray;
 class JArray;
@@ -21,13 +22,13 @@ namespace java::lang
 	class ThreadGroup;
 }
 class JThrowable;
-namespace java::lang::ref
-{
-	class ReferenceQueue;
-}
 namespace java::security
 {
 	class AccessControlContext;
+}
+namespace java::time
+{
+	class Duration;
 }
 
 namespace java::lang
@@ -64,10 +65,14 @@ namespace java::lang
 		static JObject getDefaultUncaughtExceptionHandler();
 		static jboolean holdsLock(JObject arg0);
 		static jboolean interrupted();
+		static JObject ofPlatform();
+		static JObject ofVirtual();
 		static void onSpinWait();
 		static void setDefaultUncaughtExceptionHandler(JObject arg0);
+		static void sleep(java::time::Duration arg0);
 		static void sleep(jlong arg0);
 		static void sleep(jlong arg0, jint arg1);
+		static java::lang::Thread startVirtualThread(JObject arg0);
 		static void yield();
 		void checkAccess() const;
 		jint countStackFrames() const;
@@ -83,6 +88,8 @@ namespace java::lang
 		jboolean isAlive() const;
 		jboolean isDaemon() const;
 		jboolean isInterrupted() const;
+		jboolean isVirtual() const;
+		jboolean join(java::time::Duration arg0) const;
 		void join() const;
 		void join(jlong arg0) const;
 		void join(jlong arg0, jint arg1) const;
@@ -96,6 +103,7 @@ namespace java::lang
 		void start() const;
 		void stop() const;
 		void suspend() const;
+		jlong threadId() const;
 		JString toString() const;
 	};
 } // namespace java::lang

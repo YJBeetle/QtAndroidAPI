@@ -4,7 +4,6 @@
 #include "../../../JArray.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"
-#include "../../lang/ThreadLocal.def.hpp"
 #include "../ByteBuffer.def.hpp"
 #include "../CharBuffer.def.hpp"
 #include "./CharsetDecoder.def.hpp"
@@ -43,6 +42,16 @@ namespace java::nio::charset
 			"forName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
 			arg0.object<jstring>()
+		);
+	}
+	inline java::nio::charset::Charset Charset::forName(JString arg0, java::nio::charset::Charset arg1)
+	{
+		return callStaticObjectMethod(
+			"java.nio.charset.Charset",
+			"forName",
+			"(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;",
+			arg0.object<jstring>(),
+			arg1.object()
 		);
 	}
 	inline jboolean Charset::isSupported(JString arg0)

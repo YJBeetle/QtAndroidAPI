@@ -18,6 +18,13 @@ namespace java::io
 	// Constructors
 	
 	// Methods
+	inline java::nio::charset::Charset Console::charset() const
+	{
+		return callObjectMethod(
+			"charset",
+			"()Ljava/nio/charset/Charset;"
+		);
+	}
 	inline void Console::flush() const
 	{
 		callMethod<void>(

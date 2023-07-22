@@ -44,6 +44,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript COPTIC();
 		static java::lang::Character_UnicodeScript CUNEIFORM();
 		static java::lang::Character_UnicodeScript CYPRIOT();
+		static java::lang::Character_UnicodeScript CYPRO_MINOAN();
 		static java::lang::Character_UnicodeScript CYRILLIC();
 		static java::lang::Character_UnicodeScript DESERET();
 		static java::lang::Character_UnicodeScript DEVANAGARI();
@@ -77,6 +78,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript KAITHI();
 		static java::lang::Character_UnicodeScript KANNADA();
 		static java::lang::Character_UnicodeScript KATAKANA();
+		static java::lang::Character_UnicodeScript KAWI();
 		static java::lang::Character_UnicodeScript KAYAH_LI();
 		static java::lang::Character_UnicodeScript KHAROSHTHI();
 		static java::lang::Character_UnicodeScript KHITAN_SMALL_SCRIPT();
@@ -111,6 +113,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript MULTANI();
 		static java::lang::Character_UnicodeScript MYANMAR();
 		static java::lang::Character_UnicodeScript NABATAEAN();
+		static java::lang::Character_UnicodeScript NAG_MUNDARI();
 		static java::lang::Character_UnicodeScript NANDINAGARI();
 		static java::lang::Character_UnicodeScript NEWA();
 		static java::lang::Character_UnicodeScript NEW_TAI_LUE();
@@ -126,6 +129,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript OLD_SOGDIAN();
 		static java::lang::Character_UnicodeScript OLD_SOUTH_ARABIAN();
 		static java::lang::Character_UnicodeScript OLD_TURKIC();
+		static java::lang::Character_UnicodeScript OLD_UYGHUR();
 		static java::lang::Character_UnicodeScript OL_CHIKI();
 		static java::lang::Character_UnicodeScript ORIYA();
 		static java::lang::Character_UnicodeScript OSAGE();
@@ -158,6 +162,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript TAI_VIET();
 		static java::lang::Character_UnicodeScript TAKRI();
 		static java::lang::Character_UnicodeScript TAMIL();
+		static java::lang::Character_UnicodeScript TANGSA();
 		static java::lang::Character_UnicodeScript TANGUT();
 		static java::lang::Character_UnicodeScript TELUGU();
 		static java::lang::Character_UnicodeScript THAANA();
@@ -165,9 +170,11 @@ namespace java::lang
 		static java::lang::Character_UnicodeScript TIBETAN();
 		static java::lang::Character_UnicodeScript TIFINAGH();
 		static java::lang::Character_UnicodeScript TIRHUTA();
+		static java::lang::Character_UnicodeScript TOTO();
 		static java::lang::Character_UnicodeScript UGARITIC();
 		static java::lang::Character_UnicodeScript UNKNOWN();
 		static java::lang::Character_UnicodeScript VAI();
+		static java::lang::Character_UnicodeScript VITHKUQI();
 		static java::lang::Character_UnicodeScript WANCHO();
 		static java::lang::Character_UnicodeScript WARANG_CITI();
 		static java::lang::Character_UnicodeScript YEZIDI();

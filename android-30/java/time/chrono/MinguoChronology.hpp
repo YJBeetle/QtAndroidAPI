@@ -136,6 +136,13 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		);
 	}
+	inline jboolean MinguoChronology::isIsoBased() const
+	{
+		return callMethod<jboolean>(
+			"isIsoBased",
+			"()Z"
+		);
+	}
 	inline jboolean MinguoChronology::isLeapYear(jlong arg0) const
 	{
 		return callMethod<jboolean>(

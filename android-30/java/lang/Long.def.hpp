@@ -44,8 +44,10 @@ namespace java::lang
 		static jint bitCount(jlong arg0);
 		static jint compare(jlong arg0, jlong arg1);
 		static jint compareUnsigned(jlong arg0, jlong arg1);
+		static jlong compress(jlong arg0, jlong arg1);
 		static java::lang::Long decode(JString arg0);
 		static jlong divideUnsigned(jlong arg0, jlong arg1);
+		static jlong expand(jlong arg0, jlong arg1);
 		static java::lang::Long getLong(JString arg0);
 		static java::lang::Long getLong(JString arg0, java::lang::Long arg1);
 		static java::lang::Long getLong(JString arg0, jlong arg1);

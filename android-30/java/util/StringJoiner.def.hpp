@@ -2,7 +2,6 @@
 
 #include "../../JObject.hpp"
 
-class JCharArray;
 class JArray;
 class JString;
 class JString;

@@ -11,6 +11,10 @@ namespace java::io
 {
 	class FileDescriptor;
 }
+namespace java::io
+{
+	class OutputStream;
+}
 class JObject;
 class JString;
 namespace java::nio::channels
@@ -42,7 +46,10 @@ namespace java::io
 		jint read() const;
 		jint read(JByteArray arg0) const;
 		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		JByteArray readAllBytes() const;
+		JByteArray readNBytes(jint arg0) const;
 		jlong skip(jlong arg0) const;
+		jlong transferTo(java::io::OutputStream arg0) const;
 	};
 } // namespace java::io
 
