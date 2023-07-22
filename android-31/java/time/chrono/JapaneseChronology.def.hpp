@@ -73,6 +73,7 @@ namespace java::time::chrono
 		JObject eras() const;
 		JString getCalendarType() const;
 		JString getId() const;
+		jboolean isIsoBased() const;
 		jboolean isLeapYear(jlong arg0) const;
 		JObject localDateTime(JObject arg0) const;
 		jint prolepticYear(JObject arg0, jint arg1) const;

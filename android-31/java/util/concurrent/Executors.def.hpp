@@ -31,6 +31,8 @@ namespace java::util::concurrent
 		static JObject newSingleThreadExecutor(JObject arg0);
 		static JObject newSingleThreadScheduledExecutor();
 		static JObject newSingleThreadScheduledExecutor(JObject arg0);
+		static JObject newThreadPerTaskExecutor(JObject arg0);
+		static JObject newVirtualThreadPerTaskExecutor();
 		static JObject newWorkStealingPool();
 		static JObject newWorkStealingPool(jint arg0);
 		static JObject privilegedCallable(JObject arg0);

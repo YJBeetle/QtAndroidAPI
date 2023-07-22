@@ -3,7 +3,6 @@
 #include "../../../JObject.hpp"
 
 class JByteArray;
-class JCharArray;
 class JObject;
 class JString;
 

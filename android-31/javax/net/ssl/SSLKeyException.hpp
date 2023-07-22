@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../../JString.hpp"
+#include "../../../JThrowable.hpp"
 #include "./SSLKeyException.def.hpp"
 
 namespace javax::net::ssl
@@ -13,6 +14,13 @@ namespace javax::net::ssl
 			"javax.net.ssl.SSLKeyException",
 			"(Ljava/lang/String;)V",
 			arg0.object<jstring>()
+		) {}
+	inline SSLKeyException::SSLKeyException(JString arg0, JThrowable arg1)
+		: javax::net::ssl::SSLException(
+			"javax.net.ssl.SSLKeyException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0.object<jstring>(),
+			arg1.object<jthrowable>()
 		) {}
 	
 	// Methods

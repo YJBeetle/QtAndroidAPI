@@ -137,6 +137,13 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		);
 	}
+	inline jboolean JapaneseChronology::isIsoBased() const
+	{
+		return callMethod<jboolean>(
+			"isIsoBased",
+			"()Z"
+		);
+	}
 	inline jboolean JapaneseChronology::isLeapYear(jlong arg0) const
 	{
 		return callMethod<jboolean>(

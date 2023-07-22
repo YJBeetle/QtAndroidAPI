@@ -31,6 +31,24 @@ namespace javax::security::auth
 		) {}
 	
 	// Methods
+	inline JObject Subject::callAs(javax::security::auth::Subject arg0, JObject arg1)
+	{
+		return callStaticObjectMethod(
+			"javax.security.auth.Subject",
+			"callAs",
+			"(Ljavax/security/auth/Subject;Ljava/util/concurrent/Callable;)Ljava/lang/Object;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline javax::security::auth::Subject Subject::current()
+	{
+		return callStaticObjectMethod(
+			"javax.security.auth.Subject",
+			"current",
+			"()Ljavax/security/auth/Subject;"
+		);
+	}
 	inline JObject Subject::doAs(javax::security::auth::Subject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(

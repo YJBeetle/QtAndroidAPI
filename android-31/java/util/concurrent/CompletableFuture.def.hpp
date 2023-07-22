@@ -52,6 +52,7 @@ namespace java::util::concurrent
 		java::util::concurrent::CompletableFuture completeOnTimeout(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
 		java::util::concurrent::CompletableFuture copy() const;
 		JObject defaultExecutor() const;
+		JThrowable exceptionNow() const;
 		java::util::concurrent::CompletableFuture exceptionally(JObject arg0) const;
 		java::util::concurrent::CompletableFuture exceptionallyAsync(JObject arg0) const;
 		java::util::concurrent::CompletableFuture exceptionallyAsync(JObject arg0, JObject arg1) const;
@@ -74,12 +75,14 @@ namespace java::util::concurrent
 		void obtrudeException(JThrowable arg0) const;
 		void obtrudeValue(JObject arg0) const;
 		java::util::concurrent::CompletableFuture orTimeout(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		JObject resultNow() const;
 		java::util::concurrent::CompletableFuture runAfterBoth(JObject arg0, JObject arg1) const;
 		java::util::concurrent::CompletableFuture runAfterBothAsync(JObject arg0, JObject arg1) const;
 		java::util::concurrent::CompletableFuture runAfterBothAsync(JObject arg0, JObject arg1, JObject arg2) const;
 		java::util::concurrent::CompletableFuture runAfterEither(JObject arg0, JObject arg1) const;
 		java::util::concurrent::CompletableFuture runAfterEitherAsync(JObject arg0, JObject arg1) const;
 		java::util::concurrent::CompletableFuture runAfterEitherAsync(JObject arg0, JObject arg1, JObject arg2) const;
+		JObject state() const;
 		java::util::concurrent::CompletableFuture thenAccept(JObject arg0) const;
 		java::util::concurrent::CompletableFuture thenAcceptAsync(JObject arg0) const;
 		java::util::concurrent::CompletableFuture thenAcceptAsync(JObject arg0, JObject arg1) const;

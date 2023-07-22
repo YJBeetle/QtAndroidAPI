@@ -41,6 +41,7 @@ namespace java::io
 		// Constructors
 		
 		// Methods
+		java::nio::charset::Charset charset() const;
 		void flush() const;
 		java::io::Console format(JString arg0, JObjectArray arg1) const;
 		java::io::Console printf(JString arg0, JObjectArray arg1) const;

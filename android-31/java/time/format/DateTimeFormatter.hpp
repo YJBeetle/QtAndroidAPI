@@ -173,6 +173,15 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
+	inline java::time::format::DateTimeFormatter DateTimeFormatter::ofLocalizedPattern(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.time.format.DateTimeFormatter",
+			"ofLocalizedPattern",
+			"(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;",
+			arg0.object<jstring>()
+		);
+	}
 	inline java::time::format::DateTimeFormatter DateTimeFormatter::ofLocalizedTime(java::time::format::FormatStyle arg0)
 	{
 		return callStaticObjectMethod(

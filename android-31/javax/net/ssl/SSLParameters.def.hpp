@@ -28,10 +28,12 @@ namespace javax::net::ssl
 		jboolean getEnableRetransmissions() const;
 		JString getEndpointIdentificationAlgorithm() const;
 		jint getMaximumPacketSize() const;
+		JArray getNamedGroups() const;
 		jboolean getNeedClientAuth() const;
 		JArray getProtocols() const;
 		JObject getSNIMatchers() const;
 		JObject getServerNames() const;
+		JArray getSignatureSchemes() const;
 		jboolean getUseCipherSuitesOrder() const;
 		jboolean getWantClientAuth() const;
 		void setAlgorithmConstraints(JObject arg0) const;
@@ -40,10 +42,12 @@ namespace javax::net::ssl
 		void setEnableRetransmissions(jboolean arg0) const;
 		void setEndpointIdentificationAlgorithm(JString arg0) const;
 		void setMaximumPacketSize(jint arg0) const;
+		void setNamedGroups(JArray arg0) const;
 		void setNeedClientAuth(jboolean arg0) const;
 		void setProtocols(JArray arg0) const;
 		void setSNIMatchers(JObject arg0) const;
 		void setServerNames(JObject arg0) const;
+		void setSignatureSchemes(JArray arg0) const;
 		void setUseCipherSuitesOrder(jboolean arg0) const;
 		void setWantClientAuth(jboolean arg0) const;
 	};

@@ -2,13 +2,12 @@
 
 #include "../../JObjectArray.hpp"
 #include "../../JArray.hpp"
-#include "../../JArray.hpp"
 #include "../io/File.def.hpp"
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
+#include "../net/URL.def.hpp"
 #include "./Provider.def.hpp"
-#include "../util/LinkedHashSet.def.hpp"
 #include "../util/Properties.def.hpp"
 #include "./Security.def.hpp"
 

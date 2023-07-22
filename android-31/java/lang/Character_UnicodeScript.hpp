@@ -233,6 +233,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::CYPRO_MINOAN()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"CYPRO_MINOAN",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
 	inline java::lang::Character_UnicodeScript Character_UnicodeScript::CYRILLIC()
 	{
 		return getStaticObjectField(
@@ -494,6 +502,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
 			"KATAKANA",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::KAWI()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"KAWI",
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
@@ -769,6 +785,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::NAG_MUNDARI()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"NAG_MUNDARI",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
 	inline java::lang::Character_UnicodeScript Character_UnicodeScript::NANDINAGARI()
 	{
 		return getStaticObjectField(
@@ -886,6 +910,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
 			"OLD_TURKIC",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::OLD_UYGHUR()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"OLD_UYGHUR",
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
@@ -1145,6 +1177,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::TANGSA()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"TANGSA",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
 	inline java::lang::Character_UnicodeScript Character_UnicodeScript::TANGUT()
 	{
 		return getStaticObjectField(
@@ -1201,6 +1241,14 @@ namespace java::lang
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::TOTO()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"TOTO",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
 	inline java::lang::Character_UnicodeScript Character_UnicodeScript::UGARITIC()
 	{
 		return getStaticObjectField(
@@ -1222,6 +1270,14 @@ namespace java::lang
 		return getStaticObjectField(
 			"java.lang.Character$UnicodeScript",
 			"VAI",
+			"Ljava/lang/Character$UnicodeScript;"
+		);
+	}
+	inline java::lang::Character_UnicodeScript Character_UnicodeScript::VITHKUQI()
+	{
+		return getStaticObjectField(
+			"java.lang.Character$UnicodeScript",
+			"VITHKUQI",
 			"Ljava/lang/Character$UnicodeScript;"
 		);
 	}

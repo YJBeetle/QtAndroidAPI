@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../JString.hpp"
+#include "../../JThrowable.hpp"
 #include "./ObjectStreamException.def.hpp"
 
 namespace java::io

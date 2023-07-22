@@ -20,6 +20,7 @@ namespace java::util
 		LinkedHashSet(jint arg0, jfloat arg1);
 		
 		// Methods
+		static java::util::LinkedHashSet newLinkedHashSet(jint arg0);
 		JObject spliterator() const;
 	};
 } // namespace java::util

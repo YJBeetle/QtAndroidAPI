@@ -95,6 +95,16 @@ namespace java::lang
 			arg1
 		);
 	}
+	inline jint Integer::compress(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Integer",
+			"compress",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
 	inline java::lang::Integer Integer::decode(JString arg0)
 	{
 		return callStaticObjectMethod(
@@ -109,6 +119,16 @@ namespace java::lang
 		return callStaticMethod<jint>(
 			"java.lang.Integer",
 			"divideUnsigned",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	inline jint Integer::expand(jint arg0, jint arg1)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Integer",
+			"expand",
 			"(II)I",
 			arg0,
 			arg1

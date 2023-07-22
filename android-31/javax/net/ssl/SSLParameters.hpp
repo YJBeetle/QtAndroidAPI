@@ -71,6 +71,13 @@ namespace javax::net::ssl
 			"()I"
 		);
 	}
+	inline JArray SSLParameters::getNamedGroups() const
+	{
+		return callObjectMethod(
+			"getNamedGroups",
+			"()[Ljava/lang/String;"
+		);
+	}
 	inline jboolean SSLParameters::getNeedClientAuth() const
 	{
 		return callMethod<jboolean>(
@@ -97,6 +104,13 @@ namespace javax::net::ssl
 		return callObjectMethod(
 			"getServerNames",
 			"()Ljava/util/List;"
+		);
+	}
+	inline JArray SSLParameters::getSignatureSchemes() const
+	{
+		return callObjectMethod(
+			"getSignatureSchemes",
+			"()[Ljava/lang/String;"
 		);
 	}
 	inline jboolean SSLParameters::getUseCipherSuitesOrder() const
@@ -161,6 +175,14 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
+	inline void SSLParameters::setNamedGroups(JArray arg0) const
+	{
+		callMethod<void>(
+			"setNamedGroups",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
+		);
+	}
 	inline void SSLParameters::setNeedClientAuth(jboolean arg0) const
 	{
 		callMethod<void>(
@@ -191,6 +213,14 @@ namespace javax::net::ssl
 			"setServerNames",
 			"(Ljava/util/List;)V",
 			arg0.object()
+		);
+	}
+	inline void SSLParameters::setSignatureSchemes(JArray arg0) const
+	{
+		callMethod<void>(
+			"setSignatureSchemes",
+			"([Ljava/lang/String;)V",
+			arg0.object<jarray>()
 		);
 	}
 	inline void SSLParameters::setUseCipherSuitesOrder(jboolean arg0) const

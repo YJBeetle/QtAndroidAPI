@@ -31,11 +31,14 @@ namespace java::util::concurrent
 		
 		// Methods
 		jboolean cancel(jboolean arg0) const;
+		JThrowable exceptionNow() const;
 		JObject get() const;
 		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
 		jboolean isCancelled() const;
 		jboolean isDone() const;
+		JObject resultNow() const;
 		void run() const;
+		JObject state() const;
 		JString toString() const;
 	};
 } // namespace java::util::concurrent

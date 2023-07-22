@@ -11,9 +11,9 @@ namespace java::lang
 class JClass;
 class JObject;
 class JString;
-namespace java::lang::ref
+namespace java::lang::reflect
 {
-	class Reference;
+	class Constructor;
 }
 namespace java::security
 {

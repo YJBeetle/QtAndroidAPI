@@ -7,7 +7,12 @@ namespace java::io
 {
 	class InputStream;
 }
+class JObject;
 class JString;
+namespace java::nio
+{
+	class CharBuffer;
+}
 namespace java::nio::charset
 {
 	class Charset;
@@ -38,6 +43,7 @@ namespace java::io
 		void close() const;
 		JString getEncoding() const;
 		jint read() const;
+		jint read(java::nio::CharBuffer arg0) const;
 		jint read(JCharArray arg0, jint arg1, jint arg2) const;
 		jboolean ready() const;
 	};

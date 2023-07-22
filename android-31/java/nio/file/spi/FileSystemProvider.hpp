@@ -96,6 +96,15 @@ namespace java::nio::file::spi
 			arg0.object()
 		);
 	}
+	inline jboolean FileSystemProvider::exists(JObject arg0, JArray arg1) const
+	{
+		return callMethod<jboolean>(
+			"exists",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z",
+			arg0.object(),
+			arg1.object<jarray>()
+		);
+	}
 	inline JObject FileSystemProvider::getFileAttributeView(JObject arg0, JClass arg1, JArray arg2) const
 	{
 		return callObjectMethod(
@@ -257,6 +266,16 @@ namespace java::nio::file::spi
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
 			arg0.object(),
 			arg1.object<jstring>(),
+			arg2.object<jarray>()
+		);
+	}
+	inline JObject FileSystemProvider::readAttributesIfExists(JObject arg0, JClass arg1, JArray arg2) const
+	{
+		return callObjectMethod(
+			"readAttributesIfExists",
+			"(Ljava/nio/file/Path;Ljava/lang/Class;[Ljava/nio/file/LinkOption;)Ljava/nio/file/attribute/BasicFileAttributes;",
+			arg0.object(),
+			arg1.object<jclass>(),
 			arg2.object<jarray>()
 		);
 	}

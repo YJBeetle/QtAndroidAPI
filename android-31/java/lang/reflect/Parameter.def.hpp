@@ -25,6 +25,7 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
+		JObject accessFlags() const;
 		jboolean equals(JObject arg0) const;
 		JObject getAnnotatedType() const;
 		JObject getAnnotation(JClass arg0) const;

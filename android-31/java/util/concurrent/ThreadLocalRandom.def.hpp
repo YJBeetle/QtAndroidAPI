@@ -13,10 +13,6 @@ namespace java::lang
 {
 	class Thread;
 }
-namespace java::lang
-{
-	class ThreadLocal;
-}
 namespace java::security
 {
 	class AccessControlContext;
@@ -62,7 +58,8 @@ namespace java::util::concurrent
 		jdouble nextDouble(jdouble arg0) const;
 		jdouble nextDouble(jdouble arg0, jdouble arg1) const;
 		jfloat nextFloat() const;
-		jdouble nextGaussian() const;
+		jfloat nextFloat(jfloat arg0) const;
+		jfloat nextFloat(jfloat arg0, jfloat arg1) const;
 		jint nextInt() const;
 		jint nextInt(jint arg0) const;
 		jint nextInt(jint arg0, jint arg1) const;
