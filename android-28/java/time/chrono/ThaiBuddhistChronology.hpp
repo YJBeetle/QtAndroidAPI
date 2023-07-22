@@ -11,7 +11,6 @@
 #include "../format/ResolverStyle.def.hpp"
 #include "../temporal/ChronoField.def.hpp"
 #include "../temporal/ValueRange.def.hpp"
-#include "../../util/HashMap.def.hpp"
 #include "./ThaiBuddhistChronology.def.hpp"
 
 namespace java::time::chrono
@@ -135,6 +134,13 @@ namespace java::time::chrono
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
+		);
+	}
+	inline jboolean ThaiBuddhistChronology::isIsoBased() const
+	{
+		return callMethod<jboolean>(
+			"isIsoBased",
+			"()Z"
 		);
 	}
 	inline jboolean ThaiBuddhistChronology::isLeapYear(jlong arg0) const

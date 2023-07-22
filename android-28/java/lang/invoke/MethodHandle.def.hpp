@@ -4,11 +4,19 @@
 
 class JObjectArray;
 class JClass;
+namespace java::lang
+{
+	class ClassLoader;
+}
 class JObject;
 class JString;
 namespace java::lang::invoke
 {
 	class MethodType;
+}
+namespace java::lang::ref
+{
+	class SoftReference;
 }
 namespace java::util
 {

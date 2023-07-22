@@ -35,6 +35,7 @@ namespace java::util
 		HashSet(jint arg0, jfloat arg1);
 		
 		// Methods
+		static java::util::HashSet newHashSet(jint arg0);
 		jboolean add(JObject arg0) const;
 		void clear() const;
 		JObject clone() const;

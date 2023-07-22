@@ -38,6 +38,15 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline java::util::HashSet HashSet::newHashSet(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.HashSet",
+			"newHashSet",
+			"(I)Ljava/util/HashSet;",
+			arg0
+		);
+	}
 	inline jboolean HashSet::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(

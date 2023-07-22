@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../../JObject.hpp"
+#include "../ThreadGroup.def.hpp"
 #include "./ReferenceQueue.def.hpp"
 #include "./Reference.def.hpp"
 

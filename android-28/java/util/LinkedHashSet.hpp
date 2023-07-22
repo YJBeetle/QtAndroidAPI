@@ -33,6 +33,15 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline java::util::LinkedHashSet LinkedHashSet::newLinkedHashSet(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.LinkedHashSet",
+			"newLinkedHashSet",
+			"(I)Ljava/util/LinkedHashSet;",
+			arg0
+		);
+	}
 	inline JObject LinkedHashSet::spliterator() const
 	{
 		return callObjectMethod(

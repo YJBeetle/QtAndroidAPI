@@ -2,6 +2,7 @@
 
 #include "../util/Properties.def.hpp"
 
+class JObjectArray;
 class JArray;
 namespace java::io
 {
@@ -11,7 +12,6 @@ namespace java::io
 {
 	class ObjectInputStream;
 }
-class JClass;
 class JObject;
 class JString;
 namespace java::security

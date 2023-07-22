@@ -35,6 +35,13 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
+	inline JThrowable FutureTask::exceptionNow() const
+	{
+		return callObjectMethod(
+			"exceptionNow",
+			"()Ljava/lang/Throwable;"
+		);
+	}
 	inline JObject FutureTask::get() const
 	{
 		return callObjectMethod(
@@ -65,11 +72,25 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
+	inline JObject FutureTask::resultNow() const
+	{
+		return callObjectMethod(
+			"resultNow",
+			"()Ljava/lang/Object;"
+		);
+	}
 	inline void FutureTask::run() const
 	{
 		callMethod<void>(
 			"run",
 			"()V"
+		);
+	}
+	inline JObject FutureTask::state() const
+	{
+		return callObjectMethod(
+			"state",
+			"()Ljava/util/concurrent/Future$State;"
 		);
 	}
 	inline JString FutureTask::toString() const

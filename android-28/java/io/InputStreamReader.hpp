@@ -2,7 +2,9 @@
 
 #include "../../JCharArray.hpp"
 #include "./InputStream.def.hpp"
+#include "../../JObject.hpp"
 #include "../../JString.hpp"
+#include "../nio/CharBuffer.def.hpp"
 #include "../nio/charset/Charset.def.hpp"
 #include "../nio/charset/CharsetDecoder.def.hpp"
 #include "./InputStreamReader.def.hpp"
@@ -60,6 +62,14 @@ namespace java::io
 		return callMethod<jint>(
 			"read",
 			"()I"
+		);
+	}
+	inline jint InputStreamReader::read(java::nio::CharBuffer arg0) const
+	{
+		return callMethod<jint>(
+			"read",
+			"(Ljava/nio/CharBuffer;)I",
+			arg0.object()
 		);
 	}
 	inline jint InputStreamReader::read(JCharArray arg0, jint arg1, jint arg2) const

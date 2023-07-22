@@ -62,6 +62,17 @@ namespace java::nio::channels
 			arg2
 		);
 	}
+	inline JObject FileChannel::map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2, JObject arg3) const
+	{
+		return callObjectMethod(
+			"map",
+			"(Ljava/nio/channels/FileChannel$MapMode;JJLjava/lang/foreign/SegmentScope;)Ljava/lang/foreign/MemorySegment;",
+			arg0.object(),
+			arg1,
+			arg2,
+			arg3.object()
+		);
+	}
 	inline java::nio::MappedByteBuffer FileChannel::map(java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2) const
 	{
 		return callObjectMethod(

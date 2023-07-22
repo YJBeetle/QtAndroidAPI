@@ -84,6 +84,7 @@ namespace java::time::format
 		static java::time::format::DateTimeFormatter ofLocalizedDate(java::time::format::FormatStyle arg0);
 		static java::time::format::DateTimeFormatter ofLocalizedDateTime(java::time::format::FormatStyle arg0);
 		static java::time::format::DateTimeFormatter ofLocalizedDateTime(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1);
+		static java::time::format::DateTimeFormatter ofLocalizedPattern(JString arg0);
 		static java::time::format::DateTimeFormatter ofLocalizedTime(java::time::format::FormatStyle arg0);
 		static java::time::format::DateTimeFormatter ofPattern(JString arg0);
 		static java::time::format::DateTimeFormatter ofPattern(JString arg0, java::util::Locale arg1);

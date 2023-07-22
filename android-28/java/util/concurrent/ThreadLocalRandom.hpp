@@ -5,7 +5,6 @@
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"
 #include "../../lang/Thread.def.hpp"
-#include "../../lang/ThreadLocal.def.hpp"
 #include "../../security/AccessControlContext.def.hpp"
 #include "./atomic/AtomicInteger.def.hpp"
 #include "./atomic/AtomicLong.def.hpp"
@@ -166,11 +165,21 @@ namespace java::util::concurrent
 			"()F"
 		);
 	}
-	inline jdouble ThreadLocalRandom::nextGaussian() const
+	inline jfloat ThreadLocalRandom::nextFloat(jfloat arg0) const
 	{
-		return callMethod<jdouble>(
-			"nextGaussian",
-			"()D"
+		return callMethod<jfloat>(
+			"nextFloat",
+			"(F)F",
+			arg0
+		);
+	}
+	inline jfloat ThreadLocalRandom::nextFloat(jfloat arg0, jfloat arg1) const
+	{
+		return callMethod<jfloat>(
+			"nextFloat",
+			"(FF)F",
+			arg0,
+			arg1
 		);
 	}
 	inline jint ThreadLocalRandom::nextInt() const

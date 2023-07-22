@@ -10,7 +10,7 @@ class JObject;
 class JString;
 namespace java::lang
 {
-	class StringBuffer;
+	class StringBuilder;
 }
 namespace java::text
 {

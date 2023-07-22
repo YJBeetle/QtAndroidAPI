@@ -7,6 +7,7 @@
 #include "../io/PrintStream.def.hpp"
 #include "../../JString.hpp"
 #include "../nio/charset/Charset.def.hpp"
+#include "../text/DecimalFormatSymbols.def.hpp"
 #include "./Locale.def.hpp"
 #include "./regex/Pattern.def.hpp"
 #include "./Formatter.def.hpp"

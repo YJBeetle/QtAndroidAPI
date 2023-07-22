@@ -2,6 +2,7 @@
 
 #include "../../../JByteArray.hpp"
 #include "../../io/InputStream.def.hpp"
+#include "../../io/OutputStream.def.hpp"
 #include "../../../JString.hpp"
 #include "../../nio/charset/Charset.def.hpp"
 #include "./CRC32.def.hpp"
@@ -56,10 +57,42 @@ namespace java::util::zip
 			"()Ljava/util/zip/ZipEntry;"
 		);
 	}
+	inline jint ZipInputStream::read() const
+	{
+		return callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
 	inline jint ZipInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
+			"([BII)I",
+			arg0.object<jbyteArray>(),
+			arg1,
+			arg2
+		);
+	}
+	inline JByteArray ZipInputStream::readAllBytes() const
+	{
+		return callObjectMethod(
+			"readAllBytes",
+			"()[B"
+		);
+	}
+	inline JByteArray ZipInputStream::readNBytes(jint arg0) const
+	{
+		return callObjectMethod(
+			"readNBytes",
+			"(I)[B",
+			arg0
+		);
+	}
+	inline jint ZipInputStream::readNBytes(JByteArray arg0, jint arg1, jint arg2) const
+	{
+		return callMethod<jint>(
+			"readNBytes",
 			"([BII)I",
 			arg0.object<jbyteArray>(),
 			arg1,
@@ -72,6 +105,22 @@ namespace java::util::zip
 			"skip",
 			"(J)J",
 			arg0
+		);
+	}
+	inline void ZipInputStream::skipNBytes(jlong arg0) const
+	{
+		callMethod<void>(
+			"skipNBytes",
+			"(J)V",
+			arg0
+		);
+	}
+	inline jlong ZipInputStream::transferTo(java::io::OutputStream arg0) const
+	{
+		return callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/OutputStream;)J",
+			arg0.object()
 		);
 	}
 } // namespace java::util::zip

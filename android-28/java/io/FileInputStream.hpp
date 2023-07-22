@@ -3,6 +3,7 @@
 #include "../../JByteArray.hpp"
 #include "./File.def.hpp"
 #include "./FileDescriptor.def.hpp"
+#include "./OutputStream.def.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
 #include "../nio/channels/FileChannel.def.hpp"
@@ -86,12 +87,35 @@ namespace java::io
 			arg2
 		);
 	}
+	inline JByteArray FileInputStream::readAllBytes() const
+	{
+		return callObjectMethod(
+			"readAllBytes",
+			"()[B"
+		);
+	}
+	inline JByteArray FileInputStream::readNBytes(jint arg0) const
+	{
+		return callObjectMethod(
+			"readNBytes",
+			"(I)[B",
+			arg0
+		);
+	}
 	inline jlong FileInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
+		);
+	}
+	inline jlong FileInputStream::transferTo(java::io::OutputStream arg0) const
+	{
+		return callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/OutputStream;)J",
+			arg0.object()
 		);
 	}
 } // namespace java::io

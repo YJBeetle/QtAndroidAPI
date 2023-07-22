@@ -4,17 +4,9 @@
 
 namespace java::lang
 {
-	class ClassLoader;
-}
-namespace java::lang
-{
 	class ThreadGroup;
 }
 class JThrowable;
-namespace java::security
-{
-	class AccessControlContext;
-}
 namespace java::util::concurrent
 {
 	class ForkJoinPool;
@@ -36,6 +28,7 @@ namespace java::util::concurrent
 		// Methods
 		java::util::concurrent::ForkJoinPool getPool() const;
 		jint getPoolIndex() const;
+		jint getQueuedTaskCount() const;
 		void run() const;
 	};
 } // namespace java::util::concurrent

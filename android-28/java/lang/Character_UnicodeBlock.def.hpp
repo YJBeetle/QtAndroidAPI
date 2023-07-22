@@ -24,6 +24,8 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock ANCIENT_SYMBOLS();
 		static java::lang::Character_UnicodeBlock ARABIC();
 		static java::lang::Character_UnicodeBlock ARABIC_EXTENDED_A();
+		static java::lang::Character_UnicodeBlock ARABIC_EXTENDED_B();
+		static java::lang::Character_UnicodeBlock ARABIC_EXTENDED_C();
 		static java::lang::Character_UnicodeBlock ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS();
 		static java::lang::Character_UnicodeBlock ARABIC_PRESENTATION_FORMS_A();
 		static java::lang::Character_UnicodeBlock ARABIC_PRESENTATION_FORMS_B();
@@ -71,6 +73,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E();
 		static java::lang::Character_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F();
 		static java::lang::Character_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G();
+		static java::lang::Character_UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H();
 		static java::lang::Character_UnicodeBlock COMBINING_DIACRITICAL_MARKS();
 		static java::lang::Character_UnicodeBlock COMBINING_DIACRITICAL_MARKS_EXTENDED();
 		static java::lang::Character_UnicodeBlock COMBINING_DIACRITICAL_MARKS_SUPPLEMENT();
@@ -85,14 +88,17 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock CUNEIFORM_NUMBERS_AND_PUNCTUATION();
 		static java::lang::Character_UnicodeBlock CURRENCY_SYMBOLS();
 		static java::lang::Character_UnicodeBlock CYPRIOT_SYLLABARY();
+		static java::lang::Character_UnicodeBlock CYPRO_MINOAN();
 		static java::lang::Character_UnicodeBlock CYRILLIC();
 		static java::lang::Character_UnicodeBlock CYRILLIC_EXTENDED_A();
 		static java::lang::Character_UnicodeBlock CYRILLIC_EXTENDED_B();
 		static java::lang::Character_UnicodeBlock CYRILLIC_EXTENDED_C();
+		static java::lang::Character_UnicodeBlock CYRILLIC_EXTENDED_D();
 		static java::lang::Character_UnicodeBlock CYRILLIC_SUPPLEMENTARY();
 		static java::lang::Character_UnicodeBlock DESERET();
 		static java::lang::Character_UnicodeBlock DEVANAGARI();
 		static java::lang::Character_UnicodeBlock DEVANAGARI_EXTENDED();
+		static java::lang::Character_UnicodeBlock DEVANAGARI_EXTENDED_A();
 		static java::lang::Character_UnicodeBlock DINGBATS();
 		static java::lang::Character_UnicodeBlock DIVES_AKURU();
 		static java::lang::Character_UnicodeBlock DOGRA();
@@ -111,6 +117,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock ETHIOPIC();
 		static java::lang::Character_UnicodeBlock ETHIOPIC_EXTENDED();
 		static java::lang::Character_UnicodeBlock ETHIOPIC_EXTENDED_A();
+		static java::lang::Character_UnicodeBlock ETHIOPIC_EXTENDED_B();
 		static java::lang::Character_UnicodeBlock ETHIOPIC_SUPPLEMENT();
 		static java::lang::Character_UnicodeBlock GENERAL_PUNCTUATION();
 		static java::lang::Character_UnicodeBlock GEOMETRIC_SHAPES();
@@ -149,13 +156,16 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock IPA_EXTENSIONS();
 		static java::lang::Character_UnicodeBlock JAVANESE();
 		static java::lang::Character_UnicodeBlock KAITHI();
+		static java::lang::Character_UnicodeBlock KAKTOVIK_NUMERALS();
 		static java::lang::Character_UnicodeBlock KANA_EXTENDED_A();
+		static java::lang::Character_UnicodeBlock KANA_EXTENDED_B();
 		static java::lang::Character_UnicodeBlock KANA_SUPPLEMENT();
 		static java::lang::Character_UnicodeBlock KANBUN();
 		static java::lang::Character_UnicodeBlock KANGXI_RADICALS();
 		static java::lang::Character_UnicodeBlock KANNADA();
 		static java::lang::Character_UnicodeBlock KATAKANA();
 		static java::lang::Character_UnicodeBlock KATAKANA_PHONETIC_EXTENSIONS();
+		static java::lang::Character_UnicodeBlock KAWI();
 		static java::lang::Character_UnicodeBlock KAYAH_LI();
 		static java::lang::Character_UnicodeBlock KHAROSHTHI();
 		static java::lang::Character_UnicodeBlock KHITAN_SMALL_SCRIPT();
@@ -171,6 +181,8 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock LATIN_EXTENDED_C();
 		static java::lang::Character_UnicodeBlock LATIN_EXTENDED_D();
 		static java::lang::Character_UnicodeBlock LATIN_EXTENDED_E();
+		static java::lang::Character_UnicodeBlock LATIN_EXTENDED_F();
+		static java::lang::Character_UnicodeBlock LATIN_EXTENDED_G();
 		static java::lang::Character_UnicodeBlock LEPCHA();
 		static java::lang::Character_UnicodeBlock LETTERLIKE_SYMBOLS();
 		static java::lang::Character_UnicodeBlock LIMBU();
@@ -217,6 +229,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock MYANMAR_EXTENDED_A();
 		static java::lang::Character_UnicodeBlock MYANMAR_EXTENDED_B();
 		static java::lang::Character_UnicodeBlock NABATAEAN();
+		static java::lang::Character_UnicodeBlock NAG_MUNDARI();
 		static java::lang::Character_UnicodeBlock NANDINAGARI();
 		static java::lang::Character_UnicodeBlock NEWA();
 		static java::lang::Character_UnicodeBlock NEW_TAI_LUE();
@@ -233,6 +246,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock OLD_SOGDIAN();
 		static java::lang::Character_UnicodeBlock OLD_SOUTH_ARABIAN();
 		static java::lang::Character_UnicodeBlock OLD_TURKIC();
+		static java::lang::Character_UnicodeBlock OLD_UYGHUR();
 		static java::lang::Character_UnicodeBlock OL_CHIKI();
 		static java::lang::Character_UnicodeBlock OPTICAL_CHARACTER_RECOGNITION();
 		static java::lang::Character_UnicodeBlock ORIYA();
@@ -297,6 +311,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock TAKRI();
 		static java::lang::Character_UnicodeBlock TAMIL();
 		static java::lang::Character_UnicodeBlock TAMIL_SUPPLEMENT();
+		static java::lang::Character_UnicodeBlock TANGSA();
 		static java::lang::Character_UnicodeBlock TANGUT();
 		static java::lang::Character_UnicodeBlock TANGUT_COMPONENTS();
 		static java::lang::Character_UnicodeBlock TANGUT_SUPPLEMENT();
@@ -306,15 +321,18 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock TIBETAN();
 		static java::lang::Character_UnicodeBlock TIFINAGH();
 		static java::lang::Character_UnicodeBlock TIRHUTA();
+		static java::lang::Character_UnicodeBlock TOTO();
 		static java::lang::Character_UnicodeBlock TRANSPORT_AND_MAP_SYMBOLS();
 		static java::lang::Character_UnicodeBlock UGARITIC();
 		static java::lang::Character_UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS();
 		static java::lang::Character_UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED();
+		static java::lang::Character_UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A();
 		static java::lang::Character_UnicodeBlock VAI();
 		static java::lang::Character_UnicodeBlock VARIATION_SELECTORS();
 		static java::lang::Character_UnicodeBlock VARIATION_SELECTORS_SUPPLEMENT();
 		static java::lang::Character_UnicodeBlock VEDIC_EXTENSIONS();
 		static java::lang::Character_UnicodeBlock VERTICAL_FORMS();
+		static java::lang::Character_UnicodeBlock VITHKUQI();
 		static java::lang::Character_UnicodeBlock WANCHO();
 		static java::lang::Character_UnicodeBlock WARANG_CITI();
 		static java::lang::Character_UnicodeBlock YEZIDI();
@@ -322,6 +340,7 @@ namespace java::lang
 		static java::lang::Character_UnicodeBlock YI_RADICALS();
 		static java::lang::Character_UnicodeBlock YI_SYLLABLES();
 		static java::lang::Character_UnicodeBlock ZANABAZAR_SQUARE();
+		static java::lang::Character_UnicodeBlock ZNAMENNY_MUSICAL_NOTATION();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit Character_UnicodeBlock(const char *className, const char *sig, Ts...agv) : java::lang::Character_Subset(className, sig, std::forward<Ts>(agv)...) {}

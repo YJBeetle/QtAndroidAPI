@@ -8,7 +8,6 @@ namespace java::io
 }
 class JClass;
 class JObject;
-class JString;
 namespace java::net
 {
 	class DatagramPacket;
@@ -20,6 +19,10 @@ namespace java::net
 namespace java::net
 {
 	class InetAddress;
+}
+namespace java::net
+{
+	class NetworkInterface;
 }
 namespace java::net
 {
@@ -75,6 +78,8 @@ namespace java::net
 		jboolean isBound() const;
 		jboolean isClosed() const;
 		jboolean isConnected() const;
+		void joinGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const;
+		void leaveGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const;
 		void receive(java::net::DatagramPacket arg0) const;
 		void send(java::net::DatagramPacket arg0) const;
 		void setBroadcast(jboolean arg0) const;

@@ -3,10 +3,10 @@
 #include "../io/IOException.def.hpp"
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"
-#include "../../JString.hpp"
 #include "./DatagramPacket.def.hpp"
 #include "./DatagramSocketImpl.def.hpp"
 #include "./InetAddress.def.hpp"
+#include "./NetworkInterface.def.hpp"
 #include "./SocketAddress.def.hpp"
 #include "./SocketException.def.hpp"
 #include "../nio/channels/DatagramChannel.def.hpp"
@@ -209,6 +209,24 @@ namespace java::net
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
+		);
+	}
+	inline void DatagramSocket::joinGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const
+	{
+		callMethod<void>(
+			"joinGroup",
+			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void DatagramSocket::leaveGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const
+	{
+		callMethod<void>(
+			"leaveGroup",
+			"(Ljava/net/SocketAddress;Ljava/net/NetworkInterface;)V",
+			arg0.object(),
+			arg1.object()
 		);
 	}
 	inline void DatagramSocket::receive(java::net::DatagramPacket arg0) const

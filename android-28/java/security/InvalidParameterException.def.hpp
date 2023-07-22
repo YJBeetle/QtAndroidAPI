@@ -3,6 +3,7 @@
 #include "../lang/IllegalArgumentException.def.hpp"
 
 class JString;
+class JThrowable;
 
 namespace java::security
 {
@@ -18,6 +19,8 @@ namespace java::security
 		// Constructors
 		InvalidParameterException();
 		InvalidParameterException(JString arg0);
+		InvalidParameterException(JThrowable arg0);
+		InvalidParameterException(JString arg0, JThrowable arg1);
 		
 		// Methods
 	};

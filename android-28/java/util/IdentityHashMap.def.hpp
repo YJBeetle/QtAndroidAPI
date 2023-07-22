@@ -43,7 +43,9 @@ namespace java::util
 		JObject keySet() const;
 		JObject put(JObject arg0, JObject arg1) const;
 		void putAll(JObject arg0) const;
+		jboolean remove(JObject arg0, JObject arg1) const;
 		JObject remove(JObject arg0) const;
+		jboolean replace(JObject arg0, JObject arg1, JObject arg2) const;
 		void replaceAll(JObject arg0) const;
 		jint size() const;
 		JObject values() const;

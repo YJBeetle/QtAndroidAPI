@@ -47,6 +47,7 @@ namespace java::text
 		jchar getGroupingSeparator() const;
 		JString getInfinity() const;
 		JString getInternationalCurrencySymbol() const;
+		java::util::Locale getLocale() const;
 		jchar getMinusSign() const;
 		jchar getMonetaryDecimalSeparator() const;
 		jchar getMonetaryGroupingSeparator() const;

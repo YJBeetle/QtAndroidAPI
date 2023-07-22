@@ -6,8 +6,11 @@
 #include "../io/ObjectInputStream.def.hpp"
 #include "../io/ObjectOutputStream.def.hpp"
 #include "../../JObject.hpp"
+#include "../lang/RuntimePermission.def.hpp"
 #include "../../JString.hpp"
 #include "./NetworkInterface.def.hpp"
+#include "./UnknownHostException.def.hpp"
+#include "../util/concurrent/locks/ReentrantLock.def.hpp"
 #include "./InetAddress.def.hpp"
 
 namespace java::net

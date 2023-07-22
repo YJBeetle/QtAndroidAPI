@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../../JCharArray.hpp"
 #include "../../JArray.hpp"
 #include "../../JString.hpp"
 #include "../../JString.hpp"

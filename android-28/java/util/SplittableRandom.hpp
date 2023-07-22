@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../../JByteArray.hpp"
-#include "../../JString.hpp"
 #include "./concurrent/atomic/AtomicLong.def.hpp"
 #include "./SplittableRandom.def.hpp"
 
@@ -125,43 +124,12 @@ namespace java::util
 			arg2
 		);
 	}
-	inline jboolean SplittableRandom::nextBoolean() const
-	{
-		return callMethod<jboolean>(
-			"nextBoolean",
-			"()Z"
-		);
-	}
 	inline void SplittableRandom::nextBytes(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"nextBytes",
 			"([B)V",
 			arg0.object<jbyteArray>()
-		);
-	}
-	inline jdouble SplittableRandom::nextDouble() const
-	{
-		return callMethod<jdouble>(
-			"nextDouble",
-			"()D"
-		);
-	}
-	inline jdouble SplittableRandom::nextDouble(jdouble arg0) const
-	{
-		return callMethod<jdouble>(
-			"nextDouble",
-			"(D)D",
-			arg0
-		);
-	}
-	inline jdouble SplittableRandom::nextDouble(jdouble arg0, jdouble arg1) const
-	{
-		return callMethod<jdouble>(
-			"nextDouble",
-			"(DD)D",
-			arg0,
-			arg1
 		);
 	}
 	inline jint SplittableRandom::nextInt() const
@@ -171,23 +139,6 @@ namespace java::util
 			"()I"
 		);
 	}
-	inline jint SplittableRandom::nextInt(jint arg0) const
-	{
-		return callMethod<jint>(
-			"nextInt",
-			"(I)I",
-			arg0
-		);
-	}
-	inline jint SplittableRandom::nextInt(jint arg0, jint arg1) const
-	{
-		return callMethod<jint>(
-			"nextInt",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
 	inline jlong SplittableRandom::nextLong() const
 	{
 		return callMethod<jlong>(
@@ -195,28 +146,51 @@ namespace java::util
 			"()J"
 		);
 	}
-	inline jlong SplittableRandom::nextLong(jlong arg0) const
-	{
-		return callMethod<jlong>(
-			"nextLong",
-			"(J)J",
-			arg0
-		);
-	}
-	inline jlong SplittableRandom::nextLong(jlong arg0, jlong arg1) const
-	{
-		return callMethod<jlong>(
-			"nextLong",
-			"(JJ)J",
-			arg0,
-			arg1
-		);
-	}
 	inline java::util::SplittableRandom SplittableRandom::split() const
 	{
 		return callObjectMethod(
 			"split",
 			"()Ljava/util/SplittableRandom;"
+		);
+	}
+	inline java::util::SplittableRandom SplittableRandom::split(JObject arg0) const
+	{
+		return callObjectMethod(
+			"split",
+			"(Ljava/util/random/RandomGenerator$SplittableGenerator;)Ljava/util/SplittableRandom;",
+			arg0.object()
+		);
+	}
+	inline JObject SplittableRandom::splits() const
+	{
+		return callObjectMethod(
+			"splits",
+			"()Ljava/util/stream/Stream;"
+		);
+	}
+	inline JObject SplittableRandom::splits(JObject arg0) const
+	{
+		return callObjectMethod(
+			"splits",
+			"(Ljava/util/random/RandomGenerator$SplittableGenerator;)Ljava/util/stream/Stream;",
+			arg0.object()
+		);
+	}
+	inline JObject SplittableRandom::splits(jlong arg0) const
+	{
+		return callObjectMethod(
+			"splits",
+			"(J)Ljava/util/stream/Stream;",
+			arg0
+		);
+	}
+	inline JObject SplittableRandom::splits(jlong arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"splits",
+			"(JLjava/util/random/RandomGenerator$SplittableGenerator;)Ljava/util/stream/Stream;",
+			arg0,
+			arg1.object()
 		);
 	}
 } // namespace java::util
