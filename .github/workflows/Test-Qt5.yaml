@@ -1,16 +1,16 @@
-name: Build
+name: Test
 on:
   push:
-    branches: [ Qt5, Qt5Dev ]
+    branches: [ Qt5 ]
   pull_request:
-    branches: [ Qt5, Qt5Dev ]
+    branches: [ Qt5 ]
 env:
   BUILD_TYPE: Release
   NDK_VERSION: r21d
   QT_VERSION: 5.15.2
 jobs:
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
