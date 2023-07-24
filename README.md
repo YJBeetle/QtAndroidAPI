@@ -1,6 +1,6 @@
 # QtAndroidAPI
 
-[![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt6.yaml/badge.svg?branch=Qt6)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt6.yaml)
+[![Test](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Test-Qt6.yaml/badge.svg?branch=Qt6)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Test-Qt6.yaml)
 
 ## What can do
 
