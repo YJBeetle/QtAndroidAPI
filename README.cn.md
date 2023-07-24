@@ -1,6 +1,6 @@
 # QtAndroidAPI
 
-[![Build](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt6.yaml/badge.svg?branch=Qt6)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Build-Qt6.yaml)
+[![Test](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Test-Qt6.yaml/badge.svg?branch=Qt6)](https://github.com/YJBeetle/QtAndroidAPI/actions/workflows/Test-Qt6.yaml)
 
 ## 这个项目可以做什么
 
@@ -20,7 +20,7 @@
 
     #define QT_ANDROID_API_AUTOUSE
     #include <AndroidContext>
-    #include <android/widget/Toast.hpp>
+    #include <android/widget/Toast>
     auto toast = Toast::makeText(CONTEXT, QStringLiteral("Message"), 0);
     toast.show();
 
@@ -32,7 +32,7 @@
     FetchContent_Declare(androidapi
         GIT_REPOSITORY https://github.com/YJBeetle/QtAndroidAPI.git
         GIT_TAG origin/Qt6
-        SOURCE_SUBDIR android-??
+        SOURCE_SUBDIR android-31
     )
     FetchContent_MakeAvailable(androidapi)
 
