@@ -38,16 +38,11 @@ jobs:
         id: setup-ndk
         with:
           ndk-version: ${{ env.NDK_VERSION }}
-      - name: Cache host Qt
-        id: cache-host-qt
-        uses: actions/cache@v3
-        with:
-          path: ../QtHost
-          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-Cache
       - name: Install host Qt
         uses: jurplel/install-qt-action@v3
         with:
-          cached: ${{ steps.cache-host-qt.outputs.cache-hit }}
+          cache: true
+          cache-key-prefix: 'install-qt-action-${{ runner.os }}-${{ env.QT_VERSION }}'
           version: ${{ env.QT_VERSION }}
       - name: Get host Qt path
         id: host-qt-path
@@ -55,16 +50,11 @@ jobs:
         with:
           script: return "${{ env.Qt6_DIR }}"
           result-encoding: string
-      - name: Cache Qt
-        id: cache-qt
-        uses: actions/cache@v3
-        with:
-          path: ../Qt
-          key: ${{ runner.os }}-Qt${{ env.QT_VERSION }}-${{ matrix.arch.qt }}-Cache
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          cached: ${{ steps.cache-qt.outputs.cache-hit }}
+          cache: true
+          cache-key-prefix: 'install-qt-action-${{ runner.os }}-${{ env.QT_VERSION }}-${{ matrix.arch.qt }}'
           version: ${{ env.QT_VERSION }}
           host: linux
           target: android
