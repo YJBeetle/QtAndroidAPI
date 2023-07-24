@@ -51,7 +51,7 @@ jobs:
           version: ${{ env.QT_VERSION }}
       - name: Get host Qt path
         id: host-qt-path
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: return "${{ env.Qt6_DIR }}"
           result-encoding: string
