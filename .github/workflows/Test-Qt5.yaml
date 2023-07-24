@@ -6,7 +6,7 @@ on:
     branches: [ Qt5 ]
 env:
   BUILD_TYPE: Release
-  NDK_VERSION: r21d
+  NDK_VERSION: r21e
   QT_VERSION: 5.15.2
 jobs:
   test:
