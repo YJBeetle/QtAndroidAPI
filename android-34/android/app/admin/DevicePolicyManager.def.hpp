@@ -1,0 +1,579 @@
+#pragma once
+
+#include "../../../JObject.hpp"
+
+class JByteArray;
+class JArray;
+class JArray;
+namespace android::app::admin
+{
+	class DevicePolicyManager_InstallSystemUpdateCallback;
+}
+namespace android::app::admin
+{
+	class DevicePolicyResourcesManager;
+}
+namespace android::app::admin
+{
+	class FactoryResetProtectionPolicy;
+}
+namespace android::app::admin
+{
+	class ManagedSubscriptionsPolicy;
+}
+namespace android::app::admin
+{
+	class PackagePolicy;
+}
+namespace android::app::admin
+{
+	class SystemUpdateInfo;
+}
+namespace android::app::admin
+{
+	class SystemUpdatePolicy;
+}
+namespace android::app::admin
+{
+	class WifiSsidPolicy;
+}
+namespace android::content
+{
+	class ComponentName;
+}
+namespace android::content
+{
+	class Context_BindServiceFlags;
+}
+namespace android::content
+{
+	class Intent;
+}
+namespace android::content
+{
+	class IntentFilter;
+}
+namespace android::graphics
+{
+	class Bitmap;
+}
+namespace android::net
+{
+	class ProxyInfo;
+}
+namespace android::net
+{
+	class Uri;
+}
+namespace android::os
+{
+	class Bundle;
+}
+namespace android::os
+{
+	class PersistableBundle;
+}
+namespace android::os
+{
+	class UserHandle;
+}
+namespace android::security
+{
+	class AttestedKeyPair;
+}
+namespace android::security::keystore
+{
+	class KeyGenParameterSpec;
+}
+namespace android::telephony::data
+{
+	class ApnSetting;
+}
+class JString;
+class JString;
+namespace java::security::cert
+{
+	class Certificate;
+}
+
+namespace android::app::admin
+{
+	class DevicePolicyManager : public JObject
+	{
+	public:
+		// Fields
+		static JString ACTION_ADD_DEVICE_ADMIN();
+		static JString ACTION_ADMIN_POLICY_COMPLIANCE();
+		static JString ACTION_APPLICATION_DELEGATION_SCOPES_CHANGED();
+		static JString ACTION_CHECK_POLICY_COMPLIANCE();
+		static JString ACTION_DEVICE_ADMIN_SERVICE();
+		static JString ACTION_DEVICE_FINANCING_STATE_CHANGED();
+		static JString ACTION_DEVICE_OWNER_CHANGED();
+		static JString ACTION_DEVICE_POLICY_RESOURCE_UPDATED();
+		static JString ACTION_GET_PROVISIONING_MODE();
+		static JString ACTION_MANAGED_PROFILE_PROVISIONED();
+		static JString ACTION_PROFILE_OWNER_CHANGED();
+		static JString ACTION_PROVISIONING_SUCCESSFUL();
+		static JString ACTION_PROVISION_MANAGED_DEVICE();
+		static JString ACTION_PROVISION_MANAGED_PROFILE();
+		static JString ACTION_SET_NEW_PARENT_PROFILE_PASSWORD();
+		static JString ACTION_SET_NEW_PASSWORD();
+		static JString ACTION_START_ENCRYPTION();
+		static JString ACTION_SYSTEM_UPDATE_POLICY_CHANGED();
+		static JString DELEGATION_APP_RESTRICTIONS();
+		static JString DELEGATION_BLOCK_UNINSTALL();
+		static JString DELEGATION_CERT_INSTALL();
+		static JString DELEGATION_CERT_SELECTION();
+		static JString DELEGATION_ENABLE_SYSTEM_APP();
+		static JString DELEGATION_INSTALL_EXISTING_PACKAGE();
+		static JString DELEGATION_KEEP_UNINSTALLED_PACKAGES();
+		static JString DELEGATION_NETWORK_LOGGING();
+		static JString DELEGATION_PACKAGE_ACCESS();
+		static JString DELEGATION_PERMISSION_GRANT();
+		static JString DELEGATION_SECURITY_LOGGING();
+		static jint ENCRYPTION_STATUS_ACTIVATING();
+		static jint ENCRYPTION_STATUS_ACTIVE();
+		static jint ENCRYPTION_STATUS_ACTIVE_DEFAULT_KEY();
+		static jint ENCRYPTION_STATUS_ACTIVE_PER_USER();
+		static jint ENCRYPTION_STATUS_INACTIVE();
+		static jint ENCRYPTION_STATUS_UNSUPPORTED();
+		static JString EXTRA_ADD_EXPLANATION();
+		static JString EXTRA_DELEGATION_SCOPES();
+		static JString EXTRA_DEVICE_ADMIN();
+		static JString EXTRA_DEVICE_PASSWORD_REQUIREMENT_ONLY();
+		static JString EXTRA_PASSWORD_COMPLEXITY();
+		static JString EXTRA_PROVISIONING_ACCOUNT_TO_MIGRATE();
+		static JString EXTRA_PROVISIONING_ADMIN_EXTRAS_BUNDLE();
+		static JString EXTRA_PROVISIONING_ALLOWED_PROVISIONING_MODES();
+		static JString EXTRA_PROVISIONING_ALLOW_OFFLINE();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_MINIMUM_VERSION_CODE();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_CHECKSUM();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_COOKIE_HEADER();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_PACKAGE_NAME();
+		static JString EXTRA_PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM();
+		static JString EXTRA_PROVISIONING_DISCLAIMERS();
+		static JString EXTRA_PROVISIONING_DISCLAIMER_CONTENT();
+		static JString EXTRA_PROVISIONING_DISCLAIMER_HEADER();
+		static JString EXTRA_PROVISIONING_EMAIL_ADDRESS();
+		static JString EXTRA_PROVISIONING_IMEI();
+		static JString EXTRA_PROVISIONING_KEEP_ACCOUNT_ON_MIGRATION();
+		static JString EXTRA_PROVISIONING_KEEP_SCREEN_ON();
+		static JString EXTRA_PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED();
+		static JString EXTRA_PROVISIONING_LOCALE();
+		static JString EXTRA_PROVISIONING_LOCAL_TIME();
+		static JString EXTRA_PROVISIONING_LOGO_URI();
+		static JString EXTRA_PROVISIONING_MAIN_COLOR();
+		static JString EXTRA_PROVISIONING_MODE();
+		static JString EXTRA_PROVISIONING_SENSORS_PERMISSION_GRANT_OPT_OUT();
+		static JString EXTRA_PROVISIONING_SERIAL_NUMBER();
+		static JString EXTRA_PROVISIONING_SHOULD_LAUNCH_RESULT_INTENT();
+		static JString EXTRA_PROVISIONING_SKIP_EDUCATION_SCREENS();
+		static JString EXTRA_PROVISIONING_SKIP_ENCRYPTION();
+		static JString EXTRA_PROVISIONING_SKIP_USER_CONSENT();
+		static JString EXTRA_PROVISIONING_TIME_ZONE();
+		static JString EXTRA_PROVISIONING_USE_MOBILE_DATA();
+		static JString EXTRA_PROVISIONING_WIFI_ANONYMOUS_IDENTITY();
+		static JString EXTRA_PROVISIONING_WIFI_CA_CERTIFICATE();
+		static JString EXTRA_PROVISIONING_WIFI_DOMAIN();
+		static JString EXTRA_PROVISIONING_WIFI_EAP_METHOD();
+		static JString EXTRA_PROVISIONING_WIFI_HIDDEN();
+		static JString EXTRA_PROVISIONING_WIFI_IDENTITY();
+		static JString EXTRA_PROVISIONING_WIFI_PAC_URL();
+		static JString EXTRA_PROVISIONING_WIFI_PASSWORD();
+		static JString EXTRA_PROVISIONING_WIFI_PHASE2_AUTH();
+		static JString EXTRA_PROVISIONING_WIFI_PROXY_BYPASS();
+		static JString EXTRA_PROVISIONING_WIFI_PROXY_HOST();
+		static JString EXTRA_PROVISIONING_WIFI_PROXY_PORT();
+		static JString EXTRA_PROVISIONING_WIFI_SECURITY_TYPE();
+		static JString EXTRA_PROVISIONING_WIFI_SSID();
+		static JString EXTRA_PROVISIONING_WIFI_USER_CERTIFICATE();
+		static JString EXTRA_RESOURCE_IDS();
+		static JString EXTRA_RESOURCE_TYPE();
+		static jint EXTRA_RESOURCE_TYPE_DRAWABLE();
+		static jint EXTRA_RESOURCE_TYPE_STRING();
+		static JString EXTRA_RESULT_LAUNCH_INTENT();
+		static jint FLAG_EVICT_CREDENTIAL_ENCRYPTION_KEY();
+		static jint FLAG_MANAGED_CAN_ACCESS_PARENT();
+		static jint FLAG_PARENT_CAN_ACCESS_MANAGED();
+		static jint ID_TYPE_BASE_INFO();
+		static jint ID_TYPE_IMEI();
+		static jint ID_TYPE_INDIVIDUAL_ATTESTATION();
+		static jint ID_TYPE_MEID();
+		static jint ID_TYPE_SERIAL();
+		static jint INSTALLKEY_REQUEST_CREDENTIALS_ACCESS();
+		static jint INSTALLKEY_SET_USER_SELECTABLE();
+		static jint KEYGUARD_DISABLE_BIOMETRICS();
+		static jint KEYGUARD_DISABLE_FACE();
+		static jint KEYGUARD_DISABLE_FEATURES_ALL();
+		static jint KEYGUARD_DISABLE_FEATURES_NONE();
+		static jint KEYGUARD_DISABLE_FINGERPRINT();
+		static jint KEYGUARD_DISABLE_IRIS();
+		static jint KEYGUARD_DISABLE_REMOTE_INPUT();
+		static jint KEYGUARD_DISABLE_SECURE_CAMERA();
+		static jint KEYGUARD_DISABLE_SECURE_NOTIFICATIONS();
+		static jint KEYGUARD_DISABLE_SHORTCUTS_ALL();
+		static jint KEYGUARD_DISABLE_TRUST_AGENTS();
+		static jint KEYGUARD_DISABLE_UNREDACTED_NOTIFICATIONS();
+		static jint KEYGUARD_DISABLE_WIDGETS_ALL();
+		static jint LEAVE_ALL_SYSTEM_APPS_ENABLED();
+		static jint LOCK_TASK_FEATURE_BLOCK_ACTIVITY_START_IN_TASK();
+		static jint LOCK_TASK_FEATURE_GLOBAL_ACTIONS();
+		static jint LOCK_TASK_FEATURE_HOME();
+		static jint LOCK_TASK_FEATURE_KEYGUARD();
+		static jint LOCK_TASK_FEATURE_NONE();
+		static jint LOCK_TASK_FEATURE_NOTIFICATIONS();
+		static jint LOCK_TASK_FEATURE_OVERVIEW();
+		static jint LOCK_TASK_FEATURE_SYSTEM_INFO();
+		static jint MAKE_USER_EPHEMERAL();
+		static JString MIME_TYPE_PROVISIONING_NFC();
+		static jint MTE_DISABLED();
+		static jint MTE_ENABLED();
+		static jint MTE_NOT_CONTROLLED_BY_POLICY();
+		static jint NEARBY_STREAMING_DISABLED();
+		static jint NEARBY_STREAMING_ENABLED();
+		static jint NEARBY_STREAMING_NOT_CONTROLLED_BY_POLICY();
+		static jint NEARBY_STREAMING_SAME_MANAGED_ACCOUNT_ONLY();
+		static jint OPERATION_SAFETY_REASON_DRIVING_DISTRACTION();
+		static jint PASSWORD_COMPLEXITY_HIGH();
+		static jint PASSWORD_COMPLEXITY_LOW();
+		static jint PASSWORD_COMPLEXITY_MEDIUM();
+		static jint PASSWORD_COMPLEXITY_NONE();
+		static jint PASSWORD_QUALITY_ALPHABETIC();
+		static jint PASSWORD_QUALITY_ALPHANUMERIC();
+		static jint PASSWORD_QUALITY_BIOMETRIC_WEAK();
+		static jint PASSWORD_QUALITY_COMPLEX();
+		static jint PASSWORD_QUALITY_NUMERIC();
+		static jint PASSWORD_QUALITY_NUMERIC_COMPLEX();
+		static jint PASSWORD_QUALITY_SOMETHING();
+		static jint PASSWORD_QUALITY_UNSPECIFIED();
+		static jint PERMISSION_GRANT_STATE_DEFAULT();
+		static jint PERMISSION_GRANT_STATE_DENIED();
+		static jint PERMISSION_GRANT_STATE_GRANTED();
+		static jint PERMISSION_POLICY_AUTO_DENY();
+		static jint PERMISSION_POLICY_AUTO_GRANT();
+		static jint PERMISSION_POLICY_PROMPT();
+		static jint PERSONAL_APPS_NOT_SUSPENDED();
+		static jint PERSONAL_APPS_SUSPENDED_EXPLICITLY();
+		static jint PERSONAL_APPS_SUSPENDED_PROFILE_TIMEOUT();
+		static JString POLICY_DISABLE_CAMERA();
+		static JString POLICY_DISABLE_SCREEN_CAPTURE();
+		static jint PRIVATE_DNS_MODE_OFF();
+		static jint PRIVATE_DNS_MODE_OPPORTUNISTIC();
+		static jint PRIVATE_DNS_MODE_PROVIDER_HOSTNAME();
+		static jint PRIVATE_DNS_MODE_UNKNOWN();
+		static jint PRIVATE_DNS_SET_ERROR_FAILURE_SETTING();
+		static jint PRIVATE_DNS_SET_ERROR_HOST_NOT_SERVING();
+		static jint PRIVATE_DNS_SET_NO_ERROR();
+		static jint PROVISIONING_MODE_FULLY_MANAGED_DEVICE();
+		static jint PROVISIONING_MODE_MANAGED_PROFILE();
+		static jint PROVISIONING_MODE_MANAGED_PROFILE_ON_PERSONAL_DEVICE();
+		static jint RESET_PASSWORD_DO_NOT_ASK_CREDENTIALS_ON_BOOT();
+		static jint RESET_PASSWORD_REQUIRE_ENTRY();
+		static jint SKIP_SETUP_WIZARD();
+		static jint WIFI_SECURITY_ENTERPRISE_192();
+		static jint WIFI_SECURITY_ENTERPRISE_EAP();
+		static jint WIFI_SECURITY_OPEN();
+		static jint WIFI_SECURITY_PERSONAL();
+		static jint WIPE_EUICC();
+		static jint WIPE_EXTERNAL_STORAGE();
+		static jint WIPE_RESET_PROTECTION_DATA();
+		static jint WIPE_SILENTLY();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit DevicePolicyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		DevicePolicyManager(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		
+		// Methods
+		void acknowledgeDeviceCompliant() const;
+		void addCrossProfileIntentFilter(android::content::ComponentName arg0, android::content::IntentFilter arg1, jint arg2) const;
+		jboolean addCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1) const;
+		jint addOverrideApn(android::content::ComponentName arg0, android::telephony::data::ApnSetting arg1) const;
+		void addPersistentPreferredActivity(android::content::ComponentName arg0, android::content::IntentFilter arg1, android::content::ComponentName arg2) const;
+		void addUserRestriction(android::content::ComponentName arg0, JString arg1) const;
+		void addUserRestrictionGlobally(JString arg0) const;
+		jboolean bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, android::content::Context_BindServiceFlags arg3, android::os::UserHandle arg4) const;
+		jboolean bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, jint arg3, android::os::UserHandle arg4) const;
+		jboolean canAdminGrantSensorsPermissions() const;
+		jboolean canUsbDataSignalingBeDisabled() const;
+		void clearApplicationUserData(android::content::ComponentName arg0, JString arg1, JObject arg2, JObject arg3) const;
+		void clearCrossProfileIntentFilters(android::content::ComponentName arg0) const;
+		void clearDeviceOwnerApp(JString arg0) const;
+		void clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, JString arg1) const;
+		void clearProfileOwner(android::content::ComponentName arg0) const;
+		jboolean clearResetPasswordToken(android::content::ComponentName arg0) const;
+		void clearUserRestriction(android::content::ComponentName arg0, JString arg1) const;
+		android::content::Intent createAdminSupportIntent(JString arg0) const;
+		android::os::UserHandle createAndManageUser(android::content::ComponentName arg0, JString arg1, android::content::ComponentName arg2, android::os::PersistableBundle arg3, jint arg4) const;
+		jint enableSystemApp(android::content::ComponentName arg0, android::content::Intent arg1) const;
+		void enableSystemApp(android::content::ComponentName arg0, JString arg1) const;
+		android::security::AttestedKeyPair generateKeyPair(android::content::ComponentName arg0, JString arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3) const;
+		JArray getAccountTypesWithManagementDisabled() const;
+		JObject getActiveAdmins() const;
+		JObject getAffiliationIds(android::content::ComponentName arg0) const;
+		JObject getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0) const;
+		JString getAlwaysOnVpnPackage(android::content::ComponentName arg0) const;
+		android::os::Bundle getApplicationRestrictions(android::content::ComponentName arg0, JString arg1) const;
+		JString getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0) const;
+		jboolean getAutoTimeEnabled(android::content::ComponentName arg0) const;
+		jboolean getAutoTimeRequired() const;
+		jboolean getAutoTimeZoneEnabled(android::content::ComponentName arg0) const;
+		JObject getBindDeviceAdminTargetUsers(android::content::ComponentName arg0) const;
+		jboolean getBluetoothContactSharingDisabled(android::content::ComponentName arg0) const;
+		jboolean getCameraDisabled(android::content::ComponentName arg0) const;
+		JString getCertInstallerPackage(android::content::ComponentName arg0) const;
+		android::app::admin::PackagePolicy getCredentialManagerPolicy() const;
+		JObject getCrossProfileCalendarPackages(android::content::ComponentName arg0) const;
+		jboolean getCrossProfileCallerIdDisabled(android::content::ComponentName arg0) const;
+		jboolean getCrossProfileContactsSearchDisabled(android::content::ComponentName arg0) const;
+		JObject getCrossProfilePackages(android::content::ComponentName arg0) const;
+		JObject getCrossProfileWidgetProviders(android::content::ComponentName arg0) const;
+		jint getCurrentFailedPasswordAttempts() const;
+		JObject getDelegatePackages(android::content::ComponentName arg0, JString arg1) const;
+		JObject getDelegatedScopes(android::content::ComponentName arg0, JString arg1) const;
+		JString getDeviceOwnerLockScreenInfo() const;
+		JString getDevicePolicyManagementRoleHolderPackage() const;
+		JString getEndUserSessionMessage(android::content::ComponentName arg0) const;
+		JString getEnrollmentSpecificId() const;
+		android::app::admin::FactoryResetProtectionPolicy getFactoryResetProtectionPolicy(android::content::ComponentName arg0) const;
+		JString getGlobalPrivateDnsHost(android::content::ComponentName arg0) const;
+		jint getGlobalPrivateDnsMode(android::content::ComponentName arg0) const;
+		JObject getInstalledCaCerts(android::content::ComponentName arg0) const;
+		JObject getKeepUninstalledPackages(android::content::ComponentName arg0) const;
+		JObject getKeyPairGrants(JString arg0) const;
+		jint getKeyguardDisabledFeatures(android::content::ComponentName arg0) const;
+		jint getLockTaskFeatures(android::content::ComponentName arg0) const;
+		JArray getLockTaskPackages(android::content::ComponentName arg0) const;
+		JString getLongSupportMessage(android::content::ComponentName arg0) const;
+		android::app::admin::PackagePolicy getManagedProfileCallerIdAccessPolicy() const;
+		android::app::admin::PackagePolicy getManagedProfileContactsAccessPolicy() const;
+		jlong getManagedProfileMaximumTimeOff(android::content::ComponentName arg0) const;
+		android::app::admin::ManagedSubscriptionsPolicy getManagedSubscriptionsPolicy() const;
+		jint getMaximumFailedPasswordsForWipe(android::content::ComponentName arg0) const;
+		jlong getMaximumTimeToLock(android::content::ComponentName arg0) const;
+		JObject getMeteredDataDisabledPackages(android::content::ComponentName arg0) const;
+		jint getMinimumRequiredWifiSecurityLevel() const;
+		jint getMtePolicy() const;
+		jint getNearbyAppStreamingPolicy() const;
+		jint getNearbyNotificationStreamingPolicy() const;
+		jint getOrganizationColor(android::content::ComponentName arg0) const;
+		JString getOrganizationName(android::content::ComponentName arg0) const;
+		JObject getOverrideApns(android::content::ComponentName arg0) const;
+		android::app::admin::DevicePolicyManager getParentProfileInstance(android::content::ComponentName arg0) const;
+		jint getPasswordComplexity() const;
+		jlong getPasswordExpiration(android::content::ComponentName arg0) const;
+		jlong getPasswordExpirationTimeout(android::content::ComponentName arg0) const;
+		jint getPasswordHistoryLength(android::content::ComponentName arg0) const;
+		jint getPasswordMaximumLength(jint arg0) const;
+		jint getPasswordMinimumLength(android::content::ComponentName arg0) const;
+		jint getPasswordMinimumLetters(android::content::ComponentName arg0) const;
+		jint getPasswordMinimumLowerCase(android::content::ComponentName arg0) const;
+		jint getPasswordMinimumNonLetter(android::content::ComponentName arg0) const;
+		jint getPasswordMinimumNumeric(android::content::ComponentName arg0) const;
+		jint getPasswordMinimumSymbols(android::content::ComponentName arg0) const;
+		jint getPasswordMinimumUpperCase(android::content::ComponentName arg0) const;
+		jint getPasswordQuality(android::content::ComponentName arg0) const;
+		android::app::admin::SystemUpdateInfo getPendingSystemUpdate(android::content::ComponentName arg0) const;
+		jint getPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2) const;
+		jint getPermissionPolicy(android::content::ComponentName arg0) const;
+		JObject getPermittedAccessibilityServices(android::content::ComponentName arg0) const;
+		JObject getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0) const;
+		JObject getPermittedInputMethods(android::content::ComponentName arg0) const;
+		jint getPersonalAppsSuspendedReasons(android::content::ComponentName arg0) const;
+		JObject getPreferentialNetworkServiceConfigs() const;
+		jint getRequiredPasswordComplexity() const;
+		jlong getRequiredStrongAuthTimeout(android::content::ComponentName arg0) const;
+		android::app::admin::DevicePolicyResourcesManager getResources() const;
+		jboolean getScreenCaptureDisabled(android::content::ComponentName arg0) const;
+		JObject getSecondaryUsers(android::content::ComponentName arg0) const;
+		JString getShortSupportMessage(android::content::ComponentName arg0) const;
+		JString getStartUserSessionMessage(android::content::ComponentName arg0) const;
+		jboolean getStorageEncryption(android::content::ComponentName arg0) const;
+		jint getStorageEncryptionStatus() const;
+		android::app::admin::SystemUpdatePolicy getSystemUpdatePolicy() const;
+		android::os::PersistableBundle getTransferOwnershipBundle() const;
+		JObject getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1) const;
+		JObject getUserControlDisabledPackages(android::content::ComponentName arg0) const;
+		android::os::Bundle getUserRestrictions(android::content::ComponentName arg0) const;
+		android::os::Bundle getUserRestrictionsGlobally() const;
+		JString getWifiMacAddress(android::content::ComponentName arg0) const;
+		android::app::admin::WifiSsidPolicy getWifiSsidPolicy() const;
+		jboolean grantKeyPairToApp(android::content::ComponentName arg0, JString arg1, JString arg2) const;
+		jboolean grantKeyPairToWifiAuth(JString arg0) const;
+		jboolean hasCaCertInstalled(android::content::ComponentName arg0, JByteArray arg1) const;
+		jboolean hasGrantedPolicy(android::content::ComponentName arg0, jint arg1) const;
+		jboolean hasKeyPair(JString arg0) const;
+		jboolean hasLockdownAdminConfiguredNetworks(android::content::ComponentName arg0) const;
+		jboolean installCaCert(android::content::ComponentName arg0, JByteArray arg1) const;
+		jboolean installExistingPackage(android::content::ComponentName arg0, JString arg1) const;
+		jboolean installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, JString arg3) const;
+		jboolean installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jboolean arg4) const;
+		jboolean installKeyPair(android::content::ComponentName arg0, JObject arg1, JArray arg2, JString arg3, jint arg4) const;
+		void installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, JObject arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3) const;
+		jboolean isActivePasswordSufficient() const;
+		jboolean isActivePasswordSufficientForDeviceRequirement() const;
+		jboolean isAdminActive(android::content::ComponentName arg0) const;
+		jboolean isAffiliatedUser() const;
+		jboolean isAlwaysOnVpnLockdownEnabled(android::content::ComponentName arg0) const;
+		jboolean isApplicationHidden(android::content::ComponentName arg0, JString arg1) const;
+		jboolean isBackupServiceEnabled(android::content::ComponentName arg0) const;
+		jboolean isCallerApplicationRestrictionsManagingPackage() const;
+		jboolean isCommonCriteriaModeEnabled(android::content::ComponentName arg0) const;
+		jboolean isComplianceAcknowledgementRequired() const;
+		jboolean isDeviceFinanced() const;
+		jboolean isDeviceIdAttestationSupported() const;
+		jboolean isDeviceOwnerApp(JString arg0) const;
+		jboolean isEphemeralUser(android::content::ComponentName arg0) const;
+		jboolean isKeyPairGrantedToWifiAuth(JString arg0) const;
+		jboolean isLockTaskPermitted(JString arg0) const;
+		jboolean isLogoutEnabled() const;
+		jboolean isManagedProfile(android::content::ComponentName arg0) const;
+		jboolean isMasterVolumeMuted(android::content::ComponentName arg0) const;
+		jboolean isNetworkLoggingEnabled(android::content::ComponentName arg0) const;
+		jboolean isOrganizationOwnedDeviceWithManagedProfile() const;
+		jboolean isOverrideApnEnabled(android::content::ComponentName arg0) const;
+		jboolean isPackageSuspended(android::content::ComponentName arg0, JString arg1) const;
+		jboolean isPreferentialNetworkServiceEnabled() const;
+		jboolean isProfileOwnerApp(JString arg0) const;
+		jboolean isProvisioningAllowed(JString arg0) const;
+		jboolean isResetPasswordTokenActive(android::content::ComponentName arg0) const;
+		jboolean isSafeOperation(jint arg0) const;
+		jboolean isSecurityLoggingEnabled(android::content::ComponentName arg0) const;
+		jboolean isStatusBarDisabled() const;
+		jboolean isUninstallBlocked(android::content::ComponentName arg0, JString arg1) const;
+		jboolean isUniqueDeviceAttestationSupported() const;
+		jboolean isUsbDataSignalingEnabled() const;
+		jboolean isUsingUnifiedPassword(android::content::ComponentName arg0) const;
+		JObject listForegroundAffiliatedUsers() const;
+		void lockNow() const;
+		void lockNow(jint arg0) const;
+		jint logoutUser(android::content::ComponentName arg0) const;
+		void reboot(android::content::ComponentName arg0) const;
+		void removeActiveAdmin(android::content::ComponentName arg0) const;
+		jboolean removeCrossProfileWidgetProvider(android::content::ComponentName arg0, JString arg1) const;
+		jboolean removeKeyPair(android::content::ComponentName arg0, JString arg1) const;
+		jboolean removeOverrideApn(android::content::ComponentName arg0, jint arg1) const;
+		jboolean removeUser(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
+		jboolean requestBugreport(android::content::ComponentName arg0) const;
+		jboolean resetPassword(JString arg0, jint arg1) const;
+		jboolean resetPasswordWithToken(android::content::ComponentName arg0, JString arg1, JByteArray arg2, jint arg3) const;
+		JObject retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1) const;
+		JObject retrievePreRebootSecurityLogs(android::content::ComponentName arg0) const;
+		JObject retrieveSecurityLogs(android::content::ComponentName arg0) const;
+		jboolean revokeKeyPairFromApp(android::content::ComponentName arg0, JString arg1, JString arg2) const;
+		jboolean revokeKeyPairFromWifiAuth(JString arg0) const;
+		void setAccountManagementDisabled(android::content::ComponentName arg0, JString arg1, jboolean arg2) const;
+		void setAffiliationIds(android::content::ComponentName arg0, JObject arg1) const;
+		void setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2) const;
+		void setAlwaysOnVpnPackage(android::content::ComponentName arg0, JString arg1, jboolean arg2, JObject arg3) const;
+		jboolean setApplicationHidden(android::content::ComponentName arg0, JString arg1, jboolean arg2) const;
+		void setApplicationRestrictions(android::content::ComponentName arg0, JString arg1, android::os::Bundle arg2) const;
+		void setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, JString arg1) const;
+		void setAutoTimeEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setAutoTimeRequired(android::content::ComponentName arg0, jboolean arg1) const;
+		void setAutoTimeZoneEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setBackupServiceEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setBluetoothContactSharingDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setCameraDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setCertInstallerPackage(android::content::ComponentName arg0, JString arg1) const;
+		void setCommonCriteriaModeEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setConfiguredNetworksLockdownState(android::content::ComponentName arg0, jboolean arg1) const;
+		void setCredentialManagerPolicy(android::app::admin::PackagePolicy arg0) const;
+		void setCrossProfileCalendarPackages(android::content::ComponentName arg0, JObject arg1) const;
+		void setCrossProfileCallerIdDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setCrossProfileContactsSearchDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setCrossProfilePackages(android::content::ComponentName arg0, JObject arg1) const;
+		void setDefaultDialerApplication(JString arg0) const;
+		void setDefaultSmsApplication(android::content::ComponentName arg0, JString arg1) const;
+		void setDelegatedScopes(android::content::ComponentName arg0, JString arg1, JObject arg2) const;
+		void setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, JString arg1) const;
+		void setEndUserSessionMessage(android::content::ComponentName arg0, JString arg1) const;
+		void setFactoryResetProtectionPolicy(android::content::ComponentName arg0, android::app::admin::FactoryResetProtectionPolicy arg1) const;
+		jint setGlobalPrivateDnsModeOpportunistic(android::content::ComponentName arg0) const;
+		jint setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, JString arg1) const;
+		void setGlobalSetting(android::content::ComponentName arg0, JString arg1, JString arg2) const;
+		void setKeepUninstalledPackages(android::content::ComponentName arg0, JObject arg1) const;
+		jboolean setKeyPairCertificate(android::content::ComponentName arg0, JString arg1, JObject arg2, jboolean arg3) const;
+		jboolean setKeyguardDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setKeyguardDisabledFeatures(android::content::ComponentName arg0, jint arg1) const;
+		void setLocationEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setLockTaskFeatures(android::content::ComponentName arg0, jint arg1) const;
+		void setLockTaskPackages(android::content::ComponentName arg0, JArray arg1) const;
+		void setLogoutEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setLongSupportMessage(android::content::ComponentName arg0, JString arg1) const;
+		void setManagedProfileCallerIdAccessPolicy(android::app::admin::PackagePolicy arg0) const;
+		void setManagedProfileContactsAccessPolicy(android::app::admin::PackagePolicy arg0) const;
+		void setManagedProfileMaximumTimeOff(android::content::ComponentName arg0, jlong arg1) const;
+		void setManagedSubscriptionsPolicy(android::app::admin::ManagedSubscriptionsPolicy arg0) const;
+		void setMasterVolumeMuted(android::content::ComponentName arg0, jboolean arg1) const;
+		void setMaximumFailedPasswordsForWipe(android::content::ComponentName arg0, jint arg1) const;
+		void setMaximumTimeToLock(android::content::ComponentName arg0, jlong arg1) const;
+		JObject setMeteredDataDisabledPackages(android::content::ComponentName arg0, JObject arg1) const;
+		void setMinimumRequiredWifiSecurityLevel(jint arg0) const;
+		void setMtePolicy(jint arg0) const;
+		void setNearbyAppStreamingPolicy(jint arg0) const;
+		void setNearbyNotificationStreamingPolicy(jint arg0) const;
+		void setNetworkLoggingEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setOrganizationColor(android::content::ComponentName arg0, jint arg1) const;
+		void setOrganizationId(JString arg0) const;
+		void setOrganizationName(android::content::ComponentName arg0, JString arg1) const;
+		void setOverrideApnsEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		JArray setPackagesSuspended(android::content::ComponentName arg0, JArray arg1, jboolean arg2) const;
+		void setPasswordExpirationTimeout(android::content::ComponentName arg0, jlong arg1) const;
+		void setPasswordHistoryLength(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumLength(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumLetters(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumLowerCase(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumNonLetter(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumNumeric(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumSymbols(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordMinimumUpperCase(android::content::ComponentName arg0, jint arg1) const;
+		void setPasswordQuality(android::content::ComponentName arg0, jint arg1) const;
+		jboolean setPermissionGrantState(android::content::ComponentName arg0, JString arg1, JString arg2, jint arg3) const;
+		void setPermissionPolicy(android::content::ComponentName arg0, jint arg1) const;
+		jboolean setPermittedAccessibilityServices(android::content::ComponentName arg0, JObject arg1) const;
+		jboolean setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, JObject arg1) const;
+		jboolean setPermittedInputMethods(android::content::ComponentName arg0, JObject arg1) const;
+		void setPersonalAppsSuspended(android::content::ComponentName arg0, jboolean arg1) const;
+		void setPreferentialNetworkServiceConfigs(JObject arg0) const;
+		void setPreferentialNetworkServiceEnabled(jboolean arg0) const;
+		void setProfileEnabled(android::content::ComponentName arg0) const;
+		void setProfileName(android::content::ComponentName arg0, JString arg1) const;
+		void setRecommendedGlobalProxy(android::content::ComponentName arg0, android::net::ProxyInfo arg1) const;
+		void setRequiredPasswordComplexity(jint arg0) const;
+		void setRequiredStrongAuthTimeout(android::content::ComponentName arg0, jlong arg1) const;
+		jboolean setResetPasswordToken(android::content::ComponentName arg0, JByteArray arg1) const;
+		void setRestrictionsProvider(android::content::ComponentName arg0, android::content::ComponentName arg1) const;
+		void setScreenCaptureDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setSecureSetting(android::content::ComponentName arg0, JString arg1, JString arg2) const;
+		void setSecurityLoggingEnabled(android::content::ComponentName arg0, jboolean arg1) const;
+		void setShortSupportMessage(android::content::ComponentName arg0, JString arg1) const;
+		void setStartUserSessionMessage(android::content::ComponentName arg0, JString arg1) const;
+		jboolean setStatusBarDisabled(android::content::ComponentName arg0, jboolean arg1) const;
+		jint setStorageEncryption(android::content::ComponentName arg0, jboolean arg1) const;
+		void setSystemSetting(android::content::ComponentName arg0, JString arg1, JString arg2) const;
+		void setSystemUpdatePolicy(android::content::ComponentName arg0, android::app::admin::SystemUpdatePolicy arg1) const;
+		jboolean setTime(android::content::ComponentName arg0, jlong arg1) const;
+		jboolean setTimeZone(android::content::ComponentName arg0, JString arg1) const;
+		void setTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2) const;
+		void setUninstallBlocked(android::content::ComponentName arg0, JString arg1, jboolean arg2) const;
+		void setUsbDataSignalingEnabled(jboolean arg0) const;
+		void setUserControlDisabledPackages(android::content::ComponentName arg0, JObject arg1) const;
+		void setUserIcon(android::content::ComponentName arg0, android::graphics::Bitmap arg1) const;
+		void setWifiSsidPolicy(android::app::admin::WifiSsidPolicy arg0) const;
+		jint startUserInBackground(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
+		jint stopUser(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
+		jboolean switchUser(android::content::ComponentName arg0, android::os::UserHandle arg1) const;
+		void transferOwnership(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2) const;
+		void uninstallAllUserCaCerts(android::content::ComponentName arg0) const;
+		void uninstallCaCert(android::content::ComponentName arg0, JByteArray arg1) const;
+		jboolean updateOverrideApn(android::content::ComponentName arg0, jint arg1, android::telephony::data::ApnSetting arg2) const;
+		void wipeData(jint arg0) const;
+		void wipeData(jint arg0, JString arg1) const;
+		void wipeDevice(jint arg0) const;
+	};
+} // namespace android::app::admin
+

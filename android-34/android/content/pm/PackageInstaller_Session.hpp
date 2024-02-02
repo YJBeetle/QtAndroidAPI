@@ -1,0 +1,210 @@
+#pragma once
+
+#include "../../../JByteArray.hpp"
+#include "../../../JIntArray.hpp"
+#include "../../../JArray.hpp"
+#include "../IntentSender.def.hpp"
+#include "./PackageInstaller_PreapprovalDetails.def.hpp"
+#include "../../os/PersistableBundle.def.hpp"
+#include "../../../java/io/InputStream.def.hpp"
+#include "../../../java/io/OutputStream.def.hpp"
+#include "../../../JString.hpp"
+#include "./PackageInstaller_Session.def.hpp"
+
+namespace android::content::pm
+{
+	// Fields
+	
+	// Constructors
+	
+	// Methods
+	inline void PackageInstaller_Session::abandon() const
+	{
+		callMethod<void>(
+			"abandon",
+			"()V"
+		);
+	}
+	inline void PackageInstaller_Session::addChildSessionId(jint arg0) const
+	{
+		callMethod<void>(
+			"addChildSessionId",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_Session::close() const
+	{
+		callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	inline void PackageInstaller_Session::commit(android::content::IntentSender arg0) const
+	{
+		callMethod<void>(
+			"commit",
+			"(Landroid/content/IntentSender;)V",
+			arg0.object()
+		);
+	}
+	inline void PackageInstaller_Session::fsync(java::io::OutputStream arg0) const
+	{
+		callMethod<void>(
+			"fsync",
+			"(Ljava/io/OutputStream;)V",
+			arg0.object()
+		);
+	}
+	inline android::os::PersistableBundle PackageInstaller_Session::getAppMetadata() const
+	{
+		return callObjectMethod(
+			"getAppMetadata",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	inline JIntArray PackageInstaller_Session::getChildSessionIds() const
+	{
+		return callObjectMethod(
+			"getChildSessionIds",
+			"()[I"
+		);
+	}
+	inline JArray PackageInstaller_Session::getNames() const
+	{
+		return callObjectMethod(
+			"getNames",
+			"()[Ljava/lang/String;"
+		);
+	}
+	inline jint PackageInstaller_Session::getParentSessionId() const
+	{
+		return callMethod<jint>(
+			"getParentSessionId",
+			"()I"
+		);
+	}
+	inline jboolean PackageInstaller_Session::isApplicationEnabledSettingPersistent() const
+	{
+		return callMethod<jboolean>(
+			"isApplicationEnabledSettingPersistent",
+			"()Z"
+		);
+	}
+	inline jboolean PackageInstaller_Session::isMultiPackage() const
+	{
+		return callMethod<jboolean>(
+			"isMultiPackage",
+			"()Z"
+		);
+	}
+	inline jboolean PackageInstaller_Session::isRequestUpdateOwnership() const
+	{
+		return callMethod<jboolean>(
+			"isRequestUpdateOwnership",
+			"()Z"
+		);
+	}
+	inline jboolean PackageInstaller_Session::isStaged() const
+	{
+		return callMethod<jboolean>(
+			"isStaged",
+			"()Z"
+		);
+	}
+	inline java::io::InputStream PackageInstaller_Session::openRead(JString arg0) const
+	{
+		return callObjectMethod(
+			"openRead",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			arg0.object<jstring>()
+		);
+	}
+	inline java::io::OutputStream PackageInstaller_Session::openWrite(JString arg0, jlong arg1, jlong arg2) const
+	{
+		return callObjectMethod(
+			"openWrite",
+			"(Ljava/lang/String;JJ)Ljava/io/OutputStream;",
+			arg0.object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
+	inline void PackageInstaller_Session::removeChildSessionId(jint arg0) const
+	{
+		callMethod<void>(
+			"removeChildSessionId",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_Session::removeSplit(JString arg0) const
+	{
+		callMethod<void>(
+			"removeSplit",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void PackageInstaller_Session::requestChecksums(JString arg0, jint arg1, JObject arg2, JObject arg3, JObject arg4) const
+	{
+		callMethod<void>(
+			"requestChecksums",
+			"(Ljava/lang/String;ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/content/pm/PackageManager$OnChecksumsReadyListener;)V",
+			arg0.object<jstring>(),
+			arg1,
+			arg2.object(),
+			arg3.object(),
+			arg4.object()
+		);
+	}
+	inline void PackageInstaller_Session::requestUserPreapproval(android::content::pm::PackageInstaller_PreapprovalDetails arg0, android::content::IntentSender arg1) const
+	{
+		callMethod<void>(
+			"requestUserPreapproval",
+			"(Landroid/content/pm/PackageInstaller$PreapprovalDetails;Landroid/content/IntentSender;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void PackageInstaller_Session::setAppMetadata(android::os::PersistableBundle arg0) const
+	{
+		callMethod<void>(
+			"setAppMetadata",
+			"(Landroid/os/PersistableBundle;)V",
+			arg0.object()
+		);
+	}
+	inline void PackageInstaller_Session::setChecksums(JString arg0, JObject arg1, JByteArray arg2) const
+	{
+		callMethod<void>(
+			"setChecksums",
+			"(Ljava/lang/String;Ljava/util/List;[B)V",
+			arg0.object<jstring>(),
+			arg1.object(),
+			arg2.object<jbyteArray>()
+		);
+	}
+	inline void PackageInstaller_Session::setStagingProgress(jfloat arg0) const
+	{
+		callMethod<void>(
+			"setStagingProgress",
+			"(F)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_Session::transfer(JString arg0) const
+	{
+		callMethod<void>(
+			"transfer",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+} // namespace android::content::pm
+
+// Base class headers
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content::pm;
+#endif

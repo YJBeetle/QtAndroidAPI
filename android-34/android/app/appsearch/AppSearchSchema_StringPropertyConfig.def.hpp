@@ -1,0 +1,33 @@
+#pragma once
+
+#include "./AppSearchSchema_PropertyConfig.def.hpp"
+
+namespace android::app::appsearch
+{
+	class AppSearchSchema_StringPropertyConfig : public android::app::appsearch::AppSearchSchema_PropertyConfig
+	{
+	public:
+		// Fields
+		static jint INDEXING_TYPE_EXACT_TERMS();
+		static jint INDEXING_TYPE_NONE();
+		static jint INDEXING_TYPE_PREFIXES();
+		static jint JOINABLE_VALUE_TYPE_NONE();
+		static jint JOINABLE_VALUE_TYPE_QUALIFIED_ID();
+		static jint TOKENIZER_TYPE_NONE();
+		static jint TOKENIZER_TYPE_PLAIN();
+		static jint TOKENIZER_TYPE_RFC822();
+		static jint TOKENIZER_TYPE_VERBATIM();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit AppSearchSchema_StringPropertyConfig(const char *className, const char *sig, Ts...agv) : android::app::appsearch::AppSearchSchema_PropertyConfig(className, sig, std::forward<Ts>(agv)...) {}
+		AppSearchSchema_StringPropertyConfig(QJniObject obj) : android::app::appsearch::AppSearchSchema_PropertyConfig(obj) {}
+		
+		// Constructors
+		
+		// Methods
+		jint getIndexingType() const;
+		jint getJoinableValueType() const;
+		jint getTokenizerType() const;
+	};
+} // namespace android::app::appsearch
+

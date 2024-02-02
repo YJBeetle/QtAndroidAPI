@@ -1,0 +1,361 @@
+#pragma once
+
+#include "../../net/Uri.def.hpp"
+#include "../../../JString.hpp"
+#include "./TvContract_Programs.def.hpp"
+
+namespace android::media::tv
+{
+	// Fields
+	inline JString TvContract_Programs::COLUMN_AUDIO_LANGUAGE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_AUDIO_LANGUAGE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_BROADCAST_GENRE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_BROADCAST_GENRE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_CANONICAL_GENRE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_CANONICAL_GENRE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_CHANNEL_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_CHANNEL_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_CONTENT_RATING()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_CONTENT_RATING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_END_TIME_UTC_MILLIS()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_END_TIME_UTC_MILLIS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_EPISODE_DISPLAY_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_EPISODE_DISPLAY_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_EPISODE_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_EPISODE_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_EPISODE_TITLE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_EPISODE_TITLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_EVENT_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_EVENT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_GLOBAL_CONTENT_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_GLOBAL_CONTENT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_INTERNAL_PROVIDER_DATA()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_INTERNAL_PROVIDER_DATA",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG1()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_INTERNAL_PROVIDER_FLAG1",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG2()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_INTERNAL_PROVIDER_FLAG2",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG3()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_INTERNAL_PROVIDER_FLAG3",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_INTERNAL_PROVIDER_FLAG4()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_INTERNAL_PROVIDER_FLAG4",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_INTERNAL_PROVIDER_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_INTERNAL_PROVIDER_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_LONG_DESCRIPTION()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_LONG_DESCRIPTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_MULTI_SERIES_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_MULTI_SERIES_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_POSTER_ART_URI()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_POSTER_ART_URI",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_RECORDING_PROHIBITED()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_RECORDING_PROHIBITED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_REVIEW_RATING()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_REVIEW_RATING",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_REVIEW_RATING_STYLE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_REVIEW_RATING_STYLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SCRAMBLED()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SCRAMBLED",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SEARCHABLE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SEARCHABLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SEASON_DISPLAY_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SEASON_DISPLAY_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SEASON_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SEASON_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SEASON_TITLE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SEASON_TITLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SERIES_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SERIES_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SHORT_DESCRIPTION()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SHORT_DESCRIPTION",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_SPLIT_ID()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_SPLIT_ID",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_START_TIME_UTC_MILLIS()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_START_TIME_UTC_MILLIS",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_THUMBNAIL_URI()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_THUMBNAIL_URI",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_TITLE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_TITLE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_VERSION_NUMBER()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_VERSION_NUMBER",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_VIDEO_HEIGHT()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_VIDEO_HEIGHT",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::COLUMN_VIDEO_WIDTH()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"COLUMN_VIDEO_WIDTH",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::CONTENT_ITEM_TYPE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"CONTENT_ITEM_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline JString TvContract_Programs::CONTENT_TYPE()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"CONTENT_TYPE",
+			"Ljava/lang/String;"
+		);
+	}
+	inline android::net::Uri TvContract_Programs::CONTENT_URI()
+	{
+		return getStaticObjectField(
+			"android.media.tv.TvContract$Programs",
+			"CONTENT_URI",
+			"Landroid/net/Uri;"
+		);
+	}
+	inline jint TvContract_Programs::REVIEW_RATING_STYLE_PERCENTAGE()
+	{
+		return getStaticField<jint>(
+			"android.media.tv.TvContract$Programs",
+			"REVIEW_RATING_STYLE_PERCENTAGE"
+		);
+	}
+	inline jint TvContract_Programs::REVIEW_RATING_STYLE_STARS()
+	{
+		return getStaticField<jint>(
+			"android.media.tv.TvContract$Programs",
+			"REVIEW_RATING_STYLE_STARS"
+		);
+	}
+	inline jint TvContract_Programs::REVIEW_RATING_STYLE_THUMBS_UP_DOWN()
+	{
+		return getStaticField<jint>(
+			"android.media.tv.TvContract$Programs",
+			"REVIEW_RATING_STYLE_THUMBS_UP_DOWN"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+} // namespace android::media::tv
+
+// Base class headers
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::media::tv;
+#endif

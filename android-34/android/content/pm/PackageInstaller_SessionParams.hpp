@@ -1,0 +1,276 @@
+#pragma once
+
+#include "../../graphics/Bitmap.def.hpp"
+#include "../../net/Uri.def.hpp"
+#include "../../os/Parcel.def.hpp"
+#include "../../../JString.hpp"
+#include "../../../JString.hpp"
+#include "./PackageInstaller_SessionParams.def.hpp"
+
+namespace android::content::pm
+{
+	// Fields
+	inline JObject PackageInstaller_SessionParams::CREATOR()
+	{
+		return getStaticObjectField(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"CREATOR",
+			"Landroid/os/Parcelable$Creator;"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::MODE_FULL_INSTALL()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"MODE_FULL_INSTALL"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::MODE_INHERIT_EXISTING()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"MODE_INHERIT_EXISTING"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::PERMISSION_STATE_DEFAULT()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"PERMISSION_STATE_DEFAULT"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::PERMISSION_STATE_DENIED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"PERMISSION_STATE_DENIED"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::PERMISSION_STATE_GRANTED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"PERMISSION_STATE_GRANTED"
+		);
+	}
+	inline JObject PackageInstaller_SessionParams::RESTRICTED_PERMISSIONS_ALL()
+	{
+		return getStaticObjectField(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"RESTRICTED_PERMISSIONS_ALL",
+			"Ljava/util/Set;"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::USER_ACTION_NOT_REQUIRED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"USER_ACTION_NOT_REQUIRED"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::USER_ACTION_REQUIRED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"USER_ACTION_REQUIRED"
+		);
+	}
+	inline jint PackageInstaller_SessionParams::USER_ACTION_UNSPECIFIED()
+	{
+		return getStaticField<jint>(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"USER_ACTION_UNSPECIFIED"
+		);
+	}
+	
+	// Constructors
+	inline PackageInstaller_SessionParams::PackageInstaller_SessionParams(jint arg0)
+		: JObject(
+			"android.content.pm.PackageInstaller$SessionParams",
+			"(I)V",
+			arg0
+		) {}
+	
+	// Methods
+	inline jint PackageInstaller_SessionParams::describeContents() const
+	{
+		return callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	inline void PackageInstaller_SessionParams::setAppIcon(android::graphics::Bitmap arg0) const
+	{
+		callMethod<void>(
+			"setAppIcon",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.object()
+		);
+	}
+	inline void PackageInstaller_SessionParams::setAppLabel(JString arg0) const
+	{
+		callMethod<void>(
+			"setAppLabel",
+			"(Ljava/lang/CharSequence;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void PackageInstaller_SessionParams::setAppPackageName(JString arg0) const
+	{
+		callMethod<void>(
+			"setAppPackageName",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void PackageInstaller_SessionParams::setApplicationEnabledSettingPersistent() const
+	{
+		callMethod<void>(
+			"setApplicationEnabledSettingPersistent",
+			"()V"
+		);
+	}
+	inline void PackageInstaller_SessionParams::setAutoRevokePermissionsMode(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setAutoRevokePermissionsMode",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setDontKillApp(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setDontKillApp",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setInstallLocation(jint arg0) const
+	{
+		callMethod<void>(
+			"setInstallLocation",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setInstallReason(jint arg0) const
+	{
+		callMethod<void>(
+			"setInstallReason",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setInstallScenario(jint arg0) const
+	{
+		callMethod<void>(
+			"setInstallScenario",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setInstallerPackageName(JString arg0) const
+	{
+		callMethod<void>(
+			"setInstallerPackageName",
+			"(Ljava/lang/String;)V",
+			arg0.object<jstring>()
+		);
+	}
+	inline void PackageInstaller_SessionParams::setMultiPackage() const
+	{
+		callMethod<void>(
+			"setMultiPackage",
+			"()V"
+		);
+	}
+	inline void PackageInstaller_SessionParams::setOriginatingUid(jint arg0) const
+	{
+		callMethod<void>(
+			"setOriginatingUid",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setOriginatingUri(android::net::Uri arg0) const
+	{
+		callMethod<void>(
+			"setOriginatingUri",
+			"(Landroid/net/Uri;)V",
+			arg0.object()
+		);
+	}
+	inline void PackageInstaller_SessionParams::setPackageSource(jint arg0) const
+	{
+		callMethod<void>(
+			"setPackageSource",
+			"(I)V",
+			arg0
+		);
+	}
+	inline android::content::pm::PackageInstaller_SessionParams PackageInstaller_SessionParams::setPermissionState(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"setPermissionState",
+			"(Ljava/lang/String;I)Landroid/content/pm/PackageInstaller$SessionParams;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
+	inline void PackageInstaller_SessionParams::setReferrerUri(android::net::Uri arg0) const
+	{
+		callMethod<void>(
+			"setReferrerUri",
+			"(Landroid/net/Uri;)V",
+			arg0.object()
+		);
+	}
+	inline void PackageInstaller_SessionParams::setRequestUpdateOwnership(jboolean arg0) const
+	{
+		callMethod<void>(
+			"setRequestUpdateOwnership",
+			"(Z)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setRequireUserAction(jint arg0) const
+	{
+		callMethod<void>(
+			"setRequireUserAction",
+			"(I)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setSize(jlong arg0) const
+	{
+		callMethod<void>(
+			"setSize",
+			"(J)V",
+			arg0
+		);
+	}
+	inline void PackageInstaller_SessionParams::setWhitelistedRestrictedPermissions(JObject arg0) const
+	{
+		callMethod<void>(
+			"setWhitelistedRestrictedPermissions",
+			"(Ljava/util/Set;)V",
+			arg0.object()
+		);
+	}
+	inline void PackageInstaller_SessionParams::writeToParcel(android::os::Parcel arg0, jint arg1) const
+	{
+		callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.object(),
+			arg1
+		);
+	}
+} // namespace android::content::pm
+
+// Base class headers
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::content::pm;
+#endif
