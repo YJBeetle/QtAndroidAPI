@@ -6,8 +6,8 @@ on:
     branches: [ Qt6 ]
 env:
   BUILD_TYPE: Release
-  NDK_VERSION: r25b # 25.1.8937393
-  QT_VERSION: 6.6.3
+  NDK_VERSION: r26b # 26.1.10909125
+  QT_VERSION: 6.7.3
 jobs:
   test:
     name: Test
