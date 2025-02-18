@@ -30,6 +30,7 @@ jobs:
           - android-31
           - android-32
           - android-33
+          - android-34
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
