@@ -1,0 +1,25 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+class JString;
+
+namespace android::util
+{
+	class LogPrinter : public JObject
+	{
+	public:
+		// Fields
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit LogPrinter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		LogPrinter(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		LogPrinter(jint arg0, JString arg1);
+		
+		// Methods
+		void println(JString arg0) const;
+	};
+} // namespace android::util
+

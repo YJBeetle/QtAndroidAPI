@@ -1,0 +1,33 @@
+#pragma once
+
+#include "../../java/lang/Enum.def.hpp"
+
+class JArray;
+class JString;
+
+namespace android::graphics
+{
+	class Bitmap_Config : public java::lang::Enum
+	{
+	public:
+		// Fields
+		static android::graphics::Bitmap_Config ALPHA_8();
+		static android::graphics::Bitmap_Config ARGB_4444();
+		static android::graphics::Bitmap_Config ARGB_8888();
+		static android::graphics::Bitmap_Config HARDWARE();
+		static android::graphics::Bitmap_Config RGBA_1010102();
+		static android::graphics::Bitmap_Config RGBA_F16();
+		static android::graphics::Bitmap_Config RGB_565();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit Bitmap_Config(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
+		Bitmap_Config(QJniObject obj) : java::lang::Enum(obj) {}
+		
+		// Constructors
+		
+		// Methods
+		static android::graphics::Bitmap_Config valueOf(JString arg0);
+		static JArray values();
+	};
+} // namespace android::graphics
+

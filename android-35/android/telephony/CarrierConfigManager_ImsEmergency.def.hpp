@@ -1,0 +1,61 @@
+#pragma once
+
+#include "../../JObject.hpp"
+
+class JString;
+
+namespace android::telephony
+{
+	class CarrierConfigManager_ImsEmergency : public JObject
+	{
+	public:
+		// Fields
+		static jint DOMAIN_CS();
+		static jint DOMAIN_PS_3GPP();
+		static jint DOMAIN_PS_NON_3GPP();
+		static JString KEY_CROSS_STACK_REDIAL_TIMER_SEC_INT();
+		static JString KEY_EMERGENCY_CALLBACK_MODE_SUPPORTED_BOOL();
+		static JString KEY_EMERGENCY_CALL_SETUP_TIMER_ON_CURRENT_NETWORK_SEC_INT();
+		static JString KEY_EMERGENCY_CDMA_PREFERRED_NUMBERS_STRING_ARRAY();
+		static JString KEY_EMERGENCY_DOMAIN_PREFERENCE_INT_ARRAY();
+		static JString KEY_EMERGENCY_DOMAIN_PREFERENCE_ROAMING_INT_ARRAY();
+		static JString KEY_EMERGENCY_LTE_PREFERRED_AFTER_NR_FAILED_BOOL();
+		static JString KEY_EMERGENCY_NETWORK_SCAN_TYPE_INT();
+		static JString KEY_EMERGENCY_OVER_CS_ROAMING_SUPPORTED_ACCESS_NETWORK_TYPES_INT_ARRAY();
+		static JString KEY_EMERGENCY_OVER_CS_SUPPORTED_ACCESS_NETWORK_TYPES_INT_ARRAY();
+		static JString KEY_EMERGENCY_OVER_IMS_ROAMING_SUPPORTED_3GPP_NETWORK_TYPES_INT_ARRAY();
+		static JString KEY_EMERGENCY_OVER_IMS_SUPPORTED_3GPP_NETWORK_TYPES_INT_ARRAY();
+		static JString KEY_EMERGENCY_OVER_IMS_SUPPORTED_RATS_INT_ARRAY();
+		static JString KEY_EMERGENCY_QOS_PRECONDITION_SUPPORTED_BOOL();
+		static JString KEY_EMERGENCY_REGISTRATION_TIMER_MILLIS_INT();
+		static JString KEY_EMERGENCY_REQUIRES_IMS_REGISTRATION_BOOL();
+		static JString KEY_EMERGENCY_REQUIRES_VOLTE_ENABLED_BOOL();
+		static JString KEY_EMERGENCY_SCAN_TIMER_SEC_INT();
+		static JString KEY_EMERGENCY_VOWIFI_REQUIRES_CONDITION_INT();
+		static JString KEY_MAXIMUM_CELLULAR_SEARCH_TIMER_SEC_INT();
+		static JString KEY_MAXIMUM_NUMBER_OF_EMERGENCY_TRIES_OVER_VOWIFI_INT();
+		static JString KEY_PREFER_IMS_EMERGENCY_WHEN_VOICE_CALLS_ON_CS_BOOL();
+		static JString KEY_PREFIX();
+		static JString KEY_QUICK_CROSS_STACK_REDIAL_TIMER_SEC_INT();
+		static JString KEY_REFRESH_GEOLOCATION_TIMEOUT_MILLIS_INT();
+		static JString KEY_RETRY_EMERGENCY_ON_IMS_PDN_BOOL();
+		static JString KEY_SCAN_LIMITED_SERVICE_AFTER_VOLTE_FAILURE_BOOL();
+		static JString KEY_START_QUICK_CROSS_STACK_REDIAL_TIMER_WHEN_REGISTERED_BOOL();
+		static jint REDIAL_TIMER_DISABLED();
+		static jint SCAN_TYPE_FULL_SERVICE();
+		static jint SCAN_TYPE_FULL_SERVICE_FOLLOWED_BY_LIMITED_SERVICE();
+		static jint SCAN_TYPE_NO_PREFERENCE();
+		static jint VOWIFI_REQUIRES_NONE();
+		static jint VOWIFI_REQUIRES_SETTING_ENABLED();
+		static jint VOWIFI_REQUIRES_VALID_EID();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit CarrierConfigManager_ImsEmergency(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		CarrierConfigManager_ImsEmergency(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		
+		// Methods
+	};
+} // namespace android::telephony
+
