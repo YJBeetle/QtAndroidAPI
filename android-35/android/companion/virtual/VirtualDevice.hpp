@@ -6,7 +6,7 @@
 #include "../../../JString.hpp"
 #include "./VirtualDevice.def.hpp"
 
-namespace android::companion::virtual
+namespace android::companion::virtual_
 {
 	// Fields
 	inline JObject VirtualDevice::CREATOR()
@@ -86,10 +86,10 @@ namespace android::companion::virtual
 			arg1
 		);
 	}
-} // namespace android::companion::virtual
+} // namespace android::companion::virtual_
 
 // Base class headers
 
 #ifdef QT_ANDROID_API_AUTOUSE
-using namespace android::companion::virtual;
+using namespace android::companion::virtual_;
 #endif

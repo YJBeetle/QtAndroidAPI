@@ -2,12 +2,12 @@
 
 #include "../../../JObject.hpp"
 
-namespace android::companion::virtual
+namespace android::companion::virtual_
 {
 	class VirtualDevice;
 }
 
-namespace android::companion::virtual
+namespace android::companion::virtual_
 {
 	class VirtualDeviceManager : public JObject
 	{
@@ -21,10 +21,10 @@ namespace android::companion::virtual
 		// Constructors
 		
 		// Methods
-		android::companion::virtual::VirtualDevice getVirtualDevice(jint arg0) const;
+		android::companion::virtual_::VirtualDevice getVirtualDevice(jint arg0) const;
 		JObject getVirtualDevices() const;
 		void registerVirtualDeviceListener(JObject arg0, JObject arg1) const;
 		void unregisterVirtualDeviceListener(JObject arg0) const;
 	};
-} // namespace android::companion::virtual
+} // namespace android::companion::virtual_
 

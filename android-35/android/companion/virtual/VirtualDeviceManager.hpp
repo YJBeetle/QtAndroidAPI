@@ -3,14 +3,14 @@
 #include "./VirtualDevice.def.hpp"
 #include "./VirtualDeviceManager.def.hpp"
 
-namespace android::companion::virtual
+namespace android::companion::virtual_
 {
 	// Fields
 	
 	// Constructors
 	
 	// Methods
-	inline android::companion::virtual::VirtualDevice VirtualDeviceManager::getVirtualDevice(jint arg0) const
+	inline android::companion::virtual_::VirtualDevice VirtualDeviceManager::getVirtualDevice(jint arg0) const
 	{
 		return callObjectMethod(
 			"getVirtualDevice",
@@ -42,10 +42,10 @@ namespace android::companion::virtual
 			arg0.object()
 		);
 	}
-} // namespace android::companion::virtual
+} // namespace android::companion::virtual_
 
 // Base class headers
 
 #ifdef QT_ANDROID_API_AUTOUSE
-using namespace android::companion::virtual;
+using namespace android::companion::virtual_;
 #endif
