@@ -2,7 +2,7 @@
 
 #include "../../../JObject.hpp"
 
-namespace android::companion::virtual
+namespace android::companion::virtual_
 {
 	class VirtualDeviceManager : public JObject
 	{
@@ -18,5 +18,5 @@ namespace android::companion::virtual
 		// Methods
 		JObject getVirtualDevices() const;
 	};
-} // namespace android::companion::virtual
+} // namespace android::companion::virtual_
 
