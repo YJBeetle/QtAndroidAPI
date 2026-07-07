@@ -1,0 +1,79 @@
+#pragma once
+
+#include "../../../../JObject.hpp"
+
+class JByteArray;
+namespace android::net
+{
+	class MacAddress;
+}
+namespace android::net::wifi::aware
+{
+	class PeerHandle;
+}
+namespace android::net::wifi::rtt
+{
+	class ResponderLocation;
+}
+namespace android::os
+{
+	class Parcel;
+}
+class JObject;
+class JString;
+
+namespace android::net::wifi::rtt
+{
+	class RangingResult : public JObject
+	{
+	public:
+		// Fields
+		static JObject CREATOR();
+		static jint STATUS_FAIL();
+		static jint STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC();
+		static jint STATUS_SUCCESS();
+		static jint UNSPECIFIED();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit RangingResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		RangingResult(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		
+		// Methods
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint get80211azInitiatorTxLtfRepetitionsCount() const;
+		jint get80211azNumberOfRxSpatialStreams() const;
+		jint get80211azNumberOfTxSpatialStreams() const;
+		jint get80211azResponderTxLtfRepetitionsCount() const;
+		jint getDistanceMm() const;
+		jint getDistanceStdDevMm() const;
+		JByteArray getLci() const;
+		JByteArray getLcr() const;
+		android::net::MacAddress getMacAddress() const;
+		jlong getMaxTimeBetweenNtbMeasurementsMicros() const;
+		jint getMeasurementBandwidth() const;
+		jint getMeasurementChannelFrequencyMHz() const;
+		jlong getMinTimeBetweenNtbMeasurementsMicros() const;
+		jint getNumAttemptedMeasurements() const;
+		jint getNumSuccessfulMeasurements() const;
+		jlong getPasnComebackAfterMillis() const;
+		JByteArray getPasnComebackCookie() const;
+		android::net::wifi::aware::PeerHandle getPeerHandle() const;
+		jlong getRangingTimestampMillis() const;
+		jint getRssi() const;
+		jint getSecureHeLtfProtocolVersion() const;
+		jint getStatus() const;
+		android::net::wifi::rtt::ResponderLocation getUnverifiedResponderLocation() const;
+		jint hashCode() const;
+		jboolean is80211azNtbMeasurement() const;
+		jboolean is80211mcMeasurement() const;
+		jboolean isRangingAuthenticated() const;
+		jboolean isRangingFrameProtected() const;
+		jboolean isSecureHeLtfEnabled() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
+	};
+} // namespace android::net::wifi::rtt
+

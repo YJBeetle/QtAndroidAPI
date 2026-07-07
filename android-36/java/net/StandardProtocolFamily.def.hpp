@@ -1,0 +1,29 @@
+#pragma once
+
+#include "../lang/Enum.def.hpp"
+
+class JArray;
+class JString;
+
+namespace java::net
+{
+	class StandardProtocolFamily : public java::lang::Enum
+	{
+	public:
+		// Fields
+		static java::net::StandardProtocolFamily INET();
+		static java::net::StandardProtocolFamily INET6();
+		static java::net::StandardProtocolFamily UNIX();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit StandardProtocolFamily(const char *className, const char *sig, Ts...agv) : java::lang::Enum(className, sig, std::forward<Ts>(agv)...) {}
+		StandardProtocolFamily(QJniObject obj) : java::lang::Enum(obj) {}
+		
+		// Constructors
+		
+		// Methods
+		static java::net::StandardProtocolFamily valueOf(JString arg0);
+		static JArray values();
+	};
+} // namespace java::net
+

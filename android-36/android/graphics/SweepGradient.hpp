@@ -1,0 +1,58 @@
+#pragma once
+
+#include "../../JFloatArray.hpp"
+#include "../../JIntArray.hpp"
+#include "../../JLongArray.hpp"
+#include "./SweepGradient.def.hpp"
+
+namespace android::graphics
+{
+	// Fields
+	
+	// Constructors
+	inline SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, JIntArray arg2, JFloatArray arg3)
+		: android::graphics::Shader(
+			"android.graphics.SweepGradient",
+			"(FF[I[F)V",
+			arg0,
+			arg1,
+			arg2.object<jintArray>(),
+			arg3.object<jfloatArray>()
+		) {}
+	inline SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, JLongArray arg2, JFloatArray arg3)
+		: android::graphics::Shader(
+			"android.graphics.SweepGradient",
+			"(FF[J[F)V",
+			arg0,
+			arg1,
+			arg2.object<jlongArray>(),
+			arg3.object<jfloatArray>()
+		) {}
+	inline SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jint arg2, jint arg3)
+		: android::graphics::Shader(
+			"android.graphics.SweepGradient",
+			"(FFII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	inline SweepGradient::SweepGradient(jfloat arg0, jfloat arg1, jlong arg2, jlong arg3)
+		: android::graphics::Shader(
+			"android.graphics.SweepGradient",
+			"(FFJJ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		) {}
+	
+	// Methods
+} // namespace android::graphics
+
+// Base class headers
+#include "./Shader.hpp"
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace android::graphics;
+#endif

@@ -1,0 +1,196 @@
+#pragma once
+
+#include "../../JArray.hpp"
+#include "../../JObject.hpp"
+#include "../../JString.hpp"
+#include "./format/TextStyle.def.hpp"
+#include "./temporal/ValueRange.def.hpp"
+#include "../util/Locale.def.hpp"
+#include "./DayOfWeek.def.hpp"
+
+namespace java::time
+{
+	// Fields
+	inline java::time::DayOfWeek DayOfWeek::FRIDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"FRIDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::MONDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"MONDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::SATURDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"SATURDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::SUNDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"SUNDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::THURSDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"THURSDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::TUESDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"TUESDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::WEDNESDAY()
+	{
+		return getStaticObjectField(
+			"java.time.DayOfWeek",
+			"WEDNESDAY",
+			"Ljava/time/DayOfWeek;"
+		);
+	}
+	
+	// Constructors
+	
+	// Methods
+	inline java::time::DayOfWeek DayOfWeek::from(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.time.DayOfWeek",
+			"from",
+			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/DayOfWeek;",
+			arg0.object()
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::of(jint arg0)
+	{
+		return callStaticObjectMethod(
+			"java.time.DayOfWeek",
+			"of",
+			"(I)Ljava/time/DayOfWeek;",
+			arg0
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::valueOf(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.time.DayOfWeek",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/DayOfWeek;",
+			arg0.object<jstring>()
+		);
+	}
+	inline JArray DayOfWeek::values()
+	{
+		return callStaticObjectMethod(
+			"java.time.DayOfWeek",
+			"values",
+			"()[Ljava/time/DayOfWeek;"
+		);
+	}
+	inline JObject DayOfWeek::adjustInto(JObject arg0) const
+	{
+		return callObjectMethod(
+			"adjustInto",
+			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
+			arg0.object()
+		);
+	}
+	inline jint DayOfWeek::get(JObject arg0) const
+	{
+		return callMethod<jint>(
+			"get",
+			"(Ljava/time/temporal/TemporalField;)I",
+			arg0.object()
+		);
+	}
+	inline JString DayOfWeek::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
+	{
+		return callObjectMethod(
+			"getDisplayName",
+			"(Ljava/time/format/TextStyle;Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline jlong DayOfWeek::getLong(JObject arg0) const
+	{
+		return callMethod<jlong>(
+			"getLong",
+			"(Ljava/time/temporal/TemporalField;)J",
+			arg0.object()
+		);
+	}
+	inline jint DayOfWeek::getValue() const
+	{
+		return callMethod<jint>(
+			"getValue",
+			"()I"
+		);
+	}
+	inline jboolean DayOfWeek::isSupported(JObject arg0) const
+	{
+		return callMethod<jboolean>(
+			"isSupported",
+			"(Ljava/time/temporal/TemporalField;)Z",
+			arg0.object()
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::minus(jlong arg0) const
+	{
+		return callObjectMethod(
+			"minus",
+			"(J)Ljava/time/DayOfWeek;",
+			arg0
+		);
+	}
+	inline java::time::DayOfWeek DayOfWeek::plus(jlong arg0) const
+	{
+		return callObjectMethod(
+			"plus",
+			"(J)Ljava/time/DayOfWeek;",
+			arg0
+		);
+	}
+	inline JObject DayOfWeek::query(JObject arg0) const
+	{
+		return callObjectMethod(
+			"query",
+			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
+			arg0.object()
+		);
+	}
+	inline java::time::temporal::ValueRange DayOfWeek::range(JObject arg0) const
+	{
+		return callObjectMethod(
+			"range",
+			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
+			arg0.object()
+		);
+	}
+} // namespace java::time
+
+// Base class headers
+#include "../lang/Enum.hpp"
+
+#ifdef QT_ANDROID_API_AUTOUSE
+using namespace java::time;
+#endif

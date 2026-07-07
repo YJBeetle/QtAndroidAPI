@@ -1,0 +1,83 @@
+#pragma once
+
+#include "../../../../JObject.hpp"
+
+namespace android::health::connect::datatypes
+{
+	class ExerciseSessionType : public JObject
+	{
+	public:
+		// Fields
+		static jint EXERCISE_SESSION_TYPE_BADMINTON();
+		static jint EXERCISE_SESSION_TYPE_BASEBALL();
+		static jint EXERCISE_SESSION_TYPE_BASKETBALL();
+		static jint EXERCISE_SESSION_TYPE_BIKING();
+		static jint EXERCISE_SESSION_TYPE_BIKING_STATIONARY();
+		static jint EXERCISE_SESSION_TYPE_BOOT_CAMP();
+		static jint EXERCISE_SESSION_TYPE_BOXING();
+		static jint EXERCISE_SESSION_TYPE_CALISTHENICS();
+		static jint EXERCISE_SESSION_TYPE_CRICKET();
+		static jint EXERCISE_SESSION_TYPE_DANCING();
+		static jint EXERCISE_SESSION_TYPE_ELLIPTICAL();
+		static jint EXERCISE_SESSION_TYPE_EXERCISE_CLASS();
+		static jint EXERCISE_SESSION_TYPE_FENCING();
+		static jint EXERCISE_SESSION_TYPE_FOOTBALL_AMERICAN();
+		static jint EXERCISE_SESSION_TYPE_FOOTBALL_AUSTRALIAN();
+		static jint EXERCISE_SESSION_TYPE_FRISBEE_DISC();
+		static jint EXERCISE_SESSION_TYPE_GOLF();
+		static jint EXERCISE_SESSION_TYPE_GUIDED_BREATHING();
+		static jint EXERCISE_SESSION_TYPE_GYMNASTICS();
+		static jint EXERCISE_SESSION_TYPE_HANDBALL();
+		static jint EXERCISE_SESSION_TYPE_HIGH_INTENSITY_INTERVAL_TRAINING();
+		static jint EXERCISE_SESSION_TYPE_HIKING();
+		static jint EXERCISE_SESSION_TYPE_ICE_HOCKEY();
+		static jint EXERCISE_SESSION_TYPE_ICE_SKATING();
+		static jint EXERCISE_SESSION_TYPE_MARTIAL_ARTS();
+		static jint EXERCISE_SESSION_TYPE_OTHER_WORKOUT();
+		static jint EXERCISE_SESSION_TYPE_PADDLING();
+		static jint EXERCISE_SESSION_TYPE_PARAGLIDING();
+		static jint EXERCISE_SESSION_TYPE_PILATES();
+		static jint EXERCISE_SESSION_TYPE_RACQUETBALL();
+		static jint EXERCISE_SESSION_TYPE_ROCK_CLIMBING();
+		static jint EXERCISE_SESSION_TYPE_ROLLER_HOCKEY();
+		static jint EXERCISE_SESSION_TYPE_ROWING();
+		static jint EXERCISE_SESSION_TYPE_ROWING_MACHINE();
+		static jint EXERCISE_SESSION_TYPE_RUGBY();
+		static jint EXERCISE_SESSION_TYPE_RUNNING();
+		static jint EXERCISE_SESSION_TYPE_RUNNING_TREADMILL();
+		static jint EXERCISE_SESSION_TYPE_SAILING();
+		static jint EXERCISE_SESSION_TYPE_SCUBA_DIVING();
+		static jint EXERCISE_SESSION_TYPE_SKATING();
+		static jint EXERCISE_SESSION_TYPE_SKIING();
+		static jint EXERCISE_SESSION_TYPE_SNOWBOARDING();
+		static jint EXERCISE_SESSION_TYPE_SNOWSHOEING();
+		static jint EXERCISE_SESSION_TYPE_SOCCER();
+		static jint EXERCISE_SESSION_TYPE_SOFTBALL();
+		static jint EXERCISE_SESSION_TYPE_SQUASH();
+		static jint EXERCISE_SESSION_TYPE_STAIR_CLIMBING();
+		static jint EXERCISE_SESSION_TYPE_STAIR_CLIMBING_MACHINE();
+		static jint EXERCISE_SESSION_TYPE_STRENGTH_TRAINING();
+		static jint EXERCISE_SESSION_TYPE_STRETCHING();
+		static jint EXERCISE_SESSION_TYPE_SURFING();
+		static jint EXERCISE_SESSION_TYPE_SWIMMING_OPEN_WATER();
+		static jint EXERCISE_SESSION_TYPE_SWIMMING_POOL();
+		static jint EXERCISE_SESSION_TYPE_TABLE_TENNIS();
+		static jint EXERCISE_SESSION_TYPE_TENNIS();
+		static jint EXERCISE_SESSION_TYPE_UNKNOWN();
+		static jint EXERCISE_SESSION_TYPE_VOLLEYBALL();
+		static jint EXERCISE_SESSION_TYPE_WALKING();
+		static jint EXERCISE_SESSION_TYPE_WATER_POLO();
+		static jint EXERCISE_SESSION_TYPE_WEIGHTLIFTING();
+		static jint EXERCISE_SESSION_TYPE_WHEELCHAIR();
+		static jint EXERCISE_SESSION_TYPE_YOGA();
+		
+		// QJniObject forward
+		template<typename ...Ts> explicit ExerciseSessionType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
+		ExerciseSessionType(QJniObject obj) : JObject(obj) {}
+		
+		// Constructors
+		
+		// Methods
+	};
+} // namespace android::health::connect::datatypes
+
