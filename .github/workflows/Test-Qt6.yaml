@@ -33,26 +33,26 @@ jobs:
           - android-34
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup NDK
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
           ndk-version: ${{ env.NDK_VERSION }}
       - name: Install host Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
           cache: true
           cache-key-prefix: 'install-qt-action-${{ runner.os }}-${{ env.QT_VERSION }}'
           version: ${{ env.QT_VERSION }}
       - name: Get host Qt path
         id: host-qt-path
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: return "${{ env.Qt6_DIR }}"
           result-encoding: string
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
           cache: true
           cache-key-prefix: 'install-qt-action-${{ runner.os }}-${{ env.QT_VERSION }}-${{ matrix.arch.qt }}'
@@ -74,6 +74,6 @@ jobs:
           -DQT_ANDROID_API_TEST:BOOL=ON
       - name: Get number of CPU cores
         id: cpu-cores
-        uses: SimenB/github-actions-cpu-cores@v1
+        uses: SimenB/github-actions-cpu-cores@v3
       - name: Build
         run: cmake --build ./build --config ${{ env.BUILD_TYPE }} -j ${{ steps.cpu-cores.outputs.count }}
