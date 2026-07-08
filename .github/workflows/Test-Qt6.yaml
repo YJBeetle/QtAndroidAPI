@@ -33,7 +33,7 @@ jobs:
           - android-34
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup NDK
         uses: nttld/setup-ndk@v1
         id: setup-ndk
@@ -47,7 +47,7 @@ jobs:
           version: ${{ env.QT_VERSION }}
       - name: Get host Qt path
         id: host-qt-path
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: return "${{ env.QT_ROOT_DIR }}"
           result-encoding: string
