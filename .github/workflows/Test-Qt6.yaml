@@ -49,7 +49,7 @@ jobs:
         id: host-qt-path
         uses: actions/github-script@v7
         with:
-          script: return "${{ env.Qt6_DIR }}"
+          script: return "${{ env.QT_ROOT_DIR }}"
           result-encoding: string
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -67,7 +67,7 @@ jobs:
           -DCMAKE_BUILD_TYPE:STRING=${{ env.BUILD_TYPE }} \
           -DANDROID_NDK:PATH=${{ steps.setup-ndk.outputs.ndk-path }} \
           -DCMAKE_TOOLCHAIN_FILE:PATH=${{ steps.setup-ndk.outputs.ndk-path }}/build/cmake/android.toolchain.cmake \
-          -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.Qt6_DIR }} \
+          -DCMAKE_FIND_ROOT_PATH:PATH=${{ env.QT_ROOT_DIR }} \
           -DQT_HOST_PATH:PATH=${{ steps.host-qt-path.outputs.result }} \
           -DANDROID_ABI:STRING=${{ matrix.arch.abi }} \
           -DCMAKE_INSTALL_PREFIX=./install \
