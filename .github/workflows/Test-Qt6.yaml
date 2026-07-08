@@ -7,7 +7,7 @@ on:
 env:
   BUILD_TYPE: Release
   NDK_VERSION: r26b # 26.1.10909125
-  QT_VERSION: 6.8.2
+  QT_VERSION: 6.8.3
 jobs:
   test:
     name: Test
