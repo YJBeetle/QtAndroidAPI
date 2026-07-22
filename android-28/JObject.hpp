@@ -8,4 +8,6 @@ public:
     template<typename ...Ts>
     explicit JObject(const char *className, const char *sig, Ts...agv) : QJniObject(className, sig, std::forward<Ts>(agv)...) {}
     JObject(QJniObject obj) : QJniObject(obj) {}
+    template<typename T>
+    T as() const { return T(*this); }
 };
