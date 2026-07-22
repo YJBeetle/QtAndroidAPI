@@ -2,7 +2,6 @@
 
 #include "../io/ObjectInputStream.def.hpp"
 #include "../../JString.hpp"
-#include "../lang/Integer.def.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
 #include "./ZoneId.def.hpp"

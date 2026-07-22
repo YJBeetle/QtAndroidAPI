@@ -60,6 +60,7 @@ namespace java::util::regex
 		JArray split(JString arg0) const;
 		JArray split(JString arg0, jint arg1) const;
 		JObject splitAsStream(JString arg0) const;
+		JArray splitWithDelimiters(JString arg0, jint arg1) const;
 		JString toString() const;
 	};
 } // namespace java::util::regex

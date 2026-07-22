@@ -2,6 +2,12 @@
 
 #include "./HashSet.def.hpp"
 
+class JObject;
+namespace java::util
+{
+	class LinkedHashMap;
+}
+
 namespace java::util
 {
 	class LinkedHashSet : public java::util::HashSet
@@ -21,6 +27,13 @@ namespace java::util
 		
 		// Methods
 		static java::util::LinkedHashSet newLinkedHashSet(jint arg0);
+		void addFirst(JObject arg0) const;
+		void addLast(JObject arg0) const;
+		JObject getFirst() const;
+		JObject getLast() const;
+		JObject removeFirst() const;
+		JObject removeLast() const;
+		JObject reversed() const;
 		JObject spliterator() const;
 	};
 } // namespace java::util

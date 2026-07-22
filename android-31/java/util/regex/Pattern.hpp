@@ -187,6 +187,15 @@ namespace java::util::regex
 			arg0.object<jstring>()
 		);
 	}
+	inline JArray Pattern::splitWithDelimiters(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"splitWithDelimiters",
+			"(Ljava/lang/CharSequence;I)[Ljava/lang/String;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 	inline JString Pattern::toString() const
 	{
 		return callObjectMethod(
