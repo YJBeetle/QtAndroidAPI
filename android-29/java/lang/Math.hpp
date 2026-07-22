@@ -249,6 +249,50 @@ namespace java::lang
 			arg1
 		);
 	}
+	inline jdouble Math::clamp(jdouble arg0, jdouble arg1, jdouble arg2)
+	{
+		return callStaticMethod<jdouble>(
+			"java.lang.Math",
+			"clamp",
+			"(DDD)D",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jfloat Math::clamp(jfloat arg0, jfloat arg1, jfloat arg2)
+	{
+		return callStaticMethod<jfloat>(
+			"java.lang.Math",
+			"clamp",
+			"(FFF)F",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jint Math::clamp(jlong arg0, jint arg1, jint arg2)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.Math",
+			"clamp",
+			"(JII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jlong Math::clamp(jlong arg0, jlong arg1, jlong arg2)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.Math",
+			"clamp",
+			"(JJJ)J",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	inline jdouble Math::copySign(jdouble arg0, jdouble arg1)
 	{
 		return callStaticMethod<jdouble>(

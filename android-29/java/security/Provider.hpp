@@ -4,6 +4,7 @@
 #include "../../JArray.hpp"
 #include "../io/InputStream.def.hpp"
 #include "../io/ObjectInputStream.def.hpp"
+#include "../../JClass.hpp"
 #include "../../JObject.hpp"
 #include "../../JString.hpp"
 #include "./Provider_Service.def.hpp"

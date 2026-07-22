@@ -66,6 +66,22 @@ namespace java::util
 			arg1.object()
 		);
 	}
+	inline void ArrayList::addFirst(JObject arg0) const
+	{
+		callMethod<void>(
+			"addFirst",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void ArrayList::addLast(JObject arg0) const
+	{
+		callMethod<void>(
+			"addLast",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 	inline void ArrayList::clear() const
 	{
 		callMethod<void>(
@@ -118,6 +134,20 @@ namespace java::util
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
+		);
+	}
+	inline JObject ArrayList::getFirst() const
+	{
+		return callObjectMethod(
+			"getFirst",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject ArrayList::getLast() const
+	{
+		return callObjectMethod(
+			"getLast",
+			"()Ljava/lang/Object;"
 		);
 	}
 	inline jint ArrayList::hashCode() const
@@ -196,12 +226,26 @@ namespace java::util
 			arg0.object()
 		);
 	}
+	inline JObject ArrayList::removeFirst() const
+	{
+		return callObjectMethod(
+			"removeFirst",
+			"()Ljava/lang/Object;"
+		);
+	}
 	inline jboolean ArrayList::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
 			arg0.object()
+		);
+	}
+	inline JObject ArrayList::removeLast() const
+	{
+		return callObjectMethod(
+			"removeLast",
+			"()Ljava/lang/Object;"
 		);
 	}
 	inline void ArrayList::replaceAll(JObject arg0) const

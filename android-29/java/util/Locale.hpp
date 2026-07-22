@@ -230,6 +230,23 @@ namespace java::util
 		) {}
 	
 	// Methods
+	inline JObject Locale::availableLocales()
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale",
+			"availableLocales",
+			"()Ljava/util/stream/Stream;"
+		);
+	}
+	inline JString Locale::caseFoldLanguageTag(JString arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Locale",
+			"caseFoldLanguageTag",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0.object<jstring>()
+		);
+	}
 	inline JObject Locale::filter(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(

@@ -3,6 +3,10 @@
 #include "../../../JObject.hpp"
 
 class JByteArray;
+namespace java::io
+{
+	class ObjectInputStream;
+}
 class JObject;
 class JString;
 

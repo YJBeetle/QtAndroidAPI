@@ -400,6 +400,24 @@ namespace java::lang
 			arg1
 		);
 	}
+	inline java::lang::StringBuilder StringBuilder::repeat(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"repeat",
+			"(II)Ljava/lang/StringBuilder;",
+			arg0,
+			arg1
+		);
+	}
+	inline java::lang::StringBuilder StringBuilder::repeat(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"repeat",
+			"(Ljava/lang/CharSequence;I)Ljava/lang/StringBuilder;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 	inline java::lang::StringBuilder StringBuilder::replace(jint arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(

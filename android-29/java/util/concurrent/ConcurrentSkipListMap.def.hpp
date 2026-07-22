@@ -72,7 +72,9 @@ namespace java::util::concurrent
 		JObject pollFirstEntry() const;
 		JObject pollLastEntry() const;
 		JObject put(JObject arg0, JObject arg1) const;
+		JObject putFirst(JObject arg0, JObject arg1) const;
 		JObject putIfAbsent(JObject arg0, JObject arg1) const;
+		JObject putLast(JObject arg0, JObject arg1) const;
 		jboolean remove(JObject arg0, JObject arg1) const;
 		JObject remove(JObject arg0) const;
 		jboolean replace(JObject arg0, JObject arg1, JObject arg2) const;
