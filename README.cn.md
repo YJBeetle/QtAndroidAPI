@@ -39,3 +39,30 @@
 并且在你的Target之后添加链接库
 
     target_link_libraries(${PROJECT_NAME} PRIVATE QtAndroidAPI)
+
+## 便捷类型转换支持
+
+本库内置了 Qt 常用数据类型与 Java/Android JNI 类型之间的隐式及便捷转换：
+
+- **字符串**: `QString` $\leftrightarrow$ `JString` (支持隐式转换，或通过 `.toString()`)
+- **字节数组**: `QByteArray` $\leftrightarrow$ `JByteArray` (支持隐式转换，或通过 `.toByteArray()`)
+- **字符串列表**: `QStringList` $\leftrightarrow$ `JObjectArray` (支持隐式转换，或通过 `.toStringList()`)
+- **数值列表**: `QList<int>` $\leftrightarrow$ `JIntArray` (支持隐式转换，或通过 `.toQList()`)
+- **类型向下强转**: 通过 `obj.as<T>()`（如 `CONTEXT.as<Activity>()`）方便地将基类转换为派生类类型。
+
+```cpp
+// 字符串与字节数组
+QString msg = "Hello Qt";
+Toast::makeText(CONTEXT, msg, 0).show(); // 自动转 JString
+
+QByteArray data = "binary data";
+JByteArray jBytes = data;     // 自动转 JByteArray
+QByteArray recvData = jBytes; // 自动转 QByteArray
+
+// 权限/字符串数组
+QStringList permissions = {"android.permission.CAMERA", "android.permission.READ_EXTERNAL_STORAGE"};
+JObjectArray jPermissions = permissions; // 自动转 Java String[]
+
+// 类型转换
+auto activity = CONTEXT.as<android::app::Activity>();
+```

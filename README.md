@@ -39,3 +39,30 @@ Add the following to your CMake:
 And add the link library after your target
 
     target_link_libraries(${PROJECT_NAME} PRIVATE QtAndroidAPI)
+
+## Convenient Type Conversions
+
+This library provides seamless implicit and explicit conversions between Qt data types and Java JNI types:
+
+- **String**: `QString` $\leftrightarrow$ `JString` (Implicit conversion supported, or via `.toString()`)
+- **Byte Array**: `QByteArray` $\leftrightarrow$ `JByteArray` (Implicit conversion supported, or via `.toByteArray()`)
+- **String List**: `QStringList` $\leftrightarrow$ `JObjectArray` (Implicit conversion supported, or via `.toStringList()`)
+- **Integer List**: `QList<int>` $\leftrightarrow$ `JIntArray` (Implicit conversion supported, or via `.toQList()`)
+- **Type Downcasting**: Easily cast base objects to derived classes via `obj.as<T>()` (e.g. `CONTEXT.as<Activity>()`).
+
+```cpp
+// String & ByteArray
+QString msg = "Hello Qt";
+Toast::makeText(CONTEXT, msg, 0).show(); // Auto converts to JString
+
+QByteArray data = "binary data";
+JByteArray jBytes = data;     // Auto converts to JByteArray
+QByteArray recvData = jBytes; // Auto converts back to QByteArray
+
+// Permissions / String Array
+QStringList permissions = {"android.permission.CAMERA", "android.permission.READ_EXTERNAL_STORAGE"};
+JObjectArray jPermissions = permissions; // Auto converts to Java String[]
+
+// Downcasting
+auto activity = CONTEXT.as<android::app::Activity>();
+```
