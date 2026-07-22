@@ -38,7 +38,6 @@ namespace java::lang
 		// Methods
 		jint activeCount() const;
 		jint activeGroupCount() const;
-		jboolean allowThreadSuspension(jboolean arg0) const;
 		void checkAccess() const;
 		void destroy() const;
 		jint enumerate(JArray arg0) const;

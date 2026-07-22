@@ -67,6 +67,7 @@ namespace java::util
 		static JObject min(JObject arg0);
 		static JObject min(JObject arg0, JObject arg1);
 		static JObject nCopies(jint arg0, JObject arg1);
+		static JObject newSequencedSetFromMap(JObject arg0);
 		static JObject newSetFromMap(JObject arg0);
 		static jboolean replaceAll(JObject arg0, JObject arg1, JObject arg2);
 		static void reverse(JObject arg0);
@@ -75,6 +76,7 @@ namespace java::util
 		static void rotate(JObject arg0, jint arg1);
 		static void shuffle(JObject arg0);
 		static void shuffle(JObject arg0, java::util::Random arg1);
+		static void shuffle(JObject arg0, JObject arg1);
 		static JObject singleton(JObject arg0);
 		static JObject singletonList(JObject arg0);
 		static JObject singletonMap(JObject arg0, JObject arg1);
@@ -94,6 +96,9 @@ namespace java::util
 		static JObject unmodifiableMap(JObject arg0);
 		static JObject unmodifiableNavigableMap(JObject arg0);
 		static JObject unmodifiableNavigableSet(JObject arg0);
+		static JObject unmodifiableSequencedCollection(JObject arg0);
+		static JObject unmodifiableSequencedMap(JObject arg0);
+		static JObject unmodifiableSequencedSet(JObject arg0);
 		static JObject unmodifiableSet(JObject arg0);
 		static JObject unmodifiableSortedMap(JObject arg0);
 		static JObject unmodifiableSortedSet(JObject arg0);

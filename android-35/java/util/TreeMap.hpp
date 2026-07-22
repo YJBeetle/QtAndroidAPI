@@ -288,10 +288,28 @@ namespace java::util
 			arg0.object()
 		);
 	}
+	inline JObject TreeMap::putFirst(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putFirst",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
 	inline JObject TreeMap::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JObject TreeMap::putLast(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putLast",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0.object<jobject>(),
 			arg1.object<jobject>()

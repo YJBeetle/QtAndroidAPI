@@ -3,6 +3,10 @@
 #include "../../../../JObject.hpp"
 
 class JCharArray;
+namespace java::io
+{
+	class ObjectInputStream;
+}
 class JString;
 
 namespace javax::security::auth::callback

@@ -44,14 +44,6 @@ namespace java::lang
 			"()I"
 		);
 	}
-	inline jboolean ThreadGroup::allowThreadSuspension(jboolean arg0) const
-	{
-		return callMethod<jboolean>(
-			"allowThreadSuspension",
-			"(Z)Z",
-			arg0
-		);
-	}
 	inline void ThreadGroup::checkAccess() const
 	{
 		callMethod<void>(
