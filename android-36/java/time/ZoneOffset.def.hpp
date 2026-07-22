@@ -7,10 +7,6 @@ namespace java::io
 	class ObjectInputStream;
 }
 class JString;
-namespace java::lang
-{
-	class Integer;
-}
 class JObject;
 class JString;
 namespace java::time

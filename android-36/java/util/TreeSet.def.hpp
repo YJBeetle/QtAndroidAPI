@@ -30,6 +30,8 @@ namespace java::util
 		// Methods
 		jboolean add(JObject arg0) const;
 		jboolean addAll(JObject arg0) const;
+		void addFirst(JObject arg0) const;
+		void addLast(JObject arg0) const;
 		JObject ceiling(JObject arg0) const;
 		void clear() const;
 		JObject clone() const;

@@ -1,8 +1,10 @@
 #pragma once
 
+#include "../../../JArray.hpp"
 #include "../../../JObjectArray.hpp"
 #include "../../../JClass.hpp"
 #include "../Enum.def.hpp"
+#include "../Integer.def.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"
 #include "../invoke/CallSite.def.hpp"

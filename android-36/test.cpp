@@ -4434,7 +4434,6 @@
 #include "./java/lang/IllegalAccessException.hpp"
 #include "./java/lang/Runtime.hpp"
 #include "./java/lang/Process.hpp"
-#include "./java/lang/Compiler.hpp"
 #include "./java/lang/ThreadGroup.hpp"
 #include "./java/lang/UnsatisfiedLinkError.hpp"
 #include "./java/lang/IllegalAccessError.hpp"

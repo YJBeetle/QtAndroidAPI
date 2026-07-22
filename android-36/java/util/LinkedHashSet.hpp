@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../../JObject.hpp"
+#include "./LinkedHashMap.def.hpp"
 #include "./LinkedHashSet.def.hpp"
 
 namespace java::util
@@ -40,6 +42,57 @@ namespace java::util
 			"newLinkedHashSet",
 			"(I)Ljava/util/LinkedHashSet;",
 			arg0
+		);
+	}
+	inline void LinkedHashSet::addFirst(JObject arg0) const
+	{
+		callMethod<void>(
+			"addFirst",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void LinkedHashSet::addLast(JObject arg0) const
+	{
+		callMethod<void>(
+			"addLast",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline JObject LinkedHashSet::getFirst() const
+	{
+		return callObjectMethod(
+			"getFirst",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject LinkedHashSet::getLast() const
+	{
+		return callObjectMethod(
+			"getLast",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject LinkedHashSet::removeFirst() const
+	{
+		return callObjectMethod(
+			"removeFirst",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject LinkedHashSet::removeLast() const
+	{
+		return callObjectMethod(
+			"removeLast",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject LinkedHashSet::reversed() const
+	{
+		return callObjectMethod(
+			"reversed",
+			"()Ljava/util/SequencedSet;"
 		);
 	}
 	inline JObject LinkedHashSet::spliterator() const

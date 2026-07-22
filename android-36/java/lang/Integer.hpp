@@ -2,7 +2,6 @@
 
 #include "../../JByteArray.hpp"
 #include "../../JCharArray.hpp"
-#include "../../JIntArray.hpp"
 #include "../../JString.hpp"
 #include "../../JClass.hpp"
 #include "../../JObject.hpp"

@@ -36,7 +36,13 @@ namespace java::util
 		JObject get(JObject arg0) const;
 		JObject getOrDefault(JObject arg0, JObject arg1) const;
 		JObject keySet() const;
+		JObject putFirst(JObject arg0, JObject arg1) const;
+		JObject putLast(JObject arg0, JObject arg1) const;
 		void replaceAll(JObject arg0) const;
+		JObject reversed() const;
+		JObject sequencedEntrySet() const;
+		JObject sequencedKeySet() const;
+		JObject sequencedValues() const;
 		JObject values() const;
 	};
 } // namespace java::util

@@ -4,7 +4,6 @@
 
 class JByteArray;
 class JCharArray;
-class JIntArray;
 class JString;
 class JClass;
 class JObject;

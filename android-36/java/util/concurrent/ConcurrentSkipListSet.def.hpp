@@ -25,6 +25,8 @@ namespace java::util::concurrent
 		
 		// Methods
 		jboolean add(JObject arg0) const;
+		void addFirst(JObject arg0) const;
+		void addLast(JObject arg0) const;
 		JObject ceiling(JObject arg0) const;
 		void clear() const;
 		java::util::concurrent::ConcurrentSkipListSet clone() const;

@@ -2,11 +2,16 @@
 
 #include "../../../JObject.hpp"
 
+class JArray;
 class JObjectArray;
 class JClass;
 namespace java::lang
 {
 	class Enum;
+}
+namespace java::lang
+{
+	class Integer;
 }
 class JObject;
 class JString;
