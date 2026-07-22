@@ -306,10 +306,28 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
+	inline JObject ConcurrentSkipListMap::putFirst(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putFirst",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
 	inline JObject ConcurrentSkipListMap::putIfAbsent(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putIfAbsent",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JObject ConcurrentSkipListMap::putLast(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putLast",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0.object<jobject>(),
 			arg1.object<jobject>()

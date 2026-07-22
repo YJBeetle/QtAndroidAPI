@@ -5,10 +5,6 @@
 class JObjectArray;
 namespace java::io
 {
-	class ObjectInputStream;
-}
-namespace java::io
-{
 	class ObjectOutputStream;
 }
 class JObject;

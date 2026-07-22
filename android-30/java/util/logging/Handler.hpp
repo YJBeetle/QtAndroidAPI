@@ -2,6 +2,7 @@
 
 #include "../../lang/Exception.def.hpp"
 #include "../../../JString.hpp"
+#include "../concurrent/locks/ReentrantLock.def.hpp"
 #include "./ErrorManager.def.hpp"
 #include "./Formatter.def.hpp"
 #include "./Level.def.hpp"

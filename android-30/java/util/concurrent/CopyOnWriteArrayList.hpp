@@ -75,11 +75,27 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
+	inline void CopyOnWriteArrayList::addFirst(JObject arg0) const
+	{
+		callMethod<void>(
+			"addFirst",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 	inline jboolean CopyOnWriteArrayList::addIfAbsent(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addIfAbsent",
 			"(Ljava/lang/Object;)Z",
+			arg0.object<jobject>()
+		);
+	}
+	inline void CopyOnWriteArrayList::addLast(JObject arg0) const
+	{
+		callMethod<void>(
+			"addLast",
+			"(Ljava/lang/Object;)V",
 			arg0.object<jobject>()
 		);
 	}
@@ -135,6 +151,20 @@ namespace java::util::concurrent
 			"get",
 			"(I)Ljava/lang/Object;",
 			arg0
+		);
+	}
+	inline JObject CopyOnWriteArrayList::getFirst() const
+	{
+		return callObjectMethod(
+			"getFirst",
+			"()Ljava/lang/Object;"
+		);
+	}
+	inline JObject CopyOnWriteArrayList::getLast() const
+	{
+		return callObjectMethod(
+			"getLast",
+			"()Ljava/lang/Object;"
 		);
 	}
 	inline jint CopyOnWriteArrayList::hashCode() const
@@ -231,12 +261,26 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
+	inline JObject CopyOnWriteArrayList::removeFirst() const
+	{
+		return callObjectMethod(
+			"removeFirst",
+			"()Ljava/lang/Object;"
+		);
+	}
 	inline jboolean CopyOnWriteArrayList::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
 			"(Ljava/util/function/Predicate;)Z",
 			arg0.object()
+		);
+	}
+	inline JObject CopyOnWriteArrayList::removeLast() const
+	{
+		return callObjectMethod(
+			"removeLast",
+			"()Ljava/lang/Object;"
 		);
 	}
 	inline void CopyOnWriteArrayList::replaceAll(JObject arg0) const
@@ -253,6 +297,13 @@ namespace java::util::concurrent
 			"retainAll",
 			"(Ljava/util/Collection;)Z",
 			arg0.object()
+		);
+	}
+	inline JObject CopyOnWriteArrayList::reversed() const
+	{
+		return callObjectMethod(
+			"reversed",
+			"()Ljava/util/List;"
 		);
 	}
 	inline JObject CopyOnWriteArrayList::set(jint arg0, JObject arg1) const

@@ -50,6 +50,7 @@ namespace java::util::concurrent
 		void put(JObject arg0) const;
 		jint remainingCapacity() const;
 		jboolean remove(JObject arg0) const;
+		JObject remove() const;
 		jint size() const;
 		JObject take() const;
 		JObjectArray toArray() const;

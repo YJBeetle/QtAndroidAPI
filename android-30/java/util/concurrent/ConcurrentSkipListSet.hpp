@@ -30,6 +30,22 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
+	inline void ConcurrentSkipListSet::addFirst(JObject arg0) const
+	{
+		callMethod<void>(
+			"addFirst",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void ConcurrentSkipListSet::addLast(JObject arg0) const
+	{
+		callMethod<void>(
+			"addLast",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 	inline JObject ConcurrentSkipListSet::ceiling(JObject arg0) const
 	{
 		return callObjectMethod(

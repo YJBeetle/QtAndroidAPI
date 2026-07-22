@@ -789,6 +789,60 @@ namespace java::lang
 			arg0
 		);
 	}
+	inline jboolean Character::isEmoji(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Character",
+			"isEmoji",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean Character::isEmojiComponent(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Character",
+			"isEmojiComponent",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean Character::isEmojiModifier(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Character",
+			"isEmojiModifier",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean Character::isEmojiModifierBase(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Character",
+			"isEmojiModifierBase",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean Character::isEmojiPresentation(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Character",
+			"isEmojiPresentation",
+			"(I)Z",
+			arg0
+		);
+	}
+	inline jboolean Character::isExtendedPictographic(jint arg0)
+	{
+		return callStaticMethod<jboolean>(
+			"java.lang.Character",
+			"isExtendedPictographic",
+			"(I)Z",
+			arg0
+		);
+	}
 	inline jboolean Character::isHighSurrogate(jchar arg0)
 	{
 		return callStaticMethod<jboolean>(

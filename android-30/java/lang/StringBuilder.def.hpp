@@ -79,6 +79,8 @@ namespace java::lang
 		jint lastIndexOf(JString arg0, jint arg1) const;
 		jint length() const;
 		jint offsetByCodePoints(jint arg0, jint arg1) const;
+		java::lang::StringBuilder repeat(jint arg0, jint arg1) const;
+		java::lang::StringBuilder repeat(JString arg0, jint arg1) const;
 		java::lang::StringBuilder replace(jint arg0, jint arg1, JString arg2) const;
 		java::lang::StringBuilder reverse() const;
 		void setCharAt(jint arg0, jchar arg1) const;
