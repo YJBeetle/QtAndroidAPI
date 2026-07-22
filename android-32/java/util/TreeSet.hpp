@@ -39,6 +39,22 @@ namespace java::util
 			arg0.object()
 		);
 	}
+	inline void TreeSet::addFirst(JObject arg0) const
+	{
+		callMethod<void>(
+			"addFirst",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
+	inline void TreeSet::addLast(JObject arg0) const
+	{
+		callMethod<void>(
+			"addLast",
+			"(Ljava/lang/Object;)V",
+			arg0.object<jobject>()
+		);
+	}
 	inline JObject TreeSet::ceiling(JObject arg0) const
 	{
 		return callObjectMethod(

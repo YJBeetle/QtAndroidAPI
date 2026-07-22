@@ -65,6 +65,7 @@ namespace java::util
 		jboolean removeFirstOccurrence(JObject arg0) const;
 		JObject removeLast() const;
 		jboolean removeLastOccurrence(JObject arg0) const;
+		java::util::LinkedList reversed() const;
 		JObject set(jint arg0, JObject arg1) const;
 		jint size() const;
 		JObject spliterator() const;

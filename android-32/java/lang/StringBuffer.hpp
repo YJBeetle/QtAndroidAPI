@@ -401,6 +401,24 @@ namespace java::lang
 			arg1
 		);
 	}
+	inline java::lang::StringBuffer StringBuffer::repeat(jint arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"repeat",
+			"(II)Ljava/lang/StringBuffer;",
+			arg0,
+			arg1
+		);
+	}
+	inline java::lang::StringBuffer StringBuffer::repeat(JString arg0, jint arg1) const
+	{
+		return callObjectMethod(
+			"repeat",
+			"(Ljava/lang/CharSequence;I)Ljava/lang/StringBuffer;",
+			arg0.object<jstring>(),
+			arg1
+		);
+	}
 	inline java::lang::StringBuffer StringBuffer::replace(jint arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(

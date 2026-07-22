@@ -66,7 +66,7 @@ namespace java::nio::channels
 	{
 		return callObjectMethod(
 			"map",
-			"(Ljava/nio/channels/FileChannel$MapMode;JJLjava/lang/foreign/SegmentScope;)Ljava/lang/foreign/MemorySegment;",
+			"(Ljava/nio/channels/FileChannel$MapMode;JJLjava/lang/foreign/Arena;)Ljava/lang/foreign/MemorySegment;",
 			arg0.object(),
 			arg1,
 			arg2,

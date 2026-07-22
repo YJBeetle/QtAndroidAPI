@@ -7,6 +7,10 @@ namespace java::lang
 	class Exception;
 }
 class JString;
+namespace java::util::concurrent::locks
+{
+	class ReentrantLock;
+}
 namespace java::util::logging
 {
 	class ErrorManager;

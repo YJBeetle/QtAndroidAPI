@@ -129,6 +129,13 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
+	inline JObject DelayQueue::remove() const
+	{
+		return callObjectMethod(
+			"remove",
+			"()Ljava/util/concurrent/Delayed;"
+		);
+	}
 	inline jint DelayQueue::size() const
 	{
 		return callMethod<jint>(

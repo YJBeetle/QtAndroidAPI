@@ -69,6 +69,8 @@ namespace java::util
 		Locale(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
+		static JObject availableLocales();
+		static JString caseFoldLanguageTag(JString arg0);
 		static JObject filter(JObject arg0, JObject arg1);
 		static JObject filter(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2);
 		static JObject filterTags(JObject arg0, JObject arg1);
