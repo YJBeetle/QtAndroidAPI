@@ -4,11 +4,9 @@
 #include "../../JObjectArray.hpp"
 #include "./PrintWriter.def.hpp"
 #include "./Reader.def.hpp"
-#include "./Writer.def.hpp"
-#include "../../JObject.hpp"
 #include "../../JString.hpp"
+#include "../lang/UnsupportedOperationException.def.hpp"
 #include "../nio/charset/Charset.def.hpp"
-#include "../util/Formatter.def.hpp"
 #include "./Console.def.hpp"
 
 namespace java::io

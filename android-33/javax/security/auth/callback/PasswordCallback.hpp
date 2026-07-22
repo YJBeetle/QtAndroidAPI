@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../../../JCharArray.hpp"
+#include "../../../../java/io/ObjectInputStream.def.hpp"
 #include "../../../../JString.hpp"
 #include "./PasswordCallback.def.hpp"
 

@@ -126,6 +126,12 @@ namespace java::lang
 		static jboolean isDefined(jint arg0);
 		static jboolean isDigit(jchar arg0);
 		static jboolean isDigit(jint arg0);
+		static jboolean isEmoji(jint arg0);
+		static jboolean isEmojiComponent(jint arg0);
+		static jboolean isEmojiModifier(jint arg0);
+		static jboolean isEmojiModifierBase(jint arg0);
+		static jboolean isEmojiPresentation(jint arg0);
+		static jboolean isExtendedPictographic(jint arg0);
 		static jboolean isHighSurrogate(jchar arg0);
 		static jboolean isISOControl(jchar arg0);
 		static jboolean isISOControl(jint arg0);
