@@ -377,6 +377,15 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
+	inline JObject Collections::newSequencedSetFromMap(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Collections",
+			"newSequencedSetFromMap",
+			"(Ljava/util/SequencedMap;)Ljava/util/SequencedSet;",
+			arg0.object()
+		);
+	}
 	inline JObject Collections::newSetFromMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
@@ -448,6 +457,16 @@ namespace java::util
 			"java.util.Collections",
 			"shuffle",
 			"(Ljava/util/List;Ljava/util/Random;)V",
+			arg0.object(),
+			arg1.object()
+		);
+	}
+	inline void Collections::shuffle(JObject arg0, JObject arg1)
+	{
+		callStaticMethod<void>(
+			"java.util.Collections",
+			"shuffle",
+			"(Ljava/util/List;Ljava/util/random/RandomGenerator;)V",
 			arg0.object(),
 			arg1.object()
 		);
@@ -624,6 +643,33 @@ namespace java::util
 			"java.util.Collections",
 			"unmodifiableNavigableSet",
 			"(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;",
+			arg0.object()
+		);
+	}
+	inline JObject Collections::unmodifiableSequencedCollection(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Collections",
+			"unmodifiableSequencedCollection",
+			"(Ljava/util/SequencedCollection;)Ljava/util/SequencedCollection;",
+			arg0.object()
+		);
+	}
+	inline JObject Collections::unmodifiableSequencedMap(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Collections",
+			"unmodifiableSequencedMap",
+			"(Ljava/util/SequencedMap;)Ljava/util/SequencedMap;",
+			arg0.object()
+		);
+	}
+	inline JObject Collections::unmodifiableSequencedSet(JObject arg0)
+	{
+		return callStaticObjectMethod(
+			"java.util.Collections",
+			"unmodifiableSequencedSet",
+			"(Ljava/util/SequencedSet;)Ljava/util/SequencedSet;",
 			arg0.object()
 		);
 	}

@@ -3812,7 +3812,6 @@
 #include "./java/lang/UnsupportedClassVersionError.hpp"
 #include "./java/lang/ThreadDeath.hpp"
 #include "./java/lang/SecurityException.hpp"
-#include "./java/lang/Compiler.hpp"
 #include "./java/lang/Boolean.hpp"
 #include "./java/lang/Runtime.hpp"
 #include "./java/lang/StackWalker_Option.hpp"

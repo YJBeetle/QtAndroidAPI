@@ -249,6 +249,50 @@ namespace java::lang
 			arg1
 		);
 	}
+	inline jdouble StrictMath::clamp(jdouble arg0, jdouble arg1, jdouble arg2)
+	{
+		return callStaticMethod<jdouble>(
+			"java.lang.StrictMath",
+			"clamp",
+			"(DDD)D",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jfloat StrictMath::clamp(jfloat arg0, jfloat arg1, jfloat arg2)
+	{
+		return callStaticMethod<jfloat>(
+			"java.lang.StrictMath",
+			"clamp",
+			"(FFF)F",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jint StrictMath::clamp(jlong arg0, jint arg1, jint arg2)
+	{
+		return callStaticMethod<jint>(
+			"java.lang.StrictMath",
+			"clamp",
+			"(JII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	inline jlong StrictMath::clamp(jlong arg0, jlong arg1, jlong arg2)
+	{
+		return callStaticMethod<jlong>(
+			"java.lang.StrictMath",
+			"clamp",
+			"(JJJ)J",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	inline jdouble StrictMath::copySign(jdouble arg0, jdouble arg1)
 	{
 		return callStaticMethod<jdouble>(

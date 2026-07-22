@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../../../JObjectArray.hpp"
-#include "../../io/ObjectInputStream.def.hpp"
 #include "../../io/ObjectOutputStream.def.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"

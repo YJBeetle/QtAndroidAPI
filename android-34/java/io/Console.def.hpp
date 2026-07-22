@@ -12,19 +12,14 @@ namespace java::io
 {
 	class Reader;
 }
-namespace java::io
-{
-	class Writer;
-}
-class JObject;
 class JString;
+namespace java::lang
+{
+	class UnsupportedOperationException;
+}
 namespace java::nio::charset
 {
 	class Charset;
-}
-namespace java::util
-{
-	class Formatter;
 }
 
 namespace java::io

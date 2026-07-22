@@ -3,6 +3,10 @@
 #include "../AbstractSet.def.hpp"
 
 class JObjectArray;
+namespace java::io
+{
+	class ObjectInputStream;
+}
 class JObject;
 namespace java::util::concurrent
 {
