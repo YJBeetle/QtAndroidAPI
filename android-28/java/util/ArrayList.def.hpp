@@ -36,6 +36,8 @@ namespace java::util
 		void add(jint arg0, JObject arg1) const;
 		jboolean addAll(JObject arg0) const;
 		jboolean addAll(jint arg0, JObject arg1) const;
+		void addFirst(JObject arg0) const;
+		void addLast(JObject arg0) const;
 		void clear() const;
 		JObject clone() const;
 		jboolean contains(JObject arg0) const;
@@ -43,6 +45,8 @@ namespace java::util
 		jboolean equals(JObject arg0) const;
 		void forEach(JObject arg0) const;
 		JObject get(jint arg0) const;
+		JObject getFirst() const;
+		JObject getLast() const;
 		jint hashCode() const;
 		jint indexOf(JObject arg0) const;
 		jboolean isEmpty() const;
@@ -53,7 +57,9 @@ namespace java::util
 		jboolean remove(JObject arg0) const;
 		JObject remove(jint arg0) const;
 		jboolean removeAll(JObject arg0) const;
+		JObject removeFirst() const;
 		jboolean removeIf(JObject arg0) const;
+		JObject removeLast() const;
 		void replaceAll(JObject arg0) const;
 		jboolean retainAll(JObject arg0) const;
 		JObject set(jint arg0, JObject arg1) const;

@@ -107,12 +107,58 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
+	inline JObject LinkedHashMap::putFirst(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putFirst",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
+	inline JObject LinkedHashMap::putLast(JObject arg0, JObject arg1) const
+	{
+		return callObjectMethod(
+			"putLast",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0.object<jobject>(),
+			arg1.object<jobject>()
+		);
+	}
 	inline void LinkedHashMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
 			"(Ljava/util/function/BiFunction;)V",
 			arg0.object()
+		);
+	}
+	inline JObject LinkedHashMap::reversed() const
+	{
+		return callObjectMethod(
+			"reversed",
+			"()Ljava/util/SequencedMap;"
+		);
+	}
+	inline JObject LinkedHashMap::sequencedEntrySet() const
+	{
+		return callObjectMethod(
+			"sequencedEntrySet",
+			"()Ljava/util/SequencedSet;"
+		);
+	}
+	inline JObject LinkedHashMap::sequencedKeySet() const
+	{
+		return callObjectMethod(
+			"sequencedKeySet",
+			"()Ljava/util/SequencedSet;"
+		);
+	}
+	inline JObject LinkedHashMap::sequencedValues() const
+	{
+		return callObjectMethod(
+			"sequencedValues",
+			"()Ljava/util/SequencedCollection;"
 		);
 	}
 	inline JObject LinkedHashMap::values() const

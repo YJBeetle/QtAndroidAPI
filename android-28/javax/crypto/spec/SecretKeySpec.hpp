@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../../JByteArray.hpp"
+#include "../../../java/io/ObjectInputStream.def.hpp"
 #include "../../../JObject.hpp"
 #include "../../../JString.hpp"
 #include "./SecretKeySpec.def.hpp"

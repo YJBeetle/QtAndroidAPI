@@ -42,6 +42,10 @@ namespace java::lang
 		static jint ceilMod(jint arg0, jint arg1);
 		static jint ceilMod(jlong arg0, jint arg1);
 		static jlong ceilMod(jlong arg0, jlong arg1);
+		static jdouble clamp(jdouble arg0, jdouble arg1, jdouble arg2);
+		static jfloat clamp(jfloat arg0, jfloat arg1, jfloat arg2);
+		static jint clamp(jlong arg0, jint arg1, jint arg2);
+		static jlong clamp(jlong arg0, jlong arg1, jlong arg2);
 		static jdouble copySign(jdouble arg0, jdouble arg1);
 		static jfloat copySign(jfloat arg0, jfloat arg1);
 		static jdouble cos(jdouble arg0);

@@ -11,6 +11,10 @@ namespace java::util::zip
 {
 	class CRC32;
 }
+namespace java::util::zip
+{
+	class Inflater;
+}
 
 namespace java::util::zip
 {

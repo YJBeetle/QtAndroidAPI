@@ -291,6 +291,13 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
+	inline java::util::LinkedList LinkedList::reversed() const
+	{
+		return callObjectMethod(
+			"reversed",
+			"()Ljava/util/LinkedList;"
+		);
+	}
 	inline JObject LinkedList::set(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(

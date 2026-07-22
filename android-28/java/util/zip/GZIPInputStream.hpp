@@ -3,6 +3,7 @@
 #include "../../../JByteArray.hpp"
 #include "../../io/InputStream.def.hpp"
 #include "./CRC32.def.hpp"
+#include "./Inflater.def.hpp"
 #include "./GZIPInputStream.def.hpp"
 
 namespace java::util::zip

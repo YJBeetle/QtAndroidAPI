@@ -62,7 +62,9 @@ namespace java::util
 		JObject pollLastEntry() const;
 		JObject put(JObject arg0, JObject arg1) const;
 		void putAll(JObject arg0) const;
+		JObject putFirst(JObject arg0, JObject arg1) const;
 		JObject putIfAbsent(JObject arg0, JObject arg1) const;
+		JObject putLast(JObject arg0, JObject arg1) const;
 		JObject remove(JObject arg0) const;
 		jboolean replace(JObject arg0, JObject arg1, JObject arg2) const;
 		JObject replace(JObject arg0, JObject arg1) const;
